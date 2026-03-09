@@ -1,0 +1,24 @@
+---
+interface Props {
+  eyebrow?: string;
+  eyebrowDotColor?: string;
+  heading: string;
+  sub?: string;
+  align?: 'left' | 'center';
+  class?: string;
+}
+
+const { eyebrow, eyebrowDotColor = 'bg-brand', heading, sub, align = 'left', class: className = '' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center mx-auto' : '';
+---
+
+<div class={`max-w-2xl ${alignClass} ${className}`.trim()} data-reveal>
+  {eyebrow && (
+    <p class="eyebrow mb-4">
+      <span class={`eyebrow-dot ${eyebrowDotColor}`}></span>
+      {eyebrow}
+    </p>
+  )}
+  <h2 class="section-heading">{heading}</h2>
+  {sub && <p class="mt-4 text-lg text-ink-3 leading-relaxed">{sub}</p>}
+</div>

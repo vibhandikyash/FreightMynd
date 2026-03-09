@@ -1,0 +1,8 @@
+---
+import SolutionPage from '../../layouts/SolutionPage.astro';
+import { solutions } from '../../data/solutions';
+
+const solution = solutions.find(s => s.slug === 'autonomous-quote-management')!;
+---
+
+<SolutionPage solution={solution} />

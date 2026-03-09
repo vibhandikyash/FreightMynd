@@ -1,0 +1,51 @@
+---
+const differentiators = [
+  {
+    title: 'You Own It',
+    description: 'No subscription. No vendor lock-in. No price hike when you scale. The system we build is yours — deployed in your environment, maintained on your terms.',
+    icon: '🔒',
+  },
+  {
+    title: 'Your Stack, Not Ours',
+    description: 'Your TMS. Your CargoWise instance. Your carrier portals. We integrate with the systems you already run — not the ones we decided to support.',
+    icon: '🔧',
+  },
+  {
+    title: 'Your Edge Cases, Built In',
+    description: 'Every freight forwarder has lanes, suppliers, and document formats that don\'t fit a template. We build those in from day one — not as an afterthought.',
+    icon: '🎯',
+  },
+];
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+  <!-- Soft gradient orbs -->
+  <div class="absolute top-[-20%] left-[20%] w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute bottom-[-20%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/8 blur-3xl" aria-hidden="true"></div>
+
+  <div class="container relative z-10">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
+      <p class="eyebrow justify-center mb-4 text-white/50">
+        <span class="eyebrow-dot bg-brand"></span>
+        Why CargoIQ
+      </p>
+      <h2 class="text-display-lg font-bold text-white" style="padding-left:0; border-left:none;">
+        A SaaS Seat Fits Their Workflow.<br class="hidden md:inline" />
+        <span class="text-brand-mid">We Build Around Yours.</span>
+      </h2>
+    </div>
+
+    <!-- Three columns -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {differentiators.map((diff, i) => (
+        <div class="p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300"
+             data-reveal data-reveal-delay={String(i + 1)}>
+          <span class="text-3xl mb-5 block" aria-hidden="true">{diff.icon}</span>
+          <h3 class="text-xl font-bold text-white mb-3">{diff.title}</h3>
+          <p class="text-white/60 leading-relaxed">{diff.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

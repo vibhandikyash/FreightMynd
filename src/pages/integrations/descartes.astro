@@ -1,0 +1,6 @@
+---
+import IntegrationPage from '../../layouts/IntegrationPage.astro';
+import { integrations } from '../../data/integrations';
+const integration = integrations.find(i => i.slug === 'descartes')!;
+---
+<IntegrationPage integration={integration} />

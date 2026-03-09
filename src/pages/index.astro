@@ -1,17 +1,43 @@
 ---
+import Page from '../layouts/Page.astro';
+import Hero from '../components/sections/Hero.astro';
+import StatsBar from '../components/sections/StatsBar.astro';
+import SectorCards from '../components/sections/SectorCards.astro';
+import ProblemSection from '../components/sections/ProblemSection.astro';
+import ProofSection from '../components/sections/ProofSection.astro';
+import DiffSection from '../components/sections/DiffSection.astro';
+import SuiteSection from '../components/sections/SuiteSection.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import HowWeEngage from '../components/sections/HowWeEngage.astro';
+import CtaSection from '../components/sections/CtaSection.astro';
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CargoIQ.ai",
+  "url": "https://cargoiq.ai",
+  "description": "AI-powered operations intelligence for sea, air & freight forwarders. Custom-built systems that replace manual freight operations.",
+  "foundingDate": "2019",
+  "address": [
+    { "@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Clifton" },
+    { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gujarat" }
+  ]
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Page
+  title="CargoIQ.ai — AI-Powered Operations Intelligence for Freight Forwarders"
+  description="Custom-built AI systems for sea freight, air freight & logistics operations. 4PL control tower automation, autonomous quote management, and freight document intelligence. Trusted by Hellmann Worldwide Logistics."
+  schema={schema}
+>
+  <Hero />
+  <StatsBar />
+  <SectorCards />
+  <ProblemSection />
+  <ProofSection />
+  <DiffSection />
+  <SuiteSection variant="logistics" />
+  <Testimonials />
+  <HowWeEngage />
+  <CtaSection />
+</Page>

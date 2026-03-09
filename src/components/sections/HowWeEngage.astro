@@ -1,0 +1,62 @@
+---
+const steps = [
+  {
+    num: '01',
+    title: 'Discovery & Audit',
+    description: 'We map your current workflows, identify automation opportunities, and quantify the time and cost impact. Free, no-commitment audit.',
+    duration: 'Week 1–2',
+  },
+  {
+    num: '02',
+    title: 'Architecture & Design',
+    description: 'We design the system architecture — integrations, data flows, validation rules, and exception handling — specific to your environment.',
+    duration: 'Week 2–4',
+  },
+  {
+    num: '03',
+    title: 'Build & Test',
+    description: 'We build in iterative sprints with your ops team reviewing outputs at every stage. No black-box handoff. You see it working before it ships.',
+    duration: 'Week 4–10',
+  },
+  {
+    num: '04',
+    title: 'Deploy & Handoff',
+    description: 'Production deployment in your environment with full documentation, monitoring, and a support period. You own the system — no recurring SaaS fees.',
+    duration: 'Week 10–14',
+  },
+];
+---
+
+<section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+  <div class="container">
+    <!-- Header -->
+    <div class="max-w-2xl mb-14" data-reveal>
+      <p class="eyebrow mb-4">
+        <span class="eyebrow-dot bg-brand"></span>
+        How We Work
+      </p>
+      <h2 class="section-heading">From Audit to Production in 8–14 Weeks</h2>
+      <p class="mt-4 text-lg text-ink-3 leading-relaxed">
+        No 6-month enterprise sales cycle. No multi-year contract. A focused engagement that delivers a working system.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {steps.map((step, i) => (
+        <div class="relative p-6 rounded-2xl border border-line/70 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+             data-reveal data-reveal-delay={String(i + 1)}>
+          <!-- Step number -->
+          <span class="font-mono text-4xl font-bold text-brand/10 absolute top-4 right-5">{step.num}</span>
+
+          <!-- Duration badge -->
+          <span class="tag tag-brand mb-4">{step.duration}</span>
+
+          <!-- Content -->
+          <h3 class="text-lg font-bold text-ink mb-2">{step.title}</h3>
+          <p class="text-sm text-ink-3 leading-relaxed">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  variant?: 'brand' | 'accent';
+  class?: string;
+}
+
+const { variant = 'brand', class: className = '' } = Astro.props;
+const variantClass = variant === 'brand' ? 'tag-brand' : 'text-accent-dark bg-accent-light border border-accent-mid';
+---
+
+<span class={`tag ${variantClass} ${className}`.trim()}>
+  <slot />
+</span>

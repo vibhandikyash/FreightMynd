@@ -1,0 +1,13 @@
+---
+interface Props {
+  dotColor?: string;
+  class?: string;
+}
+
+const { dotColor = 'bg-brand', class: className = '' } = Astro.props;
+---
+
+<p class={`eyebrow ${className}`.trim()}>
+  <span class={`eyebrow-dot ${dotColor}`}></span>
+  <slot />
+</p>

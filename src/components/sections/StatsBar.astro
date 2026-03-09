@@ -1,0 +1,18 @@
+---
+import { heroStats } from '../../data/stats';
+---
+
+<section class="relative bg-white border-y border-line/50">
+  <div class="container py-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+      {heroStats.map((stat, i) => (
+        <div class="text-center" data-reveal data-reveal-delay={String(i + 1)}>
+          <p class="text-display-sm font-bold bg-gradient-to-br from-brand to-brand-dark bg-clip-text text-transparent">
+            {stat.value}<span class="text-[0.6em] opacity-70">{stat.suffix}</span>
+          </p>
+          <p class="mt-2 text-sm text-ink-3 leading-snug">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

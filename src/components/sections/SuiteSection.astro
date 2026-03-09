@@ -1,0 +1,75 @@
+---
+import { solutions } from '../../data/solutions';
+
+const displaySolutions = solutions.slice(0, 6);
+
+const flowSteps = [
+  { label: 'Ingest', sub: 'Email, Portal, EDI' },
+  { label: 'Extract', sub: 'AI Document Intelligence' },
+  { label: 'Validate', sub: 'Business Rules Engine' },
+  { label: 'Push', sub: 'TMS / ERP Integration' },
+];
+---
+
+<section class="section bg-white">
+  <div class="container">
+    <!-- Header -->
+    <div class="max-w-2xl mb-14" data-reveal>
+      <p class="eyebrow mb-4">
+        <span class="eyebrow-dot bg-brand"></span>
+        The CargoIQ Suite
+      </p>
+      <h2 class="section-heading">Every System Your Freight Ops Needs</h2>
+      <p class="mt-4 text-lg text-ink-3 leading-relaxed">
+        Each module is custom-built for your environment. Deploy one or connect them all into a unified operations intelligence layer.
+      </p>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="flex items-center justify-between gap-2 md:gap-4 mb-14 p-6 rounded-2xl bg-brand-light/50 border border-brand-mid/30 overflow-x-auto" data-reveal>
+      {flowSteps.map((step, i) => (
+        <>
+          <div class="flex flex-col items-center text-center min-w-[100px]">
+            <div class="w-10 h-10 rounded-xl bg-brand/10 text-brand font-bold text-sm flex items-center justify-center mb-2">
+              {i + 1}
+            </div>
+            <p class="text-sm font-semibold text-ink">{step.label}</p>
+            <p class="text-[11px] text-ink-4 mt-0.5">{step.sub}</p>
+          </div>
+          {i < flowSteps.length - 1 && (
+            <svg class="w-5 h-5 text-brand/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+        </>
+      ))}
+    </div>
+
+    <!-- Solution cards grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {displaySolutions.map((sol, i) => (
+        <a href={`/solutions/${sol.slug}`}
+           class="group p-6 rounded-2xl border border-line/70 bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+           data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+          <span class="text-2xl mb-3" aria-hidden="true">{sol.icon}</span>
+          <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors">{sol.shortTitle}</h3>
+          <p class="text-sm text-ink-3 leading-relaxed mb-4 flex-grow">{sol.description}</p>
+          <div class="flex items-baseline gap-2 pt-4 border-t border-line/50">
+            <span class="text-lg font-bold text-brand">{sol.results[0].value}</span>
+            <span class="text-xs text-ink-4">{sol.results[0].label}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- View all link -->
+    <div class="mt-10 text-center" data-reveal>
+      <a href="/solutions" class="btn btn-ghost">
+        View All Solutions
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
