@@ -29,13 +29,30 @@ const faqSchema = {
   })),
 };
 
-const softwareSchema = {
+const serviceSchema = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": `CargoIQ ${solution.title}`,
-  "applicationCategory": "BusinessApplication",
+  "@type": "Service",
+  "name": solution.title,
   "description": solution.description,
-  "featureList": solution.capabilities.map(c => c.title),
+  "provider": {
+    "@type": "Organization",
+    "name": "CargoIQ.ai",
+    "url": site.url
+  },
+  "serviceType": "AI Automation for Freight Operations",
+  "areaServed": "Global",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": solution.title,
+    "itemListElement": solution.capabilities.map(c => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": c.title,
+        "description": c.description
+      }
+    }))
+  }
 };
 
 // Get related solutions (exclude current)
@@ -46,7 +63,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
 <Page
   title={solution.metaTitle}
   description={solution.metaDescription}
-  schema={[breadcrumbSchema, faqSchema, softwareSchema]}
+  schema={[breadcrumbSchema, faqSchema, serviceSchema]}
 >
   <!-- Breadcrumb -->
   <nav class="pt-20 pb-0 bg-surface" aria-label="Breadcrumb">

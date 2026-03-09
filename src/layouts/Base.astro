@@ -1,5 +1,6 @@
 ---
 import Seo from '../components/global/Seo.astro';
+import { site } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
@@ -11,12 +12,25 @@ interface Props {
   noindex?: boolean;
   schema?: object | object[];
 }
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CargoIQ.ai",
+  "url": site.url,
+  "description": "AI-powered operations intelligence for sea, air & freight forwarders",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CargoIQ.ai"
+  }
+};
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <Seo {...Astro.props} />
+  <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
   <link rel="preload" href="/fonts/dm-sans-variable.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/dm-mono-regular.woff2" as="font" type="font/woff2" crossorigin />
   <meta name="theme-color" content="#1A5FA8" />

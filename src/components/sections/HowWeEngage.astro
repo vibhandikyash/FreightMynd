@@ -59,4 +59,16 @@ const steps = [
       ))}
     </div>
   </div>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Implement AI Automation for Freight Operations",
+    "description": "CargoIQ's 4-step process from discovery to production deployment",
+    "step": steps.map((step, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": step.title,
+      "text": step.description
+    }))
+  })} />
 </section>

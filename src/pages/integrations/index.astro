@@ -11,12 +11,25 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Integrations" },
   ],
 };
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "TMS & Freight System AI Integrations",
+  "numberOfItems": integrations.length,
+  "itemListElement": integrations.map((intg, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": intg.shortTitle,
+    "url": `${site.url}/integrations/${intg.slug}`
+  }))
+};
 ---
 
 <Page
   title="TMS & Freight System AI Integrations | CargoIQ.ai"
   description="Direct AI integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. No middleware — our systems connect to the TMS you already run."
-  schema={breadcrumbSchema}
+  schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Hero -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">

@@ -16,6 +16,19 @@ const breadcrumbSchema = {
   ],
 };
 
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AI for Freight Operations Blog",
+  "numberOfItems": posts.length,
+  "itemListElement": posts.map((post, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": post.data.title,
+    "url": `${site.url}/blog/${post.id}`
+  }))
+};
+
 function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -28,7 +41,7 @@ function formatDate(date: Date): string {
 <Page
   title="Blog — Insights on AI for Freight Operations"
   description="Expert insights on AI automation for freight forwarding — 4PL control towers, document intelligence, pricing AI, and CargoWise integration guides."
-  schema={breadcrumbSchema}
+  schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Breadcrumb -->
   <div class="bg-white border-b border-line">

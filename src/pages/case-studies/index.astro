@@ -11,12 +11,25 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Case Studies" },
   ],
 };
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AI Case Studies for Freight Forwarding",
+  "numberOfItems": caseStudies.length,
+  "itemListElement": caseStudies.map((study, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": study.title,
+    "url": `${site.url}/case-studies/${study.slug}`
+  }))
+};
 ---
 
 <Page
   title="AI Case Studies for Freight Forwarding & Logistics | CargoIQ.ai"
   description="Real AI systems deployed for freight forwarders — 4PL control tower automation, RFQ intelligence, document processing, and more. See measurable results from live deployments."
-  schema={breadcrumbSchema}
+  schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Hero -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
