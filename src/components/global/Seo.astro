@@ -23,7 +23,7 @@ const {
   modifiedDate,
 } = Astro.props;
 
-const siteUrl = 'https://cargoiq.ai';
+const siteUrl = 'https://cargoiq.pages.dev';
 const fullTitle = title.includes('CargoIQ') ? title : `${title} | CargoIQ.ai`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;

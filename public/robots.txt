@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /thank-you
 
-Sitemap: https://cargoiq.ai/sitemap-index.xml
+Sitemap: https://cargoiq.pages.dev/sitemap-index.xml

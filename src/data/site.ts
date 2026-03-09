@@ -1,6 +1,6 @@
 export const site = {
   name: 'CargoIQ.ai',
-  url: 'https://cargoiq.ai',
+  url: 'https://cargoiq.pages.dev',
   tagline: 'AI-Powered Operations Intelligence for Sea, Air & Freight Forwarders',
   description: 'Custom-built AI systems that replace manual freight operations. Trusted by Hellmann Worldwide Logistics.',
   contact: {
