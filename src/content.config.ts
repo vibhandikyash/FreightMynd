@@ -14,6 +14,8 @@ const blog = defineCollection({
     ogImage: z.string().optional(),
     featured: z.boolean().default(false),
     readingTime: z.string(),
+    wordCount: z.number().optional(),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 });
 

@@ -1,4 +1,6 @@
 ---
+import { site } from '../../data/site';
+
 interface Props {
   title: string;
   description: string;
@@ -23,7 +25,7 @@ const {
   modifiedDate,
 } = Astro.props;
 
-const siteUrl = 'https://cargoiq.pages.dev';
+const siteUrl = site.url;
 const fullTitle = title.includes('CargoIQ') ? title : `${title} | CargoIQ.ai`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, siteUrl).href;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;

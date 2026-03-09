@@ -29,7 +29,7 @@ export interface Solution {
     scenario: string;
     description: string;
   }>;
-  results: Array<{ value: string; label: string; context?: string }>;
+  results: Array<{ value: string; label: string; context?: string; businessOutcome?: string }>;
   stack: string[];
   /** Integration ecosystem — what systems this connects to */
   integrations: string[];
@@ -153,10 +153,10 @@ export const solutions: Solution[] = [
     ],
 
     results: [
-      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual processing of equivalent document volumes at Hellmann Worldwide Logistics' },
-      { value: '50%', label: 'AI cost reduction via smart filtering', context: 'By removing irrelevant pages before LLM extraction, reducing token consumption by half' },
-      { value: '0', label: 'Manual TMS data entry', context: 'All validated data pushed directly into CargoWise via XML — zero human keying required' },
-      { value: '≈0%', label: 'Failure rate on 300-page batches', context: 'Stress-tested on production Hellmann document batches with no dropped or partially processed documents' },
+      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual processing of equivalent document volumes at Hellmann Worldwide Logistics', businessOutcome: 'Equivalent to reclaiming 2+ FTEs of operational capacity' },
+      { value: '50%', label: 'AI cost reduction via smart filtering', context: 'By removing irrelevant pages before LLM extraction, reducing token consumption by half', businessOutcome: 'Lower ongoing operational costs as document volume scales' },
+      { value: '0', label: 'Manual TMS data entry', context: 'All validated data pushed directly into CargoWise via XML — zero human keying required', businessOutcome: 'Eliminates data entry errors and costly exception handling' },
+      { value: '≈0%', label: 'Failure rate on 300-page batches', context: 'Stress-tested on production Hellmann document batches with no dropped or partially processed documents', businessOutcome: 'No lost documents, no re-processing, no supplier follow-ups' },
     ],
 
     stack: ['Python', 'LangGraph', 'Azure', 'n8n', 'CargoWise eHub', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'PostgreSQL'],
@@ -315,9 +315,9 @@ export const solutions: Solution[] = [
     ],
 
     results: [
-      { value: '85%', label: 'Faster quote turnaround', context: 'Average time from RFQ receipt to quote delivery dropped from 4.5 hours to 40 minutes' },
-      { value: '3x', label: 'More quotes handled per person', context: 'Sales reps process 3x the quote volume without additional hires, shifting time from data entry to relationship building' },
-      { value: '40%', label: 'Higher quote-to-book conversion', context: 'Faster response times and more accurate pricing improve win rates from an industry-average 15–20% to 25–30%' },
+      { value: '85%', label: 'Faster quote turnaround', context: 'Average time from RFQ receipt to quote delivery dropped from 4.5 hours to 40 minutes', businessOutcome: 'Respond to RFQs before competitors even open the email' },
+      { value: '3x', label: 'More quotes handled per person', context: 'Sales reps process 3x the quote volume without additional hires, shifting time from data entry to relationship building', businessOutcome: 'Scale quoting capacity without hiring' },
+      { value: '40%', label: 'Higher quote-to-book conversion', context: 'Faster response times and more accurate pricing improve win rates from an industry-average 15–20% to 25–30%', businessOutcome: 'Faster response + accurate pricing = more wins' },
       { value: '0', label: 'Missed quote deadlines', context: 'Automated tracking ensures every RFQ gets a response before the customer\'s stated deadline' },
     ],
 
@@ -467,10 +467,10 @@ export const solutions: Solution[] = [
     ],
 
     results: [
-      { value: '99%+', label: 'Extraction accuracy', context: 'On structured documents (invoices, AWBs, BLs) in standard formats. 95%+ on unstructured or non-standard layouts.' },
-      { value: '70%', label: 'Processing time reduction', context: 'Average time from document receipt to data availability in TMS, compared to manual processing baseline' },
-      { value: '90%', label: 'Reduction in manual data entry', context: 'Remaining 10% are edge cases requiring human review — flagged automatically with specific fields highlighted' },
-      { value: '24/7', label: 'Processing availability', context: 'Documents arriving at 2 AM are processed immediately, not queued until the morning shift starts' },
+      { value: '99%+', label: 'Extraction accuracy', context: 'On structured documents (invoices, AWBs, BLs) in standard formats. 95%+ on unstructured or non-standard layouts.', businessOutcome: 'Near-perfect data quality eliminates downstream exception cascades' },
+      { value: '70%', label: 'Processing time reduction', context: 'Average time from document receipt to data availability in TMS, compared to manual processing baseline', businessOutcome: 'Shipments clear faster, improving SLA compliance across the board' },
+      { value: '90%', label: 'Reduction in manual data entry', context: 'Remaining 10% are edge cases requiring human review — flagged automatically with specific fields highlighted', businessOutcome: 'Ops team refocused on exception management instead of data keying' },
+      { value: '24/7', label: 'Processing availability', context: 'Documents arriving at 2 AM are processed immediately, not queued until the morning shift starts', businessOutcome: 'No timezone dependency — global operations move at the speed of the document' },
     ],
 
     stack: ['Python', 'Azure Document Intelligence', 'LangGraph', 'Tesseract OCR', 'OpenAI GPT-4o', 'PostgreSQL'],
@@ -1233,10 +1233,10 @@ export const solutions: Solution[] = [
     ],
 
     results: [
-      { value: '80%', label: 'Reduction in manual AP processing', context: 'From 15–25 invoices per person per day manually to 100+ with the system handling extraction, matching, and routing' },
-      { value: '95%', label: 'First-pass match rate', context: '95% of invoices matched to bookings automatically on first attempt, with the remaining 5% flagged for specific review' },
-      { value: '4.2%', label: 'Average overcharge detection rate', context: 'Percentage of total freight spend identified as carrier overcharges through automated rate auditing' },
-      { value: '60%', label: 'Faster invoice cycle time', context: 'Average time from invoice receipt to payment posting reduced by 60%, improving carrier relationships and avoiding late payment penalties' },
+      { value: '80%', label: 'Reduction in manual AP processing', context: 'From 15–25 invoices per person per day manually to 100+ with the system handling extraction, matching, and routing', businessOutcome: 'AP team capacity freed for dispute resolution and vendor negotiations' },
+      { value: '95%', label: 'First-pass match rate', context: '95% of invoices matched to bookings automatically on first attempt, with the remaining 5% flagged for specific review', businessOutcome: 'Fewer payment delays and cleaner month-end closes' },
+      { value: '4.2%', label: 'Average overcharge detection rate', context: 'Percentage of total freight spend identified as carrier overcharges through automated rate auditing', businessOutcome: 'Direct cost recovery — $150K–$250K annually on $5M freight spend' },
+      { value: '60%', label: 'Faster invoice cycle time', context: 'Average time from invoice receipt to payment posting reduced by 60%, improving carrier relationships and avoiding late payment penalties', businessOutcome: 'Better carrier relationships and elimination of late payment penalties' },
     ],
 
     stack: ['Python', 'Azure Document Intelligence', 'LangGraph', 'n8n', 'OpenAI GPT-4o', 'PostgreSQL'],

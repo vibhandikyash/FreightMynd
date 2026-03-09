@@ -7,7 +7,30 @@ category: "Technical"
 tags: ["CargoWise", "integration", "AI", "TMS"]
 featured: false
 readingTime: "12 min read"
+wordCount: 1500
+faq:
+  - q: "What's the difference between CargoWise eHub and Universal Gateway?"
+    a: "eHub is CargoWise's cloud-based integration platform for asynchronous message routing with built-in retry logic — ideal for high-volume document processing. Universal Gateway provides real-time API access for lookup operations like checking shipment status or retrieving reference data. For AI automation, most deployments use eHub for inbound data push and Universal Gateway for reference data lookups."
+  - q: "How long does CargoWise AI integration take?"
+    a: "Typical implementation takes 8-14 weeks from kickoff to production. This includes discovery and audit (2-3 weeks), building the AI pipeline and XML mapping (4-8 weeks), testing and validation running in parallel with your existing process (2-3 weeks), and deployment with monitoring and handoff (1-2 weeks)."
+  - q: "Can CargoWise AI integration handle multiple document formats?"
+    a: "Yes. The AI extraction engine handles multi-format, multi-supplier document variations — commercial invoices, AWBs, packing lists, customs forms, and more. The system maps different supplier formats to the same CargoWise XML schema dynamically, understanding that fields like 'Consignee' and 'Ship To' refer to the same CargoWise party field."
+  - q: "What happens when the AI is uncertain about extracted data?"
+    a: "The system implements confidence scoring on every extracted field. When confidence drops below a configurable threshold for critical fields, the record is routed to a human review queue with the specific uncertain field highlighted — rather than pushing potentially incorrect data to CargoWise. This keeps your TMS data clean while minimizing manual intervention."
+  - q: "Does this work with CargoWise One Cloud?"
+    a: "Yes. The AI integration works with both CargoWise One Cloud and on-premise deployments. The integration pathway uses eHub and Universal Gateway APIs, which are available in both environments. The AI pipeline runs externally and communicates with CargoWise through these standard integration interfaces."
 ---
+
+<div class="summary-box">
+<strong>Key Takeaways</strong>
+<ul>
+<li>Use eHub for high-volume inbound document push and Universal Gateway for real-time reference data lookups — the hybrid approach gives you reliability and speed</li>
+<li>Intelligent pre-filtering before AI extraction can cut processing costs by 50% by removing blank pages, duplicates, and irrelevant attachments</li>
+<li>The validation layer is the most critical component — confidence scoring, referential integrity checks, and exception routing keep your CargoWise data clean</li>
+<li>XML mapping must match your specific CargoWise configuration (module codes, custom fields, branch mappings) — generic mappings will fail in production</li>
+<li>Implementation takes 8-14 weeks from discovery to production, with near-zero failure rates achievable on established supplier formats within the first month</li>
+</ul>
+</div>
 
 ## Why CargoWise Is the Right Foundation for AI Automation
 
@@ -21,7 +44,11 @@ We have built and deployed this architecture in production for [Hellmann Worldwi
 
 CargoWise offers two primary integration pathways, and choosing the right one matters for AI automation.
 
+### eHub: Asynchronous Message Routing
+
 **eHub** is CargoWise's cloud-based integration platform. It handles message routing, transformation, and delivery between CargoWise and external systems. For AI automation, eHub is typically the preferred pathway because it supports asynchronous message processing, has built-in retry logic, and provides visibility into message status. Your AI system generates CargoWise-compatible XML, posts it to eHub, and eHub routes it into the correct CargoWise module.
+
+### Universal Gateway: Real-Time API Access
 
 **Universal Gateway** is a more direct integration option that allows real-time API calls into CargoWise. It is useful for lookup operations (checking shipment status, retrieving reference data) but less suited for high-volume document processing where asynchronous processing and retry capabilities are important.
 
@@ -55,7 +82,11 @@ The AI system must handle all of these mappings dynamically. Different suppliers
 
 Validation is the most underestimated component of CargoWise AI integration. Without it, you will push bad data into your TMS and create downstream problems that are harder to fix than the original manual process.
 
+### What a Production Validation Layer Checks
+
 A production validation layer checks data completeness (all required CargoWise fields populated), referential integrity (party codes, port codes, and commodity codes exist in your master data), business logic (weights and dimensions within acceptable ranges, amounts and currencies consistent), and duplicate detection (preventing the same document from being processed twice).
+
+### Confidence Scoring and Exception Routing
 
 The validation layer should also implement confidence scoring. If the AI extraction confidence for a critical field drops below a threshold, the record should be routed for human review rather than pushed to CargoWise. This keeps your TMS data clean while ensuring that edge cases get human attention.
 

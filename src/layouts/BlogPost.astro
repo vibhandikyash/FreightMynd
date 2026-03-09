@@ -1,5 +1,6 @@
 ---
 import Page from './Page.astro';
+import { site } from '../data/site';
 
 interface Props {
   title: string;
@@ -12,6 +13,8 @@ interface Props {
   readingTime: string;
   ogImage?: string;
   slug: string;
+  wordCount?: number;
+  faq?: Array<{ q: string; a: string }>;
 }
 
 const {
@@ -25,6 +28,8 @@ const {
   readingTime,
   ogImage,
   slug,
+  wordCount,
+  faq,
 } = Astro.props;
 
 const formattedDate = publishDate.toLocaleDateString('en-US', {
@@ -40,28 +45,45 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cargoiq.ai" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cargoiq.ai/blog" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${site.url}/blog` },
     { "@type": "ListItem", "position": 3, "name": title },
   ],
 };
+
+const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site.url}${ogImage}`) : `${site.url}/og-default.png`;
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": title,
   "description": description,
+  "image": ogImageUrl,
   "author": { "@type": "Organization", "name": "CargoIQ.ai" },
   "publisher": {
     "@type": "Organization",
     "name": "CargoIQ.ai",
-    "url": "https://cargoiq.ai",
+    "url": site.url,
   },
   "datePublished": isoDate,
   ...(isoModified && { "dateModified": isoModified }),
-  "mainEntityOfPage": `https://cargoiq.ai/blog/${slug}`,
+  "mainEntityOfPage": `${site.url}/blog/${slug}`,
   "keywords": tags.join(', '),
+  "inLanguage": "en-US",
+  ...(wordCount && { "wordCount": wordCount }),
 };
+
+const faqSchema = faq && faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+} : null;
+
+const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])];
 ---
 
 <Page
@@ -69,7 +91,7 @@ const articleSchema = {
   description={description}
   ogType="article"
   ogImage={ogImage}
-  schema={[breadcrumbSchema, articleSchema]}
+  schema={allSchemas}
 >
   <!-- Breadcrumb -->
   <div class="bg-white border-b border-line">
@@ -121,13 +143,34 @@ const articleSchema = {
     </div>
   </article>
 
+  <!-- Related Reading -->
+  <section class="section bg-surface">
+    <div class="container max-w-3xl mx-auto">
+      <h2 class="text-display-sm font-bold text-ink mb-8" style="padding-left:0; border-left:none;">Continue Reading</h2>
+      <div class="grid sm:grid-cols-3 gap-4">
+        <a href="/solutions/4pl-control-tower-automation" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+          <span class="text-xs font-mono text-brand uppercase tracking-wider">Solution</span>
+          <p class="mt-2 text-sm font-semibold text-ink">4PL Control Tower Automation</p>
+        </a>
+        <a href="/case-studies/hellmann-4pl-control-tower" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+          <span class="text-xs font-mono text-brand uppercase tracking-wider">Case Study</span>
+          <p class="mt-2 text-sm font-semibold text-ink">Hellmann Worldwide Logistics</p>
+        </a>
+        <a href="/integrations/cargowise" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+          <span class="text-xs font-mono text-brand uppercase tracking-wider">Integration</span>
+          <p class="mt-2 text-sm font-semibold text-ink">CargoWise AI Integration</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="relative py-20 md:py-28 overflow-hidden" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-white/5 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
       <h2 class="text-display-lg font-bold text-white max-w-3xl mx-auto" style="padding-left:0; border-left:none;">
-        Want to Implement This?
+        Want to See What This Looks Like for Your Operations?
       </h2>
       <p class="mt-5 text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
         Book a free audit. We'll map your workflows, identify the highest-impact automation opportunities, and show you exactly what we'd build.
@@ -143,6 +186,9 @@ const articleSchema = {
           Explore Solutions
         </a>
       </div>
+      <p class="mt-6 text-sm text-white/50">
+        Takes 30 minutes. No commitment. Custom proposal within 48 hours.
+      </p>
     </div>
   </section>
 </Page>

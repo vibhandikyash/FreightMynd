@@ -22,15 +22,28 @@ import { testimonials } from '../../data/testimonials';
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
           </svg>
 
+          <!-- Verified tag -->
+          {t.verified && (
+            <span class="inline-flex items-center gap-1 text-[10px] font-mono tracking-wider uppercase text-health-dark bg-health-light border border-health-mid px-2 py-0.5 rounded mb-3 w-fit">
+              <span class="w-1.5 h-1.5 rounded-full bg-health" aria-hidden="true"></span>
+              Verified Client
+            </span>
+          )}
+
           <!-- Quote text -->
-          <blockquote class="text-ink-3 leading-relaxed mb-6 flex-grow">
+          <blockquote class="text-ink-3 leading-relaxed mb-4 flex-grow">
             "{t.quote}"
           </blockquote>
 
+          <!-- Context -->
+          {t.context && (
+            <p class="text-xs text-ink-4 italic mb-6">{t.context}</p>
+          )}
+
           <!-- Author -->
           <div class="pt-5 border-t border-line/50">
-            <p class="font-semibold text-sm text-ink">{t.author}</p>
-            <p class="text-xs text-ink-4 mt-0.5">{t.role} · {t.company}</p>
+            <p class="font-semibold text-sm text-ink">{t.role}</p>
+            <p class="text-xs text-ink-4 mt-0.5">{t.company}</p>
           </div>
         </div>
       ))}

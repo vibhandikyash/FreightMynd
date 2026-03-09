@@ -69,15 +69,15 @@ const comparisonRows = [
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="border-b-2 border-line">
-                <th class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4"></th>
-                <th class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Freightos</th>
-                <th class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">CargoIQ</th>
+                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Freightos</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">CargoIQ</th>
               </tr>
             </thead>
             <tbody>
-              {comparisonRows.map((row) => (
-                <tr class="border-b border-line/50">
-                  <td class="py-4 pr-6 text-sm font-semibold text-ink">{row.category}</td>
+              {comparisonRows.map((row, i) => (
+                <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
+                  <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
                   <td class="py-4 px-6 text-sm text-ink-3">{row.freightos}</td>
                   <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
                 </tr>
@@ -165,6 +165,54 @@ const comparisonRows = [
         <p class="text-sm text-ink leading-relaxed">
           <strong>Key distinction:</strong> Freightos and CargoIQ are not direct competitors. Freightos is a rate marketplace. CargoIQ builds custom AI systems for freight operations. Many freight forwarders could use Freightos for rate data while using CargoIQ for document processing, quoting automation, and TMS integration.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- See Our Work -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center" data-reveal>
+        <p class="eyebrow mb-4 justify-center">
+          <span class="eyebrow-dot bg-brand"></span>
+          See Our Work
+        </p>
+        <h2 class="text-display-sm font-bold text-ink mb-4" style="padding-left:0; border-left:none;">
+          Real Systems. Real Results.
+        </h2>
+        <p class="text-ink-3 leading-relaxed mb-10">
+          Don't just take our word for it. See how we've built custom AI systems for freight forwarders like Hellmann Worldwide Logistics.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+        <a href="/case-studies/hellmann-4pl-control-tower"
+           class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+           data-reveal data-reveal-delay="1">
+          <span class="text-2xl mb-3 block" aria-hidden="true">📊</span>
+          <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">Hellmann Case Study</h3>
+          <p class="text-xs text-ink-3 leading-relaxed">60% processing time reduction for 4PL control tower ops.</p>
+        </a>
+        <a href="/solutions/4pl-control-tower-automation"
+           class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+           data-reveal data-reveal-delay="2">
+          <span class="text-2xl mb-3 block" aria-hidden="true">🏗️</span>
+          <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">4PL Control Tower</h3>
+          <p class="text-xs text-ink-3 leading-relaxed">Full document intelligence pipeline — email to TMS push.</p>
+        </a>
+        <a href="/solutions/document-intelligence"
+           class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+           data-reveal data-reveal-delay="3">
+          <span class="text-2xl mb-3 block" aria-hidden="true">📄</span>
+          <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">Document Intelligence</h3>
+          <p class="text-xs text-ink-3 leading-relaxed">AI reads and extracts data from 300-page batches.</p>
+        </a>
+        <a href="/integrations"
+           class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+           data-reveal data-reveal-delay="4">
+          <span class="text-2xl mb-3 block" aria-hidden="true">🔗</span>
+          <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">Integrations</h3>
+          <p class="text-xs text-ink-3 leading-relaxed">CargoWise, SAP TM, Oracle TMS, and more.</p>
+        </a>
       </div>
     </div>
   </section>

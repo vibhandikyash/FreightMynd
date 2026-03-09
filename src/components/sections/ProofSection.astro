@@ -15,8 +15,8 @@ const systems = [
     cta: 'Read Full Case Study',
   },
   {
-    tag: 'Expected Outcomes',
-    client: 'Global Freight Forwarder',
+    tag: 'Pilot Results',
+    client: 'European Freight Forwarder',
     title: 'Autonomous Quote Management',
     description: 'AI-powered RFQ intake, rate comparison, margin optimization, and auto-generated quote documents — cutting turnaround from hours to minutes.',
     results: [
@@ -78,6 +78,13 @@ const systems = [
               <span class="tag tag-brand">{tech}</span>
             ))}
           </div>
+
+          {/* Impact line for Hellmann */}
+          {system.tag === 'Live System' && (
+            <p class="text-xs italic text-ink-4 mb-6 border-l-2 border-brand/30 pl-3">
+              Impact: Ops team reallocated from data entry to exception management and client communication
+            </p>
+          )}
 
           <!-- CTA -->
           <a href={system.href} class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-all duration-200">
