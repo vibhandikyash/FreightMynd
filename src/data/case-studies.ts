@@ -18,6 +18,7 @@ export interface CaseStudy {
   clientOverview?: string;
   architecture?: string[];
   keyLearnings?: string[];
+  timeline?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -47,8 +48,9 @@ export const caseStudies: CaseStudy[] = [
       'Validation layer — extracted data checked against business rules before any data moves downstream',
       'CargoWise XML push — validated data formatted as CargoWise-compatible XML and pushed directly into TMS via API',
       'Excel report generation — formatted compliance reports auto-generated for the ops team',
-      'Self-learning supplier onboarding — new supplier formats mapped automatically with no engineering effort',
+      'Self-learning supplier onboarding — when a new supplier sends documents for the first time, the system maps the format within 3-5 sample documents. No engineering effort required per supplier.',
     ],
+    timeline: 'Deployed in 12 weeks from kickoff to production, including a 4-week parallel run period',
     architecture: [
       'Email Inbox monitoring via IMAP/Microsoft 365 connector',
       'Email Monitor Agent — detects supplier document emails, auto-downloads attachments',
@@ -61,7 +63,7 @@ export const caseStudies: CaseStudy[] = [
       'Ops Dashboard — real-time processing status, confidence scores, and exception queue',
     ],
     keyLearnings: [
-      'Self-learning supplier onboarding eliminated the engineering backlog entirely — new suppliers mapped automatically without developer intervention',
+      'Self-learning supplier onboarding eliminated the engineering backlog entirely — new suppliers are mapped within 3-5 sample documents without developer intervention, compared to the previous 1-3 weeks of engineering effort per supplier',
       'Pre-filtering was the highest-ROI single feature — removing irrelevant pages before LLM extraction cut AI costs by 50%, which was not obvious during the design phase',
       'The parallel run period (4 weeks of automated and manual processing side-by-side) was essential for building ops team confidence and catching edge cases',
       'Confidence scoring at field level (not document level) was the right granularity for human review — operators review specific uncertain fields, not entire documents',
