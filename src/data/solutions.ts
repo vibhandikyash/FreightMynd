@@ -10,6 +10,7 @@ export interface Solution {
   icon: string;
   color: 'brand' | 'accent';
   headline: string;
+  keywordSubheadline?: string;
   sub: string;
   /** Who this solution is built for — roles, company types */
   idealFor: string[];
@@ -237,6 +238,7 @@ export const solutions: Solution[] = [
     icon: '📋',
     color: 'brand',
     headline: 'Stop Losing Deals to Slow Quoting',
+    keywordSubheadline: 'AI-powered autonomous quote management for freight forwarders — from RFQ inbox to client quote in under 10 minutes.',
     sub: 'Autonomous AI that generates, compares, and sends freight quotes — cutting turnaround from hours to minutes while your team focuses on relationships.',
 
     idealFor: [
@@ -541,6 +543,7 @@ export const solutions: Solution[] = [
     icon: '💰',
     color: 'accent',
     headline: 'Price Smarter. Win More. Lose Less Margin.',
+    keywordSubheadline: 'AI-powered freight pricing intelligence — dynamic rate optimization, market benchmarking, and margin protection for sea and air freight forwarders.',
     sub: 'AI that analyzes market rates, optimizes your pricing, and gives your sales team real-time intelligence — so you win more deals at better margins.',
 
     idealFor: [
@@ -692,6 +695,7 @@ export const solutions: Solution[] = [
     icon: '🚢',
     color: 'brand',
     headline: 'Your Sea Freight Ops on Autopilot',
+    keywordSubheadline: 'End-to-end sea freight automation — from booking confirmation to final delivery, with proactive exception management and zero reactive firefighting.',
     sub: 'AI systems that automate the entire sea freight workflow — from booking confirmation to final delivery — eliminating manual touchpoints across your ocean operations.',
 
     idealFor: [
@@ -764,6 +768,11 @@ export const solutions: Solution[] = [
         scenario: 'Demurrage prevention through proactive container tracking',
         description:
           'A container arrives at the destination port and enters the free-time window. The system automatically notifies the consignee, destination agent, and trucking company with container details and the exact free-time expiry date/time. If the container isn\'t collected within the configurable warning threshold, escalation notifications go out to the account manager and the client\'s logistics coordinator. This proactive approach prevents 40–60% of avoidable demurrage charges.',
+      },
+      {
+        scenario: 'AI voice agents for port and terminal check-calls',
+        description:
+          'For proactive exception management, we deploy AI voice agents that automatically call ports and terminals to check container status — eliminating the 45–60 minutes per day operators spend on manual check-call cycles. Voice agents extract real-time status updates and feed them directly into the tracking system. See our shipping news intelligence case study for a full deployment example of this capability.',
       },
     ],
 
@@ -845,6 +854,7 @@ export const solutions: Solution[] = [
     icon: '✈️',
     color: 'brand',
     headline: 'Air Freight Speed Meets AI Precision',
+    keywordSubheadline: 'AI-powered air freight automation — AWB processing, rate management, flight tracking, and documentation for time-critical air operations.',
     sub: 'AI systems purpose-built for the speed of air freight — automating AWB processing, rate management, bookings, and tracking so your ops team keeps pace with same-day demands.',
 
     idealFor: [
@@ -997,6 +1007,7 @@ export const solutions: Solution[] = [
     icon: '🔄',
     color: 'accent',
     headline: 'Run Multi-Client Ops Without Scaling Headcount',
+    keywordSubheadline: 'AI automation for 3PL and 4PL logistics providers — multi-client workflow orchestration, SLA monitoring, and intelligent reporting.',
     sub: 'AI systems that let 3PL and 4PL providers manage more clients, hit SLAs consistently, and scale operations — without proportionally scaling your team.',
 
     idealFor: [
@@ -1145,6 +1156,7 @@ export const solutions: Solution[] = [
     icon: '🧾',
     color: 'accent',
     headline: 'Invoices That Process Themselves',
+    keywordSubheadline: 'AI-powered smart invoice processing for freight — extraction, 3-way matching, overcharge detection, and direct ERP integration.',
     sub: 'AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors.',
 
     idealFor: [

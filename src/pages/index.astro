@@ -9,9 +9,10 @@ import DiffSection from '../components/sections/DiffSection.astro';
 import SuiteSection from '../components/sections/SuiteSection.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import HowWeEngage from '../components/sections/HowWeEngage.astro';
+import HomeFaq from '../components/sections/HomeFaq.astro';
 import CtaSection from '../components/sections/CtaSection.astro';
 
-const schema = {
+const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "CargoIQ.ai",
@@ -23,6 +24,40 @@ const schema = {
     { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gujarat" }
   ]
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is 4PL control tower automation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A 4PL control tower automation system monitors all incoming shipment documents, extracts structured data from invoices, AWBs, and packing lists, validates the data against your business rules, and pushes it directly into your TMS \u2014 replacing the manual reading, sorting, and data entry your ops team currently performs for every shipment." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does CargoIQ integrate with CargoWise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The system we built for Hellmann Worldwide Logistics pushes clean XML directly into CargoWise via the eHub and Universal Gateway APIs. We also integrate with SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CargoIQ a SaaS product?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. We build custom AI systems deployed in your environment \u2014 not a SaaS seat. You own the system outright with no recurring subscription. This means the system is built for your TMS, your suppliers, your document formats, and your business rules \u2014 not a generic workflow that requires your operations to conform to it." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does implementation take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Typically 8\u201314 weeks from kickoff to production. Discovery and audit takes 2 weeks, build and training takes 6\u20138 weeks, and UAT and production deployment takes 2\u20134 weeks. We deploy with a 30-day hypercare period." }
+    },
+    {
+      "@type": "Question",
+      "name": "What freight operations can be automated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Document processing (invoices, AWBs, packing lists, customs forms), freight quoting (RFQ intake, rate comparison, quote generation), sea freight operations (booking, BL processing, container tracking, demurrage monitoring), air freight operations (AWB processing, flight tracking, DG documentation), invoice processing (extraction, 3-way matching, overcharge detection), and 3PL/4PL multi-client workflow management." }
+    }
+  ]
+};
+
+const schema = [orgSchema, faqSchema];
 ---
 
 <Page
@@ -39,5 +74,6 @@ const schema = {
   <SuiteSection variant="logistics" />
   <Testimonials />
   <HowWeEngage />
+  <HomeFaq />
   <CtaSection />
 </Page>

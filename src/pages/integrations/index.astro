@@ -32,6 +32,9 @@ const breadcrumbSchema = {
           CargoIQ integrates directly with your TMS — no middleware, no CSV exports, no manual data entry.
           We build on top of the freight systems your team already uses every day.
         </p>
+        <p class="mt-4 text-base text-ink-3 leading-relaxed">
+          CargoIQ integrates directly with the TMS your operations team already runs — no middleware layer, no CSV exports, no manual data re-entry. We build native connections using each system's official APIs and data formats: CargoWise eHub and Universal Gateway, SAP BAPIs and RFC calls, Oracle REST APIs, Microsoft Dynamics Dataverse, and Descartes GLN. Every integration is built and tested in your specific environment. Don't see your TMS? We build custom integrations for any freight management system with an API.
+        </p>
       </div>
     </div>
   </section>
@@ -55,7 +58,7 @@ const breadcrumbSchema = {
                     <svg class="w-4 h-4 mt-0.5 text-health flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span>{cap}</span>
+                    <span>{cap.title}</span>
                   </li>
                 ))}
               </ul>

@@ -9,9 +9,26 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/thank-you'),
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
+      serialize(item) {
+        const url = item.url;
+        if (url === 'https://cargoiq.pages.dev/') {
+          item.priority = 1.0;
+          item.changefreq = 'weekly';
+        } else if (url.includes('/solutions/') && !url.endsWith('/solutions/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        } else if (url.includes('/integrations/') && !url.endsWith('/integrations/')) {
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        } else if (url.includes('/case-studies/') && !url.endsWith('/case-studies/')) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+        } else {
+          item.priority = 0.7;
+          item.changefreq = 'weekly';
+        }
+        return item;
+      },
     }),
   ],
   image: {

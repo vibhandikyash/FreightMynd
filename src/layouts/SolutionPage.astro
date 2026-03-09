@@ -69,6 +69,9 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           {solution.keyword}
         </p>
         <h1 class="text-display-lg font-bold text-ink">{solution.headline}</h1>
+        {solution.keywordSubheadline && (
+          <p class="mt-3 text-base font-medium text-ink-3">{solution.keywordSubheadline}</p>
+        )}
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">{solution.sub}</p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4">
           <a href="/contact" class="btn btn-brand">
@@ -77,7 +80,13 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-ghost">See It in Action</a>
+          {(solution.slug === '4pl-control-tower-automation' || solution.slug === 'document-intelligence') ? (
+            <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-ghost">See It in Action</a>
+          ) : solution.slug === 'autonomous-quote-management' ? (
+            <a href="/case-studies/rfq-email-intelligence" class="btn btn-ghost">See It in Action</a>
+          ) : (
+            <a href="/case-studies/" class="btn btn-ghost">View Case Studies</a>
+          )}
         </div>
       </div>
     </div>

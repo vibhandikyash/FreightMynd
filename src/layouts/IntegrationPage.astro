@@ -35,8 +35,8 @@ const topSolutions = solutions.slice(0, 3);
 ---
 
 <Page
-  title={`${integration.keyword} | CargoIQ.ai`}
-  description={integration.description}
+  title={integration.metaTitle}
+  description={integration.metaDescription}
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
@@ -74,25 +74,103 @@ const topSolutions = solutions.slice(0, 3);
     </div>
   </section>
 
+  <!-- Intro -->
+  <section class="section-sm bg-white">
+    <div class="container">
+      <div class="max-w-3xl" data-reveal>
+        <p class="text-lg text-ink-3 leading-relaxed">{integration.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="max-w-2xl mb-12" data-reveal>
+        <h2 class="section-heading">Technical Architecture</h2>
+      </div>
+      <div class="max-w-3xl grid gap-6" data-reveal data-reveal-delay="1">
+        <div class="p-6 rounded-2xl bg-white border border-line/70">
+          <div class="grid gap-5">
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-ink-4 mb-1.5">Connection Method</p>
+              <p class="text-ink font-medium leading-relaxed">{integration.architecture.connectionMethod}</p>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-ink-4 mb-1.5">Supported Versions</p>
+              <p class="text-ink font-medium leading-relaxed">{integration.architecture.supportedVersions}</p>
+            </div>
+            <div>
+              <p class="text-xs font-mono uppercase tracking-widest text-ink-4 mb-2">Data Objects</p>
+              <div class="flex flex-wrap gap-2">
+                {integration.architecture.dataObjects.map(obj => (
+                  <span class="tag tag-brand">{obj}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Capabilities -->
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mb-12" data-reveal>
         <h2 class="section-heading">Integration Capabilities</h2>
       </div>
-      <div class="max-w-3xl grid gap-4">
+      <div class="max-w-3xl grid gap-5">
         {integration.capabilities.map((cap, i) => (
-          <div class="flex gap-3 p-5 rounded-2xl border border-line/70 bg-surface/50 hover:bg-white hover:shadow-md transition-all duration-200"
+          <div class="p-6 rounded-2xl border border-line/70 bg-surface/50 hover:bg-white hover:shadow-md transition-all duration-200"
                data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
-            <svg class="w-5 h-5 mt-0.5 text-mint flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <p class="text-ink-3 leading-relaxed">{cap}</p>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-brand/10 text-brand font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                {i + 1}
+              </div>
+              <div>
+                <h3 class="text-ink font-semibold mb-2">{cap.title}</h3>
+                <p class="text-ink-3 leading-relaxed text-[15px]">{cap.description}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Proof Block (conditional) -->
+  {integration.proofBlock && (
+    <section class="section-sm bg-surface">
+      <div class="container">
+        <div class="max-w-3xl" data-reveal>
+          <div class="relative p-6 md:p-8 rounded-2xl bg-brand/5 border border-brand-mid">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-brand/10 text-brand flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="eyebrow mb-3">
+                  <span class="eyebrow-dot bg-health"></span>
+                  Live Deployment
+                </p>
+                <p class="text-ink leading-relaxed">{integration.proofBlock}</p>
+                <a href="/case-studies/hellmann-4pl-control-tower"
+                   class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand hover:text-brand-dark transition-colors">
+                  Read the Hellmann case study
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- How it works -->
   <section class="section bg-surface">

@@ -32,11 +32,14 @@ const articleSchema = {
 
 import { caseStudies } from '../data/case-studies';
 const related = caseStudies.filter(s => s.slug !== study.slug).slice(0, 2);
+
+const pageTitle = study.metaTitle ?? `${study.title} | CargoIQ.ai`;
+const pageDescription = study.metaDescription ?? study.description;
 ---
 
 <Page
-  title={`${study.title} | CargoIQ.ai`}
-  description={study.description}
+  title={pageTitle}
+  description={pageDescription}
   schema={[breadcrumbSchema, articleSchema]}
 >
   <!-- Breadcrumb -->
@@ -74,6 +77,22 @@ const related = caseStudies.filter(s => s.slug !== study.slug).slice(0, 2);
       </div>
     </div>
   </section>
+
+  <!-- Client Overview (if present) -->
+  {study.clientOverview && (
+    <section class="section-sm bg-white border-b border-line">
+      <div class="container">
+        <div class="max-w-3xl" data-reveal>
+          <p class="eyebrow mb-4">
+            <span class="eyebrow-dot bg-brand"></span>
+            Client Overview
+          </p>
+          <h2 class="section-heading">About {study.client}</h2>
+          <p class="mt-5 text-lg text-ink-3 leading-relaxed">{study.clientOverview}</p>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- The Challenge -->
   <section class="section bg-white">
@@ -115,6 +134,34 @@ const related = caseStudies.filter(s => s.slug !== study.slug).slice(0, 2);
     </div>
   </section>
 
+  <!-- Architecture (if present) -->
+  {study.architecture && (
+    <section class="section bg-white">
+      <div class="container">
+        <div class="max-w-3xl">
+          <div class="mb-10" data-reveal>
+            <p class="eyebrow mb-4">
+              <span class="eyebrow-dot bg-brand"></span>
+              System Architecture
+            </p>
+            <h2 class="section-heading">How It All Connects</h2>
+          </div>
+          <div class="grid gap-3">
+            {study.architecture.map((step, i) => (
+              <div class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-surface hover:shadow-md transition-all duration-200"
+                   data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+                <div class="w-8 h-8 rounded-full bg-brand text-white font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                  {i + 1}
+                </div>
+                <p class="text-ink-3 leading-relaxed">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Results -->
   <section class="py-20 md:py-28" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
     <div class="container">
@@ -130,11 +177,40 @@ const related = caseStudies.filter(s => s.slug !== study.slug).slice(0, 2);
           <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.04]" data-reveal data-reveal-delay={String(i + 1)}>
             <p class="text-display-sm font-bold text-brand-mid">{r.value}</p>
             <p class="mt-2 text-sm text-white/60">{r.label}</p>
+            {r.context && (
+              <p class="mt-2 text-xs text-white/40 leading-relaxed">{r.context}</p>
+            )}
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- Key Learnings (if present) -->
+  {study.keyLearnings && (
+    <section class="section bg-surface">
+      <div class="container">
+        <div class="max-w-3xl">
+          <div class="mb-10" data-reveal>
+            <p class="eyebrow mb-4">
+              <span class="eyebrow-dot bg-health"></span>
+              Key Learnings
+            </p>
+            <h2 class="section-heading">What We Learned</h2>
+          </div>
+          <ul class="grid gap-4">
+            {study.keyLearnings.map((learning, i) => (
+              <li class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-white"
+                  data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+                <div class="w-2 h-2 rounded-full bg-health flex-shrink-0 mt-2.5"></div>
+                <p class="text-ink-3 leading-relaxed">{learning}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Tech Stack -->
   <section class="section-sm bg-white">
