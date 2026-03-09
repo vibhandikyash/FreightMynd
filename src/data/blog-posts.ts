@@ -22,4 +22,15 @@ export const blogPosts: BlogPostMeta[] = [
     featured: true,
     readingTime: '18 min read',
   },
+  {
+    slug: 'cargowise-ai-integration-guide',
+    title: 'How to Integrate AI with CargoWise: A Technical Guide for Freight Forwarders',
+    description: 'Step-by-step guide to building AI automation on top of CargoWise One — eHub integration, XML data push, document intelligence, and zero-touch TMS operations.',
+    publishDate: '2026-03-01',
+    author: 'CargoIQ Team',
+    category: 'Technical',
+    tags: ['CargoWise', 'integration', 'AI', 'TMS'],
+    featured: false,
+    readingTime: '12 min read',
+  },
 ];

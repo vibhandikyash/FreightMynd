@@ -1,0 +1,148 @@
+---
+import Page from './Page.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  publishDate: Date;
+  modifiedDate?: Date;
+  author: string;
+  category: string;
+  tags: string[];
+  readingTime: string;
+  ogImage?: string;
+  slug: string;
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  modifiedDate,
+  author,
+  category,
+  tags,
+  readingTime,
+  ogImage,
+  slug,
+} = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const isoDate = publishDate.toISOString();
+const isoModified = modifiedDate ? modifiedDate.toISOString() : undefined;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cargoiq.ai" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cargoiq.ai/blog" },
+    { "@type": "ListItem", "position": 3, "name": title },
+  ],
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "CargoIQ.ai" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CargoIQ.ai",
+    "url": "https://cargoiq.ai",
+  },
+  "datePublished": isoDate,
+  ...(isoModified && { "dateModified": isoModified }),
+  "mainEntityOfPage": `https://cargoiq.ai/blog/${slug}`,
+  "keywords": tags.join(', '),
+};
+---
+
+<Page
+  title={title}
+  description={description}
+  ogType="article"
+  ogImage={ogImage}
+  schema={[breadcrumbSchema, articleSchema]}
+>
+  <!-- Breadcrumb -->
+  <div class="bg-white border-b border-line">
+    <div class="container py-3 pt-20">
+      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono text-ink-4">
+        <a href="/" class="hover:text-ink transition-colors">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/blog" class="hover:text-ink transition-colors">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span class="text-ink-3 truncate max-w-[200px] sm:max-w-none">{title}</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Article Hero -->
+  <header class="bg-white border-b border-line">
+    <div class="container max-w-3xl mx-auto py-12 md:py-16">
+      <div class="flex items-center gap-3 mb-6" data-reveal>
+        <span class="tag tag-brand">{category}</span>
+        <span class="text-xs text-ink-4 font-mono">{readingTime}</span>
+      </div>
+      <h1 class="text-display-md font-bold text-ink leading-tight" data-reveal data-reveal-delay="1">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-ink-3 leading-relaxed" data-reveal data-reveal-delay="2">
+        {description}
+      </p>
+      <div class="mt-6 flex items-center gap-4 text-sm text-ink-4" data-reveal data-reveal-delay="3">
+        <span class="font-medium text-ink-3">{author}</span>
+        <span aria-hidden="true" class="w-1 h-1 rounded-full bg-ink-4"></span>
+        <time datetime={isoDate}>{formattedDate}</time>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <article class="section">
+    <div class="container max-w-3xl mx-auto">
+      <div class="article-body" data-reveal>
+        <slot />
+      </div>
+
+      <!-- Tags -->
+      <div class="mt-12 pt-8 border-t border-line flex flex-wrap gap-2">
+        {tags.map(tag => (
+          <span class="tag tag-brand">{tag}</span>
+        ))}
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="relative py-20 md:py-28 overflow-hidden" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">
+    <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
+    <div class="absolute bottom-[-20%] left-[-10%] w-[300px] h-[300px] rounded-full bg-white/5 blur-3xl" aria-hidden="true"></div>
+    <div class="container relative z-10 text-center">
+      <h2 class="text-display-lg font-bold text-white max-w-3xl mx-auto" style="padding-left:0; border-left:none;">
+        Want to Implement This?
+      </h2>
+      <p class="mt-5 text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+        Book a free audit. We'll map your workflows, identify the highest-impact automation opportunities, and show you exactly what we'd build.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/contact" class="btn btn-white">
+          Book a Free Audit
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/solutions" class="btn border border-white/30 text-white hover:bg-white/10">
+          Explore Solutions
+        </a>
+      </div>
+    </div>
+  </section>
+</Page>

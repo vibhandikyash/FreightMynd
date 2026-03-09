@@ -333,3 +333,110 @@
   line-height: var(--line-height-display-sm);
   letter-spacing: var(--letter-spacing-display-sm);
 }
+
+/* ── Article body typography ── */
+@utility article-body {
+  & h2 {
+    font-size: var(--font-size-display-sm);
+    line-height: var(--line-height-display-sm);
+    letter-spacing: var(--letter-spacing-display-sm);
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  & h2:first-child {
+    margin-top: 0;
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  & p {
+    color: var(--color-ink-3);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  & ul, & ol {
+    color: var(--color-ink-3);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  & ul {
+    list-style-type: disc;
+  }
+
+  & ol {
+    list-style-type: decimal;
+  }
+
+  & li {
+    margin-bottom: 0.5rem;
+  }
+
+  & a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+    &:hover {
+      color: var(--color-brand-dark);
+    }
+  }
+
+  & blockquote {
+    border-left: 4px solid var(--color-brand);
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: var(--color-ink-3);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  & strong {
+    font-weight: 700;
+    color: var(--color-ink);
+  }
+
+  & code {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    background-color: var(--color-surface);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+  }
+
+  & pre {
+    background-color: var(--color-ink);
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: var(--radius-card);
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  & pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  & hr {
+    border: none;
+    border-top: 1px solid var(--color-line);
+    margin: 2.5rem 0;
+  }
+}
