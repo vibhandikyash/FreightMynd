@@ -19,7 +19,7 @@ const orgSchema = {
   "name": "CargoIQ.ai",
   "url": site.url,
   "logo": `${site.url}/favicon.svg`,
-  "description": "AI-powered operations intelligence for sea, air & freight forwarders. Custom-built systems that replace manual freight operations.",
+  "description": "AI-driven cargo data intelligence platform for sea, air & freight forwarders. Custom-built systems that replace manual freight operations.",
   "foundingDate": "2019",
   "address": [
     { "@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Clifton" },
@@ -76,6 +76,21 @@ const faqSchema = {
       "@type": "Question",
       "name": "What freight operations can be automated?",
       "acceptedAnswer": { "@type": "Answer", "text": "Document processing (invoices, AWBs, packing lists, customs forms), freight quoting (RFQ intake, rate comparison, quote generation), sea freight operations (booking, BL processing, container tracking, demurrage monitoring), air freight operations (AWB processing, flight tracking, DG documentation), invoice processing (extraction, 3-way matching, overcharge detection), and 3PL/4PL multi-client workflow management." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the ROI of AI automation for freight forwarding?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Based on our production deployments, freight forwarders see 60% reduction in document processing time, 50% reduction in AI processing costs via intelligent filtering, and full elimination of manual TMS data entry. For a mid-size forwarder processing 150+ documents daily, this typically translates to 2-3 FTEs reallocated from data entry to higher-value operations within the first 90 days." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI document processing work for freight?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The system monitors your ops inbox for incoming supplier documents, automatically downloads attachments, uses AI to classify and filter irrelevant pages (cutting processing costs by 50%), extracts structured data from invoices, AWBs, packing lists, and compliance documents, validates against your business rules, and pushes clean data directly into your TMS — all without human intervention." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which TMS platforms does CargoIQ integrate with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "CargoIQ integrates natively with CargoWise (via eHub and Universal Gateway), SAP TM (classic and S/4HANA), Oracle TMS (cloud and on-premise), Microsoft Dynamics 365, and Descartes. Each integration is built natively for your specific TMS instance, not through a generic connector." }
     }
   ]
 };
@@ -84,8 +99,8 @@ const schema = [orgSchema, faqSchema];
 ---
 
 <Page
-  title="CargoIQ.ai — AI-Powered Operations Intelligence for Freight Forwarders"
-  description="Custom-built AI systems for sea freight, air freight & logistics operations. 4PL control tower automation, autonomous quote management, and freight document intelligence. Trusted by Hellmann Worldwide Logistics."
+  title="CargoIQ.ai — AI-Driven Cargo Data Intelligence for Freight Forwarders"
+  description="AI-driven cargo data intelligence for sea freight, air freight & logistics. 4PL control tower automation, autonomous quote management, and freight document intelligence. Trusted by Hellmann Worldwide Logistics."
   schema={schema}
 >
   <Hero />

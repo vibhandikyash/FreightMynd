@@ -21,6 +21,18 @@ const faqItems = [
     q: 'What freight operations can be automated?',
     a: 'Document processing (invoices, AWBs, packing lists, customs forms), freight quoting (RFQ intake, rate comparison, quote generation), sea freight operations (booking, BL processing, container tracking, demurrage monitoring), air freight operations (AWB processing, flight tracking, DG documentation), invoice processing (extraction, 3-way matching, overcharge detection), and 3PL/4PL multi-client workflow management.',
   },
+  {
+    q: 'What is the ROI of AI automation for freight forwarding?',
+    a: 'Based on our production deployments, freight forwarders see 60% reduction in document processing time, 50% reduction in AI processing costs via intelligent filtering, and full elimination of manual TMS data entry. For a mid-size forwarder processing 150+ documents daily, this typically translates to 2–3 FTEs reallocated from data entry to higher-value operations within the first 90 days.',
+  },
+  {
+    q: 'How does AI document processing work for freight?',
+    a: 'Our system monitors your ops inbox for incoming supplier documents, automatically downloads attachments, uses AI to classify and filter irrelevant pages (cutting processing costs by 50%), extracts structured data from invoices, AWBs, packing lists, and compliance documents, validates against your business rules, and pushes clean data directly into your TMS — all without human intervention.',
+  },
+  {
+    q: 'Which TMS platforms does CargoIQ integrate with?',
+    a: 'We integrate natively with <a href="/integrations/cargowise">CargoWise</a> (via eHub and Universal Gateway), <a href="/integrations/sap-tm">SAP TM</a> (classic and S/4HANA), <a href="/integrations/oracle-tms">Oracle TMS</a> (cloud and on-premise), <a href="/integrations/microsoft-dynamics">Microsoft Dynamics 365</a>, and <a href="/integrations/descartes">Descartes</a>. Each integration is built natively for your specific TMS instance, not through a generic connector.',
+  },
 ];
 
 ---
@@ -32,7 +44,7 @@ const faqItems = [
         <span class="eyebrow-dot bg-brand"></span>
         FAQ
       </p>
-      <h2 class="section-heading">Frequently Asked Questions</h2>
+      <h2 class="section-heading">AI Freight Forwarding Automation — FAQ</h2>
     </div>
     <div class="max-w-3xl grid gap-4" itemscope itemtype="https://schema.org/FAQPage">
       {faqItems.map((item, i) => (
