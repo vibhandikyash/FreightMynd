@@ -48,7 +48,19 @@ const systems = [
     <!-- System cards -->
     <div class="grid md:grid-cols-2 gap-6">
       {systems.map((system, i) => (
-        <div class="bg-white rounded-2xl border border-line/70 p-8 flex flex-col hover:shadow-hover hover:-translate-y-1 transition-all duration-300" data-reveal data-reveal-delay={String(i + 1)}>
+        <div class="bg-white rounded-2xl border border-line/70 overflow-hidden flex flex-col hover:shadow-hover hover:-translate-y-1 transition-all duration-300" data-reveal data-reveal-delay={String(i + 1)}>
+          {/* Card image */}
+          {i === 0 && (
+            <div class="w-full h-48 overflow-hidden bg-brand-light/20">
+              <img src="/images/4pl-control-tower.webp" alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          )}
+          {i === 1 && (
+            <div class="w-full h-48 overflow-hidden bg-brand-light/20">
+              <img src="/images/quote-management.webp" alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          )}
+          <div class="p-8 flex flex-col flex-grow">
           <!-- Tag + Client -->
           <div class="flex items-center gap-3 mb-5">
             <span class="tag tag-brand">
@@ -93,6 +105,7 @@ const systems = [
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
+          </div>
         </div>
       ))}
     </div>

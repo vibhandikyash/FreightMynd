@@ -1,34 +1,34 @@
 ---
 ---
 
-<section class="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
-  <!-- Soft grid background -->
-  <div class="absolute inset-0 opacity-[0.4]" style="background-image: radial-gradient(circle, #C7D2FE 1px, transparent 1px); background-size: 32px 32px;" aria-hidden="true"></div>
-  <!-- Gradient orbs -->
-  <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-brand/5 blur-3xl" aria-hidden="true"></div>
-  <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-accent/5 blur-3xl" aria-hidden="true"></div>
+<section class="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
+  <!-- Hero background image -->
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="/images/hero-freight-ai.webp" alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0D1117]/70 via-[#0D1117]/50 to-[#0D1117]/80"></div>
+  </div>
 
   <div class="container relative z-10 text-center">
     <!-- Eyebrow -->
-    <p class="eyebrow justify-center mb-6">
-      <span class="eyebrow-dot bg-brand animate-pulse-dot"></span>
+    <p class="eyebrow justify-center mb-6 text-white/60">
+      <span class="eyebrow-dot bg-brand-mid animate-pulse-dot"></span>
       AI-Driven Cargo Data Intelligence
     </p>
 
     <!-- Headline -->
-    <h1 class="text-display-xl font-bold text-ink max-w-4xl mx-auto">
+    <h1 class="text-display-xl font-bold text-white max-w-4xl mx-auto">
       AI That Runs Your<br class="hidden md:inline" /> Freight Operations.<br />
-      <span class="bg-gradient-to-r from-brand to-brand-dark bg-clip-text text-transparent">End to End.</span>
+      <span class="text-brand-mid">End to End.</span>
     </h1>
 
     <!-- Subheadline -->
-    <p class="mt-6 text-lg md:text-xl text-ink-3 leading-relaxed max-w-2xl mx-auto">
+    <p class="mt-6 text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
       Custom-built AI systems for sea freight, air freight & freight forwarders.
       We build what generic SaaS can't — for your TMS, your suppliers, your workflows.
     </p>
 
     <!-- Trust signal -->
-    <p class="mt-4 text-sm text-ink-3 font-mono tracking-wide">
+    <p class="mt-4 text-sm text-white/50 font-mono tracking-wide">
       Trusted by Hellmann Worldwide Logistics · Serving freight forwarders across North America, Europe & Asia-Pacific
     </p>
 
@@ -40,79 +40,21 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
       </a>
-      <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-ghost">
+      <a href="/case-studies/hellmann-4pl-control-tower" class="btn border border-white/30 text-white hover:bg-white/10">
         See How Hellmann Did It
       </a>
     </div>
 
     <!-- Lower-commitment CTA -->
-    <p class="mt-5 text-sm text-ink-4">
-      <a href="/solutions" class="hover:text-ink-3 transition-colors">Or explore our solutions &rarr;</a>
+    <p class="mt-5 text-sm text-white/40">
+      <a href="/solutions" class="hover:text-white/60 transition-colors">Or explore our solutions &rarr;</a>
     </p>
 
     <!-- Scroll indicator -->
-    <div class="mt-16 flex flex-col items-center gap-2 text-ink-4" data-reveal data-reveal-delay="4" aria-hidden="true">
+    <div class="mt-16 flex flex-col items-center gap-2 text-white/30" data-reveal data-reveal-delay="4" aria-hidden="true">
       <span class="text-[10px] font-mono tracking-widest uppercase">Scroll</span>
-      <div class="w-px h-8 bg-ink-4/30 animate-scroll-line origin-top"></div>
+      <div class="w-px h-8 bg-white/20 animate-scroll-line origin-top"></div>
     </div>
   </div>
 </section>
 
-<!-- SEO content block — keyword-rich informational text for Google crawlability -->
-<section class="py-12 bg-white border-b border-line/50">
-  <div class="container">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-display-sm font-bold text-ink mb-4" style="padding-left:0; border-left:none;">What Is AI Automation for Freight Forwarding?</h2>
-      <p class="text-ink-3 leading-relaxed mb-4">
-        AI automation for freight forwarding replaces the manual document processing, data entry, and system coordination that freight forwarders depend on daily. Instead of operators reading supplier PDFs, re-keying data into CargoWise or SAP TM, and manually generating quotes, AI systems handle the full pipeline — from email ingestion to TMS data push — with zero human intervention.
-      </p>
-      <p class="text-ink-3 leading-relaxed">
-        CargoIQ builds these systems as custom deployments for each client. Unlike SaaS freight automation platforms, every system is built around your specific TMS instance, your suppliers, and your document formats. The result: freight document automation that handles your edge cases from day one, not a generic tool that requires your operations to conform to its limitations. <a href="/solutions" class="text-brand font-semibold hover:text-brand-dark transition-colors">See all AI freight forwarding solutions &rarr;</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Benefits of AI Automation — scannable keyword section -->
-<section class="py-16 md:py-20 bg-surface border-b border-line/50">
-  <div class="container">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-display-sm font-bold text-ink mb-10 text-center" style="padding-left:0; border-left:none;">Benefits of AI Automation in Freight Forwarding</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal>
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Speed</p>
-          <h3 class="text-lg font-bold text-ink mb-2">60% Faster Document Processing</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">AI reads, classifies, and extracts data from invoices, AWBs, and packing lists in seconds — replacing hours of manual operator work per shipment batch.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal data-reveal-delay="1">
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Cost</p>
-          <h3 class="text-lg font-bold text-ink mb-2">50% Lower AI Processing Costs</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">Intelligent pre-filtering removes blank pages, cover sheets, and duplicates before extraction — cutting AI token costs in half without sacrificing accuracy.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal data-reveal-delay="2">
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Accuracy</p>
-          <h3 class="text-lg font-bold text-ink mb-2">Near-Zero Error Rate</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">Validation layers check every extracted field against your business rules before data reaches your TMS — eliminating the re-keying errors that cause downstream delays.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal data-reveal-delay="3">
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Integration</p>
-          <h3 class="text-lg font-bold text-ink mb-2">Zero Manual TMS Entry</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">Clean, validated data pushes directly into <a href="/integrations/cargowise" class="text-brand hover:text-brand-dark transition-colors font-medium">CargoWise</a>, <a href="/integrations/sap-tm" class="text-brand hover:text-brand-dark transition-colors font-medium">SAP TM</a>, or <a href="/integrations/oracle-tms" class="text-brand hover:text-brand-dark transition-colors font-medium">Oracle TMS</a> via native API — no copy-paste, no manual uploads.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal data-reveal-delay="4">
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Scale</p>
-          <h3 class="text-lg font-bold text-ink mb-2">Handle 300-Page Batches</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">Process large supplier document bundles that would take operators an entire morning — automatically split, classified, and extracted at production scale.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-white border border-line/70" data-reveal data-reveal-delay="5">
-          <p class="text-sm font-mono uppercase tracking-widest text-brand mb-2">Ownership</p>
-          <h3 class="text-lg font-bold text-ink mb-2">You Own the System</h3>
-          <p class="text-sm text-ink-3 leading-relaxed">No SaaS subscription or vendor lock-in. Custom-built AI deployed in your environment, built for your suppliers, your document formats, and your business rules.</p>
-        </div>
-      </div>
-      <p class="mt-8 text-center text-sm text-ink-3">
-        <a href="/blog/freight-automation-roi-real-numbers" class="text-brand font-semibold hover:text-brand-dark transition-colors">See real ROI numbers from production deployments &rarr;</a>
-      </p>
-    </div>
-  </div>
-</section>

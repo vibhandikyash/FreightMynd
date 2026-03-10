@@ -5,9 +5,11 @@ import type { Integration } from '../data/integrations';
 
 interface Props {
   integration: Integration;
+  heroImage?: string;
+  heroImageAlt?: string;
 }
 
-const { integration } = Astro.props;
+const { integration, heroImage, heroImageAlt } = Astro.props;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -41,7 +43,7 @@ const topSolutions = solutions.slice(0, 3);
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="pt-20 pb-0 bg-surface" aria-label="Breadcrumb">
+  <nav class="pt-28 pb-0 bg-surface" aria-label="Breadcrumb">
     <div class="container">
       <ol class="flex items-center gap-2 text-sm text-ink-4" role="list">
         <li><a href="/" class="hover:text-ink transition-colors">Home</a></li>
@@ -72,6 +74,19 @@ const topSolutions = solutions.slice(0, 3);
           </a>
         </div>
       </div>
+      {heroImage && (
+        <div class="mt-12 max-w-4xl" data-reveal data-reveal-delay="1">
+          <img
+            src={heroImage}
+            alt={heroImageAlt || `${integration.shortTitle} AI integration architecture`}
+            width="960"
+            height="540"
+            loading="lazy"
+            decoding="async"
+            class="w-full rounded-2xl border border-line/70 shadow-lg"
+          />
+        </div>
+      )}
     </div>
   </section>
 

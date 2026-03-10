@@ -27,23 +27,23 @@ const flowSteps = [
     </div>
 
     <!-- Flow diagram -->
-    <div class="flex items-center justify-between gap-2 md:gap-4 mb-14 p-6 rounded-2xl bg-brand-light/50 border border-brand-mid/30 overflow-x-auto" data-reveal>
-      {flowSteps.map((step, i) => (
-        <>
-          <div class="flex flex-col items-center text-center min-w-[100px]">
-            <div class="w-10 h-10 rounded-xl bg-brand/10 text-brand font-bold text-sm flex items-center justify-center mb-2">
-              {i + 1}
+    <div class="mb-14 rounded-2xl overflow-hidden border border-brand-mid/30 bg-brand-light/30" data-reveal>
+      <img src="/images/system-architecture.webp" alt="AI document processing pipeline — email ingestion, AI filtering, data extraction, validation, and TMS push" class="w-full h-auto" loading="lazy" />
+      <div class="flex items-center justify-between gap-2 md:gap-4 p-5 overflow-x-auto">
+        {flowSteps.map((step, i) => (
+          <>
+            <div class="flex flex-col items-center text-center min-w-[80px]">
+              <p class="text-sm font-semibold text-ink">{step.label}</p>
+              <p class="text-[11px] text-ink-4 mt-0.5">{step.sub}</p>
             </div>
-            <p class="text-sm font-semibold text-ink">{step.label}</p>
-            <p class="text-[11px] text-ink-4 mt-0.5">{step.sub}</p>
-          </div>
-          {i < flowSteps.length - 1 && (
-            <svg class="w-5 h-5 text-brand/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          )}
-        </>
-      ))}
+            {i < flowSteps.length - 1 && (
+              <svg class="w-4 h-4 text-brand/30 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </>
+        ))}
+      </div>
     </div>
 
     <!-- Solution cards grid -->

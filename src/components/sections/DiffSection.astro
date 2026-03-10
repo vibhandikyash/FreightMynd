@@ -1,62 +1,171 @@
 ---
 const differentiators = [
   {
-    title: 'You Own It',
-    description: 'No subscription. No vendor lock-in. No price hike when you scale. The system we build is yours — deployed in your environment, maintained on your terms.',
-    icon: '🔒',
+    title: 'You Own It — Forever',
+    description: 'No subscription. No vendor lock-in. No price hike when you scale. The system we build is yours — deployed in your environment, maintained on your terms. When you outgrow a feature, you extend it. When your team changes, you retrain it. No tickets to a vendor roadmap.',
+    detail: 'One-time build. Full source code handover. Your infrastructure.',
+    icon: 'ownership',
   },
   {
     title: 'Your Stack, Not Ours',
-    description: 'Your TMS. Your CargoWise instance. Your carrier portals. We integrate with the systems you already run — not the ones we decided to support.',
-    icon: '🔧',
+    description: 'Your TMS. Your CargoWise instance. Your carrier portals. We integrate natively with the systems you already run — not the ones we decided to support. Every API call, every data mapping, every validation rule is built for your specific setup.',
+    detail: 'CargoWise · SAP TM · Oracle TMS · Dynamics 365 · Descartes',
+    icon: 'stack',
   },
   {
     title: 'Your Edge Cases, Built In',
-    description: 'Every freight forwarder has lanes, suppliers, and document formats that don\'t fit a template. We build those in from day one — not as an afterthought.',
-    icon: '🎯',
+    description: 'Every freight forwarder has lanes, suppliers, and document formats that don\'t fit a template. A 300-page PDF batch from a German supplier looks nothing like a single-page invoice from a carrier in Singapore. We build those edge cases in from day one — not as an afterthought.',
+    detail: 'Self-learning supplier onboarding. Zero engineering per new format.',
+    icon: 'edge',
   },
+];
+
+const vsRows = [
+  { feature: 'Deployment', saas: 'Their cloud, their terms', cargoiq: 'Your environment, your control' },
+  { feature: 'Pricing', saas: 'Per-seat subscription, forever', cargoiq: 'One-time build, you own it' },
+  { feature: 'TMS Integration', saas: 'Generic connectors', cargoiq: 'Native API built for your instance' },
+  { feature: 'Edge Cases', saas: 'Submit a feature request', cargoiq: 'Built in from day one' },
+  { feature: 'New Suppliers', saas: 'Manual template mapping', cargoiq: 'Self-learning, zero engineering' },
 ];
 ---
 
-<section class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
-  <!-- Soft gradient orbs -->
-  <div class="absolute top-[-20%] left-[20%] w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl" aria-hidden="true"></div>
-  <div class="absolute bottom-[-20%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/8 blur-3xl" aria-hidden="true"></div>
-
-  <div class="container relative z-10">
-    <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16" data-reveal>
-      <p class="eyebrow justify-center mb-4 text-white/50">
-        <span class="eyebrow-dot bg-brand"></span>
-        Why CargoIQ
-      </p>
-      <h2 class="text-display-lg font-bold text-white" style="padding-left:0; border-left:none;">
-        Custom AI Freight Automation,<br class="hidden md:inline" />
-        <span class="text-brand-mid">Built Around Your Workflow.</span>
-      </h2>
+<section class="relative overflow-hidden">
+  <!-- ── Top: Dark hero block ── -->
+  <div class="relative py-24 md:py-32">
+    <!-- Background image -->
+    <div class="absolute inset-0" aria-hidden="true">
+      <img src="/images/section-custom-build.webp" alt="" class="w-full h-full object-cover" loading="lazy" />
+      <div class="absolute inset-0 bg-[#0D1117]/70"></div>
     </div>
 
-    <!-- Three columns -->
-    <div class="grid md:grid-cols-3 gap-6">
-      {differentiators.map((diff, i) => (
-        <div class="p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300"
-             data-reveal data-reveal-delay={String(i + 1)}>
-          <span class="text-3xl mb-5 block" aria-hidden="true">{diff.icon}</span>
-          <h3 class="text-xl font-bold text-white mb-3">{diff.title}</h3>
-          <p class="text-white/60 leading-relaxed">{diff.description}</p>
+    <div class="container relative z-10">
+      <!-- Header -->
+      <div class="text-center max-w-3xl mx-auto mb-6" data-reveal>
+        <p class="eyebrow justify-center mb-4 text-white/50">
+          <span class="eyebrow-dot bg-brand-mid"></span>
+          Why CargoIQ
+        </p>
+        <h2 class="text-display-lg font-bold text-white" style="padding-left:0; border-left:none;">
+          Custom AI Freight Automation,<br class="hidden md:inline" />
+          <span class="text-brand-mid">Built Around Your Workflow.</span>
+        </h2>
+        <p class="mt-5 text-lg text-white/50 leading-relaxed max-w-2xl mx-auto">
+          SaaS platforms give you a login. We give you a system — engineered for your TMS, your suppliers, and your operations.
+        </p>
+      </div>
+
+      <!-- Three pillars -->
+      <div class="grid md:grid-cols-3 gap-5 mt-14">
+        {differentiators.map((diff, i) => (
+          <div class="group relative p-8 rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-sm hover:bg-white/[0.10] transition-all duration-300"
+               data-reveal data-reveal-delay={String(i + 1)}>
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-brand/20 flex items-center justify-center mb-5">
+              {diff.icon === 'ownership' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+              )}
+              {diff.icon === 'stack' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+                </svg>
+              )}
+              {diff.icon === 'edge' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L12 4.37l5.68 5.7m-11.38 0h11.38M4.22 19.78h15.56" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{diff.title}</h3>
+            <p class="text-white/55 leading-relaxed mb-4">{diff.description}</p>
+            <p class="text-xs font-mono text-brand-mid/80 tracking-wide">{diff.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bottom: Comparison table ── -->
+  <div class="bg-[#0D1117] py-16 md:py-20 border-t border-white/5">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <!-- Table header -->
+        <div class="text-center mb-10" data-reveal>
+          <h3 class="text-display-sm font-bold text-white" style="padding-left:0; border-left:none;">
+            Generic SaaS vs Custom-Built AI
+          </h3>
+          <p class="mt-3 text-white/40 text-sm">See why freight forwarders choose custom over off-the-shelf.</p>
         </div>
-      ))}
-    </div>
 
-    <!-- In-house comparison callout -->
-    <div class="mt-10 p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm text-center max-w-3xl mx-auto" data-reveal data-reveal-delay="4">
-      <h3 class="text-xl font-bold text-white mb-3">
-        <span class="text-2xl mr-2" aria-hidden="true">⚡</span>
-        Faster Than Building In-House
-      </h3>
-      <p class="text-white/60 leading-relaxed">
-        Building freight AI in-house means hiring ML engineers, training them on TMS APIs, and discovering document edge cases the hard way. We've already solved those problems across multiple production deployments. Your team gets a production-grade system in 8–14 weeks, not 12–18 months.
-      </p>
+        <!-- Desktop table -->
+        <div class="hidden md:block rounded-2xl border border-white/10 overflow-hidden" data-reveal data-reveal-delay="1">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-white/30 w-1/4"></th>
+                <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-white/40 w-[37.5%]">Generic SaaS</th>
+                <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-brand-mid w-[37.5%]">CargoIQ</th>
+              </tr>
+            </thead>
+            <tbody>
+              {vsRows.map((row, i) => (
+                <tr class={`border-b border-white/5 ${i % 2 === 1 ? 'bg-white/[0.02]' : ''}`}>
+                  <td class="py-4 px-6 text-sm font-semibold text-white/70">{row.feature}</td>
+                  <td class="py-4 px-6 text-sm text-white/35">{row.saas}</td>
+                  <td class="py-4 px-6 text-sm text-white font-medium">{row.cargoiq}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile cards -->
+        <div class="md:hidden grid gap-3">
+          {vsRows.map((row, i) => (
+            <div class="p-4 rounded-xl border border-white/10 bg-white/[0.03]" data-reveal data-reveal-delay={String(Math.min(i + 1, 4))}>
+              <p class="text-xs font-mono uppercase tracking-widest text-white/30 mb-2">{row.feature}</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <p class="text-[10px] font-mono text-white/25 uppercase mb-1">SaaS</p>
+                  <p class="text-sm text-white/40">{row.saas}</p>
+                </div>
+                <div class="pl-3 border-l border-brand/30">
+                  <p class="text-[10px] font-mono text-brand-mid uppercase mb-1">CargoIQ</p>
+                  <p class="text-sm text-white font-medium">{row.cargoiq}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- In-house comparison callout -->
+        <div class="mt-10 p-8 rounded-2xl border border-brand/20 bg-brand/5 backdrop-blur-sm text-center max-w-3xl mx-auto" data-reveal data-reveal-delay="2">
+          <div class="w-12 h-12 rounded-xl bg-brand/20 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Faster Than Building In-House</h3>
+          <p class="text-white/50 leading-relaxed max-w-xl mx-auto">
+            Building freight AI in-house means hiring ML engineers, training them on TMS APIs, and discovering document edge cases the hard way. We've already solved those problems across multiple production deployments.
+          </p>
+          <p class="mt-4 text-sm font-semibold text-brand-mid">
+            Your team gets a production-grade system in 8–14 weeks, not 12–18 months.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-10 text-center" data-reveal data-reveal-delay="3">
+          <a href="/contact" class="btn btn-brand">
+            Book a Free Audit
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <p class="mt-3 text-xs text-white/30">No commitment. We'll assess your ops and show you what's possible.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
