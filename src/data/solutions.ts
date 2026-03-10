@@ -996,7 +996,7 @@ export const solutions: Solution[] = [
       'logistics provider automation AI',
       '3PL multi-client automation',
       '4PL SLA monitoring',
-      'logistics operations intelligence',
+      'cargo data intelligence platform',
       'multi-client logistics management',
     ],
     metaTitle: '3PL & 4PL Operations Automation | Multi-Client AI for Logistics Providers',

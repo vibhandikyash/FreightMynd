@@ -35,7 +35,7 @@ const capabilities = [
         <span class="eyebrow-dot bg-brand"></span>
         What We Automate
       </p>
-      <h2 class="section-heading">Every Manual Step in Your Freight Operations</h2>
+      <h2 class="section-heading">AI Automation for Every Freight Forwarding Workflow</h2>
       <p class="mt-4 text-lg text-ink-3 leading-relaxed">
         From document processing to quoting to TMS integration — we build the AI layer that removes human bottlenecks.
       </p>
@@ -50,7 +50,7 @@ const capabilities = [
           <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors">{cap.title}</h3>
           <p class="text-sm text-ink-3 leading-relaxed">{cap.description}</p>
           <span class="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand group-hover:gap-2.5 transition-all duration-200">
-            Learn more
+            {cap.title === 'Zero-Touch Document Processing' ? 'Explore document intelligence' : cap.title === 'Quotes in Minutes, Not Hours' ? 'Explore AI quote management' : cap.title === 'Automated Booking to Delivery' ? 'Explore sea freight automation' : 'View TMS integrations'}
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

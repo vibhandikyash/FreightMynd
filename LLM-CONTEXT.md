@@ -8,7 +8,7 @@
 
 **CargoIQ.ai** is a specialist AI systems website for freight forwarding and logistics automation. Built by [Bitontree](https://bitontree.com). Static marketing site, SEO-first, no CMS. Content is hardcoded in TypeScript data files and Astro components.
 
-**Positioning:** AI-powered operations intelligence for sea, air & freight forwarders. Custom-built systems that replace manual freight operations. Flagship client: Hellmann Worldwide Logistics.
+**Positioning:** AI-driven cargo data intelligence platform for freight forwarders. Custom-built systems that replace manual freight operations across sea, air & logistics. Flagship client: Hellmann Worldwide Logistics.
 
 **Live URL:** https://cargoiq.pages.dev
 **Repo:** git@github.com:bitontree/cargoIQ.git

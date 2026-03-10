@@ -118,7 +118,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           <span class="eyebrow-dot bg-mint"></span>
           Built For
         </p>
-        <h2 class="section-heading">Who This Is For</h2>
+        <h2 class="section-heading">Who Needs {solution.shortTitle} Automation</h2>
         <ul class="mt-6 grid gap-3">
           {solution.idealFor.map((item, i) => (
             <li class="flex gap-3 items-start" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
@@ -166,7 +166,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           <span class="eyebrow-dot bg-brand"></span>
           What We Build
         </p>
-        <h2 class="section-heading">Capabilities</h2>
+        <h2 class="section-heading">{solution.shortTitle} AI Capabilities</h2>
       </div>
       <div class="max-w-4xl grid gap-5">
         {solution.capabilities.map((cap, i) => (
@@ -195,7 +195,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           <span class="eyebrow-dot bg-brand"></span>
           In Practice
         </p>
-        <h2 class="section-heading">Real-World Use Cases</h2>
+        <h2 class="section-heading">{solution.shortTitle} Use Cases in Production</h2>
       </div>
       <div class="max-w-4xl grid gap-5">
         {solution.useCases.map((uc, i) => (
@@ -217,7 +217,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           <span class="eyebrow-dot bg-brand"></span>
           Implementation
         </p>
-        <h2 class="section-heading">How We Deploy It</h2>
+        <h2 class="section-heading">How We Deploy {solution.shortTitle} AI</h2>
         <p class="mt-4 text-lg text-ink-3">
           Timeline: <span class="font-semibold text-ink">{solution.implementation.timeline}</span>
         </p>
@@ -298,7 +298,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
   <section class="section bg-white">
     <div class="container">
       <div class="max-w-2xl mb-12" data-reveal>
-        <h2 class="section-heading">Frequently Asked Questions</h2>
+        <h2 class="section-heading">{solution.shortTitle} — Frequently Asked Questions</h2>
       </div>
       <div class="max-w-3xl grid gap-4" itemscope itemtype="https://schema.org/FAQPage">
         {solution.faq.map((item, i) => (
@@ -322,7 +322,7 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
   <section class="section bg-surface">
     <div class="container">
       <div class="max-w-2xl mb-12" data-reveal>
-        <h2 class="section-heading">Related Solutions</h2>
+        <h2 class="section-heading">Related Freight AI Solutions</h2>
       </div>
       <div class="grid sm:grid-cols-3 gap-5">
         {related.map((sol, i) => (
