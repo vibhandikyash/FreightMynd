@@ -42,7 +42,7 @@ export async function sendLeadEmail(lead: LeadData, env: EmailEnv): Promise<bool
   }
 
   const senderEmail = env.LEAD_EMAIL_FROM || 'noreply@cargoiq.ai';
-  const recipientEmail = env.LEAD_EMAIL_TO;
+  const recipients = env.LEAD_EMAIL_TO.split(',').map((e) => ({ email: e.trim() }));
 
   const subject = `🔔 New Lead: ${lead.name || 'Unknown'} ${lead.company ? `@ ${lead.company}` : ''} — ${lead.interest || 'General'}`;
 
@@ -128,7 +128,7 @@ Session ID: ${lead.sessionId}`;
       },
       body: JSON.stringify({
         sender: { email: senderEmail, name: 'CargoIQ Chat' },
-        to: [{ email: recipientEmail }],
+        to: recipients,
         subject,
         htmlContent: htmlBody,
         textContent: textBody,
