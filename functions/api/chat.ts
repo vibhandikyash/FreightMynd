@@ -5,10 +5,13 @@
 
 import { SYSTEM_PROMPT } from '../lib/system-prompt';
 import { checkRateLimit } from '../lib/rate-limiter';
+import { sendLeadEmail } from '../lib/send-lead-email';
 
 interface Env {
   ANTHROPIC_API_KEY: string;
-  SMTP_FUNCTION_URL: string;
+  SMTP_API_KEY: string;
+  LEAD_EMAIL_TO: string;
+  LEAD_EMAIL_FROM: string;
   CHAT_SESSIONS: KVNamespace;
   CHAT_LEADS: KVNamespace;
 }
@@ -258,14 +261,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               { expirationTtl: 2592000 } // 30 days
             );
 
-            // Send lead email via SMTP function
-            if (env.SMTP_FUNCTION_URL) {
-              fetch(env.SMTP_FUNCTION_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(leadPayload),
-              }).catch((err) => console.error('SMTP function error:', err));
-            }
+            // Send lead notification email
+            sendLeadEmail(leadPayload, {
+              SMTP_API_KEY: env.SMTP_API_KEY,
+              LEAD_EMAIL_TO: env.LEAD_EMAIL_TO,
+              LEAD_EMAIL_FROM: env.LEAD_EMAIL_FROM,
+            }).catch((err) => console.error('Lead email error:', err));
           } catch (err) {
             console.error('Lead parsing error:', err);
           }

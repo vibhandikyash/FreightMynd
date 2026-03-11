@@ -5,10 +5,12 @@ pages_build_output_dir = "dist"
 [vars]
 ENVIRONMENT = "production"
 
-# Secrets (set via `wrangler secret put`):
-# ANTHROPIC_API_KEY
-# SMTP_FUNCTION_URL
-# ADMIN_TOKEN
+# Secrets (set via CF dashboard → Pages → Settings → Environment variables):
+# ANTHROPIC_API_KEY  — Anthropic API key
+# SMTP_API_KEY       — Brevo transactional email API key
+# LEAD_EMAIL_TO      — Team email for lead notifications (e.g. leads@cargoiq.ai)
+# LEAD_EMAIL_FROM    — Sender address (e.g. noreply@cargoiq.ai)
+# ADMIN_TOKEN        — Bearer token for /api/conversation/:id access
 
 [[kv_namespaces]]
 binding = "CHAT_SESSIONS"
