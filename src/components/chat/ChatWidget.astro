@@ -1,0 +1,388 @@
+---
+/**
+ * ChatWidget.astro — Lazy-loaded chat bubble + panel.
+ * SSG renders only the bubble button. All JS initializes on first click.
+ * Zero Lighthouse impact — no JS executed until user interaction.
+ */
+---
+
+<!-- Chat Bubble -->
+<button
+  id="chat-bubble"
+  class="fixed bottom-5 right-5 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-brand)] text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--color-brand)] cursor-pointer"
+  aria-label="Chat with CargoIQ"
+>
+  <svg id="chat-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+  </svg>
+  <svg id="chat-icon-close" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+  </svg>
+</button>
+
+<!-- Chat Panel (hidden until first click) -->
+<div
+  id="chat-panel"
+  class="fixed bottom-24 right-5 z-[45] hidden w-[380px] max-sm:bottom-0 max-sm:right-0 max-sm:left-0 max-sm:top-[68px] max-sm:w-full flex-col overflow-hidden rounded-2xl max-sm:rounded-none bg-white shadow-xl border border-[var(--color-line)]"
+  role="dialog"
+  aria-label="Chat with CargoIQ"
+  style="height: 560px; max-sm:height: auto;"
+>
+  <!-- Header -->
+  <div class="flex items-center justify-between bg-[var(--color-ink)] px-4 py-3 shrink-0">
+    <div class="flex items-center gap-2.5">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-brand)]">
+        <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-white">Cargo</p>
+        <p class="text-[11px] text-[var(--color-ink-4)]">CargoIQ AI Assistant</p>
+      </div>
+    </div>
+    <button
+      id="chat-close"
+      class="rounded-md p-1.5 text-[var(--color-ink-4)] hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
+      aria-label="Close chat"
+    >
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Messages -->
+  <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3" aria-live="polite">
+    <!-- Greeting injected by JS on first open -->
+  </div>
+
+  <!-- Input -->
+  <div class="shrink-0 border-t border-[var(--color-line)] bg-white p-3">
+    <form id="chat-form" class="flex items-center gap-2">
+      <label for="chat-input" class="sr-only">Type your message</label>
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="Ask about freight automation..."
+        autocomplete="off"
+        maxlength="2000"
+        class="flex-1 rounded-lg border border-[var(--color-line)] bg-[var(--color-surface)] px-3 py-2.5 text-sm text-[var(--color-ink)] placeholder-[var(--color-ink-4)] outline-none focus:border-[var(--color-brand)] focus:ring-1 focus:ring-[var(--color-brand)] transition-colors"
+      />
+      <button
+        id="chat-send"
+        type="submit"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-dark)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        aria-label="Send message"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const bubble = document.getElementById('chat-bubble')!;
+    const panel = document.getElementById('chat-panel')!;
+    const closeBtn = document.getElementById('chat-close')!;
+    const iconOpen = document.getElementById('chat-icon-open')!;
+    const iconClose = document.getElementById('chat-icon-close')!;
+    const messagesEl = document.getElementById('chat-messages')!;
+    const form = document.getElementById('chat-form') as HTMLFormElement;
+    const input = document.getElementById('chat-input') as HTMLInputElement;
+    const sendBtn = document.getElementById('chat-send') as HTMLButtonElement;
+
+    let isOpen = false;
+    let initialized = false;
+    let sessionId: string | null = sessionStorage.getItem('ciq_sid');
+    let isStreaming = false;
+
+    // --- Session persistence ---
+    interface StoredMessage { role: 'user' | 'assistant'; content: string }
+
+    function saveMessages(msgs: StoredMessage[]) {
+      sessionStorage.setItem('ciq_msgs', JSON.stringify(msgs));
+    }
+
+    function loadMessages(): StoredMessage[] {
+      try {
+        const raw = sessionStorage.getItem('ciq_msgs');
+        return raw ? JSON.parse(raw) : [];
+      } catch { return []; }
+    }
+
+    function persistSessionId(id: string) {
+      sessionId = id;
+      sessionStorage.setItem('ciq_sid', id);
+    }
+
+    // --- Minimal markdown parser ---
+    function md(text: string): string {
+      // Strip any LEAD markers that slipped through
+      text = text.replace(/<!--LEAD:\{.*?\}-->/g, '');
+      // Bold
+      text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Links
+      text = text.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener" class="underline text-[var(--color-brand)] hover:text-[var(--color-brand-dark)]">$1</a>'
+      );
+      // List items
+      text = text.replace(/^- (.+)$/gm, '<li class="ml-4 list-disc">$1</li>');
+      text = text.replace(/(<li.*?<\/li>\n?)+/g, '<ul class="my-1">$&</ul>');
+      // Line breaks
+      text = text.replace(/\n/g, '<br>');
+      return text;
+    }
+
+    // --- Message rendering ---
+    function addMessage(role: 'user' | 'assistant', content: string) {
+      const wrapper = document.createElement('div');
+      wrapper.className =
+        role === 'user'
+          ? 'flex justify-end'
+          : 'flex justify-start';
+
+      const bubble = document.createElement('div');
+      bubble.className =
+        role === 'user'
+          ? 'max-w-[85%] rounded-2xl rounded-br-sm bg-[var(--color-brand)] px-3.5 py-2.5 text-sm text-white leading-relaxed'
+          : 'max-w-[85%] rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] leading-relaxed';
+
+      if (role === 'assistant') {
+        bubble.innerHTML = md(content);
+      } else {
+        bubble.textContent = content;
+      }
+
+      wrapper.appendChild(bubble);
+      messagesEl.appendChild(wrapper);
+      scrollToBottom();
+
+      // Persist to sessionStorage (skip if restoring)
+      if (!isRestoring) {
+        const msgs = loadMessages();
+        msgs.push({ role, content });
+        saveMessages(msgs);
+      }
+    }
+
+    let isRestoring = false;
+
+    function addStreamingBubble(): HTMLDivElement {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex justify-start';
+      wrapper.id = 'streaming-msg';
+
+      const bubble = document.createElement('div');
+      bubble.className =
+        'max-w-[85%] rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] leading-relaxed';
+      bubble.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-ink-4)] animate-pulse"></span>';
+
+      wrapper.appendChild(bubble);
+      messagesEl.appendChild(wrapper);
+      scrollToBottom();
+      return bubble;
+    }
+
+    function addQuickReplies(chips: string[]) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'flex flex-wrap gap-2 mt-1';
+      wrapper.id = 'quick-replies';
+
+      chips.forEach((label) => {
+        const btn = document.createElement('button');
+        btn.className =
+          'rounded-full border border-[var(--color-brand-mid)] bg-[var(--color-brand-light)] px-3 py-1.5 text-xs font-medium text-[var(--color-brand-dark)] hover:bg-[var(--color-brand-mid)] transition-colors cursor-pointer';
+        btn.textContent = label;
+        btn.addEventListener('click', () => {
+          const qr = document.getElementById('quick-replies');
+          if (qr) qr.remove();
+          sendMessage(label);
+        });
+        wrapper.appendChild(btn);
+      });
+
+      messagesEl.appendChild(wrapper);
+      scrollToBottom();
+    }
+
+    function scrollToBottom() {
+      requestAnimationFrame(() => {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      });
+    }
+
+    // --- Greeting or restore ---
+    function showGreeting() {
+      const saved = loadMessages();
+      if (saved.length > 0) {
+        // Restore previous conversation
+        isRestoring = true;
+        saved.forEach((msg) => addMessage(msg.role, msg.content));
+        isRestoring = false;
+        return;
+      }
+
+      addMessage(
+        'assistant',
+        "Hey! I'm **Cargo**, CargoIQ's AI assistant. I help freight forwarding teams understand how AI can automate their operations.\n\nWhat are you looking into?"
+      );
+      addQuickReplies([
+        'Document processing',
+        'Quote automation',
+        'TMS integration',
+        'Just exploring',
+      ]);
+    }
+
+    // --- Send message ---
+    async function sendMessage(text: string) {
+      if (!text.trim() || isStreaming) return;
+
+      addMessage('user', text.trim());
+      input.value = '';
+      isStreaming = true;
+      sendBtn.disabled = true;
+
+      const streamBubble = addStreamingBubble();
+      let fullText = '';
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId, message: text.trim() }),
+        });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ error: 'Something went wrong' }));
+          streamBubble.innerHTML = md(
+            err.error === 'Rate limit exceeded. Please try again later.'
+              ? "You've sent a lot of messages! Feel free to [book a call with our team](/contact) to continue the conversation."
+              : 'Sorry, I hit a snag. Try again in a moment.'
+          );
+          return;
+        }
+
+        const reader = res.body!.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
+
+          for (const line of lines) {
+            if (!line.startsWith('data: ')) continue;
+            const data = line.slice(6).trim();
+            if (!data) continue;
+
+            try {
+              const event = JSON.parse(data);
+
+              if (event.type === 'session' && event.sessionId) {
+                persistSessionId(event.sessionId);
+              }
+
+              if (event.type === 'delta' && event.text) {
+                fullText += event.text;
+                // Strip any LEAD markers from display
+                const displayText = fullText.replace(/<!--LEAD:\{.*?\}-->/g, '');
+                streamBubble.innerHTML = md(displayText);
+                scrollToBottom();
+              }
+
+              if (event.type === 'done') {
+                // Final render
+                const displayText = fullText.replace(/<!--LEAD:\{.*?\}-->/g, '');
+                streamBubble.innerHTML = md(displayText);
+              }
+            } catch {
+              // Skip malformed chunks
+            }
+          }
+        }
+      } catch (err) {
+        console.error('Chat error:', err);
+        streamBubble.innerHTML = md(
+          'Sorry, I had trouble connecting. Please try again.'
+        );
+      } finally {
+        // Remove streaming wrapper ID and persist assistant message
+        const sw = document.getElementById('streaming-msg');
+        if (sw) sw.removeAttribute('id');
+        if (fullText) {
+          const displayText = fullText.replace(/<!--LEAD:\{.*?\}-->/g, '');
+          const msgs = loadMessages();
+          msgs.push({ role: 'assistant', content: displayText });
+          saveMessages(msgs);
+        }
+        isStreaming = false;
+        sendBtn.disabled = false;
+        input.focus();
+      }
+    }
+
+    // --- Toggle panel ---
+    function toggleChat() {
+      isOpen = !isOpen;
+      panel.classList.toggle('hidden', !isOpen);
+      panel.classList.toggle('flex', isOpen);
+      iconOpen.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+
+      if (isOpen && !initialized) {
+        initialized = true;
+        showGreeting();
+      }
+
+      if (isOpen) {
+        input.focus();
+      }
+    }
+
+    function closeChat() {
+      isOpen = false;
+      panel.classList.add('hidden');
+      panel.classList.remove('flex');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      bubble.focus();
+    }
+
+    // --- Event listeners ---
+    bubble.addEventListener('click', toggleChat);
+    closeBtn.addEventListener('click', closeChat);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      sendMessage(input.value);
+    });
+
+    // Escape key closes chat
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        closeChat();
+      }
+    });
+
+    // Mobile: fix panel height
+    function setMobileHeight() {
+      if (window.innerWidth < 640 && isOpen) {
+        panel.style.height = `${window.innerHeight - 68}px`;
+      } else if (window.innerWidth >= 640) {
+        panel.style.height = '560px';
+      }
+    }
+
+    window.addEventListener('resize', setMobileHeight);
+  })();
+</script>

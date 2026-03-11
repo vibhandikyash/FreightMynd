@@ -1,0 +1,19 @@
+name = "cargoiq"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "dist"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (set via `wrangler secret put`):
+# ANTHROPIC_API_KEY
+# SMTP_FUNCTION_URL
+# ADMIN_TOKEN
+
+[[kv_namespaces]]
+binding = "CHAT_SESSIONS"
+id = "c092a97cf7ca4f15b9df2a6fe6fc529b"
+
+[[kv_namespaces]]
+binding = "CHAT_LEADS"
+id = "c092a97cf7ca4f15b9df2a6fe6fc529b"
