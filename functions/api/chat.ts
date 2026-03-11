@@ -236,14 +236,16 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         console.error('Stream processing error:', err);
       } finally {
         // Save session with assistant response (strip LEAD marker for storage)
-        const cleanResponse = fullResponse.replace(/<!--LEAD:\{.*?\}-->/, '').trim();
+        const cleanResponse = fullResponse.replace(/<!--LEAD:\{[\s\S]*?\}-->/, '').trim();
         session.messages.push({ role: 'assistant', content: cleanResponse });
         await env.CHAT_SESSIONS.put(sessionKey, JSON.stringify(session), {
           expirationTtl: 86400, // 24h
         });
 
         // Check for lead marker and process
-        const leadMatch = fullResponse.match(/<!--LEAD:(\{.*?\})-->/);
+        console.log('Full response length:', fullResponse.length);
+        console.log('Contains LEAD marker:', fullResponse.includes('<!--LEAD:'));
+        const leadMatch = fullResponse.match(/<!--LEAD:(\{[\s\S]*?\})-->/);
         if (leadMatch) {
           try {
             const leadData = JSON.parse(leadMatch[1]);
