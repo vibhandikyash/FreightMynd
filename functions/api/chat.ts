@@ -135,10 +135,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     if (!anthropicResponse.ok) {
       const errorText = await anthropicResponse.text();
       console.error('Anthropic API error:', anthropicResponse.status, errorText);
-      return new Response(JSON.stringify({ error: 'AI service unavailable' }), {
-        status: 502,
-        headers: { ...headers, 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({
+          error: 'AI service unavailable',
+          status: anthropicResponse.status,
+          detail: errorText,
+        }),
+        {
+          status: 502,
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     // Stream the response back to the client
