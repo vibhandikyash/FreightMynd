@@ -164,7 +164,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     const processStream = async () => {
       let buffer = '';
-      let leadStarted = false;
+      // Track how much of fullResponse we've already forwarded to the client
+      let sentLength = 0;
 
       try {
         while (true) {
@@ -184,55 +185,41 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               const event = JSON.parse(data);
 
               if (event.type === 'content_block_delta' && event.delta?.text) {
-                const text = event.delta.text;
-                fullResponse += text;
+                fullResponse += event.delta.text;
 
-                // Detect start of LEAD marker and stop forwarding from that point
-                if (!leadStarted) {
-                  const markerIdx = text.indexOf('<!--LEAD:');
-                  if (markerIdx !== -1) {
-                    leadStarted = true;
-                    // Forward text before the marker
-                    const before = text.slice(0, markerIdx);
-                    if (before) {
-                      await writer.write(
-                        encoder.encode(`data: ${JSON.stringify({ type: 'delta', text: before })}\n\n`)
-                      );
-                    }
-                  } else {
-                    // Check for partial marker start at end of chunk (e.g. "<!-")
-                    const partialCheck = '<!--LEAD:';
-                    let safeEnd = text.length;
-                    for (let i = 1; i < partialCheck.length; i++) {
-                      if (text.endsWith(partialCheck.slice(0, i))) {
-                        safeEnd = text.length - i;
-                        break;
-                      }
-                    }
-                    const safeText = text.slice(0, safeEnd);
-                    if (safeText) {
-                      await writer.write(
-                        encoder.encode(`data: ${JSON.stringify({ type: 'delta', text: safeText })}\n\n`)
-                      );
-                    }
-                  }
+                // Determine how much text is safe to send.
+                // If we see the start of a LEAD marker, hold back from that point.
+                // The marker looks like: <!--LEAD:{...}-->
+                const leadIdx = fullResponse.indexOf('<!--LEAD:');
+
+                let safeUpTo: number;
+                if (leadIdx !== -1) {
+                  // Marker started — only send up to the marker start
+                  safeUpTo = leadIdx;
+                } else {
+                  // No marker yet — but hold back last 9 chars in case
+                  // a partial "<!--LEAD:" is forming at the tail
+                  safeUpTo = Math.max(sentLength, fullResponse.length - 9);
                 }
-                // If leadStarted, skip forwarding (it's LEAD JSON data)
 
-                // Detect end of LEAD marker
-                if (leadStarted && fullResponse.includes('-->')) {
-                  // Forward any text after the closing marker
-                  const afterMarker = fullResponse.split('-->').pop() || '';
-                  if (afterMarker.trim()) {
-                    await writer.write(
-                      encoder.encode(`data: ${JSON.stringify({ type: 'delta', text: afterMarker })}\n\n`)
-                    );
-                  }
-                  leadStarted = false;
+                if (safeUpTo > sentLength) {
+                  const chunk = fullResponse.slice(sentLength, safeUpTo);
+                  sentLength = safeUpTo;
+                  await writer.write(
+                    encoder.encode(`data: ${JSON.stringify({ type: 'delta', text: chunk })}\n\n`)
+                  );
                 }
               }
 
               if (event.type === 'message_stop') {
+                // Send any remaining safe text (anything after a closed marker)
+                const cleaned = fullResponse.replace(/<!--LEAD:\{[\s\S]*?\}-->/, '');
+                if (cleaned.length > sentLength) {
+                  const remaining = cleaned.slice(sentLength);
+                  await writer.write(
+                    encoder.encode(`data: ${JSON.stringify({ type: 'delta', text: remaining })}\n\n`)
+                  );
+                }
                 await writer.write(
                   encoder.encode(`data: ${JSON.stringify({ type: 'done' })}\n\n`)
                 );

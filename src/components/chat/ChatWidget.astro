@@ -294,16 +294,21 @@
 
               if (event.type === 'delta' && event.text) {
                 fullText += event.text;
-                // Strip any LEAD markers from display
-                const displayText = fullText.replace(/<!--LEAD:\{.*?\}-->/g, '');
+                // Strip complete LEAD markers and any partial marker at the end
+                let displayText = fullText.replace(/<!--LEAD:\{[\s\S]*?\}-->/g, '');
+                // Also strip any partial/incomplete marker from end of stream
+                const partialIdx = displayText.indexOf('<!--LEAD:');
+                if (partialIdx !== -1) displayText = displayText.slice(0, partialIdx);
                 streamBubble.innerHTML = md(displayText);
                 scrollToBottom();
               }
 
               if (event.type === 'done') {
-                // Final render
-                const displayText = fullText.replace(/<!--LEAD:\{.*?\}-->/g, '');
-                streamBubble.innerHTML = md(displayText);
+                // Final render — clean everything
+                let displayText = fullText.replace(/<!--LEAD:\{[\s\S]*?\}-->/g, '');
+                const partialIdx = displayText.indexOf('<!--LEAD:');
+                if (partialIdx !== -1) displayText = displayText.slice(0, partialIdx);
+                streamBubble.innerHTML = md(displayText.trimEnd());
               }
             } catch {
               // Skip malformed chunks
