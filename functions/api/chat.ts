@@ -264,13 +264,15 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             );
 
             // Send lead notification email
-            sendLeadEmail(leadPayload, {
+            console.log('Sending lead email to:', env.LEAD_EMAIL_TO);
+            const emailSent = await sendLeadEmail(leadPayload, {
               SMTP_API_KEY: env.SMTP_API_KEY,
               LEAD_EMAIL_TO: env.LEAD_EMAIL_TO,
               LEAD_EMAIL_FROM: env.LEAD_EMAIL_FROM,
-            }).catch((err) => console.error('Lead email error:', err));
+            });
+            console.log('Email send result:', emailSent);
           } catch (err) {
-            console.error('Lead parsing error:', err);
+            console.error('Lead parsing/email error:', err);
           }
         }
 
