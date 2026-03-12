@@ -10,7 +10,7 @@ import { heroStats } from '../../data/stats';
   <div class="absolute bottom-[-40%] right-[15%] w-[350px] h-[350px] rounded-full bg-health/10 blur-[100px]" aria-hidden="true"></div>
 
   <div class="container relative z-10 py-16 md:py-20">
-    <p class="eyebrow mb-10 justify-center text-ink-4/60">
+    <p class="eyebrow mb-10 justify-center text-white/50">
       <span class="eyebrow-dot bg-health animate-pulse-dot"></span>
       Live Production Metrics
     </p>
@@ -28,7 +28,7 @@ import { heroStats } from '../../data/stats';
           <p class="text-display-lg font-bold text-white tracking-tight">
             {stat.value}<span class="text-[0.5em] font-semibold text-brand-mid ml-0.5">{stat.suffix}</span>
           </p>
-          <p class="mt-3 text-sm text-white/50 leading-snug font-medium">{stat.label}</p>
+          <p class="mt-3 text-sm text-white/65 leading-snug font-medium">{stat.label}</p>
         </div>
       ))}
     </div>

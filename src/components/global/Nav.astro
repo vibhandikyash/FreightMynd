@@ -45,7 +45,7 @@ const navLinks = [
           {navLinks.map(link => (
             <li class="relative" data-has-dropdown={link.dropdown ? 'true' : undefined}>
               <a href={link.href}
-                 class="nav-link text-[13.5px] font-semibold text-ink-3 px-3 py-2 rounded-lg hover:text-ink transition-colors duration-150 flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:outline-none">
+                 class="nav-link text-[13.5px] font-semibold text-ink-3 px-3 py-3 rounded-lg hover:text-ink transition-colors duration-150 flex items-center gap-1 focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:outline-none">
                 {link.label}
                 {link.dropdown && (
                   <svg class="nav-arrow w-3.5 h-3.5 text-ink-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -367,12 +367,46 @@ const navLinks = [
     if (!dropdownEls[label]) return;
     item.addEventListener('mouseenter', () => showDropdown(label));
     item.addEventListener('mouseleave', hideAllDropdowns);
+
+    // Keyboard: open dropdown on Enter/Space/ArrowDown, close on Escape
+    const link = item.querySelector('.nav-link') as HTMLElement | null;
+    link?.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showDropdown(label);
+        const firstLink = dropdownEls[label]?.querySelector('a') as HTMLElement | null;
+        firstLink?.focus();
+      }
+    });
   });
 
   Object.values(dropdownEls).forEach(el => {
     if (!el) return;
     el.addEventListener('mouseenter', cancelHide);
     el.addEventListener('mouseleave', hideAllDropdowns);
+
+    // Keyboard: navigate within dropdown, Escape to close
+    el.addEventListener('keydown', (e: KeyboardEvent) => {
+      const links = Array.from(el.querySelectorAll('a')) as HTMLElement[];
+      const idx = links.indexOf(document.activeElement as HTMLElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        links[Math.min(idx + 1, links.length - 1)]?.focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        links[Math.max(idx - 1, 0)]?.focus();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        hideAllDropdowns();
+        // Return focus to the trigger link
+        triggerItems.forEach(item => {
+          const link = item.querySelector('.nav-link') as HTMLElement | null;
+          if (link?.textContent?.trim() === Object.entries(dropdownEls).find(([, v]) => v === el)?.[0]) {
+            link?.focus();
+          }
+        });
+      }
+    });
   });
 
   backdrop?.addEventListener('click', () => {
