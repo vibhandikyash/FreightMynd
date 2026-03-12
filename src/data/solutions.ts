@@ -233,6 +233,8 @@ export const solutions: Solution[] = [
       'freight rate quoting AI',
       'logistics quote management system',
       'automated freight pricing',
+      'freight quote generation',
+      'spot quote automation',
     ],
     metaTitle: 'Autonomous Quote Management | AI-Powered Freight Quoting in Minutes',
     metaDescription:
@@ -243,7 +245,7 @@ export const solutions: Solution[] = [
     color: 'brand',
     headline: 'Stop Losing Deals to Slow Quoting',
     keywordSubheadline: 'AI-powered freight quote automation for freight forwarders — from RFQ inbox to client quote in under 10 minutes, fully autonomous.',
-    sub: 'Autonomous AI that generates, compares, and sends freight quotes — cutting turnaround from hours to minutes while your team focuses on relationships. Our freight quote automation system handles the entire quoting lifecycle end to end.',
+    sub: 'Autonomous AI that generates, compares, and sends freight quotes — from spot quotes to contract rates — cutting turnaround from hours to minutes while your team focuses on relationships. Our freight quote automation system handles the entire quoting lifecycle end to end.',
 
     idealFor: [
       'Freight forwarders processing 30+ RFQs per day across sea, air, and road',
@@ -542,6 +544,8 @@ export const solutions: Solution[] = [
       'logistics pricing intelligence',
       'carrier rate analysis AI',
       'freight margin optimization',
+      'freight rate management',
+      'freight cost optimization',
     ],
     metaTitle: 'Freight Pricing AI | Dynamic Rate Optimization & Market Intelligence',
     metaDescription:
@@ -562,7 +566,7 @@ export const solutions: Solution[] = [
     ],
 
     problem: {
-      headline: 'You are either leaving margin on the table or losing deals you should have won',
+      headline: 'Your freight rates are either leaving margin on the table or losing deals you should have won',
       description:
         'Freight pricing is one of the most impactful decisions in forwarding, yet most companies treat it as an afterthought. Rate data lives in disconnected spreadsheets, carrier portals, and individual reps\' heads. Pricing decisions are made based on "what we charged this customer last time" or "what feels competitive" rather than real-time market intelligence. The result: you over-price stable lanes and lose volume to hungrier competitors, or you under-price volatile lanes and give away margin during surges. Neither outcome is visible until the P&L lands — by then, the damage is done. Meanwhile, your pricing team spends most of their time on data gathering and rate maintenance rather than strategic analysis.',
       painPoints: [
@@ -696,6 +700,8 @@ export const solutions: Solution[] = [
       'BL processing automation',
       'container tracking automation',
       'shipping operations AI',
+      'sea freight forwarding automation',
+      'freight booking automation',
     ],
     metaTitle: 'Sea Freight Automation | End-to-End AI for Ocean Freight Operations',
     metaDescription:
@@ -857,12 +863,14 @@ export const solutions: Solution[] = [
       'flight tracking freight automation',
       'air freight document processing',
       'IATA e-AWB automation',
+      'air cargo services automation',
+      'air freight rates comparison',
     ],
     metaTitle: 'Air Freight Automation | AI-Powered AWB Processing & Operations',
     metaDescription:
       'AI automation for air freight operations — AWB processing, carrier rate comparison, flight tracking, customs docs, and exception management. 70% faster AWB processing.',
     description:
-      'AI-powered automation for air freight operations — AWB processing, rate management, booking, and shipment tracking.',
+      'AI-powered automation for air cargo services — AWB processing, air freight rates comparison, booking, and shipment tracking.',
     icon: '✈️',
     color: 'brand',
     headline: 'Air Freight Speed Meets AI Precision',
@@ -1163,6 +1171,7 @@ export const solutions: Solution[] = [
       'carrier invoice audit AI',
       'freight overcharge detection',
       '3-way matching logistics',
+      'ai in procurement logistics',
     ],
     metaTitle: 'Smart Freight Invoice Processing | AI-Powered AP Automation & Audit',
     metaDescription:
@@ -1173,7 +1182,7 @@ export const solutions: Solution[] = [
     color: 'accent',
     headline: 'Invoices That Process Themselves',
     keywordSubheadline: 'AI-powered smart invoice processing for freight — extraction, 3-way matching, overcharge detection, and direct ERP integration.',
-    sub: 'Invoice processing software powered by AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Purpose-built freight invoice automation for forwarders and 3PLs.',
+    sub: 'Invoice processing software powered by AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Built for procurement and accounts payable teams in freight forwarding.',
 
     idealFor: [
       'Freight forwarders and 3PLs processing 200+ carrier invoices per month',
