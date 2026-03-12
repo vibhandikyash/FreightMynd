@@ -2,18 +2,35 @@
 import { heroStats } from '../../data/stats';
 ---
 
-<section class="relative bg-white border-y border-line/50">
-  <div class="container py-12">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+<section class="relative overflow-hidden" style="background: linear-gradient(135deg, #0D1117 0%, #1A2332 50%, #0D1117 100%);">
+  <!-- Subtle grid pattern -->
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;40&quot; height=&quot;40&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cpath d=&quot;M0 0h40v40H0z&quot; fill=&quot;none&quot; stroke=&quot;%23fff&quot; stroke-width=&quot;0.5&quot;/%3E%3C/svg%3E');" aria-hidden="true"></div>
+  <!-- Glow accents -->
+  <div class="absolute top-[-40%] left-[10%] w-[400px] h-[400px] rounded-full bg-brand/15 blur-[100px]" aria-hidden="true"></div>
+  <div class="absolute bottom-[-40%] right-[15%] w-[350px] h-[350px] rounded-full bg-health/10 blur-[100px]" aria-hidden="true"></div>
+
+  <div class="container relative z-10 py-16 md:py-20">
+    <p class="eyebrow mb-10 justify-center text-ink-4/60">
+      <span class="eyebrow-dot bg-health animate-pulse-dot"></span>
+      Live Production Metrics
+    </p>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {heroStats.map((stat, i) => (
-        <div class="text-center" data-reveal data-reveal-delay={String(i + 1)}>
-          <p class="text-display-sm font-bold bg-gradient-to-br from-brand to-brand-dark bg-clip-text text-transparent">
-            {stat.value}<span class="text-[0.6em] opacity-70">{stat.suffix}</span>
+        <div
+          class="relative group text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-500"
+          data-reveal
+          data-reveal-delay={String(i + 1)}
+        >
+          {/* Top accent line */}
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] rounded-full bg-gradient-to-r from-brand to-health opacity-60 group-hover:w-20 group-hover:opacity-100 transition-all duration-500" aria-hidden="true"></div>
+
+          <p class="text-display-lg font-bold text-white tracking-tight">
+            {stat.value}<span class="text-[0.5em] font-semibold text-brand-mid ml-0.5">{stat.suffix}</span>
           </p>
-          <p class="mt-2 text-sm text-ink-3 leading-snug">{stat.label}</p>
+          <p class="mt-3 text-sm text-white/50 leading-snug font-medium">{stat.label}</p>
         </div>
       ))}
     </div>
-    <p class="mt-6 text-center text-[10px] text-ink-4">Metrics from live production deployments</p>
   </div>
 </section>
