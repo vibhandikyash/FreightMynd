@@ -31,7 +31,7 @@ export const integrations: Integration[] = [
     metaTitle: 'CargoWise AI Integration | CargoIQ.ai',
     metaDescription: 'Deep AI integration with CargoWise One — automated XML data push via eHub and Universal Gateway, document intelligence, and zero manual TMS entry. Built and live for Hellmann Worldwide Logistics.',
     logo: 'cargowise',
-    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. CargoIQ builds deep, native AI integration with CargoWise — not a surface-level connector, but a full automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway.',
+    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. CargoIQ builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
     architecture: {
       connectionMethod: 'CargoWise eHub and Universal Gateway APIs',
       supportedVersions: 'CargoWise One (CW1), all current versions',
@@ -97,7 +97,7 @@ export const integrations: Integration[] = [
       },
       {
         q: 'Can it work alongside our existing CargoWise customisations?',
-        a: 'Yes. We work within your existing CargoWise customisation framework — custom fields, custom workflows, custom charge codes. During discovery, we map your specific customisations and ensure our integration respects and leverages them rather than conflicting with them.',
+        a: 'Yes. We work within your existing CargoWise customisation framework — custom fields, custom workflows, custom charge codes. During discovery, we map your specific customisations and ensure our integration respects and builds on them rather than conflicting with them.',
       },
     ],
   },
@@ -107,10 +107,10 @@ export const integrations: Integration[] = [
     shortTitle: 'SAP TM',
     keyword: 'SAP TM AI integration',
     description: 'AI-powered automation layered on SAP Transportation Management — document processing, data enrichment, and operational intelligence.',
-    metaTitle: 'SAP TM AI Integration | CargoIQ.ai',
+    metaTitle: 'SAP TM & S/4HANA AI Integration | CargoIQ.ai',
     metaDescription: 'AI automation layered on SAP Transportation Management — automated freight order creation, document processing, and operational intelligence. Supports classic SAP TM and S/4HANA embedded TM.',
     logo: 'sap',
-    intro: 'SAP Transportation Management is the TMS of choice for large shippers and logistics service providers running complex, high-volume freight operations. Whether you run classic SAP TM or the embedded Transportation Management module in S/4HANA, CargoIQ layers AI automation on top of your existing SAP environment — automating document processing, freight order creation, and operational intelligence without replacing or disrupting your SAP infrastructure.',
+    intro: 'SAP Transportation Management is the TMS of choice for large shippers and logistics service providers running complex, high-volume freight operations. Whether you run classic SAP TM or the embedded Transportation Management module in S/4HANA, CargoIQ layers SAP logistics AI on top of your existing SAP environment — automating document processing, freight order creation, and operational intelligence without replacing or disrupting your SAP infrastructure.',
     architecture: {
       connectionMethod: 'SAP APIs, BAPIs, RFC calls, SAP Integration Suite (BTP optional)',
       supportedVersions: 'SAP TM classic, SAP S/4HANA embedded Transportation Management',
@@ -220,8 +220,8 @@ export const integrations: Integration[] = [
         a: 'We support Oracle OTM Cloud, Oracle OTM on-premise (all actively maintained versions), and Oracle Global Trade Management (GTM). The integration approach adapts to your deployment model — cloud APIs for OTM Cloud, web services for on-premise — so you get the same automation capability regardless of your Oracle hosting choice.',
       },
       {
-        q: 'How does data flow between CargoIQ and Oracle TMS?',
-        a: 'Via Oracle REST APIs and web services. Extracted document data is validated against your business rules, then pushed into OTM as shipment records, order releases, document attachments, or billing updates. The data flow is one-directional by default (CargoIQ to OTM), with optional bi-directional sync for event-driven workflows where OTM events trigger CargoIQ processing.',
+        q: 'How does data flow between CargoIQ and Oracle Transportation Management?',
+        a: 'Via Oracle REST APIs and web services. Extracted document data is validated against your business rules, then pushed into Oracle OTM as shipment records, order releases, document attachments, or billing updates. The data flow is one-directional by default (CargoIQ to OTM), with optional bi-directional sync for event-driven workflows where OTM events trigger CargoIQ processing.',
       },
       {
         q: 'Can it work alongside existing Oracle integrations?',
@@ -250,7 +250,7 @@ export const integrations: Integration[] = [
     metaTitle: 'Dynamics 365 Freight AI Integration | CargoIQ.ai',
     metaDescription: 'AI-powered freight automation for Microsoft Dynamics 365 Supply Chain Management — Azure-native deployment, Power Automate integration, and automated document processing.',
     logo: 'dynamics',
-    intro: 'Microsoft Dynamics 365 serves mid-market to enterprise logistics operations with its Finance and Supply Chain Management modules. Because Dynamics 365 runs natively on Azure — and CargoIQ deploys on Azure — the integration delivers native performance with no data leaving the Microsoft ecosystem. This simplifies security compliance, reduces latency, and enables seamless use of Power Automate, Dataverse, and Azure services as part of the automation workflow.',
+    intro: 'Microsoft Dynamics 365 serves mid-market to enterprise logistics operations with its Finance and Supply Chain Management modules, making Microsoft Dynamics TMS a popular choice for freight forwarders and 3PLs. Because Dynamics 365 runs natively on Azure — and CargoIQ deploys on Azure — the integration delivers native performance with no data leaving the Microsoft ecosystem. This simplifies security compliance, reduces latency, and enables direct access to Power Automate logistics workflows, Dataverse, and Azure services as part of the automation pipeline.',
     architecture: {
       connectionMethod: 'Dynamics 365 REST APIs, Dataverse, Power Automate flows',
       supportedVersions: 'Dynamics 365 Finance and Operations, Supply Chain Management',
@@ -317,10 +317,10 @@ export const integrations: Integration[] = [
     shortTitle: 'Descartes',
     keyword: 'Descartes logistics AI integration',
     description: 'AI automation for Descartes logistics platform — document intelligence, customs automation, and operational analytics.',
-    metaTitle: 'Descartes AI Integration | CargoIQ.ai',
+    metaTitle: 'Descartes AI Integration for Customs & Compliance | CargoIQ.ai',
     metaDescription: 'AI automation for Descartes logistics platform — customs declaration automation, trade compliance data enrichment, and EDI processing for freight forwarders and customs brokers.',
     logo: 'descartes',
-    intro: 'Descartes is strongest in customs and trade compliance — and that\'s where CargoIQ\'s document extraction creates the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we automate the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',
+    intro: 'Descartes is strongest in customs and trade compliance — and that\'s where CargoIQ\'s trade compliance AI and document extraction create the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we deliver customs declaration automation that removes the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',
     architecture: {
       connectionMethod: 'Descartes Global Logistics Network (GLN), Descartes APIs, EDI messaging',
       supportedVersions: 'Descartes GLN, Customs & Regulatory Compliance, Descartes TMS',

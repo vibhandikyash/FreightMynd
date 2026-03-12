@@ -92,7 +92,7 @@ The validation layer should also implement confidence scoring. If the AI extract
 
 ## Production Monitoring and Exception Handling
 
-Running an AI-to-CargoWise pipeline in production requires robust monitoring. You need visibility into document processing volumes and trends, extraction accuracy rates by document type and supplier, validation pass and fail rates, eHub message delivery status, and end-to-end processing time from email receipt to CargoWise entry.
+Running an AI-to-CargoWise pipeline in production requires production-grade monitoring. You need visibility into document processing volumes and trends, extraction accuracy rates by document type and supplier, validation pass and fail rates, eHub message delivery status, and end-to-end processing time from email receipt to CargoWise entry.
 
 Exception handling workflows are equally important. When a document fails processing, the system should categorize the failure (extraction error, validation failure, eHub rejection), route it to the appropriate queue, preserve context so the reviewer can see exactly what went wrong, and learn from the resolution to reduce future failures.
 

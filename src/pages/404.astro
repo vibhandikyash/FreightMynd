@@ -1,0 +1,28 @@
+---
+import Page from '../layouts/Page.astro';
+---
+
+<Page
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist. Browse our AI solutions for freight forwarders or head back to the homepage."
+  noindex={true}
+>
+  <section class="pt-32 pb-24 md:pt-40 md:pb-32">
+    <div class="container text-center">
+      <p class="font-mono text-6xl font-bold text-brand/20 mb-6">404</p>
+      <h1 class="text-display-md font-bold text-ink mb-4">Page not found</h1>
+      <p class="text-lg text-ink-3 max-w-md mx-auto mb-10">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/" class="btn btn-brand">
+          Back to Homepage
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/solutions" class="btn btn-ghost">Browse Solutions</a>
+      </div>
+    </div>
+  </section>
+</Page>

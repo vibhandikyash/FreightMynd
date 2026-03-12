@@ -1,7 +1,30 @@
 ---
 import Page from './Page.astro';
+import { Image } from 'astro:assets';
 import { site } from '../data/site';
 import type { Solution } from '../data/solutions';
+import type { ImageMetadata } from 'astro';
+
+// Import all solution/integration hero images from src/assets/images
+import img4pl from '../assets/images/4pl-control-tower.webp';
+import imgQuote from '../assets/images/quote-management.webp';
+import imgDoc from '../assets/images/document-intelligence.webp';
+import imgPricing from '../assets/images/freight-pricing-ai.webp';
+import imgSea from '../assets/images/sea-freight.webp';
+import imgAir from '../assets/images/air-freight.webp';
+import img3pl from '../assets/images/3pl-4pl-operations.webp';
+import imgInvoice from '../assets/images/smart-invoice-processing.webp';
+
+const heroImageMap: Record<string, ImageMetadata> = {
+  '/images/4pl-control-tower.webp': img4pl,
+  '/images/quote-management.webp': imgQuote,
+  '/images/document-intelligence.webp': imgDoc,
+  '/images/freight-pricing-ai.webp': imgPricing,
+  '/images/sea-freight.webp': imgSea,
+  '/images/air-freight.webp': imgAir,
+  '/images/3pl-4pl-operations.webp': img3pl,
+  '/images/smart-invoice-processing.webp': imgInvoice,
+};
 
 interface Props {
   solution: Solution;
@@ -10,6 +33,7 @@ interface Props {
 }
 
 const { solution, heroImage, heroImageAlt } = Astro.props;
+const resolvedHeroImage = heroImage ? heroImageMap[heroImage] : null;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -57,9 +81,17 @@ const serviceSchema = {
   }
 };
 
-// Get related solutions (exclude current)
+// Get related solutions using the relatedSolutions field
 import { solutions } from '../data/solutions';
-const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
+import { integrations } from '../data/integrations';
+
+const relatedSolutionData = solution.relatedSolutions
+  .map(slug => solutions.find(s => s.slug === slug))
+  .filter((s): s is Solution => !!s);
+
+const relatedIntegrationData = solution.relatedIntegrations
+  .map(slug => integrations.find(i => i.slug === slug))
+  .filter((i): i is import('../data/integrations').Integration => !!i);
 ---
 
 <Page
@@ -109,17 +141,28 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           )}
         </div>
       </div>
-      {heroImage && (
+      {(resolvedHeroImage || heroImage) && (
         <div class="mt-12 max-w-4xl" data-reveal data-reveal-delay="1">
-          <img
-            src={heroImage}
-            alt={heroImageAlt || `${solution.shortTitle} AI automation system`}
-            width="960"
-            height="540"
-            loading="lazy"
-            decoding="async"
-            class="w-full rounded-2xl border border-line/70 shadow-lg"
-          />
+          {resolvedHeroImage ? (
+            <Image
+              src={resolvedHeroImage}
+              alt={heroImageAlt || `${solution.shortTitle} AI automation system`}
+              widths={[640, 768, 960]}
+              sizes="(max-width: 960px) calc(100vw - 40px), 768px"
+              quality={80}
+              class="w-full rounded-2xl border border-line/70 shadow-lg"
+            />
+          ) : heroImage ? (
+            <img
+              src={heroImage}
+              alt={heroImageAlt || `${solution.shortTitle} AI automation system`}
+              width="960"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              class="w-full rounded-2xl border border-line/70 shadow-lg"
+            />
+          ) : null}
         </div>
       )}
     </div>
@@ -339,8 +382,8 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
       <div class="max-w-2xl mb-12" data-reveal>
         <h2 class="section-heading">Related Freight AI Solutions</h2>
       </div>
-      <div class="grid sm:grid-cols-3 gap-5">
-        {related.map((sol, i) => (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {relatedSolutionData.map((sol, i) => (
           <a href={`/solutions/${sol.slug}`}
              class="group p-6 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
              data-reveal data-reveal-delay={String(i + 1)}>
@@ -350,6 +393,23 @@ const related = solutions.filter(s => s.slug !== solution.slug).slice(0, 3);
           </a>
         ))}
       </div>
+
+      {relatedIntegrationData.length > 0 && (
+        <div class="mt-12" data-reveal>
+          <h3 class="text-sm font-semibold text-ink mb-4">Works With</h3>
+          <div class="flex flex-wrap gap-3">
+            {relatedIntegrationData.map(intg => (
+              <a href={`/integrations/${intg.slug}`}
+                 class="inline-flex items-center gap-2 px-4 py-2.5 rounded-card border border-line bg-white text-sm font-medium text-ink-3 hover:text-brand hover:border-brand-mid hover:bg-brand-light transition-all duration-200">
+                {intg.shortTitle}
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 

@@ -51,7 +51,7 @@ const breadcrumbSchema = {
   ],
 };
 
-const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site.url}${ogImage}`) : `${site.url}/og-default.png`;
+const ogImageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${site.url}${ogImage}`) : `${site.url}/images/og-default.webp`;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -59,7 +59,17 @@ const articleSchema = {
   "headline": title,
   "description": description,
   "image": ogImageUrl,
-  "author": { "@type": "Organization", "name": "CargoIQ.ai" },
+  "author": {
+    "@type": "Person",
+    "name": "CargoIQ Team",
+    "jobTitle": "Freight AI Specialists",
+    "url": `${site.url}/about`,
+    "worksFor": {
+      "@type": "Organization",
+      "name": "CargoIQ.ai",
+      "url": site.url,
+    },
+  },
   "publisher": {
     "@type": "Organization",
     "name": "CargoIQ.ai",
@@ -95,7 +105,7 @@ const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema]
 >
   <!-- Breadcrumb -->
   <div class="bg-white border-b border-line">
-    <div class="container py-3 pt-20">
+    <div class="container py-3 pt-28">
       <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono text-ink-4">
         <a href="/" class="hover:text-ink transition-colors">Home</a>
         <span aria-hidden="true">/</span>

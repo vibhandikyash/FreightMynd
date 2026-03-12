@@ -1,0 +1,429 @@
+---
+import Page from '../../layouts/Page.astro';
+import { site } from '../../data/site';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Solutions", "item": `${site.url}/solutions` },
+    { "@type": "ListItem", "position": 3, "name": "Freight Document Automation" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of freight documents can be automated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our freight document automation system handles commercial invoices, airway bills (AWBs), bills of lading (BLs), packing lists, customs declarations, certificates of origin, and more. The AI extraction engine adapts to any structured or semi-structured logistics document format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is AI document extraction for freight documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our extraction engine achieves 99%+ accuracy on standard freight documents. For edge cases and unusual formats, built-in confidence scoring routes low-confidence extractions to human review — so nothing gets pushed to your TMS without validation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does freight document automation integrate with my TMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We build native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. Extracted data is formatted and pushed directly into your TMS — no CSV exports, no middleware, no manual re-entry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to deploy freight document automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical deployment takes 8–14 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the system handle documents from new suppliers automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The self-learning supplier onboarding module automatically maps new document formats when a supplier sends their first batch. No engineering effort is required per new supplier — the system adapts and improves with each document processed."
+      }
+    },
+  ],
+};
+
+const documentTypes = [
+  {
+    name: 'Commercial Invoice',
+    description: 'Extract supplier details, line items, quantities, values, currency, Incoterms, and HS codes from invoices in any format.',
+    icon: '🧾',
+  },
+  {
+    name: 'Airway Bill (AWB)',
+    description: 'Capture shipper/consignee, flight details, piece count, weight, dimensions, and handling codes from master and house AWBs.',
+    icon: '✈️',
+  },
+  {
+    name: 'Bill of Lading (BL)',
+    description: 'Parse vessel details, container numbers, seal numbers, port pairs, and cargo descriptions from ocean bills of lading.',
+    icon: '🚢',
+  },
+  {
+    name: 'Packing List',
+    description: 'Extract carton counts, gross/net weights, dimensions, and item-level descriptions across multi-page packing lists.',
+    icon: '📦',
+  },
+  {
+    name: 'Customs Declaration',
+    description: 'Capture HS codes, declared values, country of origin, duty calculations, and regulatory flags from customs forms.',
+    icon: '🛃',
+  },
+  {
+    name: 'Certificate of Origin',
+    description: 'Extract issuing authority, origin country, product descriptions, and certification details for trade compliance.',
+    icon: '📜',
+  },
+];
+
+const steps = [
+  {
+    num: '01',
+    title: 'Ingest',
+    description: 'Documents arrive via email, SFTP, or API. The system auto-downloads attachments and queues them for processing — no human intervention.',
+  },
+  {
+    num: '02',
+    title: 'Classify',
+    description: 'AI classifies each document by type — invoice, AWB, BL, packing list — and filters out irrelevant pages like cover sheets and duplicates, reducing processing costs by 50%.',
+  },
+  {
+    num: '03',
+    title: 'Extract',
+    description: 'The extraction engine pulls structured fields from each document with 99%+ accuracy. Confidence scoring flags uncertain values for human review.',
+  },
+  {
+    num: '04',
+    title: 'Push to TMS',
+    description: 'Validated data is formatted as TMS-compatible records and pushed directly via API — CargoWise XML, SAP TM objects, or your platform of choice. Zero manual entry.',
+  },
+];
+
+const metrics = [
+  { value: '99%+', label: 'Extraction accuracy' },
+  { value: '60%', label: 'Processing time reduction' },
+  { value: '0', label: 'Manual data entry' },
+  { value: '50%', label: 'AI cost reduction via smart filtering' },
+];
+
+const faqItems = [
+  {
+    q: 'What types of freight documents can be automated?',
+    a: 'Our freight document automation system handles commercial invoices, airway bills (AWBs), bills of lading (BLs), packing lists, customs declarations, certificates of origin, and more. The AI extraction engine adapts to any structured or semi-structured logistics document format.',
+  },
+  {
+    q: 'How accurate is AI document extraction for freight documents?',
+    a: 'Our extraction engine achieves 99%+ accuracy on standard freight documents. For edge cases and unusual formats, built-in confidence scoring routes low-confidence extractions to human review — so nothing gets pushed to your TMS without validation.',
+  },
+  {
+    q: 'Does freight document automation integrate with my TMS?',
+    a: 'Yes. We build native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. Extracted data is formatted and pushed directly into your TMS — no CSV exports, no middleware, no manual re-entry.',
+  },
+  {
+    q: 'How long does it take to deploy freight document automation?',
+    a: 'Typical deployment takes 8–14 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team.',
+  },
+  {
+    q: 'Can the system handle documents from new suppliers automatically?',
+    a: 'Yes. The self-learning supplier onboarding module automatically maps new document formats when a supplier sends their first batch. No engineering effort is required per new supplier — the system adapts and improves with each document processed.',
+  },
+];
+
+const integrations = [
+  { name: 'CargoWise', href: '/integrations/cargowise' },
+  { name: 'SAP TM', href: '/integrations/sap-tm' },
+  { name: 'Oracle TMS', href: '/integrations/oracle-tms' },
+  { name: 'Dynamics 365', href: '/integrations/microsoft-dynamics' },
+  { name: 'Descartes', href: '/integrations/descartes' },
+];
+---
+
+<Page
+  title="Freight Document Automation | AI Document Processing for Logistics | CargoIQ.ai"
+  description="Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration."
+  schema={[breadcrumbSchema, faqSchema]}
+>
+  <!-- Breadcrumb -->
+  <div class="pt-24 pb-0 bg-surface">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="py-3">
+        <ol class="flex items-center gap-2 text-xs font-mono text-ink-4">
+          <li><a href="/" class="hover:text-brand transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/solutions" class="hover:text-brand transition-colors">Solutions</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-ink-3">Freight Document Automation</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          Freight Document Automation
+        </p>
+        <h1 class="text-display-lg font-bold text-ink">
+          Freight Document Automation — AI That Reads, Extracts, and Pushes Data to Your TMS
+        </h1>
+        <p class="mt-5 text-lg text-ink-3 leading-relaxed">
+          Freight document automation eliminates manual document processing across your logistics operations. Our AI extraction engine handles invoices, AWBs, bills of lading, packing lists, and customs forms — extracting structured data with 99%+ accuracy and pushing it directly into your TMS. No re-keying. No spreadsheets. No bottlenecks.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="btn btn-brand">
+            Book a Free Document Automation Audit
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-ghost">See It in Production</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div data-reveal>
+          <p class="eyebrow mb-4">
+            <span class="eyebrow-dot bg-red-500"></span>
+            The Problem
+          </p>
+          <h2 class="section-heading">The Manual Document Processing Bottleneck</h2>
+          <p class="mt-5 text-ink-3 leading-relaxed">
+            Freight forwarding runs on documents — but most forwarders still process them by hand. Ops teams spend hours every morning downloading attachments, splitting multi-page PDFs, reading invoices line by line, and manually keying data into the TMS. It's slow, error-prone, and doesn't scale.
+          </p>
+        </div>
+        <div class="space-y-3" data-reveal data-reveal-delay="1">
+          {[
+            'Ops staff manually downloading and splitting 200–300 page PDF batches from supplier emails',
+            'Re-keying invoice line items, AWB details, and BL data into CargoWise or SAP TM by hand',
+            'New supplier formats requiring weeks of engineering effort to map and integrate',
+            'Data entry errors causing compliance issues, billing disputes, and shipment delays',
+            'Growing shipment volumes with no scalable way to handle the document load',
+          ].map((point) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl border border-line/50 bg-surface/50">
+              <span class="text-red-400 mt-0.5 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                </svg>
+              </span>
+              <p class="text-sm text-ink-3 leading-relaxed">{point}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents We Automate -->
+  <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          Document Types
+        </p>
+        <h2 class="section-heading">Documents We Automate</h2>
+        <p class="mt-4 text-lg text-ink-3 leading-relaxed">
+          Our freight document automation system processes every standard logistics document type — extracting the exact fields your TMS needs, in the exact format it expects.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {documentTypes.map((doc, i) => (
+          <div class="p-7 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+               data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+            <span class="text-2xl mb-4 block" aria-hidden="true">{doc.icon}</span>
+            <h3 class="text-lg font-bold text-ink mb-2">{doc.name}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{doc.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-health"></span>
+          How It Works
+        </p>
+        <h2 class="section-heading">From Raw Document to TMS Record — Fully Automated</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map((step, i) => (
+          <div class="relative p-7 rounded-2xl border border-line/70 bg-surface/30"
+               data-reveal data-reveal-delay={String(Math.min(i + 1, 4))}>
+            <span class="font-mono text-3xl font-bold text-brand/20 block mb-3">{step.num}</span>
+            <h3 class="text-base font-bold text-ink mb-2">{step.title}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="relative py-24 md:py-32 overflow-hidden" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+    <div class="absolute top-[-20%] left-[20%] w-[600px] h-[600px] rounded-full bg-brand/10 blur-3xl" aria-hidden="true"></div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center" data-reveal>
+        <p class="eyebrow justify-center mb-4 text-white/50">
+          <span class="eyebrow-dot bg-health"></span>
+          Results
+        </p>
+        <h2 class="text-display-md font-bold text-white" style="padding-left:0; border-left:none;">
+          Measurable Impact From Day One
+        </h2>
+        <p class="mt-5 text-white/60 leading-relaxed">
+          These are real metrics from our freight document automation deployments — including the Hellmann Worldwide Logistics 4PL control tower.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+        {metrics.map((stat, i) => (
+          <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.04] text-center"
+               data-reveal data-reveal-delay={String(i + 1)}>
+            <p class="text-3xl font-bold text-white">{stat.value}</p>
+            <p class="text-sm text-white/50 mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10" data-reveal data-reveal-delay="3">
+        <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-white">
+          Read the Hellmann Case Study
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Callout -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center" data-reveal>
+        <p class="eyebrow justify-center mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          TMS Integration
+        </p>
+        <h2 class="text-display-sm font-bold text-ink" style="padding-left:0; border-left:none;">
+          Works With CargoWise, SAP TM, Oracle TMS, Dynamics 365, and Descartes
+        </h2>
+        <p class="mt-4 text-ink-3 leading-relaxed">
+          Every freight document automation system we build pushes extracted data directly into your TMS via native API integration. No middleware. No manual exports. The data flows automatically.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+          {integrations.map((integration) => (
+            <a href={integration.href}
+               class="px-5 py-2.5 rounded-xl border border-line/70 bg-surface/50 text-sm font-medium text-ink-3 hover:text-brand hover:border-brand/30 hover:bg-brand-light transition-all duration-200">
+              {integration.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Solutions -->
+  <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <div class="max-w-2xl mb-10" data-reveal>
+        <h2 class="section-heading">Related Solutions</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { title: 'Document Intelligence', href: '/solutions/document-intelligence', description: 'The AI extraction engine behind our document automation — handles multi-format, multi-supplier variations at scale.' },
+          { title: '4PL Control Tower Automation', href: '/solutions/4pl-control-tower-automation', description: 'Full pipeline from email ingestion to CargoWise XML — the system we built for Hellmann Worldwide Logistics.' },
+          { title: 'Smart Invoice Processing', href: '/solutions/smart-invoice-processing', description: 'Automated invoice capture, validation, matching, and TMS posting with exception routing.' },
+        ].map((card, i) => (
+          <a href={card.href}
+             class="group p-7 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+             data-reveal data-reveal-delay={String(i + 1)}>
+            <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors">{card.title}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-10" data-reveal>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+        </div>
+        <div class="space-y-4">
+          {faqItems.map((faq, i) => (
+            <details class="group p-5 rounded-xl border border-line/70 bg-surface/30" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+              <summary class="flex items-center justify-between cursor-pointer text-ink font-semibold text-sm leading-relaxed list-none">
+                {faq.q}
+                <svg class="w-5 h-5 text-ink-4 flex-shrink-0 ml-4 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm text-ink-3 leading-relaxed">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">
+    <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
+    <div class="container relative z-10 text-center">
+      <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
+        Book a Free Document Automation Audit
+      </h2>
+      <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
+        We'll review your document workflows, identify the highest-impact automation opportunities, and show you exactly what we'd build — with projected ROI.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
+        <a href="/contact" class="btn btn-white">
+          Book a Free Audit
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/solutions" class="btn border border-white/30 text-white hover:bg-white/10">
+          Explore All Solutions
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-white/60 font-mono" data-reveal data-reveal-delay="3">
+        No commitment · 30-minute call · Custom proposal within 48 hours
+      </p>
+    </div>
+  </section>
+</Page>

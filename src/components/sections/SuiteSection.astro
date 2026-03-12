@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import archImg from '../../assets/images/system-architecture.webp';
 import { solutions } from '../../data/solutions';
 
 const displaySolutions = solutions.slice(0, 6);
@@ -22,13 +24,13 @@ const flowSteps = [
       </p>
       <h2 class="section-heading">Freight Forwarding Automation — The Full AI Suite</h2>
       <p class="mt-4 text-lg text-ink-3 leading-relaxed">
-        Each AI logistics automation module is custom-built for your environment. Deploy one or connect them all into a unified freight intelligence layer.
+        Each module is engineered around your environment. Deploy one or connect them all into a unified freight intelligence layer.
       </p>
     </div>
 
     <!-- Flow diagram -->
     <div class="mb-14 rounded-2xl overflow-hidden border border-brand-mid/30 bg-brand-light/30" data-reveal>
-      <img src="/images/system-architecture.webp" alt="AI document processing pipeline — email ingestion, AI filtering, data extraction, validation, and TMS push" class="w-full h-auto" loading="lazy" />
+      <Image src={archImg} alt="AI document processing pipeline — email ingestion, AI filtering, data extraction, validation, and TMS push" class="w-full h-auto" widths={[640, 960, 1180]} sizes="(max-width: 1220px) calc(100vw - 40px), 1180px" quality={80} />
       <div class="flex items-center justify-between gap-2 md:gap-4 p-5 overflow-x-auto">
         {flowSteps.map((step, i) => (
           <>

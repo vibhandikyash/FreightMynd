@@ -1,6 +1,8 @@
 ---
 import Page from '../layouts/Page.astro';
 import { site } from '../data/site';
+import { Image } from 'astro:assets';
+import aboutHeroImg from '../assets/images/about-hero.webp';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -59,7 +61,7 @@ const steps = [
 
 <Page
   title="About CargoIQ.ai — AI Systems for Freight Forwarding"
-  description="CargoIQ.ai is the freight automation division of Bitontree. We build custom AI systems for freight forwarders, 3PLs, and logistics providers. Founded 2019, offices in US and India."
+  description="Custom AI systems for freight forwarders and 3PLs — document processing, quote automation, and TMS integration. Built by Bitontree. Founded 2019."
   schema={breadcrumbSchema}
 >
   <!-- Breadcrumb -->
@@ -85,18 +87,18 @@ const steps = [
           AI Systems for Freight — Built by People Who Understand Operations
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          CargoIQ is powered by <a href={site.builtBy.url} target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors font-medium">Bitontree</a> — a specialist AI engineering firm with 6+ years of production AI deployments. We build custom AI systems for freight forwarders, 3PLs, and logistics providers. Not SaaS. Not templates. Purpose-built systems deployed in your environment.
+          CargoIQ is powered by <a href={site.builtBy.url} target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors font-medium">Bitontree</a> — a specialist AI logistics company with 6+ years of production AI deployments. We build custom AI systems for freight forwarders, 3PLs, and logistics providers. Not SaaS. Not templates. Purpose-built systems deployed in your environment.
         </p>
       </div>
       <div class="mt-12 max-w-4xl">
-        <img
-          src="/images/about-hero.webp"
+        <Image
+          src={aboutHeroImg}
           alt="CargoIQ team building AI systems for freight forwarding operations"
-          width="960"
-          height="540"
+          widths={[640, 960, 1180]}
+          sizes="(max-width: 1220px) calc(100vw - 40px), 960px"
           loading="eager"
           fetchpriority="high"
-          decoding="async"
+          quality={80}
           class="w-full rounded-2xl border border-line/70 shadow-lg"
         />
       </div>

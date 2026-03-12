@@ -1,4 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import controlTowerImg from '../../assets/images/4pl-control-tower.webp';
+import quoteManagementImg from '../../assets/images/quote-management.webp';
+
 const systems = [
   {
     tag: 'Live System',
@@ -52,12 +56,12 @@ const systems = [
           {/* Card image */}
           {i === 0 && (
             <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <img src="/images/4pl-control-tower.webp" alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" loading="lazy" />
+              <Image src={controlTowerImg} alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" width={590} height={192} quality={80} />
             </div>
           )}
           {i === 1 && (
             <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <img src="/images/quote-management.webp" alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" loading="lazy" />
+              <Image src={quoteManagementImg} alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" width={590} height={192} quality={80} />
             </div>
           )}
           <div class="p-8 flex flex-col flex-grow">

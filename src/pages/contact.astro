@@ -1,6 +1,8 @@
 ---
 import Page from '../layouts/Page.astro';
 import { site } from '../data/site';
+import { Image } from 'astro:assets';
+import contactImg from '../assets/images/contact-cta.webp';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -31,7 +33,7 @@ const expectations = [
 ---
 
 <Page
-  title="Book a Free Operations Audit | CargoIQ.ai"
+  title="Book a Free Freight Operations Audit | CargoIQ.ai"
   description="Book a free 30-minute discovery call. We'll map your freight operations workflow, identify automation opportunities, and deliver a custom roadmap with ROI projections."
   schema={breadcrumbSchema}
 >
@@ -55,10 +57,10 @@ const expectations = [
           Get Started
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Book a Free Operations Audit
+          Book a Free Freight Operations Audit
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          We'll map your current freight operations workflow, identify the highest-impact automation opportunities, and show you exactly what we'd build — with a timeline and expected results.
+          We'll map your current freight operations workflow, identify the highest-impact logistics automation opportunities, and show you exactly what we'd build — with a timeline and expected results.
         </p>
       </div>
     </div>
@@ -68,13 +70,12 @@ const expectations = [
   <section class="pb-0 pt-0 bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto" data-reveal>
-        <img
-          src="/images/contact-cta.webp"
+        <Image
+          src={contactImg}
           alt="Freight operations workflow being automated with CargoIQ AI systems"
-          width="960"
-          height="440"
-          loading="lazy"
-          decoding="async"
+          widths={[640, 960, 1180]}
+          sizes="(max-width: 1220px) calc(100vw - 40px), 960px"
+          quality={80}
           class="w-full rounded-2xl border border-line/70 shadow-lg"
         />
       </div>

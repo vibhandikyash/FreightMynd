@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/hero-freight-ai.webp';
 ---
 
 <section class="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
   <!-- Hero background image -->
   <div class="absolute inset-0" aria-hidden="true">
-    <img src="/images/hero-freight-ai.webp" alt="" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+    <Image src={heroImg} alt="" class="w-full h-full object-cover" widths={[640, 960, 1280, 1920]} sizes="100vw" loading="eager" fetchpriority="high" quality={75} />
     <div class="absolute inset-0 bg-gradient-to-b from-[#0D1117]/70 via-[#0D1117]/50 to-[#0D1117]/80"></div>
   </div>
 

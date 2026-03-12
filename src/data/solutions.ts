@@ -39,6 +39,8 @@ export interface Solution {
     phases: string[];
   };
   faq: Array<{ q: string; a: string }>;
+  relatedSolutions: string[];
+  relatedIntegrations: string[];
 }
 
 export const solutions: Solution[] = [
@@ -75,7 +77,7 @@ export const solutions: Solution[] = [
     problem: {
       headline: 'Your ops team is a bottleneck disguised as a process',
       description:
-        'In most 4PL control towers, a shipment cannot move forward until someone manually reads an email, opens the attached PDF (often 200–300 pages of mixed invoices, packing lists, and AWBs), identifies which pages matter, extracts the relevant data, validates it against business rules, and keys it into CargoWise or your TMS. This process takes 15–45 minutes per shipment, varies in accuracy depending on who is processing it, and breaks down entirely during peak volumes, staff turnover, or when a new supplier sends documents in a format nobody has seen before. The result: shipments stall, exceptions multiply, and your control tower becomes the slowest link in the chain it is supposed to be orchestrating.',
+        'In most 4PL control towers, a shipment cannot move forward until someone manually reads an email, opens the attached PDF (often 200–300 pages of mixed invoices, packing lists, and AWBs), identifies which pages matter, extracts the relevant data, validates it against business rules, and keys it into CargoWise or your TMS. That takes 15–45 minutes per shipment. Accuracy depends on who\'s processing and how far into their shift they are. The whole thing breaks down during peak volumes, staff turnover, or when a new supplier shows up with a format nobody has seen before. Shipments stall, exceptions multiply, and your control tower becomes the slowest link in the chain it\'s supposed to orchestrate.',
       painPoints: [
         'Ops staff spending 60–70% of their time on manual document processing instead of exception management and client communication',
         'Processing accuracy varies from 85–95% depending on the individual, the document quality, and how far into a shift they are — every error cascading into downstream exceptions',
@@ -186,19 +188,19 @@ export const solutions: Solution[] = [
     faq: [
       {
         q: 'What is 4PL control tower automation?',
-        a: 'A 4PL control tower automation system monitors all incoming shipment documents across email, SFTP, and portal sources, classifies each document type (invoice, AWB, packing list, certificate of origin, customs declaration), extracts structured data fields, validates them against your business rules and contracted rates, and pushes clean data directly into your TMS — replacing the manual reading, sorting, data entry, and cross-checking that your ops team currently performs for every shipment. It handles the full lifecycle from raw document to TMS record without human intervention, only escalating when confidence is low or a business rule exception is triggered.',
+        a: 'It watches your inboxes, SFTP drops, and portal feeds for incoming shipment documents. Each one gets classified (invoice, AWB, packing list, CoO, customs declaration), the relevant fields get extracted, validated against your business rules and contracted rates, then pushed straight into your TMS. No manual reading, no re-keying, no sorting. The system only escalates to your team when confidence is low or a business rule flags something.',
       },
       {
         q: 'Does this integrate with CargoWise?',
-        a: 'Yes. The system we built for Hellmann pushes clean XML directly into CargoWise via the eHub and Universal Gateway APIs. We handle the full complexity of CargoWise\'s XML schema — mapping extracted data to the correct modules (forwarding, customs, accounting), handling reference numbers, party data, and charge codes. We also build integrations with SAP TM, Oracle TMS, Microsoft Dynamics 365, BluJay/E2open, and other freight management systems. If your TMS has an API or accepts EDI, we can connect to it.',
+        a: 'Yes — it\'s how we built the Hellmann system. Clean XML goes directly into CargoWise via eHub and Universal Gateway. We handle the messy parts of CW\'s XML schema: mapping data to the right modules (forwarding, customs, accounting), wiring up reference numbers, party data, charge codes. We also integrate with SAP TM, Oracle TMS, Dynamics 365, and BluJay/E2open. If your TMS has an API or takes EDI, we can connect to it.',
       },
       {
         q: 'How long does implementation take?',
-        a: 'Typically 8–14 weeks from kickoff to production. We start with a 2-week discovery phase where we map your current document workflows, catalog every document type and supplier format you handle, and document your business rules and TMS field mappings. Then we build and train the extraction models on your actual documents (not generic training data), configure your validation rules, set up the TMS integration, and run UAT with your team. We deploy with full monitoring and provide 30 days of hypercare support post-launch.',
+        a: '8–14 weeks, kickoff to production. First two weeks are discovery: we map your document workflows, catalog every document type and supplier format, and nail down your business rules and TMS field mappings. Then we build and train extraction models on your actual documents — not generic training data. After that: validation rules, TMS integration, and UAT with your team. We deploy with monitoring and 30 days of hypercare.',
       },
       {
         q: 'Can it handle multiple document formats from different suppliers?',
-        a: 'Yes — this is one of the core design principles. The AI supplier onboarding module self-learns new document formats without engineering effort. When a new supplier sends their first batch, the system analyzes the layout, field positions, and data patterns to create an extraction template automatically. Over the first 5–10 batches, the template improves as the model refines its understanding through an ops-facing review interface where your team can confirm or correct extractions. Contrast this with traditional template-based OCR systems that require a developer to manually configure each new supplier format — a process that typically takes 1–3 weeks per supplier.',
+        a: 'Yes — the system self-learns new formats without engineering effort. New supplier sends their first batch? The AI analyzes layout, field positions, and data patterns to build an extraction template on the spot. Over the next 5–10 batches it sharpens itself through your ops team\'s review interface — they confirm or correct, and the model learns. Compare that to traditional template-based OCR where a developer manually maps each new supplier. That takes 1–3 weeks per supplier. This takes days.',
       },
       {
         q: 'What happens when the AI is uncertain about a document?',
@@ -217,6 +219,8 @@ export const solutions: Solution[] = [
         a: 'We offer two models: a fixed project fee for the initial build and deployment (covering discovery, development, testing, and launch), and a monthly operational fee based on document processing volume tiers. The operational fee covers infrastructure, AI model hosting, monitoring, and ongoing model improvements. There are no per-page or per-extraction charges that create unpredictable costs at scale. We size the operational fee during discovery based on your actual volumes.',
       },
     ],
+    relatedSolutions: ['document-intelligence', 'smart-invoice-processing'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
   },
   {
     slug: 'autonomous-quote-management',
@@ -238,8 +242,8 @@ export const solutions: Solution[] = [
     icon: '📋',
     color: 'brand',
     headline: 'Stop Losing Deals to Slow Quoting',
-    keywordSubheadline: 'AI-powered autonomous quote management for freight forwarders — from RFQ inbox to client quote in under 10 minutes.',
-    sub: 'Autonomous AI that generates, compares, and sends freight quotes — cutting turnaround from hours to minutes while your team focuses on relationships.',
+    keywordSubheadline: 'AI-powered freight quote automation for freight forwarders — from RFQ inbox to client quote in under 10 minutes, fully autonomous.',
+    sub: 'Autonomous AI that generates, compares, and sends freight quotes — cutting turnaround from hours to minutes while your team focuses on relationships. Our freight quote automation system handles the entire quoting lifecycle end to end.',
 
     idealFor: [
       'Freight forwarders processing 30+ RFQs per day across sea, air, and road',
@@ -251,7 +255,7 @@ export const solutions: Solution[] = [
     problem: {
       headline: 'Every hour your quote is late, your win probability drops 30%',
       description:
-        'In freight forwarding, speed kills — or speed wins. When an RFQ arrives by email, your sales rep has to read the requirements, log into 3–7 carrier portals or rate management systems, pull applicable rates, calculate margins, factor in surcharges and accessorials, create a quote document, get approval if the margin is non-standard, and send it back. For a complex multi-leg shipment, this takes 2–6 hours. For a simple lane, it still takes 30–60 minutes. Meanwhile, the shipper sent the same RFQ to 3–5 forwarders, and the first credible quote back often wins. Your best sales reps should be building relationships and closing strategic accounts — not copy-pasting rates between spreadsheets and carrier portals.',
+        'In freight forwarding, speed kills — or speed wins. When an RFQ arrives by email, your sales rep reads the requirements, logs into 3–7 carrier portals, pulls rates, calculates margins, factors in surcharges and accessorials, builds a quote document, gets approval if the margin is non-standard, and sends it back. Complex multi-leg shipment? 2–6 hours. Simple lane? Still 30–60 minutes. Meanwhile, the shipper sent the same RFQ to 3–5 forwarders, and the first credible quote back often wins. Your best sales reps should be building relationships and closing strategic accounts — not copy-pasting rates between spreadsheets and carrier portals.',
       painPoints: [
         'Average quote turnaround of 4–24 hours, while competitors using modern tools respond in under 60 minutes',
         'Sales reps spending 50–60% of their day on rate lookups and quote formatting instead of selling',
@@ -267,7 +271,7 @@ export const solutions: Solution[] = [
       {
         title: 'Automated RFQ intake from email, portals, and web forms',
         description:
-          'The system monitors your sales inbox and connected portals for incoming RFQs, extracts shipment requirements (origin, destination, commodity, weight, volume, incoterm, timeline, special requirements), and creates a structured quote request — even from unstructured email text. It handles follow-up emails that modify the original request, grouping them into a single evolving RFQ.',
+          'The freight quote automation pipeline monitors your sales inbox and connected portals for incoming RFQs, extracts shipment requirements (origin, destination, commodity, weight, volume, incoterm, timeline, special requirements), and creates a structured quote request — even from unstructured email text. It handles follow-up emails that modify the original request, grouping them into a single evolving RFQ.',
       },
       {
         title: 'AI-powered rate comparison across carriers and rate sources',
@@ -347,7 +351,7 @@ export const solutions: Solution[] = [
     faq: [
       {
         q: 'How does autonomous quote management work?',
-        a: 'The system monitors incoming RFQs from email, web forms, and freight portals. When an RFQ arrives, it extracts shipment requirements using natural language understanding (handling unstructured emails, not just forms), pulls applicable rates from all your connected rate sources (carrier contracts, rate management systems, spot rate APIs), calculates optimal margin based on customer tier, lane competitiveness, and your pricing rules, generates a branded quote document, and either auto-sends or queues for rep review — all without manual intervention. The entire process runs in minutes, not hours.',
+        a: 'The system watches your inboxes, web forms, and freight portals for incoming RFQs. When one lands, it reads the email (actual natural language understanding, not keyword matching), pulls rates from your carrier contracts, rate management systems, and spot APIs, calculates the right margin based on customer tier and lane competitiveness, generates a branded quote doc, and either sends it or queues it for your rep to review. Minutes, not hours. No manual intervention unless you want it.',
       },
       {
         q: 'Can it handle complex multi-leg quotes?',
@@ -355,7 +359,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Does it replace my sales team?',
-        a: 'No — it replaces the spreadsheet work your sales team does, not the selling. Today, your best reps spend 50–60% of their time on rate lookups, carrier portal navigation, margin calculations, and document formatting. This system handles all of that, so your reps can spend their time on what actually wins business: building relationships, understanding customer needs, negotiating strategic deals, and proactively reaching out to prospects. Most of our clients see their reps handle 3x the quote volume while reporting higher job satisfaction because they\'re doing sales work, not data entry.',
+        a: 'No. It replaces the spreadsheet work, not the selling. Today, your best reps spend 50–60% of their time on rate lookups, carrier portal navigation, margin calculations, and document formatting. This system handles all of that, so your reps can spend their time on what actually wins business: building relationships, understanding customer needs, negotiating strategic deals, and proactively reaching out to prospects. Most of our clients see their reps handle 3x the quote volume while reporting higher job satisfaction because they\'re doing sales work, not data entry.',
       },
       {
         q: 'How does it connect to my rate databases?',
@@ -370,6 +374,8 @@ export const solutions: Solution[] = [
         a: 'Strict customer isolation is enforced at every level. Rate negotiations, margin agreements, and pricing history for Customer A are never visible to or influenced by Customer B\'s data, even though the system optimizes across your entire book of business. The margin optimization engine uses anonymized market patterns, not cross-customer data. Access controls ensure each sales rep only sees quotes and pricing data for their assigned accounts.',
       },
     ],
+    relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
   },
   {
     slug: 'document-intelligence',
@@ -503,7 +509,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'How accurate is the extraction?',
-        a: 'We measure accuracy at the field level, not the document level, because one wrong field on an otherwise perfect extraction still matters in freight. On structured documents (standard-format invoices, AWBs, BLs), field-level accuracy exceeds 99%. On unstructured or non-standard formats (handwritten notes, unusual layouts, degraded scans), accuracy is 95%+. Every field includes a confidence score — fields below the threshold (configurable, typically 85–90%) are flagged for human review with the specific field highlighted, not the entire document. This means your team only touches the 5–10% of data points that genuinely need human judgment.',
+        a: 'We measure at the field level, not document level — because one wrong field on an otherwise perfect extraction still matters. Structured documents (standard invoices, AWBs, BLs): 99%+ field-level accuracy. Unstructured or non-standard formats (handwritten notes, unusual layouts, degraded scans): 95%+. Every field gets a confidence score. Below the threshold (configurable, typically 85–90%)? That specific field gets flagged for review — not the whole document. Your team only touches the 5–10% that genuinely needs a human call.',
       },
       {
         q: 'Can it handle handwritten or poor-quality scans?',
@@ -522,6 +528,8 @@ export const solutions: Solution[] = [
         a: 'A typical document processing operator costs $3,000–$6,000/month (fully loaded, depending on location) and processes 80–120 documents per day at 92–96% accuracy. Our system processes the same volume for a fraction of that cost at 99%+ accuracy, running 24/7 without breaks, turnover, or training time. Most clients see ROI within 3–4 months. We price on monthly volume tiers, not per-document, so costs are predictable and decrease per-unit as volume grows.',
       },
     ],
+    relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
+    relatedIntegrations: ['cargowise', 'oracle-tms'],
   },
   {
     slug: 'freight-pricing-ai',
@@ -544,7 +552,7 @@ export const solutions: Solution[] = [
     color: 'accent',
     headline: 'Price Smarter. Win More. Lose Less Margin.',
     keywordSubheadline: 'AI-powered freight pricing intelligence — dynamic rate optimization, market benchmarking, and margin protection for sea and air freight forwarders.',
-    sub: 'AI that analyzes market rates, optimizes your pricing, and gives your sales team real-time intelligence — so you win more deals at better margins.',
+    sub: 'Freight pricing software powered by AI that analyzes market rates, optimizes your pricing, and gives your sales team real-time intelligence — so you win more deals at better margins through dynamic freight pricing.',
 
     idealFor: [
       'Freight forwarders whose pricing decisions are based on gut feel, outdated spreadsheets, or "what we charged last time"',
@@ -556,7 +564,7 @@ export const solutions: Solution[] = [
     problem: {
       headline: 'You are either leaving margin on the table or losing deals you should have won',
       description:
-        'Freight pricing is one of the highest-leverage decisions in forwarding, yet most companies treat it as an afterthought. Rate data lives in disconnected spreadsheets, carrier portals, and individual reps\' heads. Pricing decisions are made based on "what we charged this customer last time" or "what feels competitive" rather than real-time market intelligence. The result: you over-price stable lanes and lose volume to hungrier competitors, or you under-price volatile lanes and give away margin during surges. Neither outcome is visible until the P&L lands — by then, the damage is done. Meanwhile, your pricing team spends most of their time on data gathering and rate maintenance rather than strategic analysis.',
+        'Freight pricing is one of the most impactful decisions in forwarding, yet most companies treat it as an afterthought. Rate data lives in disconnected spreadsheets, carrier portals, and individual reps\' heads. Pricing decisions are made based on "what we charged this customer last time" or "what feels competitive" rather than real-time market intelligence. The result: you over-price stable lanes and lose volume to hungrier competitors, or you under-price volatile lanes and give away margin during surges. Neither outcome is visible until the P&L lands — by then, the damage is done. Meanwhile, your pricing team spends most of their time on data gathering and rate maintenance rather than strategic analysis.',
       painPoints: [
         'Rate data scattered across 5–15 carrier portals, internal spreadsheets, rate management systems, and email confirmations — no single source of truth',
         'Pricing decisions lag market movements by days or weeks because manual rate analysis cannot keep pace with volatile markets',
@@ -574,19 +582,19 @@ export const solutions: Solution[] = [
           'Integrates with Xeneta, Freightos Baltic Index, carrier spot rate APIs, and your own historical data to provide real-time visibility into where the market is on any lane. Benchmarks your current pricing against market rates, contracted rates, and competitor positioning (inferred from win/loss patterns) — showing you exactly where you are over- or under-priced.',
       },
       {
-        title: 'Dynamic pricing optimization by lane, customer, and volume',
+        title: 'Dynamic freight pricing optimization by lane, customer, and volume',
         description:
-          'Replaces flat markups with intelligent pricing that considers lane competitiveness, customer lifetime value, volume commitments, market direction (rates trending up or down), and your capacity position. The system recommends optimal pricing for each quote that balances win probability against margin targets — not just the lowest price that wins, but the highest price that still wins.',
+          'Replaces flat markups with intelligent dynamic freight pricing that considers lane competitiveness, customer lifetime value, volume commitments, market direction (pricing trending up or down), and your capacity position. The system recommends optimal pricing for each quote that balances win probability against margin targets — not just the lowest price that wins, but the highest price that still wins.',
       },
       {
-        title: 'Margin analysis and protection alerts',
+        title: 'Margin analysis and pricing protection alerts',
         description:
-          'Real-time margin visibility across your book of business — by lane, customer, mode, and time period. Automated alerts when margins drop below thresholds (globally or per lane), when carrier rate changes make your quotes uncompetitive or under-priced, or when a customer\'s volume-to-margin ratio deteriorates. This replaces the "surprise" in your monthly P&L with proactive intervention.',
+          'Real-time margin visibility across your book of business — by lane, customer, mode, and time period. Automated alerts when margins drop below thresholds (globally or per lane), when carrier pricing changes make your quotes uncompetitive or under-priced, or when a customer\'s volume-to-margin ratio deteriorates. This freight pricing software replaces the "surprise" in your monthly P&L with proactive intervention.',
       },
       {
-        title: 'Carrier rate comparison and normalization',
+        title: 'Carrier pricing comparison and normalization',
         description:
-          'Automatically aggregates rates from all your carrier sources, normalizes them to a comparable format (handling different surcharge structures, currency, and validity periods), and presents apples-to-apples comparisons. Includes total cost analysis that factors in carrier reliability, transit time, and your historical claims rate — because the cheapest rate isn\'t always the cheapest shipment.',
+          'Automatically aggregates pricing from all your carrier sources, normalizes them to a comparable format (handling different surcharge structures, currency, and validity periods), and presents apples-to-apples comparisons. Includes total cost analysis that factors in carrier reliability, transit time, and your historical claims rate — because the cheapest rate isn\'t always the cheapest shipment.',
       },
       {
         title: 'Historical trend analysis and rate forecasting',
@@ -651,7 +659,7 @@ export const solutions: Solution[] = [
     faq: [
       {
         q: 'How does freight pricing AI work?',
-        a: 'It ingests data from three categories: your internal data (historical rates, booking data, win/loss records, carrier contracts), market data (Xeneta, Freightos Baltic Index, carrier spot rate APIs), and operational data (carrier reliability scores, transit time performance, claims history). It then builds a pricing model for each lane-customer combination that recommends the optimal price point — the price that maximizes your expected margin by balancing win probability against markup. The model continuously learns from new data, so pricing recommendations improve as it sees more of your quoting outcomes.',
+        a: 'Three data feeds: your internal data (historical rates, bookings, win/loss records, carrier contracts), market data (Xeneta, Freightos Baltic Index, spot rate APIs), and operational data (carrier reliability, transit times, claims history). From that, the system builds a pricing model per lane-customer combination. It recommends the price that maximizes expected margin — not just the lowest price that wins, but the highest price that still wins. The model keeps learning from your quoting outcomes, so recommendations sharpen over time.',
       },
       {
         q: 'Can it predict rate changes?',
@@ -674,6 +682,8 @@ export const solutions: Solution[] = [
         a: 'A rate management system stores and retrieves rates — it tells you what a carrier charges. Freight Pricing AI tells you what you should charge. It adds the intelligence layer: market positioning, dynamic margin optimization, win probability modeling, trend forecasting, and proactive repricing alerts. Think of your rate management system as the data source and the pricing AI as the decision engine that sits on top of it. They complement each other — we integrate with your existing rate management system, not replace it.',
       },
     ],
+    relatedSolutions: ['autonomous-quote-management', 'sea-freight-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
   },
   {
     slug: 'sea-freight-automation',
@@ -696,7 +706,7 @@ export const solutions: Solution[] = [
     color: 'brand',
     headline: 'Your Sea Freight Ops on Autopilot',
     keywordSubheadline: 'End-to-end sea freight automation — from booking confirmation to final delivery, with proactive exception management and zero reactive firefighting.',
-    sub: 'AI systems that automate the entire sea freight workflow — from booking confirmation to final delivery — eliminating manual touchpoints across your ocean operations.',
+    sub: 'Ocean freight automation systems that automate the entire sea freight workflow — from booking confirmation to final delivery — eliminating manual touchpoints across your ocean operations with container tracking AI and proactive exception management.',
 
     idealFor: [
       'NVOCCs and freight forwarders handling 200+ TEU per month',
@@ -732,9 +742,9 @@ export const solutions: Solution[] = [
           'Extracts all BL fields from carrier-issued draft BLs, validates against shipping instructions and booking data, identifies discrepancies (shipper/consignee mismatches, weight differences, commodity description errors), and flags required amendments with specific field-level corrections. For straightforward amendments, the system can draft the amendment request to the carrier in the required format, cutting the amendment cycle from 3–5 emails to 1.',
       },
       {
-        title: 'Real-time container tracking with proactive exception alerting',
+        title: 'Container tracking AI with proactive exception alerting',
         description:
-          'Aggregates tracking data from carrier APIs, AIS vessel tracking, and port community systems to provide real-time visibility across your entire shipment portfolio. Instead of logging into carrier portals, your team gets a unified dashboard showing all active shipments with status, ETA, and risk indicators. The system proactively alerts on: late departures, transshipment delays, ETA changes exceeding tolerance, unusual port dwell times, and approaching free-time deadlines.',
+          'Our container tracking AI aggregates tracking data from carrier APIs, AIS vessel tracking, and port community systems to provide real-time ocean freight automation visibility across your entire shipment portfolio. Instead of logging into carrier portals, your team gets a unified dashboard showing all active shipments with status, ETA, and risk indicators. The system proactively alerts on: late departures, transshipment delays, ETA changes exceeding tolerance, unusual port dwell times, and approaching free-time deadlines.',
       },
       {
         title: 'Automated customs documentation preparation',
@@ -809,8 +819,8 @@ export const solutions: Solution[] = [
 
     faq: [
       {
-        q: 'What parts of sea freight can be automated?',
-        a: 'Virtually every repetitive, data-driven step: booking confirmation processing, shipping instruction collection and validation, BL extraction and amendment management, container tracking and milestone monitoring, carrier communication parsing (schedule changes, equipment updates, ETA revisions), customs documentation preparation, pre-alert generation, demurrage/detention tracking, carrier performance monitoring, and compliance reporting. The only steps that remain manual are genuine decision points: should we rebook this shipment on a faster service? Should we accept this BL discrepancy or push the amendment? Should we escalate this delay to the client? The system presents these decisions with full context — your team decides.',
+        q: 'What parts of sea freight and ocean freight automation can be automated?',
+        a: 'Virtually every repetitive, data-driven step in ocean freight automation: booking confirmation processing, shipping instruction collection and validation, BL extraction and amendment management, container tracking and milestone monitoring, carrier communication parsing (schedule changes, equipment updates, ETA revisions), customs documentation preparation, pre-alert generation, demurrage/detention tracking, carrier performance monitoring, and compliance reporting. The only steps that remain manual are genuine decision points: should we rebook this shipment on a faster service? Should we accept this BL discrepancy or push the amendment? Should we escalate this delay to the client? The system presents these decisions with full context — your team decides.',
       },
       {
         q: 'Does it work with all shipping lines?',
@@ -833,6 +843,8 @@ export const solutions: Solution[] = [
         a: 'We always run a parallel period (typically 2–4 weeks) where the automation processes shipments alongside your manual team. During this period, the system processes documents and generates updates, but your team continues to perform their normal tasks. We compare outputs daily — any discrepancy between the automated and manual process is investigated and resolved. This builds confidence and identifies edge cases specific to your operations. Once accuracy is validated and the team is comfortable, shipments are migrated to automated processing in controlled batches, not all at once.',
       },
     ],
+    relatedSolutions: ['document-intelligence', 'air-freight-automation'],
+    relatedIntegrations: ['cargowise', 'oracle-tms'],
   },
   {
     slug: 'air-freight-automation',
@@ -855,7 +867,7 @@ export const solutions: Solution[] = [
     color: 'brand',
     headline: 'Air Freight Speed Meets AI Precision',
     keywordSubheadline: 'AI-powered air freight automation — AWB processing, rate management, flight tracking, and documentation for time-critical air operations.',
-    sub: 'AI systems purpose-built for the speed of air freight — automating AWB processing, rate management, bookings, and tracking so your ops team keeps pace with same-day demands.',
+    sub: 'Air cargo automation systems purpose-built for the speed of air freight — automating AWB (airway bill) processing, rate management, bookings, and tracking so your ops team keeps pace with same-day demands.',
 
     idealFor: [
       'Air freight forwarders handling 50+ shipments per week where speed-to-quote and speed-to-ship are competitive differentiators',
@@ -869,7 +881,7 @@ export const solutions: Solution[] = [
       description:
         'Air freight is the mode where speed matters most — and where operational inefficiency hurts most. A shipment that misses its booked flight because documentation was 15 minutes late doesn\'t wait for the next vessel in 7 days; it waits for the next available flight, which might be tomorrow or might be next week if capacity is tight. Yet most air freight operations still run on the same manual processes as sea freight, just compressed into shorter timelines: manually preparing AWBs from shipping instructions, logging into airline portals to book space and check availability, manually tracking flight status across multiple airline websites, preparing security and customs documentation by hand, and managing the cascade of rebookings when flights are cancelled or delayed. The shorter the timeline, the more damage manual errors and delays cause.',
       painPoints: [
-        'AWB preparation takes 20–30 minutes per shipment manually — multiply by 50+ shipments per week and you have an entire FTE just doing data entry',
+        'Airway bill (AWB) preparation takes 20–30 minutes per shipment manually — multiply by 50+ shipments per week and you have an entire FTE just doing airway bill processing and data entry',
         'Airline booking portals require manual login and search for each booking — ops staff switch between 5–10 airline portals daily, each with different interfaces',
         'Flight tracking is done by manually checking airline cargo tracking websites, often after the client asks for an update — reactive, not proactive',
         'DG documentation (Shipper\'s Declaration, DG handling forms) requires extreme accuracy — one wrong UN number or packing group can ground a shipment and trigger regulatory scrutiny',
@@ -881,9 +893,9 @@ export const solutions: Solution[] = [
 
     capabilities: [
       {
-        title: 'Automated AWB processing and validation',
+        title: 'Automated AWB (airway bill) processing and validation',
         description:
-          'Generates Master and House AWBs from shipping instructions and booking data, auto-populating all IATA-standard fields. Validates against IATA regulations (correct SHC codes, weight/dimension consistency, airport codes, commodity descriptions against dangerous goods lists). For incoming AWBs from partner agents, extracts all fields and validates against your booking records. Supports both legacy paper AWB workflows and IATA e-AWB standards.',
+          'Generates Master and House airway bills from shipping instructions and booking data, auto-populating all IATA-standard fields. Validates against IATA regulations (correct SHC codes, weight/dimension consistency, airport codes, commodity descriptions against dangerous goods lists). For incoming AWBs from partner agents, our air cargo automation engine extracts all fields and validates against your booking records. Supports both legacy paper airway bill workflows and IATA e-AWB standards.',
       },
       {
         title: 'AI-powered carrier rate comparison and booking',
@@ -986,6 +998,8 @@ export const solutions: Solution[] = [
         a: 'The system supports both and knows which to apply. For routes and airlines that support IATA e-AWB (the majority of international air cargo), the system generates e-AWB compliant data sets and transmits them via the appropriate channel. For routes or airlines that still require paper AWBs, the system generates print-ready AWB documents. It also handles the mixed scenarios where the MAWB is electronic but certain HAWBs require paper, or where e-AWB is available on the first leg but not the transshipment leg.',
       },
     ],
+    relatedSolutions: ['sea-freight-automation', 'document-intelligence'],
+    relatedIntegrations: ['cargowise', 'descartes'],
   },
   {
     slug: '3pl-4pl-operations',
@@ -1008,7 +1022,7 @@ export const solutions: Solution[] = [
     color: 'accent',
     headline: 'Run Multi-Client Ops Without Scaling Headcount',
     keywordSubheadline: 'AI automation for 3PL and 4PL logistics providers — multi-client workflow orchestration, SLA monitoring, and intelligent reporting.',
-    sub: 'AI systems that let 3PL and 4PL providers manage more clients, hit SLAs consistently, and scale operations — without proportionally scaling your team.',
+    sub: '3PL automation software and AI systems that let third-party logistics automation providers manage more clients, hit SLAs consistently, and scale operations — without proportionally scaling your team.',
 
     idealFor: [
       '3PL and 4PL providers managing 10+ clients with different workflows, SLAs, and reporting requirements',
@@ -1116,7 +1130,7 @@ export const solutions: Solution[] = [
     faq: [
       {
         q: 'How does this differ from single-client automation?',
-        a: 'Single-client automation optimizes one workflow. Multi-client automation solves a fundamentally different problem: running many different workflows simultaneously with strict isolation between clients while maintaining operational efficiency. This requires a configuration-driven architecture where client-specific rules, document formats, SLA definitions, escalation paths, and reporting templates are parameters — not hardcoded logic. It also requires cross-client intelligence: the ability to aggregate performance data, identify patterns across clients, and provide operational insights that single-client systems cannot generate.',
+        a: 'Single-client automation optimizes one workflow. This is a different problem entirely: running many workflows simultaneously with strict client isolation and no efficiency loss. That means the architecture has to be configuration-driven — client rules, document formats, SLA definitions, escalation paths, and reporting templates are all parameters, not hardcoded. And it unlocks something single-client systems can\'t do: cross-client intelligence. Aggregate performance data, spot patterns, surface operational insights across your entire portfolio.',
       },
       {
         q: 'Can each client have different workflows?',
@@ -1135,6 +1149,8 @@ export const solutions: Solution[] = [
         a: 'We build reusable integration adapters for common systems (CargoWise, SAP, Oracle, Dynamics) that handle the connection once and then configure per client (different instance, different field mappings, different data exchange frequency). For clients with proprietary systems, we build custom adapters that follow the same pattern — the adapter connects to their system, and the platform\'s configuration layer handles client-specific mapping. This approach means that adding a new client on an already-connected system type is configuration, not development. Only truly unique system integrations require custom engineering.',
       },
     ],
+    relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
+    relatedIntegrations: ['sap-tm', 'oracle-tms'],
   },
   {
     slug: 'smart-invoice-processing',
@@ -1157,7 +1173,7 @@ export const solutions: Solution[] = [
     color: 'accent',
     headline: 'Invoices That Process Themselves',
     keywordSubheadline: 'AI-powered smart invoice processing for freight — extraction, 3-way matching, overcharge detection, and direct ERP integration.',
-    sub: 'AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors.',
+    sub: 'Invoice processing software powered by AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Purpose-built freight invoice automation for forwarders and 3PLs.',
 
     idealFor: [
       'Freight forwarders and 3PLs processing 200+ carrier invoices per month',
@@ -1173,7 +1189,7 @@ export const solutions: Solution[] = [
       painPoints: [
         'AP team processing 15–25 invoices per person per day manually, with accuracy degrading beyond 20 invoices as fatigue sets in',
         'Carrier overcharges of 3–5% of freight spend go undetected because manual rate auditing is too time-consuming to apply to every invoice',
-        'Three-way matching (PO/booking, delivery receipt, invoice) is done manually by cross-referencing documents in different systems — taking 10–20 minutes per invoice',
+        'Three-way matching (PO/booking, delivery receipt, invoice) is done manually by cross-referencing documents in different systems — taking 10–20 minutes per invoice. Without freight invoice automation, this bottleneck compounds at scale.',
         'Duplicate invoices from carriers (same charges sent multiple times with slightly different invoice numbers) slip through manual processing at a rate of 1–2%',
         'Month-end close is delayed by 3–5 days because freight invoice reconciliation cannot be completed in time',
         'Invoice coding errors (wrong GL account, wrong cost center) create downstream accounting issues that take hours to trace and correct',
@@ -1188,9 +1204,9 @@ export const solutions: Solution[] = [
           'Processes freight invoices from any carrier, agent, or vendor regardless of format — structured (EDI, CSV), semi-structured (PDF with tables), or unstructured (scanned paper invoices). Extracts all charge line items, reference numbers, dates, amounts, currencies, tax amounts, and party details. Handles multi-currency invoices and invoices with 100+ line items (common in consolidated sea freight billing).',
       },
       {
-        title: 'Automated 3-way matching (PO/booking, receipt, invoice)',
+        title: 'Automated 3-way invoice matching (PO/booking, receipt, invoice)',
         description:
-          'Matches each invoice against the original booking or purchase order and the delivery/receipt confirmation. Identifies mismatches at the line-item level: quantity differences, rate discrepancies, unauthorized charges, and missing credits. The matching engine handles the reality of freight billing — where reference numbers are not always consistent across documents and charges may span multiple bookings.',
+          'Our freight invoice automation engine performs 3-way invoice matching — comparing each invoice against the original booking or purchase order and the delivery/receipt confirmation. Identifies mismatches at the line-item level: quantity differences, rate discrepancies, unauthorized charges, and missing credits. The 3-way invoice matching engine handles the reality of freight billing — where reference numbers are not always consistent across documents and charges may span multiple bookings.',
       },
       {
         title: 'Carrier rate audit and overcharge detection',
@@ -1265,7 +1281,7 @@ export const solutions: Solution[] = [
     faq: [
       {
         q: 'How does smart invoice processing work?',
-        a: 'The system receives invoices from all channels — email attachments, carrier portals, EDI feeds, or SFTP drops. For each invoice, it: extracts all charge line items and header data using a combination of OCR and LLM-based extraction, matches the invoice to the corresponding booking or PO using reference number matching and fuzzy logic (handling the reality that reference numbers are often inconsistent across carrier systems), audits every charge line against your contracted rates (base rates, surcharges, weight calculations, currency conversions), flags discrepancies and generates dispute documentation, routes clean invoices for automatic posting or flagged invoices for human review, and posts approved invoices to your ERP with correct GL coding. The entire process runs in minutes per invoice, not 15–20 minutes.',
+        a: 'Invoices come in from email, carrier portals, EDI, or SFTP. For each one, the system extracts every charge line item and header field, matches it to the corresponding booking or PO (using fuzzy matching because reference numbers are never consistent across carrier systems), audits each charge against your contracted rates — base rates, surcharges, weight calcs, currency conversions — and flags anything that doesn\'t match. Clean invoices route straight to your ERP with correct GL coding. Flagged ones go to a reviewer with full context. The whole thing takes minutes per invoice instead of 15–20.',
       },
       {
         q: 'Can it detect carrier overcharges?',
@@ -1288,5 +1304,7 @@ export const solutions: Solution[] = [
         a: 'For most freight companies, the system reaches positive ROI within 2–4 months through three value drivers: AP labor savings (80% reduction in manual processing time frees your team for higher-value work), overcharge recovery (3–5% of freight spend identified and recovered), and late payment penalty elimination (faster processing means invoices are paid on time, avoiding penalties and improving carrier relationships). For a company spending $5M annually on freight, the overcharge recovery alone (3–5% = $150K–$250K) typically exceeds the annual system cost.',
       },
     ],
+    relatedSolutions: ['document-intelligence', '3pl-4pl-operations'],
+    relatedIntegrations: ['cargowise', 'microsoft-dynamics'],
   },
 ];

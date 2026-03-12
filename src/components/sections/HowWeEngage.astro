@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import engageImg from '../../assets/images/how-we-engage.webp';
+
 const steps = [
   {
     num: '01',
@@ -43,7 +46,7 @@ const steps = [
 
     <!-- Process illustration -->
     <div class="mb-10 rounded-2xl overflow-hidden border border-line/70 bg-white" data-reveal>
-      <img src="/images/how-we-engage.webp" alt="CargoIQ implementation process — discovery, architecture, build, and deploy phases" class="w-full h-auto" loading="lazy" />
+      <Image src={engageImg} alt="CargoIQ implementation process — discovery, architecture, build, and deploy phases" class="w-full h-auto" widths={[640, 960, 1180]} sizes="(max-width: 1220px) calc(100vw - 40px), 1180px" quality={80} />
     </div>
 
     <!-- Steps -->
