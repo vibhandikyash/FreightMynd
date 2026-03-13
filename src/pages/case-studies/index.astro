@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 import { caseStudies } from '../../data/case-studies';
 
@@ -31,6 +32,9 @@ const itemListSchema = {
   description="Real AI case studies for freight forwarders — 4PL control towers, RFQ automation, document processing. See measurable ROI from production deployments."
   schema={[breadcrumbSchema, itemListSchema]}
 >
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Case Studies' }]} />
+
   <!-- Hero -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
     <div class="container">

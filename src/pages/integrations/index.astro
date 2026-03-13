@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 import { integrations } from '../../data/integrations';
 
@@ -31,6 +32,9 @@ const itemListSchema = {
   description="Direct AI integration with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. No middleware — our systems connect to the freight management system you already run."
   schema={[breadcrumbSchema, itemListSchema]}
 >
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Integrations' }]} />
+
   <!-- Hero -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
     <div class="container">

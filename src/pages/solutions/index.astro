@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import SolutionIcon from '../../components/ui/SolutionIcon.astro';
 import { site } from '../../data/site';
 import { solutions } from '../../data/solutions';
@@ -32,6 +33,9 @@ const itemListSchema = {
   description="Custom-built AI systems for freight forwarders — 4PL control tower automation, document intelligence, autonomous quoting, freight pricing AI, and more. Every system built for your stack."
   schema={[breadcrumbSchema, itemListSchema]}
 >
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Solutions' }]} />
+
   <!-- Hero -->
   <section class="pt-28 pb-16 md:pt-36 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
     <div class="container">
