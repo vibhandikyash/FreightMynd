@@ -1,6 +1,7 @@
 ---
 import { solutions } from '../../data/solutions';
 import { integrations } from '../../data/integrations';
+import SolutionIcon from '../ui/SolutionIcon.astro';
 
 const solutionItems = solutions.map(s => ({
   title: s.shortTitle,
@@ -74,7 +75,9 @@ const navLinks = [
       <div class="grid grid-cols-2 gap-x-2 gap-y-1">
         {solutionItems.map(item => (
           <a href={item.href} class="nav-dropdown-item">
-            <span class="text-lg flex-shrink-0" aria-hidden="true">{item.icon}</span>
+            <div class="w-8 h-8 rounded-lg bg-brand-light flex items-center justify-center flex-shrink-0">
+              <SolutionIcon slug={item.href.split('/').pop() || ''} fallbackEmoji={item.icon} class="w-4 h-4 text-brand" />
+            </div>
             <div class="min-w-0">
               <p class="text-sm font-semibold text-ink">{item.title}</p>
               <p class="text-xs text-ink-4 leading-snug truncate">{item.description}</p>
@@ -152,7 +155,9 @@ const navLinks = [
             <div class="acc-panel mt-1 ml-3 pl-3 border-l border-line/50" style="display:none;" data-accordion-panel={link.label}>
               {link.dropdown.map(item => (
                 <a href={item.href} class="flex items-start gap-2.5 px-3 py-2.5 rounded-lg hover:bg-surface transition-colors">
-                  {item.icon && <span class="text-base mt-0.5 flex-shrink-0" aria-hidden="true">{item.icon}</span>}
+                  {item.icon && <div class="w-7 h-7 rounded-lg bg-brand-light flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <SolutionIcon slug={item.href.split('/').pop() || ''} fallbackEmoji={item.icon} class="w-3.5 h-3.5 text-brand" />
+                  </div>}
                   <div class="min-w-0">
                     <p class="text-sm font-semibold text-ink">{item.title}</p>
                     <p class="text-xs text-ink-4 leading-snug">{item.description}</p>

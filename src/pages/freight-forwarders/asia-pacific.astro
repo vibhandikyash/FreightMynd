@@ -42,25 +42,25 @@ const faqSchema = {
 
 const capabilities = [
   {
-    icon: '📦',
+    icon: 'box',
     title: 'High-Volume Batch Processing',
     description: 'Process thousands of documents daily across busy APAC trade corridors. Our pipeline handles 200-300 page batches at near-zero failure — built for the volume that APAC freight operations demand.',
     href: '/solutions/document-intelligence',
   },
   {
-    icon: '🔄',
+    icon: 'workflow',
     title: 'Multi-Format Supplier Onboarding',
     description: 'Self-learning AI that maps new supplier document formats automatically. Critical for APAC operations where supplier diversity spans dozens of countries, languages, and document standards.',
     href: '/solutions/4pl-control-tower-automation',
   },
   {
-    icon: '🚢',
+    icon: 'ship',
     title: 'Sea Freight Automation',
     description: 'Automate booking confirmations, sailing schedules, container tracking, and ocean freight documentation across major APAC corridors — China-US, Intra-Asia, and Asia-Europe.',
     href: '/solutions/sea-freight-automation',
   },
   {
-    icon: '🔗',
+    icon: 'integration',
     title: 'CargoWise Integration',
     description: 'Native CargoWise integration — the dominant TMS across APAC freight forwarders in Australia, Singapore, Hong Kong, and the broader region. Direct XML push, zero manual entry.',
     href: '/integrations/cargowise',
@@ -165,7 +165,14 @@ const challenges = [
           <a href={card.href}
              class="group p-7 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
              data-reveal data-reveal-delay={String(Math.min(i + 1, 4))}>
-            <span class="text-2xl mb-4" aria-hidden="true">{card.icon}</span>
+            <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                {card.icon === 'box' && <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />}
+                {card.icon === 'workflow' && <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />}
+                {card.icon === 'ship' && <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.149-.504 1.149-1.125v-5.648a3.568 3.568 0 00-.927-2.403L16.5 5.25H6l-2.972 4.324a3.568 3.568 0 00-.928 2.403v5.648c0 .621.504 1.125 1.125 1.125H6.75" />}
+                {card.icon === 'integration' && <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />}
+              </svg>
+            </div>
             <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors">{card.title}</h3>
             <p class="text-sm text-ink-3 leading-relaxed">{card.description}</p>
           </a>

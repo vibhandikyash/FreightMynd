@@ -15,17 +15,17 @@ const breadcrumbSchema = {
 
 const expectations = [
   {
-    icon: '📞',
+    icon: 'call',
     title: '30-Minute Discovery Call',
     description: 'A focused conversation about your freight operations, current pain points, and what automation could look like.',
   },
   {
-    icon: '🗺️',
+    icon: 'map',
     title: 'Operations Workflow Mapping',
     description: 'We map your current document flows, quoting processes, and TMS interactions to identify the highest-impact automation targets.',
   },
   {
-    icon: '📊',
+    icon: 'roadmap',
     title: 'Custom Automation Roadmap',
     description: 'A detailed proposal with timeline, expected results, and ROI projections — specific to your operation.',
   },
@@ -91,7 +91,23 @@ const expectations = [
       <div class="grid md:grid-cols-3 gap-6">
         {expectations.map((item, i) => (
           <div class="p-6 rounded-2xl border border-line/70 bg-surface/30" data-reveal data-reveal-delay={String(i + 1)}>
-            <span class="text-2xl mb-4 block" aria-hidden="true">{item.icon}</span>
+            <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
+              {item.icon === 'call' && (
+                <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              )}
+              {item.icon === 'map' && (
+                <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                </svg>
+              )}
+              {item.icon === 'roadmap' && (
+                <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                </svg>
+              )}
+            </div>
             <h3 class="text-lg font-bold text-ink mb-2">{item.title}</h3>
             <p class="text-sm text-ink-3 leading-relaxed">{item.description}</p>
           </div>

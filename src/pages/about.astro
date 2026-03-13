@@ -15,17 +15,17 @@ const breadcrumbSchema = {
 
 const differentiators = [
   {
-    icon: '🔒',
+    icon: 'ownership',
     title: 'You Own It',
     description: 'No subscription. No vendor lock-in. No price hike when you scale. The system we build is yours — deployed in your environment, maintained on your terms.',
   },
   {
-    icon: '🔧',
+    icon: 'stack',
     title: 'Your Stack',
     description: 'We integrate with your TMS — CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, Descartes — not ours. Your carrier portals. Your data formats.',
   },
   {
-    icon: '🎯',
+    icon: 'edge',
     title: 'Your Edge Cases',
     description: 'Every freight forwarder has lanes, suppliers, and document formats that don\'t fit a template. We build those in from day one — not as an afterthought.',
   },
@@ -268,7 +268,23 @@ const steps = [
         {differentiators.map((diff, i) => (
           <div class="p-8 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:bg-white/[0.08] transition-all duration-300"
                data-reveal data-reveal-delay={String(i + 1)}>
-            <span class="text-3xl mb-5 block" aria-hidden="true">{diff.icon}</span>
+            <div class="w-12 h-12 rounded-xl bg-brand/20 flex items-center justify-center mb-5">
+              {diff.icon === 'ownership' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+              )}
+              {diff.icon === 'stack' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+                </svg>
+              )}
+              {diff.icon === 'edge' && (
+                <svg class="w-6 h-6 text-brand-mid" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                </svg>
+              )}
+            </div>
             <h3 class="text-xl font-bold text-white mb-3">{diff.title}</h3>
             <p class="text-white/60 leading-relaxed">{diff.description}</p>
           </div>

@@ -137,6 +137,18 @@
     overflow-x: hidden;
   }
 
+  /* Prose links — for HTML content rendered via set:html */
+  .text-ink-3 a {
+    color: var(--color-brand);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  .text-ink-3 a:hover {
+    color: var(--color-brand-dark);
+  }
+
   /* Scroll reveal states */
   [data-reveal] {
     opacity: 0;
