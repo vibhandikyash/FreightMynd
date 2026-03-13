@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 import { getCollection } from 'astro:content';
 
@@ -44,15 +45,7 @@ function formatDate(date: Date): string {
   schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Breadcrumb -->
-  <div class="bg-white border-b border-line">
-    <div class="container py-3 pt-28">
-      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-mono text-ink-4">
-        <a href="/" class="hover:text-ink transition-colors">Home</a>
-        <span aria-hidden="true">/</span>
-        <span class="text-ink-3">Blog</span>
-      </nav>
-    </div>
-  </div>
+  <Breadcrumb items={[{ label: 'Blog' }]} />
 
   <!-- Hero -->
   <section class="bg-white border-b border-line">

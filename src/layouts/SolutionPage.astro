@@ -1,5 +1,6 @@
 ---
 import Page from './Page.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
 import SolutionIcon from '../components/ui/SolutionIcon.astro';
 import { Image } from 'astro:assets';
 import { site } from '../data/site';
@@ -101,17 +102,7 @@ const relatedIntegrationData = solution.relatedIntegrations
   schema={[breadcrumbSchema, faqSchema, serviceSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="pt-28 pb-0 bg-surface" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="flex items-center gap-2 text-sm text-ink-4" role="list">
-        <li><a href="/" class="hover:text-ink transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/solutions" class="hover:text-ink transition-colors">Solutions</a></li>
-        <li aria-hidden="true">/</li>
-        <li class="text-ink font-medium">{solution.shortTitle}</li>
-      </ol>
-    </div>
-  </nav>
+  <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: solution.shortTitle }]} />
 
   <!-- Hero -->
   <section class="pt-12 pb-20 md:pt-16 md:pb-28" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">

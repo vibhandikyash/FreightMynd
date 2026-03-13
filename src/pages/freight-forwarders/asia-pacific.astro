@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 
 const breadcrumbSchema = {
@@ -81,17 +82,7 @@ const challenges = [
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <div class="pt-24 md:pt-28 bg-surface">
-    <div class="container">
-      <nav class="flex items-center gap-2 text-xs font-mono text-ink-4" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-brand transition-colors">Home</a>
-        <span aria-hidden="true">/</span>
-        <a href="/freight-forwarders" class="hover:text-brand transition-colors">Freight Forwarders</a>
-        <span aria-hidden="true">/</span>
-        <span class="text-ink-3">Asia-Pacific</span>
-      </nav>
-    </div>
-  </div>
+  <Breadcrumb items={[{ label: 'Freight Forwarders', href: '/freight-forwarders' }, { label: 'Asia-Pacific' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">

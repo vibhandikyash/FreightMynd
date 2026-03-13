@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import SolutionIcon from '../../components/ui/SolutionIcon.astro';
 import { site } from '../../data/site';
 import { glossaryTerms } from '../../data/glossary';
@@ -68,17 +69,7 @@ const definedTermSchema = {
   schema={[breadcrumbSchema, faqSchema, definedTermSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="pt-24 md:pt-28 pb-0" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="flex items-center gap-1.5 text-xs text-ink-4 font-mono" role="list">
-        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/glossary" class="hover:text-brand transition-colors">Glossary</a></li>
-        <li aria-hidden="true">/</li>
-        <li class="text-ink-3" aria-current="page">{term.term}</li>
-      </ol>
-    </div>
-  </nav>
+  <Breadcrumb items={[{ label: 'Glossary', href: '/glossary' }, { label: term.term }]} />
 
   <!-- Term content -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20">

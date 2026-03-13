@@ -1,5 +1,6 @@
 ---
 import Page from '../layouts/Page.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
 import { site } from '../data/site';
 import { Image } from 'astro:assets';
 import aboutHeroImg from '../assets/images/about-hero.webp';
@@ -65,15 +66,7 @@ const steps = [
   schema={breadcrumbSchema}
 >
   <!-- Breadcrumb -->
-  <div class="pt-28 bg-surface">
-    <div class="container pt-4 pb-0">
-      <nav aria-label="Breadcrumb" class="text-xs text-ink-4 font-mono">
-        <a href="/" class="hover:text-ink transition-colors">Home</a>
-        <span class="mx-1.5">/</span>
-        <span class="text-ink-3">About</span>
-      </nav>
-    </div>
-  </div>
+  <Breadcrumb items={[{ label: 'About' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">

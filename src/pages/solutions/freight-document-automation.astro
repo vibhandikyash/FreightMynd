@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 
 const breadcrumbSchema = {
@@ -160,19 +161,7 @@ const integrations = [
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <div class="pt-24 pb-0 bg-surface">
-    <div class="container">
-      <nav aria-label="Breadcrumb" class="py-3">
-        <ol class="flex items-center gap-2 text-xs font-mono text-ink-4">
-          <li><a href="/" class="hover:text-brand transition-colors">Home</a></li>
-          <li aria-hidden="true">/</li>
-          <li><a href="/solutions" class="hover:text-brand transition-colors">Solutions</a></li>
-          <li aria-hidden="true">/</li>
-          <li class="text-ink-3">Freight Document Automation</li>
-        </ol>
-      </nav>
-    </div>
-  </div>
+  <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'Freight Document Automation' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">

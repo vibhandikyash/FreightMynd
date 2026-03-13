@@ -1,5 +1,6 @@
 ---
 import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import { site } from '../../data/site';
 import { glossaryTerms } from '../../data/glossary';
 
@@ -36,15 +37,7 @@ const itemListSchema = {
   schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="pt-24 md:pt-28 pb-0" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="flex items-center gap-1.5 text-xs text-ink-4 font-mono" role="list">
-        <li><a href="/" class="hover:text-brand transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li class="text-ink-3" aria-current="page">Glossary</li>
-      </ol>
-    </div>
-  </nav>
+  <Breadcrumb items={[{ label: 'Glossary' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">

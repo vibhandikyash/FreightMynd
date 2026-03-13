@@ -1,5 +1,6 @@
 ---
 import Page from './Page.astro';
+import Breadcrumb from '../components/ui/Breadcrumb.astro';
 import SolutionIcon from '../components/ui/SolutionIcon.astro';
 import { site } from '../data/site';
 import type { CaseStudy } from '../data/case-studies';
@@ -45,17 +46,7 @@ const pageDescription = study.metaDescription ?? study.description;
   schema={[breadcrumbSchema, articleSchema]}
 >
   <!-- Breadcrumb -->
-  <nav class="pt-28 pb-0 bg-surface" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="flex items-center gap-2 text-sm text-ink-4" role="list">
-        <li><a href="/" class="hover:text-ink transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/case-studies" class="hover:text-ink transition-colors">Case Studies</a></li>
-        <li aria-hidden="true">/</li>
-        <li class="text-ink font-medium truncate">{study.client}</li>
-      </ol>
-    </div>
-  </nav>
+  <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: study.title }]} />
 
   <!-- Hero -->
   <section class="pt-12 pb-16 md:pt-16 md:pb-24" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
