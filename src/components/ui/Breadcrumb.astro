@@ -6,12 +6,13 @@ interface BreadcrumbItem {
 
 interface Props {
   items: BreadcrumbItem[];
+  bg?: string;
 }
 
-const { items } = Astro.props;
+const { items, bg = 'bg-surface' } = Astro.props;
 ---
 
-<nav class="pt-24 md:pt-28 pb-0" aria-label="Breadcrumb">
+<nav class={`pt-24 md:pt-28 pb-0 ${bg}`} aria-label="Breadcrumb">
   <div class="container">
     <ol class="flex items-center gap-1.5 text-[13px]" role="list">
       <li>
