@@ -1,0 +1,56 @@
+# FreightMynd
+
+> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
+
+FreightMynd builds custom AI automation systems for freight forwarding companies. Unlike SaaS tools, every system is purpose-built for the client's specific TMS, suppliers, document formats, and workflows. Systems are deployed in 4-8 weeks.
+
+## Solutions
+
+- [4PL Control Tower Automation](https://freightmynd.com/solutions/4pl-control-tower-automation): Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction.
+- [Autonomous Quote Management](https://freightmynd.com/solutions/autonomous-quote-management): Automated RFQ intake, rate comparison, margin optimization, and freight quote generation in minutes.
+- [Document Intelligence](https://freightmynd.com/solutions/document-intelligence): AI document processing for logistics — reads, classifies, and extracts data from invoices, AWBs, packing lists, and compliance documents.
+- [Freight Pricing AI](https://freightmynd.com/solutions/freight-pricing-ai): Real-time freight rate benchmarking, dynamic pricing optimization, and margin analysis.
+- [Sea Freight Automation](https://freightmynd.com/solutions/sea-freight-automation): End-to-end shipping AI for ocean freight — booking, documentation, tracking, and exception management.
+- [Air Freight Automation](https://freightmynd.com/solutions/air-freight-automation): AI-powered AWB processing, air freight rates comparison, flight tracking, and customs documentation.
+- [3PL & 4PL Operations](https://freightmynd.com/solutions/3pl-4pl-operations): Multi-client workflow orchestration, SLA monitoring, and scalable document processing.
+- [Smart Invoice Processing](https://freightmynd.com/solutions/smart-invoice-processing): AI procurement automation — 3-way invoice matching, carrier rate audit, overcharge detection.
+
+## TMS Integrations
+
+Native AI integration with major freight management systems — no middleware, no CSV exports:
+
+- [CargoWise](https://freightmynd.com/integrations/cargowise): Direct XML push via eHub and Universal Gateway
+- [SAP TM](https://freightmynd.com/integrations/sap-tm): BAPI and RFC integration
+- [Oracle TMS](https://freightmynd.com/integrations/oracle-tms): REST API integration
+- [Microsoft Dynamics](https://freightmynd.com/integrations/microsoft-dynamics): Dataverse integration
+- [Descartes](https://freightmynd.com/integrations/descartes): GLN integration
+
+## Case Studies
+
+- [Hellmann Worldwide Logistics](https://freightmynd.com/case-studies/hellmann-4pl-control-tower): 4PL control tower automation — 60% processing time reduction, zero manual TMS entry, near-zero failure on 300-page document batches.
+- [RFQ Email Intelligence](https://freightmynd.com/case-studies/rfq-email-intelligence): AI-powered RFQ email intelligence and completion system.
+- [Historical Email Intelligence](https://freightmynd.com/case-studies/historical-email-intelligence): AI institutional knowledge capture from operational email.
+- [Shipping News Intelligence](https://freightmynd.com/case-studies/shipping-news-intelligence): Proactive freight risk detection and live disruption intelligence.
+- [RFQ Email Automation](https://freightmynd.com/case-studies/rfq-email-automation): Automated RFQ processing and email automation system.
+
+## Key Facts
+
+- Founded: 2019
+- Built by: Bitontree (https://bitontree.com)
+- Flagship client: Hellmann Worldwide Logistics (500+ offices, 13,000+ employees)
+- Deployment timeline: 4-8 weeks from kickoff to production
+- Tech stack: Python, LangGraph, Azure, CargoWise API, OpenAI, custom OCR
+- Offices: Clifton (US), Gujarat (India)
+
+## Contact
+
+- Website: https://freightmynd.com
+- Email: hello@freightmynd.com
+- Book a free audit: https://freightmynd.com/contact
+- LinkedIn: https://www.linkedin.com/company/cargoiq-ai
+
+## Optional
+
+- [Blog](https://freightmynd.com/blog): Guides and technical deep-dives on AI for freight operations
+- [Glossary](https://freightmynd.com/glossary): Freight and logistics terminology
+- [Full details](https://freightmynd.com/llms-full.txt): Extended version with complete solution details

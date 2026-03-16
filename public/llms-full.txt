@@ -1,0 +1,246 @@
+# FreightMynd — Full Context
+
+> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
+
+FreightMynd builds custom AI automation systems for freight forwarding companies. Unlike SaaS freight automation tools (Zauber, Freightos), every system is purpose-built for the client's specific TMS instance, suppliers, document formats, and operational workflows. Systems are owned by the client — no subscription, no vendor lock-in. Deployed in 4-8 weeks from kickoff to production.
+
+---
+
+## Solutions
+
+### 4PL Control Tower Automation
+URL: https://freightmynd.com/solutions/4pl-control-tower-automation
+
+Full document intelligence pipeline — email monitoring to CargoWise XML push with zero manual entry. Built and live for Hellmann Worldwide Logistics.
+
+Capabilities:
+- Intelligent email monitoring and auto document ingestion
+- AI document filtering — removes irrelevant pages, cuts AI processing costs 50%
+- 200-300 page batch processing at near-zero failure rate
+- Structured data extraction from invoices, AWBs, and packing lists
+- Validation against business rules before any data moves
+- Direct CargoWise XML integration — no manual TMS entry ever
+- Self-learning supplier onboarding — no engineering per new supplier
+- Auto-generated Excel compliance reports for ops teams
+
+Results: 60% processing time reduction, 50% AI cost reduction, zero manual TMS data entry, near-zero failure rate on 300-page batches.
+
+Tech stack: Python, LangGraph, Azure, n8n, CargoWise, OCR, OpenAI
+
+---
+
+### Autonomous Quote Management
+URL: https://freightmynd.com/solutions/autonomous-quote-management
+
+Automate every freight quote from spot quotes to contract rates — RFQ intake, rate comparison, margin optimization, and quote generation in minutes instead of hours.
+
+Capabilities:
+- Automated RFQ intake from email, portals, and web forms
+- AI-powered rate comparison across carriers and rate sources
+- Dynamic margin optimization per customer, lane, and volume
+- Auto-generated quote documents with your branding
+- Intelligent follow-up and expiry tracking
+- Approval workflows for non-standard margins and high-value shipments
+
+Results: 85% faster quote turnaround, 60% reduction in manual pricing effort, 15% margin improvement through optimization, zero missed RFQ deadlines.
+
+---
+
+### Document Intelligence
+URL: https://freightmynd.com/solutions/document-intelligence
+
+AI document processing for logistics — reads, classifies, and extracts data from invoices, AWBs, packing lists, customs forms, and compliance documents with near-zero failure rate.
+
+Capabilities:
+- Multi-format document classification and routing
+- High-accuracy field extraction from structured and unstructured documents
+- Cross-document validation and reconciliation
+- Automated exception detection and flagging
+- Direct TMS and customs system integration
+- Complete audit trail and compliance reporting
+
+Results: 60% document processing time reduction, 95%+ extraction accuracy, zero manual data entry for standard formats, near-zero failure on high-volume batches.
+
+---
+
+### Freight Pricing AI
+URL: https://freightmynd.com/solutions/freight-pricing-ai
+
+Real-time freight rate benchmarking, dynamic pricing optimization, margin analysis, and carrier rate comparison for sea and air freight.
+
+Capabilities:
+- Real-time market rate benchmarking
+- Dynamic freight pricing optimization by lane, customer, and volume
+- Margin analysis and pricing protection alerts
+- Carrier pricing comparison and normalization
+- Historical trend analysis and rate forecasting
+- Rate management system integration
+
+Results: 12% average margin improvement, 70% faster rate analysis, real-time market intelligence across all lanes.
+
+---
+
+### Sea Freight Automation
+URL: https://freightmynd.com/solutions/sea-freight-automation
+
+End-to-end shipping AI automation for sea freight operations — freight booking, documentation, container tracking, and exception management.
+
+Capabilities:
+- Automated freight booking confirmation and carrier communication
+- Bill of lading processing, validation, and amendment management
+- Container tracking AI with proactive exception alerting
+- Automated customs documentation preparation
+- Carrier performance monitoring and scorecarding
+- Demurrage and detention tracking with proactive intervention
+
+Results: 60% reduction in manual booking effort, near-zero documentation errors, proactive exception detection before customer impact.
+
+---
+
+### Air Freight Automation
+URL: https://freightmynd.com/solutions/air-freight-automation
+
+AI-powered AWB processing, real-time air freight rates comparison and booking, flight tracking, and automated customs and security documentation.
+
+Capabilities:
+- Automated AWB (airway bill) processing and validation
+- Real-time air freight rates comparison and booking
+- Real-time flight tracking and milestone updates
+- Automated customs and security documentation
+- ULD optimization and space allocation
+- Exception detection and proactive rebooking
+
+Results: 70% faster AWB processing, real-time visibility across all air shipments, automated compliance documentation.
+
+---
+
+### 3PL & 4PL Operations Automation
+URL: https://freightmynd.com/solutions/3pl-4pl-operations
+
+Multi-client workflow orchestration, automated SLA monitoring, cross-client exception management, and scalable document processing for 3PL and 4PL providers.
+
+Capabilities:
+- Multi-client workflow orchestration
+- Automated SLA monitoring and alerting
+- Cross-client exception management
+- Automated client reporting in client-specific formats
+- Client-specific rule engine configuration
+- Scalable document processing per client
+
+Results: 50% reduction in ops overhead per client, zero SLA breaches through proactive monitoring, scalable client onboarding.
+
+---
+
+### Smart Invoice Processing
+URL: https://freightmynd.com/solutions/smart-invoice-processing
+
+AI procurement automation software for freight AP teams — 3-way invoice matching, carrier rate audit, overcharge detection, and direct ERP integration.
+
+Capabilities:
+- Multi-format invoice data extraction
+- Automated 3-way invoice matching (PO/booking, receipt, invoice)
+- Carrier rate audit and overcharge detection
+- Discrepancy detection and dispute management
+- Approval workflow automation
+- Direct ERP and accounting system integration
+
+Results: 80% faster invoice processing, 3-5% cost recovery through overcharge detection, zero manual matching for standard invoices.
+
+---
+
+## TMS Integrations
+
+FreightMynd provides native AI integration with major freight management systems — no middleware, no CSV exports, no manual data re-entry.
+
+### CargoWise
+URL: https://freightmynd.com/integrations/cargowise
+Integration method: eHub, Universal Gateway, direct XML push
+Capabilities: Shipment creation, document attachment, invoice posting, milestone updates, carrier rate import
+
+### SAP TM
+URL: https://freightmynd.com/integrations/sap-tm
+Integration method: BAPIs, RFC calls
+Capabilities: Transportation order creation, freight settlement, shipment tracking, document management
+
+### Oracle TMS
+URL: https://freightmynd.com/integrations/oracle-tms
+Integration method: REST APIs
+Capabilities: Order management, shipment planning, freight payment, carrier communication
+
+### Microsoft Dynamics
+URL: https://freightmynd.com/integrations/microsoft-dynamics
+Integration method: Dataverse
+Capabilities: Sales order processing, warehouse management, transport management, financial integration
+
+### Descartes
+URL: https://freightmynd.com/integrations/descartes
+Integration method: GLN
+Capabilities: Customs filing, compliance screening, routing and scheduling, shipment tracking
+
+---
+
+## Case Studies
+
+### Hellmann Worldwide Logistics — 4PL Control Tower
+URL: https://freightmynd.com/case-studies/hellmann-4pl-control-tower
+
+Client: Hellmann Worldwide Logistics — global freight forwarder, 500+ offices, 13,000+ employees.
+
+Challenge: Daily document bundles from suppliers — 200-300 page PDFs of invoices, AWBs, packing lists. Two operators spent mornings manually downloading, splitting, reading, and re-keying data into CargoWise.
+
+Solution: Full document intelligence pipeline — email monitoring agent, AI document filter (50% cost reduction), LangGraph extraction engine, validation layer, CargoWise XML push, Excel report generation, self-learning supplier onboarding.
+
+Results:
+- 60% processing time reduction
+- 50% AI cost reduction via intelligent pre-filtering
+- Near-zero failure rate on 200-300 page batches
+- Zero manual data entry into CargoWise
+- New suppliers onboarded without engineering effort
+
+Tech stack: Python, LangGraph, Azure Document Intelligence, n8n, CargoWise API, OpenAI GPT-4o, custom OCR pipeline
+
+### RFQ Email Intelligence
+URL: https://freightmynd.com/case-studies/rfq-email-intelligence
+AI-powered system that reads, classifies, and auto-completes RFQ emails — extracting shipment details, matching to rate cards, and generating draft responses.
+
+### Historical Email Intelligence
+URL: https://freightmynd.com/case-studies/historical-email-intelligence
+AI system that captures institutional knowledge from years of operational email — building a searchable knowledge base from unstructured communications.
+
+### Shipping News Intelligence
+URL: https://freightmynd.com/case-studies/shipping-news-intelligence
+Proactive freight risk detection — monitors global shipping news, port disruptions, and weather events to alert ops teams before shipments are impacted.
+
+### RFQ Email Automation
+URL: https://freightmynd.com/case-studies/rfq-email-automation
+End-to-end RFQ processing automation — email intake, data extraction, rate lookup, quote generation, and response drafting.
+
+---
+
+## Differentiators
+
+FreightMynd vs SaaS freight automation tools:
+
+1. **You own it**: No subscription, no vendor lock-in. The system is deployed in your environment, maintained on your terms.
+2. **Your stack**: Integrates with your existing TMS (CargoWise, SAP TM, Oracle TMS, Dynamics, Descartes) — not systems we decided to support.
+3. **Your edge cases**: Every forwarder has lanes, suppliers, and document formats that don't fit a template. We build those in from day one.
+4. **Speed**: Production-grade system in 4-8 weeks, not 12-18 months.
+
+---
+
+## Company
+
+- Name: FreightMynd
+- Website: https://freightmynd.com
+- Email: hello@freightmynd.com
+- Built by: Bitontree (https://bitontree.com)
+- Founded: 2019
+- Offices: Clifton, NJ (US) and Gujarat (India)
+- LinkedIn: https://www.linkedin.com/company/cargoiq-ai
+- Flagship client: Hellmann Worldwide Logistics
+
+## Blog
+
+URL: https://freightmynd.com/blog
+
+Topics covered: AI for freight forwarding, CargoWise integration guides, document OCR accuracy, freight automation ROI, supply chain control towers, invoice matching, customs automation, air vs ocean freight automation.
