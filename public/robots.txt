@@ -1,6 +1,19 @@
 User-agent: *
+Content-Signal: search=yes,ai-train=no
 Allow: /
-
 Disallow: /thank-you
+
+# Block scraping-only bots with no user benefit
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Keep these OPEN for AI search visibility:
+# GPTBot → ChatGPT answers
+# ClaudeBot → Claude answers
+# Google-Extended → Google AI Overviews
+# Applebot-Extended → Apple Intelligence
 
 Sitemap: https://freightmynd.com/sitemap-index.xml
