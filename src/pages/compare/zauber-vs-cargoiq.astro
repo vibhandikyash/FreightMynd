@@ -9,26 +9,26 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
     { "@type": "ListItem", "position": 2, "name": "Compare" },
-    { "@type": "ListItem", "position": 3, "name": "Zauber vs CargoIQ" },
+    { "@type": "ListItem", "position": 3, "name": "Zauber vs FreightMynd" },
   ],
 };
 
 const faqItems = [
   {
-    q: 'What is the difference between Zauber and CargoIQ?',
-    a: 'Zauber is a SaaS freight automation product — a hosted platform you subscribe to. CargoIQ builds custom AI systems deployed in your own environment. Zauber offers pre-built features within their product\'s limits; CargoIQ builds bespoke automation around your specific TMS, suppliers, document formats, and edge cases. You subscribe to Zauber; you own what CargoIQ builds.',
+    q: 'What is the difference between Zauber and FreightMynd?',
+    a: 'Zauber is a SaaS freight automation product — a hosted platform you subscribe to. FreightMynd builds custom AI systems deployed in your own environment. Zauber offers pre-built features within their product\'s limits; FreightMynd builds bespoke automation around your specific TMS, suppliers, document formats, and edge cases. You subscribe to Zauber; you own what FreightMynd builds.',
   },
   {
-    q: 'Is CargoIQ a Zauber alternative?',
-    a: 'Yes, for freight forwarders who need deeper customization, native TMS integration (CargoWise, SAP TM, Oracle TMS), and full ownership of their automation infrastructure. CargoIQ is purpose-built for complex, high-volume operations where a SaaS product\'s configuration limits become a constraint. If your operation has unique supplier formats, custom workflows, or edge cases that don\'t fit a template, CargoIQ is the alternative.',
+    q: 'Is FreightMynd a Zauber alternative?',
+    a: 'Yes, for freight forwarders who need deeper customization, native TMS integration (CargoWise, SAP TM, Oracle TMS), and full ownership of their automation infrastructure. FreightMynd is purpose-built for complex, high-volume operations where a SaaS product\'s configuration limits become a constraint. If your operation has unique supplier formats, custom workflows, or edge cases that don\'t fit a template, FreightMynd is the alternative.',
   },
   {
     q: 'Should I choose SaaS or custom AI for freight automation?',
-    a: 'It depends on your operation\'s complexity. SaaS platforms like Zauber work well for smaller operations with standard workflows that fit within the product\'s configuration options. Custom AI (CargoIQ\'s approach) is better for high-volume operations with complex TMS integrations, diverse supplier document formats, and edge cases that require purpose-built systems. Custom AI also gives you full ownership — no vendor lock-in, no per-seat pricing, and no dependency on a third-party platform.',
+    a: 'It depends on your operation\'s complexity. SaaS platforms like Zauber work well for smaller operations with standard workflows that fit within the product\'s configuration options. Custom AI (FreightMynd\'s approach) is better for high-volume operations with complex TMS integrations, diverse supplier document formats, and edge cases that require purpose-built systems. Custom AI also gives you full ownership — no vendor lock-in, no per-seat pricing, and no dependency on a third-party platform.',
   },
   {
-    q: 'Can CargoIQ handle document formats that Zauber cannot?',
-    a: 'Yes. CargoIQ\'s AI pipeline self-learns new document formats from any supplier. When a new supplier sends documents in a format the system hasn\'t seen, it maps the format automatically — no engineering effort per supplier. SaaS products are typically limited to their supported format library, which may not cover your specific supplier ecosystem.',
+    q: 'Can FreightMynd handle document formats that Zauber cannot?',
+    a: 'Yes. FreightMynd\'s AI pipeline self-learns new document formats from any supplier. When a new supplier sends documents in a format the system hasn\'t seen, it maps the format automatically — no engineering effort per supplier. SaaS products are typically limited to their supported format library, which may not cover your specific supplier ecosystem.',
   },
 ];
 
@@ -54,12 +54,12 @@ const comparisonRows = [
 ---
 
 <Page
-  title="Zauber vs CargoIQ — Custom AI vs SaaS Freight Automation | CargoIQ.ai"
-  description="Zauber vs CargoIQ comparison — custom AI vs SaaS for freight automation. Compare deployment, ownership, TMS integration, and customization."
+  title="Zauber vs FreightMynd — Custom AI vs SaaS Freight Automation | FreightMynd"
+  description="Zauber vs FreightMynd comparison — custom AI vs SaaS for freight automation. Compare deployment, ownership, TMS integration, and customization."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Zauber vs CargoIQ' }]} />
+  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Zauber vs FreightMynd' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
@@ -70,10 +70,10 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Zauber vs CargoIQ — How Custom AI Compares to SaaS Freight Automation
+          Zauber vs FreightMynd — How Custom AI Compares to SaaS Freight Automation
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          Looking for a Zauber alternative? Zauber offers a SaaS freight automation product. CargoIQ builds custom AI systems deployed in your environment. Both aim to reduce manual freight operations — but the approach, ownership model, and depth of customization are fundamentally different.
+          Looking for a Zauber alternative? Zauber offers a SaaS freight automation product. FreightMynd builds custom AI systems deployed in your environment. Both aim to reduce manual freight operations — but the approach, ownership model, and depth of customization are fundamentally different.
         </p>
       </div>
     </div>
@@ -92,7 +92,7 @@ const comparisonRows = [
               <tr class="border-b-2 border-line">
                 <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
                 <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Zauber</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">CargoIQ</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">FreightMynd</th>
               </tr>
             </thead>
             <tbody>
@@ -118,7 +118,7 @@ const comparisonRows = [
                   <p class="text-sm text-ink-3">{row.zauber}</p>
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
-                  <span class="text-[10px] font-mono text-brand uppercase tracking-wider">CargoIQ</span>
+                  <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
                   <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
                 </div>
               </div>
@@ -129,7 +129,7 @@ const comparisonRows = [
     </div>
   </section>
 
-  <!-- When Zauber / When CargoIQ -->
+  <!-- When Zauber / When FreightMynd -->
   <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -156,9 +156,9 @@ const comparisonRows = [
           </ul>
         </div>
 
-        <!-- CargoIQ -->
+        <!-- FreightMynd -->
         <div class="p-8 rounded-2xl border border-brand/20 bg-brand-light/20" data-reveal data-reveal-delay="1">
-          <h3 class="text-xl font-bold text-ink mb-4">When CargoIQ Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When FreightMynd Makes Sense</h3>
           <ul class="space-y-3">
             {[
               'Complex, high-volume operations needing deep TMS integration',

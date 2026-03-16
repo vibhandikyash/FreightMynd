@@ -175,7 +175,7 @@ export const solutions: Solution[] = [
     ],
 
     implementation: {
-      timeline: '8–14 weeks from kickoff to production',
+      timeline: '4–8 weeks from kickoff to production',
       phases: [
         'Weeks 1–2: Discovery and audit — map current document workflows, identify all document types and suppliers, catalog business rules and validation logic',
         'Weeks 3–4: Environment setup, TMS integration scaffolding, and initial document pipeline configuration',
@@ -196,7 +196,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'How long does implementation take?',
-        a: '8–14 weeks, kickoff to production. First two weeks are discovery: we map your document workflows, catalog every document type and supplier format, and nail down your business rules and TMS field mappings. Then we build and train extraction models on your actual documents — not generic training data. After that: validation rules, TMS integration, and UAT with your team. We deploy with monitoring and 30 days of hypercare.',
+        a: '4–8 weeks, kickoff to production. First two weeks are discovery: we map your document workflows, catalog every document type and supplier format, and nail down your business rules and TMS field mappings. Then we build and train extraction models on your actual documents — not generic training data. After that: validation rules, TMS integration, and UAT with your team. We deploy with monitoring and 30 days of hypercare.',
       },
       {
         q: 'Can it handle multiple document formats from different suppliers?',
@@ -240,7 +240,7 @@ export const solutions: Solution[] = [
     metaDescription:
       'AI-powered freight quote generation, comparison, and response automation. Reduce quote turnaround from hours to minutes. 85% faster with 40% higher conversion.',
     description:
-      'AI-powered freight quote generation, comparison, and response automation. Reduce quote turnaround from hours to minutes.',
+      'AI-powered freight quote generation, comparison, and response automation. Automate every freight quote from spot quotes to contract rates — reduce turnaround from hours to minutes.',
     icon: '📋',
     color: 'brand',
     headline: 'Stop Losing Deals to Slow Quoting',
@@ -356,8 +356,8 @@ export const solutions: Solution[] = [
         a: 'The system watches your inboxes, web forms, and freight portals for incoming RFQs. When one lands, it reads the email (actual natural language understanding, not keyword matching), pulls rates from your carrier contracts, rate management systems, and spot APIs, calculates the right margin based on customer tier and lane competitiveness, generates a branded quote doc, and either sends it or queues it for your rep to review. Minutes, not hours. No manual intervention unless you want it.',
       },
       {
-        q: 'Can it handle complex multi-leg quotes?',
-        a: 'Yes. The system handles multi-modal, multi-leg quotes including sea-air combinations, cross-dock transfers, and intermodal routing. It breaks complex shipments into individual legs, sources rates independently for each segment, calculates combined pricing including handoff and transloading costs, and presents multiple routing options ranked by cost, transit time, and reliability. It also handles project cargo quotes where standard tariffs don\'t apply, flagging these for manual pricing with pre-populated shipment details.',
+        q: 'Can it handle complex multi-leg quotes including air freight quotes?',
+        a: 'Yes. The system handles multi-modal, multi-leg quotes including sea-air combinations, cross-dock transfers, and intermodal routing. For air freight quote requests, it pulls rates from airline cargo platforms and normalizes across different pricing structures. It breaks complex shipments into individual legs, sources rates independently for each segment, calculates combined pricing including handoff and transloading costs, and presents multiple routing options ranked by cost, transit time, and reliability. It also handles project cargo quotes where standard tariffs don\'t apply, flagging these for manual pricing with pre-populated shipment details.',
       },
       {
         q: 'Does it replace my sales team?',
@@ -707,7 +707,7 @@ export const solutions: Solution[] = [
     metaDescription:
       'End-to-end AI automation for sea freight — booking, BL processing, container tracking, customs docs, and exception management. 65% fewer manual touchpoints.',
     description:
-      'End-to-end AI automation for sea freight operations — booking, documentation, tracking, and exception management.',
+      'End-to-end shipping AI automation for sea freight operations — freight booking, documentation, tracking, and exception management.',
     icon: '🚢',
     color: 'brand',
     headline: 'Your Sea Freight Ops on Autopilot',
@@ -738,9 +738,9 @@ export const solutions: Solution[] = [
 
     capabilities: [
       {
-        title: 'Automated booking confirmation and carrier communication',
+        title: 'Automated freight booking confirmation and carrier communication',
         description:
-          'Monitors booking confirmation emails and carrier portal notifications, extracts booking details (vessel, voyage, ETD, ETA, container number, seal), validates against the original booking request, and updates your TMS automatically. When carriers send amendments (vessel change, ETA update, equipment swap), the system detects the change, updates all downstream records, and notifies affected stakeholders — without anyone monitoring carrier emails manually.',
+          'Our shipping AI monitors freight booking confirmation emails and carrier portal notifications, extracts booking details (vessel, voyage, ETD, ETA, container number, seal), validates against the original booking request, and updates your TMS automatically. When carriers send amendments (vessel change, ETA update, equipment swap), the system detects the change, updates all downstream records, and notifies affected stakeholders — without anyone monitoring carrier emails manually.',
       },
       {
         title: 'Bill of lading processing, validation, and amendment management',
@@ -906,9 +906,9 @@ export const solutions: Solution[] = [
           'Generates Master and House airway bills from shipping instructions and booking data, auto-populating all IATA-standard fields. Validates against IATA regulations (correct SHC codes, weight/dimension consistency, airport codes, commodity descriptions against dangerous goods lists). For incoming AWBs from partner agents, our air cargo automation engine extracts all fields and validates against your booking records. Supports both legacy paper airway bill workflows and IATA e-AWB standards.',
       },
       {
-        title: 'AI-powered carrier rate comparison and booking',
+        title: 'Real-time air freight rates comparison and booking',
         description:
-          'Pulls real-time rates and availability from airline cargo platforms, normalizes across different pricing structures (per-kilo, ULD rates, weight breaks, minimum charges, surcharges), and presents a unified comparison ranked by your criteria (cost, transit time, reliability, routing). For standard bookings, the system can execute the booking directly via airline APIs or Cargo iQ interfaces, eliminating manual portal navigation.',
+          'Pulls real-time air freight rates and availability from airline cargo platforms, normalizes across different pricing structures (per-kilo, ULD rates, weight breaks, minimum charges, surcharges), and presents a unified air freight rates comparison ranked by your criteria (cost, transit time, reliability, routing). For standard bookings, the system can execute the booking directly via airline APIs or Cargo iQ interfaces, eliminating manual portal navigation.',
       },
       {
         title: 'Real-time flight tracking and milestone updates',
@@ -971,7 +971,7 @@ export const solutions: Solution[] = [
     ],
 
     implementation: {
-      timeline: '8–14 weeks for core air freight automation',
+      timeline: '4–8 weeks for core air freight automation',
       phases: [
         'Weeks 1–2: Operations mapping — AWB workflows, airline partnerships, documentation requirements by trade lane, exception handling procedures',
         'Weeks 3–6: AWB processing pipeline, airline rate integration, booking automation for primary carrier partners',
@@ -1177,12 +1177,12 @@ export const solutions: Solution[] = [
     metaDescription:
       'AI-powered freight invoice processing — extraction, 3-way matching, overcharge detection, and approval automation. 80% reduction in manual AP work. 4.2% overcharge recovery.',
     description:
-      'AI-powered freight invoice processing — extraction, validation, matching, and approval automation for logistics companies.',
+      'AI-powered freight invoice processing and procurement automation — extraction, validation, matching, and approval automation for logistics AP and procurement teams.',
     icon: '🧾',
     color: 'accent',
     headline: 'Invoices That Process Themselves',
     keywordSubheadline: 'AI-powered smart invoice processing for freight — extraction, 3-way matching, overcharge detection, and direct ERP integration.',
-    sub: 'Invoice processing software powered by AI that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Built for procurement and accounts payable teams in freight forwarding.',
+    sub: 'AI procurement automation software that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Built for procurement and accounts payable teams in freight forwarding.',
 
     idealFor: [
       'Freight forwarders and 3PLs processing 200+ carrier invoices per month',
@@ -1310,7 +1310,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'How quickly does it pay for itself?',
-        a: 'For most freight companies, the system reaches positive ROI within 2–4 months through three value drivers: AP labor savings (80% reduction in manual processing time frees your team for higher-value work), overcharge recovery (3–5% of freight spend identified and recovered), and late payment penalty elimination (faster processing means invoices are paid on time, avoiding penalties and improving carrier relationships). For a company spending $5M annually on freight, the overcharge recovery alone (3–5% = $150K–$250K) typically exceeds the annual system cost.',
+        a: 'For most freight companies, the system reaches positive ROI within 2–4 months through three value drivers: AP labor savings (80% reduction in manual processing time frees your team for higher-value work), overcharge recovery (3–5% of freight spend identified and recovered), and late payment penalty elimination (faster processing means invoices are paid on time, avoiding penalties and improving carrier relationships). For a company spending $5M annually on freight, the overcharge recovery alone (3–5% = $150K–$250K) typically exceeds the annual system cost. As an AI procurement software solution purpose-built for freight, it delivers measurable ROI that generic AP automation tools cannot match because it understands freight-specific charge structures, surcharge types, and carrier billing patterns.',
       },
     ],
     relatedSolutions: ['document-intelligence', '3pl-4pl-operations'],

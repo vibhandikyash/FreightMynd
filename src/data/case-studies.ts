@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
     keyword: 'Hellmann 4PL control tower automation case study, CargoWise AI integration, freight document extraction',
     headline: 'How Hellmann Automated Their 4PL Control Tower with AI',
     heroMetric: { value: '60%', label: 'Processing time reduction' },
-    metaTitle: 'Hellmann 4PL Control Tower Automation — 60% Faster Processing with AI | CargoIQ.ai',
+    metaTitle: 'Hellmann 4PL Control Tower Automation — 60% Faster Processing with AI | FreightMynd',
     metaDescription: 'Hellmann Worldwide Logistics case study — AI document intelligence for 4PL control tower. 60% time reduction, zero manual CargoWise entry.',
     clientOverview: 'Hellmann Worldwide Logistics is a global freight forwarder headquartered in Osnabrück, Germany, with 500+ offices across 170+ countries and more than 13,000 employees. Hellmann operates sea freight, air freight, road, and rail services worldwide, handling millions of shipments annually. Their 4PL control tower function manages complex multi-modal supply chains for enterprise clients, requiring high-volume, accurate document processing as the operational foundation.',
     results: [

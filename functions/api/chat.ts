@@ -37,7 +37,7 @@ function generateId(): string {
 }
 
 function corsHeaders(origin: string): Record<string, string> {
-  const allowed = ['https://cargoiq.ai', 'https://cargoiq.pages.dev', 'http://localhost:4321', 'http://localhost:8788'];
+  const allowed = ['https://freightmynd.com', 'https://freightmynd.pages.dev', 'http://localhost:4321', 'http://localhost:8788'];
   const allowOrigin = allowed.includes(origin) ? origin : allowed[0];
   return {
     'Access-Control-Allow-Origin': allowOrigin,

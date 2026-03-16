@@ -30,7 +30,7 @@ const faqSchema = {
       "name": "Which TMS platforms can be automated with AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CargoIQ builds native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Each integration is purpose-built for your specific TMS instance, workflows, and data structures — not a generic connector."
+        "text": "FreightMynd builds native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Each integration is purpose-built for your specific TMS instance, workflows, and data structures — not a generic connector."
       }
     },
     {
@@ -58,6 +58,30 @@ const faqSchema = {
       }
     },
   ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TMS Automation",
+  "description": "Automate your TMS with AI — zero manual data entry, intelligent document routing, and native API integration with CargoWise, SAP TM, Oracle TMS.",
+  "provider": {
+    "@type": "Organization",
+    "name": "FreightMynd",
+    "url": site.url
+  },
+  "serviceType": "AI Automation for Freight Operations",
+  "areaServed": "Global",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "TMS Automation",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automated document data push to TMS" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invoice posting and 3-way matching" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Shipment creation automation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Native CargoWise, SAP TM, Oracle TMS, Dynamics 365 integration" } },
+    ]
+  }
 };
 
 const tmsPlatforms = [
@@ -139,7 +163,7 @@ const metrics = [
   { value: '0', label: 'Manual TMS data entry' },
   { value: '60%', label: 'Processing time reduction' },
   { value: '≈0%', label: 'Error rate on validated records' },
-  { value: '8–14 wk', label: 'Typical deployment timeline' },
+  { value: '4–8 wk', label: 'Typical deployment timeline' },
 ];
 
 const faqItems = [
@@ -149,7 +173,7 @@ const faqItems = [
   },
   {
     q: 'Which TMS platforms can be automated with AI?',
-    a: 'CargoIQ builds native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Each integration is purpose-built for your specific TMS instance, workflows, and data structures — not a generic connector.',
+    a: 'FreightMynd builds native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Each integration is purpose-built for your specific TMS instance, workflows, and data structures — not a generic connector.',
   },
   {
     q: 'How does TMS automation reduce errors?',
@@ -167,9 +191,9 @@ const faqItems = [
 ---
 
 <Page
-  title="TMS Automation | AI-Powered Transportation Management System Integration | CargoIQ.ai"
+  title="TMS Automation | AI-Powered Transportation Management System Integration | FreightMynd"
   description="Automate your TMS with AI — zero manual data entry, intelligent document routing, and native API integration with CargoWise, SAP TM, Oracle TMS."
-  schema={[breadcrumbSchema, faqSchema]}
+  schema={[breadcrumbSchema, faqSchema, serviceSchema]}
 >
   <!-- Breadcrumb -->
   <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'TMS Automation' }]} />

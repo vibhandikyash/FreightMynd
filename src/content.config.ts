@@ -8,7 +8,7 @@ const blog = defineCollection({
     description: z.string(),
     publishDate: z.coerce.date(),
     modifiedDate: z.coerce.date().optional(),
-    author: z.string().default('CargoIQ Team'),
+    author: z.string().default('FreightMynd Team'),
     category: z.string(),
     tags: z.array(z.string()),
     ogImage: z.string().optional(),

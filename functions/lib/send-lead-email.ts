@@ -4,8 +4,8 @@
  *
  * Required env vars:
  *   SMTP_API_KEY    — Brevo API key (or any transactional email provider)
- *   LEAD_EMAIL_TO   — Team email to receive leads (e.g. "leads@cargoiq.ai")
- *   LEAD_EMAIL_FROM — Sender address (e.g. "noreply@cargoiq.ai")
+ *   LEAD_EMAIL_TO   — Team email to receive leads (e.g. "leads@freightmynd.com")
+ *   LEAD_EMAIL_FROM — Sender address (e.g. "noreply@freightmynd.com")
  */
 
 interface LeadData {
@@ -41,7 +41,7 @@ export async function sendLeadEmail(lead: LeadData, env: EmailEnv): Promise<bool
     return false;
   }
 
-  const senderEmail = env.LEAD_EMAIL_FROM || 'noreply@cargoiq.ai';
+  const senderEmail = env.LEAD_EMAIL_FROM || 'noreply@freightmynd.com';
   const recipients = env.LEAD_EMAIL_TO.split(',').map((e) => ({ email: e.trim() }));
 
   const subject = `🔔 New Lead: ${lead.name || 'Unknown'} ${lead.company ? `@ ${lead.company}` : ''} — ${lead.interest || 'General'}`;
@@ -96,7 +96,7 @@ export async function sendLeadEmail(lead: LeadData, env: EmailEnv): Promise<bool
     </div>
 
     <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #E2E8F0; font-size: 12px; color: #8A96A3;">
-      Session ID: ${lead.sessionId} · Sent by CargoIQ Chat
+      Session ID: ${lead.sessionId} · Sent by FreightMynd Chat
     </div>
   </div>
 </div>`;
@@ -127,7 +127,7 @@ Session ID: ${lead.sessionId}`;
         'api-key': env.SMTP_API_KEY,
       },
       body: JSON.stringify({
-        sender: { email: senderEmail, name: 'CargoIQ Chat' },
+        sender: { email: senderEmail, name: 'FreightMynd Chat' },
         to: recipients,
         subject,
         htmlContent: htmlBody,

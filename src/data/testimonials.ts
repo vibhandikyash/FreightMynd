@@ -9,7 +9,7 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    quote: 'CargoIQ replaced what would have taken us 6 months of internal development. The 4PL control tower system processes our 300-page document batches with near-zero failure — something we couldn\'t achieve manually.',
+    quote: 'FreightMynd replaced what would have taken us 6 months of internal development. The 4PL control tower system processes our 300-page document batches with near-zero failure — something we couldn\'t achieve manually.',
     author: 'Operations Director',
     role: 'Operations Director',
     company: 'Hellmann Worldwide Logistics',
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     context: '12-week implementation, fully automated CargoWise integration',
   },
   {
-    quote: 'What sets CargoIQ apart is that they built around our systems, not theirs. Our CargoWise instance, our supplier formats, our validation rules — all custom, all ours to own.',
+    quote: 'What sets FreightMynd apart is that they built around our systems, not theirs. Our CargoWise instance, our supplier formats, our validation rules — all custom, all ours to own.',
     author: 'VP of Operations',
     role: 'VP of Operations',
     company: 'Mid-Market 3PL (3 warehouses, SAP TM)',

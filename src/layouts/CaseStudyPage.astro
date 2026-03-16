@@ -27,8 +27,8 @@ const articleSchema = {
   "articleSection": "Case Study",
   "headline": study.headline,
   "description": study.description,
-  "author": { "@type": "Organization", "name": "CargoIQ.ai" },
-  "publisher": { "@type": "Organization", "name": "CargoIQ.ai" },
+  "author": { "@type": "Organization", "name": "FreightMynd" },
+  "publisher": { "@type": "Organization", "name": "FreightMynd" },
   "about": { "@type": "Organization", "name": study.client },
   "keywords": study.keyword,
 };
@@ -36,7 +36,7 @@ const articleSchema = {
 import { caseStudies } from '../data/case-studies';
 const related = caseStudies.filter(s => s.slug !== study.slug).slice(0, 2);
 
-const pageTitle = study.metaTitle ?? `${study.title} | CargoIQ.ai`;
+const pageTitle = study.metaTitle ?? `${study.title} | FreightMynd`;
 const pageDescription = study.metaDescription ?? study.description;
 ---
 

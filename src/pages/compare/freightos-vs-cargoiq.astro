@@ -9,26 +9,26 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
     { "@type": "ListItem", "position": 2, "name": "Compare" },
-    { "@type": "ListItem", "position": 3, "name": "Freightos vs CargoIQ" },
+    { "@type": "ListItem", "position": 3, "name": "Freightos vs FreightMynd" },
   ],
 };
 
 const faqItems = [
   {
-    q: 'What is the difference between Freightos and CargoIQ?',
-    a: 'Freightos is a freight rate marketplace and booking platform — it aggregates carrier rates and provides a platform for comparing and booking freight. CargoIQ builds custom AI operations systems for freight forwarders — document intelligence, quoting automation, and deep TMS integration. Freightos focuses on rate discovery and booking; CargoIQ focuses on automating the operational workflows that happen after booking — document processing, data entry, compliance, and TMS updates.',
+    q: 'What is the difference between Freightos and FreightMynd?',
+    a: 'Freightos is a freight rate marketplace and booking platform — it aggregates carrier rates and provides a platform for comparing and booking freight. FreightMynd builds custom AI operations systems for freight forwarders — document intelligence, quoting automation, and deep TMS integration. Freightos focuses on rate discovery and booking; FreightMynd focuses on automating the operational workflows that happen after booking — document processing, data entry, compliance, and TMS updates.',
   },
   {
-    q: 'Is CargoIQ a Freightos alternative?',
-    a: 'Not directly. Freightos and CargoIQ solve different problems. Freightos is a rate marketplace for finding and comparing carrier rates. CargoIQ automates freight operations — document processing, quoting, and TMS integration. They overlap in pricing intelligence, but CargoIQ combines market data with your historical pricing data and custom business rules for more accurate, context-aware quotes. Many freight forwarders could use both.',
+    q: 'Is FreightMynd a Freightos alternative?',
+    a: 'Not directly. Freightos and FreightMynd solve different problems. Freightos is a rate marketplace for finding and comparing carrier rates. FreightMynd automates freight operations — document processing, quoting, and TMS integration. They overlap in pricing intelligence, but FreightMynd combines market data with your historical pricing data and custom business rules for more accurate, context-aware quotes. Many freight forwarders could use both.',
   },
   {
-    q: 'Can I use Freightos and CargoIQ together?',
-    a: 'Yes. Freightos provides rate marketplace data, while CargoIQ handles the operational automation — document processing, data extraction, validation, and TMS integration. CargoIQ can ingest rate data from Freightos (or any source) and combine it with your historical pricing, margin rules, and carrier preferences to generate more accurate quotes. The two systems are complementary rather than competing.',
+    q: 'Can I use Freightos and FreightMynd together?',
+    a: 'Yes. Freightos provides rate marketplace data, while FreightMynd handles the operational automation — document processing, data extraction, validation, and TMS integration. FreightMynd can ingest rate data from Freightos (or any source) and combine it with your historical pricing, margin rules, and carrier preferences to generate more accurate quotes. The two systems are complementary rather than competing.',
   },
   {
-    q: 'Does CargoIQ offer freight rate data like Freightos?',
-    a: 'CargoIQ does not operate a rate marketplace. Instead, CargoIQ\'s freight pricing AI combines multiple data sources — market rate data (which can include Freightos data), your historical pricing, carrier contracts, and real-time market conditions — to generate intelligent, context-aware pricing recommendations. This approach provides more accurate quotes tailored to your specific operation rather than generic marketplace rates.',
+    q: 'Does FreightMynd offer freight rate data like Freightos?',
+    a: 'FreightMynd does not operate a rate marketplace. Instead, FreightMynd\'s freight pricing AI combines multiple data sources — market rate data (which can include Freightos data), your historical pricing, carrier contracts, and real-time market conditions — to generate intelligent, context-aware pricing recommendations. This approach provides more accurate quotes tailored to your specific operation rather than generic marketplace rates.',
   },
 ];
 
@@ -53,12 +53,12 @@ const comparisonRows = [
 ---
 
 <Page
-  title="Freightos vs CargoIQ — Marketplace vs Custom Cargo Intelligence | CargoIQ.ai"
-  description="Freightos vs CargoIQ — rate marketplace vs custom AI operations. Compare pricing, document processing, TMS integration, and ownership."
+  title="Freightos vs FreightMynd — Marketplace vs Custom Cargo Intelligence | FreightMynd"
+  description="Freightos vs FreightMynd — rate marketplace vs custom AI operations. Compare pricing, document processing, TMS integration, and ownership."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Freightos vs CargoIQ' }]} />
+  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Freightos vs FreightMynd' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
@@ -69,10 +69,10 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Freightos vs CargoIQ — Marketplace Rate Data vs Custom Cargo Data Intelligence
+          Freightos vs FreightMynd — Marketplace Rate Data vs Custom Cargo Data Intelligence
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          Looking for a Freightos alternative for operations automation? Freightos is a freight marketplace and rate platform. CargoIQ builds custom AI operations systems for freight forwarders. They solve different problems but overlap in pricing intelligence. Here's how they compare.
+          Looking for a Freightos alternative for operations automation? Freightos is a freight marketplace and rate platform. FreightMynd builds custom AI operations systems for freight forwarders. They solve different problems but overlap in pricing intelligence. Here's how they compare.
         </p>
       </div>
     </div>
@@ -91,7 +91,7 @@ const comparisonRows = [
               <tr class="border-b-2 border-line">
                 <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
                 <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Freightos</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">CargoIQ</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">FreightMynd</th>
               </tr>
             </thead>
             <tbody>
@@ -117,7 +117,7 @@ const comparisonRows = [
                   <p class="text-sm text-ink-3">{row.freightos}</p>
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
-                  <span class="text-[10px] font-mono text-brand uppercase tracking-wider">CargoIQ</span>
+                  <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
                   <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ const comparisonRows = [
     </div>
   </section>
 
-  <!-- When Freightos / When CargoIQ -->
+  <!-- When Freightos / When FreightMynd -->
   <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -155,9 +155,9 @@ const comparisonRows = [
           </ul>
         </div>
 
-        <!-- CargoIQ -->
+        <!-- FreightMynd -->
         <div class="p-8 rounded-2xl border border-brand/20 bg-brand-light/20" data-reveal data-reveal-delay="1">
-          <h3 class="text-xl font-bold text-ink mb-4">When CargoIQ Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When FreightMynd Makes Sense</h3>
           <ul class="space-y-3">
             {[
               'Your bottleneck is document processing, not rate discovery',
@@ -183,7 +183,7 @@ const comparisonRows = [
       <!-- Key Distinction -->
       <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl border border-brand/20 bg-brand-light/20 text-center" data-reveal>
         <p class="text-sm text-ink leading-relaxed">
-          <strong>Key distinction:</strong> Freightos and CargoIQ are not direct competitors. Freightos is a rate marketplace. CargoIQ builds custom AI systems for freight operations. Many freight forwarders could use Freightos for rate data while using CargoIQ for document processing, quoting automation, and TMS integration.
+          <strong>Key distinction:</strong> Freightos and FreightMynd are not direct competitors. Freightos is a rate marketplace. FreightMynd builds custom AI systems for freight operations. Many freight forwarders could use Freightos for rate data while using FreightMynd for document processing, quoting automation, and TMS integration.
         </p>
       </div>
     </div>

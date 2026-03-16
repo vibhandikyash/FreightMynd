@@ -46,7 +46,7 @@ const faqSchema = {
       "name": "How long does it take to deploy freight document automation?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Typical deployment takes 8–14 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team."
+        "text": "Typical deployment takes 4–8 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team."
       }
     },
     {
@@ -58,6 +58,30 @@ const faqSchema = {
       }
     },
   ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Freight Document Automation",
+  "description": "Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration.",
+  "provider": {
+    "@type": "Organization",
+    "name": "FreightMynd",
+    "url": site.url
+  },
+  "serviceType": "AI Automation for Freight Operations",
+  "areaServed": "Global",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Freight Document Automation",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI document extraction for invoices, AWBs, BLs, and packing lists" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Intelligent document classification and filtering" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Direct TMS integration — CargoWise, SAP TM, Oracle TMS" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Self-learning supplier onboarding" } },
+    ]
+  }
 };
 
 const documentTypes = [
@@ -138,7 +162,7 @@ const faqItems = [
   },
   {
     q: 'How long does it take to deploy freight document automation?',
-    a: 'Typical deployment takes 8–14 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team.',
+    a: 'Typical deployment takes 4–8 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team.',
   },
   {
     q: 'Can the system handle documents from new suppliers automatically?',
@@ -156,9 +180,9 @@ const integrations = [
 ---
 
 <Page
-  title="Freight Document Automation | AI Document Processing for Logistics | CargoIQ.ai"
+  title="Freight Document Automation | AI Document Processing for Logistics | FreightMynd"
   description="Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration."
-  schema={[breadcrumbSchema, faqSchema]}
+  schema={[breadcrumbSchema, faqSchema, serviceSchema]}
 >
   <!-- Breadcrumb -->
   <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'Freight Document Automation' }]} />

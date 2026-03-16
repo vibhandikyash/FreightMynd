@@ -2,7 +2,7 @@
 title: "How to Integrate AI with CargoWise: A Technical Guide for Freight Forwarders"
 description: "Step-by-step guide to building AI automation on top of CargoWise One — eHub integration, XML data push, document intelligence, and zero-touch TMS operations."
 publishDate: 2026-03-01
-author: "CargoIQ Team"
+author: "FreightMynd Team"
 category: "Technical"
 tags: ["CargoWise", "integration", "AI", "TMS"]
 featured: false
@@ -12,7 +12,7 @@ faq:
   - q: "What's the difference between CargoWise eHub and Universal Gateway?"
     a: "eHub is CargoWise's cloud-based integration platform for asynchronous message routing with built-in retry logic — ideal for high-volume document processing. Universal Gateway provides real-time API access for lookup operations like checking shipment status or retrieving reference data. For AI automation, most deployments use eHub for inbound data push and Universal Gateway for reference data lookups."
   - q: "How long does CargoWise AI integration take?"
-    a: "Typical implementation takes 8-14 weeks from kickoff to production. This includes discovery and audit (2-3 weeks), building the AI pipeline and XML mapping (4-8 weeks), testing and validation running in parallel with your existing process (2-3 weeks), and deployment with monitoring and handoff (1-2 weeks)."
+    a: "Typical implementation takes 4-8 weeks from kickoff to production. This includes discovery and audit (2-3 weeks), building the AI pipeline and XML mapping (4-8 weeks), testing and validation running in parallel with your existing process (2-3 weeks), and deployment with monitoring and handoff (1-2 weeks)."
   - q: "Can CargoWise AI integration handle multiple document formats?"
     a: "Yes. The AI extraction engine handles multi-format, multi-supplier document variations — commercial invoices, AWBs, packing lists, customs forms, and more. The system maps different supplier formats to the same CargoWise XML schema dynamically, understanding that fields like 'Consignee' and 'Ship To' refer to the same CargoWise party field."
   - q: "What happens when the AI is uncertain about extracted data?"
@@ -28,7 +28,7 @@ faq:
 <li>Intelligent pre-filtering before AI extraction can cut processing costs by 50% by removing blank pages, duplicates, and irrelevant attachments</li>
 <li>The validation layer is the most critical component — confidence scoring, referential integrity checks, and exception routing keep your CargoWise data clean</li>
 <li>XML mapping must match your specific CargoWise configuration (module codes, custom fields, branch mappings) — generic mappings will fail in production</li>
-<li>Implementation takes 8-14 weeks from discovery to production, with near-zero failure rates achievable on established supplier formats within the first month</li>
+<li>Implementation takes 4-8 weeks from discovery to production, with near-zero failure rates achievable on established supplier formats within the first month</li>
 </ul>
 </div>
 
@@ -102,4 +102,4 @@ The goal is not zero exceptions — that is unrealistic with real-world freight 
 
 If you are running CargoWise and processing more than 50 documents per day manually, AI automation will likely deliver positive ROI within three to six months. The [CargoWise integration](/integrations/cargowise) we build is designed to work alongside your existing CargoWise configuration without requiring changes to your TMS setup.
 
-The first step is a discovery audit — we analyze your current document volumes, supplier formats, CargoWise configuration, and operational workflows to scope the build accurately. From there, implementation typically takes 8-14 weeks to production.
+The first step is a discovery audit — we analyze your current document volumes, supplier formats, CargoWise configuration, and operational workflows to scope the build accurately. From there, implementation typically takes 4-8 weeks to production.

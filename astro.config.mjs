@@ -9,13 +9,13 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 export default defineConfig({
-  site: 'https://cargoiq.pages.dev',
+  site: 'https://freightmynd.com',
   output: 'static',
   integrations: [sitemap({
     filter: (page) => !page.includes('/thank-you'),
     serialize(item) {
       const url = item.url;
-      if (url === 'https://cargoiq.pages.dev/') {
+      if (url === 'https://freightmynd.com/') {
         item.priority = 1.0;
         item.changefreq = 'weekly';
       } else if (url.includes('/solutions/') && !url.endsWith('/solutions/')) {

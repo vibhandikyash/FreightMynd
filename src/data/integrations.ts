@@ -9,7 +9,7 @@ export interface Integration {
   logo: string;
   /** Opening paragraph about this TMS/platform */
   intro: string;
-  /** How CargoIQ connects technically */
+  /** How FreightMynd connects technically */
   architecture: {
     connectionMethod: string;
     supportedVersions: string;
@@ -28,10 +28,10 @@ export const integrations: Integration[] = [
     shortTitle: 'CargoWise',
     keyword: 'CargoWise AI integration',
     description: 'Deep AI integration with CargoWise One — automated XML data push, document processing, and cargo data intelligence built on your existing CargoWise instance.',
-    metaTitle: 'CargoWise AI Integration | CargoIQ.ai',
+    metaTitle: 'CargoWise AI Integration | FreightMynd',
     metaDescription: 'Deep AI integration with CargoWise One — automated XML data push via eHub and Universal Gateway, document intelligence, and zero manual TMS entry. Built and live for Hellmann Worldwide Logistics.',
     logo: 'cargowise',
-    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. CargoIQ builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
+    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. FreightMynd builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
     architecture: {
       connectionMethod: 'CargoWise eHub and Universal Gateway APIs',
       supportedVersions: 'CargoWise One (CW1), all current versions',
@@ -66,13 +66,13 @@ export const integrations: Integration[] = [
       },
       {
         title: 'Automated workflow triggers on CargoWise events',
-        description: 'CargoWise events (shipment creation, milestone updates, document receipt) can trigger downstream CargoIQ processing — enabling bi-directional automation where CargoWise and the AI layer work in concert.',
+        description: 'CargoWise events (shipment creation, milestone updates, document receipt) can trigger downstream FreightMynd processing — enabling bi-directional automation where CargoWise and the AI layer work in concert.',
       },
     ],
     proofBlock: 'We built and deployed this integration for Hellmann Worldwide Logistics — processing 200–300 page document batches with near-zero failure rate and zero manual TMS data entry. Every extracted, validated field goes directly into CargoWise via XML. No human ever touches the TMS for routine document data.',
     faq: [
       {
-        q: 'How does CargoIQ integrate with CargoWise?',
+        q: 'How does FreightMynd integrate with CargoWise?',
         a: 'We use the CargoWise eHub and Universal Gateway APIs to push extracted, validated data directly into your CargoWise instance as XML. The integration covers the Forwarding module (shipment records, parties, references), Customs module (declaration pre-population), Accounting module (charge posting), and Document Management (PDF attachments). No manual entry, no CSV imports, no middleware layer.',
       },
       {
@@ -107,10 +107,10 @@ export const integrations: Integration[] = [
     shortTitle: 'SAP TM',
     keyword: 'SAP TM AI integration',
     description: 'AI-powered automation layered on SAP Transportation Management — document processing, data enrichment, and operational intelligence.',
-    metaTitle: 'SAP TM & S/4HANA AI Integration | CargoIQ.ai',
+    metaTitle: 'SAP TM & S/4HANA AI Integration | FreightMynd',
     metaDescription: 'AI automation layered on SAP Transportation Management — automated freight order creation, document processing, and operational intelligence. Supports classic SAP TM and S/4HANA embedded TM.',
     logo: 'sap',
-    intro: 'SAP Transportation Management is the TMS of choice for large shippers and logistics service providers running complex, high-volume freight operations. Whether you run classic SAP TM or the embedded Transportation Management module in S/4HANA, CargoIQ layers SAP logistics AI on top of your existing SAP environment — automating document processing, freight order creation, and operational intelligence without replacing or disrupting your SAP infrastructure.',
+    intro: 'SAP Transportation Management is the TMS of choice for large shippers and logistics service providers running complex, high-volume freight operations. Whether you run classic SAP TM or the embedded Transportation Management module in S/4HANA, FreightMynd layers SAP logistics AI on top of your existing SAP environment — automating document processing, freight order creation, and operational intelligence without replacing or disrupting your SAP infrastructure.',
     architecture: {
       connectionMethod: 'SAP APIs, BAPIs, RFC calls, SAP Integration Suite (BTP optional)',
       supportedVersions: 'SAP TM classic, SAP S/4HANA embedded Transportation Management',
@@ -146,7 +146,7 @@ export const integrations: Integration[] = [
     ],
     faq: [
       {
-        q: 'How does CargoIQ work with SAP TM?',
+        q: 'How does FreightMynd work with SAP TM?',
         a: 'We integrate via SAP APIs, BAPIs, and RFC calls to automate document processing, freight order creation, and data enrichment within your existing SAP TM environment. The integration uses your existing SAP authorization model and respects your custom configurations. For S/4HANA environments, we also support OData services and CDS views.',
       },
       {
@@ -158,7 +158,7 @@ export const integrations: Integration[] = [
         a: 'Yes. We support both classic SAP TM and the embedded Transportation Management module in S/4HANA. The integration approach adapts to your specific SAP landscape — using the appropriate APIs and data models for your version.',
       },
       {
-        q: 'What SAP TM objects does CargoIQ write to?',
+        q: 'What SAP TM objects does FreightMynd write to?',
         a: 'Freight Orders, Freight Bookings, Transportation Requests, Shipment Documents, and Carrier Invoices. We also update custom fields and trigger SAP workflow events where configured. The specific objects depend on your operational workflow — we map these during the discovery phase.',
       },
       {
@@ -177,10 +177,10 @@ export const integrations: Integration[] = [
     shortTitle: 'Oracle TMS',
     keyword: 'Oracle TMS AI integration',
     description: 'AI automation for Oracle Transportation Management — intelligent document processing, shipment automation, and operational analytics.',
-    metaTitle: 'Oracle TMS AI Integration | CargoIQ.ai',
+    metaTitle: 'Oracle TMS AI Integration | FreightMynd',
     metaDescription: 'AI automation for Oracle Transportation Management Cloud and on-premise — document intelligence, shipment automation, and operational analytics via Oracle REST APIs.',
     logo: 'oracle',
-    intro: 'Oracle Transportation Management (OTM) serves enterprise shippers, 3PLs, and global trade management operations with comprehensive transportation planning, execution, and settlement capabilities. Whether you run Oracle OTM Cloud or on-premise, CargoIQ integrates AI-powered document intelligence and operational automation via Oracle\'s REST APIs and web services — extending your OTM\'s capabilities without replacing or disrupting your existing Oracle infrastructure.',
+    intro: 'Oracle Transportation Management (OTM) serves enterprise shippers, 3PLs, and global trade management operations with comprehensive transportation planning, execution, and settlement capabilities. Whether you run Oracle OTM Cloud or on-premise, FreightMynd integrates AI-powered document intelligence and operational automation via Oracle\'s REST APIs and web services — extending your OTM\'s capabilities without replacing or disrupting your existing Oracle infrastructure.',
     architecture: {
       connectionMethod: 'Oracle REST APIs and web services',
       supportedVersions: 'Oracle OTM Cloud, Oracle OTM on-premise, Oracle Global Trade Management (GTM)',
@@ -220,8 +220,8 @@ export const integrations: Integration[] = [
         a: 'We support Oracle OTM Cloud, Oracle OTM on-premise (all actively maintained versions), and Oracle Global Trade Management (GTM). The integration approach adapts to your deployment model — cloud APIs for OTM Cloud, web services for on-premise — so you get the same automation capability regardless of your Oracle hosting choice.',
       },
       {
-        q: 'How does data flow between CargoIQ and Oracle Transportation Management?',
-        a: 'Via Oracle REST APIs and web services. Extracted document data is validated against your business rules, then pushed into Oracle OTM as shipment records, order releases, document attachments, or billing updates. The data flow is one-directional by default (CargoIQ to OTM), with optional bi-directional sync for event-driven workflows where OTM events trigger CargoIQ processing.',
+        q: 'How does data flow between FreightMynd and Oracle Transportation Management?',
+        a: 'Via Oracle REST APIs and web services. Extracted document data is validated against your business rules, then pushed into Oracle OTM as shipment records, order releases, document attachments, or billing updates. The data flow is one-directional by default (FreightMynd to OTM), with optional bi-directional sync for event-driven workflows where OTM events trigger FreightMynd processing.',
       },
       {
         q: 'Can it work alongside existing Oracle integrations?',
@@ -229,10 +229,10 @@ export const integrations: Integration[] = [
       },
       {
         q: 'Does it integrate with Oracle Financials for invoice processing?',
-        a: 'Yes. Carrier invoices extracted and validated by CargoIQ can be routed through Oracle\'s settlement and payment workflows. The integration maps invoice line items to OTM shipment costs, performs rate auditing against contracted tariffs, and posts approved charges to Oracle Financials — reducing manual invoice processing and catching billing discrepancies automatically.',
+        a: 'Yes. Carrier invoices extracted and validated by FreightMynd can be routed through Oracle\'s settlement and payment workflows. The integration maps invoice line items to OTM shipment costs, performs rate auditing against contracted tariffs, and posts approved charges to Oracle Financials — reducing manual invoice processing and catching billing discrepancies automatically.',
       },
       {
-        q: 'How does CargoIQ handle Oracle OTM\'s complex shipment structures?',
+        q: 'How does FreightMynd handle Oracle OTM\'s complex shipment structures?',
         a: 'We map extracted document data to OTM\'s full shipment object model — including multi-stop shipments, multi-leg routes, equipment assignments, and service provider allocations. The integration handles the complexity of OTM\'s data model so your team receives fully structured shipment records without manual data assembly.',
       },
       {
@@ -247,10 +247,10 @@ export const integrations: Integration[] = [
     shortTitle: 'Microsoft Dynamics',
     keyword: 'Microsoft Dynamics freight AI integration',
     description: 'AI-powered freight automation for Microsoft Dynamics 365 — document intelligence, workflow automation, and operational analytics.',
-    metaTitle: 'Dynamics 365 Freight AI Integration | CargoIQ.ai',
+    metaTitle: 'Dynamics 365 Freight AI Integration | FreightMynd',
     metaDescription: 'AI-powered freight automation for Microsoft Dynamics 365 Supply Chain Management — Azure-native deployment, Power Automate integration, and automated document processing.',
     logo: 'dynamics',
-    intro: 'Microsoft Dynamics 365 serves mid-market to enterprise logistics operations with its Finance and Supply Chain Management modules, making Microsoft Dynamics TMS a popular choice for freight forwarders and 3PLs. Because Dynamics 365 runs natively on Azure — and CargoIQ deploys on Azure — the integration delivers native performance with no data leaving the Microsoft ecosystem. This simplifies security compliance, reduces latency, and enables direct access to Power Automate logistics workflows, Dataverse, and Azure services as part of the automation pipeline.',
+    intro: 'Microsoft Dynamics 365 serves mid-market to enterprise logistics operations with its Finance and Supply Chain Management modules, making Microsoft Dynamics TMS a popular choice for freight forwarders and 3PLs. Because Dynamics 365 runs natively on Azure — and FreightMynd deploys on Azure — the integration delivers native performance with no data leaving the Microsoft ecosystem. This simplifies security compliance, reduces latency, and enables direct access to Power Automate logistics workflows, Dataverse, and Azure services as part of the automation pipeline.',
     architecture: {
       connectionMethod: 'Dynamics 365 REST APIs, Dataverse, Power Automate flows',
       supportedVersions: 'Dynamics 365 Finance and Operations, Supply Chain Management',
@@ -269,7 +269,7 @@ export const integrations: Integration[] = [
       },
       {
         title: 'Power Automate workflow integration',
-        description: 'CargoIQ processing events trigger Power Automate flows for downstream actions — approval workflows, email notifications, Teams messages, or updates to connected systems. This integrates AI automation into your existing Microsoft workflow ecosystem.',
+        description: 'FreightMynd processing events trigger Power Automate flows for downstream actions — approval workflows, email notifications, Teams messages, or updates to connected systems. This integrates AI automation into your existing Microsoft workflow ecosystem.',
       },
       {
         title: 'Custom Dataverse entity creation and updates',
@@ -291,11 +291,11 @@ export const integrations: Integration[] = [
       },
       {
         q: 'Can it use Power Automate for workflows?',
-        a: 'Yes. CargoIQ processing events can trigger Power Automate flows for downstream actions — approval workflows, email notifications, Teams messages, SharePoint document storage, or updates to connected systems. This means your existing Power Automate infrastructure extends naturally to include AI-processed freight data.',
+        a: 'Yes. FreightMynd processing events can trigger Power Automate flows for downstream actions — approval workflows, email notifications, Teams messages, SharePoint document storage, or updates to connected systems. This means your existing Power Automate infrastructure extends naturally to include AI-processed freight data.',
       },
       {
         q: 'Is Azure required?',
-        a: 'Strongly recommended but not strictly required. Because Dynamics 365 runs natively on Azure, deploying CargoIQ on Azure in the same region delivers the best performance, lowest latency, and simplest security configuration. All data stays within the Microsoft ecosystem, which simplifies compliance. We can deploy on other cloud platforms if your architecture requires it, but Azure-native is the recommended approach.',
+        a: 'Strongly recommended but not strictly required. Because Dynamics 365 runs natively on Azure, deploying FreightMynd on Azure in the same region delivers the best performance, lowest latency, and simplest security configuration. All data stays within the Microsoft ecosystem, which simplifies compliance. We can deploy on other cloud platforms if your architecture requires it, but Azure-native is the recommended approach.',
       },
       {
         q: 'How does authentication work with Dynamics 365?',
@@ -317,10 +317,10 @@ export const integrations: Integration[] = [
     shortTitle: 'Descartes',
     keyword: 'Descartes logistics AI integration',
     description: 'AI automation for Descartes logistics platform — document intelligence, customs automation, and operational analytics.',
-    metaTitle: 'Descartes AI Integration for Customs & Compliance | CargoIQ.ai',
+    metaTitle: 'Descartes AI Integration for Customs & Compliance | FreightMynd',
     metaDescription: 'AI automation for Descartes logistics platform — customs declaration automation, trade compliance data enrichment, and EDI processing for freight forwarders and customs brokers.',
     logo: 'descartes',
-    intro: 'Descartes is strongest in customs and trade compliance — and that\'s where CargoIQ\'s trade compliance AI and document extraction create the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we deliver customs declaration automation that removes the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',
+    intro: 'Descartes is strongest in customs and trade compliance — and that\'s where FreightMynd\'s trade compliance AI and document extraction create the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we deliver customs declaration automation that removes the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',
     architecture: {
       connectionMethod: 'Descartes Global Logistics Network (GLN), Descartes APIs, EDI messaging',
       supportedVersions: 'Descartes GLN, Customs & Regulatory Compliance, Descartes TMS',

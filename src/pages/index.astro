@@ -16,9 +16,9 @@ import { site } from '../data/site';
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "CargoIQ.ai",
+  "name": "FreightMynd",
   "url": site.url,
-  "logo": `${site.url}/favicon.svg`,
+  "logo": `${site.url}/FM-logo.svg`,
   "description": "AI in logistics and freight forwarding — custom-built systems that replace manual freight operations for sea, air & freight forwarders.",
   "foundingDate": "2019",
   "address": [
@@ -65,12 +65,12 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does CargoIQ integrate with CargoWise?",
+      "name": "Does FreightMynd integrate with CargoWise?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. The system we built for Hellmann Worldwide Logistics pushes clean XML directly into CargoWise via the eHub and Universal Gateway APIs. We also integrate with SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes." }
     },
     {
       "@type": "Question",
-      "name": "Is CargoIQ a SaaS product?",
+      "name": "Is FreightMynd a SaaS product?",
       "acceptedAnswer": { "@type": "Answer", "text": "No. We build custom AI systems deployed in your environment \u2014 not a SaaS seat. You own the system outright with no recurring subscription. This means the system is built for your TMS, your suppliers, your document formats, and your business rules \u2014 not a generic workflow that requires your operations to conform to it." }
     },
     {
@@ -95,8 +95,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Which TMS platforms does CargoIQ integrate with?",
-      "acceptedAnswer": { "@type": "Answer", "text": "CargoIQ integrates natively with CargoWise (via eHub and Universal Gateway), SAP TM (classic and S/4HANA), Oracle TMS (cloud and on-premise), Microsoft Dynamics 365, and Descartes. Each integration is built natively for your specific TMS instance, not through a generic connector." }
+      "name": "Which TMS platforms does FreightMynd integrate with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FreightMynd integrates natively with CargoWise (via eHub and Universal Gateway), SAP TM (classic and S/4HANA), Oracle TMS (cloud and on-premise), Microsoft Dynamics 365, and Descartes. Each integration is built natively for your specific TMS instance, not through a generic connector." }
     }
   ]
 };
@@ -105,7 +105,7 @@ const schema = [orgSchema, faqSchema];
 ---
 
 <Page
-  title="CargoIQ.ai — AI for Freight Forwarding | Freight Automation Software"
+  title="FreightMynd — AI for Freight Forwarding | Freight Automation Software"
   description="AI in logistics and freight forwarding — document processing, quote automation, and freight forwarding service automation built for your TMS. Trusted by Hellmann Worldwide Logistics."
   schema={schema}
 >

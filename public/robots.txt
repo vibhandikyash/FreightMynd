@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /thank-you
 
-Sitemap: https://cargoiq.pages.dev/sitemap-index.xml
+Sitemap: https://freightmynd.com/sitemap-index.xml
