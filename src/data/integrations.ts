@@ -29,7 +29,7 @@ export const integrations: Integration[] = [
     keyword: 'CargoWise AI integration',
     description: 'Deep AI integration with CargoWise One — automated XML data push, document processing, and cargo data intelligence built on your existing CargoWise instance.',
     metaTitle: 'CargoWise AI Integration | FreightMynd',
-    metaDescription: 'Deep AI integration with CargoWise One — automated XML data push via eHub and Universal Gateway, document intelligence, and zero manual TMS entry. Built and live for Hellmann Worldwide Logistics.',
+    metaDescription: 'AI integration with CargoWise One — automated XML data push via eHub and Universal Gateway, document intelligence, and zero manual TMS entry.',
     logo: 'cargowise',
     intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. FreightMynd builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
     architecture: {
@@ -108,7 +108,7 @@ export const integrations: Integration[] = [
     keyword: 'SAP TM AI integration',
     description: 'AI-powered automation layered on SAP Transportation Management — document processing, data enrichment, and operational intelligence.',
     metaTitle: 'SAP TM & S/4HANA AI Integration | FreightMynd',
-    metaDescription: 'AI automation layered on SAP Transportation Management — automated freight order creation, document processing, and operational intelligence. Supports classic SAP TM and S/4HANA embedded TM.',
+    metaDescription: 'AI automation for SAP Transportation Management — freight order creation, document processing, and operational intelligence for classic SAP TM and S/4HANA.',
     logo: 'sap',
     intro: 'SAP Transportation Management is the TMS of choice for large shippers and logistics service providers running complex, high-volume freight operations. Whether you run classic SAP TM or the embedded Transportation Management module in S/4HANA, FreightMynd layers SAP logistics AI on top of your existing SAP environment — automating document processing, freight order creation, and operational intelligence without replacing or disrupting your SAP infrastructure.',
     architecture: {
@@ -178,7 +178,7 @@ export const integrations: Integration[] = [
     keyword: 'Oracle TMS AI integration',
     description: 'AI automation for Oracle Transportation Management — intelligent document processing, shipment automation, and operational analytics.',
     metaTitle: 'Oracle TMS AI Integration | FreightMynd',
-    metaDescription: 'AI automation for Oracle Transportation Management Cloud and on-premise — document intelligence, shipment automation, and operational analytics via Oracle REST APIs.',
+    metaDescription: 'AI automation for Oracle Transportation Management Cloud and on-premise — document intelligence, shipment automation, and freight analytics.',
     logo: 'oracle',
     intro: 'Oracle Transportation Management (OTM) serves enterprise shippers, 3PLs, and global trade management operations with comprehensive transportation planning, execution, and settlement capabilities. Whether you run Oracle OTM Cloud or on-premise, FreightMynd integrates AI-powered document intelligence and operational automation via Oracle\'s REST APIs and web services — extending your OTM\'s capabilities without replacing or disrupting your existing Oracle infrastructure.',
     architecture: {
@@ -248,7 +248,7 @@ export const integrations: Integration[] = [
     keyword: 'Microsoft Dynamics freight AI integration',
     description: 'AI-powered freight automation for Microsoft Dynamics 365 — document intelligence, workflow automation, and operational analytics.',
     metaTitle: 'Dynamics 365 Freight AI Integration | FreightMynd',
-    metaDescription: 'AI-powered freight automation for Microsoft Dynamics 365 Supply Chain Management — Azure-native deployment, Power Automate integration, and automated document processing.',
+    metaDescription: 'AI-powered freight automation for Microsoft Dynamics 365 — Azure-native deployment, Power Automate integration, and automated document processing.',
     logo: 'dynamics',
     intro: 'Microsoft Dynamics 365 serves mid-market to enterprise logistics operations with its Finance and Supply Chain Management modules, making Microsoft Dynamics TMS a popular choice for freight forwarders and 3PLs. Because Dynamics 365 runs natively on Azure — and FreightMynd deploys on Azure — the integration delivers native performance with no data leaving the Microsoft ecosystem. This simplifies security compliance, reduces latency, and enables direct access to Power Automate logistics workflows, Dataverse, and Azure services as part of the automation pipeline.',
     architecture: {
@@ -318,7 +318,7 @@ export const integrations: Integration[] = [
     keyword: 'Descartes logistics AI integration',
     description: 'AI automation for Descartes logistics platform — document intelligence, customs automation, and operational analytics.',
     metaTitle: 'Descartes AI Integration for Customs & Compliance | FreightMynd',
-    metaDescription: 'AI automation for Descartes logistics platform — customs declaration automation, trade compliance data enrichment, and EDI processing for freight forwarders and customs brokers.',
+    metaDescription: 'AI automation for the Descartes logistics platform — customs declaration automation, trade compliance data enrichment, and EDI processing.',
     logo: 'descartes',
     intro: 'Descartes is strongest in customs and trade compliance — and that\'s where FreightMynd\'s trade compliance AI and document extraction create the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we deliver customs declaration automation that removes the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',
     architecture: {

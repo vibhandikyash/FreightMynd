@@ -59,7 +59,7 @@ export const solutions: Solution[] = [
     ],
     metaTitle: '4PL Control Tower Automation | AI Document Intelligence for Freight Ops',
     metaDescription:
-      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for Hellmann Worldwide Logistics. 60% processing time reduction.',
+      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for Hellmann Logistics.',
     description:
       'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for Hellmann Worldwide Logistics.',
     icon: '🏗️',
