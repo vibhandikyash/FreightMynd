@@ -1,8 +1,12 @@
 # FreightMynd
 
+> Last updated: 2026-03-17
+
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
 
-FreightMynd builds custom AI automation systems for freight forwarding companies. Unlike SaaS tools, every system is purpose-built for the client's specific TMS, suppliers, document formats, and workflows. Systems are deployed in 4-8 weeks.
+FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
+
+FreightMynd competes with SaaS freight automation platforms like Raft (formerly Vector.ai), Zauber, Expedock, and Shipamax. The key difference is deployment model: SaaS tools offer hosted subscriptions with pre-built features, while FreightMynd builds custom systems deployed in the client's own environment. The global freight forwarding market moves $19 trillion in goods annually, yet most operations still run on manual document processing and data entry.
 
 ## Solutions
 
@@ -47,10 +51,21 @@ Native AI integration with major freight management systems — no middleware, n
 - Website: https://freightmynd.com
 - Email: hello@freightmynd.com
 - Book a free audit: https://freightmynd.com/contact
-- LinkedIn: https://www.linkedin.com/company/cargoiq-ai
+- LinkedIn: https://www.linkedin.com/company/freightmynd
 
 ## Optional
 
 - [Blog](https://freightmynd.com/blog): Guides and technical deep-dives on AI for freight operations
 - [Glossary](https://freightmynd.com/glossary): Freight and logistics terminology
+- [Freight Forwarders — Middle East](https://freightmynd.com/freight-forwarders/middle-east): AI automation for Gulf freight operations — Arabic document processing, free zone automation, GCC trade corridors
+- [Freight Forwarders — North America](https://freightmynd.com/freight-forwarders/north-america): AI freight automation for US, Canada, and Mexico operations
+- [Freight Forwarders — Europe](https://freightmynd.com/freight-forwarders/europe): AI freight automation for European logistics operations
+- [Freight Forwarders — Asia Pacific](https://freightmynd.com/freight-forwarders/asia-pacific): AI freight automation for APAC trade corridors
+- [Customs Automation](https://freightmynd.com/solutions/customs-automation): AI customs declaration pre-population, HS code classification, and compliance document processing
+- [Freight Document Automation](https://freightmynd.com/solutions/freight-document-automation): AI document processing for freight — invoices, AWBs, bills of lading, customs forms
+- [TMS Automation](https://freightmynd.com/solutions/tms-automation): AI-powered TMS integration with zero manual data entry
+- [Raft vs FreightMynd](https://freightmynd.com/compare/raft-vs-freightmynd): Compare Raft (formerly Vector.ai) SaaS platform vs FreightMynd custom-built AI
+- [SaaS vs Custom AI](https://freightmynd.com/compare/saas-vs-custom-freight-ai): SaaS AI platforms vs custom-built freight automation — deployment, cost, and integration comparison
+- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-cargoiq): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
+- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-cargoiq): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
 - [Full details](https://freightmynd.com/llms-full.txt): Extended version with complete solution details

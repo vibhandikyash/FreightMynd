@@ -1,0 +1,362 @@
+---
+import Page from '../../layouts/Page.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
+import { site } from '../../data/site';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
+    { "@type": "ListItem", "position": 2, "name": "Solutions", "item": `${site.url}/solutions` },
+    { "@type": "ListItem", "position": 3, "name": "Customs Automation" },
+  ],
+};
+
+const faqItems = [
+  {
+    q: 'Can AI fully automate customs declarations?',
+    a: 'AI automates data extraction and pre-population, typically reducing filing time by 70%. The licensed customs broker still reviews and submits — keeping human oversight where it matters while eliminating the manual data entry that slows your team down.',
+  },
+  {
+    q: 'Does customs automation work with CargoWise?',
+    a: 'Yes. FreightMynd pushes structured customs data directly into CargoWise via eHub and Universal Gateway. We also integrate with Descartes, SAP TM, Oracle TMS, and other customs filing platforms.',
+  },
+  {
+    q: 'How accurate is AI HS code classification?',
+    a: 'AI-assisted HS code classification achieves 90%+ accuracy on first pass, with confidence scoring to flag uncertain classifications for human review. The system improves over time as it processes more of your specific commodity types.',
+  },
+  {
+    q: 'What document types does customs automation handle?',
+    a: 'Commercial invoices, packing lists, certificates of origin, bills of lading, phytosanitary certificates, and dangerous goods declarations. The AI extraction engine handles multi-format, multi-supplier variations without per-format engineering.',
+  },
+  {
+    q: 'How long does customs automation take to deploy?',
+    a: '4-8 weeks from kickoff to production, including integration with your customs filing platform. We start with a discovery and audit phase, build and test in your environment, and deploy with full handoff and documentation.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Customs Automation",
+  "provider": {
+    "@type": "Organization",
+    "name": "FreightMynd",
+    "url": site.url,
+  },
+  "serviceType": "AI Customs Automation",
+  "areaServed": "Global",
+  "description": "AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.",
+};
+
+const painPoints = [
+  'Manual re-keying of data from commercial invoices into customs forms',
+  'HS code lookup and classification done by memory or spreadsheet',
+  'Compliance checks are reactive — errors caught at the border, not before',
+  'Every new trade lane means new document formats and new pain',
+  'Peak season backlogs delay clearance and create demurrage risk',
+];
+
+const capabilities = [
+  {
+    icon: 'declaration',
+    title: 'Customs Declaration Pre-Population',
+    description: 'Extracts shipper, consignee, commodity, value, and origin data from commercial invoices and auto-fills customs declaration forms.',
+  },
+  {
+    icon: 'classification',
+    title: 'HS Code Classification',
+    description: 'AI-assisted Harmonized System code assignment based on product descriptions, reducing classification errors.',
+  },
+  {
+    icon: 'compliance',
+    title: 'Compliance Document Processing',
+    description: 'Processes certificates of origin, phytosanitary certificates, and dangerous goods declarations.',
+  },
+  {
+    icon: 'validation',
+    title: 'Cross-Document Validation',
+    description: 'Validates data consistency across invoices, packing lists, and bills of lading before submission.',
+  },
+  {
+    icon: 'integration',
+    title: 'Filing Platform Integration',
+    description: 'Pushes structured customs data into CargoWise, Descartes, and other customs filing systems.',
+  },
+  {
+    icon: 'audit',
+    title: 'Audit Trail & Reporting',
+    description: 'Complete processing logs for customs compliance audits.',
+  },
+];
+
+const results = [
+  { value: '70%', label: 'Customs filing time reduction' },
+  { value: '95%+', label: 'Data extraction accuracy' },
+  { value: '0', label: 'Manual data re-entry for standard formats' },
+  { value: '3 min', label: 'Average declaration pre-population time' },
+];
+
+const relatedSolutions = [
+  {
+    title: 'Document Intelligence',
+    description: 'AI reads and extracts structured data from freight documents — invoices, AWBs, packing lists, and compliance forms.',
+    href: '/solutions/document-intelligence',
+  },
+  {
+    title: 'Smart Invoice Processing',
+    description: 'Automated invoice capture, line-item extraction, and validation against purchase orders and contracts.',
+    href: '/solutions/smart-invoice-processing',
+  },
+  {
+    title: 'Sea Freight Automation',
+    description: 'End-to-end automation for sea freight operations — booking, documentation, tracking, and exception management.',
+    href: '/solutions/sea-freight-automation',
+  },
+];
+---
+
+<Page
+  title="Customs Automation for Freight Forwarders"
+  description="Automate customs declarations, HS code classification, and compliance document processing. AI customs automation that integrates with your TMS."
+  schema={[breadcrumbSchema, faqSchema, serviceSchema]}
+>
+  <!-- Breadcrumb -->
+  <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: 'Customs Automation' }]} />
+
+  <!-- Hero -->
+  <section class="pt-8 pb-16 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
+    <div class="container">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          Customs Automation
+        </p>
+        <h1 class="text-display-lg font-bold text-ink">
+          Your Customs Team Shouldn't Spend 3 Hours on Data Entry That Takes AI 3 Minutes
+        </h1>
+        <p class="mt-5 text-lg text-ink-3 leading-relaxed">
+          AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="/contact" class="btn btn-brand">
+            Book a Free Audit
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href="/solutions/document-intelligence" class="btn btn-ghost">See Document Intelligence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div data-reveal>
+          <p class="eyebrow mb-4">
+            <span class="eyebrow-dot bg-red-500"></span>
+            Before AI Customs Automation
+          </p>
+          <h2 class="section-heading">Manual Customs Processing Is a Bottleneck You Don't Need</h2>
+          <p class="mt-5 text-ink-3 leading-relaxed">
+            Customs teams spend hours re-keying data that already exists in commercial invoices and packing lists. HS code classification relies on memory. Compliance errors get caught at the border — not before. Every peak season creates backlogs that delay clearance and rack up demurrage charges.
+          </p>
+        </div>
+        <div class="space-y-3" data-reveal data-reveal-delay="1">
+          {painPoints.map((point) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl border border-line/50 bg-surface/50">
+              <span class="text-red-400 mt-0.5 flex-shrink-0">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                </svg>
+              </span>
+              <p class="text-sm text-ink-3 leading-relaxed">{point}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities -->
+  <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          What We Build
+        </p>
+        <h2 class="section-heading">AI Customs Automation — Built for Your Filing Workflow</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {capabilities.map((card, i) => (
+          <div class="group p-7 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+               data-reveal data-reveal-delay={String(Math.min(i + 1, 4))}>
+            <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                {card.icon === 'declaration' && <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />}
+                {card.icon === 'classification' && <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />}
+                {card.icon === 'compliance' && <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />}
+                {card.icon === 'validation' && <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />}
+                {card.icon === 'integration' && <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />}
+                {card.icon === 'audit' && <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />}
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2">{card.title}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-health"></span>
+          Results
+        </p>
+        <h2 class="section-heading">What AI Customs Automation Delivers</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {results.map((stat, i) => (
+          <div class="p-6 rounded-2xl border border-line/70 bg-surface/30 text-center" data-reveal data-reveal-delay={String(Math.min(i + 1, 4))}>
+            <p class="text-display-md font-bold text-brand">{stat.value}</p>
+            <p class="mt-2 text-sm text-ink-3">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Callout -->
+  <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center" data-reveal>
+        <p class="eyebrow justify-center mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          Integrations
+        </p>
+        <h2 class="text-display-sm font-bold text-ink" style="padding-left:0; border-left:none;">
+          Works With Your Existing Customs and TMS Platforms
+        </h2>
+        <p class="mt-4 text-ink-3 leading-relaxed max-w-xl mx-auto">
+          FreightMynd pushes structured customs data directly into the platforms you already use — no middleware, no manual re-entry.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+          {['CargoWise', 'Descartes', 'SAP TM', 'Oracle TMS'].map((platform) => (
+            <span class="px-5 py-2.5 rounded-xl border border-line/70 bg-white text-sm font-medium text-ink-3">
+              {platform}
+            </span>
+          ))}
+        </div>
+        <div class="mt-8">
+          <a href="/integrations" class="btn btn-ghost btn-sm">
+            See All Integrations
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Solutions -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="max-w-2xl mb-14" data-reveal>
+        <p class="eyebrow mb-4">
+          <span class="eyebrow-dot bg-brand"></span>
+          Related Solutions
+        </p>
+        <h2 class="section-heading">Explore More AI Solutions for Freight Forwarders</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {relatedSolutions.map((solution, i) => (
+          <a href={solution.href}
+             class="group p-7 rounded-2xl border border-line/70 bg-surface/30 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+             data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-brand transition-colors">{solution.title}</h3>
+            <p class="text-sm text-ink-3 leading-relaxed">{solution.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-10" data-reveal>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+        </div>
+        <div class="space-y-4">
+          {faqItems.map((faq, i) => (
+            <details class="group p-5 rounded-xl border border-line/70 bg-white" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+              <summary class="flex items-center justify-between cursor-pointer text-ink font-semibold text-sm leading-relaxed list-none">
+                {faq.q}
+                <svg class="w-5 h-5 text-ink-4 flex-shrink-0 ml-4 group-open:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm text-ink-3 leading-relaxed">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);">
+    <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
+    <div class="container relative z-10 text-center">
+      <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
+        Ready to Automate Your Customs Operations?
+      </h2>
+      <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
+        Book a free audit. We'll map your customs workflows, assess your filing platform integration, and deliver a custom automation proposal within 48 hours.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
+        <a href="/contact" class="btn btn-white">
+          Book a Free Audit
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/solutions" class="btn border border-white/30 text-white hover:bg-white/10">
+          Explore Solutions
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-white/60 font-mono" data-reveal data-reveal-delay="3">
+        No commitment · 30-minute call · Custom proposal within 48 hours
+      </p>
+    </div>
+  </section>
+</Page>

@@ -317,7 +317,7 @@ export const integrations: Integration[] = [
     shortTitle: 'Descartes',
     keyword: 'Descartes logistics AI integration',
     description: 'AI automation for Descartes logistics platform — document intelligence, customs automation, and operational analytics.',
-    metaTitle: 'Descartes AI Integration for Customs & Compliance | FreightMynd',
+    metaTitle: 'Descartes AI Integration | FreightMynd',
     metaDescription: 'AI automation for the Descartes logistics platform — customs declaration automation, trade compliance data enrichment, and EDI processing.',
     logo: 'descartes',
     intro: 'Descartes is strongest in customs and trade compliance — and that\'s where FreightMynd\'s trade compliance AI and document extraction create the most value. By feeding AI-extracted data from commercial invoices, packing lists, and certificates of origin directly into Descartes customs workflows, we deliver customs declaration automation that removes the most time-consuming part of customs processing: the manual extraction and re-keying of declaration data from source documents.',

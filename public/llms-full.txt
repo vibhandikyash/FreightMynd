@@ -1,8 +1,12 @@
 # FreightMynd — Full Context
 
+> Last updated: 2026-03-17
+
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
 
-FreightMynd builds custom AI automation systems for freight forwarding companies. Unlike SaaS freight automation tools (Zauber, Freightos), every system is purpose-built for the client's specific TMS instance, suppliers, document formats, and operational workflows. Systems are owned by the client — no subscription, no vendor lock-in. Deployed in 4-8 weeks from kickoff to production.
+FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
+
+FreightMynd competes with SaaS freight automation platforms like Raft (formerly Vector.ai), Zauber, Expedock, and Shipamax. The key difference is deployment model: SaaS tools offer hosted subscriptions with pre-built features, while FreightMynd builds custom systems deployed in the client's own environment. The global freight forwarding market moves $19 trillion in goods annually, yet most operations still run on manual document processing and data entry.
 
 ---
 
@@ -25,6 +29,8 @@ Capabilities:
 
 Results: 60% processing time reduction, 50% AI cost reduction, zero manual TMS data entry, near-zero failure rate on 300-page batches.
 
+Best for: Freight forwarders processing 100+ documents per day who want to eliminate manual CargoWise data entry.
+
 Tech stack: Python, LangGraph, Azure, n8n, CargoWise, OCR, OpenAI
 
 ---
@@ -44,6 +50,8 @@ Capabilities:
 
 Results: 85% faster quote turnaround, 60% reduction in manual pricing effort, 15% margin improvement through optimization, zero missed RFQ deadlines.
 
+Best for: Freight forwarders handling 50+ spot quotes per week who want to reduce quote turnaround from hours to minutes.
+
 ---
 
 ### Document Intelligence
@@ -60,6 +68,8 @@ Capabilities:
 - Complete audit trail and compliance reporting
 
 Results: 60% document processing time reduction, 95%+ extraction accuracy, zero manual data entry for standard formats, near-zero failure on high-volume batches.
+
+Best for: Any logistics company processing diverse document types from multiple suppliers and needing structured data in their TMS.
 
 ---
 
@@ -78,6 +88,8 @@ Capabilities:
 
 Results: 12% average margin improvement, 70% faster rate analysis, real-time market intelligence across all lanes.
 
+Best for: Freight forwarders managing rate sheets across 100+ lanes who want real-time benchmarking and margin protection.
+
 ---
 
 ### Sea Freight Automation
@@ -94,6 +106,8 @@ Capabilities:
 - Demurrage and detention tracking with proactive intervention
 
 Results: 60% reduction in manual booking effort, near-zero documentation errors, proactive exception detection before customer impact.
+
+Best for: Ocean freight operators managing high-volume container shipments who need end-to-end booking and documentation automation.
 
 ---
 
@@ -112,6 +126,8 @@ Capabilities:
 
 Results: 70% faster AWB processing, real-time visibility across all air shipments, automated compliance documentation.
 
+Best for: Air freight forwarders processing 50+ AWBs per day who need automated customs and security documentation.
+
 ---
 
 ### 3PL & 4PL Operations Automation
@@ -129,6 +145,8 @@ Capabilities:
 
 Results: 50% reduction in ops overhead per client, zero SLA breaches through proactive monitoring, scalable client onboarding.
 
+Best for: 3PL and 4PL providers managing 10+ clients who need scalable automation without per-client engineering effort.
+
 ---
 
 ### Smart Invoice Processing
@@ -145,6 +163,8 @@ Capabilities:
 - Direct ERP and accounting system integration
 
 Results: 80% faster invoice processing, 3-5% cost recovery through overcharge detection, zero manual matching for standard invoices.
+
+Best for: Freight AP teams processing 500+ invoices per month who want automated matching, audit, and overcharge recovery.
 
 ---
 
@@ -236,11 +256,68 @@ FreightMynd vs SaaS freight automation tools:
 - Built by: Bitontree (https://bitontree.com)
 - Founded: 2019
 - Offices: Clifton, NJ (US) and Gujarat (India)
-- LinkedIn: https://www.linkedin.com/company/cargoiq-ai
+- LinkedIn: https://www.linkedin.com/company/freightmynd
+- Formerly known as: CargoIQ.ai
 - Flagship client: Hellmann Worldwide Logistics
+
+### FreightMynd by the Numbers
+- 6+ years building AI for freight forwarding
+- 15+ TMS integrations completed
+- 50,000+ documents processed monthly
+- 5 production AI systems deployed
+- 60% average processing time reduction across deployments
+- 4-8 weeks average deployment timeline
+
+## Regional Coverage
+
+### Middle East
+URL: https://freightmynd.com/freight-forwarders/middle-east
+
+AI automation for freight forwarders in the UAE, Saudi Arabia, Qatar, Bahrain, Oman, and Kuwait.
+
+Capabilities:
+- Arabic and bilingual (Arabic-English) document processing — invoices, customs declarations, certificates of origin, bills of lading
+- UAE free zone automation — JAFZA, DAFZA, SAIF Zone documentation workflows
+- High-volume port operations — Jebel Ali, Khalifa Port, Hamad Port, King Abdullah Port
+- Air freight hub automation — DXB, DWC, DOH AWB processing and customs documentation
+- GCC cross-border road freight documentation and single-entry transit processing
+- Multi-modal operations across sea, air, and road freight
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
 
 ## Blog
 
 URL: https://freightmynd.com/blog
 
 Topics covered: AI for freight forwarding, CargoWise integration guides, document OCR accuracy, freight automation ROI, supply chain control towers, invoice matching, customs automation, air vs ocean freight automation.
+
+---
+
+## Comparisons
+
+- [Raft vs FreightMynd](https://freightmynd.com/compare/raft-vs-freightmynd): Compare Raft (formerly Vector.ai) SaaS platform vs FreightMynd custom-built AI for freight automation
+- [SaaS vs Custom AI](https://freightmynd.com/compare/saas-vs-custom-freight-ai): SaaS AI platforms vs custom-built freight automation — deployment model, cost, integration depth comparison
+- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-cargoiq): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
+- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-cargoiq): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
+
+---
+
+## Additional Solutions
+
+### Customs Automation
+URL: https://freightmynd.com/solutions/customs-automation
+
+AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into filing platforms.
+
+Capabilities:
+- Customs declaration pre-population from commercial invoices
+- AI-assisted HS code classification
+- Compliance document processing (certificates of origin, phytosanitary certificates, DG declarations)
+- Cross-document validation before submission
+- Filing platform integration (CargoWise, Descartes)
+- Complete audit trail for customs compliance
+
+Results: 70% customs filing time reduction, 95%+ data extraction accuracy, zero manual data re-entry for standard formats.
+
+Best for: Customs brokers and freight forwarders processing 50+ customs declarations per week who want to eliminate manual data entry.

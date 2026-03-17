@@ -28,9 +28,12 @@ const articleSchema = {
   "headline": study.headline,
   "description": study.description,
   "author": { "@type": "Organization", "name": "FreightMynd" },
-  "publisher": { "@type": "Organization", "name": "FreightMynd" },
+  "publisher": { "@type": "Organization", "name": "FreightMynd", "url": site.url },
   "about": { "@type": "Organization", "name": study.client },
   "keywords": study.keyword,
+  "datePublished": "2025-09-15",
+  "dateModified": "2026-03-17",
+  "mentions": study.stack.map(tech => ({ "@type": "Thing", "name": tech })),
 };
 
 import { caseStudies } from '../data/case-studies';

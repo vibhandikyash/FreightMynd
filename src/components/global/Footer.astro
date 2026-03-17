@@ -10,6 +10,9 @@ const solutionLinks = [
   { label: 'Air Freight Automation', href: '/solutions/air-freight-automation' },
   { label: '3PL/4PL Operations', href: '/solutions/3pl-4pl-operations' },
   { label: 'Smart Invoice Processing', href: '/solutions/smart-invoice-processing' },
+  { label: 'Customs Automation', href: '/solutions/customs-automation' },
+  { label: 'Document Automation', href: '/solutions/freight-document-automation' },
+  { label: 'TMS Automation', href: '/solutions/tms-automation' },
 ];
 
 const companyLinks = [
@@ -17,8 +20,19 @@ const companyLinks = [
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
   { label: 'Freight Forwarders', href: '/freight-forwarders' },
+  { label: 'Middle East', href: '/freight-forwarders/middle-east' },
+  { label: 'North America', href: '/freight-forwarders/north-america' },
+  { label: 'Europe', href: '/freight-forwarders/europe' },
+  { label: 'Asia Pacific', href: '/freight-forwarders/asia-pacific' },
   { label: 'Glossary', href: '/glossary' },
   { label: 'Contact', href: '/contact' },
+];
+
+const compareLinks = [
+  { label: 'Raft vs FreightMynd', href: '/compare/raft-vs-freightmynd' },
+  { label: 'Zauber vs FreightMynd', href: '/compare/zauber-vs-cargoiq' },
+  { label: 'Freightos vs FreightMynd', href: '/compare/freightos-vs-cargoiq' },
+  { label: 'SaaS vs Custom AI', href: '/compare/saas-vs-custom-freight-ai' },
 ];
 
 const integrationLinks = [
@@ -35,7 +49,7 @@ const currentYear = new Date().getFullYear();
 <footer class="bg-ink-2 text-white/70 pt-20 pb-8" role="contentinfo">
   <div class="container">
     <!-- Top grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-12 border-b border-white/10">
       <!-- Col 1: Brand -->
       <div class="col-span-2 md:col-span-1">
         <a href="/" class="flex items-center mb-4">
@@ -78,7 +92,19 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Col 4: Company -->
+      <!-- Col 4: Compare -->
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4">Compare</h3>
+        <ul class="space-y-2.5" role="list">
+          {compareLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-white transition-colors">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 5: Company -->
       <div>
         <h3 class="text-white font-semibold text-sm mb-4">Company</h3>
         <ul class="space-y-2.5" role="list">

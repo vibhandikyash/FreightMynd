@@ -9,26 +9,30 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
     { "@type": "ListItem", "position": 2, "name": "Compare" },
-    { "@type": "ListItem", "position": 3, "name": "Zauber vs FreightMynd" },
+    { "@type": "ListItem", "position": 3, "name": "SaaS vs Custom AI for Freight Forwarding" },
   ],
 };
 
 const faqItems = [
   {
-    q: 'What is the difference between Zauber and FreightMynd?',
-    a: 'Zauber is a SaaS freight automation product — a hosted platform you subscribe to. FreightMynd builds custom AI systems deployed in your own environment. Zauber offers pre-built features within their product\'s limits; FreightMynd builds bespoke automation around your specific TMS, suppliers, document formats, and edge cases. You subscribe to Zauber; you own what FreightMynd builds.',
+    q: 'Is SaaS or custom AI better for freight forwarding?',
+    a: 'It depends on your operational complexity. SaaS platforms work well for freight forwarders with standard workflows, common document formats, and limited TMS customization needs. Custom AI is better for complex, high-volume operations with diverse supplier formats, deep TMS integration requirements (CargoWise XML push, SAP TM BAPIs), and edge cases that are a competitive advantage rather than a nuisance.',
   },
   {
-    q: 'Is FreightMynd a Zauber alternative?',
-    a: 'Yes, for freight forwarders who need deeper customization, native TMS integration (CargoWise, SAP TM, Oracle TMS), and full ownership of their automation infrastructure. FreightMynd is purpose-built for complex, high-volume operations where a SaaS product\'s configuration limits become a constraint. If your operation has unique supplier formats, custom workflows, or edge cases that don\'t fit a template, FreightMynd is the alternative.',
+    q: 'How long does custom freight AI take to deploy?',
+    a: 'Typically 4-8 weeks from kickoff to production. This includes a discovery and audit phase, system build and testing in your environment, and deployment with full handoff and documentation. SaaS platforms can be live in days to weeks, but with less depth of integration and customization.',
   },
   {
-    q: 'Should I choose SaaS or custom AI for freight automation?',
-    a: 'It depends on your operation\'s complexity. SaaS platforms like Zauber work well for smaller operations with standard workflows that fit within the product\'s configuration options. Custom AI (FreightMynd\'s approach) is better for high-volume operations with complex TMS integrations, diverse supplier document formats, and edge cases that require purpose-built systems. Custom AI also gives you full ownership — no vendor lock-in, no per-seat pricing, and no dependency on a third-party platform.',
+    q: 'Is custom AI more expensive than SaaS?',
+    a: 'The upfront cost of custom AI is higher than a SaaS subscription. However, custom AI has no recurring per-seat fees, no price hikes when you scale, and no vendor lock-in. Over a 2-3 year horizon, custom AI often costs less than a SaaS subscription — and you own the system outright.',
   },
   {
-    q: 'Can FreightMynd handle document formats that Zauber cannot?',
-    a: 'Yes. FreightMynd\'s AI pipeline self-learns new document formats from any supplier. When a new supplier sends documents in a format the system hasn\'t seen, it maps the format automatically — no engineering effort per supplier. SaaS products are typically limited to their supported format library, which may not cover your specific supplier ecosystem.',
+    q: 'Can I migrate from SaaS to custom AI later?',
+    a: 'Yes. FreightMynd builds custom AI systems from scratch for your specific environment — your TMS, your suppliers, your workflows. If you\'ve outgrown a SaaS platform or hit its configuration limits, we can build a purpose-built replacement that handles your edge cases and integrates natively with your existing systems.',
+  },
+  {
+    q: 'What TMS integrations does custom AI support?',
+    a: 'FreightMynd builds native integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes — not generic connectors, but per-instance integrations tailored to your specific TMS configuration. This means direct XML push, BAPI calls, and API integration rather than flat-file imports or middleware workarounds.',
   },
 ];
 
@@ -43,23 +47,24 @@ const faqSchema = {
 };
 
 const comparisonRows = [
-  { category: 'Deployment', zauber: 'SaaS — vendor-hosted platform', cargoiq: 'Custom-built in your environment' },
-  { category: 'Ownership', zauber: 'Subscription — ongoing license fees', cargoiq: 'You own it — project fee + operational fee' },
-  { category: 'TMS Integration', zauber: 'Pre-built connectors for supported TMS', cargoiq: 'Native integration with your specific TMS instance' },
-  { category: 'Customization', zauber: 'Configure within product limits', cargoiq: 'Built for your edge cases from day one' },
-  { category: 'Document Formats', zauber: 'Supported formats only', cargoiq: 'Any format — AI learns your suppliers automatically' },
-  { category: 'Pricing', zauber: 'Per-seat subscription', cargoiq: 'Project fee + operational fee — no per-seat cost' },
-  { category: 'Data Control', zauber: 'Vendor-hosted — data on their servers', cargoiq: 'Your environment — your data stays with you' },
+  { category: 'Deployment', saas: 'Vendor-hosted cloud platform', custom: 'Deployed in your environment' },
+  { category: 'Time to Deploy', saas: 'Days to weeks', custom: '4-8 weeks' },
+  { category: 'Cost Structure', saas: 'Monthly/annual subscription per seat', custom: 'One-time project fee, no recurring' },
+  { category: 'Integration Depth', saas: 'Pre-built connectors, limited customization', custom: 'Native per-TMS instance integration' },
+  { category: 'Customization', saas: 'Configure within platform limits', custom: 'Built for your specific workflows' },
+  { category: 'Data Ownership', saas: 'Vendor-hosted, vendor-controlled', custom: 'You own everything' },
+  { category: 'Vendor Lock-in', saas: 'Switching costs increase over time', custom: 'No lock-in, system is yours' },
+  { category: 'Edge Cases', saas: 'Workarounds or feature requests', custom: 'Built in from day one' },
 ];
 ---
 
 <Page
-  title="Zauber vs FreightMynd — AI Comparison"
-  description="Zauber vs FreightMynd comparison — custom AI vs SaaS for freight automation. Compare deployment, ownership, TMS integration, and customization."
+  title="SaaS vs Custom AI for Freight Forwarding"
+  description="Should your freight operation use SaaS AI or build a custom system? Compare deployment, cost, integration depth, and long-term ROI."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Zauber vs FreightMynd' }]} />
+  <Breadcrumb items={[{ label: 'Compare' }, { label: 'SaaS vs Custom AI for Freight Forwarding' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
@@ -70,10 +75,10 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Zauber vs FreightMynd — How Custom AI Compares to SaaS Freight Automation
+          SaaS AI vs Custom-Built AI: Which Model Wins for Freight Operations?
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          Looking for a Zauber alternative? Zauber offers a SaaS freight automation product. FreightMynd builds custom AI systems deployed in your environment. Both aim to reduce manual freight operations — but the approach, ownership model, and depth of customization are fundamentally different.
+          Two fundamentally different approaches to freight automation. SaaS platforms offer speed and breadth. Custom-built systems offer depth and ownership. Here's how to decide.
         </p>
       </div>
     </div>
@@ -90,17 +95,17 @@ const comparisonRows = [
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="border-b-2 border-line">
-                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Zauber</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">FreightMynd</th>
+                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Dimension</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">SaaS AI (Raft, Zauber, Expedock)</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">Custom-Built AI (FreightMynd)</th>
               </tr>
             </thead>
             <tbody>
               {comparisonRows.map((row, i) => (
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
-                  <td class="py-4 px-6 text-sm text-ink-3">{row.zauber}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink-3">{row.saas}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.custom}</td>
                 </tr>
               ))}
             </tbody>
@@ -114,12 +119,12 @@ const comparisonRows = [
               <p class="text-sm font-bold text-ink mb-3">{row.category}</p>
               <div class="space-y-2">
                 <div>
-                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">Zauber</span>
-                  <p class="text-sm text-ink-3">{row.zauber}</p>
+                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">SaaS AI</span>
+                  <p class="text-sm text-ink-3">{row.saas}</p>
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
                   <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
-                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
+                  <p class="text-sm text-ink font-medium">{row.custom}</p>
                 </div>
               </div>
             </div>
@@ -129,20 +134,19 @@ const comparisonRows = [
     </div>
   </section>
 
-  <!-- When Zauber / When FreightMynd -->
+  <!-- When SaaS / When Custom -->
   <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Zauber -->
+        <!-- SaaS -->
         <div class="p-8 rounded-2xl border border-line/70 bg-white" data-reveal>
-          <h3 class="text-xl font-bold text-ink mb-4">When Zauber Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When SaaS Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'Small to mid-size operations wanting quick deployment',
-              'Standard workflows that fit within a product\'s configuration options',
-              'Teams that prefer a managed SaaS experience over custom development',
-              'Operations with limited TMS customization requirements',
-              'Budgets that favour predictable monthly subscription costs',
+              'You need to be live in days, not weeks',
+              'Your workflows are standard and don\'t require deep customization',
+              'You prefer vendor-managed infrastructure and updates',
+              'You\'re comfortable with recurring subscription costs',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink-3 leading-relaxed">
                 <span class="text-ink-4 mt-0.5 flex-shrink-0">
@@ -156,17 +160,16 @@ const comparisonRows = [
           </ul>
         </div>
 
-        <!-- FreightMynd -->
+        <!-- Custom -->
         <div class="p-8 rounded-2xl border border-brand/20 bg-brand-light/20" data-reveal data-reveal-delay="1">
-          <h3 class="text-xl font-bold text-ink mb-4">When FreightMynd Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When Custom Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'Complex, high-volume operations needing deep TMS integration',
-              'Custom document formats from diverse supplier networks',
-              'Operations that need systems built for their specific edge cases',
-              'Companies that want to own their automation infrastructure',
-              'Multi-system environments (CargoWise + SAP + custom portals)',
-              'Organisations where data sovereignty and control matter',
+              'You have diverse supplier formats that don\'t fit templates',
+              'You need deep TMS integration (CargoWise XML push, SAP TM BAPIs)',
+              'You want to own your system and data with no vendor lock-in',
+              'Your edge cases are a competitive advantage, not a nuisance',
+              'Hellmann chose custom because their 4PL control tower needed per-supplier document intelligence that no SaaS platform could handle',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink leading-relaxed">
                 <span class="text-brand mt-0.5 flex-shrink-0">
@@ -179,6 +182,13 @@ const comparisonRows = [
             ))}
           </ul>
         </div>
+      </div>
+
+      <!-- Key Distinction -->
+      <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl border border-brand/20 bg-brand-light/20 text-center" data-reveal>
+        <p class="text-sm text-ink leading-relaxed">
+          <strong>Key distinction:</strong> This isn't about which approach is "better" — it's about which one fits your operational reality. If your documents, suppliers, and TMS workflows are unique, a custom system will outperform any SaaS platform. If they're standard, SaaS gets you there faster.
+        </p>
       </div>
     </div>
   </section>
@@ -198,7 +208,7 @@ const comparisonRows = [
           Don't just take our word for it. See how we've built custom AI systems for freight forwarders like Hellmann Worldwide Logistics.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl mx-auto">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-3xl mx-auto">
         <a href="/case-studies/hellmann-4pl-control-tower"
            class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
            data-reveal data-reveal-delay="1">
@@ -231,17 +241,6 @@ const comparisonRows = [
           </div>
           <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">Document Intelligence</h3>
           <p class="text-xs text-ink-3 leading-relaxed">AI reads and extracts data from 300-page batches.</p>
-        </a>
-        <a href="/integrations"
-           class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
-           data-reveal data-reveal-delay="4">
-          <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-3">
-            <svg class="w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-            </svg>
-          </div>
-          <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">Integrations</h3>
-          <p class="text-xs text-ink-3 leading-relaxed">CargoWise, SAP TM, Oracle TMS, and more.</p>
         </a>
       </div>
     </div>
@@ -276,10 +275,10 @@ const comparisonRows = [
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
       <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
-        Want to See What Custom AI Looks Like for Your Operations?
+        Not Sure Which Approach Fits Your Operation?
       </h2>
       <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
-        Book a free audit. We'll map your workflows and show you what we'd build — with a timeline and expected results.
+        Book a free audit. We'll map your workflows and tell you honestly whether SaaS or custom AI is the right fit — with a timeline and expected results.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
         <a href="/contact" class="btn btn-white">

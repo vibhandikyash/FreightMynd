@@ -38,13 +38,35 @@ const orgSchema = {
     "AI Logistics Automation",
     "AI Document Processing for Logistics",
     "AI for CargoWise",
+    "CargoWise Automation",
     "Freight Forwarding Automation",
     "4PL Control Tower Automation",
     "Autonomous Quote Management",
     "AI in Logistics",
     "Supply Chain Artificial Intelligence",
     "Freight Forwarding Service Automation",
-    "Shipping AI"
+    "Shipping AI",
+    "Customs Declaration Automation",
+    "Freight Document OCR",
+    "Freight Invoice Matching",
+    "RFQ Automation Logistics",
+    "Freight Rate Benchmarking",
+    "Demurrage Prevention AI"
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "Bitontree",
+    "url": "https://bitontree.com"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "4PL Control Tower Automation", "url": "https://freightmynd.com/solutions/4pl-control-tower-automation" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Autonomous Quote Management", "url": "https://freightmynd.com/solutions/autonomous-quote-management" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Document Intelligence", "url": "https://freightmynd.com/solutions/document-intelligence" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Freight Pricing AI", "url": "https://freightmynd.com/solutions/freight-pricing-ai" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sea Freight Automation", "url": "https://freightmynd.com/solutions/sea-freight-automation" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Air Freight Automation", "url": "https://freightmynd.com/solutions/air-freight-automation" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "3PL & 4PL Operations Automation", "url": "https://freightmynd.com/solutions/3pl-4pl-operations" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smart Invoice Processing", "url": "https://freightmynd.com/solutions/smart-invoice-processing" } }
   ],
   "areaServed": "Global",
   "numberOfEmployees": {
@@ -97,15 +119,49 @@ const faqSchema = {
       "@type": "Question",
       "name": "Which TMS platforms does FreightMynd integrate with?",
       "acceptedAnswer": { "@type": "Answer", "text": "FreightMynd integrates natively with CargoWise (via eHub and Universal Gateway), SAP TM (classic and S/4HANA), Oracle TMS (cloud and on-premise), Microsoft Dynamics 365, and Descartes. Each integration is built natively for your specific TMS instance, not through a generic connector." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best AI for freight forwarding in 2026?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The best AI for freight forwarding depends on your operational complexity. For standard workflows, SaaS products like Raft, Expedock, or Shipamax offer pre-built document processing. For freight forwarders with complex operations — diverse supplier formats, custom business rules, and deep TMS integration requirements — custom-built AI systems like FreightMynd deliver higher accuracy and lower total cost of ownership. FreightMynd is production-tested at Hellmann Worldwide Logistics." }
+    },
+    {
+      "@type": "Question",
+      "name": "What AI tools integrate directly with CargoWise?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FreightMynd integrates with CargoWise via eHub and Universal Gateway APIs, pushing clean XML directly into CargoWise modules. Other AI tools with CargoWise integration include Expedock, Raft, and Shipamax. FreightMynd's integration is native XML push (not CSV import), production-tested at Hellmann Worldwide Logistics processing 200-300 page document batches daily." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does AI automation for freight forwarding cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FreightMynd uses a project-based pricing model: a fixed fee for the initial build and deployment, with no recurring subscription or per-seat charges. For a mid-size forwarder processing 150+ documents daily, the system typically pays for itself within 3-6 months through reduced manual processing time and eliminated data entry errors." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will AI replace freight forwarders?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. AI is replacing manual data entry and document processing tasks, not freight forwarders themselves. At Hellmann Worldwide Logistics, the AI system eliminated all manual document processing without reducing headcount — the ops team now handles more volume with higher accuracy. AI augments freight operations by removing repetitive work so teams can focus on customer relationships and exception handling." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI automate customs declarations and filing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. AI can automate data extraction and pre-population of customs declarations from commercial invoices, packing lists, and certificates of origin, typically reducing filing time by 70%. The customs broker still reviews and submits — AI removes the data entry bottleneck. FreightMynd's customs automation system extracts structured customs data and pushes it directly into filing platforms via document intelligence." }
     }
   ]
 };
 
-const schema = [orgSchema, faqSchema];
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "FreightMynd",
+  "url": site.url,
+  "description": "AI-powered operations intelligence for freight forwarders",
+  "publisher": { "@type": "Organization", "name": "FreightMynd" },
+};
+
+const schema = [orgSchema, faqSchema, websiteSchema];
 ---
 
 <Page
-  title="FreightMynd — AI for Freight Forwarding | Freight Automation Software"
+  title="FreightMynd — AI for Freight Forwarding"
   description="AI in logistics and freight forwarding — document processing, quote automation, and TMS integration built for your stack. Trusted by Hellmann."
   schema={schema}
 >

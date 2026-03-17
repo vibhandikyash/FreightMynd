@@ -57,7 +57,7 @@ export const solutions: Solution[] = [
       'logistics control tower AI',
       'shipment document extraction',
     ],
-    metaTitle: '4PL Control Tower Automation | AI Document Intelligence for Freight Ops',
+    metaTitle: '4PL Control Tower Automation',
     metaDescription:
       'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for Hellmann Logistics.',
     description:
@@ -236,7 +236,7 @@ export const solutions: Solution[] = [
       'freight quote generation',
       'spot quote automation',
     ],
-    metaTitle: 'Autonomous Quote Management | AI-Powered Freight Quoting in Minutes',
+    metaTitle: 'Autonomous Quote Management for Freight',
     metaDescription:
       'AI-powered freight quote generation, comparison, and response automation. Reduce quote turnaround from hours to minutes. 85% faster with 40% higher conversion.',
     description:
@@ -391,7 +391,7 @@ export const solutions: Solution[] = [
       'customs document AI',
       'shipping document extraction',
     ],
-    metaTitle: 'Freight Document Intelligence | AI Extraction with 99%+ Accuracy',
+    metaTitle: 'Freight Document Intelligence & AI OCR',
     metaDescription:
       'AI-powered extraction and processing of freight documents — invoices, AWBs, packing lists, customs forms — with 99%+ accuracy and direct TMS integration.',
     description:
@@ -547,9 +547,9 @@ export const solutions: Solution[] = [
       'freight rate management',
       'freight cost optimization',
     ],
-    metaTitle: 'Freight Pricing AI | Dynamic Rate Optimization & Market Intelligence',
+    metaTitle: 'Freight Pricing AI & Rate Optimization',
     metaDescription:
-      'AI-driven freight rate analysis, pricing optimization, and market intelligence. 12% average margin improvement with real-time benchmarking for sea and air freight.',
+      'AI-driven freight rate analysis and pricing optimization. 12% average margin improvement with real-time benchmarking for sea and air freight.',
     description:
       'AI-driven freight rate analysis, pricing optimization, and market intelligence for sea and air freight forwarders.',
     icon: '💰',
@@ -703,7 +703,7 @@ export const solutions: Solution[] = [
       'sea freight forwarding automation',
       'freight booking automation',
     ],
-    metaTitle: 'Sea Freight Automation | End-to-End AI for Ocean Freight Operations',
+    metaTitle: 'Sea Freight Automation | Shipping AI',
     metaDescription:
       'End-to-end AI automation for sea freight — booking, BL processing, container tracking, customs docs, and exception management. 65% fewer manual touchpoints.',
     description:
@@ -866,9 +866,9 @@ export const solutions: Solution[] = [
       'air cargo services automation',
       'air freight rates comparison',
     ],
-    metaTitle: 'Air Freight Automation | AI-Powered AWB Processing & Operations',
+    metaTitle: 'Air Freight Automation | AWB Processing',
     metaDescription:
-      'AI automation for air freight operations — AWB processing, carrier rate comparison, flight tracking, customs docs, and exception management. 70% faster AWB processing.',
+      'AI automation for air freight — AWB processing, rate comparison, flight tracking, and customs documentation. 70% faster AWB processing.',
     description:
       'AI-powered automation for air cargo services — AWB processing, air freight rates comparison, booking, and shipment tracking.',
     icon: '✈️',
@@ -1021,7 +1021,7 @@ export const solutions: Solution[] = [
       'cargo data intelligence platform',
       'multi-client logistics management',
     ],
-    metaTitle: '3PL & 4PL Operations Automation | Multi-Client AI for Logistics Providers',
+    metaTitle: '3PL & 4PL Operations Automation',
     metaDescription:
       'AI automation for 3PL and 4PL providers — multi-client management, SLA monitoring, and operational intelligence. Handle 40% more clients per ops person.',
     description:
@@ -1173,9 +1173,9 @@ export const solutions: Solution[] = [
       '3-way matching logistics',
       'ai in procurement logistics',
     ],
-    metaTitle: 'Smart Freight Invoice Processing | AI-Powered AP Automation & Audit',
+    metaTitle: 'Smart Invoice Processing for Freight',
     metaDescription:
-      'AI-powered freight invoice processing — extraction, 3-way matching, overcharge detection, and approval automation. 80% reduction in manual AP work. 4.2% overcharge recovery.',
+      'AI-powered freight invoice processing — 3-way matching, overcharge detection, and AP automation. 80% less manual work, 4.2% cost recovery.',
     description:
       'AI-powered freight invoice processing and procurement automation — extraction, validation, matching, and approval automation for logistics AP and procurement teams.',
     icon: '🧾',

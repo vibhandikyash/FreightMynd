@@ -9,26 +9,30 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
     { "@type": "ListItem", "position": 2, "name": "Compare" },
-    { "@type": "ListItem", "position": 3, "name": "Zauber vs FreightMynd" },
+    { "@type": "ListItem", "position": 3, "name": "Raft vs FreightMynd" },
   ],
 };
 
 const faqItems = [
   {
-    q: 'What is the difference between Zauber and FreightMynd?',
-    a: 'Zauber is a SaaS freight automation product — a hosted platform you subscribe to. FreightMynd builds custom AI systems deployed in your own environment. Zauber offers pre-built features within their product\'s limits; FreightMynd builds bespoke automation around your specific TMS, suppliers, document formats, and edge cases. You subscribe to Zauber; you own what FreightMynd builds.',
+    q: 'Is Raft better than FreightMynd for freight automation?',
+    a: 'It depends on your operation\'s complexity. Raft (formerly Vector.ai) is a VC-backed SaaS platform that suits standard workflows at scale across 60+ customers and 30+ countries. FreightMynd builds custom AI systems for complex operations needing deep customization, native TMS integration, and full ownership — ideal for enterprise forwarders with edge cases that don\'t fit templates.',
   },
   {
-    q: 'Is FreightMynd a Zauber alternative?',
-    a: 'Yes, for freight forwarders who need deeper customization, native TMS integration (CargoWise, SAP TM, Oracle TMS), and full ownership of their automation infrastructure. FreightMynd is purpose-built for complex, high-volume operations where a SaaS product\'s configuration limits become a constraint. If your operation has unique supplier formats, custom workflows, or edge cases that don\'t fit a template, FreightMynd is the alternative.',
+    q: 'Does Raft integrate with CargoWise?',
+    a: 'Yes, Raft has CargoWise integration as part of their SaaS platform. FreightMynd also integrates with CargoWise via eHub and Universal Gateway with native XML push — plus SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. FreightMynd\'s integrations are built natively per TMS instance rather than through generic connectors.',
   },
   {
-    q: 'Should I choose SaaS or custom AI for freight automation?',
-    a: 'It depends on your operation\'s complexity. SaaS platforms like Zauber work well for smaller operations with standard workflows that fit within the product\'s configuration options. Custom AI (FreightMynd\'s approach) is better for high-volume operations with complex TMS integrations, diverse supplier document formats, and edge cases that require purpose-built systems. Custom AI also gives you full ownership — no vendor lock-in, no per-seat pricing, and no dependency on a third-party platform.',
+    q: 'How much does Raft cost vs FreightMynd?',
+    a: 'Raft uses custom SaaS pricing with a recurring subscription model — you pay ongoing fees for access to their platform. FreightMynd uses project-based pricing with no recurring SaaS fees. You pay for the build, and you own the system outright with no vendor lock-in or price increases when you scale.',
   },
   {
-    q: 'Can FreightMynd handle document formats that Zauber cannot?',
-    a: 'Yes. FreightMynd\'s AI pipeline self-learns new document formats from any supplier. When a new supplier sends documents in a format the system hasn\'t seen, it maps the format automatically — no engineering effort per supplier. SaaS products are typically limited to their supported format library, which may not cover your specific supplier ecosystem.',
+    q: 'Can I switch from Raft to FreightMynd?',
+    a: 'Yes. FreightMynd systems are custom-built from scratch for your specific TMS and workflows. There is no migration dependency on Raft\'s platform. FreightMynd will audit your operations, map your workflows, and build a purpose-built system tailored to your exact requirements — including any edge cases that didn\'t fit within Raft\'s platform.',
+  },
+  {
+    q: 'What is Raft\'s deployment model?',
+    a: 'Raft is a hosted SaaS platform — your data lives on their infrastructure, and you access it via subscription. FreightMynd deploys in your environment. You own the system, control the data, and have no dependency on a third-party vendor for continued operation.',
   },
 ];
 
@@ -43,23 +47,23 @@ const faqSchema = {
 };
 
 const comparisonRows = [
-  { category: 'Deployment', zauber: 'SaaS — vendor-hosted platform', cargoiq: 'Custom-built in your environment' },
-  { category: 'Ownership', zauber: 'Subscription — ongoing license fees', cargoiq: 'You own it — project fee + operational fee' },
-  { category: 'TMS Integration', zauber: 'Pre-built connectors for supported TMS', cargoiq: 'Native integration with your specific TMS instance' },
-  { category: 'Customization', zauber: 'Configure within product limits', cargoiq: 'Built for your edge cases from day one' },
-  { category: 'Document Formats', zauber: 'Supported formats only', cargoiq: 'Any format — AI learns your suppliers automatically' },
-  { category: 'Pricing', zauber: 'Per-seat subscription', cargoiq: 'Project fee + operational fee — no per-seat cost' },
-  { category: 'Data Control', zauber: 'Vendor-hosted — data on their servers', cargoiq: 'Your environment — your data stays with you' },
+  { category: 'Model', raft: 'SaaS platform (subscription)', freightmynd: 'Custom-built (client-owned)' },
+  { category: 'Funding', raft: '$30M+ VC-backed (Eight Roads, Bessemer)', freightmynd: 'Bootstrapped (Bitontree)' },
+  { category: 'TMS Integration', raft: 'Generic integrations, CargoWise focus', freightmynd: 'Native per-TMS: CargoWise, SAP TM, Oracle, Dynamics, Descartes' },
+  { category: 'Customization', raft: 'One-size-fits-many platform', freightmynd: 'Purpose-built per client\'s workflows' },
+  { category: 'Pricing', raft: 'Custom SaaS pricing, recurring subscription', freightmynd: 'Project-based, no recurring fees' },
+  { category: 'Scale', raft: '60 customers, 30+ countries', freightmynd: 'Boutique, enterprise-focused' },
+  { category: 'Data Ownership', raft: 'Raft-hosted, vendor controls data', freightmynd: 'Client-owned, deployed in your environment' },
 ];
 ---
 
 <Page
-  title="Zauber vs FreightMynd — AI Comparison"
-  description="Zauber vs FreightMynd comparison — custom AI vs SaaS for freight automation. Compare deployment, ownership, TMS integration, and customization."
+  title="Raft vs FreightMynd"
+  description="Compare Raft (formerly Vector.ai) and FreightMynd for freight AI. SaaS platform vs custom-built — deployment, pricing, and TMS integration depth."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Zauber vs FreightMynd' }]} />
+  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Raft vs FreightMynd' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
@@ -70,10 +74,10 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Zauber vs FreightMynd — How Custom AI Compares to SaaS Freight Automation
+          Raft vs FreightMynd — Which AI Approach Fits Your Freight Operations?
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          Looking for a Zauber alternative? Zauber offers a SaaS freight automation product. FreightMynd builds custom AI systems deployed in your environment. Both aim to reduce manual freight operations — but the approach, ownership model, and depth of customization are fundamentally different.
+          Raft (formerly Vector.ai) is a VC-backed SaaS platform serving 60+ freight forwarders across 30 countries. FreightMynd builds custom AI systems deployed in your environment. Here's how they compare.
         </p>
       </div>
     </div>
@@ -90,8 +94,8 @@ const comparisonRows = [
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="border-b-2 border-line">
-                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Zauber</th>
+                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Dimension</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Raft</th>
                 <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">FreightMynd</th>
               </tr>
             </thead>
@@ -99,8 +103,8 @@ const comparisonRows = [
               {comparisonRows.map((row, i) => (
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
-                  <td class="py-4 px-6 text-sm text-ink-3">{row.zauber}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink-3">{row.raft}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.freightmynd}</td>
                 </tr>
               ))}
             </tbody>
@@ -114,12 +118,12 @@ const comparisonRows = [
               <p class="text-sm font-bold text-ink mb-3">{row.category}</p>
               <div class="space-y-2">
                 <div>
-                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">Zauber</span>
-                  <p class="text-sm text-ink-3">{row.zauber}</p>
+                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">Raft</span>
+                  <p class="text-sm text-ink-3">{row.raft}</p>
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
                   <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
-                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
+                  <p class="text-sm text-ink font-medium">{row.freightmynd}</p>
                 </div>
               </div>
             </div>
@@ -129,20 +133,19 @@ const comparisonRows = [
     </div>
   </section>
 
-  <!-- When Zauber / When FreightMynd -->
+  <!-- When Raft / When FreightMynd -->
   <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Zauber -->
+        <!-- Raft -->
         <div class="p-8 rounded-2xl border border-line/70 bg-white" data-reveal>
-          <h3 class="text-xl font-bold text-ink mb-4">When Zauber Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When Raft Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'Small to mid-size operations wanting quick deployment',
-              'Standard workflows that fit within a product\'s configuration options',
-              'Teams that prefer a managed SaaS experience over custom development',
-              'Operations with limited TMS customization requirements',
-              'Budgets that favour predictable monthly subscription costs',
+              'You want a plug-and-play platform with minimal setup',
+              'You need breadth across customs, operations, and finance in one SaaS tool',
+              'You prefer vendor-managed infrastructure and updates',
+              'You\'re a mid-market forwarder with standard workflows',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink-3 leading-relaxed">
                 <span class="text-ink-4 mt-0.5 flex-shrink-0">
@@ -161,12 +164,10 @@ const comparisonRows = [
           <h3 class="text-xl font-bold text-ink mb-4">When FreightMynd Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'Complex, high-volume operations needing deep TMS integration',
-              'Custom document formats from diverse supplier networks',
-              'Operations that need systems built for their specific edge cases',
-              'Companies that want to own their automation infrastructure',
-              'Multi-system environments (CargoWise + SAP + custom portals)',
-              'Organisations where data sovereignty and control matter',
+              'You have complex operations with diverse supplier formats and custom business rules',
+              'You need deep, native TMS integration (not generic connectors)',
+              'You want to own your AI system with no vendor lock-in or recurring SaaS fees',
+              'You\'re an enterprise forwarder like Hellmann with edge cases that don\'t fit templates',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink leading-relaxed">
                 <span class="text-brand mt-0.5 flex-shrink-0">
