@@ -56,12 +56,12 @@ const systems = [
           {/* Card image */}
           {i === 0 && (
             <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <Image src={controlTowerImg} alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" width={590} height={192} quality={80} />
+              <Image src={controlTowerImg} alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" widths={[370, 480, 590]} sizes="(max-width: 768px) calc(100vw - 40px), 560px" quality={60} />
             </div>
           )}
           {i === 1 && (
             <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <Image src={quoteManagementImg} alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" width={590} height={192} quality={80} />
+              <Image src={quoteManagementImg} alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" widths={[370, 480, 590]} sizes="(max-width: 768px) calc(100vw - 40px), 560px" quality={60} />
             </div>
           )}
           <div class="p-8 flex flex-col flex-grow">
