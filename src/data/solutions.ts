@@ -41,6 +41,7 @@ export interface Solution {
   faq: Array<{ q: string; a: string }>;
   relatedSolutions: string[];
   relatedIntegrations: string[];
+  relatedCaseStudies?: string[];
 }
 
 export const solutions: Solution[] = [
@@ -221,6 +222,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', 'smart-invoice-processing'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
   {
     slug: 'autonomous-quote-management',
@@ -378,6 +380,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
+    relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
   {
     slug: 'document-intelligence',
@@ -532,6 +535,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
   {
     slug: 'freight-pricing-ai',
@@ -688,6 +692,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['autonomous-quote-management', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
+    relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
   {
     slug: 'sea-freight-automation',
@@ -851,6 +856,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', 'air-freight-automation'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
+    relatedCaseStudies: ['shipping-news-intelligence'],
   },
   {
     slug: 'air-freight-automation',
@@ -1008,6 +1014,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['sea-freight-automation', 'document-intelligence'],
     relatedIntegrations: ['cargowise', 'descartes'],
+    relatedCaseStudies: ['shipping-news-intelligence'],
   },
   {
     slug: '3pl-4pl-operations',
@@ -1159,6 +1166,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
     relatedIntegrations: ['sap-tm', 'oracle-tms'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower', 'historical-email-intelligence'],
   },
   {
     slug: 'smart-invoice-processing',
@@ -1315,5 +1323,6 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', '3pl-4pl-operations'],
     relatedIntegrations: ['cargowise', 'microsoft-dynamics'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
 ];

@@ -87,6 +87,9 @@ const serviceSchema = {
 import { solutions } from '../data/solutions';
 import { integrations } from '../data/integrations';
 
+import { caseStudies } from '../data/case-studies';
+import type { CaseStudy } from '../data/case-studies';
+
 const relatedSolutionData = solution.relatedSolutions
   .map(slug => solutions.find(s => s.slug === slug))
   .filter((s): s is Solution => !!s);
@@ -94,6 +97,12 @@ const relatedSolutionData = solution.relatedSolutions
 const relatedIntegrationData = solution.relatedIntegrations
   .map(slug => integrations.find(i => i.slug === slug))
   .filter((i): i is import('../data/integrations').Integration => !!i);
+
+const relatedCaseStudyData = (solution.relatedCaseStudies ?? [])
+  .map(slug => caseStudies.find(cs => cs.slug === slug))
+  .filter((cs): cs is CaseStudy => !!cs);
+
+const primaryCaseStudy = relatedCaseStudyData[0];
 ---
 
 <Page
@@ -124,10 +133,8 @@ const relatedIntegrationData = solution.relatedIntegrations
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          {(solution.slug === '4pl-control-tower-automation' || solution.slug === 'document-intelligence') ? (
-            <a href="/case-studies/hellmann-4pl-control-tower" class="btn btn-ghost">See It in Action</a>
-          ) : solution.slug === 'autonomous-quote-management' ? (
-            <a href="/case-studies/rfq-email-intelligence" class="btn btn-ghost">See It in Action</a>
+          {primaryCaseStudy ? (
+            <a href={`/case-studies/${primaryCaseStudy.slug}`} class="btn btn-ghost">See It in Action</a>
           ) : (
             <a href="/case-studies/" class="btn btn-ghost">View Case Studies</a>
           )}
@@ -312,6 +319,38 @@ const relatedIntegrationData = solution.relatedIntegrations
       </div>
     </div>
   </section>
+
+  <!-- Related Case Studies -->
+  {relatedCaseStudyData.length > 0 && (
+    <section class="section-sm bg-white border-b border-line">
+      <div class="container">
+        <div class="max-w-2xl mb-8" data-reveal>
+          <h3 class="text-lg font-bold text-ink">Proof in Production</h3>
+        </div>
+        <div class={`grid gap-5 ${relatedCaseStudyData.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+          {relatedCaseStudyData.map((cs, i) => (
+            <a href={`/case-studies/${cs.slug}`}
+               class="group p-6 rounded-2xl border border-line/70 bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+               data-reveal data-reveal-delay={String(i + 1)}>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="tag tag-brand">
+                  <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse-dot"></span>
+                  Case Study
+                </span>
+                <span class="text-xs text-ink-4 font-mono">{cs.client}</span>
+              </div>
+              <h4 class="text-base font-bold text-ink mb-2 group-hover:text-brand transition-colors">{cs.title}</h4>
+              <p class="text-sm text-ink-3 leading-relaxed flex-grow">{cs.description}</p>
+              <div class="mt-4 inline-flex items-baseline gap-2">
+                <span class="text-lg font-bold text-brand">{cs.heroMetric.value}</span>
+                <span class="text-xs text-ink-4">{cs.heroMetric.label}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Tech Stack & Integrations -->
   <section class="section-sm bg-white">

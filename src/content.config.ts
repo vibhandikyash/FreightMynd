@@ -16,6 +16,9 @@ const blog = defineCollection({
     readingTime: z.string(),
     wordCount: z.number().optional(),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    relatedSolutions: z.array(z.string()).optional(),
+    relatedCaseStudies: z.array(z.string()).optional(),
+    relatedIntegrations: z.array(z.string()).optional(),
   }),
 });
 

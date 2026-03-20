@@ -27,6 +27,9 @@ const { Content } = await render(post);
   slug={post.id}
   wordCount={post.data.wordCount}
   faq={post.data.faq}
+  relatedSolutions={post.data.relatedSolutions}
+  relatedCaseStudies={post.data.relatedCaseStudies}
+  relatedIntegrations={post.data.relatedIntegrations}
 >
   <Content />
 </BlogPost>

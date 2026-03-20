@@ -158,15 +158,13 @@ const expectations = [
       <div class="grid lg:grid-cols-3 gap-12">
         <!-- Form -->
         <div class="lg:col-span-2" data-reveal>
-          <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST" class="bg-white p-8 md:p-10 rounded-2xl border border-line/70 shadow-card">
+          <form id="contact-form" class="bg-white p-8 md:p-10 rounded-2xl border border-line/70 shadow-card">
             <h2 class="text-xl font-bold text-ink mb-6">Tell Us About Your Operations</h2>
 
             <!-- Honeypot -->
             <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-            <!-- Redirect after submit -->
-            <input type="hidden" name="_next" value="/thank-you" />
-            <!-- Email subject -->
-            <input type="hidden" name="_subject" value="New FreightMynd Audit Request" />
+            <!-- Interest (pre-filled from URL) -->
+            <input type="hidden" id="interest" name="interest" value="" />
 
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
@@ -296,27 +294,67 @@ const expectations = [
     </div>
   </section>
 
-  <!-- Form enhancement scripts -->
+  <!-- Form scripts -->
   <script>
-    // Disable-on-submit
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
     const submitText = document.getElementById('submit-text') as HTMLSpanElement;
-    form?.addEventListener('submit', () => {
-      submitBtn.disabled = true;
-      submitText.textContent = 'Sending...';
-      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
-    });
+    const interestField = document.getElementById('interest') as HTMLInputElement;
 
-    // Pre-fill message from URL ?interest= parameter
+    // Pre-fill from URL ?interest= parameter
     const params = new URLSearchParams(window.location.search);
     const interest = params.get('interest');
     if (interest) {
+      interestField.value = interest;
       const textarea = document.getElementById('message') as HTMLTextAreaElement;
       if (textarea) {
         textarea.value = `I'm interested in ${interest.replace(/-/g, ' ')}. `;
         textarea.focus();
       }
     }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Disable button
+      submitBtn.disabled = true;
+      submitText.textContent = 'Sending...';
+      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+      // Gather form data
+      const formData = {
+        name: (document.getElementById('name') as HTMLInputElement).value,
+        email: (document.getElementById('email') as HTMLInputElement).value,
+        company: (document.getElementById('company') as HTMLInputElement).value,
+        role: (document.getElementById('role') as HTMLInputElement).value || undefined,
+        message: (document.getElementById('message') as HTMLTextAreaElement).value || undefined,
+        interest: interestField.value || undefined,
+        _gotcha: (form.querySelector('[name="_gotcha"]') as HTMLInputElement).value || undefined,
+      };
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        if (res.ok) {
+          window.location.href = '/thank-you';
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const errorMsg = (data as { error?: string }).error || 'Something went wrong. Please try again or email us directly.';
+          alert(errorMsg);
+          submitBtn.disabled = false;
+          submitText.textContent = 'Book Your Free Audit';
+          submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+      } catch {
+        alert('Network error. Please check your connection and try again.');
+        submitBtn.disabled = false;
+        submitText.textContent = 'Book Your Free Audit';
+        submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+      }
+    });
   </script>
 </Page>

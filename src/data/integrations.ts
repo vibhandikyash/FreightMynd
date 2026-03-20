@@ -19,6 +19,8 @@ export interface Integration {
   /** Optional proof block for Hellmann */
   proofBlock?: string;
   faq: Array<{ q: string; a: string }>;
+  /** Solutions most relevant to this integration */
+  relatedSolutions?: string[];
 }
 
 export const integrations: Integration[] = [
@@ -100,6 +102,7 @@ export const integrations: Integration[] = [
         a: 'Yes. We work within your existing CargoWise customisation framework — custom fields, custom workflows, custom charge codes. During discovery, we map your specific customisations and ensure our integration respects and builds on them rather than conflicting with them.',
       },
     ],
+    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing'],
   },
   {
     slug: 'sap-tm',
@@ -170,6 +173,7 @@ export const integrations: Integration[] = [
         a: 'The integration uses a dedicated SAP service user with authorizations scoped to exactly the objects and operations required — no broader access than needed. All actions are logged under this service user for audit purposes. We work with your SAP Basis team during setup to define the appropriate authorization profile.',
       },
     ],
+    relatedSolutions: ['4pl-control-tower-automation', 'freight-pricing-ai', '3pl-4pl-operations'],
   },
   {
     slug: 'oracle-tms',
@@ -240,6 +244,7 @@ export const integrations: Integration[] = [
         a: 'Typically 10-16 weeks from kickoff to production, depending on the complexity of your Oracle environment and the number of document types being automated. We start with a discovery phase to map your OTM configuration, followed by integration development, testing in your environment, and phased production rollout.',
       },
     ],
+    relatedSolutions: ['document-intelligence', 'sea-freight-automation', 'smart-invoice-processing'],
   },
   {
     slug: 'microsoft-dynamics',
@@ -310,6 +315,7 @@ export const integrations: Integration[] = [
         a: 'Yes. We handle multi-company (multi-legal-entity) Dynamics 365 environments by routing data to the correct legal entity based on document content, reference numbers, or configurable routing rules. Each entity\'s data isolation, security roles, and business logic are respected throughout the integration.',
       },
     ],
+    relatedSolutions: ['3pl-4pl-operations', 'smart-invoice-processing', 'autonomous-quote-management'],
   },
   {
     slug: 'descartes',
@@ -380,5 +386,6 @@ export const integrations: Integration[] = [
         a: 'Commercial invoices, packing lists, certificates of origin, dangerous goods declarations, insurance certificates, phytosanitary certificates, and other trade documents. Each document type is classified automatically and routed to the appropriate Descartes workflow — customs, compliance, or trade management — based on configurable rules that match your operational procedures.',
       },
     ],
+    relatedSolutions: ['sea-freight-automation', 'air-freight-automation', 'document-intelligence'],
   },
 ];

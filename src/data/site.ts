@@ -2,7 +2,7 @@ export const site = {
   name: 'FreightMynd',
   url: 'https://freightmynd.com',
   tagline: 'AI-Driven Cargo Data Intelligence Platform for Freight Forwarders',
-  description: 'Custom-built AI systems that replace manual freight operations. Trusted by Hellmann Worldwide Logistics.',
+  description: 'Custom-built freight forwarding software and AI systems that replace manual freight operations. Shipping automation, document processing, and TMS integration trusted by Hellmann Worldwide Logistics.',
   contact: {
     email: 'hello@freightmynd.com',
     auditUrl: '/contact',

@@ -48,8 +48,13 @@ const faqSchema = {
 
 import { integrations } from '../data/integrations';
 import { solutions } from '../data/solutions';
+import type { Solution } from '../data/solutions';
 const related = integrations.filter(i => i.slug !== integration.slug).slice(0, 3);
-const topSolutions = solutions.slice(0, 3);
+
+const relevantSolutions = (integration.relatedSolutions ?? [])
+  .map(slug => solutions.find(s => s.slug === slug))
+  .filter((s): s is Solution => !!s);
+const topSolutions = relevantSolutions.length > 0 ? relevantSolutions : solutions.slice(0, 3);
 ---
 
 <Page

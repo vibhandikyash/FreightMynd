@@ -9,6 +9,7 @@ export interface CaseStudy {
   results: Array<{ value: string; label: string; context?: string }>;
   stack: string[];
   challenge: string;
+  challengePoints?: string[];
   whatWeBuilt: string[];
   color: 'brand' | 'accent';
   icon: string;
@@ -19,6 +20,9 @@ export interface CaseStudy {
   architecture?: string[];
   keyLearnings?: string[];
   timeline?: string;
+  relatedSolutions?: string[];
+  relatedIntegrations?: string[];
+  faq?: Array<{ q: string; a: string }>;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -41,6 +45,14 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'n8n', 'CargoWise API', 'OpenAI GPT-4o', 'Custom OCR'],
     challenge: 'Hellmann\'s 4PL control tower operations received daily document bundles from suppliers — commercial invoices, airway bills, packing lists, customs compliance forms — often packaged as PDFs of 200–300 pages per batch. Two operators each spent 2–3 hours per morning manually downloading, splitting, reading, and re-keying data into spreadsheets before it could be entered into CargoWise. The manual process followed a rigid sequence: download email attachments, split multi-hundred-page PDFs into individual documents, identify document type, extract relevant fields, enter data into spreadsheets, and finally re-key everything into CargoWise. New suppliers required 1–3 weeks of engineering effort to map their document formats into the existing workflow. During peak season, document processing backlogs regularly exceeded 24+ hours, delaying downstream operations and creating compliance risk. The entire process lacked any audit trail — there was no systematic record of what was processed, when, or by whom, making error investigation and compliance reporting extremely difficult.',
+    challengePoints: [
+      'Daily document bundles of 200-300 pages (invoices, AWBs, packing lists, customs forms)',
+      '2-3 hours per morning per operator on manual download, split, read, re-key workflow',
+      'Rigid sequential process: download → split PDFs → identify doc type → extract → spreadsheet → re-key into CargoWise',
+      'New suppliers required 1-3 weeks engineering effort per format',
+      'Peak season backlogs exceeded 24+ hours, delaying downstream ops',
+      'No audit trail — no record of what was processed, when, or by whom',
+    ],
     whatWeBuilt: [
       'Email monitoring agent — monitors the ops inbox, detects supplier document emails, auto-downloads attachments',
       'AI document filter — lightweight classifier removes irrelevant pages (cover sheets, blank pages, duplicates), reducing AI processing costs by 50%',
@@ -71,6 +83,30 @@ export const caseStudies: CaseStudy[] = [
     color: 'brand',
     icon: '🏗️',
     featured: true,
+    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing'],
+    relatedIntegrations: ['cargowise'],
+    faq: [
+      {
+        q: 'What is 4PL control tower automation?',
+        a: 'A 4PL control tower automation system monitors all incoming shipment documents from suppliers, extracts structured data using AI, validates it against business rules, and pushes it directly into your TMS — replacing the manual document processing your ops team currently performs for every shipment.',
+      },
+      {
+        q: 'How does FreightMynd integrate with CargoWise?',
+        a: 'We push validated data directly into CargoWise via the eHub and Universal Gateway APIs as XML. The integration covers shipment records, customs declarations, accounting postings, and document attachments — with zero manual TMS entry.',
+      },
+      {
+        q: 'How long did the Hellmann implementation take?',
+        a: '12 weeks from kickoff to production, including a 4-week parallel run period where the AI system ran alongside the manual process to build confidence and catch edge cases.',
+      },
+      {
+        q: 'Can the system handle new supplier document formats?',
+        a: 'Yes. The self-learning supplier onboarding module maps new document formats within 3-5 sample documents — no engineering effort per supplier. This replaced the previous 1-3 weeks of developer time required for each new supplier.',
+      },
+      {
+        q: 'What happens when the AI is uncertain about extracted data?',
+        a: 'The system uses field-level confidence scoring. Low-confidence fields are routed to a human review queue with the specific uncertain field highlighted. Operators review individual fields, not entire documents — keeping accuracy high while minimizing manual work.',
+      },
+    ],
   },
   {
     slug: 'rfq-email-intelligence',
@@ -99,6 +135,8 @@ export const caseStudies: CaseStudy[] = [
     color: 'brand',
     icon: '📧',
     featured: true,
+    relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
   },
   {
     slug: 'historical-email-intelligence',
@@ -127,6 +165,8 @@ export const caseStudies: CaseStudy[] = [
     color: 'accent',
     icon: '🧠',
     featured: false,
+    relatedSolutions: ['3pl-4pl-operations', 'document-intelligence'],
+    relatedIntegrations: ['cargowise'],
   },
   {
     slug: 'shipping-news-intelligence',
@@ -155,6 +195,8 @@ export const caseStudies: CaseStudy[] = [
     color: 'brand',
     icon: '🛰️',
     featured: false,
+    relatedSolutions: ['sea-freight-automation', 'air-freight-automation'],
+    relatedIntegrations: ['cargowise'],
   },
   {
     slug: 'rfq-email-automation',
@@ -187,5 +229,7 @@ export const caseStudies: CaseStudy[] = [
     color: 'accent',
     icon: '🔄',
     featured: true,
+    relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
   },
 ];

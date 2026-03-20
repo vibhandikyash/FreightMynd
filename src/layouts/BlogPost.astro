@@ -16,7 +16,14 @@ interface Props {
   slug: string;
   wordCount?: number;
   faq?: Array<{ q: string; a: string }>;
+  relatedSolutions?: string[];
+  relatedCaseStudies?: string[];
+  relatedIntegrations?: string[];
 }
+
+import { solutions } from '../data/solutions';
+import { caseStudies } from '../data/case-studies';
+import { integrations } from '../data/integrations';
 
 const {
   title,
@@ -31,7 +38,47 @@ const {
   slug,
   wordCount,
   faq,
+  relatedSolutions: relatedSolutionSlugs,
+  relatedCaseStudies: relatedCaseStudySlugs,
+  relatedIntegrations: relatedIntegrationSlugs,
 } = Astro.props;
+
+// Resolve related content from slugs
+const relatedSolutionItems = (relatedSolutionSlugs ?? [])
+  .map(s => solutions.find(sol => sol.slug === s))
+  .filter(Boolean)
+  .slice(0, 2);
+
+const relatedCaseStudyItems = (relatedCaseStudySlugs ?? [])
+  .map(s => caseStudies.find(cs => cs.slug === s))
+  .filter(Boolean)
+  .slice(0, 1);
+
+const relatedIntegrationItems = (relatedIntegrationSlugs ?? [])
+  .map(s => integrations.find(i => i.slug === s))
+  .filter(Boolean)
+  .slice(0, 1);
+
+// Build dynamic continue reading cards
+const continueReadingCards: Array<{ href: string; type: string; label: string }> = [];
+for (const sol of relatedSolutionItems) {
+  if (sol) continueReadingCards.push({ href: `/solutions/${sol.slug}`, type: 'Solution', label: sol.shortTitle });
+}
+for (const cs of relatedCaseStudyItems) {
+  if (cs) continueReadingCards.push({ href: `/case-studies/${cs.slug}`, type: 'Case Study', label: cs.client });
+}
+for (const intg of relatedIntegrationItems) {
+  if (intg) continueReadingCards.push({ href: `/integrations/${intg.slug}`, type: 'Integration', label: `${intg.shortTitle} AI Integration` });
+}
+
+// Fallback to default links if no related content specified
+if (continueReadingCards.length === 0) {
+  continueReadingCards.push(
+    { href: '/solutions/4pl-control-tower-automation', type: 'Solution', label: '4PL Control Tower Automation' },
+    { href: '/case-studies/hellmann-4pl-control-tower', type: 'Case Study', label: 'Hellmann Worldwide Logistics' },
+    { href: '/integrations/cargowise', type: 'Integration', label: 'CargoWise AI Integration' },
+  );
+}
 
 const formattedDate = publishDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -148,19 +195,13 @@ const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema]
   <section class="section bg-surface">
     <div class="container max-w-3xl mx-auto">
       <h2 class="text-display-sm font-bold text-ink mb-8" style="padding-left:0; border-left:none;">Continue Reading</h2>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <a href="/solutions/4pl-control-tower-automation" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
-          <span class="text-xs font-mono text-brand uppercase tracking-wider">Solution</span>
-          <p class="mt-2 text-sm font-semibold text-ink">4PL Control Tower Automation</p>
-        </a>
-        <a href="/case-studies/hellmann-4pl-control-tower" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
-          <span class="text-xs font-mono text-brand uppercase tracking-wider">Case Study</span>
-          <p class="mt-2 text-sm font-semibold text-ink">Hellmann Worldwide Logistics</p>
-        </a>
-        <a href="/integrations/cargowise" class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
-          <span class="text-xs font-mono text-brand uppercase tracking-wider">Integration</span>
-          <p class="mt-2 text-sm font-semibold text-ink">CargoWise AI Integration</p>
-        </a>
+      <div class={`grid gap-4 ${continueReadingCards.length >= 3 ? 'sm:grid-cols-3' : continueReadingCards.length === 2 ? 'sm:grid-cols-2' : ''}`}>
+        {continueReadingCards.slice(0, 3).map(card => (
+          <a href={card.href} class="p-5 rounded-xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300">
+            <span class="text-xs font-mono text-brand uppercase tracking-wider">{card.type}</span>
+            <p class="mt-2 text-sm font-semibold text-ink">{card.label}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>
