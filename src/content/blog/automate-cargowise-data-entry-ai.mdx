@@ -1,6 +1,6 @@
 ---
-title: "Automate CargoWise Data Entry with AI"
-description: "Eliminate manual CargoWise data entry with AI document extraction and XML push. How the eHub pipeline works, with real results from Hellmann."
+title: "How to Automate CargoWise Data Entry with AI — Zero Manual Entry (2026)"
+description: "Step-by-step guide to eliminating manual CargoWise data entry — AI document extraction, eHub XML push, and validation pipeline. Real results: 60% faster processing, zero manual entries."
 publishDate: 2026-02-15
 author: "FreightMynd Team"
 category: "Technical"
@@ -137,6 +137,23 @@ If you are evaluating [document intelligence](/solutions/document-intelligence) 
 **Expect 4-8 weeks from kickoff to production.** This includes discovery (mapping your documents and CargoWise config), development, parallel testing alongside your manual process, and a monitored go-live.
 
 If you want to understand what this would look like for your specific operation, [book a free audit](/contact). We will review your document volumes, CargoWise setup, and supplier landscape — and tell you whether automation makes economic sense for your scale.
+
+## CargoWise OCR vs AI Extraction: What's the Difference?
+
+Traditional OCR (Optical Character Recognition) and AI-powered document extraction are often confused, but they solve fundamentally different problems. Understanding the distinction matters because it determines whether your automation pipeline can handle the real-world complexity of freight documents — or breaks the moment a supplier changes their invoice layout.
+
+OCR reads characters from images and maps them to text using template-based rules. It works well when documents follow a predictable, fixed layout — the same fields always appear in the same positions on the page. But freight documents are anything but predictable. A commercial invoice from a supplier in Shanghai looks nothing like one from Rotterdam. Even the same supplier may change their format between shipments. When the layout shifts, template-based OCR fails silently — extracting the wrong value into the wrong field, or returning empty results that require manual correction.
+
+AI extraction works differently. Instead of mapping pixel coordinates to fields, it understands the semantic structure of freight documents. It knows that a number following "Gross Weight" is a weight value regardless of where it appears on the page, that an 11-digit number matching a specific pattern is an AWB number, and that line items in an invoice follow a quantity-description-price structure even when formatted as a table, a list, or free text. This semantic understanding means AI extraction handles format variations across suppliers without per-template training — what the industry calls zero-shot extraction. You do not need to manually define templates for each supplier. The AI generalises from its understanding of freight document structures, adapting to new formats automatically.
+
+### Manual CargoWise Entry vs AI-Automated Entry
+
+| | Manual Entry | AI-Automated Entry |
+|---|---|---|
+| Time per document | 15–25 minutes | 2–4 minutes |
+| Error rate | 2–4% per field | < 0.5% |
+| Cost per document | $12–$15 | $1.20–$5.00 |
+| Scalability | Linear (more staff) | Handles 3x volume, same infra |
 
 ## Frequently Asked Questions
 

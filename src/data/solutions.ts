@@ -238,9 +238,9 @@ export const solutions: Solution[] = [
       'freight quote generation',
       'spot quote automation',
     ],
-    metaTitle: 'Autonomous Quote Management for Freight',
+    metaTitle: 'AI Freight Quote Automation — RFQ to Quote in Under 10 Minutes | FreightMynd',
     metaDescription:
-      'AI-powered freight quote generation, comparison, and response automation. Reduce quote turnaround from hours to minutes. 85% faster with 40% higher conversion.',
+      'Automate your entire freight quoting workflow — RFQ intake, carrier rate lookup, margin calculation, and quote delivery in under 10 minutes. Zero manual steps. See how it works.',
     description:
       'AI-powered freight quote generation, comparison, and response automation. Automate every freight quote from spot quotes to contract rates — reduce turnaround from hours to minutes.',
     icon: '📋',
@@ -376,6 +376,18 @@ export const solutions: Solution[] = [
       {
         q: 'How do you handle rate confidentiality between customers?',
         a: 'Strict customer isolation is enforced at every level. Rate negotiations, margin agreements, and pricing history for Customer A are never visible to or influenced by Customer B\'s data, even though the system optimizes across your entire book of business. The margin optimization engine uses anonymized market patterns, not cross-customer data. Access controls ensure each sales rep only sees quotes and pricing data for their assigned accounts.',
+      },
+      {
+        q: 'How does automated freight quoting work?',
+        a: 'FreightMynd\'s AI monitors incoming RFQs via email, extracts shipment parameters (origin, destination, commodity, weight, dimensions), detects missing information and auto-generates clarification requests, matches against your rate database, applies margin rules and surcharges, and delivers a branded quote — all in under 10 minutes.',
+      },
+      {
+        q: 'How long does freight quote automation take to implement?',
+        a: 'Typically 4–8 weeks from kickoff to production. This includes discovery, architecture design, build and testing with your actual RFQs, and a parallel run period where the AI system operates alongside your existing process.',
+      },
+      {
+        q: 'Does freight quote automation integrate with CargoWise?',
+        a: 'Yes, FreightMynd integrates natively with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics 365. Rate data is pulled directly from your TMS, and completed quotes can be pushed back for record-keeping.',
       },
     ],
     relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation'],

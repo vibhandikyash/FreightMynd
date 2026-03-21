@@ -17,15 +17,15 @@ const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "FreightMynd",
-  "url": site.url,
-  "logo": `${site.url}/FM-logo.svg`,
-  "description": "AI-powered freight forwarding software and shipping automation platform — custom-built freight management systems that replace manual freight operations for sea, air & freight forwarders.",
+  "url": "https://freightmynd.com",
+  "logo": "https://freightmynd.com/FM-logo.svg",
+  "description": "AI-powered operations intelligence for sea, air & freight forwarders. Custom-built systems that replace manual freight operations.",
   "foundingDate": "2019",
   "address": [
     { "@type": "PostalAddress", "addressCountry": "US", "addressLocality": "Clifton" },
     { "@type": "PostalAddress", "addressCountry": "IN", "addressLocality": "Gujarat" }
   ],
-  "sameAs": [site.social.linkedin],
+  "sameAs": ["https://www.linkedin.com/company/freightmynd"],
   "contactPoint": {
     "@type": "ContactPoint",
     "email": site.contact.email,
@@ -154,16 +154,7 @@ const faqSchema = {
   ]
 };
 
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "FreightMynd",
-  "url": site.url,
-  "description": "AI-powered operations intelligence for freight forwarders",
-  "publisher": { "@type": "Organization", "name": "FreightMynd" },
-};
-
-const schema = [orgSchema, faqSchema, websiteSchema];
+const schema = [orgSchema, faqSchema];
 ---
 
 <Page

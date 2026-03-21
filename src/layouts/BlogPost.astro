@@ -108,20 +108,17 @@ const articleSchema = {
   "description": description,
   "image": ogImageUrl,
   "author": {
-    "@type": "Person",
+    "@type": "Organization",
     "name": "FreightMynd Team",
-    "jobTitle": "Freight AI Specialists",
-    "url": `${site.url}/about`,
-    "worksFor": {
-      "@type": "Organization",
-      "name": "FreightMynd",
-      "url": site.url,
-    },
   },
   "publisher": {
     "@type": "Organization",
     "name": "FreightMynd",
     "url": site.url,
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://freightmynd.com/FM-logo.svg",
+    },
   },
   "datePublished": isoDate,
   ...(isoModified && { "dateModified": isoModified }),

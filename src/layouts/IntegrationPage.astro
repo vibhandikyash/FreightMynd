@@ -176,6 +176,9 @@ const topSolutions = relevantSolutions.length > 0 ? relevantSolutions : solution
     </div>
   </section>
 
+  <!-- Custom content slot -->
+  <slot />
+
   <!-- Proof Block (conditional) -->
   {integration.proofBlock && (
     <section class="section-sm bg-surface">
