@@ -15,13 +15,15 @@ faq:
   - q: "Why is 3-way matching harder for freight forwarders than other industries?"
     a: "Freight invoices contain variable charges that do not exist in traditional procurement — surcharges, accessorial fees, fuel adjustments, currency conversions, and weight-based pricing that can change between booking and delivery. A single shipment can generate multiple invoices from different parties (carrier, customs broker, warehouse), and documents arrive in different formats from different suppliers."
   - q: "How does AI automate 3-way invoice matching for freight?"
-    a: "AI extracts structured data from all three document types (PO, receipt/proof of delivery, invoice), normalises the data into comparable formats, and performs automated matching with configurable tolerance rules. Matched invoices are approved automatically. Discrepancies are flagged with the specific mismatched field highlighted for human review."
+    a: "AI extracts structured data from all three document types (PO, receipt/proof of delivery, invoice), normalizes the data into comparable formats, and performs automated matching with configurable tolerance rules. Matched invoices are approved automatically. Discrepancies are flagged with the specific mismatched field highlighted for human review."
   - q: "What accuracy rate can AI achieve in freight invoice matching?"
     a: "Production AI systems achieve 92-97% straight-through matching rates on freight invoices, meaning that percentage of invoices are matched and approved without human intervention. The remaining 3-8% are flagged as exceptions with specific discrepancies identified, allowing your team to focus review time on genuine issues rather than reviewing every invoice manually."
   - q: "How much time does automated invoice matching save freight forwarders?"
     a: "Mid-size freight forwarders typically reduce invoice processing time by 60-75% with automated 3-way matching. A team that previously spent 3-4 hours daily on manual matching and reconciliation can handle the same volume in under an hour, with higher accuracy and faster payment cycles."
 relatedSolutions:
   - "smart-invoice-processing"
+  - "freight-revenue-recovery"
+  - "freight-spend-analytics"
 relatedIntegrations:
   - "cargowise"
   - "sap-tm"
@@ -62,7 +64,7 @@ A single shipment generates invoices from multiple parties. The carrier bills oc
 
 ### Format Inconsistency
 
-Your carrier sends a structured EDI invoice. Your customs broker sends a PDF. Your local agent sends a scanned document. Matching requires extracting structured data from all three formats and normalising it into comparable fields. Manually, this means an operator reads each document, mentally maps the fields, and performs the comparison. At 50-100 invoices per day, this is an entire team's workload.
+Your carrier sends a structured EDI invoice. Your customs broker sends a PDF. Your local agent sends a scanned document. Matching requires extracting structured data from all three formats and normalizing it into comparable fields. Manually, this means an operator reads each document, mentally maps the fields, and performs the comparison. At 50-100 invoices per day, this is an entire team's workload.
 
 ### Tolerance Thresholds
 
@@ -78,9 +80,9 @@ The system ingests invoices, purchase orders, and delivery receipts from all cha
 
 This is the same extraction technology used in our [document intelligence](/solutions/document-intelligence) pipeline — it handles multi-format, multi-supplier variations without per-supplier configuration.
 
-### Step 2: Data Normalisation
+### Step 2: Data Normalization
 
-Extracted data from all three document types is normalised into a common schema. Charge descriptions are mapped to standard categories (a carrier's "BAF" surcharge and another's "Bunker Adjustment" are recognised as the same charge type). Currency conversions are applied at the rate specified in the booking or at the prevailing rate if not specified. Weight and volume figures are converted to consistent units.
+Extracted data from all three document types is normalized into a common schema. Charge descriptions are mapped to standard categories (a carrier's "BAF" surcharge and another's "Bunker Adjustment" are recognized as the same charge type). Currency conversions are applied at the rate specified in the booking or at the prevailing rate if not specified. Weight and volume figures are converted to consistent units.
 
 ### Step 3: Automated Matching with Tolerance Rules
 
@@ -108,7 +110,7 @@ Each human decision on an exception feeds back into the system. If your team con
 
 The value of automated 3-way matching comes from three sources.
 
-**Recovered overpayment.** Automated matching catches discrepancies that manual review misses — especially small surcharge overcharges that individually seem insignificant but compound across hundreds of invoices. Freight forwarders who implement automated matching typically recover 2-5% of freight spend in the first year through better discrepancy detection.
+**Recovered overpayment.** Automated matching catches discrepancies that manual review misses — especially small surcharge overcharges that individually seem insignificant but compound across hundreds of invoices. Freight forwarders who implement automated matching typically recover 2-5% of freight spend in the first year through better discrepancy detection. Our [freight revenue recovery](/solutions/freight-revenue-recovery) solution builds on this capability to systematically identify and recapture leaked revenue across your entire freight operation.
 
 **Reduced processing cost.** A team of 3-4 people spending half their day on manual invoice matching and reconciliation can be reduced to 1 person handling exceptions. The time savings is 60-75%, with the reallocated staff focused on supplier negotiations, dispute resolution, and cash flow management.
 
@@ -118,7 +120,7 @@ The value of automated 3-way matching comes from three sources.
 
 If your operation processes more than 200 freight invoices per month and still relies on manual matching, the ROI case is clear. Here is a practical path forward.
 
-**Audit your current process.** Track how many hours your team spends on invoice matching and reconciliation over one month. Count the number of discrepancies found, the dollar value of corrections, and the average time from invoice receipt to payment approval. These baselines will quantify your return.
+**Audit your current process.** Track how many hours your team spends on invoice matching and reconciliation over one month. Count the number of discrepancies found, the dollar value of corrections, and the average time from invoice receipt to payment approval. These baselines will quantify your return. Our [freight spend analytics](/solutions/freight-spend-analytics) solution can help you build this visibility systematically across all your freight spend categories.
 
 **Start with your highest-volume supplier.** Pick the carrier or agent that sends you the most invoices. Automate matching for that single supplier first, prove the pipeline, then expand. This reduces implementation risk and produces a quick win.
 
@@ -140,7 +142,7 @@ Freight invoices contain variable charges that do not exist in traditional procu
 
 ### How does AI automate 3-way invoice matching for freight?
 
-AI extracts structured data from all three document types (PO, receipt/proof of delivery, invoice), normalises the data into comparable formats, and performs automated matching with configurable tolerance rules. Matched invoices are approved automatically. Discrepancies are flagged with the specific mismatched field highlighted for human review.
+AI extracts structured data from all three document types (PO, receipt/proof of delivery, invoice), normalizes the data into comparable formats, and performs automated matching with configurable tolerance rules. Matched invoices are approved automatically. Discrepancies are flagged with the specific mismatched field highlighted for human review.
 
 ### What accuracy rate can AI achieve in freight invoice matching?
 

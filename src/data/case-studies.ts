@@ -83,7 +83,7 @@ export const caseStudies: CaseStudy[] = [
     color: 'brand',
     icon: '🏗️',
     featured: true,
-    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing'],
+    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing', 'freight-revenue-recovery', 'freight-spend-analytics', 'customs-automation'],
     relatedIntegrations: ['cargowise'],
     faq: [
       {
@@ -122,9 +122,9 @@ export const caseStudies: CaseStudy[] = [
       { value: '< 5 min', label: 'Auto-clarification cycle time', context: 'Missing information detected and clarification emails sent within 5 minutes of RFQ receipt' },
     ],
     stack: ['Python', 'LangGraph', 'Azure', 'n8n', 'OpenAI'],
-    challenge: 'The sell-side quoting process was drowning in unstructured email. RFQ emails arrived from customers in every conceivable format — free-text emails, PDF attachments, Excel rate request templates, forwarded chains with critical details buried three replies deep, and even scanned handwritten notes. Each RFQ required a different set of fields depending on mode (ocean FCL, LCL, air, road), trade lane, and commodity type, but customers rarely provided complete information upfront. Sales representatives spent an average of 45 minutes per RFQ just parsing the email, identifying what shipment details were present, determining what was missing, and composing clarification emails back to the customer. The back-and-forth clarification cycle typically added 2–4 hours to quote turnaround, with some RFQs bouncing back and forth for days before all required fields were captured. During this time, the RFQ sat in a personal inbox with no visibility to the wider team — if the rep was out sick or on leave, the RFQ simply stalled. There was no standardised intake format, no tracking of clarification status, and no way to measure how long each stage of the quoting process actually took. The result: slow quote turnaround, inconsistent win rates, and a sales team that spent more time on email administration than on actual pricing and customer relationships.',
+    challenge: 'The sell-side quoting process was drowning in unstructured email. RFQ emails arrived from customers in every conceivable format — free-text emails, PDF attachments, Excel rate request templates, forwarded chains with critical details buried three replies deep, and even scanned handwritten notes. Each RFQ required a different set of fields depending on mode (ocean FCL, LCL, air, road), trade lane, and commodity type, but customers rarely provided complete information upfront. Sales representatives spent an average of 45 minutes per RFQ just parsing the email, identifying what shipment details were present, determining what was missing, and composing clarification emails back to the customer. The back-and-forth clarification cycle typically added 2–4 hours to quote turnaround, with some RFQs bouncing back and forth for days before all required fields were captured. During this time, the RFQ sat in a personal inbox with no visibility to the wider team — if the rep was out sick or on leave, the RFQ simply stalled. There was no standardized intake format, no tracking of clarification status, and no way to measure how long each stage of the quoting process actually took. The result: slow quote turnaround, inconsistent win rates, and a sales team that spent more time on email administration than on actual pricing and customer relationships.',
     whatWeBuilt: [
-      'RFQ email monitoring and classification — automatically detects and categorises incoming RFQ emails across inboxes',
+      'RFQ email monitoring and classification — automatically detects and categorizes incoming RFQ emails across inboxes',
       'Missing information detection — AI identifies incomplete fields and gaps in RFQ data',
       'Auto-clarification engine — generates and sends contextual clarification emails to customers, continuing the conversation until complete',
       'Structured RFQ delivery — delivers fully structured, ready-to-price RFQs to operators with all required fields populated',
@@ -215,9 +215,9 @@ export const caseStudies: CaseStudy[] = [
     stack: ['Python', 'LangGraph', 'Azure', 'n8n', 'OpenAI'],
     challenge: 'The full RFQ lifecycle — from initial email intake through vendor selection, rate collection, and negotiation — was managed through a patchwork of manual email threads, spreadsheets, and phone calls. Each step required human coordination, leading to slow turnaround, inconsistent vendor evaluation, and dropped follow-ups.',
     whatWeBuilt: [
-      'Email monitoring and classification — detects and categorises RFQ-related emails across the operations inbox',
+      'Email monitoring and classification — detects and categorizes RFQ-related emails across the operations inbox',
       'Intelligent data extraction — pulls structured RFQ fields from unstructured email content and attachments',
-      'Automated RFQ creation — generates standardised RFQ records from extracted data',
+      'Automated RFQ creation — generates standardized RFQ records from extracted data',
       'Vendor selection engine — matches RFQ requirements against vendor capabilities, past performance, and lane coverage',
       'Automated RFQ distribution — sends structured RFQ requests to selected vendors via email',
       'Quotation capture — parses vendor responses and extracts rate data into a structured comparison format',

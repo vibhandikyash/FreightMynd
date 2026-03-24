@@ -41,7 +41,7 @@ export const integrations: Integration[] = [
         'Forwarding module shipment records',
         'Customs module declarations',
         'Accounting module charge codes and postings',
-        'Rate module data synchronisation',
+        'Rate module data synchronization',
         'Document management module attachments',
       ],
     },
@@ -59,7 +59,7 @@ export const integrations: Integration[] = [
         description: 'Extracted data from commercial invoices, packing lists, and certificates of origin is mapped to CargoWise customs module fields — HS codes, values, quantities, country of origin — pre-populating declarations and reducing customs processing time by 60-70%.',
       },
       {
-        title: 'Rate module data synchronisation',
+        title: 'Rate module data synchronization',
         description: 'Carrier rate data extracted from rate sheets, contract PDFs, and carrier portal exports is structured and pushed into CargoWise\'s rate module, keeping your rate data current without manual rate card maintenance.',
       },
       {
@@ -98,11 +98,11 @@ export const integrations: Integration[] = [
         a: 'Forwarding (shipment records, consol management), Customs (declaration pre-population, tariff data), Accounting (charge posting, cost allocation), Document Management (PDF attachment and linking), and Rate Management (rate card updates). We can extend to additional modules based on your specific workflow requirements.',
       },
       {
-        q: 'Can it work alongside our existing CargoWise customisations?',
-        a: 'Yes. We work within your existing CargoWise customisation framework — custom fields, custom workflows, custom charge codes. During discovery, we map your specific customisations and ensure our integration respects and builds on them rather than conflicting with them.',
+        q: 'Can it work alongside our existing CargoWise customizations?',
+        a: 'Yes. We work within your existing CargoWise customization framework — custom fields, custom workflows, custom charge codes. During discovery, we map your specific customizations and ensure our integration respects and builds on them rather than conflicting with them.',
       },
     ],
-    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing'],
+    relatedSolutions: ['4pl-control-tower-automation', 'document-intelligence', 'smart-invoice-processing', 'autonomous-quote-management', 'sea-freight-automation', 'freight-revenue-recovery', 'freight-spend-analytics', 'freight-pricing-ai', 'air-freight-automation', 'customs-automation', 'freight-document-automation', 'tms-automation'],
   },
   {
     slug: 'sap-tm',
@@ -169,11 +169,11 @@ export const integrations: Integration[] = [
         a: 'No. Direct API integration is the default approach. SAP Integration Suite (formerly SAP Cloud Platform Integration) is an option for companies that prefer a managed integration layer or need to orchestrate data flows across multiple SAP and non-SAP systems.',
       },
       {
-        q: 'How does it handle SAP authorisation and role management?',
+        q: 'How does it handle SAP authorization and role management?',
         a: 'The integration uses a dedicated SAP service user with authorizations scoped to exactly the objects and operations required — no broader access than needed. All actions are logged under this service user for audit purposes. We work with your SAP Basis team during setup to define the appropriate authorization profile.',
       },
     ],
-    relatedSolutions: ['4pl-control-tower-automation', 'freight-pricing-ai', '3pl-4pl-operations'],
+    relatedSolutions: ['4pl-control-tower-automation', 'freight-pricing-ai', '3pl-4pl-operations', 'autonomous-quote-management', 'freight-revenue-recovery', 'freight-spend-analytics', 'freight-document-automation', 'tms-automation'],
   },
   {
     slug: 'oracle-tms',
@@ -244,7 +244,7 @@ export const integrations: Integration[] = [
         a: 'Typically 10-16 weeks from kickoff to production, depending on the complexity of your Oracle environment and the number of document types being automated. We start with a discovery phase to map your OTM configuration, followed by integration development, testing in your environment, and phased production rollout.',
       },
     ],
-    relatedSolutions: ['document-intelligence', 'sea-freight-automation', 'smart-invoice-processing'],
+    relatedSolutions: ['document-intelligence', 'sea-freight-automation', 'smart-invoice-processing', '3pl-4pl-operations', 'freight-document-automation', 'tms-automation'],
   },
   {
     slug: 'microsoft-dynamics',
@@ -270,7 +270,7 @@ export const integrations: Integration[] = [
     capabilities: [
       {
         title: 'Automated freight document processing with Dynamics data push',
-        description: 'Extracted data from freight documents is pushed directly into Dynamics 365 entities — sales orders, purchase orders, shipments, and vendor invoices — via the Dataverse API. Field mapping respects your Dynamics customisations and business logic.',
+        description: 'Extracted data from freight documents is pushed directly into Dynamics 365 entities — sales orders, purchase orders, shipments, and vendor invoices — via the Dataverse API. Field mapping respects your Dynamics customizations and business logic.',
       },
       {
         title: 'Power Automate workflow integration',
@@ -315,7 +315,7 @@ export const integrations: Integration[] = [
         a: 'Yes. We handle multi-company (multi-legal-entity) Dynamics 365 environments by routing data to the correct legal entity based on document content, reference numbers, or configurable routing rules. Each entity\'s data isolation, security roles, and business logic are respected throughout the integration.',
       },
     ],
-    relatedSolutions: ['3pl-4pl-operations', 'smart-invoice-processing', 'autonomous-quote-management'],
+    relatedSolutions: ['3pl-4pl-operations', 'smart-invoice-processing', 'autonomous-quote-management', 'freight-document-automation', 'tms-automation'],
   },
   {
     slug: 'descartes',
@@ -386,6 +386,6 @@ export const integrations: Integration[] = [
         a: 'Commercial invoices, packing lists, certificates of origin, dangerous goods declarations, insurance certificates, phytosanitary certificates, and other trade documents. Each document type is classified automatically and routed to the appropriate Descartes workflow — customs, compliance, or trade management — based on configurable rules that match your operational procedures.',
       },
     ],
-    relatedSolutions: ['sea-freight-automation', 'air-freight-automation', 'document-intelligence'],
+    relatedSolutions: ['sea-freight-automation', 'air-freight-automation', 'document-intelligence', 'freight-document-automation', 'tms-automation', 'customs-automation'],
   },
 ];

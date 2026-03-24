@@ -1,6 +1,6 @@
 # FreightMynd — Full Context
 
-> Last updated: 2026-03-17
+> Last updated: 2026-03-22
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
 
@@ -168,6 +168,46 @@ Best for: Freight AP teams processing 500+ invoices per month who want automated
 
 ---
 
+### Freight Revenue Recovery
+URL: https://freightmynd.com/solutions/freight-revenue-recovery
+
+AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers revenue hidden in invoice data. Average recovery: 2-5% of freight spend.
+
+Capabilities:
+- Automated carrier invoice audit against contracted rates
+- Overcharge detection across all freight modes (sea, air, road)
+- Contract rate validation and compliance monitoring
+- Duplicate invoice and billing error identification
+- Dispute management and carrier claim automation
+- Recovery tracking dashboard with real-time savings visibility
+- Historical freight spend audit for retroactive recovery
+
+Results: 2-5% average freight spend recovery, 90%+ audit coverage across all carrier invoices, automated dispute filing and tracking.
+
+Best for: Freight forwarders and shippers spending $5M+ annually on freight who want to recover overcharges and enforce contract compliance automatically.
+
+---
+
+### Freight Spend Analytics
+URL: https://freightmynd.com/solutions/freight-spend-analytics
+
+AI-powered freight spend analytics giving logistics leaders full visibility into carrier costs, lane profitability, and spend trends. Identifies 15-20% cost reduction opportunities.
+
+Capabilities:
+- Carrier cost benchmarking and performance scoring
+- Lane-level profitability analysis and optimization recommendations
+- Spend trend analysis and forecasting
+- Carrier allocation optimization across modes and lanes
+- Accessorial charge analysis and reduction opportunities
+- Custom dashboards and automated reporting for logistics leadership
+- Integration with TMS and ERP for real-time spend visibility
+
+Results: 15-20% cost reduction opportunities identified, full visibility across all freight spend categories, data-driven carrier negotiation insights.
+
+Best for: Logistics leaders managing multi-carrier, multi-modal freight operations who need actionable spend intelligence to reduce costs and optimize carrier mix.
+
+---
+
 ## TMS Integrations
 
 FreightMynd provides native AI integration with major freight management systems — no middleware, no CSV exports, no manual data re-entry.
@@ -321,3 +361,43 @@ Capabilities:
 Results: 70% customs filing time reduction, 95%+ data extraction accuracy, zero manual data re-entry for standard formats.
 
 Best for: Customs brokers and freight forwarders processing 50+ customs declarations per week who want to eliminate manual data entry.
+
+---
+
+### Freight Document Automation
+URL: https://freightmynd.com/solutions/freight-document-automation
+
+End-to-end freight document processing and automation — AI reads, classifies, extracts, and validates data from invoices, AWBs, bills of lading, packing lists, and customs forms, then pushes structured data into your TMS.
+
+Capabilities:
+- Automated document classification and routing across all freight document types
+- High-accuracy field extraction from structured and unstructured documents
+- Multi-supplier, multi-format support with self-learning onboarding
+- Cross-document validation and reconciliation
+- Direct TMS integration (CargoWise, SAP TM, Oracle TMS, Dynamics, Descartes)
+- Complete audit trail and compliance reporting
+- Batch processing for high-volume operations (200-300 page PDFs)
+
+Results: 60% document processing time reduction, 95%+ extraction accuracy, zero manual data entry for standard formats, near-zero failure on high-volume batches.
+
+Best for: Freight forwarders and logistics providers processing diverse document types from multiple suppliers who need automated extraction and TMS integration.
+
+---
+
+### TMS Automation
+URL: https://freightmynd.com/solutions/tms-automation
+
+AI-powered TMS integration and automation for freight forwarding operations — connects document intelligence and operational AI directly to your transport management system with zero manual data entry.
+
+Capabilities:
+- Native integration with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes
+- Automated shipment creation, update, and milestone tracking in your TMS
+- Document attachment and linking to correct shipment records
+- Invoice posting and charge code mapping to your chart of accounts
+- Carrier rate import and contract management
+- Bi-directional data sync between AI systems and TMS
+- Custom XML/API schema mapping for your specific TMS instance
+
+Results: Zero manual TMS data entry, real-time data sync between AI extraction and TMS, reduced onboarding time for new integrations.
+
+Best for: Freight forwarders running any major TMS who want AI-powered automation without middleware or manual re-entry.

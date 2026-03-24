@@ -17,3 +17,6 @@ Disallow: /
 # Applebot-Extended → Apple Intelligence
 
 Sitemap: https://freightmynd.com/sitemap-index.xml
+
+# AI context files
+llms-txt: https://freightmynd.com/llms.txt

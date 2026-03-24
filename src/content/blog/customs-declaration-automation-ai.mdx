@@ -2,6 +2,7 @@
 title: "Customs Declaration Automation with AI"
 description: "How AI automates customs declaration pre-population from invoices, packing lists, and certificates of origin — cutting filing time by 70%."
 publishDate: 2026-01-15
+modifiedDate: 2026-03-24
 author: "FreightMynd Team"
 category: "Technical"
 tags: ["customs", "automation", "AI", "compliance", "freight"]
@@ -22,6 +23,8 @@ faq:
 relatedSolutions:
   - "document-intelligence"
   - "air-freight-automation"
+  - "customs-automation"
+  - "smart-invoice-processing"
 relatedIntegrations:
   - "descartes"
   - "cargowise"
@@ -46,7 +49,7 @@ Here is the problem: that data already exists. It sits in the commercial invoice
 
 The error rate compounds the problem. Manual data entry into customs declarations carries a 2-5% field-level error rate under normal conditions. Under time pressure — which is constant in customs, given filing deadlines — that rate climbs. Incorrect HS codes, mismatched values, or wrong party details trigger holds, examinations, penalties, and delays that cost far more than the original filing effort.
 
-This is not a technology gap. The AI to solve this exists today. The gap is in implementation — connecting [document intelligence systems](/solutions/document-intelligence) to customs workflows in a way that is reliable, auditable, and integrated with existing platforms.
+This is not a technology gap. The AI to solve this exists today. The gap is in implementation — connecting [document intelligence systems](/solutions/document-intelligence) to [customs automation](/solutions/customs-automation) workflows in a way that is reliable, auditable, and integrated with existing platforms.
 
 ## How AI Extracts Customs Data from Commercial Documents
 
@@ -78,7 +81,7 @@ Screening is not a one-time check. Party names are run through fuzzy matching al
 
 ## Integration with Customs Filing Platforms
 
-The extracted, validated, and screened data needs to reach your customs filing platform in the right format. For operations using [Descartes customs modules](/integrations/descartes), the AI pipeline outputs structured records that map directly to Descartes' import and export declaration formats. The same approach works with other customs management systems — the AI pipeline's output format is configured to match whatever platform your customs team uses.
+The extracted, validated, and screened data needs to reach your customs filing platform in the right format. For operations using [Descartes customs modules](/integrations/descartes), the AI pipeline outputs structured records that map directly to Descartes' import and export declaration formats. For freight forwarders running [CargoWise](/integrations/cargowise), the pipeline pushes structured XML through eHub to populate customs-related modules directly. The same approach works with other customs management systems — the AI pipeline's output format is configured to match whatever platform your customs team uses.
 
 The integration is bidirectional where needed. When the customs platform returns filing status, duty calculations, or examination notices, that data flows back into your operational record. This closes the loop between AI-assisted declaration preparation and the actual customs outcome.
 
@@ -102,7 +105,7 @@ At scale, this means a customs team that currently processes 60 declarations per
 
 A production customs declaration automation system typically includes:
 
-- **Document extraction engine** — OCR and AI models trained on freight and customs document types, handling multi-format supplier variation
+- **Document extraction engine** — OCR and AI models trained on freight and customs document types, handling multi-format supplier variation (the same technology that powers our [smart invoice processing](/solutions/smart-invoice-processing) pipeline)
 - **Tariff schedule database** — regularly updated national tariff schedules for HS code validation and suggestion
 - **Denied party screening service** — real-time screening against consolidated restricted party databases with fuzzy matching
 - **Customs platform integration** — API connectors to your filing platform (Descartes, MIC, or others) for structured data push
@@ -113,7 +116,7 @@ The system sits between your document sources and your customs platform. It does
 
 ## Getting Started with Customs Declaration Automation
 
-If your customs team spends more time keying data than making classification decisions, automation will deliver immediate ROI. The starting point is a [document intelligence assessment](/contact) that maps your current document types, volumes, filing platforms, and trade lanes to determine where AI extraction delivers the highest impact.
+If your customs team spends more time keying data than making classification decisions, automation will deliver immediate ROI. Explore our full [customs automation solution](/solutions/customs-automation) to see how the end-to-end pipeline works, or start with a [document intelligence assessment](/contact) that maps your current document types, volumes, filing platforms, and trade lanes to determine where AI extraction delivers the highest impact.
 
 The implementation is incremental. Most deployments start with commercial invoice extraction for a single trade lane, validate accuracy against manual processing for two to three weeks, then expand to additional document types and lanes. This phased approach builds confidence while delivering measurable results from week one.
 

@@ -15,7 +15,7 @@ faq:
   - q: "What OCR accuracy should I expect on freight documents in 2026?"
     a: "Modern OCR engines achieve 98-99.5% character-level accuracy on clean, high-resolution freight documents. On real-world freight documents (faxed copies, low-resolution scans, handwritten annotations, stamps over text), character accuracy drops to 90-96%. However, character accuracy is not the metric that matters — field-level accuracy (correctly extracting the complete AWB number, the full consignee address, the exact invoice total) is what determines whether the data is usable in your TMS."
   - q: "What accuracy rate does FreightMynd achieve on freight document extraction?"
-    a: "Our production systems achieve 95-99% field-level accuracy on structured freight documents, with higher accuracy on standardised documents (AWBs, B/Ls from major carriers) and slightly lower on unstructured or heavily annotated documents. The validation layer catches extraction errors before they reach your TMS, so the effective accuracy of data entering your system exceeds the raw extraction rate."
+    a: "Our production systems achieve 95-99% field-level accuracy on structured freight documents, with higher accuracy on standardized documents (AWBs, B/Ls from major carriers) and slightly lower on unstructured or heavily annotated documents. The validation layer catches extraction errors before they reach your TMS, so the effective accuracy of data entering your system exceeds the raw extraction rate."
   - q: "Why do some freight documents have lower OCR accuracy than others?"
     a: "Document quality varies enormously in freight. A carrier-generated AWB from a major airline is a clean, structured digital document. A commercial invoice from a small supplier in Southeast Asia might be a low-resolution scan of a handwritten form with stamps, signatures, and annotations overlapping the data fields. Multi-language documents, non-Latin scripts, and degraded fax copies all reduce OCR accuracy."
   - q: "How can I improve document extraction accuracy for my freight operation?"
@@ -55,7 +55,7 @@ Not all freight documents are created equal. Accuracy varies significantly by do
 
 ### Airway Bills (AWBs)
 
-AWBs from major carriers (Lufthansa, Emirates SkyCargo, Cathay Cargo) follow IATA standard formats and are typically generated digitally. AI extraction accuracy on major-carrier AWBs consistently hits 97-99% at the field level. The standardised layout — fixed positions for AWB number, origin, destination, weight, pieces — makes field identification reliable.
+AWBs from major carriers (Lufthansa, Emirates SkyCargo, Cathay Cargo) follow IATA standard formats and are typically generated digitally. AI extraction accuracy on major-carrier AWBs consistently hits 97-99% at the field level. The standardized layout — fixed positions for AWB number, origin, destination, weight, pieces — makes field identification reliable.
 
 AWBs from smaller carriers or house AWBs with custom layouts achieve 93-97% field accuracy. The variation in layout requires the extraction engine to rely more on semantic understanding than positional rules.
 
@@ -75,7 +75,7 @@ Packing lists are predominantly tabular and achieve 94-98% field accuracy when t
 
 ### Customs Declarations
 
-Standardised customs forms (US CBP 7501, EU SAD) follow fixed templates and achieve 96-99% field accuracy. The challenge with customs documents is not extraction accuracy but validation — ensuring that extracted HS codes, declared values, and country of origin codes are actually correct, not just correctly read from the document.
+Standardized customs forms (US CBP 7501, EU SAD) follow fixed templates and achieve 96-99% field accuracy. The challenge with customs documents is not extraction accuracy but validation — ensuring that extracted HS codes, declared values, and country of origin codes are actually correct, not just correctly read from the document.
 
 ## Why Character Accuracy Is the Wrong Metric
 
@@ -141,7 +141,7 @@ Modern OCR engines achieve 98-99.5% character-level accuracy on clean, high-reso
 
 ### What accuracy rate does FreightMynd achieve on freight document extraction?
 
-Our production systems achieve 95-99% field-level accuracy on structured freight documents, with higher accuracy on standardised documents (AWBs, B/Ls from major carriers) and slightly lower on unstructured or heavily annotated documents. The validation layer catches extraction errors before they reach your TMS, so the effective accuracy of data entering your system exceeds the raw extraction rate.
+Our production systems achieve 95-99% field-level accuracy on structured freight documents, with higher accuracy on standardized documents (AWBs, B/Ls from major carriers) and slightly lower on unstructured or heavily annotated documents. The validation layer catches extraction errors before they reach your TMS, so the effective accuracy of data entering your system exceeds the raw extraction rate.
 
 ### Why do some freight documents have lower OCR accuracy than others?
 

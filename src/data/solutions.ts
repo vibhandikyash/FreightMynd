@@ -220,7 +220,7 @@ export const solutions: Solution[] = [
         a: 'We offer two models: a fixed project fee for the initial build and deployment (covering discovery, development, testing, and launch), and a monthly operational fee based on document processing volume tiers. The operational fee covers infrastructure, AI model hosting, monitoring, and ongoing model improvements. There are no per-page or per-extraction charges that create unpredictable costs at scale. We size the operational fee during discovery based on your actual volumes.',
       },
     ],
-    relatedSolutions: ['document-intelligence', 'smart-invoice-processing'],
+    relatedSolutions: ['document-intelligence', 'freight-document-automation', 'tms-automation', '3pl-4pl-operations'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
@@ -238,7 +238,7 @@ export const solutions: Solution[] = [
       'freight quote generation',
       'spot quote automation',
     ],
-    metaTitle: 'AI Freight Quote Automation — RFQ to Quote in Under 10 Minutes | FreightMynd',
+    metaTitle: 'AI Freight Quote Automation | FreightMynd',
     metaDescription:
       'Automate your entire freight quoting workflow — RFQ intake, carrier rate lookup, margin calculation, and quote delivery in under 10 minutes. Zero manual steps. See how it works.',
     description:
@@ -390,7 +390,7 @@ export const solutions: Solution[] = [
         a: 'Yes, FreightMynd integrates natively with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics 365. Rate data is pulled directly from your TMS, and completed quotes can be pushed back for record-keeping.',
       },
     ],
-    relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation'],
+    relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation', 'air-freight-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
@@ -545,7 +545,7 @@ export const solutions: Solution[] = [
         a: 'A typical document processing operator costs $3,000–$6,000/month (fully loaded, depending on location) and processes 80–120 documents per day at 92–96% accuracy. Our system processes the same volume for a fraction of that cost at 99%+ accuracy, running 24/7 without breaks, turnover, or training time. Most clients see ROI within 3–4 months. We price on monthly volume tiers, not per-document, so costs are predictable and decrease per-unit as volume grows.',
       },
     ],
-    relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
+    relatedSolutions: ['4pl-control-tower-automation', 'freight-document-automation', 'customs-automation', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
@@ -702,7 +702,7 @@ export const solutions: Solution[] = [
         a: 'A rate management system stores and retrieves rates — it tells you what a carrier charges. Freight Pricing AI tells you what you should charge. It adds the intelligence layer: market positioning, dynamic margin optimization, win probability modeling, trend forecasting, and proactive repricing alerts. Think of your rate management system as the data source and the pricing AI as the decision engine that sits on top of it. They complement each other — we integrate with your existing rate management system, not replace it.',
       },
     ],
-    relatedSolutions: ['autonomous-quote-management', 'sea-freight-automation'],
+    relatedSolutions: ['autonomous-quote-management', 'sea-freight-automation', 'freight-spend-analytics'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
@@ -866,7 +866,7 @@ export const solutions: Solution[] = [
         a: 'We always run a parallel period (typically 2–4 weeks) where the automation processes shipments alongside your manual team. During this period, the system processes documents and generates updates, but your team continues to perform their normal tasks. We compare outputs daily — any discrepancy between the automated and manual process is investigated and resolved. This builds confidence and identifies edge cases specific to your operations. Once accuracy is validated and the team is comfortable, shipments are migrated to automated processing in controlled batches, not all at once.',
       },
     ],
-    relatedSolutions: ['document-intelligence', 'air-freight-automation'],
+    relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai', 'document-intelligence', 'customs-automation'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
     relatedCaseStudies: ['shipping-news-intelligence'],
   },
@@ -1024,7 +1024,7 @@ export const solutions: Solution[] = [
         a: 'The system supports both and knows which to apply. For routes and airlines that support IATA e-AWB (the majority of international air cargo), the system generates e-AWB compliant data sets and transmits them via the appropriate channel. For routes or airlines that still require paper AWBs, the system generates print-ready AWB documents. It also handles the mixed scenarios where the MAWB is electronic but certain HAWBs require paper, or where e-AWB is available on the first leg but not the transshipment leg.',
       },
     ],
-    relatedSolutions: ['sea-freight-automation', 'document-intelligence'],
+    relatedSolutions: ['autonomous-quote-management', 'freight-spend-analytics', 'customs-automation'],
     relatedIntegrations: ['cargowise', 'descartes'],
     relatedCaseStudies: ['shipping-news-intelligence'],
   },
@@ -1176,7 +1176,8 @@ export const solutions: Solution[] = [
         a: 'We build reusable integration adapters for common systems (CargoWise, SAP, Oracle, Dynamics) that handle the connection once and then configure per client (different instance, different field mappings, different data exchange frequency). For clients with proprietary systems, we build custom adapters that follow the same pattern — the adapter connects to their system, and the platform\'s configuration layer handles client-specific mapping. This approach means that adding a new client on an already-connected system type is configuration, not development. Only truly unique system integrations require custom engineering.',
       },
     ],
-    relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing'],
+    relatedSolutions: ['4pl-control-tower-automation', 'tms-automation', 'freight-revenue-recovery'],
+
     relatedIntegrations: ['sap-tm', 'oracle-tms'],
     relatedCaseStudies: ['hellmann-4pl-control-tower', 'historical-email-intelligence'],
   },
@@ -1333,8 +1334,792 @@ export const solutions: Solution[] = [
         a: 'For most freight companies, the system reaches positive ROI within 2–4 months through three value drivers: AP labor savings (80% reduction in manual processing time frees your team for higher-value work), overcharge recovery (3–5% of freight spend identified and recovered), and late payment penalty elimination (faster processing means invoices are paid on time, avoiding penalties and improving carrier relationships). For a company spending $5M annually on freight, the overcharge recovery alone (3–5% = $150K–$250K) typically exceeds the annual system cost. As an AI procurement software solution purpose-built for freight, it delivers measurable ROI that generic AP automation tools cannot match because it understands freight-specific charge structures, surcharge types, and carrier billing patterns.',
       },
     ],
-    relatedSolutions: ['document-intelligence', '3pl-4pl-operations'],
+    relatedSolutions: ['freight-revenue-recovery', 'freight-document-automation', 'customs-automation', 'tms-automation'],
     relatedIntegrations: ['cargowise', 'microsoft-dynamics'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+  {
+    slug: 'freight-revenue-recovery',
+    title: 'Freight Revenue Recovery',
+    shortTitle: 'Revenue Recovery',
+    keyword: 'freight revenue recovery',
+    secondaryKeywords: [
+      'carrier overcharge detection',
+      'freight audit automation',
+      'freight invoice audit AI',
+      'revenue leakage freight',
+      'carrier dispute management',
+      'freight spend recovery',
+    ],
+    metaTitle: 'Freight Revenue Recovery — Carrier Overcharge Detection',
+    metaDescription:
+      'AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers revenue hidden in your invoice data. Average recovery: 2-5%.',
+    description:
+      'AI-powered freight audit and revenue recovery — automated carrier invoice validation, overcharge detection, contract rate enforcement, and dispute management. Stop the revenue leakage hiding in your freight invoices.',
+    icon: '💰',
+    color: 'accent',
+    headline: 'Freight Revenue Recovery: Your Invoices Are Costing You More Than You Think',
+    keywordSubheadline: 'AI-powered freight revenue recovery — automated carrier overcharge detection, contract rate enforcement, and dispute management that recovers 2-5% of total freight spend.',
+    sub: 'The average forwarder overpays carriers by 2-5% of total freight spend. Our AI audits every invoice against contracted rates, flags overcharges, identifies duplicate billings, and recovers revenue you didn\'t know you were losing — automatically.',
+
+    idealFor: [
+      'CFOs and VP Finance teams at freight forwarders who suspect revenue leakage but lack the tools to quantify it',
+      'Forwarders spending $5M+ annually on carrier freight where even 2% recovery represents significant savings',
+      'Finance teams managing 500+ carrier invoices per month across multiple carriers and modes',
+      'Companies that have tried manual freight audits but cannot sustain the effort at scale',
+    ],
+
+    problem: {
+      headline: 'You are losing 2-5% of freight spend to carrier billing errors you cannot see',
+      description:
+        'Carrier invoices in freight forwarding are notoriously complex — each shipment generates multiple invoices from different parties, with inconsistent reference numbers, layered surcharges, and rate structures that vary by lane, mode, weight break, and contract period. Your finance team processes hundreds of these monthly, but manual rate validation is impossible at scale. The result: carrier overcharges, duplicate billings, expired rate applications, and unauthorized surcharges slip through undetected. For a company spending $10M on freight, that is $200K–$500K in recoverable revenue lost every year — not because the errors are hidden, but because nobody has the bandwidth to find them.',
+      painPoints: [
+        'Carrier overcharges averaging 2-5% of total freight spend go undetected because manual rate auditing cannot keep up with invoice volume',
+        'Duplicate billings from carriers (same shipment billed twice with slightly different reference numbers) slip through at a rate of 1-2% and are almost impossible to catch manually',
+        'Rate contract compliance is not enforced — carriers apply expired rates, use incorrect weight breaks, or add surcharges not in your agreement, and nobody checks every line item',
+        'Accessorial charges (detention, demurrage, fuel surcharges, terminal handling) are accepted at face value because validating them against contracted terms requires cross-referencing multiple documents',
+        'Currency conversion errors on international invoices create systematic overcharges that compound across hundreds of transactions per month',
+        'No visibility into recovery opportunities — finance knows overcharges exist but cannot quantify the total leakage or prioritize which carriers and lanes to audit first',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Automated 3-way matching — invoice vs booking vs proof of delivery',
+        description:
+          'Every carrier invoice is automatically matched against the original booking or purchase order and the proof of delivery or receipt confirmation. The system performs line-item level comparison — checking quantities, rates, reference numbers, and charge types — using fuzzy matching to handle the inevitable reference number inconsistencies across carrier systems. Mismatches are flagged instantly with the specific discrepancy identified.',
+      },
+      {
+        title: 'Contract rate enforcement — every charge validated against your carrier agreements',
+        description:
+          'The system maintains a structured database of your carrier contracts — base rates by lane, weight break tables, surcharge schedules, validity periods, and rate adjustment mechanisms. Every invoiced charge is compared against the applicable contract rate. Overcharges are detected at the line-item level: wrong weight break applied, surcharge not in contract, expired rate used, calculation error in dimensional weight, or incorrect base rate for the lane.',
+      },
+      {
+        title: 'Overcharge detection — AI identifies billing errors, duplicate charges, and rate discrepancies',
+        description:
+          'The AI engine identifies billing anomalies that manual review consistently misses: same shipment billed twice with slightly different invoice numbers, charges for services not rendered, rate calculations that do not match the contracted formula, and systematic overcharge patterns by specific carriers or lanes. The system learns from historical patterns to improve detection accuracy over time.',
+      },
+      {
+        title: 'Accessorial charge audit — validates fuel surcharges, detention, demurrage, and ancillary fees',
+        description:
+          'Accessorial charges are the most common source of freight revenue leakage because they are difficult to validate manually. The system checks every accessorial line item — fuel surcharges against published indices, detention and demurrage against free time allowances in your contract, terminal handling charges against port tariffs, and documentation fees against agreed schedules. Each charge is either confirmed valid or flagged with the specific contractual basis for dispute.',
+      },
+      {
+        title: 'Duplicate invoice detection — catches duplicate billings across carriers and time periods',
+        description:
+          'Identifies duplicate and near-duplicate invoices using multi-dimensional matching: shipment reference, date range, route, carrier, charge amounts, and invoice numbers. Catches not just exact duplicates but also partial duplicates — where the same charges appear on different invoices, or where a corrected invoice is sent without cancelling the original. Historical lookback across 12+ months of invoice data.',
+      },
+      {
+        title: 'Revenue leakage reporting — quantified dashboard showing recovered amounts by carrier, lane, and charge type',
+        description:
+          'Real-time dashboard showing total identified overcharges, recovery amounts by carrier, lane, mode, and charge category, dispute status and resolution rates, and trend analysis highlighting which carriers and charge types produce the most leakage. The dashboard gives CFOs the data they need for carrier negotiations and contract renewals — backed by auditable evidence, not estimates.',
+      },
+      {
+        title: 'Automated dispute generation — system creates carrier dispute packages with supporting documentation',
+        description:
+          'When overcharges are identified, the system generates complete dispute packages: the original invoice, the applicable contract rate, the specific discrepancy with calculated overage amount, supporting documentation (booking confirmation, proof of delivery), and a draft dispute communication. Disputes are tracked through resolution with full audit trail — accepted, partially accepted, rejected — giving you data on carrier dispute response patterns.',
+      },
+      {
+        title: 'Continuous rate benchmarking — compares your contracted rates against market rates to identify renegotiation opportunities',
+        description:
+          'Beyond auditing individual invoices, the system continuously compares your contracted rates against market benchmarks and peer rates by lane. Identifies lanes where you are paying above market, carriers where rate increases have outpaced the market, and opportunities to consolidate volume for better rates. This intelligence feeds directly into your next round of carrier negotiations with data-backed rate targets.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Annual freight spend audit — quantifying total revenue leakage',
+        description:
+          'A forwarder with $15M in annual freight spend deploys the system against 12 months of historical invoices. Within 3 weeks, the system identifies $480K in recoverable overcharges (3.2% of spend) — primarily from incorrect weight break applications, duplicate demurrage charges, and expired rate usage by two major ocean carriers. The CFO uses this data to initiate carrier negotiations and recover $320K in the first quarter.',
+      },
+      {
+        scenario: 'Continuous carrier invoice monitoring',
+        description:
+          'A 3PL processing 800+ carrier invoices per month implements the system for ongoing monitoring. Every invoice is audited in real-time against contracted rates. Within 6 months, the system catches $185K in overcharges that would have been paid without review — including a systematic fuel surcharge miscalculation by a carrier that affected 40% of their shipments on one lane.',
+      },
+      {
+        scenario: 'Carrier contract renewal intelligence',
+        description:
+          'A VP Finance preparing for annual carrier contract renewals uses the system\'s benchmarking data to identify 12 lanes where contracted rates are 8-15% above current market rates. Armed with auditable evidence of overcharges and market benchmarks, the team negotiates $220K in annual rate reductions across their top 5 carriers.',
+      },
+    ],
+
+    results: [
+      { value: '2-5%', label: 'Average freight spend recovered', context: 'Percentage of total freight spend identified as recoverable through automated carrier invoice auditing', businessOutcome: 'For a $10M freight spend, that is $200K–$500K recovered annually' },
+      { value: '4.2%', label: 'Overcharge rate detected across carrier invoices', context: 'Average overcharge rate found across all carrier invoices processed by the system', businessOutcome: 'Direct revenue recovery from billing errors that manual review consistently misses' },
+      { value: '88%', label: 'Reduction in invoice processing errors', context: 'Error rate in freight invoice validation reduced from manual baseline through automated 3-way matching and rate auditing', businessOutcome: 'Cleaner data, fewer payment disputes, and faster month-end close' },
+      { value: '< 72hrs', label: 'From invoice receipt to validated payment', context: 'Average time from carrier invoice receipt to validated, audited payment — versus 2-3 weeks with manual processing', businessOutcome: 'Improved carrier relationships through faster, accurate payments' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'PostgreSQL', 'n8n'],
+
+    integrations: [
+      'CargoWise (accounting module)',
+      'SAP TM / SAP FI',
+      'Oracle TMS / Oracle Financials',
+      'Microsoft Dynamics 365 Finance',
+      'Carrier EDI / portal ingestion',
+      'Power BI / Tableau (recovery analytics)',
+      'QuickBooks / Xero / NetSuite',
+      'SFTP / API for invoice intake',
+    ],
+
+    implementation: {
+      timeline: '6–10 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Revenue recovery audit — analyze historical carrier invoices, catalog rate contracts, identify top leakage categories and carriers',
+        'Weeks 3–5: Build rate audit engine, 3-way matching pipeline, overcharge detection models, and duplicate invoice identification logic',
+        'Weeks 6–8: Dispute workflow automation, recovery dashboard, TMS/ERP integration, and carrier communication templates',
+        'Weeks 9–10: UAT with finance team, parallel run against manual audit results, production deployment with ongoing monitoring',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight revenue recovery?',
+        a: 'Freight revenue recovery is the systematic process of auditing carrier invoices to identify and recover overcharges, billing errors, duplicate billings, and contract rate violations. It involves comparing every invoiced charge against contracted rates, validating accessorial fees against agreed terms, detecting duplicate billings across carriers and time periods, and generating dispute documentation to recover the overpayments. For most freight forwarders, automated freight revenue recovery identifies 2-5% of total freight spend as recoverable — revenue that is lost every month to billing errors that manual processes cannot catch at scale.',
+      },
+      {
+        q: 'How much do freight forwarders lose to carrier overcharges?',
+        a: 'Industry data and our production systems consistently show that freight forwarders lose 2-5% of total freight spend to carrier billing errors. For a company spending $10M annually on freight, that represents $200K–$500K in recoverable revenue. The most common sources of leakage are: incorrect weight break applications (carrier uses a higher rate tier), surcharges not included in your contract, expired rate applications (carrier billing at new rates before your contract reflects the increase), duplicate charges (same service billed on two separate line items or invoices), and currency conversion errors on international invoices.',
+      },
+      {
+        q: 'How does AI freight invoice auditing work?',
+        a: 'The system works as a pipeline: carrier invoices are ingested from email, EDI, carrier portals, or SFTP. Each invoice is processed through OCR and AI extraction to pull every charge line item, reference number, and amount. The extracted data is then matched against your booking or purchase order (3-way matching) and every charge is audited against your contracted rates — base rates, surcharges, weight calculations, currency conversions, and accessorial fees. Overcharges, duplicates, and rate discrepancies are flagged automatically, and the system generates dispute packages with supporting documentation. Clean invoices are approved and posted to your ERP. The entire process takes minutes per invoice instead of 15-20 minutes of manual review.',
+      },
+      {
+        q: 'What types of freight overcharges can AI detect?',
+        a: 'The AI detects a wide range of overcharge types that manual review consistently misses: rate discrepancies (carrier charging above contracted rate for a specific lane or weight break), accessorial overcharges (fuel surcharges above published index, detention beyond free time, terminal handling fees above port tariff), duplicate billings (same shipment billed twice with slightly different invoice numbers), currency conversion errors (carrier applying their own exchange rate instead of the contractually agreed source), expired rate applications (billing at rates from a previous contract period), incorrect weight or measurement charges (wrong dimensional weight calculation, incorrect chargeable weight), and unauthorized surcharges (charges not included in your carrier agreement). The system also identifies systematic patterns — for example, a carrier consistently applying the wrong weight break on a specific lane — that inform contract negotiations.',
+      },
+      {
+        q: 'How long does freight revenue recovery take to implement?',
+        a: 'Typically 6–10 weeks from kickoff to production. The implementation begins with a revenue recovery audit (weeks 1-2) where we analyze your historical carrier invoices, catalog your rate contracts, and identify the highest-leakage categories and carriers. The system build phase (weeks 3-5) covers the rate audit engine, 3-way matching, and overcharge detection. Integration and workflow setup (weeks 6-8) connects to your TMS and ERP, configures dispute workflows, and builds recovery dashboards. UAT and deployment (weeks 9-10) includes parallel processing against manual audit results to validate accuracy. The system begins identifying overcharges during the parallel run phase, so you start seeing recoverable amounts before the project is even complete.',
+      },
+      {
+        q: 'Does freight revenue recovery integrate with CargoWise?',
+        a: 'Yes. FreightMynd integrates natively with CargoWise, including the accounting module for invoice ingestion and payment posting. The system also integrates with SAP TM, SAP FI/CO, Oracle TMS, Oracle Financials, Microsoft Dynamics 365 Finance, and Descartes. For invoice intake, we support carrier EDI feeds, email ingestion, carrier portal scraping, SFTP, and direct API connections. Recovery analytics can be exported to Power BI, Tableau, or your existing reporting tools.',
+      },
+    ],
+    relatedSolutions: ['freight-spend-analytics', 'smart-invoice-processing', '3pl-4pl-operations'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+  {
+    slug: 'freight-spend-analytics',
+    title: 'Freight Spend Analytics',
+    shortTitle: 'Spend Analytics',
+    keyword: 'freight spend analytics',
+    secondaryKeywords: [
+      'freight cost analytics',
+      'logistics spend visibility',
+      'transportation cost analysis',
+      'freight invoice analytics',
+      'carrier cost benchmarking',
+      'freight cost optimization',
+    ],
+    metaTitle: 'Freight Spend Analytics | FreightMynd',
+    metaDescription:
+      'Complete visibility into your freight spend — cost breakdown by carrier, lane, mode, and service level. AI-powered analytics from your actual invoice data.',
+    description:
+      'AI-powered freight spend analytics — real-time visibility into transportation costs by carrier, lane, mode, and service level. Built from your actual invoice and shipment data, not estimates.',
+    icon: '📊',
+    color: 'brand',
+    headline: "Freight Spend Analytics: You Can't Optimize Costs You Can't See",
+    keywordSubheadline: 'AI-powered freight spend analytics — real-time cost visibility across every carrier, lane, mode, and service level, built from your actual invoice and shipment data.',
+    sub: 'Most forwarders know their total freight spend. Few know where it actually goes. Our AI extracts cost data from every invoice and shipment document, normalizes it across carriers and formats, and gives you the spend visibility you need to negotiate better rates, identify cost anomalies, and make data-driven logistics decisions.',
+
+    idealFor: [
+      'Freight forwarders managing $5M+ in annual transportation spend across multiple carriers',
+      'Logistics managers who lack granular visibility into cost breakdown by lane, mode, and service level',
+      'Finance and procurement teams preparing for carrier contract negotiations without reliable spend data',
+      'Operations leaders who suspect billing errors and overcharges but have no systematic way to detect them',
+    ],
+
+    problem: {
+      headline: 'Your freight spend data is buried in invoices nobody analyzes',
+      description:
+        'Freight forwarders process hundreds or thousands of invoices per month, each containing rich cost data — carrier charges, surcharges, accessorials, fuel adjustments, detention fees. But that data sits in PDFs, spreadsheets, and TMS records in different formats. Nobody aggregates it. Nobody normalizes it across carriers. Nobody tracks how rates change over time. So when it\'s time to negotiate carrier contracts, identify cost anomalies, or answer "why did our freight spend increase 18% last quarter?", the answer is either a guess or a two-week manual analysis project.',
+      painPoints: [
+        'No single source of truth for freight costs — data scattered across carrier invoices, TMS records, spreadsheets, and email',
+        'Invoice data captured for payment processing but never aggregated for strategic analysis',
+        'Carrier contract negotiations based on gut feel and sample invoices rather than complete spend data',
+        'Billing errors and overcharges going undetected because nobody compares invoiced rates against contracted rates at scale',
+        'Accessorial costs (fuel surcharges, detention, demurrage) growing unchecked because they\'re not tracked systematically',
+        'Monthly and quarterly freight spend reports requiring days of manual compilation from multiple sources',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Automated cost extraction from carrier invoices',
+        description:
+          'AI pulls line-item cost data from carrier invoices regardless of format — PDF, EDI, email, or portal download. Every charge line, surcharge, accessorial, and adjustment is extracted, classified, and stored in a normalized cost database. No manual data entry, no format limitations.',
+      },
+      {
+        title: 'Spend breakdown by any dimension',
+        description:
+          'Slice and dice your freight spend by carrier, lane, mode (sea, air, road, rail), service level, customer, commodity, origin/destination country, or any combination. Drill down from total spend to individual invoice line items in a single view.',
+      },
+      {
+        title: 'Rate trend analysis across lanes and time periods',
+        description:
+          'Track how your actual freight costs move over time — by lane, carrier, mode, and service level. Identify seasonal patterns, detect gradual rate creep, and benchmark your rates against historical performance. See whether your contracted rates are holding or being eroded by surcharge increases.',
+      },
+      {
+        title: 'Carrier cost benchmarking',
+        description:
+          'Compare actual costs across carriers for the same lanes and service levels. Identify which carriers consistently deliver the best rates, which ones have the highest surcharge ratios, and where you have opportunities to shift volume for better pricing.',
+      },
+      {
+        title: 'Contract vs spot rate tracking',
+        description:
+          'Visibility into when you\'re paying above contracted rates — whether from spot market usage, expired contract rates, or carrier billing errors. Track your contract utilisation rate and quantify the cost impact of spot market exposure.',
+      },
+      {
+        title: 'Cost anomaly detection',
+        description:
+          'AI flags unusual charges, rate spikes, and billing outliers automatically. The system learns your normal cost patterns per lane and carrier, and alerts you when something deviates — whether it\'s a carrier applying the wrong rate tier, a sudden surcharge increase, or a duplicate charge.',
+      },
+      {
+        title: 'Accessorial cost tracking',
+        description:
+          'Monitor fuel surcharges, detention, demurrage, and ancillary fees over time. These costs often grow unchecked because they\'re buried in invoice line items. The system tracks them as a separate dimension, showing trends and flagging carriers with disproportionately high accessorial charges.',
+      },
+      {
+        title: 'Executive reporting',
+        description:
+          'Automated monthly and quarterly freight spend reports for leadership — total spend, cost per shipment, carrier allocation, lane-level trends, and year-over-year comparisons. Reports are generated automatically and delivered to stakeholders without manual compilation.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Carrier contract negotiation preparation',
+        description:
+          'A freight forwarder preparing for annual carrier contract renewals uses spend analytics to generate complete spend profiles per carrier — total volume, lane breakdown, average rates vs market, surcharge ratios, and service level performance. Instead of negotiating with sample data and estimates, the procurement team walks into negotiations with granular, carrier-specific spend intelligence that supports data-driven rate discussions.',
+      },
+      {
+        scenario: 'Detecting systematic carrier overcharges',
+        description:
+          'Spend analytics reveals that a major carrier has been applying a fuel surcharge rate 2% higher than the contracted rate across all shipments for the past 6 months. On $2M in annual spend with that carrier, this represents $40K in overcharges that would have gone undetected without automated rate comparison at scale.',
+      },
+      {
+        scenario: 'Identifying cost optimization opportunities',
+        description:
+          'Lane-level spend analysis shows that 30% of air freight volume on a particular trade lane is moving at spot rates because the contracted carrier doesn\'t serve that origin. By identifying this pattern, the forwarder negotiates a contract with a second carrier for that lane, reducing costs by 22% on those shipments.',
+      },
+      {
+        scenario: 'Quarterly spend reporting for enterprise clients',
+        description:
+          'A 3PL client requires quarterly spend reports broken down by mode, lane, and service level. Previously, this took 3 days of manual compilation from multiple systems. With spend analytics, the report is generated automatically — accurate, complete, and delivered within 24 hours of quarter close.',
+      },
+    ],
+
+    results: [
+      { value: '100%', label: 'Invoice cost data captured automatically', context: 'Every charge line from every carrier invoice extracted and normalized without manual data entry', businessOutcome: 'Complete spend visibility — no gaps, no estimates' },
+      { value: '15–20%', label: 'Typical cost reduction from spend visibility', context: 'Through better rate negotiation, carrier allocation optimization, and billing error detection', businessOutcome: 'Direct bottom-line savings from data-driven freight procurement' },
+      { value: '< 24hrs', label: 'From invoice to analytics dashboard', context: 'Invoices processed and cost data available in dashboards within hours of receipt', businessOutcome: 'Near-real-time spend visibility instead of month-end reconciliation' },
+      { value: '0', label: 'Manual data entry for spend reporting', context: 'All spend reports generated automatically from extracted invoice data', businessOutcome: 'Finance team freed from manual report compilation' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure', 'CargoWise', 'SAP TM', 'Oracle TMS', 'OpenAI'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'SAP Transportation Management (SAP TM)',
+      'Oracle Transportation Management (OTM)',
+      'Microsoft Dynamics 365 Supply Chain',
+      'Descartes Global Logistics Network',
+      'Email / IMAP / Microsoft 365 / Google Workspace',
+      'SFTP / EDI for invoice ingestion',
+    ],
+
+    implementation: {
+      timeline: '8–12 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — map current invoice processing workflow, catalog carrier invoice formats, identify all cost dimensions and reporting requirements',
+        'Weeks 3–5: Cost extraction pipeline build — AI model training on your actual carrier invoices, normalization logic, cost classification taxonomy',
+        'Weeks 6–8: Analytics dashboard development, rate comparison engine, anomaly detection rules, TMS integration',
+        'Weeks 9–10: UAT with finance and procurement teams, parallel run against manual spend reports for accuracy validation',
+        'Weeks 11–12: Production deployment, executive reporting setup, team training, documentation, and 30-day hypercare',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight spend analytics?',
+        a: 'Freight spend analytics is the systematic analysis of transportation costs across carriers, lanes, modes, and service levels — turning raw invoice data into actionable cost intelligence. It gives freight forwarders and logistics companies complete visibility into where their money goes, enabling data-driven decisions on carrier selection, rate negotiation, and cost optimization.',
+      },
+      {
+        q: 'How does AI-powered freight spend analytics work?',
+        a: 'AI extracts cost data from every carrier invoice and shipment document, normalizes it across formats and carriers, and presents it in dashboards broken down by any dimension — carrier, lane, mode, customer, time period. The system handles the messy reality of freight invoices: different formats per carrier, inconsistent charge descriptions, multiple currencies, and varying surcharge structures. All of this is automated — no manual data entry or spreadsheet manipulation required.',
+      },
+      {
+        q: 'What cost savings can freight spend analytics deliver?',
+        a: 'Organizations with full freight spend visibility typically achieve 15–20% cost reductions through three channels: better rate negotiation (armed with complete spend data, not samples), carrier allocation optimization (shifting volume to the most cost-effective carriers per lane), and elimination of billing errors and overcharges (which typically represent 3–5% of total freight spend). The specific savings depend on current spend volume and how much visibility you have today.',
+      },
+      {
+        q: 'How is this different from TMS reporting?',
+        a: 'TMS platforms report on data that\'s already in the system. But much of your freight cost data never makes it into the TMS in full detail — carrier invoices with line-item surcharges, accessorial charges, fuel adjustments, and credit notes often sit in email or on carrier portals. Freight spend analytics captures cost data from ALL sources — including invoices and documents that never make it into the TMS — giving you complete visibility rather than partial. It also normalizes data across carriers and formats, which TMS reporting typically does not.',
+      },
+      {
+        q: 'How long does freight spend analytics take to implement?',
+        a: 'Typically 8–12 weeks from kickoff to production. The first spend reports are available during the parallel run phase (around week 9–10), before full production deployment. The implementation timeline depends on the number of carrier invoice formats, the complexity of your cost classification requirements, and the depth of TMS integration needed.',
+      },
+      {
+        q: 'Does this integrate with my existing TMS?',
+        a: 'Yes. FreightMynd integrates with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Spend data can be pushed back into your TMS for operational use, or accessed via standalone analytics dashboards. The system can also pull existing shipment and booking data from your TMS to enrich the cost analytics with operational context — matching costs to specific shipments, customers, and service levels.',
+      },
+      {
+        q: 'What types of freight costs does it track?',
+        a: 'Everything on a carrier invoice: base freight rates, fuel surcharges, bunker adjustment factors, peak season surcharges, detention and demurrage charges, terminal handling charges, documentation fees, customs brokerage fees, insurance, warehousing charges, and any other line-item charges. The system classifies each charge type and tracks it independently, so you can see trends in base rates separately from surcharge inflation.',
+      },
+    ],
+    relatedSolutions: ['freight-revenue-recovery', 'freight-pricing-ai', 'air-freight-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+  {
+    slug: 'customs-automation',
+    title: 'Customs Automation for Freight Forwarders',
+    shortTitle: 'Customs Automation',
+    keyword: 'customs automation freight forwarders',
+    secondaryKeywords: [
+      'AI customs declaration automation',
+      'HS code classification AI',
+      'customs document processing',
+      'automated customs filing',
+      'customs compliance automation',
+      'freight customs AI',
+    ],
+    metaTitle: 'Customs Automation for Freight Forwarders',
+    metaDescription:
+      'Automate customs declarations, HS code classification, and compliance document processing. AI customs automation that integrates with your TMS.',
+    description:
+      'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
+    icon: '🛃',
+    color: 'brand',
+    headline: "Your Customs Team Shouldn't Spend 3 Hours on Data Entry That Takes AI 3 Minutes",
+    keywordSubheadline: 'AI-powered customs automation for freight forwarders — from document extraction to customs filing in minutes, not hours.',
+    sub: 'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
+
+    idealFor: [
+      'Customs brokers processing 50+ declarations per day',
+      'Freight forwarders with in-house customs operations',
+      'Logistics companies handling multi-country import/export compliance',
+      'Operations teams spending 3+ hours daily on manual customs data entry',
+    ],
+
+    problem: {
+      headline: 'Manual Customs Processing Is a Bottleneck You Don\'t Need',
+      description:
+        'Customs teams spend hours re-keying data that already exists in commercial invoices and packing lists. HS code classification relies on memory. Compliance errors get caught at the border — not before. Every peak season creates backlogs that delay clearance and rack up demurrage charges.',
+      painPoints: [
+        'Manual re-keying of data from commercial invoices into customs forms',
+        'HS code lookup and classification done by memory or spreadsheet',
+        'Compliance checks are reactive — errors caught at the border, not before',
+        'Every new trade lane means new document formats and new pain',
+        'Peak season backlogs delay clearance and create demurrage risk',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Customs Declaration Pre-Population',
+        description:
+          'Extracts shipper, consignee, commodity, value, and origin data from commercial invoices and auto-fills customs declaration forms.',
+      },
+      {
+        title: 'HS Code Classification',
+        description:
+          'AI-assisted Harmonized System code assignment based on product descriptions, reducing classification errors.',
+      },
+      {
+        title: 'Compliance Document Processing',
+        description:
+          'Processes certificates of origin, phytosanitary certificates, and dangerous goods declarations.',
+      },
+      {
+        title: 'Cross-Document Validation',
+        description:
+          'Validates data consistency across invoices, packing lists, and bills of lading before submission.',
+      },
+      {
+        title: 'Filing Platform Integration',
+        description:
+          'Pushes structured customs data into CargoWise, Descartes, and other customs filing systems.',
+      },
+      {
+        title: 'Audit Trail & Reporting',
+        description:
+          'Complete processing logs for customs compliance audits.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'High-volume import declarations',
+        description:
+          'A customs team processing 100+ import declarations daily uses AI to extract data from commercial invoices and pre-populate declaration forms, reducing filing time by 70% and freeing brokers for exception handling.',
+      },
+      {
+        scenario: 'Multi-country compliance',
+        description:
+          'A freight forwarder handling shipments across 15+ countries uses automated HS code classification and compliance document processing to ensure consistent, accurate filings regardless of destination.',
+      },
+      {
+        scenario: 'Peak season surge handling',
+        description:
+          'During Q4 peak season, customs declaration volume triples. Instead of hiring temporary staff, the AI system handles the surge with the same accuracy and speed — no training, no onboarding, no quality degradation.',
+      },
+    ],
+
+    results: [
+      { value: '70%', label: 'Customs filing time reduction', context: 'Measured across standard import/export declarations', businessOutcome: 'Customs brokers spend time on complex cases instead of data entry' },
+      { value: '95%+', label: 'Data extraction accuracy', context: 'Across commercial invoices, packing lists, and certificates of origin', businessOutcome: 'Fewer compliance errors and rejected filings' },
+      { value: '0', label: 'Manual data re-entry for standard formats', context: 'All validated data pushed directly into customs filing platforms', businessOutcome: 'Eliminates the manual re-keying bottleneck entirely' },
+      { value: '3 min', label: 'Average declaration pre-population time', context: 'From document intake to pre-populated customs form ready for broker review', businessOutcome: 'Faster clearance, reduced demurrage risk' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'n8n', 'PostgreSQL'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'Descartes Global Logistics Network',
+      'SAP Transportation Management (SAP TM)',
+      'Oracle Transportation Management (OTM)',
+    ],
+
+    implementation: {
+      timeline: '4–8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — map customs workflows, catalog document types, identify filing platform integration requirements',
+        'Weeks 3–4: Extraction pipeline build, HS code classification model configuration, filing platform API integration',
+        'Weeks 5–6: Validation rules, compliance checks, cross-document consistency logic',
+        'Weeks 7–8: UAT with customs team, accuracy benchmarking, production deployment and hypercare',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'Can AI fully automate customs declarations?',
+        a: 'AI automates data extraction and pre-population, typically reducing filing time by 70%. The licensed customs broker still reviews and submits — keeping human oversight where it matters while eliminating the manual data entry that slows your team down.',
+      },
+      {
+        q: 'Does customs automation work with CargoWise?',
+        a: 'Yes. FreightMynd pushes structured customs data directly into CargoWise via eHub and Universal Gateway. We also integrate with Descartes, SAP TM, Oracle TMS, and other customs filing platforms.',
+      },
+      {
+        q: 'How accurate is AI HS code classification?',
+        a: 'AI-assisted HS code classification achieves 90%+ accuracy on first pass, with confidence scoring to flag uncertain classifications for human review. The system improves over time as it processes more of your specific commodity types.',
+      },
+      {
+        q: 'What document types does customs automation handle?',
+        a: 'Commercial invoices, packing lists, certificates of origin, bills of lading, phytosanitary certificates, and dangerous goods declarations. The AI extraction engine handles multi-format, multi-supplier variations without per-format engineering.',
+      },
+      {
+        q: 'How long does customs automation take to deploy?',
+        a: '4-8 weeks from kickoff to production, including integration with your customs filing platform. We start with a discovery and audit phase, build and test in your environment, and deploy with full handoff and documentation.',
+      },
+    ],
+    relatedSolutions: ['document-intelligence', 'smart-invoice-processing', 'sea-freight-automation', 'air-freight-automation'],
+    relatedIntegrations: ['cargowise', 'descartes'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+  {
+    slug: 'freight-document-automation',
+    title: 'Freight Document Automation',
+    shortTitle: 'Document Automation',
+    keyword: 'freight document automation',
+    secondaryKeywords: [
+      'logistics document processing',
+      'freight document AI',
+      'AWB processing automation',
+      'bill of lading automation',
+      'freight document extraction',
+      'automated document processing logistics',
+    ],
+    metaTitle: 'Freight Document Automation | FreightMynd',
+    metaDescription:
+      'Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration.',
+    description:
+      'Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration.',
+    icon: '📄',
+    color: 'brand',
+    headline: 'Freight Document Automation — AI That Reads, Extracts, and Pushes Data to Your TMS',
+    keywordSubheadline: 'Freight document automation eliminates manual document processing across your logistics operations — from raw document to TMS record, fully automated.',
+    sub: 'Freight document automation eliminates manual document processing across your logistics operations. Our AI extraction engine handles invoices, AWBs, bills of lading, packing lists, and customs forms — extracting structured data with 99%+ accuracy and pushing it directly into your TMS. No re-keying. No spreadsheets. No bottlenecks.',
+
+    idealFor: [
+      'Freight forwarders processing 100+ documents per day',
+      'Operations teams manually downloading and splitting multi-page PDF batches',
+      'Logistics companies re-keying invoice and AWB data into CargoWise or SAP TM',
+      '3PL/4PL operators handling multi-supplier documentation at scale',
+    ],
+
+    problem: {
+      headline: 'The Manual Document Processing Bottleneck',
+      description:
+        'Freight forwarding runs on documents — but most forwarders still process them by hand. Ops teams spend hours every morning downloading attachments, splitting multi-page PDFs, reading invoices line by line, and manually keying data into the TMS. It\'s slow, error-prone, and doesn\'t scale.',
+      painPoints: [
+        'Ops staff manually downloading and splitting 200–300 page PDF batches from supplier emails',
+        'Re-keying invoice line items, AWB details, and BL data into CargoWise or SAP TM by hand',
+        'New supplier formats requiring weeks of engineering effort to map and integrate',
+        'Data entry errors causing compliance issues, billing disputes, and shipment delays',
+        'Growing shipment volumes with no scalable way to handle the document load',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Commercial Invoice Extraction',
+        description:
+          'Extract supplier details, line items, quantities, values, currency, Incoterms, and HS codes from invoices in any format.',
+      },
+      {
+        title: 'Airway Bill (AWB) Processing',
+        description:
+          'Capture shipper/consignee, flight details, piece count, weight, dimensions, and handling codes from master and house AWBs.',
+      },
+      {
+        title: 'Bill of Lading (BL) Parsing',
+        description:
+          'Parse vessel details, container numbers, seal numbers, port pairs, and cargo descriptions from ocean bills of lading.',
+      },
+      {
+        title: 'Packing List Extraction',
+        description:
+          'Extract carton counts, gross/net weights, dimensions, and item-level descriptions across multi-page packing lists.',
+      },
+      {
+        title: 'Customs Declaration Processing',
+        description:
+          'Capture HS codes, declared values, country of origin, duty calculations, and regulatory flags from customs forms.',
+      },
+      {
+        title: 'Certificate of Origin Extraction',
+        description:
+          'Extract issuing authority, origin country, product descriptions, and certification details for trade compliance.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'High-volume document processing pipeline',
+        description:
+          'Documents arrive via email, SFTP, or API. The system auto-downloads attachments, classifies each document by type, extracts structured fields with 99%+ accuracy, validates data, and pushes it directly into your TMS — no human intervention from intake to TMS record.',
+      },
+      {
+        scenario: 'Multi-supplier format handling',
+        description:
+          'A 4PL operator receives documents from 50+ suppliers, each with different invoice and packing list formats. The self-learning supplier onboarding module maps new formats automatically — no engineering effort per supplier.',
+      },
+      {
+        scenario: 'Hellmann 4PL control tower deployment',
+        description:
+          'The freight document automation system processes Hellmann\'s 200–300 page document batches with near-zero failure rate, achieving 60% processing time reduction and zero manual TMS data entry.',
+      },
+    ],
+
+    results: [
+      { value: '99%+', label: 'Extraction accuracy', context: 'Across standard freight document types including invoices, AWBs, BLs, and packing lists', businessOutcome: 'Eliminates data entry errors that cause compliance issues and billing disputes' },
+      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual processing of equivalent document volumes', businessOutcome: 'Reclaim operational capacity for exception management and client service' },
+      { value: '0', label: 'Manual data entry', context: 'All validated data pushed directly into TMS via native API integration', businessOutcome: 'Zero manual re-keying eliminates the document processing bottleneck' },
+      { value: '50%', label: 'AI cost reduction via smart filtering', context: 'Intelligent pre-filtering removes irrelevant pages before extraction, cutting AI processing costs', businessOutcome: 'Lower ongoing operational costs as document volume scales' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'n8n', 'PostgreSQL', 'Custom OCR Pipeline'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'SAP Transportation Management (SAP TM)',
+      'Oracle Transportation Management (OTM)',
+      'Microsoft Dynamics 365 Supply Chain',
+      'Descartes Global Logistics Network',
+    ],
+
+    implementation: {
+      timeline: '4–8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — map document workflows, catalog document types and supplier formats, define extraction requirements',
+        'Weeks 3–4: Extraction pipeline development, document classification model, TMS integration scaffolding',
+        'Weeks 5–6: Validation rules, self-learning supplier onboarding module, exception routing logic',
+        'Weeks 7–8: UAT with ops team, accuracy benchmarking, production deployment and 30-day hypercare',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What types of freight documents can be automated?',
+        a: 'Our freight document automation system handles commercial invoices, airway bills (AWBs), bills of lading (BLs), packing lists, customs declarations, certificates of origin, and more. The AI extraction engine adapts to any structured or semi-structured logistics document format.',
+      },
+      {
+        q: 'How accurate is AI document extraction for freight documents?',
+        a: 'Our extraction engine achieves 99%+ accuracy on standard freight documents. For edge cases and unusual formats, built-in confidence scoring routes low-confidence extractions to human review — so nothing gets pushed to your TMS without validation.',
+      },
+      {
+        q: 'Does freight document automation integrate with my TMS?',
+        a: 'Yes. We build native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. Extracted data is formatted and pushed directly into your TMS — no CSV exports, no middleware, no manual re-entry.',
+      },
+      {
+        q: 'How long does it take to deploy freight document automation?',
+        a: 'Typical deployment takes 4–8 weeks from kickoff to production. This includes discovery, document format mapping, extraction pipeline development, TMS integration, testing, and go-live with your ops team.',
+      },
+      {
+        q: 'Can the system handle documents from new suppliers automatically?',
+        a: 'Yes. The self-learning supplier onboarding module automatically maps new document formats when a supplier sends their first batch. No engineering effort is required per new supplier — the system adapts and improves with each document processed.',
+      },
+    ],
+    relatedSolutions: ['document-intelligence', '4pl-control-tower-automation', 'smart-invoice-processing', 'tms-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics', 'descartes'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+  {
+    slug: 'tms-automation',
+    title: 'TMS Automation for Freight Forwarders',
+    shortTitle: 'TMS Automation',
+    keyword: 'TMS automation',
+    secondaryKeywords: [
+      'transportation management system automation',
+      'CargoWise automation',
+      'SAP TM automation',
+      'Oracle TMS automation',
+      'TMS data entry automation',
+      'freight TMS AI',
+    ],
+    metaTitle: 'TMS Automation | FreightMynd',
+    metaDescription:
+      'Automate your TMS with AI — zero manual data entry, intelligent document routing, and native API integration with CargoWise, SAP TM, Oracle TMS.',
+    description:
+      'Automate your TMS with AI — zero manual data entry, intelligent document routing, and native API integration with CargoWise, SAP TM, Oracle TMS.',
+    icon: '⚙️',
+    color: 'brand',
+    headline: 'TMS Automation — Eliminate Manual Data Entry Across Your Transportation Management System',
+    keywordSubheadline: 'TMS automation replaces the manual work that sits between your documents and your transportation management system.',
+    sub: 'TMS automation replaces the manual work that sits between your documents and your transportation management system. Our AI systems extract data from freight documents, validate it against your business rules, and push it directly into CargoWise, SAP TM, Oracle TMS, or your platform of choice — via native API integration with zero manual re-keying.',
+
+    idealFor: [
+      'Freight forwarders running CargoWise, SAP TM, or Oracle TMS with heavy manual data entry',
+      'Operations teams re-keying shipment data across 3–4 systems every day',
+      'Logistics companies using CSV export/import cycles to move data between systems',
+      '3PL/4PL operators onboarding new carriers and suppliers frequently',
+    ],
+
+    problem: {
+      headline: 'Why Your TMS Still Depends on Manual Work',
+      description:
+        'Your TMS is powerful — but it\'s only as good as the data that goes into it. And right now, that data gets there through manual processes: operators downloading documents, re-keying fields, running export/import cycles between spreadsheets and the TMS, and chasing down exceptions manually. The system that\'s supposed to manage your freight is bottlenecked by the humans feeding it.',
+      painPoints: [
+        'Data silos between email, spreadsheets, carrier portals, and the TMS — requiring manual bridging',
+        'Operators re-keying the same shipment data across 3–4 systems every day',
+        'CSV export/import cycles that break, lose data, or require manual formatting',
+        'New carrier and supplier onboarding requiring IT involvement to map data formats',
+        'Error-prone manual entry causing billing disputes, compliance issues, and delayed shipments',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Document Data Push',
+        description:
+          'Extracted data from invoices, AWBs, BLs, and packing lists pushed directly into TMS records — no manual entry.',
+      },
+      {
+        title: 'Invoice Posting',
+        description:
+          'Supplier invoices validated, matched against POs and shipments, and posted to your TMS financial module automatically.',
+      },
+      {
+        title: 'Shipment Creation',
+        description:
+          'New shipment records created from booking confirmations, customer orders, or carrier notifications without operator input.',
+      },
+      {
+        title: 'Carrier Rate Import',
+        description:
+          'Rate sheets and contract updates parsed and loaded into your TMS rate engine — no spreadsheet reformatting.',
+      },
+      {
+        title: 'Compliance Reporting',
+        description:
+          'Audit trails, customs documentation, and compliance reports assembled automatically from processed shipment data.',
+      },
+      {
+        title: 'Exception Routing',
+        description:
+          'When data doesn\'t pass validation, the system routes it to the right operator with the specific issue flagged — not a generic error.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'CargoWise automation for a 4PL control tower',
+        description:
+          'A 4PL operator processes 200+ shipments daily through CargoWise. AI extracts data from supplier documents, validates against business rules, and pushes CargoWise-compatible XML directly into the TMS — eliminating manual data entry entirely.',
+      },
+      {
+        scenario: 'Multi-TMS environment synchronization',
+        description:
+          'A logistics company runs CargoWise for ocean freight and SAP TM for road freight. TMS automation keeps both systems synchronized, ensuring shipment data flows between platforms without manual CSV exports or re-keying.',
+      },
+      {
+        scenario: 'New carrier onboarding without IT involvement',
+        description:
+          'When a new carrier is added, the system automatically maps their document formats and rate structures to your TMS schema — no IT tickets, no format engineering, no 3-week onboarding cycles.',
+      },
+    ],
+
+    results: [
+      { value: '0', label: 'Manual TMS data entry', context: 'All validated data pushed directly into TMS via native API integration', businessOutcome: 'Eliminates data entry errors and frees ops team for exception management' },
+      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual document-to-TMS workflows', businessOutcome: 'Reclaim 2+ FTEs of operational capacity' },
+      { value: '≈0%', label: 'Error rate on validated records', context: 'AI extraction with validation layers catches errors before data enters your TMS', businessOutcome: 'Fewer billing disputes, compliance issues, and shipment delays' },
+      { value: '4–8 wk', label: 'Typical deployment timeline', context: 'From kickoff to production including discovery, build, testing, and go-live', businessOutcome: 'Fast time-to-value with minimal disruption to current operations' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'n8n', 'PostgreSQL'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'SAP Transportation Management (SAP TM)',
+      'Oracle Transportation Management (OTM)',
+      'Microsoft Dynamics 365 Supply Chain',
+      'Descartes Global Logistics Network',
+    ],
+
+    implementation: {
+      timeline: '4–8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — map TMS workflows, catalog data entry points, identify automation opportunities',
+        'Weeks 3–4: TMS API integration, document extraction pipeline, validation rule configuration',
+        'Weeks 5–6: Shipment creation automation, invoice posting workflows, carrier rate import',
+        'Weeks 7–8: UAT with ops team, parallel run alongside manual process, production deployment and hypercare',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is TMS automation?',
+        a: 'TMS automation uses AI to eliminate manual data entry and repetitive tasks across your transportation management system. Instead of operators re-keying document data, importing CSVs, or manually creating shipment records, AI systems extract, validate, and push data directly into your TMS via API.',
+      },
+      {
+        q: 'Which TMS platforms can be automated with AI?',
+        a: 'FreightMynd builds native API integrations with CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Each integration is purpose-built for your specific TMS instance, workflows, and data structures — not a generic connector.',
+      },
+      {
+        q: 'How does TMS automation reduce errors?',
+        a: 'Manual data entry is inherently error-prone — transposed numbers, missed fields, incorrect codes. AI extraction with validation layers catches errors before data enters your TMS. Confidence scoring flags uncertain values for human review, and business rule validation ensures data integrity on every record.',
+      },
+      {
+        q: 'Will TMS automation work with our existing workflows?',
+        a: 'Yes. Unlike SaaS tools that force you into their workflow, we build automation around your existing processes. Your carrier portals, your supplier formats, your approval chains, your exception handling — all preserved and enhanced, not replaced.',
+      },
+      {
+        q: 'What ROI can we expect from TMS automation?',
+        a: 'Our deployments typically achieve 60% processing time reduction, zero manual data entry, and near-zero error rates. For a mid-size forwarder with 3 FTEs on data entry, this means reclaiming 50+ hours per week. We include detailed ROI projections in every free audit.',
+      },
+    ],
+    relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing', '3pl-4pl-operations', 'freight-document-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics', 'descartes'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
 ];
