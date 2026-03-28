@@ -9,30 +9,26 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
     { "@type": "ListItem", "position": 2, "name": "Compare" },
-    { "@type": "ListItem", "position": 3, "name": "Raft vs FreightMynd" },
+    { "@type": "ListItem", "position": 3, "name": "Freightos vs FreightMynd" },
   ],
 };
 
 const faqItems = [
   {
-    q: 'Is Raft better than FreightMynd for freight automation?',
-    a: 'It depends on your operation\'s complexity. Raft (formerly Vector.ai) is a VC-backed SaaS platform that suits standard workflows at scale across 60+ customers and 30+ countries. FreightMynd builds custom AI systems for complex operations needing deep customization, native TMS integration, and full ownership — ideal for enterprise forwarders with edge cases that don\'t fit templates.',
+    q: 'What is the difference between Freightos and FreightMynd?',
+    a: 'Freightos is a freight rate marketplace and booking platform — it aggregates carrier rates and provides a platform for comparing and booking freight. FreightMynd builds custom AI operations systems for freight forwarders — document intelligence, quoting automation, and deep TMS integration. Freightos focuses on rate discovery and booking; FreightMynd focuses on automating the operational workflows that happen after booking — document processing, data entry, compliance, and TMS updates.',
   },
   {
-    q: 'Does Raft integrate with CargoWise?',
-    a: 'Yes, Raft has CargoWise integration as part of their SaaS platform. FreightMynd also integrates with CargoWise via eHub and Universal Gateway with native XML push — plus SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. FreightMynd\'s integrations are built natively per TMS instance rather than through generic connectors.',
+    q: 'Is FreightMynd a Freightos alternative?',
+    a: 'Not directly. Freightos and FreightMynd solve different problems. Freightos is a rate marketplace for finding and comparing carrier rates. FreightMynd automates freight operations — document processing, quoting, and TMS integration. They overlap in pricing intelligence, but FreightMynd combines market data with your historical pricing data and custom business rules for more accurate, context-aware quotes. Many freight forwarders could use both.',
   },
   {
-    q: 'How much does Raft cost vs FreightMynd?',
-    a: 'Raft uses custom SaaS pricing with a recurring subscription model — you pay ongoing fees for access to their platform. FreightMynd uses project-based pricing with no recurring SaaS fees. You pay for the build, and you own the system outright with no vendor lock-in or price increases when you scale.',
+    q: 'Can I use Freightos and FreightMynd together?',
+    a: 'Yes. Freightos provides rate marketplace data, while FreightMynd handles the operational automation — document processing, data extraction, validation, and TMS integration. FreightMynd can ingest rate data from Freightos (or any source) and combine it with your historical pricing, margin rules, and carrier preferences to generate more accurate quotes. The two systems are complementary rather than competing.',
   },
   {
-    q: 'Can I switch from Raft to FreightMynd?',
-    a: 'Yes. FreightMynd systems are custom-built from scratch for your specific TMS and workflows. There is no migration dependency on Raft\'s platform. FreightMynd will audit your operations, map your workflows, and build a purpose-built system tailored to your exact requirements — including any edge cases that didn\'t fit within Raft\'s platform.',
-  },
-  {
-    q: 'What is Raft\'s deployment model?',
-    a: 'Raft is a hosted SaaS platform — your data lives on their infrastructure, and you access it via subscription. FreightMynd deploys in your environment. You own the system, control the data, and have no dependency on a third-party vendor for continued operation.',
+    q: 'Does FreightMynd offer freight rate data like Freightos?',
+    a: 'FreightMynd does not operate a rate marketplace. Instead, FreightMynd\'s freight pricing AI combines multiple data sources — market rate data (which can include Freightos data), your historical pricing, carrier contracts, and real-time market conditions — to generate intelligent, context-aware pricing recommendations. This approach provides more accurate quotes tailored to your specific operation rather than generic marketplace rates.',
   },
 ];
 
@@ -47,32 +43,30 @@ const faqSchema = {
 };
 
 const comparisonRows = [
-  { category: 'Model', raft: 'SaaS platform (subscription)', freightmynd: 'Custom-built (client-owned)' },
-  { category: 'Funding', raft: '$30M+ VC-backed (Eight Roads, Bessemer)', freightmynd: 'Bootstrapped (Bitontree)' },
-  { category: 'TMS Integration', raft: 'Generic integrations, CargoWise focus', freightmynd: 'Native per-TMS: CargoWise, SAP TM, Oracle, Dynamics, Descartes' },
-  { category: 'Customization', raft: 'One-size-fits-many platform', freightmynd: 'Purpose-built per client\'s workflows' },
-  { category: 'Pricing', raft: 'Custom SaaS pricing, recurring subscription', freightmynd: 'Project-based, no recurring fees' },
-  { category: 'Scale', raft: '60 customers, 30+ countries', freightmynd: 'Boutique, enterprise-focused' },
-  { category: 'Data Ownership', raft: 'Raft-hosted, vendor controls data', freightmynd: 'Client-owned, deployed in your environment' },
-  { category: 'Email Intelligence', raft: 'Pre-built email triage agent', freightmynd: 'Custom email AI — classification, auto-response, attachment routing to your pipelines' },
-  { category: 'Booking Automation', raft: 'Platform booking confirmation processing', freightmynd: 'End-to-end: quote-to-booking, carrier allocation, amendment cascade, TMS record creation' },
-  { category: 'Customer Portal', raft: 'Basic shipment portal with emissions data', freightmynd: 'White-label visibility portal — your brand, your domain, quote-to-book, analytics' },
-  { category: 'Carrier Analytics', raft: 'Limited carrier visibility in platform', freightmynd: 'Full AI scorecards: on-time rates, lane-level benchmarks, exception patterns, contract intelligence' },
-  { category: 'ETA Prediction', raft: 'ETA tracking updates from carriers', freightmynd: 'Predictive AI: 24–72hr delay prediction, proactive alerts, exception routing' },
-  { category: 'SOP Compliance', raft: 'Agent governance within platform', freightmynd: 'Continuous SOP auditing per customer, real-time violation detection, compliance reporting' },
-  { category: 'Order-to-Cash', raft: 'AP invoice processing', freightmynd: 'Full cycle: cost accrual, invoice generation, revenue recognition, payment reconciliation' },
-  { category: 'Rate Management', raft: 'Rate card storage in knowledge base', freightmynd: 'AI rate sheet ingestion from any format, normalisation, cross-carrier comparison, expiry tracking' },
-  { category: 'Solution Breadth', raft: 'Operations, customs, AP in one SaaS', freightmynd: '21 purpose-built AI solutions — each customised for your workflows' },
+  { category: 'Focus', freightos: 'Freight rate marketplace and booking platform', cargoiq: 'Custom AI operations automation for freight forwarders' },
+  { category: 'Pricing Intelligence', freightos: 'Market rate data from the Freightos marketplace', cargoiq: 'Dynamic pricing + market data + your historical data combined' },
+  { category: 'Document Processing', freightos: 'Not a core focus', cargoiq: 'Core capability — invoices, AWBs, packing lists, compliance docs' },
+  { category: 'TMS Integration', freightos: 'Limited — primarily their own platform', cargoiq: 'Deep native integration with CargoWise, SAP TM, Oracle TMS, and more' },
+  { category: 'Quoting', freightos: 'Through the Freightos platform', cargoiq: 'Your existing workflow, automated with AI' },
+  { category: 'Ownership', freightos: 'Platform dependency — your data lives in their ecosystem', cargoiq: 'You own the system — deployed in your environment' },
+  { category: 'Rate Sheet Processing', freightos: 'Marketplace rate aggregation from carriers', cargoiq: 'AI ingests your carrier rate sheets in any format, normalises, and powers your quoting engine' },
+  { category: 'Email Automation', freightos: 'Not offered', cargoiq: 'AI email triage, RFQ detection, auto-response, attachment routing' },
+  { category: 'Booking Automation', freightos: 'eBooking through marketplace', cargoiq: 'Quote-to-booking in your TMS, carrier confirmation parsing, amendment handling' },
+  { category: 'Customer Portal', freightos: 'Marketplace-based shipper portal', cargoiq: 'White-label portal — your brand, your data, full visibility and analytics' },
+  { category: 'Carrier Analytics', freightos: 'Freightos Baltic Index (market benchmarks)', cargoiq: 'AI scorecards from your own shipment data — lane-level, real-time' },
+  { category: 'ETA & Exceptions', freightos: 'Basic tracking through platform', cargoiq: 'Predictive ETA AI, proactive delay alerting, intelligent exception management' },
+  { category: 'Order-to-Cash', freightos: 'Not offered', cargoiq: 'Full billing automation — accruals, invoicing, revenue recognition, reconciliation' },
+  { category: 'Solution Breadth', freightos: 'Rate comparison, booking, benchmarking', cargoiq: '21 solutions covering the complete freight operations lifecycle' },
 ];
 ---
 
 <Page
-  title="Raft vs FreightMynd — Freight AI Comparison"
-  description="Compare Raft (formerly Vector.ai) and FreightMynd for freight AI. SaaS platform vs custom-built — deployment, pricing, and TMS integration depth."
+  title="Freightos vs FreightMynd — AI Comparison"
+  description="Freightos vs FreightMynd — rate marketplace vs custom AI freight operations. Compare pricing intelligence, document processing, and TMS integration."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Raft vs FreightMynd' }]} />
+  <Breadcrumb items={[{ label: 'Compare' }, { label: 'Freightos vs FreightMynd' }]} />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 50%, #F8FAFC 100%);">
@@ -83,10 +77,10 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Raft vs FreightMynd — Which AI Approach Fits Your Freight Operations?
+          Freightos vs FreightMynd — Marketplace Rate Data vs Custom Cargo Data Intelligence
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          Raft (formerly Vector.ai) is a VC-backed SaaS platform serving 60+ freight forwarders across 30 countries. FreightMynd builds custom AI systems deployed in your environment. Here's how they compare.
+          Looking for a Freightos alternative for operations automation? Freightos is a freight marketplace and rate platform. FreightMynd builds custom AI operations systems for freight forwarders. They solve different problems but overlap in pricing intelligence. Here's how they compare.
         </p>
       </div>
     </div>
@@ -103,8 +97,8 @@ const comparisonRows = [
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="border-b-2 border-line">
-                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Dimension</th>
-                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Raft</th>
+                <th scope="col" class="py-4 pr-6 text-sm font-semibold text-ink-3 w-1/4">Feature</th>
+                <th scope="col" class="py-4 px-6 text-sm font-semibold text-ink-4 w-[37.5%]">Freightos</th>
                 <th scope="col" class="py-4 px-6 text-sm font-semibold text-brand w-[37.5%]">FreightMynd</th>
               </tr>
             </thead>
@@ -112,8 +106,8 @@ const comparisonRows = [
               {comparisonRows.map((row, i) => (
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
-                  <td class="py-4 px-6 text-sm text-ink-3">{row.raft}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.freightmynd}</td>
+                  <td class="py-4 px-6 text-sm text-ink-3">{row.freightos}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
                 </tr>
               ))}
             </tbody>
@@ -127,12 +121,12 @@ const comparisonRows = [
               <p class="text-sm font-bold text-ink mb-3">{row.category}</p>
               <div class="space-y-2">
                 <div>
-                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">Raft</span>
-                  <p class="text-sm text-ink-3">{row.raft}</p>
+                  <span class="text-[10px] font-mono text-ink-4 uppercase tracking-wider">Freightos</span>
+                  <p class="text-sm text-ink-3">{row.freightos}</p>
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
                   <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
-                  <p class="text-sm text-ink font-medium">{row.freightmynd}</p>
+                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
                 </div>
               </div>
             </div>
@@ -142,19 +136,20 @@ const comparisonRows = [
     </div>
   </section>
 
-  <!-- When Raft / When FreightMynd -->
+  <!-- When Freightos / When FreightMynd -->
   <section class="section" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
     <div class="container">
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <!-- Raft -->
+        <!-- Freightos -->
         <div class="p-8 rounded-2xl border border-line/70 bg-white" data-reveal>
-          <h3 class="text-xl font-bold text-ink mb-4">When Raft Makes Sense</h3>
+          <h3 class="text-xl font-bold text-ink mb-4">When Freightos Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'You want a plug-and-play platform with minimal setup',
-              'You need breadth across customs, operations, and finance in one SaaS tool',
-              'You prefer vendor-managed infrastructure and updates',
-              'You\'re a mid-market forwarder with standard workflows',
+              'You need access to a broad freight rate marketplace',
+              'Your primary challenge is finding and comparing carrier rates',
+              'You want a booking platform with built-in rate management',
+              'Your operations are rate-driven rather than document-driven',
+              'You prefer a marketplace model over custom-built systems',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink-3 leading-relaxed">
                 <span class="text-ink-4 mt-0.5 flex-shrink-0">
@@ -173,10 +168,12 @@ const comparisonRows = [
           <h3 class="text-xl font-bold text-ink mb-4">When FreightMynd Makes Sense</h3>
           <ul class="space-y-3">
             {[
-              'You have complex operations with diverse supplier formats and custom business rules',
-              'You need deep, native TMS integration (not generic connectors)',
-              'You want to own your AI system with no vendor lock-in or recurring SaaS fees',
-              'You\'re an enterprise forwarder like Hellmann with edge cases that don\'t fit templates',
+              'Your bottleneck is document processing, not rate discovery',
+              'You need deep TMS integration (CargoWise, SAP TM, Oracle)',
+              'You want AI that combines market data with your historical pricing',
+              'You need end-to-end operations automation beyond just quoting',
+              'You want to own your automation infrastructure',
+              'Your operation has complex supplier document formats and edge cases',
             ].map((item) => (
               <li class="flex items-start gap-2.5 text-sm text-ink leading-relaxed">
                 <span class="text-brand mt-0.5 flex-shrink-0">
@@ -189,6 +186,13 @@ const comparisonRows = [
             ))}
           </ul>
         </div>
+      </div>
+
+      <!-- Key Distinction -->
+      <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl border border-brand/20 bg-brand-light/20 text-center" data-reveal>
+        <p class="text-sm text-ink leading-relaxed">
+          <strong>Key distinction:</strong> Freightos and FreightMynd are not direct competitors. Freightos is a rate marketplace. FreightMynd builds custom AI systems for freight operations. Many freight forwarders could use Freightos for rate data while using FreightMynd for document processing, quoting automation, and TMS integration.
+        </p>
       </div>
     </div>
   </section>
@@ -286,10 +290,10 @@ const comparisonRows = [
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
       <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
-        Want to See What Custom AI Looks Like for Your Operations?
+        See What AI-Driven Cargo Data Intelligence Looks Like
       </h2>
       <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
-        Book a free audit. We'll map your workflows and show you what we'd build — with a timeline and expected results.
+        Book a free audit. We'll show you where AI automation has the highest impact on your specific freight operations.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
         <a href="/contact" class="btn btn-white">
@@ -298,8 +302,8 @@ const comparisonRows = [
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <a href="/case-studies/hellmann-4pl-control-tower" class="btn border border-white/30 text-white hover:bg-white/10">
-          Read the Hellmann Case Study
+        <a href="/solutions" class="btn border border-white/30 text-white hover:bg-white/10">
+          Explore Solutions
         </a>
       </div>
     </div>

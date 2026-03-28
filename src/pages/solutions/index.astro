@@ -17,7 +17,7 @@ const breadcrumbSchema = {
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "AI Solutions for Freight Forwarding",
+  "name": "Freight Process Automation Solutions",
   "numberOfItems": solutions.length,
   "itemListElement": solutions.map((sol, i) => ({
     "@type": "ListItem",
@@ -26,12 +26,91 @@ const itemListSchema = {
     "url": `${site.url}/solutions/${sol.slug}`
   }))
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is freight process automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Freight process automation uses AI and software to replace manual, repetitive tasks across freight forwarding operations — document processing, quoting, invoicing, pricing, customs declarations, and TMS data entry. Instead of operators manually reading documents, keying data into systems, and matching invoices, AI handles extraction, validation, and system integration automatically. The result is faster processing, fewer errors, and operations teams freed to focus on exceptions and relationships rather than data entry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which freight forwarding processes can be automated with AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nearly every repetitive freight forwarding process can be automated: document processing (bills of lading, commercial invoices, packing lists, AWBs), quote and RFQ management, carrier invoice matching and audit, freight rate sheet ingestion and management, sea and air freight booking workflows, customs declaration preparation, TMS data entry and synchronization, email triage and auto-response, shipment visibility portals, carrier performance scoring, ETA prediction and exception management, SOP compliance monitoring, order-to-cash billing cycles, and compliance reporting. The highest-impact starting points are typically document processing, email intelligence, and invoice automation, where forwarders see 60-80% time reduction immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does freight process automation take to implement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most freight automation solutions deploy in 4-12 weeks from kickoff to production. Simpler automations like email intelligence, rate sheet ingestion, or booking automation can go live in 4-6 weeks. Document extraction, invoice matching, and carrier analytics typically deploy in 6-8 weeks. More complex systems like full 4PL control tower automation, SOP compliance monitoring, or order-to-cash orchestration typically take 6-12 weeks. Every implementation starts with a discovery phase to map your specific workflows, TMS configuration, and operational requirements before any development begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does freight process automation integrate with CargoWise, SAP TM, and other TMS platforms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. FreightMynd builds native integrations with CargoWise (via eHub and Universal Gateway), SAP TM, Oracle TMS, Microsoft Dynamics 365, and Descartes. Every automation is built to work with your existing TMS — pushing validated data directly via API or XML, not requiring manual re-entry or middleware. The system adapts to your TMS configuration, not the other way around."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ROI can freight forwarders expect from process automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ROI varies by process but typical results include: 60% reduction in document processing time, 80% reduction in manual data entry, 2-5% of freight spend recovered through automated invoice auditing, and 50% reduction in AI processing costs through intelligent document filtering. For a freight forwarder processing 500+ documents per week, automation typically reaches positive ROI within 2-4 months through labor savings and error reduction alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between freight automation SaaS and custom-built automation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SaaS freight automation (like Zauber or Raft) offers pre-built tools that work across many customers but require your workflows to fit their product. Custom-built automation from FreightMynd is designed around your specific TMS instance, document formats, supplier variations, and business rules. You own the system, there is no per-seat pricing, and edge cases are built in from day one rather than submitted as feature requests. Custom systems are deployed in your environment and scale without vendor-imposed limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI automate freight email triage and response?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AI email intelligence reads every incoming email, classifies it by intent (RFQ, booking confirmation, exception alert, document delivery, tracking request), routes it to the right workflow, and drafts contextual responses. Operators review and approve rather than reading, classifying, and typing every reply. Most forwarders see 80% inbox processing time reduction and sub-5-minute RFQ response times."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does AI predict freight shipment delays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI ETA prediction analyses multiple data sources — your historical shipment patterns, carrier schedule reliability, port congestion indices, weather data, and customs processing times — to generate ETAs more accurate than carrier-reported estimates. The system predicts delays 24–72 hours before they appear in carrier tracking, enabling proactive customer communication and exception management."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can AI automate carrier rate sheet processing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Rate sheet intelligence uses AI to read carrier rate sheets in any format (PDF, Excel, CSV, email), extract all charges and surcharges, normalise them into a consistent data model, and make them instantly searchable and comparable across carriers by lane. This eliminates manual rate entry, prevents stale rate issues, and reduces quote preparation time from 30 minutes to under a minute."
+      }
+    }
+  ]
+};
 ---
 
 <Page
-  title="Freight Forwarding AI Solutions | FreightMynd"
-  description="Custom-built freight forwarding software — 4PL control tower automation, AI document processing, autonomous quoting, and freight pricing AI. A freight automation platform built for your stack."
-  schema={[breadcrumbSchema, itemListSchema]}
+  title="Freight Process Automation — AI Solutions"
+  description="Freight process automation with AI — documents, quotes, invoices, pricing, customs, email triage, booking, visibility, carrier analytics, and more. 21 solutions deployed in 4-12 weeks by FreightMynd."
+  schema={[breadcrumbSchema, itemListSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
   <Breadcrumb items={[{ label: 'Solutions' }]} />
@@ -42,16 +121,16 @@ const itemListSchema = {
       <div class="max-w-3xl">
         <p class="eyebrow mb-4">
           <span class="eyebrow-dot bg-brand"></span>
-          Solutions
+          Freight Process Automation
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Every AI System Your Freight Operations Need
+          Freight Process Automation: Every AI System Your Operations Need
         </h1>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
-          We don't sell off-the-shelf freight forwarding software. Each solution below represents a proven freight automation platform architecture that we customize and deploy for your specific TMS, suppliers, and workflows. Same proven patterns. Your configuration.
+          Freight process automation replaces the manual, repetitive work that slows your operations — document reading, data entry, invoice matching, quote building, and TMS updates. We build AI systems that handle each of these processes end-to-end, integrated directly with your existing TMS. No middleware, no CSV exports, no manual re-entry.
         </p>
         <p class="mt-6 text-base text-ink-3 leading-relaxed">
-          Every system listed here has been built and battle-tested in production freight operations — not a proof of concept. We take these proven architectures and configure them for your environment: your CargoWise instance, your SAP TM setup, your Oracle TMS, Microsoft Dynamics, or Descartes deployment. AI document processing, shipping automation, and TMS integration with no middleware, no CSV exports, no manual data re-entry. Start with the highest-impact automation for your operation and connect additional modules as your operations mature. Trusted by Hellmann Worldwide Logistics. Built and deployed in 4–8 weeks.
+          Every system below has been built and battle-tested in production freight operations. We take these proven architectures and configure them for your environment: your CargoWise instance, your SAP TM setup, your Oracle TMS, Microsoft Dynamics, or Descartes deployment. From email intelligence and booking automation to carrier analytics and order-to-cash orchestration — start with the highest-impact automation and connect additional modules as your processes mature. Trusted by Hellmann Worldwide Logistics. Deployed in 4–12 weeks.
         </p>
       </div>
     </div>
@@ -91,6 +170,30 @@ const itemListSchema = {
               )}
             </div>
           </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-surface">
+    <div class="container">
+      <div class="max-w-2xl mb-12" data-reveal>
+        <h2 class="section-heading">Freight Process Automation — Frequently Asked Questions</h2>
+      </div>
+      <div class="max-w-3xl grid gap-4">
+        {faqSchema.mainEntity.map((item: { name: string; acceptedAnswer: { text: string } }, i: number) => (
+          <details class="group rounded-2xl border border-line/70 bg-white hover:shadow-card transition-all" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+            <summary class="flex items-center justify-between cursor-pointer p-5 text-ink font-semibold list-none">
+              {item.name}
+              <svg class="w-5 h-5 text-ink-4 flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div>
+              <div class="px-5 pb-5 text-ink-3 leading-relaxed">{item.acceptedAnswer.text}</div>
+            </div>
+          </details>
         ))}
       </div>
     </div>

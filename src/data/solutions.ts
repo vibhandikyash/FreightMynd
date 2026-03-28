@@ -65,7 +65,7 @@ export const solutions: Solution[] = [
       'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for Hellmann Worldwide Logistics.',
     icon: '🏗️',
     color: 'brand',
-    headline: "Your 4PL Ops Shouldn't Depend on Someone Reading a 300-Page PDF",
+    headline: '4PL Control Tower Automation That Eliminates Manual Data Entry',
     sub: 'We build the full document intelligence pipeline — from email ingestion to CargoWise XML push — that removes every manual step from your control tower operations.',
 
     idealFor: [
@@ -220,7 +220,7 @@ export const solutions: Solution[] = [
         a: 'We offer two models: a fixed project fee for the initial build and deployment (covering discovery, development, testing, and launch), and a monthly operational fee based on document processing volume tiers. The operational fee covers infrastructure, AI model hosting, monitoring, and ongoing model improvements. There are no per-page or per-extraction charges that create unpredictable costs at scale. We size the operational fee during discovery based on your actual volumes.',
       },
     ],
-    relatedSolutions: ['document-intelligence', 'freight-document-automation', 'tms-automation', '3pl-4pl-operations'],
+    relatedSolutions: ['document-intelligence', 'freight-document-automation', 'tms-automation', 'email-intelligence', 'sop-compliance-monitoring'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
@@ -238,14 +238,14 @@ export const solutions: Solution[] = [
       'freight quote generation',
       'spot quote automation',
     ],
-    metaTitle: 'AI Freight Quote Automation | FreightMynd',
+    metaTitle: 'Autonomous Quote Management Freight',
     metaDescription:
-      'Automate your entire freight quoting workflow — RFQ intake, carrier rate lookup, margin calculation, and quote delivery in under 10 minutes. Zero manual steps. See how it works.',
+      'Automate freight quoting — RFQ intake, carrier rate lookup, margin calculation, and quote delivery in under 10 minutes. Built by FreightMynd.',
     description:
       'AI-powered freight quote generation, comparison, and response automation. Automate every freight quote from spot quotes to contract rates — reduce turnaround from hours to minutes.',
     icon: '📋',
     color: 'brand',
-    headline: 'Stop Losing Deals to Slow Quoting',
+    headline: 'Autonomous Quote Management: RFQ to Quote in Minutes, Not Hours',
     keywordSubheadline: 'AI-powered freight quote automation for freight forwarders — from RFQ inbox to client quote in under 10 minutes, fully autonomous.',
     sub: 'Autonomous AI that generates, compares, and sends freight quotes — from spot quotes to contract rates — cutting turnaround from hours to minutes while your team focuses on relationships. Our freight quote automation system handles the entire quoting lifecycle end to end.',
 
@@ -390,7 +390,7 @@ export const solutions: Solution[] = [
         a: 'Yes, FreightMynd integrates natively with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics 365. Rate data is pulled directly from your TMS, and completed quotes can be pushed back for record-keeping.',
       },
     ],
-    relatedSolutions: ['freight-pricing-ai', 'sea-freight-automation', 'air-freight-automation'],
+    relatedSolutions: ['freight-pricing-ai', 'email-intelligence', 'rate-sheet-intelligence', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
@@ -413,7 +413,7 @@ export const solutions: Solution[] = [
       'AI-powered extraction and processing of freight documents — invoices, AWBs, packing lists, customs forms — with 99%+ accuracy.',
     icon: '📄',
     color: 'brand',
-    headline: 'Your Documents Should Process Themselves',
+    headline: 'Freight Document Intelligence: AI That Reads Your 300-Page PDFs',
     sub: 'AI that reads, extracts, validates, and routes freight documents — invoices, AWBs, packing lists, customs forms — faster and more accurately than any human team.',
 
     idealFor: [
@@ -565,12 +565,12 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'Freight Pricing AI & Rate Optimization',
     metaDescription:
-      'AI-driven freight rate analysis and pricing optimization. 12% average margin improvement with real-time benchmarking for sea and air freight.',
+      'AI freight rate analysis — lane benchmarking, contract vs spot comparison, and 12% average margin improvement. Integrates with CargoWise and SAP TM.',
     description:
       'AI-driven freight rate analysis, pricing optimization, and market intelligence for sea and air freight forwarders.',
     icon: '💰',
     color: 'accent',
-    headline: 'Price Smarter. Win More. Lose Less Margin.',
+    headline: 'Freight Pricing AI That Wins More Deals at Better Margins',
     keywordSubheadline: 'AI-powered freight pricing intelligence — dynamic rate optimization, market benchmarking, and margin protection for sea and air freight forwarders.',
     sub: 'Freight pricing software powered by AI that analyzes market rates, optimizes your pricing, and gives your sales team real-time intelligence — so you win more deals at better margins through dynamic freight pricing.',
 
@@ -702,7 +702,7 @@ export const solutions: Solution[] = [
         a: 'A rate management system stores and retrieves rates — it tells you what a carrier charges. Freight Pricing AI tells you what you should charge. It adds the intelligence layer: market positioning, dynamic margin optimization, win probability modeling, trend forecasting, and proactive repricing alerts. Think of your rate management system as the data source and the pricing AI as the decision engine that sits on top of it. They complement each other — we integrate with your existing rate management system, not replace it.',
       },
     ],
-    relatedSolutions: ['autonomous-quote-management', 'sea-freight-automation', 'freight-spend-analytics'],
+    relatedSolutions: ['autonomous-quote-management', 'rate-sheet-intelligence', 'freight-spend-analytics', 'carrier-performance-analytics'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
   },
@@ -722,12 +722,12 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'Sea Freight Automation | Shipping AI',
     metaDescription:
-      'End-to-end AI automation for sea freight — booking, BL processing, container tracking, customs docs, and exception management. 65% fewer manual touchpoints.',
+      'End-to-end AI automation for sea freight — booking, BL processing, container tracking, and customs docs. 65% fewer manual touchpoints with FreightMynd.',
     description:
       'End-to-end shipping AI automation for sea freight operations — freight booking, documentation, tracking, and exception management.',
     icon: '🚢',
     color: 'brand',
-    headline: 'Your Sea Freight Ops on Autopilot',
+    headline: 'Sea Freight Automation: Your Ocean Ops on Autopilot',
     keywordSubheadline: 'End-to-end sea freight automation — from booking confirmation to final delivery, with proactive exception management and zero reactive firefighting.',
     sub: 'Ocean freight automation systems that automate the entire sea freight workflow — from booking confirmation to final delivery — eliminating manual touchpoints across your ocean operations with container tracking AI and proactive exception management.',
 
@@ -866,7 +866,7 @@ export const solutions: Solution[] = [
         a: 'We always run a parallel period (typically 2–4 weeks) where the automation processes shipments alongside your manual team. During this period, the system processes documents and generates updates, but your team continues to perform their normal tasks. We compare outputs daily — any discrepancy between the automated and manual process is investigated and resolved. This builds confidence and identifies edge cases specific to your operations. Once accuracy is validated and the team is comfortable, shipments are migrated to automated processing in controlled batches, not all at once.',
       },
     ],
-    relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai', 'document-intelligence', 'customs-automation'],
+    relatedSolutions: ['autonomous-quote-management', 'booking-automation', 'eta-prediction-exception-management', 'customs-automation'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
     relatedCaseStudies: ['shipping-news-intelligence'],
   },
@@ -886,12 +886,12 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'Air Freight Automation | AWB Processing',
     metaDescription:
-      'AI automation for air freight — AWB processing, rate comparison, flight tracking, and customs documentation. 70% faster AWB processing.',
+      'AI automation for air freight — AWB processing, rate comparison, flight tracking, and customs documentation. 70% faster AWB processing with FreightMynd.',
     description:
       'AI-powered automation for air cargo services — AWB processing, air freight rates comparison, booking, and shipment tracking.',
     icon: '✈️',
     color: 'brand',
-    headline: 'Air Freight Speed Meets AI Precision',
+    headline: 'Air Freight Automation: AI Precision for Time-Critical Shipments',
     keywordSubheadline: 'AI-powered air freight automation — AWB processing, rate management, flight tracking, and documentation for time-critical air operations.',
     sub: 'Air cargo automation systems purpose-built for the speed of air freight — automating AWB (airway bill) processing, rate management, bookings, and tracking so your ops team keeps pace with same-day demands.',
 
@@ -1024,7 +1024,7 @@ export const solutions: Solution[] = [
         a: 'The system supports both and knows which to apply. For routes and airlines that support IATA e-AWB (the majority of international air cargo), the system generates e-AWB compliant data sets and transmits them via the appropriate channel. For routes or airlines that still require paper AWBs, the system generates print-ready AWB documents. It also handles the mixed scenarios where the MAWB is electronic but certain HAWBs require paper, or where e-AWB is available on the first leg but not the transshipment leg.',
       },
     ],
-    relatedSolutions: ['autonomous-quote-management', 'freight-spend-analytics', 'customs-automation'],
+    relatedSolutions: ['autonomous-quote-management', 'sop-compliance-monitoring', 'order-to-cash-automation', 'customs-automation'],
     relatedIntegrations: ['cargowise', 'descartes'],
     relatedCaseStudies: ['shipping-news-intelligence'],
   },
@@ -1047,7 +1047,7 @@ export const solutions: Solution[] = [
       'AI automation for 3PL and 4PL logistics providers — multi-client management, SLA monitoring, and operational intelligence.',
     icon: '🔄',
     color: 'accent',
-    headline: 'Run Multi-Client Ops Without Scaling Headcount',
+    headline: '3PL 4PL Operations Automation That Scales Without Headcount',
     keywordSubheadline: 'AI automation for 3PL and 4PL logistics providers — multi-client workflow orchestration, SLA monitoring, and intelligent reporting.',
     sub: '3PL automation software and AI systems that let third-party logistics automation providers manage more clients, hit SLAs consistently, and scale operations — without proportionally scaling your team.',
 
@@ -1176,7 +1176,7 @@ export const solutions: Solution[] = [
         a: 'We build reusable integration adapters for common systems (CargoWise, SAP, Oracle, Dynamics) that handle the connection once and then configure per client (different instance, different field mappings, different data exchange frequency). For clients with proprietary systems, we build custom adapters that follow the same pattern — the adapter connects to their system, and the platform\'s configuration layer handles client-specific mapping. This approach means that adding a new client on an already-connected system type is configuration, not development. Only truly unique system integrations require custom engineering.',
       },
     ],
-    relatedSolutions: ['4pl-control-tower-automation', 'tms-automation', 'freight-revenue-recovery'],
+    relatedSolutions: ['4pl-control-tower-automation', 'order-to-cash-automation', 'freight-revenue-recovery', 'email-intelligence'],
 
     relatedIntegrations: ['sap-tm', 'oracle-tms'],
     relatedCaseStudies: ['hellmann-4pl-control-tower', 'historical-email-intelligence'],
@@ -1196,12 +1196,12 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'Smart Invoice Processing for Freight',
     metaDescription:
-      'AI-powered freight invoice processing — 3-way matching, overcharge detection, and AP automation. 80% less manual work, 4.2% cost recovery.',
+      'AI-powered freight invoice processing — 3-way matching, overcharge detection, and AP automation. 80% less manual work. Book a free audit with FreightMynd.',
     description:
       'AI-powered freight invoice processing and procurement automation — extraction, validation, matching, and approval automation for logistics AP and procurement teams.',
     icon: '🧾',
     color: 'accent',
-    headline: 'Invoices That Process Themselves',
+    headline: 'Smart Invoice Processing: Freight Invoices That Handle Themselves',
     keywordSubheadline: 'AI-powered smart invoice processing for freight — extraction, 3-way matching, overcharge detection, and direct ERP integration.',
     sub: 'AI procurement automation software that extracts, validates, matches, and routes freight invoices — eliminating manual AP work and catching discrepancies before they become costly errors. Built for procurement and accounts payable teams in freight forwarding.',
 
@@ -1351,14 +1351,14 @@ export const solutions: Solution[] = [
       'carrier dispute management',
       'freight spend recovery',
     ],
-    metaTitle: 'Freight Revenue Recovery — Carrier Overcharge Detection',
+    metaTitle: 'Freight Revenue Recovery & Overcharges',
     metaDescription:
-      'AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers revenue hidden in your invoice data. Average recovery: 2-5%.',
+      'AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers lost revenue. Average recovery: 2-5% of total spend.',
     description:
       'AI-powered freight audit and revenue recovery — automated carrier invoice validation, overcharge detection, contract rate enforcement, and dispute management. Stop the revenue leakage hiding in your freight invoices.',
     icon: '💰',
     color: 'accent',
-    headline: 'Freight Revenue Recovery: Your Invoices Are Costing You More Than You Think',
+    headline: 'Freight Revenue Recovery: Stop Overpaying Carriers by 2-5%',
     keywordSubheadline: 'AI-powered freight revenue recovery — automated carrier overcharge detection, contract rate enforcement, and dispute management that recovers 2-5% of total freight spend.',
     sub: 'The average forwarder overpays carriers by 2-5% of total freight spend. Our AI audits every invoice against contracted rates, flags overcharges, identifies duplicate billings, and recovers revenue you didn\'t know you were losing — automatically.',
 
@@ -1675,7 +1675,7 @@ export const solutions: Solution[] = [
         a: 'Everything on a carrier invoice: base freight rates, fuel surcharges, bunker adjustment factors, peak season surcharges, detention and demurrage charges, terminal handling charges, documentation fees, customs brokerage fees, insurance, warehousing charges, and any other line-item charges. The system classifies each charge type and tracks it independently, so you can see trends in base rates separately from surcharge inflation.',
       },
     ],
-    relatedSolutions: ['freight-revenue-recovery', 'freight-pricing-ai', 'air-freight-automation'],
+    relatedSolutions: ['freight-revenue-recovery', 'carrier-performance-analytics', 'order-to-cash-automation', 'shipment-visibility-portal'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
@@ -1699,7 +1699,7 @@ export const solutions: Solution[] = [
       'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
     icon: '🛃',
     color: 'brand',
-    headline: "Your Customs Team Shouldn't Spend 3 Hours on Data Entry That Takes AI 3 Minutes",
+    headline: 'Customs Automation for Freight Forwarders: File in Minutes, Not Hours',
     keywordSubheadline: 'AI-powered customs automation for freight forwarders — from document extraction to customs filing in minutes, not hours.',
     sub: 'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
 
@@ -1846,7 +1846,7 @@ export const solutions: Solution[] = [
       'Automate freight document processing — invoices, AWBs, bills of lading, customs forms. AI extraction with 99%+ accuracy and direct TMS integration.',
     icon: '📄',
     color: 'brand',
-    headline: 'Freight Document Automation — AI That Reads, Extracts, and Pushes Data to Your TMS',
+    headline: 'Freight Document Automation That Reads, Extracts, and Pushes to Your TMS',
     keywordSubheadline: 'Freight document automation eliminates manual document processing across your logistics operations — from raw document to TMS record, fully automated.',
     sub: 'Freight document automation eliminates manual document processing across your logistics operations. Our AI extraction engine handles invoices, AWBs, bills of lading, packing lists, and customs forms — extracting structured data with 99%+ accuracy and pushing it directly into your TMS. No re-keying. No spreadsheets. No bottlenecks.',
 
@@ -1994,7 +1994,7 @@ export const solutions: Solution[] = [
       'Automate your TMS with AI — zero manual data entry, intelligent document routing, and native API integration with CargoWise, SAP TM, Oracle TMS.',
     icon: '⚙️',
     color: 'brand',
-    headline: 'TMS Automation — Eliminate Manual Data Entry Across Your Transportation Management System',
+    headline: 'TMS Automation: Eliminate Manual Data Entry Across Your TMS',
     keywordSubheadline: 'TMS automation replaces the manual work that sits between your documents and your transportation management system.',
     sub: 'TMS automation replaces the manual work that sits between your documents and your transportation management system. Our AI systems extract data from freight documents, validate it against your business rules, and push it directly into CargoWise, SAP TM, Oracle TMS, or your platform of choice — via native API integration with zero manual re-keying.',
 
@@ -2121,5 +2121,1301 @@ export const solutions: Solution[] = [
     relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing', '3pl-4pl-operations', 'freight-document-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics', 'descartes'],
     relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+
+  // ─── NEW COMPETITOR-INSPIRED SOLUTIONS ───────────────────────────────
+
+  {
+    slug: 'email-intelligence',
+    title: 'Email Intelligence & Auto-Triage',
+    shortTitle: 'Email Intelligence',
+    keyword: 'freight email automation',
+    secondaryKeywords: [
+      'logistics email triage AI',
+      'freight email classification',
+      'automated email routing freight',
+      'AI email processing logistics',
+      'inbox automation freight forwarding',
+      'email auto-response freight',
+      'freight email intelligence',
+      'logistics inbox automation',
+      'email to TMS automation',
+      'freight forwarding email management',
+      'RFQ email detection',
+      'shipping email AI agent',
+    ],
+    metaTitle: 'Freight Email Automation & AI Triage for Freight Forwarders',
+    metaDescription:
+      'AI-powered freight email automation — classify, route, and auto-respond to RFQs, bookings, exceptions, and documents. 80% inbox time reduction. Outlook and Gmail integration.',
+    description:
+      'AI-powered email triage that classifies, routes, and auto-responds to freight operations emails — RFQs, booking confirmations, shipment updates, and exceptions — without human intervention.',
+    icon: '📧',
+    color: 'brand',
+    headline: 'Your Ops Inbox Processes Itself',
+    sub: 'AI agents that live inside your inbox — reading every email, classifying intent, extracting actionable data, routing to the right workflow, and drafting responses. No new UI. No training. Just an inbox that handles itself.',
+
+    idealFor: [
+      'Freight forwarders processing 200+ operational emails per day',
+      'Operations teams where 60%+ of inbox traffic is repetitive and classifiable',
+      'Companies losing quotes because RFQs sit unread for hours',
+      'Teams juggling multiple shared inboxes across departments',
+    ],
+
+    problem: {
+      headline: 'Your most expensive employee is your inbox',
+      description:
+        'In a typical freight forwarding operation, operators spend 2–3 hours per day just reading, classifying, and routing emails. Rate requests sit unanswered for hours while operators process booking confirmations. Exception alerts get buried under carrier updates. Documents attached to emails require manual download, classification, and forwarding to the right system. Every email that sits unprocessed is a delayed shipment, a lost quote, or a missed exception. The inbox isn\'t a communication tool — it\'s an unmanaged operations queue with zero prioritisation, zero automation, and zero visibility into what\'s being handled and what\'s falling through the cracks.',
+      painPoints: [
+        'Operators spend 2–3 hours daily reading and classifying emails — that\'s 25–30% of their productive time consumed by triage, not execution',
+        'Rate requests (RFQs) sit unanswered for 4–8 hours because they\'re mixed in with booking confirmations, tracking updates, and internal messages',
+        'Exception alerts from carriers get buried in the inbox — critical delays or holds go unnoticed for hours until someone happens to scroll past them',
+        'Document attachments (invoices, AWBs, packing lists) require manual download, renaming, and forwarding to the right processing pipeline',
+        'No visibility into email response times, SLA adherence, or which customer queries are still pending — managers have no operational dashboard for email',
+        'Staff turnover means institutional knowledge of "who handles what" walks out the door — new hires take weeks to learn routing rules',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Intelligent email classification and intent detection',
+        description:
+          'Every incoming email is classified in real-time by intent: rate request, booking confirmation, shipment update, exception alert, document delivery, customer inquiry, internal communication, or noise. Classification uses contextual understanding (not keyword matching) — it reads the full email thread, understands the freight context, and assigns the correct category with 95%+ accuracy.',
+      },
+      {
+        title: 'Priority-based routing to the right workflow',
+        description:
+          'Classified emails are routed to the appropriate workflow or team member based on configurable business rules. RFQs go to the quoting pipeline. Booking confirmations trigger TMS updates. Exception alerts escalate to senior operators. Documents route to the extraction pipeline. Noise is archived automatically. Routing rules are configurable per client, per lane, per service type.',
+      },
+      {
+        title: 'Auto-response drafting for routine queries',
+        description:
+          'For repetitive email types (rate requests, booking confirmations, tracking inquiries), the system drafts contextual responses using your company\'s tone, rate data, and shipment information. Operators review and send with one click — or configure fully autonomous responses for specific email categories. Average response time drops from hours to minutes.',
+      },
+      {
+        title: 'Attachment extraction and document pipeline routing',
+        description:
+          'Email attachments are automatically detected, downloaded, classified (invoice, AWB, packing list, certificate), and routed to the appropriate document processing pipeline. No manual download, no renaming, no forwarding. Documents flow directly into your extraction and TMS integration workflows.',
+      },
+      {
+        title: 'Follow-up tracking and deadline management',
+        description:
+          'The system tracks every open email thread and identifies which ones require follow-up. Unanswered RFQs get flagged after configurable SLA windows. Pending booking confirmations trigger carrier follow-ups. Exception resolution threads are tracked until closed. Nothing falls through the cracks.',
+      },
+      {
+        title: 'Operational inbox analytics dashboard',
+        description:
+          'Real-time visibility into email volumes, classification breakdown, response times, SLA adherence, and operator workload. Managers can see which email categories are consuming the most time, where bottlenecks form, and which customers are waiting longest for responses.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'RFQ auto-detection and quoting pipeline acceleration',
+        description:
+          'A mid-size forwarder receives 80+ RFQs per day across 3 shared inboxes. Previously, operators manually scanned each email to identify rate requests, often missing time-sensitive spot quotes. With email intelligence, RFQs are detected within seconds of arrival, data is extracted (origin, destination, commodity, volume, incoterms), and routed directly to the quoting engine. Quote response time dropped from 4–6 hours to under 30 minutes.',
+      },
+      {
+        scenario: 'Exception alert escalation and auto-triage',
+        description:
+          'Carrier emails about vessel delays, port holds, or customs exceptions are identified and escalated to senior operators instantly — not discovered hours later when someone scrolls past them. The system extracts the shipment reference, links it to the active booking in TMS, and creates an exception record with the carrier\'s stated reason and estimated impact.',
+      },
+      {
+        scenario: 'Booking confirmation auto-processing',
+        description:
+          'When a carrier sends a booking confirmation, the system extracts all booking details (vessel, voyage, ETD, ETA, container number, booking reference), matches it to the corresponding shipment in your TMS, and updates the record automatically. No manual data entry. If any detail conflicts with the original booking request, it flags the discrepancy for operator review.',
+      },
+    ],
+
+    results: [
+      { value: '80%', label: 'Inbox processing time reduction', context: 'Operators focus on exceptions and relationships, not triage', businessOutcome: 'Reclaim 2–3 hours per operator per day' },
+      { value: '<5 min', label: 'Average RFQ response time', context: 'Down from 4–8 hours with manual processing', businessOutcome: 'Win more spot quotes by responding first' },
+      { value: '95%+', label: 'Email classification accuracy', context: 'Contextual AI classification, not keyword matching', businessOutcome: 'Reliable routing without manual intervention' },
+      { value: '0', label: 'Emails falling through cracks', context: 'Every thread tracked with follow-up deadlines', businessOutcome: 'Complete visibility into email operations' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Microsoft Graph API', 'OpenAI GPT-4o', 'n8n', 'PostgreSQL'],
+
+    integrations: [
+      'Microsoft Outlook / Office 365',
+      'Google Workspace / Gmail',
+      'CargoWise One',
+      'SAP Transportation Management',
+      'Any TMS with API access',
+    ],
+
+    implementation: {
+      timeline: '4–6 weeks from kickoff to production',
+      phases: [
+        'Week 1: Discovery — audit email volumes, classify existing traffic patterns, map routing rules',
+        'Week 2–3: Build — email ingestion pipeline, classification model training, routing engine, auto-response templates',
+        'Week 4–5: Integration — connect to TMS, document pipelines, and quoting systems; configure per-client rules',
+        'Week 6: UAT — parallel run with operators reviewing AI classifications, accuracy tuning, production deployment',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight email intelligence?',
+        a: 'Freight email intelligence uses AI to automatically read, classify, route, and respond to operational emails in freight forwarding. Instead of operators manually scanning their inbox, AI agents identify the intent of every email (RFQ, booking, exception, document delivery), extract relevant data, and route it to the right workflow — or respond automatically.',
+      },
+      {
+        q: 'Does this work with Outlook and Gmail?',
+        a: 'Yes. We integrate with Microsoft Outlook/Office 365 via the Microsoft Graph API and with Google Workspace/Gmail via the Gmail API. The system monitors shared mailboxes and individual inboxes without requiring operators to change their email workflow.',
+      },
+      {
+        q: 'Can the AI draft responses automatically?',
+        a: 'Yes. For routine email types (rate confirmations, tracking updates, booking acknowledgements), the AI drafts contextual responses using your rates, shipment data, and company communication style. You can configure which email types are auto-responded and which require one-click operator approval before sending.',
+      },
+      {
+        q: 'How does it handle emails it cannot classify?',
+        a: 'Emails classified with low confidence are routed to a human review queue with the AI\'s best guess and reasoning. As operators confirm or correct classifications, the model improves. After the first 2 weeks, unclassifiable emails typically drop below 5% of total volume.',
+      },
+      {
+        q: 'Does email intelligence integrate with our TMS?',
+        a: 'Yes. Extracted data from classified emails (booking details, rate requests, exception alerts) is pushed directly to your TMS — CargoWise, SAP TM, Oracle TMS, or any system with API access. Documents attached to emails are routed to the appropriate processing pipeline automatically.',
+      },
+      {
+        q: 'What is the ROI of email intelligence for freight forwarders?',
+        a: 'Freight forwarders typically see 80% reduction in inbox processing time, sub-5-minute RFQ response times (vs 4–8 hours manually), and zero emails falling through the cracks. For a team of 10 operators, this recovers 20–30 hours per day of productive capacity. Most deployments achieve positive ROI within 6 weeks.',
+      },
+      {
+        q: 'How is this different from Raft or Zauber email automation?',
+        a: 'Raft and Zauber offer pre-built email agents within their SaaS platforms. FreightMynd builds custom email intelligence that integrates directly with your specific TMS, quoting system, and document pipelines — not through a third-party platform. You own the system, classification rules are built around your operations (not a generic model), and there are no per-seat subscription fees.',
+      },
+      {
+        q: 'Can it handle emails in multiple languages?',
+        a: 'Yes. The AI classification and extraction engine handles emails in English, German, French, Spanish, Mandarin, and other major languages used in freight forwarding. Multi-language support is critical for global operations receiving supplier communications in various languages.',
+      },
+    ],
+
+    relatedSolutions: ['autonomous-quote-management', 'booking-automation', 'document-intelligence', 'freight-document-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'microsoft-dynamics'],
+    relatedCaseStudies: ['rfq-email-intelligence', 'rfq-email-automation'],
+  },
+
+  {
+    slug: 'shipment-visibility-portal',
+    title: 'Shipment Visibility & Customer Portal',
+    shortTitle: 'Visibility Portal',
+    keyword: 'freight shipment visibility portal',
+    secondaryKeywords: [
+      'customer portal freight forwarding',
+      'shipment tracking portal',
+      'freight visibility dashboard',
+      'logistics customer portal',
+      'real-time shipment tracking',
+      'white-label freight portal',
+      'where is my shipment WISMO',
+      'freight forwarder customer experience',
+      'supply chain visibility platform',
+      'shipper portal logistics',
+      'freight tracking software',
+      'digital freight forwarding portal',
+    ],
+    metaTitle: 'Shipment Visibility Portal & Customer Tracking for Freight Forwarders',
+    metaDescription:
+      'White-label shipment visibility portal for freight forwarders. Real-time tracking, document sharing, milestone alerts, quote-to-book — your brand, your domain. Reduce WISMO calls 70%.',
+    description:
+      'White-label customer portal with real-time shipment tracking, document sharing, milestone notifications, and freight analytics — branded as your own platform, not a third-party tool.',
+    icon: '🔍',
+    color: 'accent',
+    headline: 'Give Your Customers the Visibility They Keep Asking For',
+    sub: 'A white-label shipment portal your customers actually use — real-time tracking across ocean, air, and road; document access; milestone alerts; and freight analytics. Branded as yours. Integrated with your TMS. Deployed in weeks, not months.',
+
+    idealFor: [
+      'Freight forwarders losing customers to digitally native competitors offering self-service portals',
+      'Operations teams spending 20%+ of their day answering "where is my shipment" calls and emails',
+      'Sales teams needing a digital experience to win enterprise RFPs that require visibility tools',
+      '3PL/4PL operators managing multi-modal shipments for clients who demand real-time updates',
+    ],
+
+    problem: {
+      headline: 'Your customers are calling you for data they should have on a screen',
+      description:
+        'Every freight forwarder knows the call: "Where is my shipment?" Your operations team stops what they\'re doing, opens the TMS, looks up the booking, checks the carrier portal, and relays the information by email or phone. Multiply that by 50–100 inquiries per day and you\'ve lost a full-time employee to status updates. Meanwhile, your customers compare you to Amazon tracking and digital-first forwarders offering self-service portals. When enterprise RFPs ask about your digital capabilities and you send them a PDF, you lose the deal. The problem isn\'t that you don\'t have the data — it\'s that your customers can\'t access it without going through your team.',
+      painPoints: [
+        '"Where is my shipment?" calls and emails consume 15–25% of operator time — a full FTE just relaying status updates that exist in your TMS',
+        'No self-service capability means every customer inquiry requires manual lookup, creating bottlenecks during peak periods and after-hours gaps',
+        'Enterprise RFPs increasingly require digital visibility tools — without a portal, you lose deals to digitally native competitors or platform forwarders',
+        'Document sharing happens via email attachments — customers can\'t access BOLs, commercial invoices, or proof of delivery without requesting them',
+        'No proactive milestone alerts — customers learn about delays when they call to ask, not when the delay actually occurs',
+        'Zero analytics for customers — they can\'t see their own freight spend, transit time performance, or exception rates without requesting manual reports',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Real-time multi-modal shipment tracking',
+        description:
+          'Track shipments across ocean, air, road, and rail in a single unified view. Data is pulled from your TMS, carrier APIs, AIS vessel tracking, and flight tracking systems. Customers see live status, current location, and estimated arrival — updated automatically, not manually.',
+      },
+      {
+        title: 'White-label branding — your logo, your domain, your platform',
+        description:
+          'The portal is fully white-labeled: your company logo, your colour scheme, your domain (e.g., track.yourcompany.com). Customers interact with your brand, not a third-party tool. No "powered by" logos. Your portal, your customer relationship.',
+      },
+      {
+        title: 'Proactive milestone notifications',
+        description:
+          'Automated email and in-app notifications at every shipment milestone: booking confirmed, cargo received, vessel departed, arrival at port, customs cleared, delivered. Exception alerts for delays, holds, or rolled cargo are pushed immediately — customers know before they need to ask.',
+      },
+      {
+        title: 'Document hub — BOLs, invoices, PODs accessible anytime',
+        description:
+          'All shipment documents (bills of lading, commercial invoices, packing lists, proof of delivery, customs declarations) are accessible in the portal. Documents are auto-linked to shipments as they\'re processed through your document intelligence pipeline. No more email requests for document copies.',
+      },
+      {
+        title: 'Freight analytics and reporting for customers',
+        description:
+          'Customers access their own analytics: freight spend by lane, carrier performance, transit time trends, exception rates, and CO2 emissions estimates. Dashboards update in real-time from TMS data. Customers download reports without requesting them from your team.',
+      },
+      {
+        title: 'Quote-to-book self-service',
+        description:
+          'Customers can request quotes, view rate options, and confirm bookings directly through the portal. Requests flow into your quoting pipeline automatically. No email back-and-forth. Combined with your rate management system, customers get instant or near-instant quotes for standard lanes.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Reducing WISMO calls by 70%',
+        description:
+          'A freight forwarder handling 300+ active shipments deployed the visibility portal to their top 20 customers. "Where is my shipment" calls dropped 70% in the first month. The freed operator capacity was redirected to exception management and new customer onboarding.',
+      },
+      {
+        scenario: 'Winning an enterprise RFP with digital capabilities',
+        description:
+          'A mid-size forwarder competing against digital-first platforms deployed a white-label portal within 4 weeks. The portal became a key differentiator in their enterprise RFP response — demonstrating real-time visibility, document access, and analytics capabilities that matched or exceeded larger competitors.',
+      },
+      {
+        scenario: 'Customer self-service document access',
+        description:
+          'Instead of emailing BOLs, invoices, and PODs on request, customers access all shipment documents directly in the portal. Document requests to the ops team dropped 85%, and customers reported faster compliance reporting because they could pull documents on demand.',
+      },
+    ],
+
+    results: [
+      { value: '70%', label: 'Reduction in WISMO inquiries', context: '"Where is my shipment" calls replaced by self-service tracking', businessOutcome: 'Free 1–2 FTEs from status update duties' },
+      { value: '85%', label: 'Fewer document request emails', context: 'Customers access BOLs, invoices, PODs directly in portal', businessOutcome: 'Ops team focuses on exceptions, not document retrieval' },
+      { value: '3x', label: 'Enterprise RFP win rate improvement', context: 'Digital capabilities match or exceed platform forwarders', businessOutcome: 'Win larger accounts with digital-first expectations' },
+      { value: '4–6 wk', label: 'Deployment timeline', context: 'White-labeled portal live with TMS integration', businessOutcome: 'Fast time-to-value without lengthy IT projects' },
+    ],
+
+    stack: ['React', 'Next.js', 'PostgreSQL', 'TMS APIs', 'Carrier APIs', 'AIS/Flight Tracking', 'n8n'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+      'Microsoft Dynamics 365',
+      'Carrier tracking APIs (ocean, air, road)',
+    ],
+
+    implementation: {
+      timeline: '4–6 weeks from kickoff to production',
+      phases: [
+        'Week 1: Discovery — map shipment data model, TMS integration points, customer requirements, branding assets',
+        'Week 2–3: Build — portal frontend, TMS data sync, carrier tracking integration, document linking',
+        'Week 4: Branding — white-label customisation, domain setup, notification templates, customer onboarding flow',
+        'Week 5–6: UAT — beta with 5 customers, feedback iteration, production deployment and rollout plan',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is a freight shipment visibility portal?',
+        a: 'A freight shipment visibility portal is a customer-facing web application that lets your shippers track shipments in real-time, access documents, receive milestone notifications, and view freight analytics — without calling or emailing your operations team. It integrates with your TMS and carrier systems to pull live data automatically.',
+      },
+      {
+        q: 'Is the portal white-labeled with our branding?',
+        a: 'Yes. The portal uses your company logo, colour scheme, and domain name. Your customers interact with your brand, not a third-party platform. There are no "powered by" logos or co-branding unless you choose to include them.',
+      },
+      {
+        q: 'Does the portal integrate with CargoWise?',
+        a: 'Yes. We build native integrations with CargoWise One via eHub and Universal Gateway, pulling shipment milestones, document data, and booking details in real-time. We also integrate with SAP TM, Oracle TMS, Microsoft Dynamics, and custom TMS systems.',
+      },
+      {
+        q: 'Can customers book shipments through the portal?',
+        a: 'Yes. The portal includes quote-to-book capability where customers can request quotes, view rate options, and confirm bookings. Requests flow directly into your quoting and booking workflows. For standard lanes with pre-configured rates, customers can receive instant quotes.',
+      },
+      {
+        q: 'How does the portal reduce WISMO calls?',
+        a: 'By giving customers direct access to real-time shipment tracking, milestone notifications, and document downloads, they no longer need to call or email your team for status updates. Forwarders typically see a 60–80% reduction in "where is my shipment" inquiries within the first month of deployment.',
+      },
+      {
+        q: 'How is this different from Logixboard or FourKites?',
+        a: 'Logixboard and FourKites are third-party SaaS visibility platforms — you subscribe to their service and your customers see their branding. FreightMynd builds a white-label portal that is fully branded as your platform, deployed on your domain, and customised to your specific data model. You own the system and control the customer experience entirely.',
+      },
+      {
+        q: 'Does the portal include CO2 emissions tracking?',
+        a: 'Yes. The portal can include carbon emissions estimates per shipment based on transport mode, distance, and carrier data. This supports your customers\' ESG reporting requirements and positions your company as sustainability-aware — increasingly a differentiator in enterprise RFPs.',
+      },
+    ],
+
+    relatedSolutions: ['eta-prediction-exception-management', 'carrier-performance-analytics', 'freight-spend-analytics', 'booking-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics'],
+    relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'carrier-performance-analytics',
+    title: 'Carrier Performance Analytics',
+    shortTitle: 'Carrier Analytics',
+    keyword: 'carrier performance analytics freight',
+    secondaryKeywords: [
+      'carrier scorecard freight forwarding',
+      'logistics carrier performance tracking',
+      'carrier KPI dashboard',
+      'freight carrier evaluation AI',
+      'supplier performance logistics',
+      'carrier reliability scoring',
+      'AI carrier analytics',
+      'carrier benchmarking logistics',
+      'freight carrier comparison',
+      'carrier allocation optimization',
+      'on-time delivery tracking freight',
+      'carrier contract negotiation data',
+    ],
+    metaTitle: 'AI Carrier Performance Analytics & Scorecards for Freight Forwarders',
+    metaDescription:
+      'AI-powered carrier scorecards for freight forwarders. Track on-time delivery, transit times, damage rates, cost per lane. Data-driven carrier allocation and contract negotiation.',
+    description:
+      'AI-powered carrier scorecards — on-time performance, transit time accuracy, damage rates, cost benchmarking, and exception frequency — built from your own shipment data, not industry averages.',
+    icon: '📊',
+    color: 'accent',
+    headline: 'Stop Guessing Which Carriers Actually Perform',
+    sub: 'Automated carrier performance scoring built from your actual shipment data. On-time delivery rates, transit time accuracy, damage frequency, cost per lane, and exception patterns — updated in real-time, not from last quarter\'s spreadsheet.',
+
+    idealFor: [
+      'Freight forwarders managing 10+ carriers who need data-driven allocation decisions',
+      'Procurement teams negotiating carrier contracts without reliable performance data',
+      'Operations managers tracking SLA compliance across carrier partners',
+      'Companies losing margin because they can\'t identify underperforming carriers quickly enough',
+    ],
+
+    problem: {
+      headline: 'You\'re allocating millions in freight spend on gut feel',
+      description:
+        'Most freight forwarders manage 10–50 carrier relationships and allocate millions in annual freight spend across them. Yet the data behind carrier selection is almost always anecdotal: "They\'re usually reliable on Asia–Europe lanes" or "We had issues with them last summer." There\'s no automated scorecard, no real-time performance tracking, and no data-driven basis for contract negotiation. When a carrier underperforms, you find out from customer complaints, not from your systems. Exception patterns that span weeks go unnoticed because nobody is aggregating the data. Rate negotiations happen with last year\'s PDF, not live performance benchmarks.',
+      painPoints: [
+        'No automated carrier performance tracking — operators rely on memory and spreadsheets to evaluate carrier reliability',
+        'Contract negotiations happen without data — procurement teams lack on-time delivery rates, damage statistics, or cost-per-lane benchmarks',
+        'Underperforming carriers consume weeks of exceptions before anyone notices a pattern — there\'s no early warning system',
+        'Carrier allocation is based on relationship and habit rather than performance data — leading to suboptimal cost and service outcomes',
+        'Customer SLA breaches caused by carrier underperformance are discovered reactively, not proactively',
+        'No visibility into carrier-specific exception patterns — recurring issues (documentation errors, late pickups, customs delays) go untracked',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Automated carrier scorecards from live shipment data',
+        description:
+          'Every completed shipment contributes to a continuously updated carrier scorecard. Metrics include: on-time pickup rate, on-time delivery rate, transit time accuracy (actual vs. quoted), documentation accuracy, exception frequency, damage rate, and cost competitiveness per lane. Scorecards are built from your actual data, not industry averages.',
+      },
+      {
+        title: 'Lane-level performance benchmarking',
+        description:
+          'Compare carrier performance per trade lane, not just globally. A carrier may be excellent on Asia–US West Coast but underperform on intra-Europe routes. Lane-level benchmarking lets you allocate the right carrier to the right lane based on data, not assumption.',
+      },
+      {
+        title: 'Exception pattern detection and early warning',
+        description:
+          'AI identifies emerging performance patterns before they become systemic problems. If a carrier\'s on-time rate drops 15% over two weeks on a specific lane, you get alerted — not after a customer complaint, but when the data shows the trend. Pattern detection covers delays, documentation errors, cargo damage, and billing discrepancies.',
+      },
+      {
+        title: 'Contract negotiation intelligence',
+        description:
+          'Walk into rate negotiations with data: actual on-time performance, cost-per-TEU by lane, exception rates, and benchmark comparisons against alternative carriers on the same routes. Data-driven negotiation typically recovers 3–8% on freight spend through better terms and performance-based SLAs.',
+      },
+      {
+        title: 'Automated carrier allocation recommendations',
+        description:
+          'Based on performance scores, cost, and capacity, the system recommends optimal carrier allocation for new bookings. Configurable weighting lets you prioritise cost, reliability, speed, or a custom balance. Recommendations integrate with your booking workflow for one-click carrier selection.',
+      },
+      {
+        title: 'Customer-facing carrier performance reports',
+        description:
+          'Generate branded carrier performance reports for your customers, showing the service quality you deliver on their lanes. These reports strengthen customer relationships and provide evidence for QBRs and contract renewals.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Data-driven carrier contract renegotiation',
+        description:
+          'A forwarder entering annual contract negotiations used carrier performance analytics to benchmark their top 5 carriers across 20 trade lanes. The data revealed that their second-most-expensive carrier had the best on-time performance, while the cheapest had 3x the exception rate. Reallocation and renegotiation based on this data reduced overall freight costs by 5% while improving on-time delivery by 12%.',
+      },
+      {
+        scenario: 'Early detection of carrier service degradation',
+        description:
+          'AI detected that a primary ocean carrier\'s transit time accuracy on Asia–Northern Europe dropped from 88% to 71% over three weeks — a pattern that wouldn\'t surface in monthly reporting. The ops team proactively shifted volume to a backup carrier for affected lanes, avoiding 40+ potential customer SLA breaches.',
+      },
+      {
+        scenario: 'Customer QBR with data-backed performance evidence',
+        description:
+          'Instead of presenting anecdotal updates in quarterly business reviews, a 3PL operator generated branded carrier performance reports showing on-time rates, exception resolution times, and cost trends per lane. The data-backed approach contributed to a 95% customer retention rate.',
+      },
+    ],
+
+    results: [
+      { value: '5–8%', label: 'Freight spend reduction', context: 'Through data-driven carrier allocation and negotiation', businessOutcome: 'Recover margin lost to suboptimal carrier selection' },
+      { value: '12%', label: 'On-time delivery improvement', context: 'By allocating carriers based on lane-specific performance data', businessOutcome: 'Fewer customer complaints and SLA breaches' },
+      { value: 'Real-time', label: 'Performance visibility', context: 'Continuously updated scorecards, not quarterly spreadsheets', businessOutcome: 'Detect problems in days, not months' },
+      { value: '6–8 wk', label: 'Deployment timeline', context: 'From kickoff to live carrier scorecards with historical data backfill', businessOutcome: 'Immediate value from existing shipment history' },
+    ],
+
+    stack: ['Python', 'PostgreSQL', 'Apache Superset', 'TMS APIs', 'n8n', 'OpenAI GPT-4o'],
+
+    integrations: [
+      'CargoWise One',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+      'Microsoft Dynamics 365',
+      'Carrier performance APIs',
+    ],
+
+    implementation: {
+      timeline: '6–8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — audit TMS data model, map carrier relationships, define KPI framework, identify historical data for backfill',
+        'Weeks 3–4: Build — data ingestion pipeline, scorecard calculation engine, exception pattern detection, dashboard UI',
+        'Weeks 5–6: Integration — TMS data sync, carrier API connections, automated report generation, alert configuration',
+        'Weeks 7–8: UAT — validate scorecards against known performance patterns, calibrate alerting thresholds, production deployment',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is carrier performance analytics?',
+        a: 'Carrier performance analytics uses AI to automatically track, score, and benchmark your freight carriers based on real shipment data. Instead of manual spreadsheets or anecdotal evaluation, every shipment contributes to a live scorecard covering on-time rates, transit accuracy, damage, cost, and exception frequency.',
+      },
+      {
+        q: 'Does this use our own shipment data or industry averages?',
+        a: 'Your own data exclusively. Scorecards are built from your actual shipments, your routes, your carriers. Industry benchmarks can be overlaid for context, but the core metrics are from your operations — making them directly actionable for your carrier decisions.',
+      },
+      {
+        q: 'Can it detect carrier problems before they affect customers?',
+        a: 'Yes. The AI monitors performance trends in real-time and alerts you when a carrier\'s metrics deviate from their baseline — before the degradation becomes a customer-facing issue. This early warning system typically catches problems 2–3 weeks before they\'d surface in traditional monthly reporting.',
+      },
+      {
+        q: 'How does carrier analytics improve contract negotiations?',
+        a: 'You enter negotiations with actual performance data: on-time rates per lane, exception frequency, cost benchmarks against alternatives. This shifts the conversation from "we feel your rates are high" to "your on-time rate on this lane is 78% vs. 91% from an alternative carrier at similar cost." Forwarders typically recover 3–8% on freight spend through data-driven negotiation.',
+      },
+      {
+        q: 'Does it integrate with CargoWise?',
+        a: 'Yes. We pull shipment milestones, carrier assignments, exception records, and cost data directly from CargoWise One. We also integrate with SAP TM, Oracle TMS, Microsoft Dynamics, and carrier performance APIs for enrichment.',
+      },
+    ],
+
+    relatedSolutions: ['freight-spend-analytics', 'shipment-visibility-portal', 'eta-prediction-exception-management', 'booking-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
+    relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'booking-automation',
+    title: 'Freight Booking Automation',
+    shortTitle: 'Booking Automation',
+    keyword: 'freight booking automation',
+    secondaryKeywords: [
+      'automated freight booking',
+      'carrier booking automation',
+      'shipment booking AI',
+      'logistics booking management',
+      'automated booking confirmation',
+      'freight reservation automation',
+      'email to booking automation',
+      'quote to booking freight',
+      'booking confirmation processing',
+      'carrier space reservation AI',
+      'freight booking management system',
+      'automated shipment creation TMS',
+    ],
+    metaTitle: 'Freight Booking Automation — Quote to Carrier Confirmation in Minutes',
+    metaDescription:
+      'End-to-end freight booking automation — quote acceptance to carrier confirmation to TMS record in minutes. Zero manual booking entry. Amendment handling included.',
+    description:
+      'End-to-end booking automation — from quote acceptance through carrier confirmation, TMS record creation, and amendment handling — with zero manual booking entry into your TMS.',
+    icon: '📋',
+    color: 'brand',
+    headline: 'Bookings That Create Themselves',
+    sub: 'When a quote is accepted, the booking creates itself: carrier allocation, space reservation, TMS record creation, confirmation to customer, and document generation — all automated. Your operators handle exceptions, not data entry.',
+
+    idealFor: [
+      'Freight forwarders processing 50+ bookings per day with manual TMS entry',
+      'Operations teams where booking creation takes 15–30 minutes per shipment',
+      'Companies with high booking amendment rates that consume operator time',
+      'Forwarders losing bookings to competitors with faster confirmation times',
+    ],
+
+    problem: {
+      headline: 'Every booking your team types into the TMS is time you\'re paying for twice',
+      description:
+        'The booking process in most freight forwarding operations is a manual chain: a quote is accepted via email, an operator opens the TMS, creates a new shipment record, enters all the details (origin, destination, commodity, weight, dimensions, service type, incoterms), selects a carrier, enters carrier-specific booking details, sends a booking request to the carrier, waits for confirmation, updates the TMS with the confirmed details, sends confirmation to the customer, and generates the initial document set. That\'s 15–30 minutes per booking of pure data entry — data that already exists in your quoting system, your rate management tool, or the customer\'s email. Every amendment (date change, weight update, carrier switch) repeats half of this cycle.',
+      painPoints: [
+        'Booking creation takes 15–30 minutes per shipment — pure data entry into TMS from information that already exists in emails, quotes, or rate sheets',
+        'Booking amendments (date changes, weight updates, carrier switches) require manual TMS updates, carrier notifications, and customer confirmations — each taking 10–15 minutes',
+        'Carrier confirmation details (booking reference, vessel/flight, ETD/ETA, container number) arrive by email and must be manually entered into TMS',
+        'Booking errors from manual entry (wrong dates, transposed container numbers, incorrect weight) cascade into downstream exceptions',
+        'Slow booking confirmation times — customers wait hours for what should take minutes, risking lost business to faster competitors',
+        'No automated tracking of booking status — operators manually check carrier portals for confirmation updates',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Quote-to-booking conversion — zero re-entry',
+        description:
+          'When a customer accepts a quote, the booking is created automatically in your TMS using the data already captured in the quoting process. Origin, destination, commodity, weight, dimensions, service type, incoterms, rate details — all transferred without re-entry. The operator reviews and approves in one click.',
+      },
+      {
+        title: 'Automated carrier allocation and space reservation',
+        description:
+          'Based on carrier performance data, contracted rates, and available capacity, the system recommends or auto-selects the optimal carrier. Booking requests are sent to carriers via API or structured email, and confirmations are processed automatically when they arrive.',
+      },
+      {
+        title: 'Booking confirmation auto-processing',
+        description:
+          'When carriers respond with booking confirmations (via email or API), the system extracts all details — booking reference, vessel/voyage or flight number, ETD/ETA, container/AWB number — and updates your TMS record automatically. Discrepancies between the booking request and confirmation are flagged for operator review.',
+      },
+      {
+        title: 'Amendment handling and cascade updates',
+        description:
+          'When a booking needs to be amended (date change, weight update, carrier switch), the system processes the change across all connected records: TMS update, carrier notification, customer notification, document regeneration. One change triggers all downstream updates automatically.',
+      },
+      {
+        title: 'Customer booking confirmation and document generation',
+        description:
+          'Once a booking is confirmed, the system auto-generates and sends the booking confirmation to the customer, including all relevant details and initial document set (booking confirmation, shipping instructions template). Branded to your company, sent from your email.',
+      },
+      {
+        title: 'Booking status tracking and carrier portal monitoring',
+        description:
+          'The system monitors carrier portals and APIs for booking status updates — confirmations, amendments, rollovers, cancellations. All updates are pushed to your TMS in real-time, eliminating the need for operators to manually check carrier websites.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Same-day booking confirmation for accepted quotes',
+        description:
+          'A forwarder processing 80+ bookings daily reduced booking creation time from an average of 25 minutes to under 2 minutes per booking. Quote acceptance now triggers automatic TMS record creation, carrier booking request, and customer confirmation — all within minutes. Booking confirmation time dropped from 4–6 hours to under 30 minutes.',
+      },
+      {
+        scenario: 'Automated carrier confirmation processing',
+        description:
+          'Carrier booking confirmations that arrived by email were previously processed manually — an operator would read the email, open the TMS, find the booking, and update all fields. With booking automation, confirmation emails are parsed automatically, matched to the correct booking, and TMS records updated within seconds of receipt.',
+      },
+      {
+        scenario: 'Booking amendment cascade management',
+        description:
+          'When a shipper requests a date change on a confirmed booking, the system automatically updates the TMS, sends an amendment request to the carrier, notifies the customer of the change, and regenerates affected documents. What previously required 15–20 minutes of multi-system updates happens in under 60 seconds.',
+      },
+    ],
+
+    results: [
+      { value: '90%', label: 'Booking creation time reduction', context: 'From 25 minutes to under 2 minutes per booking', businessOutcome: 'Operators focus on exceptions and customer relationships' },
+      { value: '<30 min', label: 'Average booking confirmation time', context: 'Down from 4–6 hours with manual processing', businessOutcome: 'Win more bookings by confirming faster than competitors' },
+      { value: '0', label: 'Manual TMS booking entry', context: 'All booking data flows from quote to TMS automatically', businessOutcome: 'Eliminate booking entry errors entirely' },
+      { value: '4–6 wk', label: 'Deployment timeline', context: 'From kickoff to production booking automation', businessOutcome: 'Fast ROI through immediate labour savings' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'OpenAI GPT-4o', 'Carrier APIs', 'n8n', 'PostgreSQL'],
+
+    integrations: [
+      'CargoWise One (eHub / Universal Gateway)',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+      'Microsoft Dynamics 365',
+      'Carrier booking APIs (ocean, air)',
+    ],
+
+    implementation: {
+      timeline: '4–6 weeks from kickoff to production',
+      phases: [
+        'Week 1: Discovery — map booking workflow, carrier API capabilities, TMS booking module configuration',
+        'Week 2–3: Build — quote-to-booking pipeline, carrier integration, confirmation parsing, TMS record creation',
+        'Week 4–5: Integration — amendment handling, document generation, customer notification, carrier portal monitoring',
+        'Week 6: UAT — parallel run alongside manual process, accuracy validation, production deployment',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight booking automation?',
+        a: 'Freight booking automation uses AI to handle the entire booking lifecycle — from quote acceptance through carrier reservation, TMS record creation, confirmation processing, and amendment handling — without manual data entry. Operators supervise and handle exceptions rather than performing repetitive booking entry.',
+      },
+      {
+        q: 'Does this replace our booking team?',
+        a: 'No. It replaces the data entry and manual processing that consumes 60–70% of your booking team\'s time. Your team shifts from typing bookings into the TMS to managing exceptions, handling complex bookings, and building carrier relationships. The same team handles 3–4x the booking volume.',
+      },
+      {
+        q: 'How does it handle booking amendments?',
+        a: 'When a booking needs amending, the system cascades the change across all connected systems: TMS update, carrier amendment request, customer notification, and document regeneration. One change triggers all downstream updates automatically, eliminating the manual multi-system update cycle.',
+      },
+      {
+        q: 'Can it work with carrier email confirmations (not just APIs)?',
+        a: 'Yes. While API-based carrier integrations provide the fastest processing, our email intelligence layer can parse carrier booking confirmations received by email, extract all relevant fields, and update your TMS automatically. This means you get automation even with carriers that don\'t offer API booking.',
+      },
+      {
+        q: 'What happens when the AI encounters an unusual booking?',
+        a: 'Complex or unusual bookings (hazmat, oversized cargo, multi-modal, special equipment requirements) are flagged for operator review with all extracted data pre-populated. The operator reviews, adjusts if needed, and approves — saving time even on bookings that need human judgment.',
+      },
+      {
+        q: 'How does this compare to Cargo.one or SeaRates booking?',
+        a: 'Cargo.one and SeaRates are marketplace booking platforms — you book through their platform. FreightMynd automates the booking process within your existing TMS and workflows. You keep your carrier relationships, your negotiated rates, and your operational control. The automation happens in your environment, not on a third-party marketplace.',
+      },
+    ],
+
+    relatedSolutions: ['autonomous-quote-management', 'email-intelligence', 'carrier-performance-analytics', 'sea-freight-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
+    relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'eta-prediction-exception-management',
+    title: 'ETA Prediction & Exception Management',
+    shortTitle: 'ETA & Exceptions',
+    keyword: 'freight ETA prediction AI',
+    secondaryKeywords: [
+      'shipment exception management',
+      'logistics ETA prediction',
+      'freight delay prediction AI',
+      'proactive exception handling logistics',
+      'shipment delay alert automation',
+      'arrival notice automation freight',
+      'predictive shipment tracking',
+      'container ETA prediction',
+      'vessel delay prediction',
+      'freight exception resolution',
+      'proactive customer notification freight',
+      'supply chain disruption prediction',
+    ],
+    metaTitle: 'AI ETA Prediction & Proactive Exception Management for Freight',
+    metaDescription:
+      'AI predicts freight delays 24-72 hours before carriers report them. Proactive customer alerts. Intelligent exception routing. 60% faster exception resolution for freight forwarders.',
+    description:
+      'AI-powered ETA prediction that detects delays before they happen, auto-alerts affected customers, and routes exceptions to the right operator with full context — cutting exception resolution time by 60%.',
+    icon: '⏱️',
+    color: 'brand',
+    headline: 'Know About Delays Before Your Customers Do',
+    sub: 'AI that predicts shipment delays 24–72 hours before they happen, automatically alerts affected customers, and routes exceptions to the right operator with full context. Proactive, not reactive.',
+
+    idealFor: [
+      'Freight forwarders managing 500+ active shipments who need proactive delay detection',
+      'Operations teams spending 30%+ of their time on exception handling and customer updates',
+      'Companies where customer SLA compliance depends on timely delay communication',
+      'Logistics providers handling time-sensitive or perishable cargo where delays have outsized impact',
+    ],
+
+    problem: {
+      headline: 'You find out about delays at the same time your customers do — or worse, after',
+      description:
+        'In most freight operations, delays are discovered reactively: a customer calls asking why their cargo hasn\'t arrived, an operator checks the carrier portal, discovers the vessel was rolled or the flight was delayed, and begins the fire drill of notifying affected parties and rebooking. By that point, the customer is already frustrated, alternative options are limited, and your team is in reactive mode. Port congestion, weather events, carrier schedule changes, customs holds — the data to predict these delays often exists hours or days before they impact your shipments. But without a system that monitors, correlates, and predicts, your team discovers problems at the worst possible moment.',
+      painPoints: [
+        'Delays are discovered reactively — when customers call, not when the data shows the problem — creating a permanent firefighting culture',
+        'No system correlates carrier schedule changes, port congestion, weather, and customs data to predict delays before they impact shipments',
+        'Exception resolution is ad-hoc — no structured triage, no priority scoring, no automated routing to the right operator with the right context',
+        'Customer notification about delays is manual — operators email customers individually, often hours after they should have been notified',
+        'Arrival notice processing is manual — operators read carrier emails, extract ETAs, and update TMS records one at a time',
+        'No historical analysis of exception patterns — recurring issues on specific lanes, with specific carriers, or during specific periods go untracked',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Predictive ETA modelling',
+        description:
+          'AI models trained on your historical shipment data, carrier schedule patterns, port congestion indices, weather data, and customs processing times generate accurate ETAs that update continuously. The system predicts delays 24–72 hours before carrier-reported ETAs reflect them, giving you time to act proactively.',
+      },
+      {
+        title: 'Proactive delay alerting',
+        description:
+          'When the predicted ETA deviates from the committed delivery date by more than a configurable threshold, the system automatically generates delay alerts. Alerts include: affected shipments, predicted new ETA, reason for delay, and recommended actions. Alerts go to operators, customers, or both — configurable per customer and per severity level.',
+      },
+      {
+        title: 'Intelligent exception routing and prioritisation',
+        description:
+          'Exceptions are automatically categorised (carrier delay, customs hold, documentation issue, weather, port congestion), scored by impact severity (value at risk, SLA exposure, customer tier), and routed to the right operator based on configurable rules. High-severity exceptions escalate immediately; low-severity issues are batched for review.',
+      },
+      {
+        title: 'Automated arrival notice processing',
+        description:
+          'Carrier arrival notices received by email or EDI are processed automatically. The system extracts terminal, ETA, free time, and demurrage deadlines, updates TMS records, and notifies relevant parties. Customs pre-clearance workflows can be triggered automatically based on arrival notice data.',
+      },
+      {
+        title: 'Exception resolution tracking and SLA monitoring',
+        description:
+          'Every exception is tracked from detection through resolution with full audit trail. Resolution time, actions taken, customer impact, and root cause are recorded. SLA compliance dashboards show which exceptions met resolution targets and which breached — with trend analysis to identify systemic issues.',
+      },
+      {
+        title: 'Historical exception pattern analysis',
+        description:
+          'AI analyses your exception history to identify patterns: carriers with recurring delays on specific lanes, ports with seasonal congestion patterns, documentation issues with specific suppliers. These patterns inform carrier performance scoring, route planning, and proactive customer communication.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Proactive customer notification of vessel delay',
+        description:
+          'AI detected that a container vessel bound for Rotterdam was experiencing delays due to port congestion at Singapore, 48 hours before the carrier updated their official ETA. The system automatically identified 12 affected shipments, generated delay notifications to 8 customers with revised ETAs, and created exception records in the TMS. Customers received proactive updates before they had to ask.',
+      },
+      {
+        scenario: 'Automated arrival notice processing and customs trigger',
+        description:
+          'Arrival notices from ocean carriers were previously processed manually — an operator would read the email, update TMS, and notify the customs team. With automation, arrival notices are parsed within seconds, TMS records updated, and customs pre-clearance workflows triggered automatically. Processing time dropped from 20 minutes per notice to near-zero.',
+      },
+      {
+        scenario: 'Exception pattern detection for carrier evaluation',
+        description:
+          'Analysis of 6 months of exception data revealed that a primary carrier had a 23% delay rate on a specific Asia–US route during Q4, compared to 8% during Q1–Q3. This seasonal pattern was invisible in monthly reporting but critical for Q4 capacity planning. The forwarder pre-allocated backup capacity for the next peak season.',
+      },
+    ],
+
+    results: [
+      { value: '60%', label: 'Exception resolution time reduction', context: 'Automated routing, prioritisation, and context-rich alerting', businessOutcome: 'Faster response means less customer impact' },
+      { value: '24–72 hr', label: 'Delay prediction lead time', context: 'Predict delays before carrier-reported ETAs reflect them', businessOutcome: 'Proactive customer communication, not reactive firefighting' },
+      { value: '85%', label: 'Proactive notification rate', context: 'Customers notified before they ask, not after', businessOutcome: 'Higher customer satisfaction and trust' },
+      { value: '6–8 wk', label: 'Deployment timeline', context: 'From kickoff to production with historical data backfill', businessOutcome: 'Immediate value from prediction and alerting' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'PostgreSQL', 'Carrier APIs', 'AIS Data', 'Weather APIs', 'n8n', 'OpenAI GPT-4o'],
+
+    integrations: [
+      'CargoWise One',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+      'Carrier tracking APIs',
+      'Port congestion data feeds',
+    ],
+
+    implementation: {
+      timeline: '6–8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — audit exception workflows, map carrier tracking sources, define ETA prediction model inputs, configure alert thresholds',
+        'Weeks 3–4: Build — ETA prediction model, exception classification engine, alert generation, TMS integration',
+        'Weeks 5–6: Integration — carrier API connections, arrival notice parsing, customer notification system, exception dashboard',
+        'Weeks 7–8: UAT — backtest predictions against historical data, calibrate alerting, production deployment with monitoring',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'How does AI predict freight delays?',
+        a: 'AI analyses multiple data sources — your historical shipment patterns, carrier schedule reliability, port congestion indices, weather data, and customs processing times — to generate ETAs that are more accurate than carrier-reported estimates. The model identifies delay patterns 24–72 hours before they appear in carrier tracking updates.',
+      },
+      {
+        q: 'Does this integrate with carrier tracking systems?',
+        a: 'Yes. We integrate with ocean carrier tracking APIs, AIS vessel data, flight tracking systems, and road transport telematics. All tracking data is correlated with your TMS records to provide a unified view of shipment status and predicted ETAs.',
+      },
+      {
+        q: 'Can customers receive delay alerts automatically?',
+        a: 'Yes. When a predicted delay exceeds a configurable threshold, the system auto-generates delay notifications to affected customers via email. Notifications include the revised ETA, reason for delay, and any recommended actions. Alert rules are configurable per customer tier and severity level.',
+      },
+      {
+        q: 'How does exception routing work?',
+        a: 'Exceptions are automatically classified by type (carrier delay, customs hold, documentation issue), scored by severity (value at risk, SLA exposure, customer tier), and routed to the right operator based on your business rules. High-severity exceptions get immediate escalation; routine exceptions are batched for efficient processing.',
+      },
+      {
+        q: 'What is the accuracy of ETA predictions?',
+        a: 'Prediction accuracy depends on the data available and the trade lane. On high-volume lanes with good carrier API coverage, predictions are typically within 12–24 hours of actual arrival 85%+ of the time. Accuracy improves continuously as the model learns from your shipment outcomes.',
+      },
+      {
+        q: 'How does this compare to Portcast or Shippeo?',
+        a: 'Portcast and Shippeo are SaaS visibility platforms that provide predictive ETAs as a service. FreightMynd builds predictive ETA systems trained on your specific shipment data and integrated directly with your TMS. Our models learn from your lanes, your carriers, and your historical patterns — not industry averages. Plus, you own the system with no vendor dependency.',
+      },
+    ],
+
+    relatedSolutions: ['shipment-visibility-portal', 'carrier-performance-analytics', 'booking-automation', 'sea-freight-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
+    relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'sop-compliance-monitoring',
+    title: 'AI SOP Compliance Monitoring',
+    shortTitle: 'SOP Compliance',
+    keyword: 'freight SOP compliance automation',
+    secondaryKeywords: [
+      'logistics SOP monitoring AI',
+      'freight operations compliance',
+      'shipment data audit automation',
+      'business rule validation freight',
+      'freight quality assurance AI',
+      'logistics process compliance',
+      'SOP as code logistics',
+      'automated compliance checking freight',
+      'customer SOP enforcement 3PL',
+      'freight demurrage prevention',
+      'shipment quality audit AI',
+      'logistics SLA monitoring automation',
+    ],
+    metaTitle: 'AI SOP Compliance Monitoring & Automated Auditing for Freight',
+    metaDescription:
+      'AI audits every shipment against your SOPs in real-time. Catch violations before they become exceptions. Customer-specific compliance. Demurrage prevention. 95%+ SOP adherence.',
+    description:
+      'AI that continuously audits every shipment against your SOPs and business rules — catching violations, missing data, and process deviations before they become exceptions or customer complaints.',
+    icon: '✅',
+    color: 'accent',
+    headline: 'Every Shipment Audited Against Your SOPs. Automatically.',
+    sub: 'AI that monitors every shipment record, every document, and every milestone against your Standard Operating Procedures. Catches missing data, process violations, and SLA risks in real-time — not in next month\'s compliance report.',
+
+    idealFor: [
+      'Freight forwarders with complex customer SOPs that vary per account',
+      '3PL/4PL operators where SOP compliance directly impacts customer retention and contract renewals',
+      'Operations managers who discover compliance gaps only during audits or customer complaints',
+      'Companies in regulated industries where freight documentation compliance is non-negotiable',
+    ],
+
+    problem: {
+      headline: 'Your SOPs exist in a document nobody reads until something goes wrong',
+      description:
+        'Every freight forwarder has SOPs. Every customer account has specific requirements: documentation formats, milestone notification timelines, carrier restrictions, packaging specifications, customs compliance rules. These SOPs live in PDFs, shared drives, or onboarding decks that operators reference during training and forget about during operations. Compliance checking is manual, sporadic, and almost always retrospective — you discover violations when a customer complains, an audit reveals gaps, or a shipment fails at customs. There\'s no system that continuously validates every shipment against the applicable SOPs in real-time.',
+      painPoints: [
+        'SOPs exist as documents, not as active validation rules — compliance depends entirely on operator memory and diligence',
+        'Customer-specific requirements are forgotten or inconsistently applied, especially during staff turnover or peak volume periods',
+        'Compliance violations are discovered retrospectively — during audits, customer complaints, or customs rejections — not when they occur',
+        'No automated SLA monitoring — free time deadlines, documentation submission windows, and notification timelines are tracked manually or not at all',
+        'Multi-customer operations require different SOPs per account — operators juggling 5+ accounts can\'t keep all requirements in memory',
+        'Compliance reporting is a manual exercise — pulling data from TMS, cross-referencing SOPs, building reports takes days per customer',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'SOP-as-code — translate SOPs into executable validation rules',
+        description:
+          'Your SOPs are converted into machine-readable validation rules that run against every shipment automatically. Rules cover: required document types per shipment mode, mandatory fields per document, milestone notification timelines, carrier restrictions, packaging requirements, customs compliance checks, and any customer-specific requirements. Rules are versioned and auditable.',
+      },
+      {
+        title: 'Continuous real-time shipment auditing',
+        description:
+          'Every shipment record is continuously validated against applicable SOPs at every stage of its lifecycle. When a booking is created, the system checks required fields. When documents are received, it validates completeness. When milestones are reached, it checks notification compliance. Violations are caught in real-time, not in retrospective audits.',
+      },
+      {
+        title: 'AI-powered anomaly detection',
+        description:
+          'Beyond rule-based checking, AI identifies anomalies that might not violate a specific rule but indicate a problem: unusually high charges, unexpected routing, weight discrepancies between documents, or atypical transit times for a lane. These anomalies are surfaced for review, catching issues that rigid rules would miss.',
+      },
+      {
+        title: 'Automated violation alerting and escalation',
+        description:
+          'When a violation is detected, the system generates an alert with: the specific SOP rule violated, the shipment and field in question, the severity level, and recommended corrective action. Critical violations escalate immediately; minor violations are batched. Alerts route to the responsible operator or team lead.',
+      },
+      {
+        title: 'SLA deadline tracking and proactive warnings',
+        description:
+          'The system tracks all time-sensitive SLA requirements: free time deadlines, documentation submission windows, customs filing deadlines, customer notification timelines. Proactive warnings fire before deadlines expire — giving operators time to act, not just a record of what was missed.',
+      },
+      {
+        title: 'Automated compliance reporting per customer',
+        description:
+          'Generate compliance reports per customer account showing: SOP adherence rate, violation categories, resolution times, and trend analysis. Reports update in real-time and can be scheduled for delivery ahead of QBRs. No manual data compilation — the report builds itself from live operations data.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Customer-specific SOP enforcement across 50 accounts',
+        description:
+          'A 3PL operator managing 50 customer accounts, each with unique SOP requirements (documentation standards, notification timelines, carrier preferences), deployed SOP compliance monitoring. The system enforces the correct SOP per shipment based on the customer account, catching 15–20 violations per day that previously went undetected until customer complaints or quarterly audits.',
+      },
+      {
+        scenario: 'Proactive free time deadline management',
+        description:
+          'The system tracks container free time deadlines from arrival notices and carrier terms. When a container approaches its free time expiry, operators receive automated warnings with the deadline, current status, and estimated demurrage cost if not actioned. Demurrage charges dropped 40% in the first quarter.',
+      },
+      {
+        scenario: 'Pre-customs filing compliance validation',
+        description:
+          'Before customs declarations are filed, the system validates all required documents are present, mandatory fields are complete, HS codes are valid, and values are consistent across documents. Customs rejection rates dropped from 8% to under 1% because compliance issues are caught before filing, not after rejection.',
+      },
+    ],
+
+    results: [
+      { value: '95%+', label: 'SOP compliance rate', context: 'Up from 70–80% with manual compliance checking', businessOutcome: 'Fewer customer complaints, stronger contract renewals' },
+      { value: '40%', label: 'Demurrage cost reduction', context: 'Proactive free time tracking and deadline warnings', businessOutcome: 'Direct cost savings from avoided penalties' },
+      { value: 'Real-time', label: 'Compliance visibility', context: 'Continuous auditing, not retrospective reports', businessOutcome: 'Catch violations when they happen, not weeks later' },
+      { value: '6–10 wk', label: 'Deployment timeline', context: 'Including SOP digitisation and rule configuration', businessOutcome: 'Compliance automation with audit trail from day one' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'OpenAI GPT-4o', 'PostgreSQL', 'n8n', 'TMS APIs'],
+
+    integrations: [
+      'CargoWise One',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+      'Microsoft Dynamics 365',
+      'Customs authority systems',
+    ],
+
+    implementation: {
+      timeline: '6–10 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–3: Discovery — audit existing SOPs, digitise into machine-readable rules, map customer-specific requirements, define severity levels',
+        'Weeks 4–6: Build — validation engine, anomaly detection model, alerting system, compliance dashboard',
+        'Weeks 7–8: Integration — TMS data sync, document pipeline connection, milestone tracking, report generation',
+        'Weeks 9–10: UAT — validate rules against historical data, calibrate anomaly detection, production deployment with monitoring',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is AI SOP compliance monitoring?',
+        a: 'AI SOP compliance monitoring translates your Standard Operating Procedures into automated validation rules that run against every shipment in real-time. Instead of relying on operator memory and manual audits, the system continuously checks every shipment record, document, and milestone against applicable SOPs — catching violations as they happen.',
+      },
+      {
+        q: 'Can it handle different SOPs for different customers?',
+        a: 'Yes. The system maintains separate SOP rule sets per customer account. When a shipment is created for a specific customer, the corresponding SOP rules are automatically applied. This is critical for 3PL/4PL operators managing multiple accounts with varying requirements.',
+      },
+      {
+        q: 'How are SOPs converted into automated rules?',
+        a: 'During the discovery phase, we work with your operations team to translate each SOP into specific, testable validation rules. For example, "Customer X requires a commercial invoice and packing list for every FCL shipment" becomes a rule that checks document completeness at the booking stage. Rules are reviewed, versioned, and configurable.',
+      },
+      {
+        q: 'Does this catch issues that aren\'t in the SOPs?',
+        a: 'Yes. Beyond rule-based compliance, AI anomaly detection identifies unusual patterns that may indicate problems: unexpected charges, atypical routing, weight discrepancies between documents, or shipments that deviate from historical patterns. These anomalies are flagged for human review even if no specific SOP rule is violated.',
+      },
+      {
+        q: 'How does it integrate with our existing quality processes?',
+        a: 'SOP compliance monitoring complements your existing quality processes by automating the detection layer. It doesn\'t replace your quality team — it gives them real-time data, automated alerts, and compliance dashboards instead of manual spreadsheet audits. Most customers see it as their quality team\'s force multiplier.',
+      },
+      {
+        q: 'Can it prevent demurrage and detention charges?',
+        a: 'Yes. The system tracks container free time deadlines, port cutoff times, and documentation submission windows. Operators receive automated warnings before deadlines expire, with estimated cost impact if not actioned. Clients typically see 30–40% reduction in demurrage charges in the first quarter.',
+      },
+      {
+        q: 'Is this similar to Chain.io AI Checks?',
+        a: 'Chain.io AI Checks is an integration platform feature that audits shipment data within their ecosystem. FreightMynd SOP compliance monitoring is a standalone system built for your specific SOPs, deployed in your environment, integrated with your TMS, and customised to your customer-specific requirements. It\'s deeper (continuous auditing vs. point checks), more configurable (your rules, not theirs), and you own it.',
+      },
+    ],
+
+    relatedSolutions: ['4pl-control-tower-automation', '3pl-4pl-operations', 'customs-automation', 'eta-prediction-exception-management'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics'],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+  },
+
+  {
+    slug: 'order-to-cash-automation',
+    title: 'Order-to-Cash Automation',
+    shortTitle: 'Order to Cash',
+    keyword: 'freight order to cash automation',
+    secondaryKeywords: [
+      'logistics order to cash AI',
+      'freight billing automation',
+      'automated freight invoicing',
+      'revenue cycle automation logistics',
+      'freight payment reconciliation',
+      'logistics billing process automation',
+      'zero-touch freight invoicing',
+      'freight revenue leakage prevention',
+      'automated cost accrual freight',
+      'month-end close automation logistics',
+      'freight margin visibility',
+      'DSO reduction freight forwarding',
+    ],
+    metaTitle: 'Freight Order-to-Cash Automation — Billing, Accruals & Reconciliation',
+    metaDescription:
+      'Automate the full freight O2C cycle — cost accruals, invoice generation, revenue recognition, payment reconciliation. Close month-end in 3 days. Zero-touch invoicing.',
+    description:
+      'Full order-to-cash automation — from booking confirmation through cost accrual, invoice generation, revenue recognition, and payment reconciliation — closing your books in hours, not weeks.',
+    icon: '💰',
+    color: 'accent',
+    headline: 'From Booking to Bank — Without the Manual Steps',
+    sub: 'The entire revenue cycle automated: cost accruals from carrier invoices, customer invoice generation from shipment data, revenue recognition from milestones, and payment reconciliation from bank feeds. No spreadsheets. No month-end fire drills.',
+
+    idealFor: [
+      'Freight forwarders with a 15+ day average invoice cycle from shipment completion to customer billing',
+      'Finance teams spending the first week of every month on manual revenue accruals and reconciliation',
+      'Companies losing margin because carrier cost accruals don\'t match actual invoices until month-end',
+      'Forwarders with high DSO (days sales outstanding) driven by slow invoicing processes',
+    ],
+
+    problem: {
+      headline: 'Your revenue cycle has more manual handoffs than your supply chain',
+      description:
+        'In most freight forwarding operations, the financial lifecycle of a shipment is a manual relay race: operations completes a booking, but finance doesn\'t know about the cost accrual until they receive the carrier invoice (days or weeks later). Customer invoicing requires manual compilation of charges from TMS records, carrier costs, and margin calculations. Revenue recognition depends on milestone data that finance has to pull from the TMS or request from operations. Payment reconciliation is a monthly spreadsheet exercise matching bank statements to invoices. Every handoff between operations and finance is a manual step that introduces delay, errors, and cash flow drag.',
+      painPoints: [
+        'Customer invoices take 10–20 days after shipment completion because billing requires manual charge compilation from multiple sources',
+        'Cost accruals are estimates until carrier invoices arrive — creating month-end reconciliation surprises and margin uncertainty',
+        'Revenue recognition depends on milestone data that finance must manually extract from TMS or request from operations',
+        'Payment reconciliation is a monthly spreadsheet exercise — matching bank statements to invoices takes 3–5 days of finance team time',
+        'Month-end close takes 7–10 days because of manual accrual adjustments, unbilled shipment reconciliation, and intercompany settlements',
+        'Margin visibility is retrospective — you don\'t know actual shipment profitability until weeks after the shipment completes',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Automated cost accrual from carrier data',
+        description:
+          'When a booking is confirmed, the system creates estimated cost accruals based on contracted rates and booking details. As carrier invoices arrive, accruals are automatically updated to actual costs. Discrepancies between estimated and actual costs are flagged for review. No more month-end accrual surprises.',
+      },
+      {
+        title: 'Auto-generated customer invoices from shipment data',
+        description:
+          'Customer invoices are generated automatically from shipment data: base freight charges from rate agreements, surcharges from carrier invoices, handling fees from your tariff, and any additional charges captured during the shipment lifecycle. Invoices are generated at shipment completion or on a configurable schedule.',
+      },
+      {
+        title: 'Milestone-based revenue recognition',
+        description:
+          'Revenue is recognised automatically based on shipment milestones: partial recognition at booking, additional at departure, and completion at delivery — configurable to your accounting policies. Milestone data flows from the TMS automatically, eliminating manual revenue scheduling.',
+      },
+      {
+        title: 'Payment reconciliation automation',
+        description:
+          'Bank feed data and payment platform records are automatically matched to outstanding invoices. Partial payments, overpayments, and unmatched receipts are flagged for review. The system handles multi-currency reconciliation and exchange rate adjustments.',
+      },
+      {
+        title: 'Real-time margin visibility per shipment',
+        description:
+          'Every shipment has a live margin calculation: customer revenue minus all costs (carrier charges, handling, duties, additional charges). Margin is visible from booking creation (estimated) through final invoice (actual). Negative-margin shipments are flagged immediately — not discovered weeks later.',
+      },
+      {
+        title: 'Accelerated month-end close',
+        description:
+          'With accruals maintained in real-time, invoices generated automatically, revenue recognised from milestones, and payments reconciled continuously, month-end close becomes a verification exercise rather than a compilation exercise. Close time typically drops from 7–10 days to 2–3 days.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Invoicing within 24 hours of shipment completion',
+        description:
+          'A forwarder reduced average invoice cycle from 18 days to under 24 hours after shipment completion. Customer invoices are auto-generated from TMS shipment data, rate agreements, and carrier cost data. The finance team reviews and approves rather than compiling from scratch. DSO dropped by 12 days.',
+      },
+      {
+        scenario: 'Real-time carrier cost accrual accuracy',
+        description:
+          'Estimated cost accruals at booking are continuously updated as carrier invoices arrive and are processed through the invoice automation pipeline. Month-end accrual adjustments dropped 80% because accruals are maintained in real-time rather than estimated and reconciled in bulk.',
+      },
+      {
+        scenario: 'Month-end close in 3 days instead of 10',
+        description:
+          'By maintaining real-time accruals, auto-generating invoices, and continuously reconciling payments, a mid-size forwarder reduced month-end close from 10 days to 3 days. The finance team shifted from data compilation to exception review and analysis.',
+      },
+    ],
+
+    results: [
+      { value: '<24 hr', label: 'Invoice cycle time', context: 'Down from 10–20 days with manual invoicing', businessOutcome: 'Faster cash collection, lower DSO' },
+      { value: '80%', label: 'Reduction in month-end accrual adjustments', context: 'Real-time cost accruals eliminate bulk reconciliation', businessOutcome: 'Predictable margins, no month-end surprises' },
+      { value: '3 days', label: 'Month-end close time', context: 'Down from 7–10 days with manual processes', businessOutcome: 'Finance team shifts from compilation to analysis' },
+      { value: '6–10 wk', label: 'Deployment timeline', context: 'From kickoff to production with accounting system integration', businessOutcome: 'ROI from first accelerated month-end close' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'PostgreSQL', 'TMS APIs', 'Accounting APIs', 'n8n', 'OpenAI GPT-4o'],
+
+    integrations: [
+      'CargoWise One (Accounting module)',
+      'SAP Transportation Management',
+      'Xero / QuickBooks / NetSuite',
+      'Bank feed APIs',
+      'Payment platforms',
+    ],
+
+    implementation: {
+      timeline: '6–10 weeks from kickoff to production',
+      phases: [
+        'Weeks 1–2: Discovery — map billing workflows, rate agreement structures, accrual policies, accounting system integration points',
+        'Weeks 3–5: Build — cost accrual engine, invoice generation pipeline, revenue recognition rules, reconciliation matching',
+        'Weeks 6–8: Integration — TMS billing data sync, accounting system push, bank feed connection, payment platform integration',
+        'Weeks 9–10: UAT — parallel run alongside manual process, validate accrual accuracy, production deployment with month-end close test',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight order-to-cash automation?',
+        a: 'Order-to-cash automation covers the entire financial lifecycle of a freight shipment: from cost accrual at booking, through customer invoice generation, revenue recognition, and payment reconciliation. Instead of manual handoffs between operations and finance, AI automates each financial step based on TMS data and business rules.',
+      },
+      {
+        q: 'How does it generate customer invoices automatically?',
+        a: 'The system pulls shipment data from your TMS (booking details, milestones, charges), applies your rate agreements and tariff structures, adds carrier costs and surcharges from processed carrier invoices, and generates a formatted customer invoice. Invoices can be auto-sent or queued for one-click approval by your finance team.',
+      },
+      {
+        q: 'Does it handle multi-currency billing?',
+        a: 'Yes. The system handles multi-currency cost accruals, customer invoicing, and payment reconciliation. Exchange rates are applied based on configurable rules (booking date rate, invoice date rate, or daily rate). Currency gains/losses are calculated and posted automatically.',
+      },
+      {
+        q: 'Can it integrate with our accounting system?',
+        a: 'Yes. We integrate with major accounting platforms including Xero, QuickBooks, NetSuite, and SAP. For CargoWise users, we push directly to the CargoWise accounting module. Integration includes invoice posting, payment recording, and GL journal entries.',
+      },
+      {
+        q: 'How does it improve month-end close?',
+        a: 'By maintaining real-time cost accruals, auto-generating invoices, and continuously reconciling payments, most of the data compilation work that drives a 7–10 day close is eliminated. Finance teams shift from compiling data to reviewing exceptions. Most customers achieve a 3-day close within the first quarter of deployment.',
+      },
+    ],
+
+    relatedSolutions: ['smart-invoice-processing', 'freight-revenue-recovery', 'freight-spend-analytics', 'booking-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'microsoft-dynamics'],
+    relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'rate-sheet-intelligence',
+    title: 'Rate Sheet Intelligence & Management',
+    shortTitle: 'Rate Intelligence',
+    keyword: 'freight rate management AI',
+    secondaryKeywords: [
+      'rate sheet automation freight',
+      'carrier rate management',
+      'freight rate comparison AI',
+      'logistics rate normalisation',
+      'automated rate ingestion freight',
+      'freight rate sheet processing',
+      'AI rate sheet reader',
+      'carrier rate sheet OCR',
+      'freight rate database',
+      'rate validity tracking logistics',
+      'surcharge normalisation freight',
+      'freight rate benchmarking',
+      'rate anomaly detection',
+      'contract rate management freight',
+    ],
+    metaTitle: 'AI Rate Sheet Intelligence — Automated Rate Ingestion & Comparison',
+    metaDescription:
+      'AI reads carrier rate sheets in any format — PDF, Excel, email — normalises surcharges, compares rates across carriers by lane. End manual rate entry. Power your quoting engine.',
+    description:
+      'AI that ingests carrier rate sheets in any format (PDF, Excel, email), normalises them into a structured database, compares rates across carriers by lane, and powers your quoting engine with always-current pricing.',
+    icon: '📈',
+    color: 'brand',
+    headline: 'Carrier Rate Sheets That Read Themselves',
+    sub: 'AI that ingests rate sheets from any carrier in any format — PDF, Excel, CSV, email body — normalises all charges into a structured, searchable database, and gives your quoting team instant access to the best rate on every lane. No manual entry. No stale spreadsheets.',
+
+    idealFor: [
+      'Freight forwarders managing rate sheets from 20+ carriers that arrive in different formats',
+      'Quoting teams spending 30+ minutes per quote searching for the right rate across multiple spreadsheets',
+      'Pricing managers who can\'t compare carrier rates by lane because data is trapped in PDFs and emails',
+      'Companies losing margin because rate updates aren\'t reflected in quoting systems fast enough',
+    ],
+
+    problem: {
+      headline: 'Your rates live in 47 different spreadsheets and nobody knows which one is current',
+      description:
+        'Carrier rate sheets arrive in every format imaginable: PDFs, Excel files with custom layouts, CSV exports, rate tables embedded in email bodies, and sometimes just a few lines of text with effective dates. Every carrier uses different terminology, different surcharge structures, and different validity periods. Your pricing team downloads these, manually transcribes them into your rate management system or master spreadsheet, and tries to keep track of which rates are current. When a quote request comes in, the quoting team searches across multiple files for the right rate on the right lane — a process that takes 15–30 minutes per quote and still sometimes uses stale rates because the latest update hasn\'t been entered yet.',
+      painPoints: [
+        'Rate sheets arrive in 10+ different formats — PDF, Excel, CSV, email — each requiring manual reading and transcription into your system',
+        'Rate updates take 2–5 days to enter into your quoting system because someone has to manually transcribe them from carrier communications',
+        'Quoting teams spend 15–30 minutes per quote searching for the right rate across multiple spreadsheets and rate management tools',
+        'Stale rates in the quoting system cause margin erosion — quotes go out at old rates while carrier costs have already increased',
+        'No ability to compare rates across carriers by lane — data is siloed in carrier-specific formats that can\'t be easily cross-referenced',
+        'Surcharge structures vary by carrier — GRI, BAF, THC, EBS, LSS — making true cost comparison nearly impossible without manual calculation',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Multi-format rate sheet ingestion',
+        description:
+          'AI reads rate sheets in any format: PDF rate tables, Excel files with custom layouts, CSV exports, email-embedded rate updates, and even scanned documents. The system identifies rate structures, surcharge components, validity periods, and lane applicability regardless of how the carrier formats them.',
+      },
+      {
+        title: 'Automatic rate normalisation and structuring',
+        description:
+          'Extracted rates are normalised into a consistent data model: base freight, surcharges broken down by type (BAF, THC, EBS, GRI, LSS, etc.), currency, container type, weight/volume breaks, validity period, and origin-destination pair. This normalisation makes cross-carrier comparison possible for the first time.',
+      },
+      {
+        title: 'Carrier rate comparison by lane',
+        description:
+          'With all rates normalised, your pricing team can instantly compare total cost across all carriers for any lane — including all surcharges, not just base freight. The system highlights the cheapest option, the most reliable option (from carrier performance data), and the best value-for-money option.',
+      },
+      {
+        title: 'Rate validity tracking and expiry alerts',
+        description:
+          'Every rate has a tracked validity period. The system alerts your pricing team before rates expire, prompts for carrier rate renewals, and flags quotes that reference expiring rates. No more discovering a rate has expired after a quote has been sent.',
+      },
+      {
+        title: 'Quoting engine integration — instant rate access',
+        description:
+          'Your quoting team accesses current rates directly from the normalised database — no spreadsheet searching. Quote building pulls the latest valid rate for the requested lane, adds applicable surcharges, applies your margin rules, and generates a quote in minutes rather than 30+ minutes.',
+      },
+      {
+        title: 'Rate trend analysis and market intelligence',
+        description:
+          'Historical rate data is analysed to show trends by lane, carrier, and season. Identify lanes where rates are rising, carriers that are getting more competitive, and seasonal patterns that affect pricing strategy. This intelligence informs both quoting and contract negotiation.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'Auto-ingesting 40+ carrier rate sheets per month',
+        description:
+          'A mid-size forwarder receives rate updates from 40+ carriers monthly in various formats. Previously, a pricing analyst spent 3 days per month manually entering rate updates. With rate sheet intelligence, carrier communications are processed automatically — rates are extracted, normalised, and available in the quoting system within hours of receipt, not days.',
+      },
+      {
+        scenario: 'Instant cross-carrier rate comparison for quoting',
+        description:
+          'When a quote request comes in for a Shanghai–Rotterdam FCL, the system instantly shows all-in rates from every carrier with valid pricing on that lane — including base freight, all surcharges, and transit time. What previously took 30 minutes of spreadsheet searching takes 30 seconds.',
+      },
+      {
+        scenario: 'Rate expiry prevention and automatic renewal prompts',
+        description:
+          'The system identified that 15 carrier rate agreements were expiring within the next 30 days — several of which were being actively used in open quotes. Automatic alerts triggered renewal requests to carriers and flagged affected quotes for rate validation, preventing margin erosion from expired rates.',
+      },
+    ],
+
+    results: [
+      { value: '95%', label: 'Reduction in rate entry time', context: 'From 3 days/month manual entry to automated ingestion', businessOutcome: 'Pricing team focuses on strategy, not data entry' },
+      { value: '<1 min', label: 'Rate lookup time per quote', context: 'Down from 15–30 minutes of spreadsheet searching', businessOutcome: 'Faster quote turnaround, more quotes per day' },
+      { value: '0', label: 'Quotes sent with stale rates', context: 'Rate validity tracking and expiry alerts prevent outdated pricing', businessOutcome: 'Protect margins from rate update delays' },
+      { value: '4–6 wk', label: 'Deployment timeline', context: 'From kickoff to production with initial carrier rate ingestion', businessOutcome: 'Immediate value from first rate sheet batch' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'OpenAI GPT-4o', 'Azure Document Intelligence', 'PostgreSQL', 'n8n'],
+
+    integrations: [
+      'CargoWise One (Rate module)',
+      'SAP Transportation Management',
+      'Rate management platforms',
+      'Microsoft Outlook / Gmail (rate email monitoring)',
+      'Quoting systems',
+    ],
+
+    implementation: {
+      timeline: '4–6 weeks from kickoff to production',
+      phases: [
+        'Week 1: Discovery — audit rate sheet formats from top carriers, map rate structures and surcharge taxonomy, define normalisation schema',
+        'Week 2–3: Build — rate extraction AI, normalisation engine, comparison interface, validity tracking',
+        'Week 4–5: Integration — email monitoring for rate updates, TMS/quoting system connection, rate expiry alerting',
+        'Week 6: UAT — validate extraction accuracy across carrier formats, calibrate surcharge classification, production deployment',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is freight rate sheet intelligence?',
+        a: 'Rate sheet intelligence uses AI to automatically read, extract, and normalise carrier rate sheets in any format (PDF, Excel, email) into a structured, searchable database. Instead of manual rate entry, your pricing team gets instant access to normalised, comparable rates across all carriers by lane — always up-to-date.',
+      },
+      {
+        q: 'Can it read rate sheets in any format?',
+        a: 'Yes. The AI handles PDF rate tables, Excel files with custom layouts, CSV exports, email-embedded rate updates, and scanned documents. Each carrier can use their own format — the system learns the structure and extracts rates regardless of layout.',
+      },
+      {
+        q: 'How does rate normalisation work?',
+        a: 'Every carrier structures rates differently — different surcharge names, different bundling, different units. Normalisation maps all carrier-specific terminology to a standard taxonomy: base freight, BAF, THC, EBS, GRI, LSS, etc. This makes true cross-carrier cost comparison possible by ensuring apples-to-apples comparison on every lane.',
+      },
+      {
+        q: 'Does it integrate with our quoting system?',
+        a: 'Yes. Normalised rates feed directly into your quoting workflow. When building a quote, the system pulls the latest valid rate for the requested lane, adds applicable surcharges, and applies your margin rules. Integration works with CargoWise rate module, SAP TM, and custom quoting systems.',
+      },
+      {
+        q: 'How quickly are new rate sheets reflected in the system?',
+        a: 'Rate sheets are processed within minutes to hours of receipt, depending on format complexity. Email-monitored rate updates are ingested automatically as they arrive. Compare this to the 2–5 day manual entry cycle in most operations.',
+      },
+      {
+        q: 'How does this compare to Freightify or Cargorates.ai?',
+        a: 'Freightify and Cargorates.ai are SaaS rate management platforms with their own UI and workflow. FreightMynd builds rate intelligence that integrates directly into your existing quoting workflow and TMS — you don\'t adopt a new platform. Rates are normalised and available wherever your team builds quotes, with cross-carrier comparison built into your existing process.',
+      },
+      {
+        q: 'Can it detect rate anomalies and pricing errors?',
+        a: 'Yes. The system flags anomalies during rate ingestion: rates significantly higher or lower than historical averages for the same lane, missing surcharge components, incorrect currency codes, or rates outside expected ranges. This prevents pricing errors from entering your quoting system and protects margins.',
+      },
+    ],
+
+    relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai', 'carrier-performance-analytics', 'booking-automation'],
+    relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
+    relatedCaseStudies: [],
   },
 ];
