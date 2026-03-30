@@ -83,6 +83,27 @@ const serviceSchema = {
   }
 };
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": solution.title,
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cloud",
+  "description": solution.description,
+  "featureList": solution.capabilities.map(c => c.title).join(', '),
+  "provider": {
+    "@type": "Organization",
+    "name": "FreightMynd",
+    "url": site.url
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Custom project-based pricing — no per-seat subscription"
+  }
+};
+
 // Get related solutions using the relatedSolutions field
 import { solutions } from '../data/solutions';
 import { integrations } from '../data/integrations';
@@ -108,7 +129,7 @@ const primaryCaseStudy = relatedCaseStudyData[0];
 <Page
   title={solution.metaTitle}
   description={solution.metaDescription}
-  schema={[breadcrumbSchema, faqSchema, serviceSchema]}
+  schema={[breadcrumbSchema, faqSchema, serviceSchema, softwareSchema]}
 >
   <!-- Breadcrumb -->
   <Breadcrumb items={[{ label: 'Solutions', href: '/solutions' }, { label: solution.shortTitle }]} />

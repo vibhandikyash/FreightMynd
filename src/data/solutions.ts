@@ -2154,7 +2154,7 @@ export const solutions: Solution[] = [
       'RFQ email detection',
       'shipping email AI agent',
     ],
-    metaTitle: 'Freight Email Automation & AI Triage for Freight Forwarders',
+    metaTitle: 'Freight Email Automation & AI Triage',
     metaDescription:
       'AI-powered freight email automation — classify, route, and auto-respond to RFQs, bookings, exceptions, and documents. 80% inbox time reduction. Outlook and Gmail integration.',
     description:
@@ -2162,7 +2162,7 @@ export const solutions: Solution[] = [
     icon: '📧',
     color: 'brand',
     headline: 'Your Ops Inbox Processes Itself',
-    sub: 'AI agents that live inside your inbox — reading every email, classifying intent, extracting actionable data, routing to the right workflow, and drafting responses. No new UI. No training. Just an inbox that handles itself.',
+    sub: 'AI agents that live inside your inbox — reading every email, classifying intent, extracting actionable data, routing to the right workflow, and drafting responses. No new UI. No training. Just an inbox that handles itself. Built on the same AI architecture deployed for Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders processing 200+ operational emails per day',
@@ -2322,7 +2322,7 @@ export const solutions: Solution[] = [
       'freight tracking software',
       'digital freight forwarding portal',
     ],
-    metaTitle: 'Shipment Visibility Portal & Customer Tracking for Freight Forwarders',
+    metaTitle: 'Shipment Visibility Portal for Forwarders',
     metaDescription:
       'White-label shipment visibility portal for freight forwarders. Real-time tracking, document sharing, milestone alerts, quote-to-book — your brand, your domain. Reduce WISMO calls 70%.',
     description:
@@ -2464,7 +2464,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['eta-prediction-exception-management', 'carrier-performance-analytics', 'freight-spend-analytics', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics'],
-    relatedCaseStudies: [],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
 
   {
@@ -2486,7 +2486,7 @@ export const solutions: Solution[] = [
       'on-time delivery tracking freight',
       'carrier contract negotiation data',
     ],
-    metaTitle: 'AI Carrier Performance Analytics & Scorecards for Freight Forwarders',
+    metaTitle: 'AI Carrier Performance Analytics',
     metaDescription:
       'AI-powered carrier scorecards for freight forwarders. Track on-time delivery, transit times, damage rates, cost per lane. Data-driven carrier allocation and contract negotiation.',
     description:
@@ -2620,7 +2620,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['freight-spend-analytics', 'shipment-visibility-portal', 'eta-prediction-exception-management', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
-    relatedCaseStudies: [],
+    relatedCaseStudies: ['hellmann-4pl-control-tower'],
   },
 
   {
@@ -2642,7 +2642,7 @@ export const solutions: Solution[] = [
       'freight booking management system',
       'automated shipment creation TMS',
     ],
-    metaTitle: 'Freight Booking Automation — Quote to Carrier Confirmation in Minutes',
+    metaTitle: 'Freight Booking Automation',
     metaDescription:
       'End-to-end freight booking automation — quote acceptance to carrier confirmation to TMS record in minutes. Zero manual booking entry. Amendment handling included.',
     description:
@@ -2650,7 +2650,7 @@ export const solutions: Solution[] = [
     icon: '📋',
     color: 'brand',
     headline: 'Bookings That Create Themselves',
-    sub: 'When a quote is accepted, the booking creates itself: carrier allocation, space reservation, TMS record creation, confirmation to customer, and document generation — all automated. Your operators handle exceptions, not data entry.',
+    sub: 'When a quote is accepted, the booking creates itself: carrier allocation, space reservation, TMS record creation, confirmation to customer, and document generation — all automated. Your operators handle exceptions, not data entry. Architecture proven in production for global freight operators including Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders processing 50+ bookings per day with manual TMS entry',
@@ -2780,7 +2780,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['autonomous-quote-management', 'email-intelligence', 'carrier-performance-analytics', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
-    relatedCaseStudies: [],
+    relatedCaseStudies: ['rfq-email-automation'],
   },
 
   {
@@ -2802,7 +2802,7 @@ export const solutions: Solution[] = [
       'proactive customer notification freight',
       'supply chain disruption prediction',
     ],
-    metaTitle: 'AI ETA Prediction & Proactive Exception Management for Freight',
+    metaTitle: 'AI ETA Prediction & Exception Management',
     metaDescription:
       'AI predicts freight delays 24-72 hours before carriers report them. Proactive customer alerts. Intelligent exception routing. 60% faster exception resolution for freight forwarders.',
     description:
@@ -2810,7 +2810,7 @@ export const solutions: Solution[] = [
     icon: '⏱️',
     color: 'brand',
     headline: 'Know About Delays Before Your Customers Do',
-    sub: 'AI that predicts shipment delays 24–72 hours before they happen, automatically alerts affected customers, and routes exceptions to the right operator with full context. Proactive, not reactive.',
+    sub: 'AI that predicts shipment delays 24–72 hours before they happen, automatically alerts affected customers, and routes exceptions to the right operator with full context. Proactive, not reactive. Built on the same pipeline architecture deployed for Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders managing 500+ active shipments who need proactive delay detection',
@@ -2940,7 +2940,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['shipment-visibility-portal', 'carrier-performance-analytics', 'booking-automation', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
-    relatedCaseStudies: [],
+    relatedCaseStudies: ['shipping-news-intelligence'],
   },
 
   {
@@ -2962,7 +2962,7 @@ export const solutions: Solution[] = [
       'shipment quality audit AI',
       'logistics SLA monitoring automation',
     ],
-    metaTitle: 'AI SOP Compliance Monitoring & Automated Auditing for Freight',
+    metaTitle: 'AI SOP Compliance Monitoring for Freight',
     metaDescription:
       'AI audits every shipment against your SOPs in real-time. Catch violations before they become exceptions. Customer-specific compliance. Demurrage prevention. 95%+ SOP adherence.',
     description:
@@ -2970,7 +2970,7 @@ export const solutions: Solution[] = [
     icon: '✅',
     color: 'accent',
     headline: 'Every Shipment Audited Against Your SOPs. Automatically.',
-    sub: 'AI that monitors every shipment record, every document, and every milestone against your Standard Operating Procedures. Catches missing data, process violations, and SLA risks in real-time — not in next month\'s compliance report.',
+    sub: 'AI that monitors every shipment record, every document, and every milestone against your Standard Operating Procedures. Catches missing data, process violations, and SLA risks in real-time — not in next month\'s compliance report. Architecture proven in production for enterprise freight operations including Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders with complex customer SOPs that vary per account',
@@ -3126,7 +3126,7 @@ export const solutions: Solution[] = [
       'freight margin visibility',
       'DSO reduction freight forwarding',
     ],
-    metaTitle: 'Freight Order-to-Cash Automation — Billing, Accruals & Reconciliation',
+    metaTitle: 'Freight Order-to-Cash Automation',
     metaDescription:
       'Automate the full freight O2C cycle — cost accruals, invoice generation, revenue recognition, payment reconciliation. Close month-end in 3 days. Zero-touch invoicing.',
     description:
@@ -3134,7 +3134,7 @@ export const solutions: Solution[] = [
     icon: '💰',
     color: 'accent',
     headline: 'From Booking to Bank — Without the Manual Steps',
-    sub: 'The entire revenue cycle automated: cost accruals from carrier invoices, customer invoice generation from shipment data, revenue recognition from milestones, and payment reconciliation from bank feeds. No spreadsheets. No month-end fire drills.',
+    sub: 'The entire revenue cycle automated: cost accruals from carrier invoices, customer invoice generation from shipment data, revenue recognition from milestones, and payment reconciliation from bank feeds. No spreadsheets. No month-end fire drills. Architecture proven in production for global freight operators including Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders with a 15+ day average invoice cycle from shipment completion to customer billing',
@@ -3284,7 +3284,7 @@ export const solutions: Solution[] = [
       'rate anomaly detection',
       'contract rate management freight',
     ],
-    metaTitle: 'AI Rate Sheet Intelligence — Automated Rate Ingestion & Comparison',
+    metaTitle: 'AI Rate Sheet Intelligence',
     metaDescription:
       'AI reads carrier rate sheets in any format — PDF, Excel, email — normalises surcharges, compares rates across carriers by lane. End manual rate entry. Power your quoting engine.',
     description:
@@ -3292,7 +3292,7 @@ export const solutions: Solution[] = [
     icon: '📈',
     color: 'brand',
     headline: 'Carrier Rate Sheets That Read Themselves',
-    sub: 'AI that ingests rate sheets from any carrier in any format — PDF, Excel, CSV, email body — normalises all charges into a structured, searchable database, and gives your quoting team instant access to the best rate on every lane. No manual entry. No stale spreadsheets.',
+    sub: 'AI that ingests rate sheets from any carrier in any format — PDF, Excel, CSV, email body — normalises all charges into a structured, searchable database, and gives your quoting team instant access to the best rate on every lane. No manual entry. No stale spreadsheets. Built on the same AI extraction engine deployed for Hellmann Worldwide Logistics.',
 
     idealFor: [
       'Freight forwarders managing rate sheets from 20+ carriers that arrive in different formats',

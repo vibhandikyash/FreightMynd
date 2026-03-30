@@ -30,7 +30,7 @@ export const integrations: Integration[] = [
     shortTitle: 'CargoWise',
     keyword: 'CargoWise AI integration',
     description: 'Deep AI integration with CargoWise One — automated XML data push, document processing, and cargo data intelligence built on your existing CargoWise instance.',
-    metaTitle: 'CargoWise AI Integration — Automated XML Push & Zero Manual TMS Entry | FreightMynd',
+    metaTitle: 'CargoWise AI Integration',
     metaDescription: 'CargoWise OCR, data entry automation, and document automation — AI-powered extraction, validation, and eHub XML push. Zero manual entry. Live for global freight operators.',
     logo: 'cargowise',
     intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. FreightMynd builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
