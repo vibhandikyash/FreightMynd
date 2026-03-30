@@ -20,11 +20,20 @@ faq:
     a: "Well-built production systems achieve 95-99% field-level accuracy on structured documents. More importantly, the validation layer catches extraction errors before they reach CargoWise — so the effective accuracy of data that enters your TMS is higher than the raw extraction rate. Exception routing ensures uncertain fields go to human review rather than into your system."
   - q: "Does automating CargoWise data entry require changes to my CargoWise configuration?"
     a: "No. The AI system integrates through CargoWise's standard eHub and Universal Gateway APIs. Your existing CargoWise modules, custom fields, branch codes, and workflows remain unchanged. The AI pipeline maps extracted data to your specific CargoWise XML schema — adapting to your configuration, not the other way around."
+howToSteps:
+  - "Monitor email inbox for incoming supplier documents"
+  - "AI classifier filters and removes irrelevant pages"
+  - "Extraction engine reads and structures all document fields"
+  - "Validation layer checks extracted data against business rules"
+  - "Clean XML pushed directly into CargoWise via eHub API"
 relatedSolutions:
   - "4pl-control-tower-automation"
   - "document-intelligence"
   - "tms-automation"
   - "customs-automation"
+  - "email-intelligence"
+  - "booking-automation"
+  - "sop-compliance-monitoring"
 relatedCaseStudies:
   - "hellmann-4pl-control-tower"
 relatedIntegrations:
@@ -58,7 +67,7 @@ Here is how the pipeline works end to end.
 
 ### Stage 1: Email Monitoring and Document Ingestion
 
-An email monitoring agent watches your operations inbox continuously. When a supplier sends documents — whether as PDF attachments, ZIP archives, or embedded images — the agent detects the email, classifies it as a shipment document delivery, and downloads all attachments for processing. This runs 24/7 with no human trigger required.
+An email monitoring agent watches your operations inbox continuously. When a supplier sends documents — whether as PDF attachments, ZIP archives, or embedded images — the agent detects the email, classifies it as a shipment document delivery, and downloads all attachments for processing. This runs 24/7 with no human trigger required. For operations that need broader inbox automation beyond CargoWise document flows — such as auto-routing rate requests, booking confirmations, and exception alerts — our [email intelligence](/solutions/email-intelligence) system extends this capability across your entire freight communications pipeline.
 
 ### Stage 2: Intelligent Pre-Filtering
 
@@ -125,7 +134,7 @@ In practice, validation operates at three levels:
 
 **Business rule validation** applies your company-specific logic. Is this supplier on the approved vendor list? Does the commodity code require additional documentation? Does this shipment route require specific compliance forms?
 
-Each validation check assigns a confidence score. When confidence drops below a configurable threshold on critical fields, the record routes to human review — with the specific field and the reason for the flag clearly displayed. Your operators handle exceptions, not routine data entry.
+Each validation check assigns a confidence score. When confidence drops below a configurable threshold on critical fields, the record routes to human review — with the specific field and the reason for the flag clearly displayed. Your operators handle exceptions, not routine data entry. For organisations that need continuous compliance assurance beyond individual document validation, [SOP compliance monitoring](/solutions/sop-compliance-monitoring) provides an always-on layer that tracks whether your entire document processing pipeline adheres to your standard operating procedures — catching systemic drift before it becomes a pattern.
 
 ## Getting Started: What You Need to Automate CargoWise Data Entry
 
@@ -135,7 +144,7 @@ If you are evaluating [document intelligence](/solutions/document-intelligence) 
 
 **Your CargoWise configuration drives the XML mapping.** The AI system needs to understand your specific module codes, custom fields, branch mappings, and party hierarchies. This is why generic SaaS products often fail in production — they map to a standard CargoWise schema that does not match your actual configuration.
 
-**Start with one document type.** Most deployments begin with commercial invoices or airway bills, prove the pipeline end to end, then expand to additional document types. Trying to automate everything at once increases risk without improving outcomes.
+**Start with one document type.** Most deployments begin with commercial invoices or airway bills, prove the pipeline end to end, then expand to additional document types. Trying to automate everything at once increases risk without improving outcomes. Once your document extraction pipeline is running reliably, the natural next step is [booking automation](/solutions/booking-automation) — taking the validated shipment data and using it to auto-generate carrier bookings, eliminating the second manual bottleneck in your operations flow.
 
 **Expect 4-8 weeks from kickoff to production.** This includes discovery (mapping your documents and CargoWise config), development, parallel testing alongside your manual process, and a monitored go-live.
 

@@ -24,6 +24,9 @@ relatedSolutions:
   - "document-intelligence"
   - "sea-freight-automation"
   - "freight-document-automation"
+  - "email-intelligence"
+  - "booking-automation"
+  - "eta-prediction-exception-management"
 relatedCaseStudies:
   - "hellmann-4pl-control-tower"
 relatedIntegrations:
@@ -129,12 +132,12 @@ Extraction without integration is a science project. The value comes when extrac
 
 The B/L extraction sits within a larger [freight document automation](/solutions/freight-document-automation) pipeline — powered by our [document intelligence](/solutions/document-intelligence) engine — that handles the full journey:
 
-1. **Document arrives** via email, EDI, or portal download
+1. **Document arrives** via email, EDI, or portal download — our [email intelligence](/solutions/email-intelligence) system auto-detects B/L attachments, routes them by shipment reference, and triggers the extraction pipeline without manual forwarding or inbox monitoring
 2. **Classification** identifies the document as a bill of lading (vs. invoice, AWB, packing list)
 3. **Extraction** pulls all structured fields with confidence scores
 4. **Validation** checks field formats, code validity, cross-field rules, and business logic
 5. **TMS mapping** converts extracted data to your TMS's specific schema — CargoWise XML, SAP IDoc, or REST API payload
-6. **Push and confirmation** sends data to the TMS and confirms successful processing
+6. **Push and confirmation** sends data to the TMS and confirms successful processing — B/L data also feeds downstream workflows like [booking automation](/solutions/booking-automation) (where extracted shipment details pre-populate booking confirmations) and [ETA prediction and exception management](/solutions/eta-prediction-exception-management) (where vessel, port, and container data from B/Ls powers real-time arrival tracking and proactive delay alerts)
 
 ### Handling Exceptions
 

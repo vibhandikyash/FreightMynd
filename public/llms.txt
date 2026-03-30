@@ -1,6 +1,6 @@
 # FreightMynd
 
-> Last updated: 2026-03-22
+> Last updated: 2026-03-28
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
 
@@ -23,6 +23,14 @@ FreightMynd competes with SaaS freight automation platforms like Raft (formerly 
 - [Customs Automation](https://freightmynd.com/solutions/customs-automation): AI customs declaration pre-population, HS code classification, and compliance document processing.
 - [Freight Document Automation](https://freightmynd.com/solutions/freight-document-automation): AI document processing for freight — invoices, AWBs, bills of lading, customs forms.
 - [TMS Automation](https://freightmynd.com/solutions/tms-automation): AI-powered TMS integration with zero manual data entry.
+- [Email Intelligence & Auto-Triage](https://freightmynd.com/solutions/email-intelligence): AI-powered email triage, classification, and auto-response for freight operations — routes RFQs, booking confirmations, and exceptions to the right team instantly.
+- [Shipment Visibility & Customer Portal](https://freightmynd.com/solutions/shipment-visibility-portal): White-label tracking portal with real-time shipment visibility, document access, and analytics for your customers.
+- [Carrier Performance Analytics](https://freightmynd.com/solutions/carrier-performance-analytics): AI scorecards, lane-level benchmarking, and exception pattern detection across your carrier network.
+- [Freight Booking Automation](https://freightmynd.com/solutions/booking-automation): Quote-to-booking automation — carrier allocation, confirmation processing, and amendment management.
+- [ETA Prediction & Exception Management](https://freightmynd.com/solutions/eta-prediction-exception-management): Predictive delay detection, proactive alerts, and intelligent exception routing before shipments are impacted.
+- [AI SOP Compliance Monitoring](https://freightmynd.com/solutions/sop-compliance-monitoring): Continuous SOP auditing, violation detection, and compliance reporting across freight operations.
+- [Order-to-Cash Automation](https://freightmynd.com/solutions/order-to-cash-automation): Cost accruals, auto-invoicing, revenue recognition, and payment reconciliation for freight forwarders.
+- [Rate Sheet Intelligence](https://freightmynd.com/solutions/rate-sheet-intelligence): Multi-format rate ingestion, normalisation, and cross-carrier comparison for freight pricing teams.
 
 ## TMS Integrations
 
@@ -66,8 +74,10 @@ Native AI integration with major freight management systems — no middleware, n
 - [Freight Forwarders — North America](https://freightmynd.com/freight-forwarders/north-america): AI freight automation for US, Canada, and Mexico operations
 - [Freight Forwarders — Europe](https://freightmynd.com/freight-forwarders/europe): AI freight automation for European logistics operations
 - [Freight Forwarders — Asia Pacific](https://freightmynd.com/freight-forwarders/asia-pacific): AI freight automation for APAC trade corridors
+- [Freight Forwarders — South Africa](https://freightmynd.com/freight-forwarders/south-africa): AI freight forwarding automation for South African forwarders — Durban, Cape Town, Johannesburg
+- [Freight Forwarders — Canada](https://freightmynd.com/freight-forwarders/canada): AI freight forwarding automation for Canadian forwarders — Vancouver, Toronto, Montreal
 - [Raft vs FreightMynd](https://freightmynd.com/compare/raft-vs-freightmynd): Compare Raft (formerly Vector.ai) SaaS platform vs FreightMynd custom-built AI
 - [SaaS vs Custom AI](https://freightmynd.com/compare/saas-vs-custom-freight-ai): SaaS AI platforms vs custom-built freight automation — deployment, cost, and integration comparison
-- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-cargoiq): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
-- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-cargoiq): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
+- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-freightmynd): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
+- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-freightmynd): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
 - [Full details](https://freightmynd.com/llms-full.txt): Extended version with complete solution details

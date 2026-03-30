@@ -1,6 +1,6 @@
 # FreightMynd — Full Context
 
-> Last updated: 2026-03-22
+> Last updated: 2026-03-28
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
 
@@ -326,6 +326,83 @@ Capabilities:
 
 ---
 
+### South Africa
+URL: https://freightmynd.com/freight-forwarders/south-africa
+
+AI automation for freight forwarders in South Africa — Durban, Cape Town, Johannesburg, and Port Elizabeth.
+
+Capabilities:
+- High-volume port operations — Durban, Cape Town, Ngqura, Port Elizabeth
+- Multi-format document processing for South African trade documentation
+- Customs and SARS compliance automation
+- Cross-border Southern African Development Community (SADC) freight documentation
+- Sea and air freight automation for South African trade corridors
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
+
+### Canada
+URL: https://freightmynd.com/freight-forwarders/canada
+
+AI automation for freight forwarders in Canada — Vancouver, Toronto, Montreal, Calgary, and Halifax.
+
+Capabilities:
+- High-volume port operations — Vancouver, Montreal, Halifax, Prince Rupert
+- Bilingual (English-French) document processing for Canadian trade documentation
+- CBSA customs automation and CARM integration
+- Cross-border US-Canada freight documentation and USMCA compliance
+- Sea, air, and intermodal freight automation for Canadian trade corridors
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
+
+### North America
+URL: https://freightmynd.com/freight-forwarders/north-america
+
+AI automation for freight forwarders in the US, Canada, and Mexico.
+
+Capabilities:
+- High-volume port operations — Los Angeles, Long Beach, New York/New Jersey, Savannah, Houston, Vancouver, Montreal, Manzanillo, Lazaro Cardenas
+- USMCA cross-border documentation and compliance automation
+- US CBP, CBSA, and SAT customs filing automation
+- Multi-modal freight automation across sea, air, road, and rail
+- FTZ and bonded warehouse documentation workflows
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
+
+### Europe
+URL: https://freightmynd.com/freight-forwarders/europe
+
+AI automation for European logistics operations.
+
+Capabilities:
+- High-volume port operations — Rotterdam, Antwerp, Hamburg, Piraeus, Felixstowe, Le Havre
+- Multi-language document processing across EU trade documentation
+- EU customs automation — ICS2, NCTS, AES filing and compliance
+- Post-Brexit UK-EU trade documentation and border workflows
+- Intra-EU and cross-border road freight documentation
+- Air freight hub automation — Frankfurt, Amsterdam, Paris CDG, London Heathrow
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
+
+### Asia Pacific
+URL: https://freightmynd.com/freight-forwarders/asia-pacific
+
+AI automation for APAC trade corridors.
+
+Capabilities:
+- High-volume port operations — Shanghai, Singapore, Shenzhen, Busan, Port Klang, Laem Chabang, Sydney, Melbourne
+- Multi-language document processing for APAC trade documentation (CJK, Thai, Bahasa)
+- APAC customs automation — China Customs, Singapore TradeNet, Australian ICS
+- Trans-Pacific and intra-Asia trade corridor automation
+- Air freight hub automation — Hong Kong, Singapore Changi, Incheon, Narita
+- Free trade agreement documentation (RCEP, CPTPP, ASEAN)
+- Native integration with CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics
+
+---
+
 ## Blog
 
 URL: https://freightmynd.com/blog
@@ -334,12 +411,40 @@ Topics covered: AI for freight forwarding, CargoWise integration guides, documen
 
 ---
 
+## Glossary
+
+URL: https://freightmynd.com/glossary
+
+30+ freight and logistics terms with individual definition pages. Covers foundational logistics terminology and AI automation concepts relevant to freight forwarding operations.
+
+Key terms include:
+- 3PL (Third-Party Logistics) — https://freightmynd.com/glossary/3pl
+- 4PL Control Tower — https://freightmynd.com/glossary/4pl-control-tower
+- Airway Bill (AWB) — https://freightmynd.com/glossary/airway-bill
+- Bill of Lading (B/L) — https://freightmynd.com/glossary/bill-of-lading
+- CargoWise — https://freightmynd.com/glossary/cargowise
+- Customs Declaration Automation — https://freightmynd.com/glossary/customs-declaration-automation
+- Demurrage and Detention — https://freightmynd.com/glossary/demurrage-and-detention
+- Freight Audit — https://freightmynd.com/glossary/freight-audit
+- Freight Forwarding — https://freightmynd.com/glossary/freight-forwarding
+- HS Code — https://freightmynd.com/glossary/hs-code
+- Incoterms — https://freightmynd.com/glossary/incoterms
+- Letter of Credit — https://freightmynd.com/glossary/letter-of-credit
+- Manifest — https://freightmynd.com/glossary/manifest
+- NVOCC — https://freightmynd.com/glossary/nvocc
+- Packing List — https://freightmynd.com/glossary/packing-list
+- Rate Management — https://freightmynd.com/glossary/rate-management
+- Shipment Milestone — https://freightmynd.com/glossary/shipment-milestone
+- TMS (Transport Management System) — https://freightmynd.com/glossary/tms
+
+---
+
 ## Comparisons
 
 - [Raft vs FreightMynd](https://freightmynd.com/compare/raft-vs-freightmynd): Compare Raft (formerly Vector.ai) SaaS platform vs FreightMynd custom-built AI for freight automation
 - [SaaS vs Custom AI](https://freightmynd.com/compare/saas-vs-custom-freight-ai): SaaS AI platforms vs custom-built freight automation — deployment model, cost, integration depth comparison
-- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-cargoiq): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
-- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-cargoiq): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
+- [Zauber vs FreightMynd](https://freightmynd.com/compare/zauber-vs-freightmynd): Compare Zauber SaaS vs FreightMynd custom AI for freight document processing
+- [Freightos vs FreightMynd](https://freightmynd.com/compare/freightos-vs-freightmynd): Compare Freightos marketplace vs FreightMynd custom AI for freight operations
 
 ---
 
