@@ -16,6 +16,7 @@ interface Props {
   slug: string;
   wordCount?: number;
   faq?: Array<{ q: string; a: string }>;
+  howToSteps?: string[];
   relatedSolutions?: string[];
   relatedCaseStudies?: string[];
   relatedIntegrations?: string[];
@@ -38,6 +39,7 @@ const {
   slug,
   wordCount,
   faq,
+  howToSteps,
   relatedSolutions: relatedSolutionSlugs,
   relatedCaseStudies: relatedCaseStudySlugs,
   relatedIntegrations: relatedIntegrationSlugs,
@@ -128,6 +130,18 @@ const articleSchema = {
   ...(wordCount && { "wordCount": wordCount }),
 };
 
+const howToSchema = howToSteps && howToSteps.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": title,
+  "description": description,
+  "step": howToSteps.map((step, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "text": step,
+  })),
+} : null;
+
 const faqSchema = faq && faq.length > 0 ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -138,7 +152,7 @@ const faqSchema = faq && faq.length > 0 ? {
   })),
 } : null;
 
-const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])];
+const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : []), ...(howToSchema ? [howToSchema] : [])];
 ---
 
 <Page
@@ -154,17 +168,17 @@ const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema]
   <!-- Article Hero -->
   <header class="bg-white border-b border-line">
     <div class="container max-w-3xl mx-auto py-12 md:py-16">
-      <div class="flex items-center gap-3 mb-6" data-reveal>
+      <div class="flex items-center gap-3 mb-6">
         <span class="tag tag-brand">{category}</span>
         <span class="text-xs text-ink-4 font-mono">{readingTime}</span>
       </div>
-      <h1 class="text-display-md font-bold text-ink leading-tight" data-reveal data-reveal-delay="1">
+      <h1 class="text-display-md font-bold text-ink leading-tight">
         {title}
       </h1>
-      <p class="mt-4 text-lg text-ink-3 leading-relaxed" data-reveal data-reveal-delay="2">
+      <p class="mt-4 text-lg text-ink-3 leading-relaxed">
         {description}
       </p>
-      <div class="mt-6 flex items-center gap-4 text-sm text-ink-4" data-reveal data-reveal-delay="3">
+      <div class="mt-6 flex items-center gap-4 text-sm text-ink-4">
         <span class="font-medium text-ink-3">{author}</span>
         <span aria-hidden="true" class="w-1 h-1 rounded-full bg-ink-4"></span>
         <time datetime={isoDate}>{formattedDate}</time>
@@ -175,7 +189,7 @@ const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema]
   <!-- Article Body -->
   <article class="section">
     <div class="container max-w-3xl mx-auto">
-      <div class="article-body" data-reveal>
+      <div class="article-body">
         <slot />
       </div>
 
