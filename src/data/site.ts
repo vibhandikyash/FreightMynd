@@ -5,6 +5,7 @@ export const site = {
   description: 'Custom-built freight forwarding software and AI systems that replace manual freight operations. Shipping automation, document processing, and TMS integration trusted by Hellmann Worldwide Logistics.',
   contact: {
     email: 'hello@freightmynd.com',
+    phone: '+91 9722999754',
     auditUrl: '/contact',
   },
   social: {

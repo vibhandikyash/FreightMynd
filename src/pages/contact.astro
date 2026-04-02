@@ -266,6 +266,13 @@ const expectations = [
               </div>
 
               <div>
+                <p class="text-xs font-mono text-ink-4 uppercase tracking-wider mb-1">Phone</p>
+                <a href={`tel:${site.contact.phone.replace(/\s/g, '')}`} class="text-sm text-brand hover:text-brand-dark transition-colors font-medium">
+                  {site.contact.phone}
+                </a>
+              </div>
+
+              <div>
                 <p class="text-xs font-mono text-ink-4 uppercase tracking-wider mb-1">LinkedIn</p>
                 <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer"
                    class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
