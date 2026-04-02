@@ -142,17 +142,14 @@
     // 1. SIGNAL COLLECTOR
     // =========================================================================
 
-    interface PageVisit { path: string; enteredAt: number; scrollDepth: number }
-
+    // Lightweight context — just enough to personalise, nothing creepy
     interface UserContext {
-      pages: PageVisit[];
-      referrer: string;
+      pages: string[];          // paths only, no timestamps or scroll tracking
       device: 'mobile' | 'desktop';
-      locale: string;
-      visitCount: number;
       sessionStart: number;
       nudgeDismissed: boolean;
       chatOpened: boolean;
+      lastChatPage?: string;    // page where chat was last opened
     }
 
     function loadContext(): UserContext {
@@ -162,10 +159,7 @@
       } catch { /* ignore */ }
       return {
         pages: [],
-        referrer: document.referrer || '',
         device: window.innerWidth < 768 ? 'mobile' : 'desktop',
-        locale: navigator.language || 'en',
-        visitCount: 0,
         sessionStart: Date.now(),
         nudgeDismissed: false,
         chatOpened: false,
@@ -176,46 +170,14 @@
       try { sessionStorage.setItem('fmnd_ctx', JSON.stringify(ctx)); } catch { /* ignore */ }
     }
 
-    // Initialize context
     const ctx = loadContext();
-
-    // Increment visit count on new session (no pages yet means fresh session)
-    if (ctx.pages.length === 0) {
-      let visits = 0;
-      try { visits = parseInt(localStorage.getItem('fmnd_visits') || '0', 10) || 0; } catch { /* ignore */ }
-      visits++;
-      try { localStorage.setItem('fmnd_visits', String(visits)); } catch { /* ignore */ }
-      ctx.visitCount = visits;
-      ctx.sessionStart = Date.now();
-      ctx.referrer = document.referrer || '';
-      ctx.device = window.innerWidth < 768 ? 'mobile' : 'desktop';
-      ctx.locale = navigator.language || 'en';
-    }
-
-    // Add current page
     const currentPath = window.location.pathname;
-    const alreadyTracked = ctx.pages.some(p => p.path === currentPath && Date.now() - p.enteredAt < 5000);
-    if (!alreadyTracked) {
-      ctx.pages.push({ path: currentPath, enteredAt: Date.now(), scrollDepth: 0 });
+
+    // Track which pages the user has visited (just paths, nothing more)
+    if (!ctx.pages.includes(currentPath)) {
+      ctx.pages.push(currentPath);
     }
     saveContext(ctx);
-
-    // Throttled scroll depth tracker (every 2 seconds)
-    let scrollThrottleTimer: ReturnType<typeof setTimeout> | null = null;
-    function trackScrollDepth() {
-      if (scrollThrottleTimer) return;
-      scrollThrottleTimer = setTimeout(() => {
-        scrollThrottleTimer = null;
-        const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-        const depth = Math.min(100, Math.round((window.scrollY / docHeight) * 100));
-        const currentPage = ctx.pages.find(p => p.path === currentPath);
-        if (currentPage && depth > currentPage.scrollDepth) {
-          currentPage.scrollDepth = depth;
-          saveContext(ctx);
-        }
-      }, 2000);
-    }
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
 
     // =========================================================================
     // 2. PERSONA INFERENCER
@@ -312,7 +274,7 @@
 
     function inferPersona(ctx: UserContext): InferredPersona {
       const path = currentPath;
-      const allPaths = ctx.pages.map(p => p.path);
+      const allPaths = ctx.pages;
 
       // --- Interest ---
       let interest = 'general';
@@ -516,7 +478,7 @@
       if (currentPath === '/contact' || currentPath === '/contact/') return;
 
       const isMobile = window.innerWidth < 640;
-      const delayMs = isMobile ? 60000 : 45000;
+      const delayMs = isMobile ? 30000 : 20000;
 
       // Account for time already spent on site this session
       const elapsed = Date.now() - ctx.sessionStart;
@@ -667,9 +629,20 @@
         isRestoring = true;
         saved.forEach((msg) => addMessage(msg.role, msg.content));
         isRestoring = false;
+
+        // If user navigated to a different page since last chat, add a contextual bridge
+        if (ctx.lastChatPage && ctx.lastChatPage !== currentPath && currentPath !== '/') {
+          const slug = currentPath.replace(/^\/(solutions|integrations|blog|compare|case-studies)\//, '').replace(/\/$/, '');
+          const title = solutionTitles[slug] || integrationTitles[slug] || null;
+          if (title) {
+            addMessage('assistant', `I see you're now looking at **${title}** — want me to answer questions about that?`);
+            addQuickReplies(persona.quickReplies);
+          }
+        }
         return;
       }
 
+      // First-ever chat open — contextual greeting based on current page
       addMessage('assistant', persona.greeting);
       addQuickReplies(persona.quickReplies);
     }
@@ -698,10 +671,8 @@
             message: text.trim(),
             context: {
               currentPath: currentPath,
-              pagesVisited: ctx.pages.map(p => p.path),
-              timeOnSite: Math.floor((Date.now() - ctx.sessionStart) / 1000),
+              pagesVisited: ctx.pages,
               device: ctx.device,
-              referrer: ctx.referrer,
               interest: persona.interest,
               stage: persona.stage,
             },
@@ -803,8 +774,9 @@
       }
 
       if (isOpen) {
-        // Mark chat as opened in context — suppress future nudges
+        // Mark chat as opened and remember which page
         ctx.chatOpened = true;
+        ctx.lastChatPage = currentPath;
         saveContext(ctx);
 
         // Hide nudge if visible
