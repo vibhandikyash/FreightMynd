@@ -1,8 +1,8 @@
 ---
 /**
- * ChatWidget.astro — Lazy-loaded chat bubble + panel.
- * SSG renders only the bubble button. All JS initializes on first click.
- * Zero Lighthouse impact — no JS executed until user interaction.
+ * ChatWidget.astro — Lazy-loaded chat bubble + panel with context-aware nudging.
+ * SSG renders only the bubble button + nudge containers. All JS initializes on first click.
+ * Signal collector and nudge timer use requestIdleCallback/setTimeout — zero Lighthouse impact.
  */
 ---
 
@@ -19,6 +19,37 @@
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
   </svg>
 </button>
+
+<!-- Nudge Tooltip (Desktop) -->
+<div
+  id="chat-nudge"
+  class="fixed bottom-20 right-5 z-[44] hidden max-w-[250px] rounded-xl bg-white px-4 py-3 shadow-lg border border-[var(--color-line)] opacity-0 translate-y-2 transition-all duration-300 max-sm:hidden"
+  role="status"
+  aria-live="polite"
+>
+  <p id="chat-nudge-text" class="text-sm text-[var(--color-ink)] leading-relaxed pr-5"></p>
+  <button
+    id="chat-nudge-close"
+    class="absolute top-2 right-2 flex h-5 w-5 items-center justify-center rounded-full text-[var(--color-ink-4)] hover:text-[var(--color-ink)] hover:bg-[var(--color-surface)] transition-colors cursor-pointer"
+    aria-label="Dismiss nudge"
+  >
+    <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <!-- Speech bubble tail -->
+  <div class="absolute -bottom-1.5 right-8 h-3 w-3 rotate-45 bg-white border-r border-b border-[var(--color-line)]"></div>
+</div>
+
+<!-- Nudge Bar (Mobile) -->
+<div
+  id="chat-nudge-mobile"
+  class="fixed bottom-20 left-3 right-3 z-[44] hidden sm:hidden rounded-xl bg-white px-4 py-2.5 shadow-lg border border-[var(--color-line)] opacity-0 translate-y-2 transition-all duration-300"
+  role="status"
+  aria-live="polite"
+>
+  <p id="chat-nudge-mobile-text" class="text-sm text-[var(--color-ink)] leading-snug"></p>
+</div>
 
 <!-- Chat Panel (hidden until first click) -->
 <div
@@ -94,13 +125,416 @@
     const form = document.getElementById('chat-form') as HTMLFormElement;
     const input = document.getElementById('chat-input') as HTMLInputElement;
     const sendBtn = document.getElementById('chat-send') as HTMLButtonElement;
+    const nudgeDesktop = document.getElementById('chat-nudge')!;
+    const nudgeDesktopText = document.getElementById('chat-nudge-text')!;
+    const nudgeDesktopClose = document.getElementById('chat-nudge-close')!;
+    const nudgeMobile = document.getElementById('chat-nudge-mobile')!;
+    const nudgeMobileText = document.getElementById('chat-nudge-mobile-text')!;
 
     let isOpen = false;
     let initialized = false;
     let sessionId: string | null = sessionStorage.getItem('ciq_sid');
     let isStreaming = false;
+    let nudgeVisible = false;
+    let nudgeAutoHideTimer: ReturnType<typeof setTimeout> | null = null;
 
-    // --- Session persistence ---
+    // =========================================================================
+    // 1. SIGNAL COLLECTOR
+    // =========================================================================
+
+    interface PageVisit { path: string; enteredAt: number; scrollDepth: number }
+
+    interface UserContext {
+      pages: PageVisit[];
+      referrer: string;
+      device: 'mobile' | 'desktop';
+      locale: string;
+      visitCount: number;
+      sessionStart: number;
+      nudgeDismissed: boolean;
+      chatOpened: boolean;
+    }
+
+    function loadContext(): UserContext {
+      try {
+        const raw = sessionStorage.getItem('fmnd_ctx');
+        if (raw) return JSON.parse(raw);
+      } catch { /* ignore */ }
+      return {
+        pages: [],
+        referrer: document.referrer || '',
+        device: window.innerWidth < 768 ? 'mobile' : 'desktop',
+        locale: navigator.language || 'en',
+        visitCount: 0,
+        sessionStart: Date.now(),
+        nudgeDismissed: false,
+        chatOpened: false,
+      };
+    }
+
+    function saveContext(ctx: UserContext) {
+      try { sessionStorage.setItem('fmnd_ctx', JSON.stringify(ctx)); } catch { /* ignore */ }
+    }
+
+    // Initialize context
+    const ctx = loadContext();
+
+    // Increment visit count on new session (no pages yet means fresh session)
+    if (ctx.pages.length === 0) {
+      let visits = 0;
+      try { visits = parseInt(localStorage.getItem('fmnd_visits') || '0', 10) || 0; } catch { /* ignore */ }
+      visits++;
+      try { localStorage.setItem('fmnd_visits', String(visits)); } catch { /* ignore */ }
+      ctx.visitCount = visits;
+      ctx.sessionStart = Date.now();
+      ctx.referrer = document.referrer || '';
+      ctx.device = window.innerWidth < 768 ? 'mobile' : 'desktop';
+      ctx.locale = navigator.language || 'en';
+    }
+
+    // Add current page
+    const currentPath = window.location.pathname;
+    const alreadyTracked = ctx.pages.some(p => p.path === currentPath && Date.now() - p.enteredAt < 5000);
+    if (!alreadyTracked) {
+      ctx.pages.push({ path: currentPath, enteredAt: Date.now(), scrollDepth: 0 });
+    }
+    saveContext(ctx);
+
+    // Throttled scroll depth tracker (every 2 seconds)
+    let scrollThrottleTimer: ReturnType<typeof setTimeout> | null = null;
+    function trackScrollDepth() {
+      if (scrollThrottleTimer) return;
+      scrollThrottleTimer = setTimeout(() => {
+        scrollThrottleTimer = null;
+        const docHeight = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+        const depth = Math.min(100, Math.round((window.scrollY / docHeight) * 100));
+        const currentPage = ctx.pages.find(p => p.path === currentPath);
+        if (currentPage && depth > currentPage.scrollDepth) {
+          currentPage.scrollDepth = depth;
+          saveContext(ctx);
+        }
+      }, 2000);
+    }
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+
+    // =========================================================================
+    // 2. PERSONA INFERENCER
+    // =========================================================================
+
+    interface InferredPersona {
+      interest: string;
+      stage: 'exploring' | 'researching' | 'evaluating' | 'ready';
+      role: 'ops' | 'tech' | 'exec' | 'unknown';
+      pain: string;
+      nudgeMessage: string;
+      greeting: string;
+      quickReplies: string[];
+    }
+
+    // Solution slug to short title map
+    const solutionTitles: Record<string, string> = {
+      '4pl-control-tower-automation': '4PL Control Tower Automation',
+      'autonomous-quote-management': 'Autonomous Quote Management',
+      'document-intelligence': 'Document Intelligence',
+      'freight-pricing-ai': 'AI-Powered Freight Pricing',
+      'sea-freight-automation': 'Sea Freight Automation',
+      'air-freight-automation': 'Air Freight Automation',
+      '3pl-4pl-operations': '3PL/4PL Operations',
+      'smart-invoice-processing': 'Smart Invoice Processing',
+      'customs-automation': 'Customs Automation',
+      'email-intelligence': 'Email Intelligence',
+      'booking-automation': 'Booking Automation',
+      'carrier-performance-analytics': 'Carrier Performance Analytics',
+      'shipment-visibility-portal': 'Shipment Visibility Portal',
+      'eta-prediction-exception-management': 'ETA Prediction & Exception Management',
+      'sop-compliance-monitoring': 'SOP Compliance Monitoring',
+      'order-to-cash-automation': 'Order-to-Cash Automation',
+      'rate-sheet-intelligence': 'Rate Sheet Intelligence',
+      'freight-document-automation': 'Freight Document Automation',
+      'freight-spend-analytics': 'Freight Spend Analytics',
+      'freight-revenue-recovery': 'Freight Revenue Recovery',
+      'tms-automation': 'TMS Automation',
+    };
+
+    // Integration slug to display name
+    const integrationTitles: Record<string, string> = {
+      'cargowise': 'CargoWise',
+      'sap-tm': 'SAP TM',
+      'oracle-tms': 'Oracle TMS',
+      'microsoft-dynamics': 'Microsoft Dynamics',
+      'descartes': 'Descartes',
+    };
+
+    // Pain point map by interest slug
+    const painMap: Record<string, string> = {
+      '4pl-control-tower-automation': 'manual document processing bottleneck',
+      'autonomous-quote-management': 'slow quote turnaround time',
+      'document-intelligence': 'manual data extraction from freight documents',
+      'freight-pricing-ai': 'inconsistent freight pricing and margin leakage',
+      'sea-freight-automation': 'manual sea freight booking and tracking',
+      'air-freight-automation': 'manual air freight operations',
+      '3pl-4pl-operations': 'disconnected 3PL/4PL workflows',
+      'smart-invoice-processing': 'manual invoice matching and processing',
+      'customs-automation': 'customs filing bottleneck',
+      'email-intelligence': 'inbox overload and missed communications',
+      'booking-automation': 'manual booking workflows',
+      'carrier-performance-analytics': 'lack of carrier performance visibility',
+      'shipment-visibility-portal': 'fragmented shipment tracking',
+      'eta-prediction-exception-management': 'reactive exception management',
+      'sop-compliance-monitoring': 'SOP compliance gaps',
+      'order-to-cash-automation': 'slow order-to-cash cycle',
+      'rate-sheet-intelligence': 'manual rate sheet ingestion',
+      'freight-document-automation': 'manual freight document handling',
+      'freight-spend-analytics': 'lack of freight spend visibility',
+      'freight-revenue-recovery': 'revenue leakage in freight operations',
+      'tms-automation': 'underutilized TMS capabilities',
+      'cargowise-integration': 'CargoWise integration complexity',
+      'tms-integration': 'TMS integration challenges',
+      'general': 'manual freight operations',
+    };
+
+    // Nudge messages by path
+    const nudgeMessages: Record<string, string> = {
+      '/solutions/customs-automation': 'Ask me about customs filing time reduction',
+      '/solutions/4pl-control-tower-automation': 'Curious how we process 300-page batches?',
+      '/solutions/autonomous-quote-management': 'Want to cut quoting time from 45 min to 5?',
+      '/solutions/email-intelligence': 'Ask me about inbox automation',
+      '/solutions/booking-automation': 'Ask about automated booking workflows',
+      '/solutions/carrier-performance-analytics': 'Want to know which carriers actually perform?',
+      '/solutions/shipment-visibility-portal': 'Ask about white-label tracking portals',
+      '/solutions/eta-prediction-exception-management': 'Ask how we predict delays 24-72 hours early',
+      '/solutions/sop-compliance-monitoring': 'Ask about automated SOP auditing',
+      '/solutions/order-to-cash-automation': 'Ask about closing your books in 3 days',
+      '/solutions/rate-sheet-intelligence': 'Ask about automated rate sheet ingestion',
+      '/solutions/freight-pricing-ai': 'Ask about AI-powered freight pricing',
+      '/solutions/smart-invoice-processing': 'Ask about automated invoice matching',
+    };
+
+    function inferPersona(ctx: UserContext): InferredPersona {
+      const path = currentPath;
+      const allPaths = ctx.pages.map(p => p.path);
+
+      // --- Interest ---
+      let interest = 'general';
+      if (path.startsWith('/solutions/') && path !== '/solutions/') {
+        interest = path.replace('/solutions/', '').replace(/\/$/, '');
+      } else if (path.startsWith('/integrations/') && path !== '/integrations/') {
+        interest = path.replace('/integrations/', '').replace(/\/$/, '') + '-integration';
+      } else if (path.startsWith('/blog/') && path !== '/blog/') {
+        interest = path.replace('/blog/', '').replace(/\/$/, '');
+      } else if (path.startsWith('/compare/')) {
+        interest = 'comparison';
+      } else if (path.startsWith('/case-studies/')) {
+        interest = 'case-study';
+      }
+
+      // --- Stage ---
+      let stage: InferredPersona['stage'] = 'exploring';
+      const uniquePages = new Set(allPaths).size;
+      if (allPaths.some(p => p === '/contact')) {
+        stage = 'ready';
+      } else if (allPaths.some(p => p.startsWith('/compare/'))) {
+        stage = 'evaluating';
+      } else if (uniquePages >= 2) {
+        stage = 'researching';
+      }
+
+      // --- Role ---
+      let role: InferredPersona['role'] = 'unknown';
+      if (allPaths.some(p => p.startsWith('/solutions/'))) {
+        role = 'ops';
+      }
+      if (allPaths.some(p => p.startsWith('/integrations/'))) {
+        role = 'tech';
+      }
+      if (allPaths.some(p => p.startsWith('/about') || p.startsWith('/compare/'))) {
+        role = 'exec';
+      }
+
+      // --- Pain ---
+      const painKey = interest.replace(/-integration$/, '-integration');
+      const pain = painMap[painKey] || painMap[interest] || painMap['general'];
+
+      // --- Nudge message ---
+      let nudgeMessage: string;
+      if (nudgeMessages[path]) {
+        nudgeMessage = nudgeMessages[path];
+      } else if (path.startsWith('/solutions/')) {
+        nudgeMessage = 'Not sure which solution fits? Ask me';
+      } else if (path.startsWith('/compare/')) {
+        nudgeMessage = 'Comparing options? I can help you decide';
+      } else if (path.startsWith('/integrations/cargowise')) {
+        nudgeMessage = 'Ask about CargoWise AI integration';
+      } else if (path.startsWith('/integrations/')) {
+        nudgeMessage = 'Ask about TMS integration';
+      } else if (path.startsWith('/blog/')) {
+        nudgeMessage = 'Have a question about this topic?';
+      } else if (path.startsWith('/case-studies/')) {
+        nudgeMessage = 'Want to see how this applies to your ops?';
+      } else if (path === '/' || path === '') {
+        nudgeMessage = 'What freight process takes the most time?';
+      } else {
+        nudgeMessage = 'Questions about freight AI automation?';
+      }
+
+      // --- Greeting ---
+      let greeting: string;
+      if (path === '/' || path === '') {
+        greeting = "Hey! I'm **Cargo**, FreightMynd's AI assistant. I help freight forwarding teams understand how AI can automate their operations.\n\nWhat's taking the most time in your ops right now?";
+      } else if (path.startsWith('/solutions/') && path !== '/solutions/') {
+        const slug = path.replace('/solutions/', '').replace(/\/$/, '');
+        const title = solutionTitles[slug] || slug.replace(/-/g, ' ');
+        greeting = `Hey! I see you're looking at **${title}**. I can answer questions about how it works, implementation timelines, or expected results.\n\nWhat would you like to know?`;
+      } else if (path.startsWith('/compare/')) {
+        greeting = "Hey! Evaluating your options for freight AI? I can help you understand the differences and figure out what fits your operation.\n\nWhat's most important to you \u2014 customization, speed, or cost?";
+      } else if (path.startsWith('/blog/') && path !== '/blog/') {
+        const slug = path.replace('/blog/', '').replace(/\/$/, '');
+        const topic = slug.replace(/-/g, ' ');
+        greeting = `Hey! I see you're reading about **${topic}**. I can answer questions or point you to related solutions.\n\nAnything specific you're looking into?`;
+      } else if (path.startsWith('/integrations/') && path !== '/integrations/') {
+        const slug = path.replace('/integrations/', '').replace(/\/$/, '');
+        const title = integrationTitles[slug] || slug.replace(/-/g, ' ');
+        greeting = `Hey! Looking at **${title}** integration? I can explain how our AI layer connects with your TMS.\n\nWhat system are you running?`;
+      } else {
+        greeting = "Hey! I'm **Cargo**, FreightMynd's AI assistant. I help freight forwarding teams understand how AI can automate their operations.\n\nWhat are you looking into?";
+      }
+
+      // --- Quick replies ---
+      let quickReplies: string[];
+      if (path.startsWith('/solutions/') && path !== '/solutions/') {
+        quickReplies = ['How does it work?', 'Implementation timeline', 'Expected ROI', 'See a case study'];
+      } else if (path.startsWith('/compare/')) {
+        quickReplies = ['What makes you different?', 'Pricing model', 'See case studies'];
+      } else if (path.startsWith('/blog/')) {
+        quickReplies = ['Related solutions', 'Book an audit', 'Just exploring'];
+      } else if (path.startsWith('/integrations/')) {
+        quickReplies = ['How does it integrate?', 'What can be automated?', 'Implementation time'];
+      } else {
+        quickReplies = ['Document processing', 'Quote automation', 'TMS integration', 'Just exploring'];
+      }
+
+      return { interest, stage, role, pain, nudgeMessage, greeting, quickReplies };
+    }
+
+    const persona = inferPersona(ctx);
+
+    // =========================================================================
+    // 3. NUDGE SYSTEM
+    // =========================================================================
+
+    function showNudge() {
+      if (ctx.nudgeDismissed || ctx.chatOpened || isOpen) return;
+      if (currentPath === '/contact' || currentPath === '/contact/') return;
+
+      const isMobile = window.innerWidth < 640;
+
+      if (isMobile) {
+        nudgeMobileText.textContent = persona.nudgeMessage;
+        nudgeMobile.classList.remove('hidden');
+        // Trigger entrance animation on next frame
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            nudgeMobile.classList.remove('opacity-0', 'translate-y-2');
+            nudgeMobile.classList.add('opacity-100', 'translate-y-0');
+          });
+        });
+      } else {
+        nudgeDesktopText.textContent = persona.nudgeMessage;
+        nudgeDesktop.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            nudgeDesktop.classList.remove('opacity-0', 'translate-y-2');
+            nudgeDesktop.classList.add('opacity-100', 'translate-y-0');
+          });
+        });
+      }
+
+      nudgeVisible = true;
+
+      // Auto-hide after 8 seconds
+      nudgeAutoHideTimer = setTimeout(hideNudge, 8000);
+    }
+
+    function hideNudge(markDismissed = false) {
+      if (nudgeAutoHideTimer) {
+        clearTimeout(nudgeAutoHideTimer);
+        nudgeAutoHideTimer = null;
+      }
+
+      // Fade out
+      nudgeDesktop.classList.add('opacity-0', 'translate-y-2');
+      nudgeDesktop.classList.remove('opacity-100', 'translate-y-0');
+      nudgeMobile.classList.add('opacity-0', 'translate-y-2');
+      nudgeMobile.classList.remove('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        nudgeDesktop.classList.add('hidden');
+        nudgeMobile.classList.add('hidden');
+      }, 300);
+
+      nudgeVisible = false;
+
+      if (markDismissed) {
+        ctx.nudgeDismissed = true;
+        saveContext(ctx);
+      }
+    }
+
+    // Desktop nudge close button
+    nudgeDesktopClose.addEventListener('click', (e) => {
+      e.stopPropagation();
+      hideNudge(true);
+    });
+
+    // Clicking the desktop nudge opens chat
+    nudgeDesktop.addEventListener('click', () => {
+      hideNudge(false);
+      if (!isOpen) toggleChat();
+    });
+
+    // Clicking/tapping the mobile nudge opens chat
+    nudgeMobile.addEventListener('click', () => {
+      hideNudge(false);
+      if (!isOpen) toggleChat();
+    });
+
+    // Mobile: swipe down to dismiss
+    let touchStartY = 0;
+    nudgeMobile.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    nudgeMobile.addEventListener('touchend', (e) => {
+      const deltaY = e.changedTouches[0].clientY - touchStartY;
+      if (deltaY > 30) {
+        hideNudge(true);
+      }
+    }, { passive: true });
+
+    // Schedule nudge — non-blocking via requestIdleCallback or setTimeout
+    function scheduleNudge() {
+      if (ctx.nudgeDismissed || ctx.chatOpened) return;
+      if (currentPath === '/contact' || currentPath === '/contact/') return;
+
+      const isMobile = window.innerWidth < 640;
+      const delayMs = isMobile ? 60000 : 45000;
+
+      // Account for time already spent on site this session
+      const elapsed = Date.now() - ctx.sessionStart;
+      const remaining = Math.max(0, delayMs - elapsed);
+
+      const schedule = typeof requestIdleCallback !== 'undefined'
+        ? (cb: () => void) => requestIdleCallback(() => setTimeout(cb, remaining))
+        : (cb: () => void) => setTimeout(cb, remaining);
+
+      schedule(showNudge);
+    }
+
+    scheduleNudge();
+
+    // =========================================================================
+    // SESSION PERSISTENCE
+    // =========================================================================
+
     interface StoredMessage { role: 'user' | 'assistant'; content: string }
 
     function saveMessages(msgs: StoredMessage[]) {
@@ -119,7 +553,10 @@
       sessionStorage.setItem('ciq_sid', id);
     }
 
-    // --- Minimal markdown parser ---
+    // =========================================================================
+    // MINIMAL MARKDOWN PARSER
+    // =========================================================================
+
     function md(text: string): string {
       // Strip any LEAD markers that slipped through
       text = text.replace(/<!--LEAD:\{.*?\}-->/g, '');
@@ -138,7 +575,10 @@
       return text;
     }
 
-    // --- Message rendering ---
+    // =========================================================================
+    // MESSAGE RENDERING
+    // =========================================================================
+
     function addMessage(role: 'user' | 'assistant', content: string) {
       const wrapper = document.createElement('div');
       wrapper.className =
@@ -146,19 +586,19 @@
           ? 'flex justify-end'
           : 'flex justify-start';
 
-      const bubble = document.createElement('div');
-      bubble.className =
+      const msgBubble = document.createElement('div');
+      msgBubble.className =
         role === 'user'
           ? 'max-w-[85%] rounded-2xl rounded-br-sm bg-[var(--color-brand)] px-3.5 py-2.5 text-sm text-white leading-relaxed'
           : 'max-w-[85%] rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] leading-relaxed';
 
       if (role === 'assistant') {
-        bubble.innerHTML = md(content);
+        msgBubble.innerHTML = md(content);
       } else {
-        bubble.textContent = content;
+        msgBubble.textContent = content;
       }
 
-      wrapper.appendChild(bubble);
+      wrapper.appendChild(msgBubble);
       messagesEl.appendChild(wrapper);
       scrollToBottom();
 
@@ -177,15 +617,15 @@
       wrapper.className = 'flex justify-start';
       wrapper.id = 'streaming-msg';
 
-      const bubble = document.createElement('div');
-      bubble.className =
+      const msgBubble = document.createElement('div');
+      msgBubble.className =
         'max-w-[85%] rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] leading-relaxed';
-      bubble.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-ink-4)] animate-pulse"></span>';
+      msgBubble.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-ink-4)] animate-pulse"></span>';
 
-      wrapper.appendChild(bubble);
+      wrapper.appendChild(msgBubble);
       messagesEl.appendChild(wrapper);
       scrollToBottom();
-      return bubble;
+      return msgBubble;
     }
 
     function addQuickReplies(chips: string[]) {
@@ -216,7 +656,10 @@
       });
     }
 
-    // --- Greeting or restore ---
+    // =========================================================================
+    // GREETING OR RESTORE
+    // =========================================================================
+
     function showGreeting() {
       const saved = loadMessages();
       if (saved.length > 0) {
@@ -227,19 +670,14 @@
         return;
       }
 
-      addMessage(
-        'assistant',
-        "Hey! I'm **Cargo**, FreightMynd's AI assistant. I help freight forwarding teams understand how AI can automate their operations.\n\nWhat are you looking into?"
-      );
-      addQuickReplies([
-        'Document processing',
-        'Quote automation',
-        'TMS integration',
-        'Just exploring',
-      ]);
+      addMessage('assistant', persona.greeting);
+      addQuickReplies(persona.quickReplies);
     }
 
-    // --- Send message ---
+    // =========================================================================
+    // SEND MESSAGE (with context)
+    // =========================================================================
+
     async function sendMessage(text: string) {
       if (!text.trim() || isStreaming) return;
 
@@ -255,7 +693,19 @@
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sessionId, message: text.trim() }),
+          body: JSON.stringify({
+            sessionId,
+            message: text.trim(),
+            context: {
+              currentPath: currentPath,
+              pagesVisited: ctx.pages.map(p => p.path),
+              timeOnSite: Math.floor((Date.now() - ctx.sessionStart) / 1000),
+              device: ctx.device,
+              referrer: ctx.referrer,
+              interest: persona.interest,
+              stage: persona.stage,
+            },
+          }),
         });
 
         if (!res.ok) {
@@ -336,7 +786,10 @@
       }
     }
 
-    // --- Toggle panel ---
+    // =========================================================================
+    // TOGGLE PANEL
+    // =========================================================================
+
     function toggleChat() {
       isOpen = !isOpen;
       panel.classList.toggle('hidden', !isOpen);
@@ -350,6 +803,13 @@
       }
 
       if (isOpen) {
+        // Mark chat as opened in context — suppress future nudges
+        ctx.chatOpened = true;
+        saveContext(ctx);
+
+        // Hide nudge if visible
+        if (nudgeVisible) hideNudge(false);
+
         input.focus();
       }
     }
@@ -363,7 +823,10 @@
       bubble.focus();
     }
 
-    // --- Event listeners ---
+    // =========================================================================
+    // EVENT LISTENERS
+    // =========================================================================
+
     bubble.addEventListener('click', toggleChat);
     closeBtn.addEventListener('click', closeChat);
 

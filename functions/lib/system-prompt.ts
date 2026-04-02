@@ -62,3 +62,186 @@ Only include fields you actually collected. The "interest" should be the slug of
 - If asked about something outside freight/logistics AI, politely redirect
 - FreightMynd is built by Bitontree (bitontree.com)
 - Implementation typically takes 6-14 weeks depending on scope`;
+
+// --- Context-aware prompt builder ---
+
+interface ChatContext {
+  currentPath?: string;
+  pagesVisited?: string[];
+  timeOnSite?: number;
+  device?: string;
+  referrer?: string;
+  interest?: string;
+  stage?: string;
+}
+
+function pathToPageName(path: string): string {
+  if (path === '/') return 'Homepage';
+  if (path === '/solutions') return 'Solutions hub';
+  if (path === '/integrations') return 'Integrations hub';
+  if (path === '/contact') return 'Contact page';
+  if (path === '/about') return 'About page';
+  if (path === '/blog') return 'Blog';
+  if (path === '/case-studies') return 'Case Studies hub';
+
+  const solutionMatch = path.match(/\/solutions\/(.+?)\/?$/);
+  if (solutionMatch) {
+    const sol = solutions.find((s) => s.url.includes(solutionMatch[1]));
+    return sol ? `${sol.name} solution page` : 'Solution page';
+  }
+
+  const integrationMatch = path.match(/\/integrations\/(.+?)\/?$/);
+  if (integrationMatch) {
+    const intg = integrations.find((i) => i.url.includes(integrationMatch[1]));
+    return intg ? `${intg.name} integration page` : 'Integration page';
+  }
+
+  if (path.startsWith('/blog/')) return 'Blog post';
+  if (path.startsWith('/case-studies/')) return 'Case study';
+  if (path.startsWith('/compare/')) return 'Comparison page';
+  if (path.startsWith('/freight-forwarders')) return 'Freight forwarders page';
+
+  return path;
+}
+
+function buildContextBlock(context: ChatContext): string {
+  const lines: string[] = [];
+
+  if (context.currentPath) {
+    lines.push(`- Currently viewing: ${pathToPageName(context.currentPath)}`);
+  }
+
+  if (context.pagesVisited && context.pagesVisited.length > 0) {
+    const journey = context.pagesVisited.map(pathToPageName).join(' → ');
+    const timeStr = context.timeOnSite
+      ? `, ${Math.round(context.timeOnSite / 60)} min on site`
+      : '';
+    lines.push(`- Journey: ${journey} (${context.pagesVisited.length} pages${timeStr})`);
+  } else if (context.timeOnSite) {
+    lines.push(`- Time on site: ${Math.round(context.timeOnSite / 60)} min`);
+  }
+
+  if (context.device) {
+    lines.push(`- Device: ${context.device}`);
+  }
+
+  if (context.referrer) {
+    lines.push(`- Referrer: ${context.referrer}`);
+  }
+
+  if (context.interest) {
+    lines.push(`- Inferred interest: ${context.interest}`);
+  }
+
+  if (context.stage) {
+    lines.push(`- Buyer stage: ${context.stage}`);
+  }
+
+  return lines.join('\n');
+}
+
+function buildBehaviorRules(context: ChatContext): string {
+  const rules: string[] = [];
+
+  // Interest-specific rules
+  if (context.interest) {
+    const solution = solutions.find((s) => s.url.includes(context.interest!));
+    if (solution) {
+      rules.push(
+        `- The visitor is interested in ${solution.name}. Lead with this solution's capabilities and results.`
+      );
+      rules.push(`- Reference specific metrics: ${solution.metrics.join(', ')}`);
+    }
+  }
+
+  // Stage-specific rules
+  switch (context.stage) {
+    case 'exploring':
+      rules.push(
+        '- Visitor is early-stage. Be educational. Ask about their operations. Do not push for contact info yet.'
+      );
+      break;
+    case 'researching':
+      rules.push(
+        '- Visitor is researching solutions. Provide specific technical details. Link to relevant solution pages.'
+      );
+      break;
+    case 'evaluating':
+      rules.push(
+        '- Visitor is evaluating options (visited comparison page). Differentiate FreightMynd. Address build vs buy.'
+      );
+      break;
+    case 'ready':
+      rules.push(
+        '- Visitor appears ready to engage (visited contact page). Be concise. Offer to book an audit directly.'
+      );
+      break;
+  }
+
+  // Path-specific rules
+  if (context.currentPath?.startsWith('/compare/')) {
+    rules.push(
+      '- Visitor is on a comparison page. They are evaluating competitors. Focus on differentiation, not features.'
+    );
+  }
+  if (context.currentPath?.startsWith('/integrations/')) {
+    rules.push(
+      '- Visitor is looking at TMS integrations. Ask which TMS they run. Be technical about integration methods.'
+    );
+  }
+  if (context.currentPath?.startsWith('/blog/')) {
+    rules.push(
+      '- Visitor is reading a blog post. Add value beyond what is on the page. Do not repeat the content they just read.'
+    );
+  }
+  if (context.currentPath?.startsWith('/case-studies/')) {
+    rules.push(
+      '- Visitor is reading a case study. They want proof. Reference specific results and offer to discuss their similar use case.'
+    );
+  }
+
+  // Device rules
+  if (context.device === 'mobile') {
+    rules.push(
+      '- Visitor is on mobile. Keep responses extra short (under 100 words). Use bullet points over paragraphs.'
+    );
+  }
+
+  // Time rules
+  if (context.timeOnSite && context.timeOnSite > 300) {
+    rules.push(
+      '- Visitor has been on site for 5+ minutes. They are engaged. This is a warm lead — transition to contact capture sooner.'
+    );
+  }
+
+  // Pages visited rules
+  if (context.pagesVisited && context.pagesVisited.length >= 4) {
+    rules.push(
+      '- Visitor has viewed 4+ pages. High engagement. They are likely building a business case. Offer ROI data and implementation timelines.'
+    );
+  }
+
+  return rules.join('\n');
+}
+
+export function buildContextualPrompt(context?: ChatContext): string {
+  let prompt = SYSTEM_PROMPT;
+
+  if (!context) return prompt;
+
+  const contextBlock = buildContextBlock(context);
+  const behaviorRules = buildBehaviorRules(context);
+
+  // Only append if there is meaningful context
+  if (!contextBlock && !behaviorRules) return prompt;
+
+  if (contextBlock) {
+    prompt += '\n\n## Current visitor context\n\n' + contextBlock;
+  }
+
+  if (behaviorRules) {
+    prompt += '\n\n## Context-aware behavior rules\n\n' + behaviorRules;
+  }
+
+  return prompt;
+}

@@ -3,7 +3,7 @@
  * Main chat endpoint — streams Claude Haiku responses back to the client.
  */
 
-import { SYSTEM_PROMPT } from '../lib/system-prompt';
+import { buildContextualPrompt } from '../lib/system-prompt';
 import { checkRateLimit } from '../lib/rate-limiter';
 import { sendLeadEmail } from '../lib/send-lead-email';
 
@@ -19,6 +19,15 @@ interface Env {
 interface ChatRequest {
   sessionId?: string;
   message: string;
+  context?: {
+    currentPath?: string;
+    pagesVisited?: string[];
+    timeOnSite?: number;
+    device?: string;
+    referrer?: string;
+    interest?: string;
+    stage?: string;
+  };
 }
 
 interface Message {
@@ -126,7 +135,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 512,
-        system: SYSTEM_PROMPT,
+        system: buildContextualPrompt(body.context),
         messages: conversationMessages.map((m) => ({
           role: m.role,
           content: m.content,
