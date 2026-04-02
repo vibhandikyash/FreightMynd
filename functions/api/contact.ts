@@ -13,6 +13,7 @@ interface ContactForm {
   name: string;
   email: string;
   company: string;
+  phone?: string;
   role?: string;
   message?: string;
   interest?: string;
@@ -124,6 +125,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${escapeHtml(data.company.trim())}</td>
       </tr>
       <tr>
+        <td style="padding: 8px 12px; font-size: 13px; color: #4A5568; border-bottom: 1px solid #E2E8F0;"><strong>Phone</strong></td>
+        <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${data.phone ? `<a href="tel:${escapeHtml(data.phone.trim())}" style="color: #1A5FA8;">${escapeHtml(data.phone.trim())}</a>` : '—'}</td>
+      </tr>
+      <tr>
         <td style="padding: 8px 12px; font-size: 13px; color: #4A5568; border-bottom: 1px solid #E2E8F0;"><strong>Role</strong></td>
         <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${data.role ? escapeHtml(data.role.trim()) : '—'}</td>
       </tr>
@@ -155,6 +160,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 Name: ${data.name.trim()}
 Email: ${data.email.trim()}
 Company: ${data.company.trim()}
+Phone: ${data.phone?.trim() || '—'}
 Role: ${data.role?.trim() || '—'}
 ${data.interest ? `Interest: ${data.interest}\n` : ''}Submitted: ${timestamp}
 

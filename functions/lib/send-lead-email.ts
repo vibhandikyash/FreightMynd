@@ -12,6 +12,7 @@ interface LeadData {
   name?: string;
   email?: string;
   company?: string;
+  phone?: string;
   role?: string;
   interest?: string;
   summary?: string;
@@ -71,6 +72,10 @@ export async function sendLeadEmail(lead: LeadData, env: EmailEnv): Promise<bool
         <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${lead.company || '—'}</td>
       </tr>
       <tr>
+        <td style="padding: 8px 12px; font-size: 13px; color: #4A5568; border-bottom: 1px solid #E2E8F0;"><strong>Phone</strong></td>
+        <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${lead.phone ? `<a href="tel:${lead.phone}" style="color: #1A5FA8;">${lead.phone}</a>` : '—'}</td>
+      </tr>
+      <tr>
         <td style="padding: 8px 12px; font-size: 13px; color: #4A5568; border-bottom: 1px solid #E2E8F0;"><strong>Role</strong></td>
         <td style="padding: 8px 12px; font-size: 14px; border-bottom: 1px solid #E2E8F0;">${lead.role || '—'}</td>
       </tr>
@@ -106,6 +111,7 @@ export async function sendLeadEmail(lead: LeadData, env: EmailEnv): Promise<bool
 Name: ${lead.name || '—'}
 Email: ${lead.email || '—'}
 Company: ${lead.company || '—'}
+Phone: ${lead.phone || '—'}
 Role: ${lead.role || '—'}
 Interest: ${lead.interest || '—'}
 Summary: ${lead.summary || '—'}

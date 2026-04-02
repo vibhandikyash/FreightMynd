@@ -35,7 +35,7 @@ const expectations = [
 
 <Page
   title="Book a Free Freight Operations Audit | FreightMynd"
-  description="Book a free 30-minute freight operations audit. We'll map your workflow, identify automation opportunities, and deliver a custom roadmap."
+  description="Book a free 30-minute freight operations audit. We map your workflows, identify automation opportunities, and deliver a custom AI automation roadmap."
   schema={breadcrumbSchema}
 >
   <!-- Breadcrumb -->
@@ -186,6 +186,12 @@ const expectations = [
                        placeholder="Company name" />
               </div>
               <div>
+                <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone</label>
+                <input type="tel" id="phone" name="phone"
+                       class="w-full px-4 py-3 rounded-xl border border-line bg-surface/50 text-ink text-sm placeholder:text-ink-4 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-colors"
+                       placeholder="+1 (555) 000-0000" />
+              </div>
+              <div>
                 <label for="role" class="block text-sm font-medium text-ink mb-1.5">Role / Title</label>
                 <input type="text" id="role" name="role"
                        class="w-full px-4 py-3 rounded-xl border border-line bg-surface/50 text-ink text-sm placeholder:text-ink-4 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-colors"
@@ -326,6 +332,7 @@ const expectations = [
         name: (document.getElementById('name') as HTMLInputElement).value,
         email: (document.getElementById('email') as HTMLInputElement).value,
         company: (document.getElementById('company') as HTMLInputElement).value,
+        phone: (document.getElementById('phone') as HTMLInputElement).value || undefined,
         role: (document.getElementById('role') as HTMLInputElement).value || undefined,
         message: (document.getElementById('message') as HTMLTextAreaElement).value || undefined,
         interest: interestField.value || undefined,
