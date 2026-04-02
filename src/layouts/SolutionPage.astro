@@ -324,19 +324,60 @@ const primaryCaseStudy = relatedCaseStudyData[0];
         </p>
         <h2 class="text-display-md font-bold text-white" style="padding-left:0; border-left:none;">Measurable Impact</h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- Headline metrics row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {solution.results.map((r, i) => (
-          <div class="p-6 rounded-2xl border border-white/10 bg-white/[0.04]" data-reveal data-reveal-delay={String(i + 1)}>
-            <p class="text-display-sm font-bold text-brand-mid">{r.value}</p>
-            <p class="mt-2 text-sm text-white/60">{r.label}</p>
-            {r.context && (
-              <p class="mt-2 text-xs text-white/40 leading-relaxed">{r.context}</p>
-            )}
-            {r.businessOutcome && (
-              <p class="mt-2 text-xs italic text-brand-mid/70 leading-relaxed">{r.businessOutcome}</p>
-            )}
+          <div class="text-center" data-reveal data-reveal-delay={String(i + 1)}>
+            <p class="text-display-md font-bold text-brand-mid">{r.value}</p>
+            <p class="mt-1 text-sm font-medium text-white/70">{r.label}</p>
           </div>
         ))}
+      </div>
+
+      <!-- Detailed results table -->
+      <div class="max-w-4xl mx-auto" data-reveal data-reveal-delay="2">
+        <!-- Desktop table -->
+        <div class="hidden md:block overflow-x-auto rounded-2xl border border-white/10">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-white/10 bg-white/[0.04]">
+                <th scope="col" class="py-4 px-6 text-xs font-mono uppercase tracking-wider text-white/40 w-[15%]">Metric</th>
+                <th scope="col" class="py-4 px-6 text-xs font-mono uppercase tracking-wider text-white/40 w-[20%]">Result</th>
+                <th scope="col" class="py-4 px-6 text-xs font-mono uppercase tracking-wider text-white/40 w-[35%]">Context</th>
+                <th scope="col" class="py-4 px-6 text-xs font-mono uppercase tracking-wider text-white/40 w-[30%]">Business Outcome</th>
+              </tr>
+            </thead>
+            <tbody>
+              {solution.results.map((r, i) => (
+                <tr class={`border-b border-white/[0.06] ${i % 2 === 1 ? 'bg-white/[0.02]' : ''}`}>
+                  <td class="py-4 px-6 text-sm text-white/60">{r.label}</td>
+                  <td class="py-4 px-6 text-lg font-bold text-brand-mid">{r.value}</td>
+                  <td class="py-4 px-6 text-sm text-white/50 leading-relaxed">{r.context || '—'}</td>
+                  <td class="py-4 px-6 text-sm text-white/70 leading-relaxed">{r.businessOutcome || '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile cards (stacked) -->
+        <div class="md:hidden grid gap-4">
+          {solution.results.map((r, i) => (
+            <div class="p-5 rounded-xl border border-white/10 bg-white/[0.04]">
+              <div class="flex items-baseline justify-between mb-3">
+                <span class="text-sm text-white/60">{r.label}</span>
+                <span class="text-xl font-bold text-brand-mid">{r.value}</span>
+              </div>
+              {r.context && (
+                <p class="text-xs text-white/40 leading-relaxed">{r.context}</p>
+              )}
+              {r.businessOutcome && (
+                <p class="mt-2 text-xs text-white/60 leading-relaxed">{r.businessOutcome}</p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
