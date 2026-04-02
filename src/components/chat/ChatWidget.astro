@@ -155,8 +155,18 @@
     function loadContext(): UserContext {
       try {
         const raw = sessionStorage.getItem('fmnd_ctx');
-        if (raw) return JSON.parse(raw);
-      } catch { /* ignore */ }
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          // Migrate old format: pages was [{path, enteredAt, scrollDepth}], now string[]
+          if (parsed.pages?.length > 0 && typeof parsed.pages[0] !== 'string') {
+            parsed.pages = parsed.pages.map((p: any) => typeof p === 'string' ? p : p.path).filter(Boolean);
+          }
+          return parsed;
+        }
+      } catch {
+        // Corrupted storage — clear and start fresh
+        try { sessionStorage.removeItem('fmnd_ctx'); } catch { /* ignore */ }
+      }
       return {
         pages: [],
         device: window.innerWidth < 768 ? 'mobile' : 'desktop',
