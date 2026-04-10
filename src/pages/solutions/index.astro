@@ -142,7 +142,7 @@ const faqSchema = {
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {solutions.map((sol, i) => (
           <a href={`/solutions/${sol.slug}`}
-             class="group p-7 rounded-2xl border border-line/70 bg-surface/30 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+             class="group p-7 rounded-2xl border border-line/70 bg-surface/30 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-[transform,box-shadow,background-color] duration-300 flex flex-col will-change-transform"
              data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
             <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
               <SolutionIcon slug={sol.slug} fallbackEmoji={sol.icon} class="w-5 h-5 text-brand" />
@@ -183,7 +183,7 @@ const faqSchema = {
       </div>
       <div class="max-w-3xl grid gap-4">
         {faqSchema.mainEntity.map((item: { name: string; acceptedAnswer: { text: string } }, i: number) => (
-          <details class="group rounded-2xl border border-line/70 bg-white hover:shadow-card transition-all" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
+          <details class="group rounded-2xl border border-line/70 bg-white hover:shadow-card transition-shadow" data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
             <summary class="flex items-center justify-between cursor-pointer p-5 text-ink font-semibold list-none">
               {item.name}
               <svg class="w-5 h-5 text-ink-4 flex-shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">

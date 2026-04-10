@@ -5,19 +5,19 @@ import { heroStats } from '../../data/stats';
 <section class="bg-white">
   <div class="container py-16 md:py-20">
     <p class="eyebrow mb-10 justify-center text-ink-4">
-      <span class="eyebrow-dot bg-health animate-pulse-dot"></span>
+      <span class="eyebrow-dot bg-mint animate-pulse-dot"></span>
       Live Production Metrics
     </p>
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {heroStats.map((stat, i) => (
         <div
-          class="relative group text-center bg-surface rounded-2xl border border-line/70 p-6 md:p-8 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+          class="relative group text-center bg-surface rounded-2xl border border-line/70 p-6 md:p-8 hover:shadow-md hover:-translate-y-0.5 transition-[transform,box-shadow] duration-300"
           data-reveal
           data-reveal-delay={String(i + 1)}
         >
           {/* Top accent line */}
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] rounded-full bg-gradient-to-r from-brand to-health opacity-80 group-hover:w-20 group-hover:opacity-100 transition-all duration-500" aria-hidden="true"></div>
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[2px] rounded-full bg-gradient-to-r from-brand to-mint opacity-80 group-hover:w-20 group-hover:opacity-100 transition-[width,opacity] duration-500" aria-hidden="true"></div>
 
           <p class="text-display-lg font-bold text-ink tracking-tight">
             {stat.value}<span class="text-brand text-[0.5em] font-semibold ml-0.5">{stat.suffix}</span>

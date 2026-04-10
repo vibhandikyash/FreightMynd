@@ -53,7 +53,7 @@ const flowSteps = [
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {displaySolutions.map((sol, i) => (
         <a href={`/solutions/${sol.slug}`}
-           class="group p-6 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
+           class="group p-6 rounded-2xl border border-line/70 bg-white hover:shadow-hover hover:-translate-y-1 transition-[transform,box-shadow] duration-300 flex flex-col"
            data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
           <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center mb-4">
             <SolutionIcon slug={sol.slug} fallbackEmoji={sol.icon} class="w-5 h-5 text-brand" />

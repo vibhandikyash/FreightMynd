@@ -38,7 +38,7 @@ const steps = [
         <span class="eyebrow-dot bg-brand"></span>
         How We Work
       </p>
-      <h2 class="section-heading">AI Implementation for Freight: Audit to Production in 4–8 Weeks</h2>
+      <h2 class="section-heading">AI Implementation for Freight: Audit to Production in 8–14 Weeks</h2>
       <p class="mt-4 text-lg text-ink-3 leading-relaxed">
         No 6-month enterprise sales cycle. No multi-year contract. A focused AI for freight forwarding engagement that delivers a working system.
       </p>
@@ -52,7 +52,7 @@ const steps = [
     <!-- Steps -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {steps.map((step, i) => (
-        <div class="relative p-6 rounded-2xl border border-line/70 bg-white hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+        <div class="relative p-6 rounded-2xl border border-line/70 bg-white hover:shadow-md hover:-translate-y-1 transition-[transform,box-shadow] duration-300"
              data-reveal data-reveal-delay={String(i + 1)}>
           <!-- Step number -->
           <span class="font-mono text-4xl font-bold text-brand/10 absolute top-4 right-5">{step.num}</span>

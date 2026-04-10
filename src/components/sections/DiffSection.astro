@@ -51,7 +51,7 @@ const vsRows = [
       <!-- Three pillars -->
       <div class="grid md:grid-cols-3 gap-5 mt-14">
         {differentiators.map((diff, i) => (
-          <div class="bg-white rounded-2xl border border-line/70 p-8 hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+          <div class="bg-white rounded-2xl border border-line/70 p-8 hover:shadow-hover hover:-translate-y-1 transition-[transform,box-shadow] duration-300"
                data-reveal data-reveal-delay={String(i + 1)}>
             <!-- Icon -->
             <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-5">
@@ -99,7 +99,7 @@ const vsRows = [
               <tr class="border-b border-line bg-surface">
                 <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-ink-4 w-1/4"></th>
                 <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-ink-4 w-[37.5%]">Generic SaaS</th>
-                <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-brand w-[37.5%]">FreightMynd</th>
+                <th class="py-4 px-6 text-xs font-mono uppercase tracking-widest text-brand w-[37.5%] bg-brand-light/40">FreightMynd</th>
               </tr>
             </thead>
             <tbody>
@@ -107,7 +107,7 @@ const vsRows = [
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <td class="py-4 px-6 text-sm font-semibold text-ink">{row.feature}</td>
                   <td class="py-4 px-6 text-sm text-ink-4">{row.saas}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/40">{row.cargoiq}</td>
                 </tr>
               ))}
             </tbody>
@@ -145,7 +145,7 @@ const vsRows = [
             Building AI for freight operations in-house means hiring ML engineers, training them on TMS APIs, and discovering document edge cases the hard way. We've already solved those problems across multiple production deployments.
           </p>
           <p class="mt-4 text-sm font-semibold text-brand">
-            Your team gets a production-grade system in 4–8 weeks, not 12–18 months.
+            Your team gets a production-grade system in 8–14 weeks, not 12–18 months.
           </p>
         </div>
 

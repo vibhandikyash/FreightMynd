@@ -16,7 +16,7 @@ import { testimonials } from '../../data/testimonials';
     <!-- Testimonial cards -->
     <div class="grid md:grid-cols-3 gap-6">
       {testimonials.map((t, i) => (
-        <div class="bg-white rounded-2xl border border-line/70 p-8 flex flex-col hover:shadow-md transition-all duration-300" data-reveal data-reveal-delay={String(i + 1)} itemscope itemtype="https://schema.org/Review">
+        <div class="bg-white rounded-2xl border border-line/70 p-8 flex flex-col hover:shadow-md transition-shadow duration-300" data-reveal data-reveal-delay={String(i + 1)} itemscope itemtype="https://schema.org/Review">
           <!-- Quote mark -->
           <svg class="w-8 h-8 text-brand/20 mb-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
@@ -24,8 +24,8 @@ import { testimonials } from '../../data/testimonials';
 
           <!-- Verified tag -->
           {t.verified && (
-            <span class="inline-flex items-center gap-1 text-[10px] font-mono tracking-wider uppercase text-health-dark bg-health-light border border-health-mid px-2 py-0.5 rounded mb-3 w-fit">
-              <span class="w-1.5 h-1.5 rounded-full bg-health" aria-hidden="true"></span>
+            <span class="inline-flex items-center gap-1 text-[10px] font-mono tracking-wider uppercase text-mint-dark bg-mint-light border border-mint-mid px-2 py-0.5 rounded mb-3 w-fit">
+              <span class="w-1.5 h-1.5 rounded-full bg-mint" aria-hidden="true"></span>
               Verified Client
             </span>
           )}

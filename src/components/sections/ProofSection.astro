@@ -52,7 +52,7 @@ const systems = [
     <!-- System cards -->
     <div class="grid md:grid-cols-2 gap-6">
       {systems.map((system, i) => (
-        <div class="bg-white rounded-2xl border border-line/70 overflow-hidden flex flex-col hover:shadow-hover hover:-translate-y-1 transition-all duration-300" data-reveal data-reveal-delay={String(i + 1)}>
+        <div class="bg-white rounded-2xl border border-line/70 overflow-hidden flex flex-col hover:shadow-hover hover:-translate-y-1 transition-[transform,box-shadow] duration-300" data-reveal data-reveal-delay={String(i + 1)}>
           {/* Card image */}
           {i === 0 && (
             <div class="w-full h-48 overflow-hidden bg-brand-light/20">
@@ -103,7 +103,7 @@ const systems = [
           )}
 
           <!-- CTA -->
-          <a href={system.href} class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-all duration-200">
+          <a href={system.href} class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-[gap] duration-200">
             {system.tag === 'Live System' ? 'Read the Hellmann automation case study' : 'Explore AI quote management solution'}
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
