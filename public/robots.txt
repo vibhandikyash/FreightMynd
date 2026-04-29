@@ -1,20 +1,89 @@
-User-agent: *
-Content-Signal: search=yes,ai-input=yes,ai-train=no
-Allow: /
-Disallow: /thank-you
+# FreightMynd robots.txt
+# Allow AI search bots for citations and answers.
+# Block scraping-only bots used for training datasets without attribution.
 
-# Block scraping-only bots with no user benefit
+# ── AI search & answer engines (explicit allow) ──
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Mistral-AI
+Allow: /
+
+# ── Training-only scrapers with no user benefit (block) ──
+
 User-agent: Bytespider
 Disallow: /
 
 User-agent: CCBot
 Disallow: /
 
-# Keep these OPEN for AI search visibility:
-# GPTBot → ChatGPT answers
-# ClaudeBot → Claude answers
-# Google-Extended → Google AI Overviews
-# Applebot-Extended → Apple Intelligence
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+# ── Default for all other bots ──
+
+User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+Allow: /
+Disallow: /thank-you
 
 Sitemap: https://freightmynd.com/sitemap-index.xml
 
