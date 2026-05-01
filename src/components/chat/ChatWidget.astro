@@ -9,7 +9,7 @@
 <!-- Chat Bubble -->
 <button
   id="chat-bubble"
-  class="fixed bottom-5 right-5 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-brand)] text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--color-brand)] cursor-pointer"
+  class="fixed bottom-5 right-5 z-[45] flex h-14 w-14 items-center justify-center rounded-full bg-[#24170E] text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-brand)] hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[var(--color-brand)] cursor-pointer"
   aria-label="Chat with FreightMynd"
 >
   <svg id="chat-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -103,7 +103,7 @@
       <button
         id="chat-send"
         type="submit"
-        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-dark)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#24170E] text-white hover:bg-[var(--color-brand)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         aria-label="Send message"
       >
         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -561,7 +561,7 @@
       const msgBubble = document.createElement('div');
       msgBubble.className =
         role === 'user'
-          ? 'max-w-[85%] rounded-2xl rounded-br-sm bg-[var(--color-brand)] px-3.5 py-2.5 text-sm text-white leading-relaxed'
+          ? 'max-w-[85%] rounded-2xl rounded-br-sm bg-[#24170E] px-3.5 py-2.5 text-sm text-white leading-relaxed'
           : 'max-w-[85%] rounded-2xl rounded-bl-sm bg-[var(--color-surface)] px-3.5 py-2.5 text-sm text-[var(--color-ink)] leading-relaxed';
 
       if (role === 'assistant') {

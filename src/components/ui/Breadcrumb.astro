@@ -9,7 +9,7 @@ interface Props {
   bg?: string;
 }
 
-const { items, bg = 'bg-surface' } = Astro.props;
+const { items, bg = 'breadcrumb-bg-cool' } = Astro.props;
 ---
 
 <nav class={`pt-24 md:pt-28 pb-0 ${bg}`} aria-label="Breadcrumb">
@@ -46,3 +46,13 @@ const { items, bg = 'bg-surface' } = Astro.props;
     </ol>
   </div>
 </nav>
+
+<style is:global>
+  .breadcrumb-bg-cool {
+    background: #F8FAFC;
+  }
+
+  .breadcrumb-bg-warm {
+    background: #FFFCF8;
+  }
+</style>

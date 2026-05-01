@@ -1,0 +1,13 @@
+<svg width="268" height="56" viewBox="0 0 268 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">FreightMynd route mark logo</title>
+  <g transform="translate(2 2)">
+    <rect x="2" y="2" width="52" height="52" rx="16" fill="#24170E"/>
+    <path d="M17 36.5V18h22" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M17 28h17.5" stroke="#de7810" stroke-width="4.8" stroke-linecap="round"/>
+    <path d="M39 18v18.5" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="round"/>
+    <circle cx="17" cy="36.5" r="3.8" fill="#de7810"/>
+    <circle cx="39" cy="18" r="3.8" fill="#de7810"/>
+  </g>
+  <text x="68" y="36" fill="#24170E" font-family="Geist, sans-serif" font-size="28" font-weight="800" letter-spacing="0">Freight</text>
+  <text x="179" y="36" fill="#de7810" font-family="Geist, sans-serif" font-size="28" font-weight="800" letter-spacing="0">Mynd</text>
+</svg>

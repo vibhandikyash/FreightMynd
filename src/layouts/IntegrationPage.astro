@@ -10,11 +10,51 @@ import type { ImageMetadata } from 'astro';
 import imgCargowise from '../assets/images/cargowise-integration.webp';
 import imgSap from '../assets/images/sap-tm-integration.webp';
 import imgOracle from '../assets/images/oracle-tms-integration.webp';
+import imgCargowiseOrange from '../assets/images/cargowise-integration-orange.png';
+import imgSapOrange from '../assets/images/sap-tm-integration-orange.png';
+import imgOracleOrange from '../assets/images/oracle-tms-integration-orange.png';
+import imgDynamicsOrange from '../assets/images/microsoft-dynamics-integration-orange.png';
+import imgDescartesOrange from '../assets/images/descartes-integration-orange.png';
+import imgCargowiseOrangeV2 from '../assets/images/cargowise-integration-orange-v2.png';
+import imgSapOrangeV2 from '../assets/images/sap-tm-integration-orange-v2.png';
+import imgOracleOrangeV2 from '../assets/images/oracle-tms-integration-orange-v2.png';
+import imgDynamicsOrangeV2 from '../assets/images/microsoft-dynamics-integration-orange-v2.png';
+import imgDescartesOrangeV2 from '../assets/images/descartes-integration-orange-v2.png';
+import imgCargowiseOrangeV3 from '../assets/images/cargowise-integration-orange-v3.png';
+import imgSapOrangeV3 from '../assets/images/sap-tm-integration-orange-v3.png';
+import imgOracleOrangeV3 from '../assets/images/oracle-tms-integration-orange-v3.png';
+import imgDynamicsOrangeV3 from '../assets/images/microsoft-dynamics-integration-orange-v3.png';
+import imgDescartesOrangeV3 from '../assets/images/descartes-integration-orange-v3.png';
+import imgCargowiseOrangeV4 from '../assets/images/cargowise-integration-orange-v4.png';
+import imgSapOrangeV4 from '../assets/images/sap-tm-integration-orange-v4.png';
+import imgOracleOrangeV4 from '../assets/images/oracle-tms-integration-orange-v4.png';
+import imgDynamicsOrangeV4 from '../assets/images/microsoft-dynamics-integration-orange-v4.png';
+import imgDescartesOrangeV4 from '../assets/images/descartes-integration-orange-v4.png';
 
 const heroImageMap: Record<string, ImageMetadata> = {
   '/images/cargowise-integration.webp': imgCargowise,
   '/images/sap-tm-integration.webp': imgSap,
   '/images/oracle-tms-integration.webp': imgOracle,
+  '/images/cargowise-integration-orange.png': imgCargowiseOrange,
+  '/images/sap-tm-integration-orange.png': imgSapOrange,
+  '/images/oracle-tms-integration-orange.png': imgOracleOrange,
+  '/images/microsoft-dynamics-integration-orange.png': imgDynamicsOrange,
+  '/images/descartes-integration-orange.png': imgDescartesOrange,
+  '/images/cargowise-integration-orange-v2.png': imgCargowiseOrangeV2,
+  '/images/sap-tm-integration-orange-v2.png': imgSapOrangeV2,
+  '/images/oracle-tms-integration-orange-v2.png': imgOracleOrangeV2,
+  '/images/microsoft-dynamics-integration-orange-v2.png': imgDynamicsOrangeV2,
+  '/images/descartes-integration-orange-v2.png': imgDescartesOrangeV2,
+  '/images/cargowise-integration-orange-v3.png': imgCargowiseOrangeV3,
+  '/images/sap-tm-integration-orange-v3.png': imgSapOrangeV3,
+  '/images/oracle-tms-integration-orange-v3.png': imgOracleOrangeV3,
+  '/images/microsoft-dynamics-integration-orange-v3.png': imgDynamicsOrangeV3,
+  '/images/descartes-integration-orange-v3.png': imgDescartesOrangeV3,
+  '/images/cargowise-integration-orange-v4.png': imgCargowiseOrangeV4,
+  '/images/sap-tm-integration-orange-v4.png': imgSapOrangeV4,
+  '/images/oracle-tms-integration-orange-v4.png': imgOracleOrangeV4,
+  '/images/microsoft-dynamics-integration-orange-v4.png': imgDynamicsOrangeV4,
+  '/images/descartes-integration-orange-v4.png': imgDescartesOrangeV4,
 };
 
 interface Props {
@@ -93,7 +133,7 @@ const topSolutions = relevantSolutions.length > 0 ? relevantSolutions : solution
               widths={[640, 960, 1280]}
               sizes="(max-width: 768px) 100vw, 960px"
               quality={80}
-              class="w-full rounded-2xl border border-line/70 shadow-lg"
+              class="w-full"
             />
           ) : heroImage ? (
             <img
@@ -103,7 +143,7 @@ const topSolutions = relevantSolutions.length > 0 ? relevantSolutions : solution
               height="540"
               loading="lazy"
               decoding="async"
-              class="w-full rounded-2xl border border-line/70 shadow-lg"
+              class="w-full"
             />
           ) : null}
         </div>
@@ -299,7 +339,7 @@ const topSolutions = relevantSolutions.length > 0 ? relevantSolutions : solution
   </section>
 
   <!-- CTA -->
-  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #5B5EF0 0%, #4F46E5 100%);">
+  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #24170E 0%, #382315 100%);">
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
       <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">

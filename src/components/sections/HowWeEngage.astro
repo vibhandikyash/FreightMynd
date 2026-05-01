@@ -1,31 +1,28 @@
 ---
-import { Image } from 'astro:assets';
-import engageImg from '../../assets/images/how-we-engage.webp';
-
 const steps = [
   {
     num: '01',
     title: 'Discovery & Audit',
     description: 'We map your current workflows, identify automation opportunities, and quantify the time and cost impact. Free, no-commitment audit.',
-    duration: 'Week 1–2',
+    duration: 'Week 1-2',
   },
   {
     num: '02',
     title: 'Architecture & Design',
-    description: 'We design the system architecture — integrations, data flows, validation rules, and exception handling — specific to your environment.',
-    duration: 'Week 2–4',
+    description: 'We design the system architecture, integrations, data flows, validation rules, and exception handling specific to your environment.',
+    duration: 'Week 2-4',
   },
   {
     num: '03',
     title: 'Build & Test',
     description: 'We build in iterative sprints with your ops team reviewing outputs at every stage. No black-box handoff. You see it working before it ships.',
-    duration: 'Week 4–10',
+    duration: 'Week 4-10',
   },
   {
     num: '04',
     title: 'Deploy & Handoff',
-    description: 'Production deployment in your environment with full documentation, monitoring, and a support period. You own the system — no recurring SaaS fees.',
-    duration: 'Week 10–14',
+    description: 'Production deployment in your environment with full documentation, monitoring, and a support period. You own the system, with no recurring SaaS fees.',
+    duration: 'Week 10-14',
   },
 ];
 ---
@@ -38,15 +35,10 @@ const steps = [
         <span class="eyebrow-dot bg-brand"></span>
         How We Work
       </p>
-      <h2 class="section-heading">AI Implementation for Freight: Audit to Production in 8–14 Weeks</h2>
+      <h2 class="section-heading">AI Implementation for Freight: Audit to Production in 8-14 Weeks</h2>
       <p class="mt-4 text-lg text-ink-3 leading-relaxed">
         No 6-month enterprise sales cycle. No multi-year contract. A focused AI for freight forwarding engagement that delivers a working system.
       </p>
-    </div>
-
-    <!-- Process illustration -->
-    <div class="mb-10 rounded-2xl overflow-hidden border border-line/70 bg-white" data-reveal>
-      <Image src={engageImg} alt="FreightMynd implementation process — discovery, architecture, build, and deploy phases" class="w-full h-auto" widths={[640, 960, 1180]} sizes="(max-width: 1220px) calc(100vw - 40px), 1180px" quality={80} />
     </div>
 
     <!-- Steps -->

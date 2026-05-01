@@ -9,6 +9,7 @@ import type { ImageMetadata } from 'astro';
 
 // Import all solution/integration hero images from src/assets/images
 import img4pl from '../assets/images/4pl-control-tower.webp';
+import img4plOrange from '../assets/images/4pl-control-tower-orange.png';
 import imgQuote from '../assets/images/quote-management.webp';
 import imgDoc from '../assets/images/document-intelligence.webp';
 import imgPricing from '../assets/images/freight-pricing-ai.webp';
@@ -16,9 +17,12 @@ import imgSea from '../assets/images/sea-freight.webp';
 import imgAir from '../assets/images/air-freight.webp';
 import img3pl from '../assets/images/3pl-4pl-operations.webp';
 import imgInvoice from '../assets/images/smart-invoice-processing.webp';
+import imgInvoiceOrange from '../assets/images/smart-invoice-processing-orange.png';
+import imgInvoiceUiTheme from '../assets/images/smart-invoice-processing-ui-theme.png';
 
 const heroImageMap: Record<string, ImageMetadata> = {
   '/images/4pl-control-tower.webp': img4pl,
+  '/images/4pl-control-tower-orange.png': img4plOrange,
   '/images/quote-management.webp': imgQuote,
   '/images/document-intelligence.webp': imgDoc,
   '/images/freight-pricing-ai.webp': imgPricing,
@@ -26,6 +30,8 @@ const heroImageMap: Record<string, ImageMetadata> = {
   '/images/air-freight.webp': imgAir,
   '/images/3pl-4pl-operations.webp': img3pl,
   '/images/smart-invoice-processing.webp': imgInvoice,
+  '/images/smart-invoice-processing-orange.png': imgInvoiceOrange,
+  '/images/smart-invoice-processing-ui-theme.png': imgInvoiceUiTheme,
 };
 
 interface Props {
@@ -509,7 +515,7 @@ const primaryCaseStudy = relatedCaseStudyData[0];
   </section>
 
   <!-- CTA -->
-  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #5B5EF0 0%, #4F46E5 100%);">
+  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #24170E 0%, #382315 100%);">
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
       <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
