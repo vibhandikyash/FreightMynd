@@ -1,4 +1,4 @@
-# CargoIQ.ai — SEO Keyword Clusters & Content Map
+# FreightMynd — SEO Keyword Clusters & Content Map
 
 Last updated: 2026-03-10
 
@@ -59,8 +59,8 @@ Last updated: 2026-03-10
 ### Cluster 7: Comparison / Decision — STRONG
 | Target Keyword | Page | Status |
 |---|---|---|
-| Zauber vs alternative | zauber-vs-cargoiq | ✅ |
-| Freightos alternative | freightos-vs-cargoiq | ✅ |
+| Zauber vs alternative | zauber-vs-freightmynd | ✅ |
+| Freightos alternative | freightos-vs-freightmynd | ✅ |
 | best AI tools freight forwarders | blog: best-ai-tools-freight-forwarders-2026 | ✅ |
 | freight automation tools comparison | blog: best-ai-tools-freight-forwarders-2026 | ✅ |
 

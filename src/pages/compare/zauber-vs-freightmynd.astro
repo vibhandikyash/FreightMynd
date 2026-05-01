@@ -43,22 +43,22 @@ const faqSchema = {
 };
 
 const comparisonRows = [
-  { category: 'Deployment', zauber: 'SaaS — vendor-hosted platform', cargoiq: 'Custom-built in your environment' },
-  { category: 'Ownership', zauber: 'Subscription — ongoing license fees', cargoiq: 'You own it — project fee + operational fee' },
-  { category: 'TMS Integration', zauber: 'Pre-built connectors for supported TMS', cargoiq: 'Native integration with your specific TMS instance' },
-  { category: 'Customization', zauber: 'Configure within product limits', cargoiq: 'Built for your edge cases from day one' },
-  { category: 'Document Formats', zauber: 'Supported formats only', cargoiq: 'Any format — AI learns your suppliers automatically' },
-  { category: 'Pricing', zauber: 'Per-seat subscription', cargoiq: 'Project fee + operational fee — no per-seat cost' },
-  { category: 'Data Control', zauber: 'Vendor-hosted — data on their servers', cargoiq: 'Your environment — your data stays with you' },
-  { category: 'Email Intelligence', zauber: 'Inbox-native Outlook agent for triage', cargoiq: 'Custom email AI — any email client, auto-response, attachment routing, follow-up tracking' },
-  { category: 'Booking Automation', zauber: 'TMS booking creation from email triggers', cargoiq: 'Full lifecycle: quote-to-booking, carrier allocation, confirmation parsing, amendment cascade' },
-  { category: 'Customer Portal', zauber: 'Not offered', cargoiq: 'White-label visibility portal — tracking, documents, analytics, quote-to-book' },
-  { category: 'Carrier Analytics', zauber: 'Not offered', cargoiq: 'AI scorecards per lane, exception detection, contract negotiation intelligence' },
-  { category: 'ETA Prediction', zauber: 'Arrival notice processing', cargoiq: 'Predictive AI: 24–72hr delay prediction, proactive customer alerts, exception management' },
-  { category: 'SOP Compliance', zauber: 'Not offered', cargoiq: 'Continuous SOP auditing, real-time violation detection, customer-specific compliance reporting' },
-  { category: 'Order-to-Cash', zauber: 'Not offered', cargoiq: 'Full O2C: cost accrual, auto-invoicing, revenue recognition, payment reconciliation' },
-  { category: 'Rate Intelligence', zauber: 'Reads rate sheets from your RMS', cargoiq: 'AI ingests any format, normalises surcharges, cross-carrier comparison, expiry alerts' },
-  { category: 'Solution Breadth', zauber: 'Quoting, booking, document extraction, analytics', cargoiq: '21 solutions covering the full freight operations lifecycle' },
+  { category: 'Deployment', zauber: 'SaaS — vendor-hosted platform', freightmynd: 'Custom-built in your environment' },
+  { category: 'Ownership', zauber: 'Subscription — ongoing license fees', freightmynd: 'You own it — project fee + operational fee' },
+  { category: 'TMS Integration', zauber: 'Pre-built connectors for supported TMS', freightmynd: 'Native integration with your specific TMS instance' },
+  { category: 'Customization', zauber: 'Configure within product limits', freightmynd: 'Built for your edge cases from day one' },
+  { category: 'Document Formats', zauber: 'Supported formats only', freightmynd: 'Any format — AI learns your suppliers automatically' },
+  { category: 'Pricing', zauber: 'Per-seat subscription', freightmynd: 'Project fee + operational fee — no per-seat cost' },
+  { category: 'Data Control', zauber: 'Vendor-hosted — data on their servers', freightmynd: 'Your environment — your data stays with you' },
+  { category: 'Email Intelligence', zauber: 'Inbox-native Outlook agent for triage', freightmynd: 'Custom email AI — any email client, auto-response, attachment routing, follow-up tracking' },
+  { category: 'Booking Automation', zauber: 'TMS booking creation from email triggers', freightmynd: 'Full lifecycle: quote-to-booking, carrier allocation, confirmation parsing, amendment cascade' },
+  { category: 'Customer Portal', zauber: 'Not offered', freightmynd: 'White-label visibility portal — tracking, documents, analytics, quote-to-book' },
+  { category: 'Carrier Analytics', zauber: 'Not offered', freightmynd: 'AI scorecards per lane, exception detection, contract negotiation intelligence' },
+  { category: 'ETA Prediction', zauber: 'Arrival notice processing', freightmynd: 'Predictive AI: 24–72hr delay prediction, proactive customer alerts, exception management' },
+  { category: 'SOP Compliance', zauber: 'Not offered', freightmynd: 'Continuous SOP auditing, real-time violation detection, customer-specific compliance reporting' },
+  { category: 'Order-to-Cash', zauber: 'Not offered', freightmynd: 'Full O2C: cost accrual, auto-invoicing, revenue recognition, payment reconciliation' },
+  { category: 'Rate Intelligence', zauber: 'Reads rate sheets from your RMS', freightmynd: 'AI ingests any format, normalises surcharges, cross-carrier comparison, expiry alerts' },
+  { category: 'Solution Breadth', zauber: 'Quoting, booking, document extraction, analytics', freightmynd: '21 solutions covering the full freight operations lifecycle' },
 ];
 ---
 
@@ -109,7 +109,7 @@ const comparisonRows = [
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
                   <td class="py-4 px-6 text-sm text-ink-3">{row.zauber}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.freightmynd}</td>
                 </tr>
               ))}
             </tbody>
@@ -128,7 +128,7 @@ const comparisonRows = [
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
                   <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
-                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
+                  <p class="text-sm text-ink font-medium">{row.freightmynd}</p>
                 </div>
               </div>
             </div>

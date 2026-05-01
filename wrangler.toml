@@ -1,4 +1,4 @@
-name = "cargoiq"
+name = "freightmynd"
 compatibility_date = "2024-12-01"
 pages_build_output_dir = "dist"
 
@@ -8,8 +8,8 @@ ENVIRONMENT = "production"
 # Secrets (set via CF dashboard → Pages → Settings → Environment variables):
 # ANTHROPIC_API_KEY  — Anthropic API key
 # SMTP_API_KEY       — Brevo transactional email API key
-# LEAD_EMAIL_TO      — Team email for lead notifications (e.g. leads@cargoiq.ai)
-# LEAD_EMAIL_FROM    — Sender address (e.g. noreply@cargoiq.ai)
+# LEAD_EMAIL_TO      — Team email for lead notifications (e.g. leads@freightmynd.com)
+# LEAD_EMAIL_FROM    — Sender address (e.g. noreply@freightmynd.com)
 # ADMIN_TOKEN        — Bearer token for /api/conversation/:id access
 
 [[kv_namespaces]]
