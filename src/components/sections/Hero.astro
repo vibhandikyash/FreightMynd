@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import heroImg from '../../assets/images/hero-container-shipping-clean.png';
+import heroImg from '../../assets/images/hero-container-shipping-clean.jpg';
 ---
 
-<section class="relative min-h-[720px] overflow-hidden pt-24 pb-12 md:min-h-[780px] md:pt-32 md:pb-14">
+<section class="relative min-h-[max(560px,_85vh)] overflow-hidden pt-24 pb-12 md:min-h-[max(640px,_82vh)] md:pt-32 md:pb-14">
   <!-- Hero background image -->
   <div class="absolute inset-0" aria-hidden="true">
     <Image src={heroImg} alt="" class="h-full w-full object-cover object-center" widths={[640, 960, 1280, 1600, 1920]} sizes="100vw" loading="eager" fetchpriority="high" quality={72} />
@@ -11,7 +11,7 @@ import heroImg from '../../assets/images/hero-container-shipping-clean.png';
     <div class="absolute inset-0 bg-gradient-to-b from-[#0f1f22]/36 via-[#120b07]/8 to-[#120b07]/72"></div>
   </div>
 
-  <div class="container relative z-10 flex min-h-[584px] items-center justify-center md:min-h-[634px]">
+  <div class="container relative z-10 flex min-h-[440px] items-center justify-center md:min-h-[500px]">
     <div class="mx-auto max-w-[880px] text-center">
       <!-- Eyebrow -->
       <p class="eyebrow mb-5 justify-center text-white/76">

@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { site } from '../../data/site';
+import logoFooter from '../../assets/images/logos/freightmynd-logo-footer.png';
 
 const solutionLinks = [
   { label: '4PL Control Tower', href: '/solutions/4pl-control-tower-automation' },
@@ -65,7 +67,7 @@ const currentYear = new Date().getFullYear();
       <!-- Col 1: Brand -->
       <div class="col-span-2 md:col-span-1">
         <a href="/" class="flex items-center mb-4">
-          <img src="/freight-mynd-logo-footer-transparent.png" alt="FreightMynd" class="h-7 w-auto max-w-[170px] object-contain" />
+          <Image src={logoFooter} alt="FreightMynd" widths={[170, 340]} sizes="170px" loading="lazy" quality={90} class="h-7 w-auto max-w-[170px] object-contain" />
         </a>
         <p class="text-sm leading-relaxed mb-6 max-w-[260px]">
           AI-driven cargo data intelligence for sea, air & freight forwarders.

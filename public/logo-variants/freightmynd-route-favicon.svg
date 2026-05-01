@@ -1,9 +1,0 @@
-<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
-  <title id="title">FreightMynd route favicon</title>
-  <rect x="5" y="5" width="54" height="54" rx="16" fill="#24170E"/>
-  <path d="M21 43V22h25" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M21 32.5h20" stroke="#de7810" stroke-width="5.5" stroke-linecap="round"/>
-  <path d="M46 22v21" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round"/>
-  <circle cx="21" cy="43" r="4.2" fill="#de7810"/>
-  <circle cx="46" cy="22" r="4.2" fill="#de7810"/>
-</svg>

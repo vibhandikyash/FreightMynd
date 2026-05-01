@@ -17,36 +17,12 @@
   }
 }
 
-/* ── Custom fonts ── */
+/* ── Custom fonts (OFL-licensed, production-safe) ── */
 @font-face {
-  font-family: 'TT Interphases Pro';
-  src: url('/fonts/tt-interphases-pro/TT Interphases Pro Trial Variable.ttf') format('truetype-variations');
-  font-weight: 100 900;
+  font-family: 'DM SansVariable';
+  src: url('/fonts/dm-sans-variable.woff2') format('woff2-variations');
+  font-weight: 100 1000;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'TT Interphases Pro';
-  src: url('/fonts/tt-interphases-pro/TT Interphases Pro Trial Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'TT Interphases Pro Mono';
-  src: url('/fonts/tt-interphases-pro/TT Interphases Pro Mono Trial Var Roman.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'TT Interphases Pro Mono';
-  src: url('/fonts/tt-interphases-pro/TT Interphases Pro Mono Trial Var Italic.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -68,12 +44,12 @@
 
   --color-accent: #24170E;
   --color-accent-dark: #160D08;
-  --color-accent-light: #FDFBF7;
+  --color-accent-light: #F8F1E7;
   --color-accent-mid: #FFE2C2;
 
   --color-mint: #A66A2A;
   --color-mint-dark: #7A461B;
-  --color-mint-light: #FDFBF7;
+  --color-mint-light: #F4EAD8;
   --color-mint-mid: #D7B78E;
 
   --color-ink: #24170E;
@@ -86,8 +62,8 @@
   --color-line2: #D2C1AE;
 
   /* Font families */
-  --font-sans: 'TT Interphases Pro', Helvetica, sans-serif;
-  --font-mono: 'TT Interphases Pro Mono', 'DM Mono', monospace;
+  --font-sans: 'DM SansVariable', 'DM Sans', system-ui, -apple-system, Helvetica, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
 
   /* Font sizes */
   --font-size-display-xl: clamp(52px, 7vw, 96px);

@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { solutions } from '../../data/solutions';
 import { integrations } from '../../data/integrations';
 import SolutionIcon from '../ui/SolutionIcon.astro';
+import logoNavbar from '../../assets/images/logos/freightmynd-logo-navbar.png';
 
 const solutionItems = solutions.map(s => ({
   title: s.shortTitle,
@@ -37,7 +39,7 @@ const navLinks = [
       <div class="navbar-inner">
         <!-- Logo -->
         <a href="/" class="flex items-center flex-shrink-0" aria-label="FreightMynd Home">
-          <img src="/freight-mynd-logo-navbar-transparent.png" alt="FreightMynd" class="w-[165px] h-auto object-contain" />
+          <Image src={logoNavbar} alt="FreightMynd" widths={[165, 330, 495]} sizes="165px" loading="eager" fetchpriority="high" quality={90} class="w-[165px] h-auto object-contain" />
         </a>
 
         <!-- Links -->
@@ -120,7 +122,7 @@ const navLinks = [
 <nav id="mobile-nav" class="lg:hidden fixed top-0 inset-x-0 z-50 bg-white border-b border-line/50" role="navigation" aria-label="Main navigation">
   <div class="flex items-center justify-between h-16 px-5">
     <a href="/" class="flex items-center" aria-label="FreightMynd Home">
-      <img src="/freight-mynd-logo-navbar-transparent.png" alt="FreightMynd" class="w-[150px] h-auto object-contain" />
+      <Image src={logoNavbar} alt="FreightMynd" widths={[150, 300, 450]} sizes="150px" loading="eager" fetchpriority="high" quality={90} class="w-[150px] h-auto object-contain" />
     </a>
     <button id="menu-toggle" class="p-2.5 rounded-lg text-ink-3 hover:text-ink hover:bg-surface"
             aria-expanded="false" aria-label="Toggle menu">
