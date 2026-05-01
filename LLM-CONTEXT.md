@@ -11,7 +11,7 @@
 **Positioning:** AI-driven cargo data intelligence platform for freight forwarders. Custom-built systems that replace manual freight operations across sea, air & logistics. Flagship client: Hellmann Worldwide Logistics.
 
 **Live URL:** https://freightmynd.com
-**Repo:** git@github.com:bitontree/cargoIQ.git
+**Repo:** FreightMynd website repository
 
 ---
 
@@ -34,7 +34,7 @@
 ## File Structure
 
 ```
-cargoiq/
+freightmynd/
 ├── public/
 │   ├── favicon.svg, favicon.ico
 │   ├── robots.txt
@@ -129,8 +129,8 @@ cargoiq/
 ### Compare (2)
 | Route | File |
 |-------|------|
-| `/compare/zauber-vs-cargoiq` | Zauber comparison |
-| `/compare/freightos-vs-cargoiq` | Freightos comparison |
+| `/compare/zauber-vs-freightmynd` | Zauber comparison |
+| `/compare/freightos-vs-freightmynd` | Freightos comparison |
 
 ### Blog (dynamic)
 | Route | File |
@@ -260,7 +260,7 @@ Blog uses Astro content collections with MDX:
 title: "Post Title"
 description: "Meta description"
 publishDate: 2026-03-15
-author: "CargoIQ Team"
+author: "FreightMynd Team"
 category: "Guides"
 tags: ["AI", "freight"]
 featured: false

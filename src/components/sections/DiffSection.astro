@@ -21,11 +21,11 @@ const differentiators = [
 ];
 
 const vsRows = [
-  { feature: 'Deployment', saas: 'Their cloud, their terms', cargoiq: 'Your environment, your control' },
-  { feature: 'Pricing', saas: 'Per-seat subscription, forever', cargoiq: 'One-time build, you own it' },
-  { feature: 'TMS Integration', saas: 'Generic connectors', cargoiq: 'Native API built for your instance' },
-  { feature: 'Edge Cases', saas: 'Submit a feature request', cargoiq: 'Built in from day one' },
-  { feature: 'New Suppliers', saas: 'Manual template mapping', cargoiq: 'Self-learning, zero engineering' },
+  { feature: 'Deployment', saas: 'Their cloud, their terms', freightmynd: 'Your environment, your control' },
+  { feature: 'Pricing', saas: 'Per-seat subscription, forever', freightmynd: 'One-time build, you own it' },
+  { feature: 'TMS Integration', saas: 'Generic connectors', freightmynd: 'Native API built for your instance' },
+  { feature: 'Edge Cases', saas: 'Submit a feature request', freightmynd: 'Built in from day one' },
+  { feature: 'New Suppliers', saas: 'Manual template mapping', freightmynd: 'Self-learning, zero engineering' },
 ];
 ---
 
@@ -107,7 +107,7 @@ const vsRows = [
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <td class="py-4 px-6 text-sm font-semibold text-ink">{row.feature}</td>
                   <td class="py-4 px-6 text-sm text-ink-4">{row.saas}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/40">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/40">{row.freightmynd}</td>
                 </tr>
               ))}
             </tbody>
@@ -126,7 +126,7 @@ const vsRows = [
                 </div>
                 <div class="pl-3 border-l border-brand/30">
                   <p class="text-[10px] font-mono text-brand uppercase mb-1">FreightMynd</p>
-                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
+                  <p class="text-sm text-ink font-medium">{row.freightmynd}</p>
                 </div>
               </div>
             </div>

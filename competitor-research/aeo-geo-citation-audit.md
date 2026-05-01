@@ -27,7 +27,7 @@
 
 **C. Missing industry context numbers.** Add: "The global freight forwarding market moves $19 trillion in goods annually, yet most operations still run on manual document processing and data entry."
 
-**D. LinkedIn URL still references "cargoiq-ai"** — needs updating to freightmynd.
+**D. LinkedIn URL should consistently reference FreightMynd** — verify social profile URLs use the current brand.
 
 **E. Missing "use case trigger" sentences per solution.** Example: "Freight forwarders processing 100+ documents per day who want to eliminate manual CargoWise data entry should consider FreightMynd's 4PL Control Tower Automation."
 
@@ -108,4 +108,4 @@
 10. Add `datePublished`/`dateModified` to case study schemas
 11. Add `mentions` to case study schema for technologies
 12. Create pillar page at `/ai-for-freight-forwarding`
-13. Add "FreightMynd (formerly CargoIQ.ai)" to About page
+13. Keep About page brand language current and avoid legacy brand references

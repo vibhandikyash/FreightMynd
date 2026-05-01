@@ -43,20 +43,20 @@ const faqSchema = {
 };
 
 const comparisonRows = [
-  { category: 'Focus', freightos: 'Freight rate marketplace and booking platform', cargoiq: 'Custom AI operations automation for freight forwarders' },
-  { category: 'Pricing Intelligence', freightos: 'Market rate data from the Freightos marketplace', cargoiq: 'Dynamic pricing + market data + your historical data combined' },
-  { category: 'Document Processing', freightos: 'Not a core focus', cargoiq: 'Core capability — invoices, AWBs, packing lists, compliance docs' },
-  { category: 'TMS Integration', freightos: 'Limited — primarily their own platform', cargoiq: 'Deep native integration with CargoWise, SAP TM, Oracle TMS, and more' },
-  { category: 'Quoting', freightos: 'Through the Freightos platform', cargoiq: 'Your existing workflow, automated with AI' },
-  { category: 'Ownership', freightos: 'Platform dependency — your data lives in their ecosystem', cargoiq: 'You own the system — deployed in your environment' },
-  { category: 'Rate Sheet Processing', freightos: 'Marketplace rate aggregation from carriers', cargoiq: 'AI ingests your carrier rate sheets in any format, normalises, and powers your quoting engine' },
-  { category: 'Email Automation', freightos: 'Not offered', cargoiq: 'AI email triage, RFQ detection, auto-response, attachment routing' },
-  { category: 'Booking Automation', freightos: 'eBooking through marketplace', cargoiq: 'Quote-to-booking in your TMS, carrier confirmation parsing, amendment handling' },
-  { category: 'Customer Portal', freightos: 'Marketplace-based shipper portal', cargoiq: 'White-label portal — your brand, your data, full visibility and analytics' },
-  { category: 'Carrier Analytics', freightos: 'Freightos Baltic Index (market benchmarks)', cargoiq: 'AI scorecards from your own shipment data — lane-level, real-time' },
-  { category: 'ETA & Exceptions', freightos: 'Basic tracking through platform', cargoiq: 'Predictive ETA AI, proactive delay alerting, intelligent exception management' },
-  { category: 'Order-to-Cash', freightos: 'Not offered', cargoiq: 'Full billing automation — accruals, invoicing, revenue recognition, reconciliation' },
-  { category: 'Solution Breadth', freightos: 'Rate comparison, booking, benchmarking', cargoiq: '21 solutions covering the complete freight operations lifecycle' },
+  { category: 'Focus', freightos: 'Freight rate marketplace and booking platform', freightmynd: 'Custom AI operations automation for freight forwarders' },
+  { category: 'Pricing Intelligence', freightos: 'Market rate data from the Freightos marketplace', freightmynd: 'Dynamic pricing + market data + your historical data combined' },
+  { category: 'Document Processing', freightos: 'Not a core focus', freightmynd: 'Core capability — invoices, AWBs, packing lists, compliance docs' },
+  { category: 'TMS Integration', freightos: 'Limited — primarily their own platform', freightmynd: 'Deep native integration with CargoWise, SAP TM, Oracle TMS, and more' },
+  { category: 'Quoting', freightos: 'Through the Freightos platform', freightmynd: 'Your existing workflow, automated with AI' },
+  { category: 'Ownership', freightos: 'Platform dependency — your data lives in their ecosystem', freightmynd: 'You own the system — deployed in your environment' },
+  { category: 'Rate Sheet Processing', freightos: 'Marketplace rate aggregation from carriers', freightmynd: 'AI ingests your carrier rate sheets in any format, normalises, and powers your quoting engine' },
+  { category: 'Email Automation', freightos: 'Not offered', freightmynd: 'AI email triage, RFQ detection, auto-response, attachment routing' },
+  { category: 'Booking Automation', freightos: 'eBooking through marketplace', freightmynd: 'Quote-to-booking in your TMS, carrier confirmation parsing, amendment handling' },
+  { category: 'Customer Portal', freightos: 'Marketplace-based shipper portal', freightmynd: 'White-label portal — your brand, your data, full visibility and analytics' },
+  { category: 'Carrier Analytics', freightos: 'Freightos Baltic Index (market benchmarks)', freightmynd: 'AI scorecards from your own shipment data — lane-level, real-time' },
+  { category: 'ETA & Exceptions', freightos: 'Basic tracking through platform', freightmynd: 'Predictive ETA AI, proactive delay alerting, intelligent exception management' },
+  { category: 'Order-to-Cash', freightos: 'Not offered', freightmynd: 'Full billing automation — accruals, invoicing, revenue recognition, reconciliation' },
+  { category: 'Solution Breadth', freightos: 'Rate comparison, booking, benchmarking', freightmynd: '21 solutions covering the complete freight operations lifecycle' },
 ];
 ---
 
@@ -107,7 +107,7 @@ const comparisonRows = [
                 <tr class={`border-b border-line/50 ${i % 2 === 1 ? 'bg-surface/50' : ''}`}>
                   <th scope="row" class="py-4 pr-6 text-sm font-semibold text-ink text-left">{row.category}</th>
                   <td class="py-4 px-6 text-sm text-ink-3">{row.freightos}</td>
-                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.cargoiq}</td>
+                  <td class="py-4 px-6 text-sm text-ink font-medium bg-brand-light/30">{row.freightmynd}</td>
                 </tr>
               ))}
             </tbody>
@@ -126,7 +126,7 @@ const comparisonRows = [
                 </div>
                 <div class="p-2.5 rounded-lg bg-brand-light/40">
                   <span class="text-[10px] font-mono text-brand uppercase tracking-wider">FreightMynd</span>
-                  <p class="text-sm text-ink font-medium">{row.cargoiq}</p>
+                  <p class="text-sm text-ink font-medium">{row.freightmynd}</p>
                 </div>
               </div>
             </div>
