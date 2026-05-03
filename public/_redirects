@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# Format: <from>  <to>  <status>
+
+# Broken external link surfaced via Clarity (4+ sessions hit /solutions/carrier-integration → 404)
+/solutions/carrier-integration  /integrations/  301
