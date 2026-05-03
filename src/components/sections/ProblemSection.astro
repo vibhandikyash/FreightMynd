@@ -59,7 +59,7 @@ const painPoints = [
       <!-- Right: Pain point cards -->
       <div class="grid gap-4">
         {painPoints.map((point, i) => (
-          <div class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-surface/50 hover:bg-white hover:shadow-md transition-[background-color,box-shadow] duration-200"
+          <div class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-surface/50 hover:border-brand/40 transition-[border-color] duration-200"
                data-reveal data-reveal-delay={String(i + 1)}>
             <div class="w-10 h-10 rounded-xl bg-brand-light flex items-center justify-center flex-shrink-0 mt-0.5">
               {point.icon === 'document' && (
