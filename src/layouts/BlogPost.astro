@@ -2,6 +2,8 @@
 import Page from './Page.astro';
 import Breadcrumb from '../components/ui/Breadcrumb.astro';
 import { site } from '../data/site';
+import { Image } from 'astro:assets';
+import yashAuthorImage from '../assets/images/yash-vibhandik-author.png';
 
 interface Props {
   title: string;
@@ -31,7 +33,6 @@ const {
   description,
   publishDate,
   modifiedDate,
-  author,
   category,
   tags,
   readingTime,
@@ -90,6 +91,8 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
 
 const isoDate = publishDate.toISOString();
 const isoModified = modifiedDate ? modifiedDate.toISOString() : undefined;
+const authorName = 'Yash Vibhandik';
+const authorTitle = 'CEO';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -110,8 +113,13 @@ const articleSchema = {
   "description": description,
   "image": ogImageUrl,
   "author": {
-    "@type": "Organization",
-    "name": "FreightMynd Team",
+    "@type": "Person",
+    "name": authorName,
+    "jobTitle": authorTitle,
+    "affiliation": {
+      "@type": "Organization",
+      "name": "FreightMynd",
+    },
   },
   "publisher": {
     "@type": "Organization",
@@ -175,13 +183,27 @@ const allSchemas = [breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema]
       <h1 class="text-display-md font-bold text-ink leading-tight">
         {title}
       </h1>
-      <p class="mt-4 text-lg text-ink-3 leading-relaxed">
+      <p class="mt-4 hero-description text-ink-3">
         {description}
       </p>
-      <div class="mt-6 flex items-center gap-4 text-sm text-ink-4">
-        <span class="font-medium text-ink-3">{author}</span>
-        <span aria-hidden="true" class="w-1 h-1 rounded-full bg-ink-4"></span>
-        <time datetime={isoDate}>{formattedDate}</time>
+      <div class="mt-7 flex flex-wrap items-center gap-4">
+        <div class="flex items-center gap-3">
+          <Image
+            src={yashAuthorImage}
+            alt={authorName}
+            width={48}
+            height={48}
+            class="h-12 w-12 rounded-full object-cover border border-line shadow-sm"
+          />
+          <div>
+            <p class="text-sm font-semibold text-ink">{authorName}</p>
+            <p class="text-xs text-ink-4">{authorTitle}</p>
+          </div>
+        </div>
+        <span aria-hidden="true" class="hidden sm:block w-1 h-1 rounded-full bg-ink-4"></span>
+        <div class="flex items-center gap-3 text-sm text-ink-4">
+          <time datetime={isoDate}>{formattedDate}</time>
+        </div>
       </div>
     </div>
   </header>

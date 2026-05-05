@@ -37,7 +37,7 @@ const itemListSchema = {
   schema={[breadcrumbSchema, itemListSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Glossary' }]} bg="breadcrumb-bg-warm" />
+  <Breadcrumb items={[{ label: 'Glossary' }]} bg="breadcrumb-bg-glossary" />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #FFFCF8 0%, #FFF8F1 50%, #FFFFFF 100%);">
@@ -50,7 +50,7 @@ const itemListSchema = {
         <h1 class="text-display-lg font-bold text-ink">
           Freight Forwarding &amp; Logistics Glossary
         </h1>
-        <p class="mt-5 text-lg text-ink-3 leading-relaxed">
+        <p class="mt-5 hero-description text-ink-3">
           Key freight forwarding and logistics terms explained — from airway bills to TMS platforms. Each entry covers what the term means, why it matters for freight forwarders, and how AI automation applies.
         </p>
       </div>
@@ -93,7 +93,7 @@ const itemListSchema = {
         Book a free audit. We'll map your workflows and recommend the highest-impact starting point.
       </p>
       <div class="mt-8" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-white">Book a Free Audit</a>
+        <a href="/contact" class="btn btn-cta-single">Book a Free Audit</a>
       </div>
     </div>
   </section>

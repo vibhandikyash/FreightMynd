@@ -3,34 +3,42 @@ import { Image } from 'astro:assets';
 import { site } from '../../data/site';
 import logoFooter from '../../assets/images/logos/freightmynd-logo-footer.png';
 
-const solutionLinks = [
+const automationSolutionLinks = [
   { label: '4PL Control Tower', href: '/solutions/4pl-control-tower-automation' },
   { label: 'Quote Management', href: '/solutions/autonomous-quote-management' },
   { label: 'Document Intelligence', href: '/solutions/document-intelligence' },
   { label: 'Freight Pricing AI', href: '/solutions/freight-pricing-ai' },
-  { label: 'Sea Freight Automation', href: '/solutions/sea-freight-automation' },
-  { label: 'Air Freight Automation', href: '/solutions/air-freight-automation' },
-  { label: '3PL/4PL Operations', href: '/solutions/3pl-4pl-operations' },
   { label: 'Smart Invoice Processing', href: '/solutions/smart-invoice-processing' },
   { label: 'Customs Automation', href: '/solutions/customs-automation' },
   { label: 'Document Automation', href: '/solutions/freight-document-automation' },
   { label: 'TMS Automation', href: '/solutions/tms-automation' },
+  { label: 'Email Intelligence', href: '/solutions/email-intelligence' },
+  { label: 'Rate Intelligence', href: '/solutions/rate-sheet-intelligence' },
+];
+
+const operationsSolutionLinks = [
+  { label: 'Sea Freight Automation', href: '/solutions/sea-freight-automation' },
+  { label: 'Air Freight Automation', href: '/solutions/air-freight-automation' },
+  { label: '3PL/4PL Operations', href: '/solutions/3pl-4pl-operations' },
   { label: 'Revenue Recovery', href: '/solutions/freight-revenue-recovery' },
   { label: 'Spend Analytics', href: '/solutions/freight-spend-analytics' },
-  { label: 'Email Intelligence', href: '/solutions/email-intelligence' },
   { label: 'Visibility Portal', href: '/solutions/shipment-visibility-portal' },
   { label: 'Carrier Analytics', href: '/solutions/carrier-performance-analytics' },
   { label: 'Booking Automation', href: '/solutions/booking-automation' },
   { label: 'ETA & Exceptions', href: '/solutions/eta-prediction-exception-management' },
   { label: 'SOP Compliance', href: '/solutions/sop-compliance-monitoring' },
   { label: 'Order to Cash', href: '/solutions/order-to-cash-automation' },
-  { label: 'Rate Intelligence', href: '/solutions/rate-sheet-intelligence' },
 ];
 
 const companyLinks = [
   { label: 'About', href: '/about' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Glossary', href: '/glossary' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const regionLinks = [
   { label: 'Freight Forwarders', href: '/freight-forwarders' },
   { label: 'Middle East', href: '/freight-forwarders/middle-east' },
   { label: 'North America', href: '/freight-forwarders/north-america' },
@@ -38,8 +46,6 @@ const companyLinks = [
   { label: 'Asia Pacific', href: '/freight-forwarders/asia-pacific' },
   { label: 'South Africa', href: '/freight-forwarders/south-africa' },
   { label: 'Canada', href: '/freight-forwarders/canada' },
-  { label: 'Glossary', href: '/glossary' },
-  { label: 'Contact', href: '/contact' },
 ];
 
 const compareLinks = [
@@ -49,23 +55,15 @@ const compareLinks = [
   { label: 'SaaS vs Custom AI', href: '/compare/saas-vs-custom-freight-ai' },
 ];
 
-const integrationLinks = [
-  { label: 'CargoWise', href: '/integrations/cargowise' },
-  { label: 'SAP TM', href: '/integrations/sap-tm' },
-  { label: 'Oracle TMS', href: '/integrations/oracle-tms' },
-  { label: 'Microsoft Dynamics', href: '/integrations/microsoft-dynamics' },
-  { label: 'Descartes', href: '/integrations/descartes' },
-];
-
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-[#120b07] text-white/70 pt-20 pb-8" role="contentinfo">
   <div class="container">
     <!-- Top grid -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+    <div class="grid grid-cols-2 lg:grid-cols-[1.25fr_repeat(5,minmax(0,1fr))] gap-10 pb-12 border-b border-white/10">
       <!-- Col 1: Brand -->
-      <div class="col-span-2 md:col-span-1">
+      <div class="col-span-2 lg:col-span-1">
         <a href="/" class="flex items-center mb-4">
           <Image src={logoFooter} alt="FreightMynd" widths={[170, 340]} sizes="170px" loading="lazy" quality={90} class="h-7 w-auto max-w-[170px] object-contain" />
         </a>
@@ -94,11 +92,11 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <!-- Col 2: Solutions -->
+      <!-- Col 2: AI Automation -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Solutions</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">AI Automation</h3>
         <ul class="space-y-2.5" role="list">
-          {solutionLinks.map(link => (
+          {automationSolutionLinks.map(link => (
             <li>
               <a href={link.href} class="text-sm hover:text-brand transition-colors">{link.label}</a>
             </li>
@@ -106,11 +104,11 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Col 3: Integrations -->
+      <!-- Col 3: Freight Ops -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Integrations</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">Freight Ops</h3>
         <ul class="space-y-2.5" role="list">
-          {integrationLinks.map(link => (
+          {operationsSolutionLinks.map(link => (
             <li>
               <a href={link.href} class="text-sm hover:text-brand transition-colors">{link.label}</a>
             </li>
@@ -130,9 +128,21 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <!-- Col 5: Company -->
+      <!-- Col 5: Regions -->
       <div>
-        <h3 class="text-white font-semibold text-sm mb-4">Company</h3>
+        <h3 class="text-white font-semibold text-sm mb-4">Regions</h3>
+        <ul class="space-y-2.5" role="list">
+          {regionLinks.map(link => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-brand transition-colors">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 6: Contact -->
+      <div>
+        <h3 class="text-white font-semibold text-sm mb-4">Contact</h3>
         <ul class="space-y-2.5" role="list">
           {companyLinks.map(link => (
             <li>

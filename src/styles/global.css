@@ -217,8 +217,8 @@
 }
 
 @utility section-sm {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 60px;
+  padding-bottom: 60px;
   @media (max-width: 768px) {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -241,6 +241,11 @@
   height: 6px;
   border-radius: 9999px;
   flex-shrink: 0;
+}
+
+@utility hero-description {
+  font-size: 18px;
+  line-height: 30px;
 }
 
 @utility tag {
@@ -310,6 +315,17 @@
   &:hover {
     background-color: var(--color-brand);
     border-color: var(--color-brand);
+    color: white;
+  }
+}
+
+@utility btn-cta-single {
+  background-color: var(--color-brand);
+  color: white;
+  border: 1px solid var(--color-brand);
+  &:hover {
+    background-color: #24170E;
+    border-color: #24170E;
     color: white;
   }
 }

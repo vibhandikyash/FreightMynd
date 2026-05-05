@@ -3,7 +3,7 @@ import Page from '../layouts/Page.astro';
 import Breadcrumb from '../components/ui/Breadcrumb.astro';
 import { site } from '../data/site';
 import { Image } from 'astro:assets';
-import aboutHeroImg from '../assets/images/about-hero.webp';
+import aboutHeroImg from '../assets/images/about-operations-hero.png';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -69,29 +69,38 @@ const steps = [
   <Breadcrumb items={[{ label: 'About' }]} bg="breadcrumb-bg-warm" />
 
   <!-- Hero -->
-  <section class="pt-8 pb-16 md:pt-12 md:pb-20" style="background: linear-gradient(135deg, #FFFCF8 0%, #FFF8F1 50%, #FFFFFF 100%);">
+  <section class="py-12 md:py-[60px]" style="background: linear-gradient(135deg, #FFFCF8 0%, #FFF8F1 50%, #FFFFFF 100%);">
     <div class="container">
-      <div class="max-w-3xl">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
+        <div class="max-w-none">
         <p class="eyebrow mb-4">
           <span class="eyebrow-dot bg-brand"></span>
           About
         </p>
-        <h1 class="text-display-lg font-bold text-ink">
-          AI Systems for Freight — Built by People Who Understand Operations
+        <h1 class="text-[42px] leading-[52px] md:text-[52px] md:leading-[64px] font-bold text-ink">
+          AI Systems for Freight - Built by People Who Understand Operations
         </h1>
-        <p class="mt-5 text-lg text-ink-3 leading-relaxed">
+        <p class="mt-7 text-[18px] leading-[30px] font-normal text-ink-3">
           FreightMynd is powered by <a href={site.builtBy.url} target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark transition-colors font-medium">Bitontree</a> — an AI development services company specialising in freight forwarding technology, with 6+ years of production deployments. We build AI freight management systems for freight forwarders, 3PLs, and supply chain operators. Not SaaS. Not templates. Purpose-built digital freight forwarding systems deployed in your environment.
         </p>
-      </div>
-      <div class="mt-12 max-w-4xl">
+          <div class="mt-8 flex flex-col sm:flex-row items-start gap-4">
+            <a href="/contact" class="btn btn-brand">
+              Book a Free Audit
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a href="/case-studies" class="btn btn-ghost">View Case Studies</a>
+          </div>
+        </div>
         <Image
           src={aboutHeroImg}
-          alt="FreightMynd team building AI systems for freight forwarding operations"
+          alt="AI freight operations visibility across trucks and ports"
           widths={[640, 960, 1180]}
-          sizes="(max-width: 1220px) calc(100vw - 40px), 960px"
+          sizes="(min-width: 1024px) 50vw, calc(100vw - 40px)"
           loading="eager"
           fetchpriority="high"
-          quality={80}
+          quality={82}
           class="w-full rounded-2xl border border-line/70 shadow-lg"
         />
       </div>
@@ -101,21 +110,20 @@ const steps = [
   <!-- Who We Are -->
   <section class="section bg-white">
     <div class="container">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div data-reveal>
+      <div data-reveal>
           <p class="eyebrow mb-4">
             <span class="eyebrow-dot bg-brand"></span>
             Who We Are
           </p>
-          <h2 class="section-heading">A Team of AI Engineers and Logistics Domain Experts</h2>
-          <p class="mt-5 text-ink-3 leading-relaxed">
+          <h2 class="section-heading">A Team of AI Engineers and<br class="hidden md:inline" /> Logistics Domain Experts</h2>
+          <p class="mt-5 max-w-none text-ink-3 leading-relaxed">
             FreightMynd was founded in 2019 and operates from offices in the United States (Clifton, NJ) and India (Gujarat). Our team combines deep AI engineering expertise with hands-on knowledge of freight forwarding operations. See what we build on our <a href="/solutions" class="text-brand hover:text-brand-dark font-medium transition-colors">solutions page</a>.
           </p>
-          <p class="mt-4 text-ink-3 leading-relaxed">
+          <p class="mt-4 max-w-none text-ink-3 leading-relaxed">
             We don't sell a product. We build systems that become part of your operations infrastructure — integrated with your TMS, trained on your documents, and deployed in your environment. Our work with <a href="/case-studies/hellmann-4pl-control-tower" class="text-brand hover:text-brand-dark font-medium transition-colors">Hellmann Worldwide Logistics</a> is a flagship example.
           </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4" data-reveal data-reveal-delay="1">
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10" data-reveal data-reveal-delay="1">
           <div class="p-6 rounded-2xl border border-line/70 bg-surface/30">
             <p class="text-3xl font-bold text-brand">2019</p>
             <p class="text-sm text-ink-4 mt-1">Founded</p>
@@ -132,7 +140,6 @@ const steps = [
             <p class="text-3xl font-bold text-brand">IN</p>
             <p class="text-sm text-ink-4 mt-1">Gujarat, India</p>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -154,7 +161,7 @@ const steps = [
             FreightMynd is built by <a href="https://bitontree.com" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-dark font-medium transition-colors">Bitontree</a>, a specialist AI engineering firm focused on building production-grade AI systems for complex operational domains. We bring the engineering rigor of a top-tier AI team with the domain knowledge of people who have lived inside freight operations.
           </p>
         </div>
-        <div data-reveal data-reveal-delay="1">
+        <div class="md:pt-12" data-reveal data-reveal-delay="1">
           <div class="grid grid-cols-2 gap-4">
             <div class="p-6 rounded-2xl border border-line/70 bg-white">
               <p class="text-3xl font-bold text-brand">6+</p>
@@ -188,8 +195,13 @@ const steps = [
         </div>
       </div>
 
-      <!-- Who You'll Work With -->
-      <div class="mt-16" data-reveal>
+    </div>
+  </section>
+
+  <!-- Who You'll Work With -->
+  <section class="section bg-white">
+    <div class="container">
+      <div data-reveal>
         <p class="eyebrow mb-4">
           <span class="eyebrow-dot bg-brand"></span>
           Who You'll Work With
@@ -287,7 +299,7 @@ const steps = [
   </section>
 
   <!-- Our Approach -->
-  <section class="section" style="background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+  <section class="section bg-surface">
     <div class="container">
       <div class="max-w-2xl mb-14" data-reveal>
         <p class="eyebrow mb-4">
@@ -413,13 +425,13 @@ const steps = [
         Book a free audit. We'll map your workflows and show you what we'd build.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-white">
+        <a href="/contact" class="btn btn-cta-single">
           Book a Free Audit
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <a href="/solutions" class="btn bg-brand border border-brand text-white hover:bg-white hover:border-white hover:text-ink">
+        <a href="/solutions" class="btn btn-white">
           Explore Solutions
         </a>
       </div>
