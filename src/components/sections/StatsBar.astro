@@ -11,8 +11,10 @@ import { heroStats } from '../../data/stats';
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
       {heroStats.map((stat, i) => (
-        <div
-          class="relative group text-center bg-surface rounded-2xl border border-line/70 p-6 md:p-8 hover:shadow-md hover:-translate-y-0.5 transition-[transform,box-shadow] duration-300"
+        <a
+          href="/case-studies/hellmann-4pl-control-tower"
+          class="relative group block text-center bg-surface rounded-2xl border border-line/70 p-6 md:p-8 hover:shadow-md hover:-translate-y-0.5 hover:border-brand/40 transition-[transform,box-shadow,border-color] duration-300"
+          aria-label={`${stat.value}${stat.suffix ?? ''} — ${stat.label}. Read the Hellmann case study.`}
           data-reveal
           data-reveal-delay={String(i + 1)}
         >
@@ -23,7 +25,7 @@ import { heroStats } from '../../data/stats';
             {stat.value}<span class="text-brand text-[0.5em] font-semibold ml-0.5">{stat.suffix}</span>
           </p>
           <p class="mt-3 text-sm text-ink-3 leading-snug font-medium">{stat.label}</p>
-        </div>
+        </a>
       ))}
     </div>
   </div>
