@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import controlTowerImg from '../../assets/images/4pl-control-tower.webp';
-import quoteManagementImg from '../../assets/images/quote-management.webp';
+import controlTowerImg from '../../assets/images/4pl-control-tower-orange.png';
+import quoteManagementImg from '../../assets/images/autonomous-quote-management-orange.png';
 
 const systems = [
   {
     tag: 'Live System',
     client: 'Hellmann Worldwide Logistics',
     title: '4PL Control Tower Automation',
-    description: 'Full document intelligence pipeline — email monitoring to CargoWise XML push — processing 200–300 page document batches with near-zero failure rate. Zero manual TMS data entry.',
+    description: 'Full document intelligence pipeline from email monitoring to CargoWise XML push, processing 200-300 page document batches with near-zero failure rate. Zero manual TMS data entry.',
     results: [
       { value: '60%', label: 'Processing time reduction' },
       { value: '50%', label: 'AI cost reduction' },
@@ -16,13 +16,12 @@ const systems = [
     ],
     stack: ['Python', 'LangGraph', 'Azure', 'CargoWise', 'OpenAI'],
     href: '/case-studies/hellmann-4pl-control-tower',
-    cta: 'Read Full Case Study',
   },
   {
     tag: 'Deployed System',
     client: 'European Sea & Air Forwarder',
     title: 'Autonomous Quote Management',
-    description: 'End-to-end RFQ automation pipeline — ingests quote requests from email and portal, matches against live carrier rates, applies lane-specific margin rules, and generates branded quote documents. Reduced quoting from a 45-minute manual process to under 5 minutes with zero rate-lookup errors.',
+    description: 'End-to-end RFQ automation pipeline that ingests quote requests, matches carrier rates, applies margin rules, and generates branded quote documents in minutes.',
     results: [
       { value: '85%', label: 'Faster turnaround' },
       { value: '3x', label: 'Quotes per person per day' },
@@ -30,87 +29,85 @@ const systems = [
     ],
     stack: ['Python', 'LangGraph', 'n8n', 'Azure', 'OpenAI'],
     href: '/solutions/autonomous-quote-management',
-    cta: 'Explore Solution',
   },
 ];
 ---
 
 <section class="section bg-surface">
   <div class="container">
-    <!-- Header -->
     <div class="max-w-2xl mb-14" data-reveal>
       <p class="eyebrow mb-4">
         <span class="eyebrow-dot bg-mint"></span>
         Proof, Not Promises
       </p>
-      <h2 class="section-heading">AI for Freight Operations — Production Systems, Not POCs</h2>
+      <h2 class="section-heading">AI for Freight Operations - Production Systems, Not POCs</h2>
       <p class="mt-4 text-lg text-ink-3 leading-relaxed">
-        Not mockups. Not demos. Production freight forwarding technology handling real operations daily for companies like Hellmann Worldwide Logistics — digital freight forwarding systems built for your stack.
+        Not mockups. Not demos. Production freight forwarding technology handling real operations daily for companies like Hellmann Worldwide Logistics - digital freight forwarding systems built for your stack.
       </p>
     </div>
 
-    <!-- System cards -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid gap-8">
       {systems.map((system, i) => (
-        <div class="bg-white rounded-2xl border border-line/70 overflow-hidden flex flex-col hover:shadow-hover hover:-translate-y-1 transition-[transform,box-shadow] duration-300" data-reveal data-reveal-delay={String(i + 1)}>
-          {/* Card image */}
-          {i === 0 && (
-            <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <Image src={controlTowerImg} alt="4PL control tower — AI document hub processing invoices, AWBs, and supplier documents" class="w-full h-full object-cover" widths={[370, 480, 590]} sizes="(max-width: 768px) calc(100vw - 40px), 560px" quality={60} />
+        <article
+          class="bg-white rounded-[18px] border border-line/80 p-6 md:p-8 flex flex-col lg:grid lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch gap-8 shadow-[0_12px_34px_rgba(36,23,14,0.045)] hover:shadow-hover hover:-translate-y-1 hover:border-brand/20 transition-[transform,box-shadow,border-color] duration-300"
+          data-reveal
+          data-reveal-delay={String(i + 1)}
+        >
+          <div class="flex flex-col">
+            <div class="flex flex-wrap items-center gap-3 mb-6">
+              <span class="tag tag-brand">
+                {system.tag === 'Live System' && <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse-dot"></span>}
+                {system.tag}
+              </span>
+              <cite class="text-xs text-ink-4 font-mono not-italic">{system.client}</cite>
             </div>
-          )}
-          {i === 1 && (
-            <div class="w-full h-48 overflow-hidden bg-brand-light/20">
-              <Image src={quoteManagementImg} alt="Autonomous quote management — AI-powered RFQ processing and rate comparison" class="w-full h-full object-cover" widths={[370, 480, 590]} sizes="(max-width: 768px) calc(100vw - 40px), 560px" quality={60} />
+
+            <h3 class="text-[1.65rem] md:text-[2rem] leading-tight font-bold text-ink mb-4">{system.title}</h3>
+            <p class="text-base md:text-[17px] text-ink-3 leading-relaxed mb-7 max-w-xl">{system.description}</p>
+
+            <div class="flex flex-wrap gap-2 mb-7">
+              {system.stack.map((tech) => (
+                <span class="px-3.5 py-2 rounded-[4px] border border-line bg-white text-sm text-ink-2">{tech}</span>
+              ))}
             </div>
-          )}
-          <div class="p-8 flex flex-col flex-grow">
-          <!-- Tag + Client -->
-          <div class="flex items-center gap-3 mb-5">
-            <span class="tag tag-brand">
-              {system.tag === 'Live System' && <span class="w-1.5 h-1.5 rounded-full bg-mint animate-pulse-dot"></span>}
-              {system.tag}
-            </span>
-            <cite class="text-xs text-ink-4 font-mono not-italic">{system.client}</cite>
+
+            {system.tag === 'Live System' && (
+              <p class="text-xs italic text-ink-4 mb-7 border-l-2 border-brand/30 pl-3">
+                Impact: Ops team reallocated from data entry to exception management and client communication
+              </p>
+            )}
+
+            <a href={system.href} class="mt-auto w-fit btn btn-brand">
+              {system.tag === 'Live System' ? 'Read Full Case Study' : 'Explore Solution'}
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
 
-          <!-- Title + Description -->
-          <h3 class="text-display-sm font-bold text-ink mb-3">{system.title}</h3>
-          <p class="text-ink-3 leading-relaxed mb-6">{system.description}</p>
-
-          <!-- Results -->
-          <div class="grid grid-cols-3 gap-4 mb-6 py-5 border-y border-line/50">
-            {system.results.map(r => (
-              <div class="text-center">
-                <p class="text-lg font-bold text-brand">{r.value}</p>
-                <p class="text-[11px] text-ink-4 mt-0.5">{r.label}</p>
-              </div>
-            ))}
+          <div class="w-full min-h-[280px] md:min-h-[340px] overflow-hidden rounded-[16px] bg-[#fff6e8] flex items-center justify-center p-5 md:p-7">
+            {i === 0 && (
+              <Image
+                src={controlTowerImg}
+                alt="4PL control tower AI document hub processing invoices, AWBs, and supplier documents"
+                class="w-full h-full object-contain scale-[1.08]"
+                widths={[520, 720, 920]}
+                sizes="(max-width: 1024px) calc(100vw - 64px), 650px"
+                quality={72}
+              />
+            )}
+            {i === 1 && (
+              <Image
+                src={quoteManagementImg}
+                alt="Autonomous quote management AI-powered RFQ processing and rate comparison"
+                class="w-full h-full object-contain scale-[1.08]"
+                widths={[520, 720, 920]}
+                sizes="(max-width: 1024px) calc(100vw - 64px), 650px"
+                quality={72}
+              />
+            )}
           </div>
-
-          <!-- Stack -->
-          <div class="flex flex-wrap gap-2 mb-6">
-            {system.stack.map(tech => (
-              <span class="tag tag-brand">{tech}</span>
-            ))}
-          </div>
-
-          {/* Impact line for Hellmann */}
-          {system.tag === 'Live System' && (
-            <p class="text-xs italic text-ink-4 mb-6 border-l-2 border-brand/30 pl-3">
-              Impact: Ops team reallocated from data entry to exception management and client communication
-            </p>
-          )}
-
-          <!-- CTA -->
-          <a href={system.href} class="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-brand hover:gap-3 transition-[gap] duration-200">
-            {system.tag === 'Live System' ? 'Read the Hellmann automation case study' : 'Explore AI quote management solution'}
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-          </div>
-        </div>
+        </article>
       ))}
     </div>
   </div>

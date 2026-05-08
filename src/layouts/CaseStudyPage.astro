@@ -74,7 +74,7 @@ const pageDescription = study.metaDescription ?? study.description;
   <Breadcrumb items={[{ label: 'Case Studies', href: '/case-studies' }, { label: study.title }]} />
 
   <!-- Hero -->
-  <section class="pt-12 pb-16 md:pt-16 md:pb-24" style="background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);">
+  <section class="py-12 md:py-[60px] bg-surface">
     <div class="container">
       <div class="max-w-3xl">
         <div class="flex items-center gap-3 mb-5">
@@ -85,7 +85,7 @@ const pageDescription = study.metaDescription ?? study.description;
           <span class="text-xs text-ink-4 font-mono">{study.client}</span>
         </div>
         <h1 class="text-display-lg font-bold text-ink">{study.headline}</h1>
-        <p class="mt-5 text-lg text-ink-3 leading-relaxed">{study.description}</p>
+        <p class="mt-5 hero-description text-ink-3">{study.description}</p>
 
         <!-- Hero metric -->
         <div class="mt-8 inline-flex items-baseline gap-3 p-5 rounded-2xl bg-brand-light/50 border border-brand-mid/30">
@@ -98,9 +98,9 @@ const pageDescription = study.metaDescription ?? study.description;
 
   <!-- Client Overview (if present) -->
   {study.clientOverview && (
-    <section class="section-sm bg-white border-b border-line">
+    <section class="section-sm bg-surface border-b border-line">
       <div class="container">
-        <div class="max-w-3xl" data-reveal>
+        <div class="max-w-none" data-reveal>
           <p class="eyebrow mb-4">
             <span class="eyebrow-dot bg-brand"></span>
             Client Overview
@@ -115,22 +115,22 @@ const pageDescription = study.metaDescription ?? study.description;
   <!-- The Challenge -->
   <section class="section bg-white">
     <div class="container">
-      <div class="max-w-3xl" data-reveal>
+      <div class="max-w-none" data-reveal>
         <p class="eyebrow mb-4">
           <span class="eyebrow-dot bg-accent"></span>
           The Challenge
         </p>
         <h2 class="section-heading">What They Were Dealing With</h2>
-        <p class="mt-5 text-lg text-ink-3 leading-relaxed">{study.challenge}</p>
+        <p class="mt-5 text-base text-ink-3 leading-relaxed">{study.challenge}</p>
         {study.challengePoints && study.challengePoints.length > 0 && (
-          <ul class="mt-6 grid gap-3">
+          <ul class="mt-8 grid gap-5 md:grid-cols-2">
             {study.challengePoints.map((point, i) => (
-              <li class="flex gap-3 items-start p-4 rounded-xl border border-line/70 bg-surface/50"
+              <li class="flex gap-4 items-start p-6 rounded-2xl border border-line/70 bg-surface/50"
                   data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
-                <svg class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg class="w-6 h-6 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
-                <span class="text-ink-3 leading-relaxed">{point}</span>
+                <span class="text-[17px] text-ink-3 leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>
@@ -142,7 +142,7 @@ const pageDescription = study.metaDescription ?? study.description;
   <!-- What We Built -->
   <section class="section bg-surface">
     <div class="container">
-      <div class="max-w-3xl">
+      <div class="max-w-none">
         <div class="mb-10" data-reveal>
           <p class="eyebrow mb-4">
             <span class="eyebrow-dot bg-brand"></span>
@@ -150,14 +150,14 @@ const pageDescription = study.metaDescription ?? study.description;
           </p>
           <h2 class="section-heading">The System</h2>
         </div>
-        <div class="grid gap-4">
+        <div class="grid gap-5 md:grid-cols-2">
           {study.whatWeBuilt.map((item, i) => (
-            <div class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-white hover:shadow-md transition-all duration-200"
+            <div class="flex gap-4 p-6 rounded-2xl border border-line/70 bg-white hover:shadow-md transition-all duration-200"
                  data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
               <div class="w-8 h-8 rounded-xl bg-brand/10 text-brand font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
                 {i + 1}
               </div>
-              <p class="text-ink-3 leading-relaxed">{item}</p>
+              <p class="text-base text-ink-3 leading-relaxed">{item}</p>
             </div>
           ))}
         </div>
@@ -169,7 +169,7 @@ const pageDescription = study.metaDescription ?? study.description;
   {study.architecture && (
     <section class="section bg-white">
       <div class="container">
-        <div class="max-w-3xl">
+        <div class="max-w-none">
           <div class="mb-10" data-reveal>
             <p class="eyebrow mb-4">
               <span class="eyebrow-dot bg-brand"></span>
@@ -177,14 +177,14 @@ const pageDescription = study.metaDescription ?? study.description;
             </p>
             <h2 class="section-heading">How It All Connects</h2>
           </div>
-          <div class="grid gap-3">
+          <div class="grid gap-4">
             {study.architecture.map((step, i) => (
-              <div class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-surface hover:shadow-md transition-all duration-200"
+              <div class="flex gap-4 p-6 rounded-2xl border border-line/70 bg-surface hover:shadow-md transition-all duration-200"
                    data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
                 <div class="w-8 h-8 rounded-full bg-brand text-white font-bold text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
                   {i + 1}
                 </div>
-                <p class="text-ink-3 leading-relaxed">{step}</p>
+                <p class="text-base text-ink-3 leading-relaxed">{step}</p>
               </div>
             ))}
           </div>
@@ -194,7 +194,7 @@ const pageDescription = study.metaDescription ?? study.description;
   )}
 
   <!-- Results -->
-  <section class="py-20 md:py-28" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+  <section class="py-12 md:py-[60px]" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
     <div class="container">
       <div class="max-w-2xl mb-12" data-reveal>
         <p class="eyebrow mb-4 text-white/50">
@@ -230,8 +230,8 @@ const pageDescription = study.metaDescription ?? study.description;
     <div class="container">
       <div class="flex flex-col md:flex-row items-start md:items-center gap-6" data-reveal>
         <div class="flex-grow">
-          <h3 class="text-lg font-bold text-ink mb-1">Want Results Like These?</h3>
-          <p class="text-sm text-ink-3">Book a free audit — we'll map your operations and show you what's possible.</p>
+          <h3 class="text-2xl font-bold text-ink mb-2">Want Results Like These?</h3>
+          <p class="text-base md:text-lg leading-relaxed text-ink-3">Book a free audit — we'll map your operations and show you what's possible.</p>
         </div>
         <a href="/contact" class="btn btn-brand btn-sm flex-shrink-0">
           Book a Free Audit
@@ -247,7 +247,7 @@ const pageDescription = study.metaDescription ?? study.description;
   {study.keyLearnings && (
     <section class="section bg-surface">
       <div class="container">
-        <div class="max-w-3xl">
+        <div class="max-w-none">
           <div class="mb-10" data-reveal>
             <p class="eyebrow mb-4">
               <span class="eyebrow-dot bg-health"></span>
@@ -255,12 +255,16 @@ const pageDescription = study.metaDescription ?? study.description;
             </p>
             <h2 class="section-heading">What We Learned</h2>
           </div>
-          <ul class="grid gap-4">
+          <ul class="grid gap-5 md:grid-cols-2">
             {study.keyLearnings.map((learning, i) => (
-              <li class="flex gap-4 p-5 rounded-2xl border border-line/70 bg-white"
+              <li class="flex gap-4 p-6 rounded-2xl border border-line/70 bg-white"
                   data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
-                <div class="w-2 h-2 rounded-full bg-health flex-shrink-0 mt-2.5"></div>
-                <p class="text-ink-3 leading-relaxed">{learning}</p>
+                <span class="w-6 h-6 rounded-full bg-health/10 text-health flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <p class="text-base text-ink-3 leading-relaxed">{learning}</p>
               </li>
             ))}
           </ul>
@@ -381,17 +385,17 @@ const pageDescription = study.metaDescription ?? study.description;
   )}
 
   <!-- CTA -->
-  <section class="relative py-20 overflow-hidden" style="background: linear-gradient(135deg, #5B5EF0 0%, #4F46E5 100%);">
+  <section class="relative py-12 md:py-[60px] overflow-hidden" style="background: linear-gradient(135deg, #24170E 0%, #382315 100%);">
     <div class="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-white/10 blur-3xl" aria-hidden="true"></div>
     <div class="container relative z-10 text-center">
-      <h2 class="text-display-md font-bold text-white max-w-2xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
+      <h2 class="text-[40px] leading-[50px] md:text-[52px] md:leading-[64px] font-bold text-white max-w-3xl mx-auto" data-reveal style="padding-left:0; border-left:none;">
         Want Results Like These?
       </h2>
-      <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
+      <p class="mt-5 text-xl leading-8 text-white/80 max-w-2xl mx-auto" data-reveal data-reveal-delay="1">
         Book a free audit. We'll map your operations and show you what's possible.
       </p>
       <div class="mt-8" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-white">Book a Free Audit</a>
+        <a href="/contact" class="btn btn-cta-single">Book a Free Audit</a>
       </div>
     </div>
   </section>

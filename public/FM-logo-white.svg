@@ -1,0 +1,8 @@
+<svg width="270" height="56" viewBox="0 0 270 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">FreightMynd</title>
+  <text x="0" y="41" fill="#FFFFFF" font-family="TT Interphases Pro, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="0">Freight</text>
+  <text x="143" y="41" fill="#de7810" font-family="TT Interphases Pro, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="0">Mynd</text>
+  <path d="M172 40 L194 14" stroke="#de7810" stroke-width="5" stroke-linecap="round"/>
+  <path d="M194 14 L191 28 M194 14 L180 16" stroke="#de7810" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="169" cy="40" r="5.5" fill="#120b07" stroke="#de7810" stroke-width="4"/>
+</svg>

@@ -3,12 +3,12 @@ import IntegrationPage from '../../layouts/IntegrationPage.astro';
 import { integrations } from '../../data/integrations';
 const integration = integrations.find(i => i.slug === 'cargowise')!;
 ---
-<IntegrationPage integration={integration} heroImage="/images/cargowise-integration.webp" heroImageAlt="FreightMynd AI integration with CargoWise TMS showing data flow architecture">
+<IntegrationPage integration={integration} heroImage="/images/cargowise-integration-orange-v4.png" heroImageAlt="FreightMynd CargoWise AI integration showing Universal XML data flow">
 
   <!-- CargoWise eHub Integration — How It Works -->
-  <section class="section bg-white">
+  <section class="section bg-surface">
     <div class="container">
-      <div class="max-w-3xl" data-reveal>
+      <div class="max-w-none" data-reveal>
         <h2 class="section-heading">CargoWise eHub Integration — How It Works</h2>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
           FreightMynd connects to your CargoWise One instance through the eHub Universal Gateway and eAdaptor HTTP+XML interface. Once documents are extracted and validated, the pipeline formats all data as CargoWise-compliant Universal XML — the same schema CargoWise uses internally — and pushes it directly into your TMS via authenticated API calls. This covers shipment creation, consol management, customs declaration modules, and universal activities.
@@ -24,9 +24,9 @@ const integration = integrations.find(i => i.slug === 'cargowise')!;
   </section>
 
   <!-- CargoWise XML Data Push -->
-  <section class="section bg-surface">
+  <section class="section bg-white">
     <div class="container">
-      <div class="max-w-3xl" data-reveal>
+      <div class="max-w-none" data-reveal>
         <h2 class="section-heading">CargoWise XML Data Push</h2>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
           Every piece of validated data that FreightMynd extracts from your freight documents is transformed into CargoWise Universal XML and pushed directly into the appropriate CW1 module. Shipment records are created in the Forwarding module with full party data, reference numbers, and charge breakdowns. Customs data flows into the Customs module with HS codes, values, and declaration fields pre-populated. Accounting entries map to your chart of accounts and charge code structure. Document attachments are linked to the correct shipment record by reference number so operators can access originals without leaving CargoWise.
@@ -36,9 +36,9 @@ const integration = integrations.find(i => i.slug === 'cargowise')!;
   </section>
 
   <!-- CargoWise OCR and Document Extraction -->
-  <section class="section bg-white">
+  <section class="section bg-surface">
     <div class="container">
-      <div class="max-w-3xl" data-reveal>
+      <div class="max-w-none" data-reveal>
         <h2 class="section-heading">CargoWise OCR and Document Extraction</h2>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed">
           FreightMynd's document extraction pipeline combines Azure Document Intelligence OCR, layout analysis, and LLM-based field extraction to process every major freight document type — commercial invoices, air waybills, bills of lading, packing lists, certificates of origin, and customs declarations. The extracted data is validated against your business rules and cross-checked across related documents before any XML is generated. This means CargoWise receives clean, consistent, verified data — not raw OCR output that requires manual correction.
@@ -48,42 +48,42 @@ const integration = integrations.find(i => i.slug === 'cargowise')!;
   </section>
 
   <!-- FreightMynd vs Generic CargoWise Connectors -->
-  <section class="section bg-surface">
+  <section class="section bg-white">
     <div class="container">
-      <div class="max-w-3xl" data-reveal>
+      <div class="max-w-none" data-reveal>
         <h2 class="section-heading">FreightMynd vs Generic CargoWise Connectors</h2>
         <p class="mt-5 text-lg text-ink-3 leading-relaxed mb-8">
           Most CargoWise integration tools use generic, template-based approaches that require manual workarounds for anything outside the standard flow. FreightMynd is purpose-built for your specific CargoWise instance.
         </p>
         <div class="overflow-x-auto rounded-2xl border border-line/70">
-          <table class="w-full text-left text-sm">
+          <table class="w-full text-left text-base">
             <thead>
               <tr class="bg-ink text-white">
-                <th class="px-5 py-3.5 font-semibold"></th>
-                <th class="px-5 py-3.5 font-semibold">Generic Connectors</th>
-                <th class="px-5 py-3.5 font-semibold">FreightMynd</th>
+                <th class="px-6 py-4 font-semibold"></th>
+                <th class="px-6 py-4 font-semibold">Generic Connectors</th>
+                <th class="px-6 py-4 font-semibold">FreightMynd</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-line/70">
               <tr class="bg-white">
-                <td class="px-5 py-3.5 font-medium text-ink">Integration method</td>
-                <td class="px-5 py-3.5 text-ink-3">Template-based</td>
-                <td class="px-5 py-3.5 text-ink font-medium">Native eHub + Universal Gateway</td>
+                <td class="px-6 py-4 font-medium text-ink">Integration method</td>
+                <td class="px-6 py-4 text-ink-3">Template-based</td>
+                <td class="px-6 py-4 text-ink font-medium">Native eHub + Universal Gateway</td>
               </tr>
               <tr class="bg-surface/50">
-                <td class="px-5 py-3.5 font-medium text-ink">XML schema handling</td>
-                <td class="px-5 py-3.5 text-ink-3">Generic mapping</td>
-                <td class="px-5 py-3.5 text-ink font-medium">Built for your CW1 instance</td>
+                <td class="px-6 py-4 font-medium text-ink">XML schema handling</td>
+                <td class="px-6 py-4 text-ink-3">Generic mapping</td>
+                <td class="px-6 py-4 text-ink font-medium">Built for your CW1 instance</td>
               </tr>
               <tr class="bg-white">
-                <td class="px-5 py-3.5 font-medium text-ink">Edge cases</td>
-                <td class="px-5 py-3.5 text-ink-3">Manual workarounds</td>
-                <td class="px-5 py-3.5 text-ink font-medium">Built in from day one</td>
+                <td class="px-6 py-4 font-medium text-ink">Edge cases</td>
+                <td class="px-6 py-4 text-ink-3">Manual workarounds</td>
+                <td class="px-6 py-4 text-ink font-medium">Built in from day one</td>
               </tr>
               <tr class="bg-surface/50">
-                <td class="px-5 py-3.5 font-medium text-ink">Data ownership</td>
-                <td class="px-5 py-3.5 text-ink-3">Vendor cloud</td>
-                <td class="px-5 py-3.5 text-ink font-medium">Your environment</td>
+                <td class="px-6 py-4 font-medium text-ink">Data ownership</td>
+                <td class="px-6 py-4 text-ink-3">Vendor cloud</td>
+                <td class="px-6 py-4 text-ink font-medium">Your environment</td>
               </tr>
             </tbody>
           </table>
