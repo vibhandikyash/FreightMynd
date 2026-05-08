@@ -53,7 +53,7 @@ The scale of the problem compounds quickly. A single sea freight shipment can ge
 
 Error rates in manual data entry typically run between 2-5% at field level. That sounds acceptable until you calculate the downstream cost: an incorrect HS code triggers a customs hold, a wrong declared value delays invoice reconciliation, a transposed consignee address causes a delivery failure. Each error cascades through CargoWise into invoicing, customs filings, carrier bookings, and client reporting.
 
-This is not a CargoWise problem. CargoWise One is a capable system that handles the full freight lifecycle well. The problem is the gap between unstructured incoming documents and CargoWise's structured data requirements. AI-powered OCR and data extraction bridges that gap — and does it at a speed and accuracy that manual processes cannot match. Our [CargoWise integration](/integrations/cargowise) is built specifically to close this gap with production-grade automation.
+This is not a CargoWise problem. CargoWise One is a capable system that handles the full freight lifecycle well. The problem is the gap between unstructured incoming documents and CargoWise's structured data requirements. AI-powered OCR and data extraction bridges that gap — and does it at a speed and accuracy that manual processes cannot match. Our [CargoWise integration](/integrations/cargowise/) is built specifically to close this gap with production-grade automation.
 
 ## How AI-Powered OCR Works for CargoWise
 
@@ -71,7 +71,7 @@ Before any OCR or AI extraction runs, a lightweight classification model examine
 
 First, it identifies document types. A 200-page PDF batch from a supplier may contain commercial invoices, packing lists, AWBs, certificates of origin, cover letters, and blank separator pages. The classifier tags each page with its document type so the extraction engine knows which fields to look for.
 
-Second, it filters irrelevant content. Cover sheets, duplicate pages, blank pages, and non-actionable attachments are removed from the processing queue before expensive AI extraction runs. In production deployments, this pre-filtering step reduces AI processing costs by up to 50% — a significant optimization when you are processing thousands of pages daily. This approach is a core part of our [document intelligence](/solutions/document-intelligence) methodology.
+Second, it filters irrelevant content. Cover sheets, duplicate pages, blank pages, and non-actionable attachments are removed from the processing queue before expensive AI extraction runs. In production deployments, this pre-filtering step reduces AI processing costs by up to 50% — a significant optimization when you are processing thousands of pages daily. This approach is a core part of our [document intelligence](/solutions/document-intelligence/) methodology.
 
 ### Stage 3: OCR and AI Data Extraction
 
@@ -104,7 +104,7 @@ Validation includes:
 
 ### Stage 5: CargoWise XML Push
 
-Validated data is transformed into CargoWise-compatible XML and pushed into your TMS. This is where the [CargoWise integration](/integrations/cargowise) architecture matters — you need to generate XML that matches your specific CargoWise configuration, including module codes, custom fields, branch mappings, and party references.
+Validated data is transformed into CargoWise-compatible XML and pushed into your TMS. This is where the [CargoWise integration](/integrations/cargowise/) architecture matters — you need to generate XML that matches your specific CargoWise configuration, including module codes, custom fields, branch mappings, and party references.
 
 The XML push handles shipment creation, document attachment, invoice posting, milestone updates, and party record creation or matching. Each message type follows the CargoWise XML schema specification for the target module — whether that is Forwarding, Customs, Warehouse, or Accounting.
 
@@ -118,11 +118,11 @@ CargoWise offers two primary integration pathways, and the choice affects how yo
 
 **The production-grade approach uses both.** Universal Gateway handles real-time lookups during the validation stage — confirming references, matching parties, checking for duplicate shipments. eHub handles the bulk data push — sending extracted document data into CargoWise modules asynchronously with retry protection. This hybrid architecture gives you the reliability of queued messaging for high-volume inbound data and the responsiveness of real-time APIs for validation checks.
 
-For a deeper walkthrough of the integration architecture, see our [CargoWise AI integration guide](/blog/cargowise-ai-integration-guide).
+For a deeper walkthrough of the integration architecture, see our [CargoWise AI integration guide](/blog/cargowise-ai-integration-guide/).
 
 ## Real Results from CargoWise Data Extraction Automation
 
-Theory matters less than production results. Here is what a major enterprise forwarder achieved after deploying an AI-powered CargoWise data extraction pipeline for their [4PL control tower operations](/solutions/4pl-control-tower-automation).
+Theory matters less than production results. Here is what a major enterprise forwarder achieved after deploying an AI-powered CargoWise data extraction pipeline for their [4PL control tower operations](/solutions/4pl-control-tower-automation/).
 
 **The operation:** A global freight forwarder with 500+ offices processing daily document batches from suppliers — commercial invoices, AWBs, packing lists, and compliance documents arriving as PDFs of 200-300 pages per batch. Two operators spent significant portions of each morning manually downloading, reading, and rekeying data into CargoWise.
 
@@ -133,7 +133,7 @@ Theory matters less than production results. Here is what a major enterprise for
 - **Near-zero failure rate** on 200-300 page document batches — the system processes large batches reliably without the errors that manual processing introduces
 - **Zero manual data entry into CargoWise** — the full pipeline runs autonomously, with human intervention only for flagged exceptions
 
-The full deployment details are documented in our [enterprise 4PL case study](/case-studies/hellmann-4pl-control-tower). The key insight: the ROI came not just from labor savings, but from the elimination of error-driven rework downstream in invoicing, customs, and client reporting.
+The full deployment details are documented in our [enterprise 4PL case study](/case-studies/hellmann-4pl-control-tower/). The key insight: the ROI came not just from labor savings, but from the elimination of error-driven rework downstream in invoicing, customs, and client reporting.
 
 ## Document Types That Can Be Automated
 
@@ -151,7 +151,7 @@ AI-powered OCR handles the full range of freight documents that flow into CargoW
 
 **Certificates of Origin, Dangerous Goods Declarations, and Inspection Certificates** — lower volume but still automatable. The classification layer identifies these document types and routes them to specialized extraction profiles.
 
-For a deeper look at OCR accuracy across these document types, see our post on [freight document OCR accuracy](/blog/freight-document-ocr-accuracy).
+For a deeper look at OCR accuracy across these document types, see our post on [freight document OCR accuracy](/blog/freight-document-ocr-accuracy/).
 
 ## Self-Learning Supplier Onboarding
 
@@ -175,7 +175,7 @@ There are two approaches to automating CargoWise data extraction: SaaS platforms
 
 **Custom-built extraction systems** are engineered around your specific operation — your document types, your supplier base, your CargoWise configuration, your validation rules, your exception handling workflows. The system maps to your XML schema, your custom fields, your branch codes. This approach costs more upfront but delivers higher accuracy, lower ongoing costs, and the ability to handle edge cases that SaaS platforms cannot.
 
-For operations processing fewer than 50 documents daily with a standard CargoWise setup, SaaS may be sufficient. For high-volume operations, complex document types, multi-branch deployments, or 4PL control towers with diverse supplier bases, a custom system pays for itself within months. Our [approach to CargoWise automation](/blog/automate-cargowise-data-entry-ai) is built around the custom model — because freight operations at scale are too varied for one-size-fits-all solutions.
+For operations processing fewer than 50 documents daily with a standard CargoWise setup, SaaS may be sufficient. For high-volume operations, complex document types, multi-branch deployments, or 4PL control towers with diverse supplier bases, a custom system pays for itself within months. Our [approach to CargoWise automation](/blog/automate-cargowise-data-entry-ai/) is built around the custom model — because freight operations at scale are too varied for one-size-fits-all solutions.
 
 ## Getting Started with CargoWise Data Extraction
 
@@ -191,7 +191,7 @@ If you are evaluating AI-powered OCR and data extraction for your CargoWise oper
 
 **5. Define your exception handling workflow.** Not every document will be processed with 100% confidence. Decide upfront how flagged exceptions should be routed — to a review queue, to a specific team member, or back to the supplier for clarification.
 
-If you want a structured assessment of your CargoWise automation opportunity, [book a free audit](/contact) — we will map your document flows, estimate the processing time reduction, and outline an implementation plan specific to your operation.
+If you want a structured assessment of your CargoWise automation opportunity, [book a free audit](/contact/) — we will map your document flows, estimate the processing time reduction, and outline an implementation plan specific to your operation.
 
 ## Frequently Asked Questions
 

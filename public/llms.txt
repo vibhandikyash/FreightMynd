@@ -1,8 +1,8 @@
 # FreightMynd
 
-> Last updated: 2026-03-28
-
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
+
+Last updated: 2026-05-08
 
 FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
 

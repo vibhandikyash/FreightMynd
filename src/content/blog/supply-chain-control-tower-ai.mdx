@@ -50,7 +50,7 @@ A supply chain control tower is an operational command center — a system that 
 
 That is the textbook definition. In practice, the term "control tower" has been applied to everything from a shared dashboard showing shipment status to a fully autonomous AI system that processes documents, detects exceptions, and takes corrective action without human intervention. The gap between those two implementations is enormous, and understanding where your operation sits on that spectrum — and where it needs to be — is the first step.
 
-In the context of freight forwarding and [4PL operations](/solutions/4pl-control-tower-automation), a control tower typically manages shipments across multiple carriers, modes (sea, air, road, rail), and geographies on behalf of a shipper or group of shippers. The 4PL provider acts as the orchestrator — they do not own trucks or vessels, but they manage the entire logistics operation, and the control tower is the system that makes that orchestration possible at scale.
+In the context of freight forwarding and [4PL operations](/solutions/4pl-control-tower-automation/), a control tower typically manages shipments across multiple carriers, modes (sea, air, road, rail), and geographies on behalf of a shipper or group of shippers. The 4PL provider acts as the orchestrator — they do not own trucks or vessels, but they manage the entire logistics operation, and the control tower is the system that makes that orchestration possible at scale.
 
 ## The Evolution: From Visibility to Autonomous Action
 
@@ -66,7 +66,7 @@ The limitation was that visibility alone does not solve operational problems. Th
 
 The second generation added rules-based alerting. When a shipment deviated from plan — late departure, missed connection, customs hold — the system generated an alert and routed it to the responsible operator. More sophisticated implementations added escalation rules, SLA tracking, and basic workflow automation.
 
-This was a meaningful improvement, but it created a new problem: alert fatigue. A busy [3PL or 4PL operation](/solutions/3pl-4pl-operations) can generate hundreds of alerts per day, and operators quickly learned to ignore all but the most critical ones. The system could detect problems, but it could not distinguish between a minor ETA update and a critical exception requiring immediate action. Every alert still required human judgment.
+This was a meaningful improvement, but it created a new problem: alert fatigue. A busy [3PL or 4PL operation](/solutions/3pl-4pl-operations/) can generate hundreds of alerts per day, and operators quickly learned to ignore all but the most critical ones. The system could detect problems, but it could not distinguish between a minor ETA update and a critical exception requiring immediate action. Every alert still required human judgment.
 
 ### Generation 3: AI-Powered Orchestration (2024-Present)
 
@@ -82,9 +82,9 @@ A production AI control tower for freight forwarding operations handles three in
 
 Every freight operation begins and ends with documents. Commercial invoices, airway bills, bills of lading, packing lists, customs declarations, certificates of origin, delivery confirmations — the volume is staggering and the manual processing is the single largest time sink in most operations.
 
-An AI control tower's [document intelligence layer](/solutions/document-intelligence) monitors incoming document streams (email, FTP, API), classifies documents by type, extracts structured data, validates against business rules, and pushes clean data into the TMS. This is not a nice-to-have — it is the foundation that makes everything else possible. If your TMS data is inaccurate, incomplete, or delayed because it depends on manual entry, no amount of visibility or alerting will fix your operations.
+An AI control tower's [document intelligence layer](/solutions/document-intelligence/) monitors incoming document streams (email, FTP, API), classifies documents by type, extracts structured data, validates against business rules, and pushes clean data into the TMS. This is not a nice-to-have — it is the foundation that makes everything else possible. If your TMS data is inaccurate, incomplete, or delayed because it depends on manual entry, no amount of visibility or alerting will fix your operations.
 
-The [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower) demonstrated what production-grade document intelligence looks like: 200-300 page document batches processed at near-zero failure rates, 60% reduction in processing time, 50% AI cost reduction through intelligent pre-filtering, and zero manual TMS data entry. The system handles invoices, AWBs, packing lists, and compliance documents across multiple suppliers with self-learning format adaptation.
+The [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower/) demonstrated what production-grade document intelligence looks like: 200-300 page document batches processed at near-zero failure rates, 60% reduction in processing time, 50% AI cost reduction through intelligent pre-filtering, and zero manual TMS data entry. The system handles invoices, AWBs, packing lists, and compliance documents across multiple suppliers with self-learning format adaptation.
 
 ### Function 2: Exception Management
 
@@ -106,7 +106,7 @@ Not all control towers serve the same function. The three primary types address 
 
 ### Transportation Control Tower
 
-The most common type in freight forwarding. A transportation control tower manages shipment execution across carriers and transport modes — booking, tracking, exception management, and carrier performance. For [4PL operations](/solutions/4pl-control-tower-automation), this is the core system that enables multi-carrier, multi-modal orchestration.
+The most common type in freight forwarding. A transportation control tower manages shipment execution across carriers and transport modes — booking, tracking, exception management, and carrier performance. For [4PL operations](/solutions/4pl-control-tower-automation/), this is the core system that enables multi-carrier, multi-modal orchestration.
 
 ### Fulfillment Control Tower
 
@@ -122,7 +122,7 @@ A production AI control tower in 2026 typically includes the following component
 
 **Data Integration Layer** — Connectors to your TMS (CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics), carrier APIs, email systems, and document sources. This layer normalizes data from disparate sources into a unified operational model.
 
-**Document Intelligence Engine** — AI extraction, classification, and validation pipeline for freight documents. This is the component that eliminates manual data entry. The [Hellmann deployment](/case-studies/hellmann-4pl-control-tower) uses LangGraph-orchestrated extraction with Azure Document Intelligence, OCR, and OpenAI models.
+**Document Intelligence Engine** — AI extraction, classification, and validation pipeline for freight documents. This is the component that eliminates manual data entry. The [Hellmann deployment](/case-studies/hellmann-4pl-control-tower/) uses LangGraph-orchestrated extraction with Azure Document Intelligence, OCR, and OpenAI models.
 
 **Exception Detection and Impact Engine** — Real-time monitoring of shipment milestones against planned schedules, with automated impact analysis across connected shipments and customer commitments.
 
@@ -134,7 +134,7 @@ A production AI control tower in 2026 typically includes the following component
 
 ## What a Real AI Control Tower Implementation Looks Like
 
-The [Hellmann Worldwide Logistics case study](/case-studies/hellmann-4pl-control-tower) is the clearest example of what production AI control tower operations look like in 2026.
+The [Hellmann Worldwide Logistics case study](/case-studies/hellmann-4pl-control-tower/) is the clearest example of what production AI control tower operations look like in 2026.
 
 Hellmann's 4PL control tower receives daily document bundles from suppliers — commercial invoices, airway bills, packing lists, and customs compliance forms — often packaged as PDFs of 200 to 300 pages per batch. Before the AI system, two operators spent significant portions of each morning manually downloading, splitting, reading, and re-keying data into spreadsheets before entering it into CargoWise.
 
@@ -148,13 +148,13 @@ The build vs. buy decision depends on your operational complexity and competitiv
 
 SaaS control tower products offer faster time to initial deployment and work well for operations with standard workflows across common trade lanes. They struggle with edge cases — unusual document formats, custom business rules, proprietary carrier integrations, and workflows that do not fit the product's template.
 
-Custom-built control towers take longer to deploy (4-8 weeks for the first workflow, expanding incrementally) but handle your specific operational complexity from day one. For [3PL and 4PL operations](/solutions/3pl-4pl-operations) where the control tower is the core of your service delivery — not a supporting tool — custom systems provide the flexibility and competitive differentiation that SaaS platforms cannot.
+Custom-built control towers take longer to deploy (4-8 weeks for the first workflow, expanding incrementally) but handle your specific operational complexity from day one. For [3PL and 4PL operations](/solutions/3pl-4pl-operations/) where the control tower is the core of your service delivery — not a supporting tool — custom systems provide the flexibility and competitive differentiation that SaaS platforms cannot.
 
 The right answer depends on your operation. If your workflows are relatively standard and you need visibility fast, a SaaS product gets you to generation 2 quickly. If your competitive advantage depends on how you orchestrate complex operations across multiple carriers, modes, and document types, a custom AI control tower is the investment that compounds over time.
 
 ## Getting Started
 
-The entry point for most freight forwarders is a [free operational audit](/contact) that maps your current document volumes, exception patterns, and system architecture to identify where AI control tower capabilities deliver the highest impact. Start with one workflow — usually document processing — prove the value in production, and expand from there.
+The entry point for most freight forwarders is a [free operational audit](/contact/) that maps your current document volumes, exception patterns, and system architecture to identify where AI control tower capabilities deliver the highest impact. Start with one workflow — usually document processing — prove the value in production, and expand from there.
 
 ---
 

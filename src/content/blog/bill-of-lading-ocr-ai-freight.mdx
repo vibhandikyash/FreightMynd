@@ -78,7 +78,7 @@ The shift from template OCR to AI-powered extraction happened when large languag
 
 ### Vision Models Read the Document
 
-Modern [document intelligence systems](/solutions/document-intelligence) use vision-language models that process the entire document as an image. Instead of looking for text in predefined zones, the model understands the visual layout — it identifies headers, tables, field labels, and their associated values based on spatial relationships and context.
+Modern [document intelligence systems](/solutions/document-intelligence/) use vision-language models that process the entire document as an image. Instead of looking for text in predefined zones, the model understands the visual layout — it identifies headers, tables, field labels, and their associated values based on spatial relationships and context.
 
 When a vision model sees "Port of Loading:" followed by "CNSHA" on a B/L, it understands the relationship regardless of where on the page that pair appears. It does not need a template telling it where to look.
 
@@ -92,7 +92,7 @@ This contextual understanding enables the system to resolve ambiguities that tem
 
 The practical result is a system that processes B/Ls from any carrier without per-carrier configuration. When a new carrier's B/L arrives for the first time, the AI reads it the same way a human would — by understanding the document's structure and content, not by matching it against a template.
 
-In production [sea freight automation](/solutions/sea-freight-automation) deployments, this means onboarding a new carrier requires zero engineering effort. The system handles it from the first document.
+In production [sea freight automation](/solutions/sea-freight-automation/) deployments, this means onboarding a new carrier requires zero engineering effort. The system handles it from the first document.
 
 ## Key Fields Extracted from a Bill of Lading
 
@@ -126,18 +126,18 @@ The raw accuracy number is important but not sufficient. What matters is the eff
 
 ## Connecting B/L Extraction to Your TMS
 
-Extraction without integration is a science project. The value comes when extracted B/L data flows directly into your TMS — [CargoWise](/integrations/cargowise), SAP TM, Oracle TMS, or Microsoft Dynamics — without manual intervention.
+Extraction without integration is a science project. The value comes when extracted B/L data flows directly into your TMS — [CargoWise](/integrations/cargowise/), SAP TM, Oracle TMS, or Microsoft Dynamics — without manual intervention.
 
 ### The Integration Pipeline
 
-The B/L extraction sits within a larger [freight document automation](/solutions/freight-document-automation) pipeline — powered by our [document intelligence](/solutions/document-intelligence) engine — that handles the full journey:
+The B/L extraction sits within a larger [freight document automation](/solutions/freight-document-automation/) pipeline — powered by our [document intelligence](/solutions/document-intelligence/) engine — that handles the full journey:
 
-1. **Document arrives** via email, EDI, or portal download — our [email intelligence](/solutions/email-intelligence) system auto-detects B/L attachments, routes them by shipment reference, and triggers the extraction pipeline without manual forwarding or inbox monitoring
+1. **Document arrives** via email, EDI, or portal download — our [email intelligence](/solutions/email-intelligence/) system auto-detects B/L attachments, routes them by shipment reference, and triggers the extraction pipeline without manual forwarding or inbox monitoring
 2. **Classification** identifies the document as a bill of lading (vs. invoice, AWB, packing list)
 3. **Extraction** pulls all structured fields with confidence scores
 4. **Validation** checks field formats, code validity, cross-field rules, and business logic
 5. **TMS mapping** converts extracted data to your TMS's specific schema — CargoWise XML, SAP IDoc, or REST API payload
-6. **Push and confirmation** sends data to the TMS and confirms successful processing — B/L data also feeds downstream workflows like [booking automation](/solutions/booking-automation) (where extracted shipment details pre-populate booking confirmations) and [ETA prediction and exception management](/solutions/eta-prediction-exception-management) (where vessel, port, and container data from B/Ls powers real-time arrival tracking and proactive delay alerts)
+6. **Push and confirmation** sends data to the TMS and confirms successful processing — B/L data also feeds downstream workflows like [booking automation](/solutions/booking-automation/) (where extracted shipment details pre-populate booking confirmations) and [ETA prediction and exception management](/solutions/eta-prediction-exception-management/) (where vessel, port, and container data from B/Ls powers real-time arrival tracking and proactive delay alerts)
 
 ### Handling Exceptions
 
@@ -145,11 +145,11 @@ Not every B/L processes cleanly. The system must handle missing fields (some car
 
 ## When B/L OCR Makes Sense for Your Operation
 
-Bill of lading extraction delivers the clearest ROI in [sea freight operations](/solutions/sea-freight-automation) processing more than 30-50 B/Ls per day. At that volume, the manual processing time (read, classify, key into TMS) typically consumes 1-2 FTE hours daily. At 100+ B/Ls per day, the case becomes overwhelming.
+Bill of lading extraction delivers the clearest ROI in [sea freight operations](/solutions/sea-freight-automation/) processing more than 30-50 B/Ls per day. At that volume, the manual processing time (read, classify, key into TMS) typically consumes 1-2 FTE hours daily. At 100+ B/Ls per day, the case becomes overwhelming.
 
 If your operation handles significant sea freight volumes and you are still keying B/L data manually, the technology is mature enough to automate it reliably. The question is not whether AI can read your bills of lading — it can. The question is whether the full pipeline (extraction, validation, TMS integration) is built to handle your specific carriers, formats, and business rules.
 
-To understand what this looks like for your operation, [book a free audit](/contact). We will assess your document volumes, carrier mix, and TMS setup to determine whether automation makes economic sense at your scale.
+To understand what this looks like for your operation, [book a free audit](/contact/). We will assess your document volumes, carrier mix, and TMS setup to determine whether automation makes economic sense at your scale.
 
 ## Frequently Asked Questions
 

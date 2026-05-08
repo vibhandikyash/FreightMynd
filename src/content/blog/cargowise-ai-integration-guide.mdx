@@ -46,11 +46,11 @@ relatedIntegrations:
 
 ## Why CargoWise Is the Right Foundation for AI Automation
 
-CargoWise One is the dominant TMS in global freight forwarding for good reason — it handles the full lifecycle of sea, air, and road freight operations in a single platform. But its strength as an operational backbone creates a specific challenge: getting data into CargoWise accurately and at scale is the bottleneck for most freight forwarders. This is the core problem that [TMS automation](/solutions/tms-automation) addresses — bridging the gap between your document sources and your system of record.
+CargoWise One is the dominant TMS in global freight forwarding for good reason — it handles the full lifecycle of sea, air, and road freight operations in a single platform. But its strength as an operational backbone creates a specific challenge: getting data into CargoWise accurately and at scale is the bottleneck for most freight forwarders. This is the core problem that [TMS automation](/solutions/tms-automation/) addresses — bridging the gap between your document sources and your system of record.
 
 This is exactly where AI automation delivers the highest impact. Rather than replacing CargoWise, AI systems sit upstream — processing documents, extracting structured data, validating it against your business rules, and pushing clean XML directly into CargoWise via its integration APIs. The result is zero-touch data entry for the majority of your shipment documents.
 
-We have built and deployed this architecture in production for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower), processing hundreds of pages daily with near-zero failure rates. This guide walks through the technical architecture behind that system.
+We have built and deployed this architecture in production for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower/), processing hundreds of pages daily with near-zero failure rates. This guide walks through the technical architecture behind that system.
 
 ## CargoWise Integration Architecture: eHub vs Universal Gateway
 
@@ -108,10 +108,10 @@ Running an AI-to-CargoWise pipeline in production requires production-grade moni
 
 Exception handling workflows are equally important. When a document fails processing, the system should categorize the failure (extraction error, validation failure, eHub rejection), route it to the appropriate queue, preserve context so the reviewer can see exactly what went wrong, and learn from the resolution to reduce future failures.
 
-The goal is not zero exceptions — that is unrealistic with real-world freight documents. The goal is that exceptions are caught early, routed correctly, and resolved efficiently. In the [Hellmann deployment](/case-studies/hellmann-4pl-control-tower), the exception rate dropped to near-zero on established supplier formats within the first month of production.
+The goal is not zero exceptions — that is unrealistic with real-world freight documents. The goal is that exceptions are caught early, routed correctly, and resolved efficiently. In the [Hellmann deployment](/case-studies/hellmann-4pl-control-tower/), the exception rate dropped to near-zero on established supplier formats within the first month of production.
 
 ## Getting Started
 
-If you are running CargoWise and processing more than 50 documents per day manually, AI automation will likely deliver positive ROI within three to six months. The [CargoWise integration](/integrations/cargowise) we build is designed to work alongside your existing CargoWise configuration without requiring changes to your TMS setup.
+If you are running CargoWise and processing more than 50 documents per day manually, AI automation will likely deliver positive ROI within three to six months. The [CargoWise integration](/integrations/cargowise/) we build is designed to work alongside your existing CargoWise configuration without requiring changes to your TMS setup.
 
 The first step is a discovery audit — we analyze your current document volumes, supplier formats, CargoWise configuration, and operational workflows to scope the build accurately. From there, implementation typically takes 4-8 weeks to production.

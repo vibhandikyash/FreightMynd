@@ -57,7 +57,7 @@ relatedIntegrations:
 
 ## The Native XML Advantage — Why Generic Connectors Fail
 
-Rather than relying on generic connectors or RPA that mimics human clicks, a custom-built AI pipeline provides true CargoWise data entry automation by pushing clean, structured data directly via eHub XML. By bypassing UI limitations, the data flows natively into your specific CargoWise configuration — respecting your custom fields, branch codes, and workflows. FreightMynd also provides native [Descartes integration](/integrations/descartes) and [SAP TM integration](/integrations/sap-tm) using the same bespoke API approach.
+Rather than relying on generic connectors or RPA that mimics human clicks, a custom-built AI pipeline provides true CargoWise data entry automation by pushing clean, structured data directly via eHub XML. By bypassing UI limitations, the data flows natively into your specific CargoWise configuration — respecting your custom fields, branch codes, and workflows. FreightMynd also provides native [Descartes integration](/integrations/descartes/) and [SAP TM integration](/integrations/sap-tm/) using the same bespoke API approach.
 
 ### Automating Data Extraction from Customs and Freight Forms
 
@@ -67,13 +67,13 @@ Processing complex compliance documents — 300-page commercial invoices, multi-
 - Ensuring gross weights logically exceed net weights
 - Cross-referencing supplier codes against your internal master data
 
-For a deeper look at the build vs. buy decision for freight automation, see our [SaaS vs custom AI comparison](/compare/saas-vs-custom-freight-ai).
+For a deeper look at the build vs. buy decision for freight automation, see our [SaaS vs custom AI comparison](/compare/saas-vs-custom-freight-ai/).
 
 ## The Manual Data Entry Problem in CargoWise
 
 If you run a freight forwarding operation on CargoWise, you already know the bottleneck. Every morning, your ops team opens their inbox, downloads document attachments from suppliers, opens each PDF, reads through invoices and airway bills, and manually keys data into CargoWise modules. For a mid-size forwarder processing 100-200 documents per day, this consumes 2-4 full-time equivalents of labor — before anyone does actual logistics work.
 
-The problem is not CargoWise itself. CargoWise One is a capable TMS that handles the full freight lifecycle well. The problem is the gap between your incoming documents and CargoWise's structured data requirements. Someone has to bridge that gap, and today it is your most expensive resource: people. This is the core challenge that [TMS automation](/solutions/tms-automation) solves — connecting your document sources to your system of record without manual intervention.
+The problem is not CargoWise itself. CargoWise One is a capable TMS that handles the full freight lifecycle well. The problem is the gap between your incoming documents and CargoWise's structured data requirements. Someone has to bridge that gap, and today it is your most expensive resource: people. This is the core challenge that [TMS automation](/solutions/tms-automation/) solves — connecting your document sources to your system of record without manual intervention.
 
 Manual data entry introduces three compounding costs. First, there is the direct labor cost — operators spending hours on rote transcription instead of exception handling, customer relationships, or operational decision-making. Second, there is the error rate. Even experienced operators make mistakes when keying data from a 300-page PDF batch, and errors in CargoWise propagate downstream to invoicing, customs filings, and carrier bookings. Third, there is throughput limitation. Your operation cannot scale beyond what your team can manually process each day.
 
@@ -85,13 +85,13 @@ Here is how the pipeline works end to end.
 
 ### Stage 1: Email Monitoring and Document Ingestion
 
-An email monitoring agent watches your operations inbox continuously. When a supplier sends documents — whether as PDF attachments, ZIP archives, or embedded images — the agent detects the email, classifies it as a shipment document delivery, and downloads all attachments for processing. This runs 24/7 with no human trigger required. For operations that need broader inbox automation beyond CargoWise document flows — such as auto-routing rate requests, booking confirmations, and exception alerts — our [email intelligence](/solutions/email-intelligence) system extends this capability across your entire freight communications pipeline.
+An email monitoring agent watches your operations inbox continuously. When a supplier sends documents — whether as PDF attachments, ZIP archives, or embedded images — the agent detects the email, classifies it as a shipment document delivery, and downloads all attachments for processing. This runs 24/7 with no human trigger required. For operations that need broader inbox automation beyond CargoWise document flows — such as auto-routing rate requests, booking confirmations, and exception alerts — our [email intelligence](/solutions/email-intelligence/) system extends this capability across your entire freight communications pipeline.
 
 ### Stage 2: Intelligent Pre-Filtering
 
 This is the stage most people overlook, and it has the biggest impact on cost efficiency. Before any expensive AI extraction runs, a lightweight classifier scans each page of the incoming documents. Cover sheets, blank pages, duplicates, and irrelevant attachments are identified and removed. In production, this step typically eliminates 30-50% of pages from the processing pipeline — which directly reduces AI compute costs by the same proportion.
 
-When we built this for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower), the pre-filtering stage alone cut AI processing costs by 50%. On document batches of 200-300 pages, that is a significant saving per batch.
+When we built this for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower/), the pre-filtering stage alone cut AI processing costs by 50%. On document batches of 200-300 pages, that is a significant saving per batch.
 
 ### Stage 3: AI-Powered Field Extraction
 
@@ -107,7 +107,7 @@ Records that pass validation move to the next stage. Records that fail are route
 
 ### Stage 5: CargoWise XML Push via eHub
 
-Validated data is formatted as CargoWise-compatible XML and pushed into your TMS through [CargoWise's eHub integration platform](/integrations/cargowise). The XML schema maps to your specific CargoWise configuration — your module codes, custom fields, branch mappings, and party codes. eHub provides asynchronous message routing with built-in retry logic, so transient failures do not result in lost data.
+Validated data is formatted as CargoWise-compatible XML and pushed into your TMS through [CargoWise's eHub integration platform](/integrations/cargowise/). The XML schema maps to your specific CargoWise configuration — your module codes, custom fields, branch mappings, and party codes. eHub provides asynchronous message routing with built-in retry logic, so transient failures do not result in lost data.
 
 The result is zero manual data entry. Documents arrive via email and structured data appears in CargoWise without any human touching the keyboard.
 
@@ -117,7 +117,7 @@ In parallel with the CargoWise push, the system generates formatted Excel compli
 
 ## The Hellmann Deployment: Real Production Results
 
-We did not build this as a proof of concept. The full [4PL control tower automation system](/solutions/4pl-control-tower-automation) is live in production at Hellmann Worldwide Logistics — a global freight forwarder with 500+ offices and 13,000+ employees.
+We did not build this as a proof of concept. The full [4PL control tower automation system](/solutions/4pl-control-tower-automation/) is live in production at Hellmann Worldwide Logistics — a global freight forwarder with 500+ offices and 13,000+ employees.
 
 Before the system went live, two operators spent significant portions of each morning manually processing document batches. Supplier PDFs arrived in bundles of 200-300 pages containing commercial invoices, airway bills, packing lists, and customs compliance forms. Each page had to be read, classified, and manually keyed into CargoWise. New suppliers required engineering effort to map their document formats.
 
@@ -128,7 +128,7 @@ After deployment, the results were measurable within the first month:
 - **Zero** manual data entry into CargoWise
 - **Near-zero failure rate** on 200-300 page document batches
 
-The full case study is available at [Hellmann 4PL Control Tower](/case-studies/hellmann-4pl-control-tower).
+The full case study is available at [Hellmann 4PL Control Tower](/case-studies/hellmann-4pl-control-tower/).
 
 ## How Self-Learning Supplier Onboarding Works
 
@@ -152,21 +152,21 @@ In practice, validation operates at three levels:
 
 **Business rule validation** applies your company-specific logic. Is this supplier on the approved vendor list? Does the commodity code require additional documentation? Does this shipment route require specific compliance forms?
 
-Each validation check assigns a confidence score. When confidence drops below a configurable threshold on critical fields, the record routes to human review — with the specific field and the reason for the flag clearly displayed. Your operators handle exceptions, not routine data entry. For organisations that need continuous compliance assurance beyond individual document validation, [SOP compliance monitoring](/solutions/sop-compliance-monitoring) provides an always-on layer that tracks whether your entire document processing pipeline adheres to your standard operating procedures — catching systemic drift before it becomes a pattern.
+Each validation check assigns a confidence score. When confidence drops below a configurable threshold on critical fields, the record routes to human review — with the specific field and the reason for the flag clearly displayed. Your operators handle exceptions, not routine data entry. For organisations that need continuous compliance assurance beyond individual document validation, [SOP compliance monitoring](/solutions/sop-compliance-monitoring/) provides an always-on layer that tracks whether your entire document processing pipeline adheres to your standard operating procedures — catching systemic drift before it becomes a pattern.
 
 ## Getting Started: What You Need to Automate CargoWise Data Entry
 
-If you are evaluating [document intelligence](/solutions/document-intelligence) for your CargoWise operation, here is what to consider.
+If you are evaluating [document intelligence](/solutions/document-intelligence/) for your CargoWise operation, here is what to consider.
 
 **Document volume matters.** The ROI inflection point is typically around 50-100 documents per day. Below that, the implementation cost takes longer to recover. Above that, the savings compound quickly.
 
 **Your CargoWise configuration drives the XML mapping.** The AI system needs to understand your specific module codes, custom fields, branch mappings, and party hierarchies. This is why generic SaaS products often fail in production — they map to a standard CargoWise schema that does not match your actual configuration.
 
-**Start with one document type.** Most deployments begin with commercial invoices or airway bills, prove the pipeline end to end, then expand to additional document types. Trying to automate everything at once increases risk without improving outcomes. Once your document extraction pipeline is running reliably, the natural next step is [booking automation](/solutions/booking-automation) — taking the validated shipment data and using it to auto-generate carrier bookings, eliminating the second manual bottleneck in your operations flow.
+**Start with one document type.** Most deployments begin with commercial invoices or airway bills, prove the pipeline end to end, then expand to additional document types. Trying to automate everything at once increases risk without improving outcomes. Once your document extraction pipeline is running reliably, the natural next step is [booking automation](/solutions/booking-automation/) — taking the validated shipment data and using it to auto-generate carrier bookings, eliminating the second manual bottleneck in your operations flow.
 
 **Expect 4-8 weeks from kickoff to production.** This includes discovery (mapping your documents and CargoWise config), development, parallel testing alongside your manual process, and a monitored go-live.
 
-If you want to understand what this would look like for your specific operation, [book a free audit](/contact). We helped Hellmann Worldwide Logistics achieve a 60% processing time reduction with zero manual entry — and we can map the exact ROI for your team. We will review your document volumes, CargoWise setup, and supplier landscape — and tell you whether automation makes economic sense for your scale.
+If you want to understand what this would look like for your specific operation, [book a free audit](/contact/). We helped Hellmann Worldwide Logistics achieve a 60% processing time reduction with zero manual entry — and we can map the exact ROI for your team. We will review your document volumes, CargoWise setup, and supplier landscape — and tell you whether automation makes economic sense for your scale.
 
 ## CargoWise OCR vs AI Extraction: What's the Difference?
 
@@ -193,7 +193,7 @@ AI automation replaces manual data entry by monitoring incoming emails, extracti
 
 ### What document types can be automated in CargoWise?
 
-Production AI systems reliably automate commercial invoices, airway bills (AWBs), bills of lading (B/Ls), packing lists, customs declarations, certificates of origin, and dangerous goods declarations. For customs-specific document flows, our [customs automation](/solutions/customs-automation) solution handles HS code extraction, denied party screening, and declaration pre-population as part of the same pipeline. The extraction engine handles multi-format variations across suppliers — the same document type from 50 different suppliers can be processed without per-supplier engineering.
+Production AI systems reliably automate commercial invoices, airway bills (AWBs), bills of lading (B/Ls), packing lists, customs declarations, certificates of origin, and dangerous goods declarations. For customs-specific document flows, our [customs automation](/solutions/customs-automation/) solution handles HS code extraction, denied party screening, and declaration pre-population as part of the same pipeline. The extraction engine handles multi-format variations across suppliers — the same document type from 50 different suppliers can be processed without per-supplier engineering.
 
 ### How long does it take to set up automated CargoWise data entry?
 

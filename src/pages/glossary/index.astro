@@ -62,7 +62,7 @@ const itemListSchema = {
     <div class="container">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedTerms.map((term, i) => (
-          <a href={`/glossary/${term.slug}`}
+          <a href={`/glossary/${term.slug}/`}
              class="group p-7 rounded-2xl border border-line/70 bg-surface/30 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
              data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
             <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-brand transition-colors">
@@ -93,7 +93,7 @@ const itemListSchema = {
         Book a free audit. We'll map your workflows and recommend the highest-impact starting point.
       </p>
       <div class="mt-8" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-cta-single">Book a Free Audit</a>
+        <a href="/contact/" class="btn btn-cta-single">Book a Free Audit</a>
       </div>
     </div>
   </section>

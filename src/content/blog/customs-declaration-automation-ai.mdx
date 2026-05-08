@@ -51,7 +51,7 @@ Here is the problem: that data already exists. It sits in the commercial invoice
 
 The error rate compounds the problem. Manual data entry into customs declarations carries a 2-5% field-level error rate under normal conditions. Under time pressure — which is constant in customs, given filing deadlines — that rate climbs. Incorrect HS codes, mismatched values, or wrong party details trigger holds, examinations, penalties, and delays that cost far more than the original filing effort.
 
-This is not a technology gap. The AI to solve this exists today. The gap is in implementation — connecting [document intelligence systems](/solutions/document-intelligence) to [customs automation](/solutions/customs-automation) workflows in a way that is reliable, auditable, and integrated with existing platforms.
+This is not a technology gap. The AI to solve this exists today. The gap is in implementation — connecting [document intelligence systems](/solutions/document-intelligence/) to [customs automation](/solutions/customs-automation/) workflows in a way that is reliable, auditable, and integrated with existing platforms.
 
 ## How AI Extracts Customs Data from Commercial Documents
 
@@ -65,7 +65,7 @@ The system monitors incoming document streams — email attachments, FTP uploads
 
 For each classified document, the AI extraction engine identifies and pulls structured fields. From a commercial invoice, that means: seller name and address, buyer name and address, invoice number, date, currency, line items with descriptions, HS codes (if provided by the shipper), quantities, unit prices, total values, incoterms, and country of origin. From a packing list: package counts, gross and net weights, dimensions, marks and numbers. From a certificate of origin: issuing authority, origin determination criteria, and certification details.
 
-The extraction engine handles supplier format variation automatically. Every company formats their commercial invoice differently — field labels vary, layouts change, some use tables while others use free text. Self-learning extraction models map new formats after processing the first few documents from a supplier, without engineering effort per supplier. This is the same approach we use in our [document intelligence pipeline](/solutions/document-intelligence) deployed for logistics operations.
+The extraction engine handles supplier format variation automatically. Every company formats their commercial invoice differently — field labels vary, layouts change, some use tables while others use free text. Self-learning extraction models map new formats after processing the first few documents from a supplier, without engineering effort per supplier. This is the same approach we use in our [document intelligence pipeline](/solutions/document-intelligence/) deployed for logistics operations.
 
 ### Stage 3: HS Code Extraction and Validation
 
@@ -79,11 +79,11 @@ The critical design decision is that AI-suggested HS codes are never treated as 
 
 Before any data moves into the declaration, the extracted party details — shipper, consignee, notify party, and any intermediate parties — are screened against denied party lists, sanctioned entity databases, and restricted end-user lists. This includes the U.S. BIS Entity List, OFAC SDN List, EU consolidated sanctions list, and other applicable restricted party databases depending on the trade lane.
 
-Screening is not a one-time check. Party names are run through fuzzy matching algorithms that catch spelling variations, transliterations, and known aliases. Hits are flagged for compliance review before the declaration proceeds. This automated screening catches matches that manual checks miss — particularly partial name matches and transliteration variations across languages. For operations that require ongoing compliance assurance beyond per-declaration checks, [SOP compliance monitoring](/solutions/sop-compliance-monitoring) provides continuous oversight — ensuring that every customs filing follows your approved procedures and flagging deviations in real time before they become audit findings.
+Screening is not a one-time check. Party names are run through fuzzy matching algorithms that catch spelling variations, transliterations, and known aliases. Hits are flagged for compliance review before the declaration proceeds. This automated screening catches matches that manual checks miss — particularly partial name matches and transliteration variations across languages. For operations that require ongoing compliance assurance beyond per-declaration checks, [SOP compliance monitoring](/solutions/sop-compliance-monitoring/) provides continuous oversight — ensuring that every customs filing follows your approved procedures and flagging deviations in real time before they become audit findings.
 
 ## Integration with Customs Filing Platforms
 
-The extracted, validated, and screened data needs to reach your customs filing platform in the right format. For operations using [Descartes customs modules](/integrations/descartes), the AI pipeline outputs structured records that map directly to Descartes' import and export declaration formats. For freight forwarders running [CargoWise](/integrations/cargowise), the pipeline pushes structured XML through eHub to populate customs-related modules directly. The same approach works with other customs management systems — the AI pipeline's output format is configured to match whatever platform your customs team uses.
+The extracted, validated, and screened data needs to reach your customs filing platform in the right format. For operations using [Descartes customs modules](/integrations/descartes/), the AI pipeline outputs structured records that map directly to Descartes' import and export declaration formats. For freight forwarders running [CargoWise](/integrations/cargowise/), the pipeline pushes structured XML through eHub to populate customs-related modules directly. The same approach works with other customs management systems — the AI pipeline's output format is configured to match whatever platform your customs team uses.
 
 The integration is bidirectional where needed. When the customs platform returns filing status, duty calculations, or examination notices, that data flows back into your operational record. This closes the loop between AI-assisted declaration preparation and the actual customs outcome.
 
@@ -93,7 +93,7 @@ The 70% time reduction in customs filing comes from eliminating the manual data 
 
 This is the correct use of AI in customs operations. The broker's time shifts from data entry to judgment — and the quality of that judgment improves because the broker now works with pre-validated, structured data rather than raw documents.
 
-The [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower) demonstrated this principle at scale. The document intelligence pipeline handles the data extraction and validation, while human operators focus on exceptions and decisions that require domain expertise. The same architecture applies to customs declaration workflows.
+The [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower/) demonstrated this principle at scale. The document intelligence pipeline handles the data extraction and validation, while human operators focus on exceptions and decisions that require domain expertise. The same architecture applies to customs declaration workflows.
 
 ## What the 70% Time Reduction Looks Like in Practice
 
@@ -107,7 +107,7 @@ At scale, this means a customs team that currently processes 60 declarations per
 
 A production customs declaration automation system typically includes:
 
-- **Document extraction engine** — OCR and AI models trained on freight and customs document types, handling multi-format supplier variation (the same technology that powers our [smart invoice processing](/solutions/smart-invoice-processing) pipeline)
+- **Document extraction engine** — OCR and AI models trained on freight and customs document types, handling multi-format supplier variation (the same technology that powers our [smart invoice processing](/solutions/smart-invoice-processing/) pipeline)
 - **Tariff schedule database** — regularly updated national tariff schedules for HS code validation and suggestion
 - **Denied party screening service** — real-time screening against consolidated restricted party databases with fuzzy matching
 - **Customs platform integration** — API connectors to your filing platform (Descartes, MIC, or others) for structured data push
@@ -118,9 +118,9 @@ The system sits between your document sources and your customs platform. It does
 
 ## Getting Started with Customs Declaration Automation
 
-If your customs team spends more time keying data than making classification decisions, automation will deliver immediate ROI. Explore our full [customs automation solution](/solutions/customs-automation) to see how the end-to-end pipeline works, or start with a [document intelligence assessment](/contact) that maps your current document types, volumes, filing platforms, and trade lanes to determine where AI extraction delivers the highest impact.
+If your customs team spends more time keying data than making classification decisions, automation will deliver immediate ROI. Explore our full [customs automation solution](/solutions/customs-automation/) to see how the end-to-end pipeline works, or start with a [document intelligence assessment](/contact/) that maps your current document types, volumes, filing platforms, and trade lanes to determine where AI extraction delivers the highest impact.
 
-Many customs teams also lose time manually sorting and routing incoming documents from shared inboxes. Our [email intelligence](/solutions/email-intelligence) system can auto-detect customs-related documents as they arrive — commercial invoices, certificates of origin, packing lists — and route them directly into the extraction pipeline without anyone touching the inbox. On the billing side, once declarations are filed, [order-to-cash automation](/solutions/order-to-cash-automation) closes the loop by connecting customs duty calculations and brokerage fees into your invoicing workflow — eliminating the manual handoff between customs operations and finance.
+Many customs teams also lose time manually sorting and routing incoming documents from shared inboxes. Our [email intelligence](/solutions/email-intelligence/) system can auto-detect customs-related documents as they arrive — commercial invoices, certificates of origin, packing lists — and route them directly into the extraction pipeline without anyone touching the inbox. On the billing side, once declarations are filed, [order-to-cash automation](/solutions/order-to-cash-automation/) closes the loop by connecting customs duty calculations and brokerage fees into your invoicing workflow — eliminating the manual handoff between customs operations and finance.
 
 The implementation is incremental. Most deployments start with commercial invoice extraction for a single trade lane, validate accuracy against manual processing for two to three weeks, then expand to additional document types and lanes. This phased approach builds confidence while delivering measurable results from week one.
 
@@ -142,7 +142,7 @@ Modern AI extraction handles PDFs, scanned images, Excel spreadsheets, and struc
 
 ### Does customs declaration automation work with Descartes and other customs platforms?
 
-Yes. AI-powered declaration automation systems integrate with customs management platforms like [Descartes](/integrations/descartes), MIC, and others through their standard APIs. The AI pipeline extracts and validates data, then pushes structured records into the customs platform in the required format. This works alongside your existing customs workflow rather than replacing it.
+Yes. AI-powered declaration automation systems integrate with customs management platforms like [Descartes](/integrations/descartes/), MIC, and others through their standard APIs. The AI pipeline extracts and validates data, then pushes structured records into the customs platform in the required format. This works alongside your existing customs workflow rather than replacing it.
 
 ### What is the typical accuracy rate for AI-extracted customs data?
 

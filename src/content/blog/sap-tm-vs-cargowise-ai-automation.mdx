@@ -45,7 +45,7 @@ If you are evaluating which TMS is better for AI automation, you are probably as
 
 The right question is: given the TMS you already run, what does AI integration look like, and what should you expect in terms of timeline, complexity, and ongoing maintenance?
 
-We build AI automation systems that integrate with both [CargoWise](/integrations/cargowise) and [SAP TM](/integrations/sap-tm). Here is an honest comparison based on production deployments.
+We build AI automation systems that integrate with both [CargoWise](/integrations/cargowise/) and [SAP TM](/integrations/sap-tm/). Here is an honest comparison based on production deployments.
 
 ## CargoWise: Purpose-Built Freight APIs
 
@@ -55,7 +55,7 @@ CargoWise One is a freight-first TMS used by forwarders, customs brokers, and 3P
 
 The primary integration path for AI automation into CargoWise uses **eHub** — an asynchronous message exchange platform that accepts XML payloads and routes them to the appropriate CargoWise module. eHub supports document types including shipment creation, milestone updates, invoice submission, and customs entry.
 
-For AI document processing, the workflow is: the AI pipeline extracts and validates data, formats it as CargoWise-compatible XML following your specific module schema, and pushes it to eHub. eHub handles message queuing, retry logic, and delivery confirmation. This is exactly how the [Hellmann 4PL control tower](/case-studies/hellmann-4pl-control-tower) system works in production.
+For AI document processing, the workflow is: the AI pipeline extracts and validates data, formats it as CargoWise-compatible XML following your specific module schema, and pushes it to eHub. eHub handles message queuing, retry logic, and delivery confirmation. This is exactly how the [Hellmann 4PL control tower](/case-studies/hellmann-4pl-control-tower/) system works in production.
 
 **Universal Gateway** provides a secondary integration path for real-time operations — useful for quote response automation and booking confirmations where the asynchronous eHub pattern introduces unwanted latency.
 
@@ -123,15 +123,15 @@ For both platforms, 80% of the integration effort goes into the first document t
 
 Do not choose a TMS based on AI automation potential. Choose based on your operational requirements, then build AI automation to match.
 
-**If you run CargoWise:** Your AI automation path is faster and more standardized. Expect 8-12 weeks to production for the first document type. The [CargoWise integration](/integrations/cargowise) guide covers the specifics.
+**If you run CargoWise:** Your AI automation path is faster and more standardized. Expect 8-12 weeks to production for the first document type. The [CargoWise integration](/integrations/cargowise/) guide covers the specifics.
 
-**If you run SAP TM:** Your AI automation path offers deeper enterprise integration. Expect 10-16 weeks to production for the first document type, with the additional time primarily in SAP configuration and cross-module testing. The [SAP TM integration](/integrations/sap-tm) guide covers the approach.
+**If you run SAP TM:** Your AI automation path offers deeper enterprise integration. Expect 10-16 weeks to production for the first document type, with the additional time primarily in SAP configuration and cross-module testing. The [SAP TM integration](/integrations/sap-tm/) guide covers the approach.
 
 **If you run both:** Common in multi-division operations or post-merger environments. A single AI extraction pipeline with separate TMS connectors is the most cost-effective approach. The shared pipeline handles 90% of the work; only the final push differs.
 
 Regardless of your TMS, the starting point is the same: understand your document types, your processing volumes, and your most painful manual workflows. The TMS integration is a solved problem — the value is in the intelligence that feeds it.
 
-Want to evaluate AI automation for your specific TMS setup? [Book a free audit](/contact). We will review your platform, your document workflows, and your integration landscape — and provide a concrete implementation plan.
+Want to evaluate AI automation for your specific TMS setup? [Book a free audit](/contact/). We will review your platform, your document workflows, and your integration landscape — and provide a concrete implementation plan.
 
 ## Frequently Asked Questions
 

@@ -98,7 +98,7 @@ const faqSchema = {
     <div class="container">
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {integrations.map((intg, i) => (
-          <a href={`/integrations/${intg.slug}`}
+          <a href={`/integrations/${intg.slug}/`}
              class="group p-7 rounded-2xl border border-line/70 bg-surface/30 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300 flex flex-col"
              data-reveal data-reveal-delay={String(Math.min(i + 1, 5))}>
             <h2 class="text-xl font-bold text-ink mb-2 group-hover:text-brand transition-colors">{intg.shortTitle}</h2>
@@ -169,7 +169,7 @@ const faqSchema = {
         We build custom integrations for any freight management system. Book a free audit and we'll scope the connection.
       </p>
       <div class="mt-8" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-cta-single">Book a Free Audit</a>
+        <a href="/contact/" class="btn btn-cta-single">Book a Free Audit</a>
       </div>
     </div>
   </section>

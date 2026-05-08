@@ -211,22 +211,22 @@ const expectations = [
             <p class="text-sm text-ink-3 mb-5">Explore what we build and see real results:</p>
             <ul class="space-y-3">
               <li>
-                <a href="/solutions/4pl-control-tower-automation" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
+                <a href="/solutions/4pl-control-tower-automation/" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
                   <span aria-hidden="true">&rarr;</span> 4PL Control Tower Automation
                 </a>
               </li>
               <li>
-                <a href="/solutions/document-intelligence" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
+                <a href="/solutions/document-intelligence/" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
                   <span aria-hidden="true">&rarr;</span> Document Intelligence
                 </a>
               </li>
               <li>
-                <a href="/solutions/autonomous-quote-management" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
+                <a href="/solutions/autonomous-quote-management/" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
                   <span aria-hidden="true">&rarr;</span> Autonomous Quote Management
                 </a>
               </li>
               <li>
-                <a href="/case-studies/hellmann-4pl-control-tower" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
+                <a href="/case-studies/hellmann-4pl-control-tower/" class="text-sm text-brand hover:text-brand-dark transition-colors font-medium inline-flex items-center gap-1.5">
                   <span aria-hidden="true">&rarr;</span> Hellmann Case Study — 60% processing time reduction
                 </a>
               </li>
@@ -336,7 +336,7 @@ const expectations = [
         });
 
         if (res.ok) {
-          window.location.href = '/thank-you';
+          window.location.href = '/thank-you/';
         } else {
           const data = await res.json().catch(() => ({}));
           const errorMsg = (data as { error?: string }).error || 'Something went wrong. Please try again or email us directly.';

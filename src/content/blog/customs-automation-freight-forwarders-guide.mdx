@@ -1,5 +1,5 @@
 ---
-title: "Customs Automation for Freight Forwarders"
+title: "Customs Automation Guide for Freight Forwarders (2026)"
 description: "Customs automation for freight forwarders cuts filing time 60-70% and classification errors by 85%. Full pipeline guide with architecture and real results."
 publishDate: 2026-04-02
 modifiedDate: 2026-04-02
@@ -77,7 +77,7 @@ Every customs filing follows the same workflow. Here is where automation deliver
 
 **Manual process:** The broker opens each PDF — commercial invoice, packing list, certificate of origin — and manually reads and re-types shipper details, consignee information, commodity descriptions, quantities, weights, and values into a spreadsheet or directly into the customs platform.
 
-**Automated process:** AI extraction reads all document types, handles multi-format supplier variations, and outputs structured fields at 96-99% accuracy on standard data points. FreightMynd's [document intelligence system](/solutions/document-intelligence) processes documents from hundreds of supplier formats without per-supplier engineering.
+**Automated process:** AI extraction reads all document types, handles multi-format supplier variations, and outputs structured fields at 96-99% accuracy on standard data points. FreightMynd's [document intelligence system](/solutions/document-intelligence/) processes documents from hundreds of supplier formats without per-supplier engineering.
 
 **Time saved:** 8-15 minutes per shipment.
 
@@ -93,7 +93,7 @@ Every customs filing follows the same workflow. Here is where automation deliver
 
 **Manual process:** The broker checks shipper and consignee names against OFAC's SDN list, the BIS Entity List, EU consolidated sanctions, and country-specific restricted party lists. Name variations, transliterations, and partial matches make manual screening unreliable.
 
-**Automated process:** Automated screening runs all parties against every relevant sanctions list in under 2 seconds, using fuzzy matching to catch name variations that manual checks miss. Positive matches are flagged for compliance review with match details. FreightMynd's [compliance monitoring system](/solutions/sop-compliance-monitoring) handles this as part of the broader SOP enforcement pipeline.
+**Automated process:** Automated screening runs all parties against every relevant sanctions list in under 2 seconds, using fuzzy matching to catch name variations that manual checks miss. Positive matches are flagged for compliance review with match details. FreightMynd's [compliance monitoring system](/solutions/sop-compliance-monitoring/) handles this as part of the broader SOP enforcement pipeline.
 
 **Time saved:** 2-5 minutes per shipment (plus significant risk reduction).
 
@@ -109,7 +109,7 @@ Every customs filing follows the same workflow. Here is where automation deliver
 
 ## How Customs Automation Works: The 4-Stage Pipeline
 
-The architecture behind customs automation follows a consistent pattern regardless of which customs platform you use. Here is the four-stage pipeline that FreightMynd's [customs automation solution](/solutions/customs-automation) implements.
+The architecture behind customs automation follows a consistent pattern regardless of which customs platform you use. Here is the four-stage pipeline that FreightMynd's [customs automation solution](/solutions/customs-automation/) implements.
 
 ```
 Stage 1: INGEST          Stage 2: EXTRACT         Stage 3: VALIDATE        Stage 4: PUSH
@@ -127,7 +127,7 @@ Deduplication            Multi-format handling    Confidence scoring       Filin
 
 **Stage 3 — Validate.** Extracted data passes through three validation layers. First, HS code classification: the AI suggests codes and assigns confidence scores. Second, denied party screening: all named parties are checked against OFAC, BIS, EU, and other sanctions lists with fuzzy matching. Third, business rule validation: required fields are present, values fall within expected ranges, and country-of-origin declarations are consistent. Any item failing validation is routed to human review with the specific issue flagged.
 
-**Stage 4 — Push.** Validated and classified data is formatted for your customs platform and pushed via API. For [Descartes](/integrations/descartes), this means structured records into CustomsInfo or the Descartes customs module. For [CargoWise](/integrations/cargowise), this means XML via eHub or Universal Gateway. The declaration arrives pre-populated — the broker reviews, adjusts where needed, and submits.
+**Stage 4 — Push.** Validated and classified data is formatted for your customs platform and pushed via API. For [Descartes](/integrations/descartes/), this means structured records into CustomsInfo or the Descartes customs module. For [CargoWise](/integrations/cargowise/), this means XML via eHub or Universal Gateway. The declaration arrives pre-populated — the broker reviews, adjusts where needed, and submits.
 
 ## HS Code Classification with AI
 
@@ -166,7 +166,7 @@ Based on production deployments across multiple freight forwarders, current HS c
 
 These are suggestion accuracy rates — the percentage of time the AI's top suggestion matches the broker's final classification. The effective error rate after broker review is significantly lower, because the AI flags low-confidence items for closer attention.
 
-For a deeper technical walkthrough of how AI handles the declaration filing step specifically, see the [customs declaration automation guide](/blog/customs-declaration-automation-ai).
+For a deeper technical walkthrough of how AI handles the declaration filing step specifically, see the [customs declaration automation guide](/blog/customs-declaration-automation-ai/).
 
 ## Denied Party Screening and Compliance
 
@@ -190,7 +190,7 @@ Manual screening fails on name variations. "Al-Qaeda" might appear as "Al Qaida,
 
 Automated screening uses fuzzy matching algorithms — Levenshtein distance, Jaro-Winkler similarity, phonetic matching — to catch these variations. The system flags potential matches with a similarity score, and the compliance officer reviews only the flagged items.
 
-FreightMynd's [SOP compliance monitoring](/solutions/sop-compliance-monitoring) integrates denied party screening into the broader compliance enforcement pipeline, so screening results feed into the same exception queue as other compliance checks.
+FreightMynd's [SOP compliance monitoring](/solutions/sop-compliance-monitoring/) integrates denied party screening into the broader compliance enforcement pipeline, so screening results feed into the same exception queue as other compliance checks.
 
 ## Integration with Customs Platforms
 
@@ -198,11 +198,11 @@ Customs automation is only useful if it connects to the systems your team alread
 
 ### Descartes
 
-The [Descartes integration](/integrations/descartes) covers CustomsInfo for classification support, Descartes MK for customs management, and the broader Descartes Global Trade Intelligence suite. AI-extracted data is formatted to match Descartes's record structure and pushed via API. Pre-populated declarations include all required fields — the broker opens a near-complete form rather than a blank one.
+The [Descartes integration](/integrations/descartes/) covers CustomsInfo for classification support, Descartes MK for customs management, and the broader Descartes Global Trade Intelligence suite. AI-extracted data is formatted to match Descartes's record structure and pushed via API. Pre-populated declarations include all required fields — the broker opens a near-complete form rather than a blank one.
 
 ### CargoWise
 
-For forwarders running customs through CargoWise, the [CargoWise integration](/integrations/cargowise) pushes validated data via eHub or Universal Gateway. This is the same integration pattern used in the [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower) — the XML schema mapping adapts to your specific CargoWise configuration, custom fields, and branch codes.
+For forwarders running customs through CargoWise, the [CargoWise integration](/integrations/cargowise/) pushes validated data via eHub or Universal Gateway. This is the same integration pattern used in the [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower/) — the XML schema mapping adapts to your specific CargoWise configuration, custom fields, and branch codes.
 
 ### Other Platforms
 
@@ -231,11 +231,11 @@ Freight forwarders evaluating customs automation face a familiar decision: buy a
 
 **Off-the-shelf customs automation** works well for forwarders with standard workflows, common document formats, and mainstream customs platforms. Deployment is faster — weeks instead of months. The tradeoff is flexibility: you adapt your process to the tool's design.
 
-**Custom-built customs automation** is the better fit when your operations include unusual document formats, multi-jurisdiction filing requirements, non-standard compliance rules, or integrations with legacy systems the SaaS tools do not support. The [SaaS vs. custom comparison guide](/compare/saas-vs-custom-freight-ai) breaks this decision down in detail.
+**Custom-built customs automation** is the better fit when your operations include unusual document formats, multi-jurisdiction filing requirements, non-standard compliance rules, or integrations with legacy systems the SaaS tools do not support. The [SaaS vs. custom comparison guide](/compare/saas-vs-custom-freight-ai/) breaks this decision down in detail.
 
 The honest answer for most mid-size forwarders: start with the area of highest volume and most standardized process. Prove the ROI there, then expand. Whether you build or buy matters less than whether the system actually integrates with your TMS and handles your real document formats — not just the demo formats.
 
-For a detailed comparison of how FreightMynd's approach differs from other providers, see the [Raft vs. FreightMynd analysis](/compare/raft-vs-freightmynd).
+For a detailed comparison of how FreightMynd's approach differs from other providers, see the [Raft vs. FreightMynd analysis](/compare/raft-vs-freightmynd/).
 
 ---
 
@@ -273,4 +273,4 @@ Freight forwarders processing 200+ customs entries per month typically see full 
 
 Customs automation is not a future-state technology. Freight forwarders are running these systems in production today, processing thousands of entries per month with 60-70% less manual effort. The question is not whether to automate customs — it is which part of your customs workflow to automate first.
 
-If your team is spending more time copying data between documents and systems than making classification and compliance decisions, that is where to start. [Talk to the FreightMynd team](/contact) about mapping your customs workflow and identifying the highest-impact automation opportunity.
+If your team is spending more time copying data between documents and systems than making classification and compliance decisions, that is where to start. [Talk to the FreightMynd team](/contact/) about mapping your customs workflow and identifying the highest-impact automation opportunity.

@@ -8,7 +8,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": site.url },
-    { "@type": "ListItem", "position": 2, "name": "Freight Forwarders", "item": `${site.url}/freight-forwarders` },
+    { "@type": "ListItem", "position": 2, "name": "Freight Forwarders", "item": `${site.url}/freight-forwarders/` },
     { "@type": "ListItem", "position": 3, "name": "Middle East" },
   ],
 };
@@ -50,25 +50,25 @@ const capabilities = [
     icon: 'port',
     title: 'High-Volume Port Operations',
     description: 'Process thousands of documents daily across Jebel Ali, Khalifa Port, Hamad Port, and King Abdullah Port. Built for the throughput that Gulf hub operations demand.',
-    href: '/solutions/document-intelligence',
+    href: '/solutions/document-intelligence/',
   },
   {
     icon: 'globe',
     title: 'Arabic & Bilingual Document Processing',
     description: 'AI extraction that handles Arabic, English, and bilingual freight documents — invoices, customs declarations, certificates of origin, and bills of lading. No per-language setup.',
-    href: '/solutions/document-intelligence',
+    href: '/solutions/document-intelligence/',
   },
   {
     icon: 'shield',
     title: 'Free Zone & Customs Automation',
     description: 'Automated processing for UAE free zone documentation, GCC customs declarations, and re-export paperwork across JAFZA, DAFZA, SAIF Zone, and Saudi free zones.',
-    href: '/solutions/4pl-control-tower-automation',
+    href: '/solutions/4pl-control-tower-automation/',
   },
   {
     icon: 'integration',
     title: 'CargoWise & SAP TM Integration',
     description: 'Native integration with the TMS platforms dominant in Middle Eastern freight — CargoWise, SAP TM, Oracle TMS, and Microsoft Dynamics. Direct API push, no middleware.',
-    href: '/integrations',
+    href: '/integrations/',
   },
 ];
 
@@ -86,7 +86,7 @@ const challenges = [
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
-  <Breadcrumb items={[{ label: 'Freight Forwarders', href: '/freight-forwarders' }, { label: 'Middle East' }]} bg="breadcrumb-bg-warm" />
+  <Breadcrumb items={[{ label: 'Freight Forwarders', href: '/freight-forwarders/' }, { label: 'Middle East' }]} bg="breadcrumb-bg-warm" />
 
   <!-- Hero -->
   <section class="pt-8 pb-16 md:pb-20" style="background: linear-gradient(135deg, #FFFCF8 0%, #FFF8F1 50%, #FFFFFF 100%);">
@@ -103,13 +103,13 @@ const challenges = [
           Custom AI systems built for the scale and complexity of Gulf freight operations — high-volume port processing, Arabic-English document intelligence, free zone automation, and multi-modal operations across the UAE, Saudi Arabia, Qatar, and the wider GCC.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="/contact" class="btn btn-brand">
+          <a href="/contact/" class="btn btn-brand">
             Book a Free Audit
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/solutions" class="btn btn-ghost">Explore All Solutions</a>
+          <a href="/solutions/" class="btn btn-ghost">Explore All Solutions</a>
         </div>
       </div>
     </div>
@@ -250,13 +250,13 @@ const challenges = [
         Book a free audit. We'll map your workflows, assess your free zone and customs requirements, and deliver a custom automation proposal within 48 hours.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
-        <a href="/contact" class="btn btn-cta-single">
+        <a href="/contact/" class="btn btn-cta-single">
           Book a Free Audit
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <a href="/solutions" class="btn btn-white">
+        <a href="/solutions/" class="btn btn-white">
           Explore Solutions
         </a>
       </div>

@@ -46,7 +46,7 @@ Most customs brokerage operations still run on the same workflow: a broker recei
 
 This is where AI for customs brokers delivers immediate, measurable value. Not by replacing broker judgment, but by eliminating the manual data handling that consumes most of the working day. The broker who spends six hours keying data and two hours on classification decisions should spend zero hours keying data and eight hours on the work that actually requires their license.
 
-The technology to achieve this is production-ready. [Customs automation systems](/solutions/customs-automation) deployed in freight forwarding operations today handle the full pipeline from document ingestion to filing platform push. The question for customs brokers is not whether AI works — it is how to implement it against their specific document types, trade lanes, and filing platforms.
+The technology to achieve this is production-ready. [Customs automation systems](/solutions/customs-automation/) deployed in freight forwarding operations today handle the full pipeline from document ingestion to filing platform push. The question for customs brokers is not whether AI works — it is how to implement it against their specific document types, trade lanes, and filing platforms.
 
 ## The 5 Areas Where AI Transforms Customs Operations
 
@@ -56,7 +56,7 @@ AI impacts customs brokerage operations across five distinct areas. Each deliver
 
 This is the highest-impact area. AI extraction engines process commercial invoices, packing lists, certificates of origin, bills of lading, and airway bills — pulling every structured field needed for a customs declaration. Shipper details, consignee information, commodity descriptions, declared values, weights, quantities, package counts, incoterms, and country of origin are extracted and mapped directly into declaration templates.
 
-The critical capability is handling supplier format variation. Every exporter formats their commercial invoice differently — different field labels, different layouts, tables versus free text, single-page versus multi-page. Self-learning extraction models adapt to new supplier formats after processing the first few documents, without requiring engineering effort per supplier. This is the same [document intelligence](/solutions/document-intelligence) approach deployed in large-scale freight operations where hundreds of suppliers send documents in their own formats.
+The critical capability is handling supplier format variation. Every exporter formats their commercial invoice differently — different field labels, different layouts, tables versus free text, single-page versus multi-page. Self-learning extraction models adapt to new supplier formats after processing the first few documents, without requiring engineering effort per supplier. This is the same [document intelligence](/solutions/document-intelligence/) approach deployed in large-scale freight operations where hundreds of suppliers send documents in their own formats.
 
 For customs brokers, this means a declaration arrives pre-populated with 80-90% of required fields already filled from source documents. The broker reviews and confirms rather than types and searches.
 
@@ -98,7 +98,7 @@ The end-to-end workflow from document receipt to filing-ready declaration follow
 
 **Step 1 — Document ingestion.** The system monitors incoming email, FTP feeds, or API streams from your TMS. When new documents arrive, they are downloaded and classified by type: commercial invoice, packing list, certificate of origin, bill of lading, dangerous goods declaration, or other.
 
-**Step 2 — Intelligent pre-filtering.** Before expensive AI extraction runs, a lightweight classifier removes irrelevant pages — cover letters, blank pages, duplicate attachments, and non-customs documents. This step alone reduces AI processing costs by 30-50% on typical document batches, following the same approach proven in the [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower).
+**Step 2 — Intelligent pre-filtering.** Before expensive AI extraction runs, a lightweight classifier removes irrelevant pages — cover letters, blank pages, duplicate attachments, and non-customs documents. This step alone reduces AI processing costs by 30-50% on typical document batches, following the same approach proven in the [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower/).
 
 **Step 3 — Field extraction.** Document-type-specific AI models extract structured fields from each classified document. The extraction engine handles format variation across suppliers without per-supplier configuration.
 
@@ -108,13 +108,13 @@ The end-to-end workflow from document receipt to filing-ready declaration follow
 
 **Step 6 — Cross-document validation.** Extracted data from all source documents for a shipment is cross-checked for consistency. Discrepancies are flagged.
 
-**Step 7 — Filing platform push.** Validated data is formatted and pushed to the broker's customs filing platform — [Descartes](/integrations/descartes), [CargoWise customs modules](/integrations/cargowise), or national customs portals — in the required data structure.
+**Step 7 — Filing platform push.** Validated data is formatted and pushed to the broker's customs filing platform — [Descartes](/integrations/descartes/), [CargoWise customs modules](/integrations/cargowise/), or national customs portals — in the required data structure.
 
 **Step 8 — Broker review and submission.** The broker reviews the pre-populated declaration, confirms or adjusts HS codes, resolves any flagged exceptions, and submits. Active broker time: 5 to 12 minutes instead of 20 to 40.
 
 ## Real Results from Customs Automation Deployments
 
-These metrics come from production [customs automation](/solutions/customs-automation) deployments in freight forwarding and customs brokerage operations:
+These metrics come from production [customs automation](/solutions/customs-automation/) deployments in freight forwarding and customs brokerage operations:
 
 - **70% reduction in customs filing preparation time** — measured as end-to-end time from document receipt to submission-ready declaration, comparing manual and AI-assisted workflows across the same declaration types and trade lanes
 - **95%+ data extraction accuracy** on structured fields (shipper/consignee details, values, quantities, weights, dates) — measured at field level across multi-supplier, multi-format document volumes
@@ -130,15 +130,15 @@ SaaS customs automation platforms offer standardized extraction and classificati
 
 Custom-built customs AI makes sense when your operation involves non-standard document types (industry-specific certificates, unusual compliance documentation), complex multi-leg shipments, integration with legacy or specialized filing platforms, or trade lanes where pre-built models lack sufficient training data. Custom systems also make sense when you need the AI to operate within your own infrastructure for data security or regulatory reasons — particularly relevant for customs data, which involves commercially sensitive party and transaction details.
 
-The decision framework is practical: if off-the-shelf covers 80% of your document types and trade lanes, start with SaaS. If your edge cases are your core business — specialized commodities, complex trade lanes, unusual regulatory requirements — build custom. For a detailed comparison of these approaches, read our guide on [customs declaration automation with AI](/blog/customs-declaration-automation-ai).
+The decision framework is practical: if off-the-shelf covers 80% of your document types and trade lanes, start with SaaS. If your edge cases are your core business — specialized commodities, complex trade lanes, unusual regulatory requirements — build custom. For a detailed comparison of these approaches, read our guide on [customs declaration automation with AI](/blog/customs-declaration-automation-ai/).
 
 ## Integration with Filing Platforms
 
 Customs AI is only useful if it connects to the platforms where brokers actually file. The integration layer matters as much as the extraction accuracy.
 
-**Descartes** — AI pipelines integrate with [Descartes customs modules](/integrations/descartes) through their standard APIs, outputting structured records that map to Descartes import and export declaration formats. The integration supports both single-entry and batch filing workflows.
+**Descartes** — AI pipelines integrate with [Descartes customs modules](/integrations/descartes/) through their standard APIs, outputting structured records that map to Descartes import and export declaration formats. The integration supports both single-entry and batch filing workflows.
 
-**CargoWise** — For freight forwarders running [CargoWise](/integrations/cargowise), the AI pipeline pushes structured XML through eHub to populate customs-related modules. This is the same integration pattern used in logistics document automation deployments where CargoWise serves as the system of record.
+**CargoWise** — For freight forwarders running [CargoWise](/integrations/cargowise/), the AI pipeline pushes structured XML through eHub to populate customs-related modules. This is the same integration pattern used in logistics document automation deployments where CargoWise serves as the system of record.
 
 **National customs portals** — Many countries now accept electronic filing through direct API submission or structured file upload. The AI pipeline's output format is configured to match the specific requirements of each national system — ACE in the United States, CDS in the United Kingdom, ICS2 in the European Union, and equivalents in other jurisdictions.
 
@@ -158,7 +158,7 @@ Before implementing customs AI, map your current operation across four dimension
 
 Most deployments start with commercial invoice extraction and declaration pre-population for a single high-volume trade lane. This proves extraction accuracy against your actual document formats, validates the filing platform integration, and delivers measurable time savings within the first two to three weeks. Expansion to additional document types, HS code suggestion, compliance screening, and additional trade lanes follows incrementally.
 
-If your customs team spends more time on data entry than on classification decisions, the ROI case is clear. [Book a free audit](/contact) to map your document types and volumes to a concrete automation plan.
+If your customs team spends more time on data entry than on classification decisions, the ROI case is clear. [Book a free audit](/contact/) to map your document types and volumes to a concrete automation plan.
 
 ---
 
@@ -178,7 +178,7 @@ AI customs automation systems process commercial invoices, packing lists, certif
 
 ### Does customs AI integrate with filing platforms like Descartes?
 
-Yes. AI customs automation systems integrate with major filing platforms including [Descartes](/integrations/descartes), [CargoWise](/integrations/cargowise) customs modules, and national customs portals. The AI extracts and validates data from commercial documents, then pushes structured data into your filing platform — eliminating manual re-entry.
+Yes. AI customs automation systems integrate with major filing platforms including [Descartes](/integrations/descartes/), [CargoWise](/integrations/cargowise/) customs modules, and national customs portals. The AI extracts and validates data from commercial documents, then pushes structured data into your filing platform — eliminating manual re-entry.
 
 ### How long does it take to implement customs AI automation?
 
