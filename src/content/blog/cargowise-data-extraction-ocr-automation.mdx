@@ -1,6 +1,6 @@
 ---
 title: "CargoWise OCR Automation: AI Data Extraction for 300-Page Document Batches"
-description: "CargoWise OCR automation for AI data extraction on 200-300 page batches — how Hellmann reduced processing time 60% with eHub XML push and zero manual entry."
+description: "CargoWise OCR automation for AI data extraction on 200-300 page batches — how the global freight forwarder reduced processing time 60% with eHub XML push and zero manual entry."
 publishDate: 2026-03-28
 modifiedDate: 2026-05-18
 author: "FreightMynd Team"
@@ -17,21 +17,21 @@ howToSteps:
   - "Push validated data as CargoWise-compatible XML via eHub or Universal Gateway API"
 faq:
   - q: "How does AI OCR work with CargoWise documents?"
-    a: "AI OCR for CargoWise works in five coordinated stages: an email monitor ingests supplier attachments, a classifier filters irrelevant pages, an OCR plus large-language-model layer extracts structured fields (shipper, consignee, HS codes, values, weights, AWB numbers), a validation layer checks business rules, and clean XML is pushed into the correct CargoWise module via eHub. This is the same architecture FreightMynd runs in production at Hellmann Worldwide Logistics."
+    a: "AI OCR for CargoWise works in five coordinated stages: an email monitor ingests supplier attachments, a classifier filters irrelevant pages, an OCR plus large-language-model layer extracts structured fields (shipper, consignee, HS codes, values, weights, AWB numbers), a validation layer checks business rules, and clean XML is pushed into the correct CargoWise module via eHub. This is the same architecture FreightMynd runs in production at a global freight forwarder."
   - q: "Can AI extract data from 200-300 page document batches reliably?"
-    a: "Yes. AI-powered CargoWise OCR is designed for exactly this scale. Intelligent pre-filtering removes cover sheets, blanks and duplicates before extraction runs, the AI processes remaining pages in parallel, and validation catches errors before XML is pushed. Hellmann's 4PL control tower automation runs at near-zero failure on 200-300 page batches with a 60% processing time reduction versus manual handling."
+    a: "Yes. AI-powered CargoWise OCR is designed for exactly this scale. Intelligent pre-filtering removes cover sheets, blanks and duplicates before extraction runs, the AI processes remaining pages in parallel, and validation catches errors before XML is pushed. the forwarder's 4PL control tower automation runs at near-zero failure on 200-300 page batches with a 60% processing time reduction versus manual handling."
   - q: "What's the difference between traditional OCR and AI document extraction for CargoWise?"
     a: "Traditional OCR maps pixel coordinates to fields using fixed templates, so it breaks the moment a supplier changes layout. AI document extraction understands the semantic meaning of freight fields — it knows an 11-digit pattern is an AWB number and that a value next to 'Gross Weight' is a weight, regardless of position. This is why AI-powered CargoWise OCR handles hundreds of supplier formats without per-template engineering."
   - q: "How does the AI handle different supplier document formats for CargoWise?"
-    a: "Self-learning supplier onboarding maps new formats automatically. On the first batch from a new supplier the AI classifies the document, extracts fields based on semantic understanding, scores confidence and routes uncertain fields for review. Operator corrections feed back into the model, and accuracy reaches established-supplier levels within 3-5 batches. Hellmann onboarded hundreds of supplier formats this way with zero per-supplier engineering."
+    a: "Self-learning supplier onboarding maps new formats automatically. On the first batch from a new supplier the AI classifies the document, extracts fields based on semantic understanding, scores confidence and routes uncertain fields for review. Operator corrections feed back into the model, and accuracy reaches established-supplier levels within 3-5 batches. The global freight forwarder onboarded hundreds of supplier formats this way with zero per-supplier engineering."
   - q: "What's the cost difference between manual data entry and AI-powered CargoWise OCR?"
-    a: "Manual data entry typically runs $12-15 per document when labor, review and error correction are included. AI-powered CargoWise OCR brings that down to roughly $1.20-5.00 per document, a 60-90% reduction. Intelligent pre-filtering cuts AI compute cost by a further 50% — exactly what Hellmann's deployment achieved — and most mid-sized forwarders see full ROI within 3-5 months."
+    a: "Manual data entry typically runs $12-15 per document when labor, review and error correction are included. AI-powered CargoWise OCR brings that down to roughly $1.20-5.00 per document, a 60-90% reduction. Intelligent pre-filtering cuts AI compute cost by a further 50% — exactly what the forwarder's deployment achieved — and most mid-sized forwarders see full ROI within 3-5 months."
 relatedSolutions:
   - "document-intelligence"
   - "4pl-control-tower-automation"
   - "tms-automation"
 relatedCaseStudies:
-  - "hellmann-4pl-control-tower"
+  - "4pl-control-tower-automation"
 ---
 
 <div class="summary-box">
@@ -45,7 +45,7 @@ relatedCaseStudies:
 </ul>
 </div>
 
-CargoWise OCR automation uses AI data extraction to convert supplier invoices, AWBs, B/Ls and packing lists into structured XML that flows straight into your TMS — no manual re-keying. At Hellmann Worldwide Logistics, FreightMynd's [AI for CargoWise](/integrations/cargowise/) processes 200-300 page document batches at near-zero failure with a 60% reduction in processing time and a 50% cut in AI compute cost via intelligent pre-filtering. This guide breaks down how the OCR pipeline is built, how each stage works, and what production results to expect.
+CargoWise OCR automation uses AI data extraction to convert supplier invoices, AWBs, B/Ls and packing lists into structured XML that flows straight into your TMS — no manual re-keying. At a global freight forwarder, FreightMynd's [AI for CargoWise](/integrations/cargowise/) processes 200-300 page document batches at near-zero failure with a 60% reduction in processing time and a 50% cut in AI compute cost via intelligent pre-filtering. This guide breaks down how the OCR pipeline is built, how each stage works, and what production results to expect.
 
 ## The CargoWise Data Entry Problem
 
@@ -126,7 +126,7 @@ For a deeper walkthrough of the integration architecture, see our [CargoWise AI 
 
 Theory matters less than production results. Here is what a major enterprise forwarder achieved after deploying an AI-powered CargoWise data extraction pipeline for their [4PL control tower operations](/solutions/4pl-control-tower-automation/).
 
-**The operation:** A global freight forwarder with 500+ offices processing daily document batches from suppliers — commercial invoices, AWBs, packing lists, and compliance documents arriving as PDFs of 200-300 pages per batch. Two operators spent significant portions of each morning manually downloading, reading, and rekeying data into CargoWise. This is the same workload that [Hellmann's 4PL control tower automation](/case-studies/hellmann-4pl-control-tower/) was built to eliminate end-to-end.
+**The operation:** A global freight forwarder with 500+ offices processing daily document batches from suppliers — commercial invoices, AWBs, packing lists, and compliance documents arriving as PDFs of 200-300 pages per batch. Two operators spent significant portions of each morning manually downloading, reading, and rekeying data into CargoWise. This is the same workload that [the forwarder's 4PL control tower automation](/case-studies/4pl-control-tower-automation/) was built to eliminate end-to-end.
 
 **The results after deployment:**
 
@@ -135,7 +135,7 @@ Theory matters less than production results. Here is what a major enterprise for
 - **Near-zero failure rate** on 200-300 page document batches — the system processes large batches reliably without the errors that manual processing introduces
 - **Zero manual data entry into CargoWise** — the full pipeline runs autonomously, with human intervention only for flagged exceptions
 
-The full deployment details are documented in our [enterprise 4PL case study](/case-studies/hellmann-4pl-control-tower/). The key insight: the ROI came not just from labor savings, but from the elimination of error-driven rework downstream in invoicing, customs, and client reporting.
+The full deployment details are documented in our [enterprise 4PL case study](/case-studies/4pl-control-tower-automation/). The key insight: the ROI came not just from labor savings, but from the elimination of error-driven rework downstream in invoicing, customs, and client reporting.
 
 ## Document Types That Can Be Automated
 
@@ -199,11 +199,11 @@ If you want a structured assessment of your CargoWise automation opportunity, [b
 
 ### How does AI OCR work with CargoWise documents?
 
-AI OCR for CargoWise works in five coordinated stages: an email monitor ingests supplier attachments, a classifier filters irrelevant pages, an OCR plus large-language-model layer extracts structured fields (shipper, consignee, HS codes, values, weights, AWB numbers), a validation layer checks business rules, and clean XML is pushed into the correct CargoWise module via eHub. This is the same architecture FreightMynd runs in production at Hellmann Worldwide Logistics.
+AI OCR for CargoWise works in five coordinated stages: an email monitor ingests supplier attachments, a classifier filters irrelevant pages, an OCR plus large-language-model layer extracts structured fields (shipper, consignee, HS codes, values, weights, AWB numbers), a validation layer checks business rules, and clean XML is pushed into the correct CargoWise module via eHub. This is the same architecture FreightMynd runs in production at a global freight forwarder.
 
 ### Can AI extract data from 200-300 page document batches reliably?
 
-Yes. AI-powered CargoWise OCR is designed for exactly this scale. Intelligent pre-filtering removes cover sheets, blanks and duplicates before extraction runs, the AI processes remaining pages in parallel, and validation catches errors before XML is pushed. Hellmann's 4PL control tower automation runs at near-zero failure on 200-300 page batches with a 60% processing time reduction versus manual handling.
+Yes. AI-powered CargoWise OCR is designed for exactly this scale. Intelligent pre-filtering removes cover sheets, blanks and duplicates before extraction runs, the AI processes remaining pages in parallel, and validation catches errors before XML is pushed. the forwarder's 4PL control tower automation runs at near-zero failure on 200-300 page batches with a 60% processing time reduction versus manual handling.
 
 ### What's the difference between traditional OCR and AI document extraction for CargoWise?
 
@@ -211,8 +211,8 @@ Traditional OCR maps pixel coordinates to fields using fixed templates, so it br
 
 ### How does the AI handle different supplier document formats for CargoWise?
 
-Self-learning supplier onboarding maps new formats automatically. On the first batch from a new supplier the AI classifies the document, extracts fields based on semantic understanding, scores confidence and routes uncertain fields for review. Operator corrections feed back into the model, and accuracy reaches established-supplier levels within 3-5 batches. Hellmann onboarded hundreds of supplier formats this way with zero per-supplier engineering.
+Self-learning supplier onboarding maps new formats automatically. On the first batch from a new supplier the AI classifies the document, extracts fields based on semantic understanding, scores confidence and routes uncertain fields for review. Operator corrections feed back into the model, and accuracy reaches established-supplier levels within 3-5 batches. The global freight forwarder onboarded hundreds of supplier formats this way with zero per-supplier engineering.
 
 ### What's the cost difference between manual data entry and AI-powered CargoWise OCR?
 
-Manual data entry typically runs $12-15 per document when labor, review and error correction are included. AI-powered CargoWise OCR brings that down to roughly $1.20-5.00 per document, a 60-90% reduction. Intelligent pre-filtering cuts AI compute cost by a further 50% — exactly what Hellmann's deployment achieved — and most mid-sized forwarders see full ROI within 3-5 months.
+Manual data entry typically runs $12-15 per document when labor, review and error correction are included. AI-powered CargoWise OCR brings that down to roughly $1.20-5.00 per document, a 60-90% reduction. Intelligent pre-filtering cuts AI compute cost by a further 50% — exactly what the forwarder's deployment achieved — and most mid-sized forwarders see full ROI within 3-5 months.

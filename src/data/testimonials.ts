@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
     quote: 'FreightMynd replaced what would have taken us 6 months of internal development. The 4PL control tower system processes our 300-page document batches with near-zero failure — something we couldn\'t achieve manually.',
     author: 'Operations Director',
     role: 'Operations Director',
-    company: 'Hellmann Worldwide Logistics',
+    company: 'Global Freight Forwarder',
     context: 'Processing 200+ documents daily via automated pipeline',
     verified: true,
   },

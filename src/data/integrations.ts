@@ -16,7 +16,7 @@ export interface Integration {
     dataObjects: string[];
   };
   capabilities: Array<{ title: string; description: string }>;
-  /** Optional proof block for Hellmann */
+  /** Optional proof block for the global freight forwarder */
   proofBlock?: string;
   faq: Array<{ q: string; a: string }>;
   /** Solutions most relevant to this integration */
@@ -33,7 +33,7 @@ export const integrations: Integration[] = [
     metaTitle: 'CargoWise AI Integration',
     metaDescription: 'CargoWise OCR, data entry automation, and document automation — AI-powered extraction, validation, and eHub XML push. Zero manual entry. Live for global freight operators.',
     logo: 'cargowise',
-    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like Hellmann Worldwide Logistics, Kuehne+Nagel, and DB Schenker. FreightMynd builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
+    intro: 'CargoWise One is the dominant TMS in freight forwarding, used by thousands of freight forwarders, customs brokers, and 3PLs worldwide. It is the operational backbone for companies ranging from mid-market forwarders to global enterprises like a global freight forwarder, Kuehne+Nagel, and DB Schenker. FreightMynd builds deep, native AI integration with CargoWise — not a surface-level connector, but a full CargoWise freight automation layer that pushes validated data directly into your CargoWise modules via eHub and Universal Gateway. Our CargoWise document processing pipeline handles invoices, AWBs, packing lists, and compliance documents end to end.',
     architecture: {
       connectionMethod: 'CargoWise eHub and Universal Gateway APIs',
       supportedVersions: 'CargoWise One (CW1), all current versions',
@@ -71,7 +71,7 @@ export const integrations: Integration[] = [
         description: 'CargoWise events (shipment creation, milestone updates, document receipt) can trigger downstream FreightMynd processing — enabling bi-directional automation where CargoWise and the AI layer work in concert.',
       },
     ],
-    proofBlock: 'We built and deployed this integration for Hellmann Worldwide Logistics — processing 200–300 page document batches with near-zero failure rate and zero manual TMS data entry. Every extracted, validated field goes directly into CargoWise via XML. No human ever touches the TMS for routine document data.',
+    proofBlock: 'We built and deployed this integration for a global freight forwarder — processing 200–300 page document batches with near-zero failure rate and zero manual TMS data entry. Every extracted, validated field goes directly into CargoWise via XML. No human ever touches the TMS for routine document data.',
     faq: [
       {
         q: 'How does FreightMynd integrate with CargoWise?',

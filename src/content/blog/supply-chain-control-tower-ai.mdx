@@ -28,7 +28,7 @@ relatedSolutions:
   - "sop-compliance-monitoring"
   - "carrier-performance-analytics"
 relatedCaseStudies:
-  - "hellmann-4pl-control-tower"
+  - "4pl-control-tower-automation"
 relatedIntegrations:
   - "cargowise"
 ---
@@ -39,7 +39,7 @@ relatedIntegrations:
 <li>A supply chain control tower is an orchestration layer that sits above your TMS — it does not replace CargoWise or SAP TM, it makes them more effective</li>
 <li>The evolution from visibility dashboards to AI-powered control towers is the shift from "see what happened" to "act on what is happening" autonomously</li>
 <li>AI control towers handle three core functions: document intelligence (ingestion to TMS push), exception management (detection to resolution), and operational coordination (carrier communication, customer notification)</li>
-<li>The Hellmann 4PL control tower deployment demonstrates what production AI orchestration looks like — 60% processing time reduction, zero manual TMS entry, near-zero failure on 300-page document batches</li>
+<li>The global freight forwarder 4PL control tower deployment demonstrates what production AI orchestration looks like — 60% processing time reduction, zero manual TMS entry, near-zero failure on 300-page document batches</li>
 <li>Start with the highest-impact workflow (usually document processing) and expand to exception management and carrier coordination incrementally</li>
 </ul>
 </div>
@@ -84,7 +84,7 @@ Every freight operation begins and ends with documents. Commercial invoices, air
 
 An AI control tower's [document intelligence layer](/solutions/document-intelligence/) monitors incoming document streams (email, FTP, API), classifies documents by type, extracts structured data, validates against business rules, and pushes clean data into the TMS. This is not a nice-to-have — it is the foundation that makes everything else possible. If your TMS data is inaccurate, incomplete, or delayed because it depends on manual entry, no amount of visibility or alerting will fix your operations.
 
-The [Hellmann 4PL control tower deployment](/case-studies/hellmann-4pl-control-tower/) demonstrated what production-grade document intelligence looks like: 200-300 page document batches processed at near-zero failure rates, 60% reduction in processing time, 50% AI cost reduction through intelligent pre-filtering, and zero manual TMS data entry. The system handles invoices, AWBs, packing lists, and compliance documents across multiple suppliers with self-learning format adaptation.
+The [global freight forwarder 4PL control tower deployment](/case-studies/4pl-control-tower-automation/) demonstrated what production-grade document intelligence looks like: 200-300 page document batches processed at near-zero failure rates, 60% reduction in processing time, 50% AI cost reduction through intelligent pre-filtering, and zero manual TMS data entry. The system handles invoices, AWBs, packing lists, and compliance documents across multiple suppliers with self-learning format adaptation.
 
 ### Function 2: Exception Management
 
@@ -122,7 +122,7 @@ A production AI control tower in 2026 typically includes the following component
 
 **Data Integration Layer** — Connectors to your TMS (CargoWise, SAP TM, Oracle TMS, Microsoft Dynamics), carrier APIs, email systems, and document sources. This layer normalizes data from disparate sources into a unified operational model.
 
-**Document Intelligence Engine** — AI extraction, classification, and validation pipeline for freight documents. This is the component that eliminates manual data entry. The [Hellmann deployment](/case-studies/hellmann-4pl-control-tower/) uses LangGraph-orchestrated extraction with Azure Document Intelligence, OCR, and OpenAI models.
+**Document Intelligence Engine** — AI extraction, classification, and validation pipeline for freight documents. This is the component that eliminates manual data entry. The [the global freight forwarder deployment](/case-studies/4pl-control-tower-automation/) uses LangGraph-orchestrated extraction with Azure Document Intelligence, OCR, and OpenAI models.
 
 **Exception Detection and Impact Engine** — Real-time monitoring of shipment milestones against planned schedules, with automated impact analysis across connected shipments and customer commitments.
 
@@ -134,11 +134,11 @@ A production AI control tower in 2026 typically includes the following component
 
 ## What a Real AI Control Tower Implementation Looks Like
 
-The [Hellmann Worldwide Logistics case study](/case-studies/hellmann-4pl-control-tower/) is the clearest example of what production AI control tower operations look like in 2026.
+The [a global freight forwarder case study](/case-studies/4pl-control-tower-automation/) is the clearest example of what production AI control tower operations look like in 2026.
 
-Hellmann's 4PL control tower receives daily document bundles from suppliers — commercial invoices, airway bills, packing lists, and customs compliance forms — often packaged as PDFs of 200 to 300 pages per batch. Before the AI system, two operators spent significant portions of each morning manually downloading, splitting, reading, and re-keying data into spreadsheets before entering it into CargoWise.
+the forwarder's 4PL control tower receives daily document bundles from suppliers — commercial invoices, airway bills, packing lists, and customs compliance forms — often packaged as PDFs of 200 to 300 pages per batch. Before the AI system, two operators spent significant portions of each morning manually downloading, splitting, reading, and re-keying data into spreadsheets before entering it into CargoWise.
 
-The AI pipeline replaced that entire workflow: email monitoring detects incoming documents, intelligent filtering removes irrelevant pages (cutting AI processing costs by 50%), the extraction engine pulls structured data from every document type, a validation layer checks data against Hellmann's business rules, and clean XML is pushed directly into CargoWise. New supplier formats are mapped automatically through the self-learning onboarding module.
+The AI pipeline replaced that entire workflow: email monitoring detects incoming documents, intelligent filtering removes irrelevant pages (cutting AI processing costs by 50%), the extraction engine pulls structured data from every document type, a validation layer checks data against the forwarder's business rules, and clean XML is pushed directly into CargoWise. New supplier formats are mapped automatically through the self-learning onboarding module.
 
 The results — 60% processing time reduction, zero manual TMS entry, near-zero failure rate on 300-page batches — demonstrate that AI control tower operations are not theoretical. They are in production, handling real freight volumes, for one of the world's largest logistics companies.
 

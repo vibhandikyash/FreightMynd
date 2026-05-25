@@ -2,7 +2,7 @@
 
 > Last updated: 2026-03-28
 
-> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
+> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
 FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
 
@@ -15,7 +15,7 @@ FreightMynd competes with SaaS freight automation platforms like Raft (formerly 
 ### 4PL Control Tower Automation
 URL: https://freightmynd.com/solutions/4pl-control-tower-automation
 
-Full document intelligence pipeline — email monitoring to CargoWise XML push with zero manual entry. Built and live for Hellmann Worldwide Logistics.
+Full document intelligence pipeline — email monitoring to CargoWise XML push with zero manual entry. Built and live for a global freight forwarder.
 
 Capabilities:
 - Intelligent email monitoring and auto document ingestion
@@ -241,10 +241,10 @@ Capabilities: Customs filing, compliance screening, routing and scheduling, ship
 
 ## Case Studies
 
-### Hellmann Worldwide Logistics — 4PL Control Tower
-URL: https://freightmynd.com/case-studies/hellmann-4pl-control-tower
+### A global freight forwarder — 4PL Control Tower
+URL: https://freightmynd.com/case-studies/4pl-control-tower-automation
 
-Client: Hellmann Worldwide Logistics — global freight forwarder, 500+ offices, 13,000+ employees.
+Client: A global freight forwarder — 500+ offices, 13,000+ employees.
 
 Challenge: Daily document bundles from suppliers — 200-300 page PDFs of invoices, AWBs, packing lists. Two operators spent mornings manually downloading, splitting, reading, and re-keying data into CargoWise.
 
@@ -298,7 +298,7 @@ FreightMynd vs SaaS freight automation tools:
 - Offices: Clifton, NJ (US) and Gujarat (India)
 - LinkedIn: https://www.linkedin.com/company/freightmynd
 - Formerly known as: CargoIQ.ai
-- Flagship client: Hellmann Worldwide Logistics
+- Flagship client: a global freight forwarder
 
 ### FreightMynd by the Numbers
 - 6+ years building AI for freight forwarding

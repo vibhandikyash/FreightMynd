@@ -1,6 +1,6 @@
 ---
-title: "Automate CargoWise Data Entry with AI: How Hellmann Eliminated Manual Re-Keying"
-description: "Automate CargoWise data entry with AI — how Hellmann eliminated manual re-keying on 200-300 page batches with 60% faster processing and zero TMS entries."
+title: "Automate CargoWise Data Entry with AI: How the global freight forwarder Eliminated Manual Re-Keying"
+description: "Automate CargoWise data entry with AI — how the global freight forwarder eliminated manual re-keying on 200-300 page batches with 60% faster processing and zero TMS entries."
 publishDate: 2026-02-15
 modifiedDate: 2026-05-18
 author: "FreightMynd Team"
@@ -11,15 +11,15 @@ readingTime: "12 min read"
 wordCount: 2410
 faq:
   - q: "How does AI eliminate manual data entry in CargoWise?"
-    a: "AI eliminates manual CargoWise data entry by replacing every step an operator performs today. An email monitoring agent ingests supplier attachments, a classifier filters irrelevant pages, a LangGraph-orchestrated extraction engine reads structured fields from invoices, AWBs and packing lists, a validation layer checks business rules, and clean XML is pushed into CargoWise via eHub. At Hellmann Worldwide Logistics, this pipeline runs with zero manual TMS entries on 200-300 page batches."
+    a: "AI eliminates manual CargoWise data entry by replacing every step an operator performs today. An email monitoring agent ingests supplier attachments, a classifier filters irrelevant pages, a LangGraph-orchestrated extraction engine reads structured fields from invoices, AWBs and packing lists, a validation layer checks business rules, and clean XML is pushed into CargoWise via eHub. At a global freight forwarder, this pipeline runs with zero manual TMS entries on 200-300 page batches."
   - q: "What document types can be auto-pushed to CargoWise via AI?"
-    a: "Production AI pipelines auto-push commercial invoices, master and house airway bills, ocean bills of lading, packing lists, customs declarations, certificates of origin, dangerous goods declarations and inspection certificates into CargoWise. Each document type maps to the correct CargoWise module — Forwarding, Customs, Accounting or Warehouse — as XML via eHub. Hellmann's deployment covers all of these across hundreds of supplier formats without per-supplier engineering."
+    a: "Production AI pipelines auto-push commercial invoices, master and house airway bills, ocean bills of lading, packing lists, customs declarations, certificates of origin, dangerous goods declarations and inspection certificates into CargoWise. Each document type maps to the correct CargoWise module — Forwarding, Customs, Accounting or Warehouse — as XML via eHub. the forwarder's deployment covers all of these across hundreds of supplier formats without per-supplier engineering."
   - q: "Does AI data entry into CargoWise work with eHub or Universal Gateway?"
-    a: "Both. eHub handles the asynchronous bulk push of extracted document data into CargoWise modules with built-in retry logic, which is ideal for high-volume invoice and AWB ingestion. Universal Gateway handles real-time lookups during validation — confirming party codes, port codes and shipment references exist before pushing. The Hellmann production system uses a hybrid eHub + Universal Gateway architecture for reliability and speed."
+    a: "Both. eHub handles the asynchronous bulk push of extracted document data into CargoWise modules with built-in retry logic, which is ideal for high-volume invoice and AWB ingestion. Universal Gateway handles real-time lookups during validation — confirming party codes, port codes and shipment references exist before pushing. The global freight forwarder production system uses a hybrid eHub + Universal Gateway architecture for reliability and speed."
   - q: "What accuracy can AI achieve on CargoWise data entry?"
-    a: "Well-built production pipelines hit 95-99% field-level accuracy on structured freight documents. More importantly, the validation layer catches extraction errors before they reach CargoWise, so effective accuracy in the TMS is higher than the raw extraction rate. Low-confidence fields are routed to a human review queue with the specific field highlighted. Hellmann's pipeline runs at near-zero failure on 200-300 page batches under this exception-only review model."
+    a: "Well-built production pipelines hit 95-99% field-level accuracy on structured freight documents. More importantly, the validation layer catches extraction errors before they reach CargoWise, so effective accuracy in the TMS is higher than the raw extraction rate. Low-confidence fields are routed to a human review queue with the specific field highlighted. the forwarder's pipeline runs at near-zero failure on 200-300 page batches under this exception-only review model."
   - q: "How long does it take to set up AI-powered CargoWise data entry?"
-    a: "A typical AI-powered CargoWise data entry deployment runs 4-8 weeks from kickoff to production. Discovery maps your document types, supplier landscape and CargoWise configuration. Build covers extraction pipeline, validation rules and XML schema mapping to your module and custom fields. Parallel testing runs alongside your manual process before a monitored phased go-live. Hellmann's full 4PL control tower rollout followed this same staged path."
+    a: "A typical AI-powered CargoWise data entry deployment runs 4-8 weeks from kickoff to production. Discovery maps your document types, supplier landscape and CargoWise configuration. Build covers extraction pipeline, validation rules and XML schema mapping to your module and custom fields. Parallel testing runs alongside your manual process before a monitored phased go-live. the forwarder's full 4PL control tower rollout followed this same staged path."
 howToSteps:
   - "Monitor email inbox for incoming supplier documents"
   - "AI classifier filters and removes irrelevant pages"
@@ -34,7 +34,7 @@ relatedSolutions:
   - "email-intelligence"
   - "booking-automation"
 relatedCaseStudies:
-  - "hellmann-4pl-control-tower"
+  - "4pl-control-tower-automation"
 relatedIntegrations:
   - "cargowise"
 ---
@@ -45,13 +45,13 @@ relatedIntegrations:
 <li>Manual CargoWise data entry costs mid-size forwarders 2-4 FTEs worth of time daily — AI document extraction eliminates it entirely</li>
 <li>The automation pipeline covers email monitoring, document classification, field extraction, validation, and direct XML push to CargoWise via eHub</li>
 <li>Intelligent pre-filtering removes irrelevant pages before AI processing, cutting extraction costs by up to 50%</li>
-<li>Hellmann Worldwide Logistics achieved 60% processing time reduction and zero manual TMS entries using this approach</li>
+<li>a global freight forwarder achieved 60% processing time reduction and zero manual TMS entries using this approach</li>
 <li>Self-learning supplier onboarding means new document formats are mapped automatically — no per-supplier engineering required</li>
 </ul>
 </div>
 
 
-CargoWise data entry automation removes the manual re-keying step between supplier documents — invoices, AWBs, packing lists, customs forms — and your WiseTech TMS. At Hellmann Worldwide Logistics, the AI pipeline FreightMynd built processes 200-300 page document batches with zero manual entry and a 60% faster turnaround, anchored by [Hellmann's 4PL control tower automation](/case-studies/hellmann-4pl-control-tower/). This guide breaks down exactly how that automation works, which document categories it covers, how eHub and Universal Gateway fit together, and what to expect from a production deployment.
+CargoWise data entry automation removes the manual re-keying step between supplier documents — invoices, AWBs, packing lists, customs forms — and your WiseTech TMS. At a global freight forwarder, the AI pipeline FreightMynd built processes 200-300 page document batches with zero manual entry and a 60% faster turnaround, anchored by [the forwarder's 4PL control tower automation](/case-studies/4pl-control-tower-automation/). This guide breaks down exactly how that automation works, which document categories it covers, how eHub and Universal Gateway fit together, and what to expect from a production deployment.
 
 ## The Native XML Advantage — Why Generic Connectors Fail
 
@@ -89,7 +89,7 @@ An email monitoring agent watches your operations inbox continuously. When a sup
 
 This is the stage most people overlook, and it has the biggest impact on cost efficiency. Before any expensive AI extraction runs, a lightweight classifier scans each page of the incoming documents. Cover sheets, blank pages, duplicates, and irrelevant attachments are identified and removed. In production, this step typically eliminates 30-50% of pages from the processing pipeline — which directly reduces AI compute costs by the same proportion.
 
-When we built this for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower/), the pre-filtering stage alone cut AI processing costs by 50%. On document batches of 200-300 pages, that is a significant saving per batch.
+When we built this for [a global freight forwarder](/case-studies/4pl-control-tower-automation/), the pre-filtering stage alone cut AI processing costs by 50%. On document batches of 200-300 pages, that is a significant saving per batch.
 
 ### Stage 3: AI-Powered Field Extraction
 
@@ -113,9 +113,9 @@ The result is zero manual data entry. Documents arrive via email and structured 
 
 In parallel with the CargoWise push, the system generates formatted Excel compliance reports for your ops team. These serve as an audit trail and give operators visibility into what was processed, what was flagged for review, and what entered the TMS successfully.
 
-## The Hellmann Deployment: Real Production Results
+## The global freight forwarder Deployment: Real Production Results
 
-We did not build this as a proof of concept. The full [4PL control tower automation system](/solutions/4pl-control-tower-automation/) is live in production at Hellmann Worldwide Logistics — a global freight forwarder with 500+ offices and 13,000+ employees.
+We did not build this as a proof of concept. The full [4PL control tower automation system](/solutions/4pl-control-tower-automation/) is live in production at a global freight forwarder — a global freight forwarder with 500+ offices and 13,000+ employees.
 
 Before the system went live, two operators spent significant portions of each morning manually processing document batches. Supplier PDFs arrived in bundles of 200-300 pages containing commercial invoices, airway bills, packing lists, and customs compliance forms. Each page had to be read, classified, and manually keyed into CargoWise. New suppliers required engineering effort to map their document formats.
 
@@ -126,7 +126,7 @@ After deployment, the results were measurable within the first month:
 - **Zero** manual data entry into CargoWise
 - **Near-zero failure rate** on 200-300 page document batches
 
-The full case study is available at [Hellmann 4PL Control Tower](/case-studies/hellmann-4pl-control-tower/).
+The full case study is available at [Global Freight Forwarder 4PL Control Tower](/case-studies/4pl-control-tower-automation/).
 
 ## How Self-Learning Supplier Onboarding Works
 
@@ -136,7 +136,7 @@ The self-learning supplier onboarding module solves this. When a document arrive
 
 With each subsequent document batch from that supplier, the mapping improves. After 3-5 batches, extraction accuracy on the new format typically matches established suppliers. No engineering effort is required per new supplier — the system learns from the documents themselves.
 
-This was a critical requirement in the Hellmann deployment. A global 4PL operation receives documents from hundreds of suppliers across dozens of countries. Per-supplier engineering was not viable.
+This was a critical requirement in the global freight forwarder deployment. A global 4PL operation receives documents from hundreds of suppliers across dozens of countries. Per-supplier engineering was not viable.
 
 ## What Validation Looks Like in Practice
 
@@ -164,7 +164,7 @@ If you are evaluating [document intelligence](/solutions/document-intelligence/)
 
 **Expect 4-8 weeks from kickoff to production.** This includes discovery (mapping your documents and CargoWise config), development, parallel testing alongside your manual process, and a monitored go-live.
 
-If you want to understand what this would look like for your specific operation, [book a free audit](/contact/). We helped Hellmann Worldwide Logistics achieve a 60% processing time reduction with zero manual entry — and we can map the exact ROI for your team. We will review your document volumes, CargoWise setup, and supplier landscape — and tell you whether automation makes economic sense for your scale.
+If you want to understand what this would look like for your specific operation, [book a free audit](/contact/). We helped a global freight forwarder achieve a 60% processing time reduction with zero manual entry — and we can map the exact ROI for your team. We will review your document volumes, CargoWise setup, and supplier landscape — and tell you whether automation makes economic sense for your scale.
 
 ## CargoWise OCR vs AI Extraction: What's the Difference?
 
@@ -187,20 +187,20 @@ AI extraction works differently. Instead of mapping pixel coordinates to fields,
 
 ### How does AI eliminate manual data entry in CargoWise?
 
-AI eliminates manual CargoWise data entry by replacing every step an operator performs today. An email monitoring agent ingests supplier attachments, a classifier filters irrelevant pages, a LangGraph-orchestrated extraction engine reads structured fields from invoices, AWBs and packing lists, a validation layer checks business rules, and clean XML is pushed into CargoWise via eHub. At Hellmann Worldwide Logistics, this pipeline runs with zero manual TMS entries on 200-300 page batches.
+AI eliminates manual CargoWise data entry by replacing every step an operator performs today. An email monitoring agent ingests supplier attachments, a classifier filters irrelevant pages, a LangGraph-orchestrated extraction engine reads structured fields from invoices, AWBs and packing lists, a validation layer checks business rules, and clean XML is pushed into CargoWise via eHub. At a global freight forwarder, this pipeline runs with zero manual TMS entries on 200-300 page batches.
 
 ### What document types can be auto-pushed to CargoWise via AI?
 
-Production AI pipelines auto-push commercial invoices, master and house airway bills, ocean bills of lading, packing lists, customs declarations, certificates of origin, dangerous goods declarations and inspection certificates into CargoWise. Each document type maps to the correct CargoWise module — Forwarding, [Customs](/solutions/customs-automation/), Accounting or Warehouse — as XML via eHub. Hellmann's deployment covers all of these across hundreds of supplier formats without per-supplier engineering.
+Production AI pipelines auto-push commercial invoices, master and house airway bills, ocean bills of lading, packing lists, customs declarations, certificates of origin, dangerous goods declarations and inspection certificates into CargoWise. Each document type maps to the correct CargoWise module — Forwarding, [Customs](/solutions/customs-automation/), Accounting or Warehouse — as XML via eHub. the forwarder's deployment covers all of these across hundreds of supplier formats without per-supplier engineering.
 
 ### Does AI data entry into CargoWise work with eHub or Universal Gateway?
 
-Both. eHub handles the asynchronous bulk push of extracted document data into CargoWise modules with built-in retry logic, which is ideal for high-volume invoice and AWB ingestion. Universal Gateway handles real-time lookups during validation — confirming party codes, port codes and shipment references exist before pushing. The Hellmann production system uses a hybrid eHub + Universal Gateway architecture for reliability and speed.
+Both. eHub handles the asynchronous bulk push of extracted document data into CargoWise modules with built-in retry logic, which is ideal for high-volume invoice and AWB ingestion. Universal Gateway handles real-time lookups during validation — confirming party codes, port codes and shipment references exist before pushing. The global freight forwarder production system uses a hybrid eHub + Universal Gateway architecture for reliability and speed.
 
 ### What accuracy can AI achieve on CargoWise data entry?
 
-Well-built production pipelines hit 95-99% field-level accuracy on structured freight documents. More importantly, the validation layer catches extraction errors before they reach CargoWise, so effective accuracy in the TMS is higher than the raw extraction rate. Low-confidence fields are routed to a human review queue with the specific field highlighted. Hellmann's pipeline runs at near-zero failure on 200-300 page batches under this exception-only review model.
+Well-built production pipelines hit 95-99% field-level accuracy on structured freight documents. More importantly, the validation layer catches extraction errors before they reach CargoWise, so effective accuracy in the TMS is higher than the raw extraction rate. Low-confidence fields are routed to a human review queue with the specific field highlighted. the forwarder's pipeline runs at near-zero failure on 200-300 page batches under this exception-only review model.
 
 ### How long does it take to set up AI-powered CargoWise data entry?
 
-A typical AI-powered CargoWise data entry deployment runs 4-8 weeks from kickoff to production. Discovery maps your document types, supplier landscape and CargoWise configuration. Build covers extraction pipeline, validation rules and XML schema mapping to your module and custom fields. Parallel testing runs alongside your manual process before a monitored phased go-live. Hellmann's full [4PL control tower automation](/solutions/4pl-control-tower-automation/) rollout followed this same staged path.
+A typical AI-powered CargoWise data entry deployment runs 4-8 weeks from kickoff to production. Discovery maps your document types, supplier landscape and CargoWise configuration. Build covers extraction pipeline, validation rules and XML schema mapping to your module and custom fields. Parallel testing runs alongside your manual process before a monitored phased go-live. the forwarder's full [4PL control tower automation](/solutions/4pl-control-tower-automation/) rollout followed this same staged path.

@@ -26,7 +26,7 @@ relatedSolutions:
   - "freight-document-automation"
   - "rate-sheet-intelligence"
 relatedCaseStudies:
-  - "hellmann-4pl-control-tower"
+  - "4pl-control-tower-automation"
 relatedIntegrations:
   - "cargowise"
 ---
@@ -108,7 +108,7 @@ Validation operates at multiple levels:
 
 **Confidence scoring.** Each extracted field carries a confidence score. Fields below a configurable threshold are flagged for human review. This means your operators review only the fields the system is uncertain about — not the entire document.
 
-In the [Hellmann deployment](/case-studies/hellmann-4pl-control-tower/), the combination of high-accuracy extraction and multi-level validation produces a near-zero failure rate on document batches of 200-300 pages. The effective accuracy of data reaching CargoWise exceeds the raw extraction accuracy because the validation layer filters out errors.
+In the [the global freight forwarder deployment](/case-studies/4pl-control-tower-automation/), the combination of high-accuracy extraction and multi-level validation produces a near-zero failure rate on document batches of 200-300 pages. The effective accuracy of data reaching CargoWise exceeds the raw extraction accuracy because the validation layer filters out errors.
 
 ## How Self-Learning Improves Accuracy Over Time
 
@@ -116,7 +116,7 @@ Static systems hit an accuracy ceiling. The extraction engine processes the same
 
 When the system processes documents from a new supplier for the first time, accuracy might be at the lower end of the range — 93-95% for a non-standard format. But each document processed, especially those corrected during human review, provides training signal. By the third or fourth batch from the same supplier, accuracy on that format typically matches established suppliers (97-99%).
 
-This self-learning capability was critical in the Hellmann deployment. A global 4PL receives documents from hundreds of suppliers across dozens of countries. Per-supplier engineering to map each format would take years. Self-learning onboarding makes new supplier formats productive within days, not months.
+This self-learning capability was critical in the global freight forwarder deployment. A global 4PL receives documents from hundreds of suppliers across dozens of countries. Per-supplier engineering to map each format would take years. Self-learning onboarding makes new supplier formats productive within days, not months.
 
 ## What This Means for Your Operation
 

@@ -1,6 +1,6 @@
 # FreightMynd
 
-> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by Hellmann Worldwide Logistics.
+> AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
 Last updated: 2026-05-08
 
@@ -44,7 +44,7 @@ Native AI integration with major freight management systems — no middleware, n
 
 ## Case Studies
 
-- [Hellmann Worldwide Logistics](https://freightmynd.com/case-studies/hellmann-4pl-control-tower): 4PL control tower automation — 60% processing time reduction, zero manual TMS entry, near-zero failure on 300-page document batches.
+- [a global freight forwarder](https://freightmynd.com/case-studies/4pl-control-tower-automation): 4PL control tower automation — 60% processing time reduction, zero manual TMS entry, near-zero failure on 300-page document batches.
 - [RFQ Email Intelligence](https://freightmynd.com/case-studies/rfq-email-intelligence): AI-powered RFQ email intelligence and completion system.
 - [Historical Email Intelligence](https://freightmynd.com/case-studies/historical-email-intelligence): AI institutional knowledge capture from operational email.
 - [Shipping News Intelligence](https://freightmynd.com/case-studies/shipping-news-intelligence): Proactive freight risk detection and live disruption intelligence.
@@ -54,7 +54,7 @@ Native AI integration with major freight management systems — no middleware, n
 
 - Founded: 2019
 - Built by: Bitontree (https://bitontree.com)
-- Flagship client: Hellmann Worldwide Logistics (500+ offices, 13,000+ employees)
+- Flagship client: a global freight forwarder (500+ offices, 13,000+ employees)
 - Deployment timeline: 4-8 weeks from kickoff to production
 - Tech stack: Python, LangGraph, Azure, CargoWise API, OpenAI, custom OCR
 - Offices: Clifton (US), Gujarat (India)

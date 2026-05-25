@@ -28,7 +28,7 @@ relatedSolutions:
   - "booking-automation"
   - "sop-compliance-monitoring"
 relatedCaseStudies:
-  - "hellmann-4pl-control-tower"
+  - "4pl-control-tower-automation"
 relatedIntegrations:
   - "cargowise"
 ---
@@ -50,7 +50,7 @@ CargoWise One is the dominant TMS in global freight forwarding for good reason �
 
 This is exactly where AI automation delivers the highest impact. Rather than replacing CargoWise, AI systems sit upstream — processing documents, extracting structured data, validating it against your business rules, and pushing clean XML directly into CargoWise via its integration APIs. The result is zero-touch data entry for the majority of your shipment documents.
 
-We have built and deployed this architecture in production for [Hellmann Worldwide Logistics](/case-studies/hellmann-4pl-control-tower/), processing hundreds of pages daily with near-zero failure rates. This guide walks through the technical architecture behind that system.
+We have built and deployed this architecture in production for [a global freight forwarder](/case-studies/4pl-control-tower-automation/), processing hundreds of pages daily with near-zero failure rates. This guide walks through the technical architecture behind that system.
 
 ## CargoWise Integration Architecture: eHub vs Universal Gateway
 
@@ -72,7 +72,7 @@ The AI pipeline that feeds CargoWise follows a specific sequence, and each stage
 
 **Stage 1: Email Monitoring and Ingestion.** An automated agent monitors your operations inbox (or multiple inboxes) for incoming supplier documents. It identifies shipment-related emails using a combination of sender rules, subject line patterns, and attachment type detection. Attachments are downloaded, deduplicated, and queued for processing.
 
-**Stage 2: Intelligent Pre-Filtering.** Before any expensive AI processing runs, a lightweight classifier examines each page of the document. Cover sheets, blank pages, duplicate pages, and irrelevant attachments are removed. In the Hellmann deployment, this stage reduced AI processing costs by 50% — a significant saving when you are processing thousands of pages daily.
+**Stage 2: Intelligent Pre-Filtering.** Before any expensive AI processing runs, a lightweight classifier examines each page of the document. Cover sheets, blank pages, duplicate pages, and irrelevant attachments are removed. In the global freight forwarder deployment, this stage reduced AI processing costs by 50% — a significant saving when you are processing thousands of pages daily.
 
 **Stage 3: Document Classification and Extraction.** The AI engine classifies each document (invoice, AWB, packing list, customs form) and extracts structured fields. This is where large language models and specialized OCR work together. The extraction maps document fields to CargoWise's data model — shipment references, party details, line items, amounts, weights, and dimensions.
 
@@ -108,7 +108,7 @@ Running an AI-to-CargoWise pipeline in production requires production-grade moni
 
 Exception handling workflows are equally important. When a document fails processing, the system should categorize the failure (extraction error, validation failure, eHub rejection), route it to the appropriate queue, preserve context so the reviewer can see exactly what went wrong, and learn from the resolution to reduce future failures.
 
-The goal is not zero exceptions — that is unrealistic with real-world freight documents. The goal is that exceptions are caught early, routed correctly, and resolved efficiently. In the [Hellmann deployment](/case-studies/hellmann-4pl-control-tower/), the exception rate dropped to near-zero on established supplier formats within the first month of production.
+The goal is not zero exceptions — that is unrealistic with real-world freight documents. The goal is that exceptions are caught early, routed correctly, and resolved efficiently. In the [the global freight forwarder deployment](/case-studies/4pl-control-tower-automation/), the exception rate dropped to near-zero on established supplier formats within the first month of production.
 
 ## Getting Started
 

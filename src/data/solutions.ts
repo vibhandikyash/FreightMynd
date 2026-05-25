@@ -60,9 +60,9 @@ export const solutions: Solution[] = [
     ],
     metaTitle: '4PL Control Tower Automation',
     metaDescription:
-      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for Hellmann Logistics.',
+      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for the global freight forwarder Logistics.',
     description:
-      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for Hellmann Worldwide Logistics.',
+      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for a global freight forwarder.',
     icon: '🏗️',
     color: 'brand',
     headline: '4PL Control Tower Automation That Eliminates Manual Data Entry',
@@ -84,7 +84,7 @@ export const solutions: Solution[] = [
         'Processing accuracy varies from 85–95% depending on the individual, the document quality, and how far into a shift they are — every error cascading into downstream exceptions',
         'New supplier onboarding takes 1–3 weeks of engineering effort to map each document format, creating a backlog that delays client go-lives',
         'Peak volume spikes (holiday season, port congestion events) cause processing backlogs of 24–72 hours that directly impact SLA compliance',
-        '300-page PDF batches from suppliers like Hellmann require operators to manually identify and separate relevant pages — a task that is tedious, error-prone, and unscalable',
+        '300-page PDF batches from suppliers like the global freight forwarder require operators to manually identify and separate relevant pages — a task that is tedious, error-prone, and unscalable',
         'No audit trail or consistency in how data is extracted — making compliance reporting a manual reconciliation exercise every month',
       ],
     },
@@ -103,7 +103,7 @@ export const solutions: Solution[] = [
       {
         title: '200–300 page batch processing at near-zero failure rate',
         description:
-          'The pipeline handles large multi-document batches as a single unit of work, splitting them into individual documents (invoice, AWB, packing list), classifying each, and processing them in parallel. The system was stress-tested on Hellmann batches of 300+ pages with near-zero failure rates — meaning no dropped documents, no partial extractions, and no silent errors.',
+          'The pipeline handles large multi-document batches as a single unit of work, splitting them into individual documents (invoice, AWB, packing list), classifying each, and processing them in parallel. The system was stress-tested on the global freight forwarder batches of 300+ pages with near-zero failure rates — meaning no dropped documents, no partial extractions, and no silent errors.',
       },
       {
         title: 'Structured data extraction from invoices, AWBs, and packing lists',
@@ -134,9 +134,9 @@ export const solutions: Solution[] = [
 
     useCases: [
       {
-        scenario: 'Hellmann Worldwide Logistics: 300-page batch processing',
+        scenario: 'a global freight forwarder: 300-page batch processing',
         description:
-          'Hellmann sends consolidated shipment documentation as single PDFs that can be 200–300 pages long, containing mixed invoices, AWBs, packing lists, and certificates for multiple shipments. Previously, an ops team member would spend 2–3 hours per batch manually sorting, extracting, and keying data. With our system, these batches are processed in under 15 minutes end-to-end with near-zero failure rate, freeing the ops team to focus on exception management.',
+          'the global freight forwarder sends consolidated shipment documentation as single PDFs that can be 200–300 pages long, containing mixed invoices, AWBs, packing lists, and certificates for multiple shipments. Previously, an ops team member would spend 2–3 hours per batch manually sorting, extracting, and keying data. With our system, these batches are processed in under 15 minutes end-to-end with near-zero failure rate, freeing the ops team to focus on exception management.',
       },
       {
         scenario: 'New supplier onboarding without engineering',
@@ -156,10 +156,10 @@ export const solutions: Solution[] = [
     ],
 
     results: [
-      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual processing of equivalent document volumes at Hellmann Worldwide Logistics', businessOutcome: 'Equivalent to reclaiming 2+ FTEs of operational capacity' },
+      { value: '60%', label: 'Processing time reduction', context: 'Measured against manual processing of equivalent document volumes at a global freight forwarder', businessOutcome: 'Equivalent to reclaiming 2+ FTEs of operational capacity' },
       { value: '50%', label: 'AI cost reduction via smart filtering', context: 'By removing irrelevant pages before LLM extraction, reducing token consumption by half', businessOutcome: 'Lower ongoing operational costs as document volume scales' },
       { value: '0', label: 'Manual TMS data entry', context: 'All validated data pushed directly into CargoWise via XML — zero human keying required', businessOutcome: 'Eliminates data entry errors and costly exception handling' },
-      { value: '≈0%', label: 'Failure rate on 300-page batches', context: 'Stress-tested on production Hellmann document batches with no dropped or partially processed documents', businessOutcome: 'No lost documents, no re-processing, no supplier follow-ups' },
+      { value: '≈0%', label: 'Failure rate on 300-page batches', context: 'Stress-tested on production the global freight forwarder document batches with no dropped or partially processed documents', businessOutcome: 'No lost documents, no re-processing, no supplier follow-ups' },
     ],
 
     stack: ['Python', 'LangGraph', 'Azure', 'n8n', 'CargoWise eHub', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'PostgreSQL'],
@@ -193,7 +193,7 @@ export const solutions: Solution[] = [
       },
       {
         q: 'Does this integrate with CargoWise?',
-        a: 'Yes — it\'s how we built the Hellmann system. Clean XML goes directly into CargoWise via eHub and Universal Gateway. We handle the messy parts of CW\'s XML schema: mapping data to the right modules (forwarding, customs, accounting), wiring up reference numbers, party data, charge codes. We also integrate with SAP TM, Oracle TMS, Dynamics 365, and BluJay/E2open. If your TMS has an API or takes EDI, we can connect to it.',
+        a: 'Yes — it\'s how we built the global freight forwarder system. Clean XML goes directly into CargoWise via eHub and Universal Gateway. We handle the messy parts of CW\'s XML schema: mapping data to the right modules (forwarding, customs, accounting), wiring up reference numbers, party data, charge codes. We also integrate with SAP TM, Oracle TMS, Dynamics 365, and BluJay/E2open. If your TMS has an API or takes EDI, we can connect to it.',
       },
       {
         q: 'How long does implementation take?',
@@ -222,7 +222,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', 'freight-document-automation', 'tms-automation', 'email-intelligence', 'sop-compliance-monitoring'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'autonomous-quote-management',
@@ -547,7 +547,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['4pl-control-tower-automation', 'freight-document-automation', 'customs-automation', 'sea-freight-automation'],
     relatedIntegrations: ['cargowise', 'oracle-tms'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'freight-pricing-ai',
@@ -1179,7 +1179,7 @@ export const solutions: Solution[] = [
     relatedSolutions: ['4pl-control-tower-automation', 'order-to-cash-automation', 'freight-revenue-recovery', 'email-intelligence'],
 
     relatedIntegrations: ['sap-tm', 'oracle-tms'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower', 'historical-email-intelligence'],
+    relatedCaseStudies: ['4pl-control-tower-automation', 'historical-email-intelligence'],
   },
   {
     slug: 'smart-invoice-processing',
@@ -1336,7 +1336,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['freight-revenue-recovery', 'freight-document-automation', 'customs-automation', 'tms-automation'],
     relatedIntegrations: ['cargowise', 'microsoft-dynamics'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'freight-revenue-recovery',
@@ -1502,7 +1502,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['freight-spend-analytics', 'smart-invoice-processing', '3pl-4pl-operations'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'freight-spend-analytics',
@@ -1677,7 +1677,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['freight-revenue-recovery', 'carrier-performance-analytics', 'order-to-cash-automation', 'shipment-visibility-portal'],
     relatedIntegrations: ['cargowise', 'sap-tm'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'customs-automation',
@@ -1834,7 +1834,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', 'smart-invoice-processing', 'sea-freight-automation', 'air-freight-automation'],
     relatedIntegrations: ['cargowise', 'descartes'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'freight-document-automation',
@@ -1925,9 +1925,9 @@ export const solutions: Solution[] = [
           'A 4PL operator receives documents from 50+ suppliers, each with different invoice and packing list formats. The self-learning supplier onboarding module maps new formats automatically — no engineering effort per supplier.',
       },
       {
-        scenario: 'Hellmann 4PL control tower deployment',
+        scenario: 'global freight forwarder 4PL control tower deployment',
         description:
-          'The freight document automation system processes Hellmann\'s 200–300 page document batches with near-zero failure rate, achieving 60% processing time reduction and zero manual TMS data entry.',
+          'The freight document automation system processes the global freight forwarder\'s 200–300 page document batches with near-zero failure rate, achieving 60% processing time reduction and zero manual TMS data entry.',
       },
     ],
 
@@ -1982,7 +1982,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['document-intelligence', '4pl-control-tower-automation', 'smart-invoice-processing', 'tms-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics', 'descartes'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
   {
     slug: 'tms-automation',
@@ -2130,7 +2130,7 @@ export const solutions: Solution[] = [
     ],
     relatedSolutions: ['4pl-control-tower-automation', 'smart-invoice-processing', '3pl-4pl-operations', 'freight-document-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics', 'descartes'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
 
   // ─── NEW COMPETITOR-INSPIRED SOLUTIONS ───────────────────────────────
@@ -2162,7 +2162,7 @@ export const solutions: Solution[] = [
     icon: '📧',
     color: 'brand',
     headline: 'Your Ops Inbox Processes Itself',
-    sub: 'AI agents that live inside your inbox — reading every email, classifying intent, extracting actionable data, routing to the right workflow, and drafting responses. No new UI. No training. Just an inbox that handles itself. Built on the same AI architecture deployed for Hellmann Worldwide Logistics.',
+    sub: 'AI agents that live inside your inbox — reading every email, classifying intent, extracting actionable data, routing to the right workflow, and drafting responses. No new UI. No training. Just an inbox that handles itself. Built on the same AI architecture deployed for a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders processing 200+ operational emails per day',
@@ -2464,7 +2464,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['eta-prediction-exception-management', 'carrier-performance-analytics', 'freight-spend-analytics', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
 
   {
@@ -2620,7 +2620,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['freight-spend-analytics', 'shipment-visibility-portal', 'eta-prediction-exception-management', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
 
   {
@@ -2650,7 +2650,7 @@ export const solutions: Solution[] = [
     icon: '📋',
     color: 'brand',
     headline: 'Bookings That Create Themselves',
-    sub: 'When a quote is accepted, the booking creates itself: carrier allocation, space reservation, TMS record creation, confirmation to customer, and document generation — all automated. Your operators handle exceptions, not data entry. Architecture proven in production for global freight operators including Hellmann Worldwide Logistics.',
+    sub: 'When a quote is accepted, the booking creates itself: carrier allocation, space reservation, TMS record creation, confirmation to customer, and document generation — all automated. Your operators handle exceptions, not data entry. Architecture proven in production for global freight operators including a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders processing 50+ bookings per day with manual TMS entry',
@@ -2810,7 +2810,7 @@ export const solutions: Solution[] = [
     icon: '⏱️',
     color: 'brand',
     headline: 'Know About Delays Before Your Customers Do',
-    sub: 'AI that predicts shipment delays 24–72 hours before they happen, automatically alerts affected customers, and routes exceptions to the right operator with full context. Proactive, not reactive. Built on the same pipeline architecture deployed for Hellmann Worldwide Logistics.',
+    sub: 'AI that predicts shipment delays 24–72 hours before they happen, automatically alerts affected customers, and routes exceptions to the right operator with full context. Proactive, not reactive. Built on the same pipeline architecture deployed for a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders managing 500+ active shipments who need proactive delay detection',
@@ -2970,7 +2970,7 @@ export const solutions: Solution[] = [
     icon: '✅',
     color: 'accent',
     headline: 'Every Shipment Audited Against Your SOPs. Automatically.',
-    sub: 'AI that monitors every shipment record, every document, and every milestone against your Standard Operating Procedures. Catches missing data, process violations, and SLA risks in real-time — not in next month\'s compliance report. Architecture proven in production for enterprise freight operations including Hellmann Worldwide Logistics.',
+    sub: 'AI that monitors every shipment record, every document, and every milestone against your Standard Operating Procedures. Catches missing data, process violations, and SLA risks in real-time — not in next month\'s compliance report. Architecture proven in production for enterprise freight operations including a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders with complex customer SOPs that vary per account',
@@ -3104,7 +3104,7 @@ export const solutions: Solution[] = [
 
     relatedSolutions: ['4pl-control-tower-automation', '3pl-4pl-operations', 'customs-automation', 'eta-prediction-exception-management'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms', 'microsoft-dynamics'],
-    relatedCaseStudies: ['hellmann-4pl-control-tower'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
 
   {
@@ -3134,7 +3134,7 @@ export const solutions: Solution[] = [
     icon: '💰',
     color: 'accent',
     headline: 'From Booking to Bank — Without the Manual Steps',
-    sub: 'The entire revenue cycle automated: cost accruals from carrier invoices, customer invoice generation from shipment data, revenue recognition from milestones, and payment reconciliation from bank feeds. No spreadsheets. No month-end fire drills. Architecture proven in production for global freight operators including Hellmann Worldwide Logistics.',
+    sub: 'The entire revenue cycle automated: cost accruals from carrier invoices, customer invoice generation from shipment data, revenue recognition from milestones, and payment reconciliation from bank feeds. No spreadsheets. No month-end fire drills. Architecture proven in production for global freight operators including a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders with a 15+ day average invoice cycle from shipment completion to customer billing',
@@ -3292,7 +3292,7 @@ export const solutions: Solution[] = [
     icon: '📈',
     color: 'brand',
     headline: 'Carrier Rate Sheets That Read Themselves',
-    sub: 'AI that ingests rate sheets from any carrier in any format — PDF, Excel, CSV, email body — normalises all charges into a structured, searchable database, and gives your quoting team instant access to the best rate on every lane. No manual entry. No stale spreadsheets. Built on the same AI extraction engine deployed for Hellmann Worldwide Logistics.',
+    sub: 'AI that ingests rate sheets from any carrier in any format — PDF, Excel, CSV, email body — normalises all charges into a structured, searchable database, and gives your quoting team instant access to the best rate on every lane. No manual entry. No stale spreadsheets. Built on the same AI extraction engine deployed for a global freight forwarder.',
 
     idealFor: [
       'Freight forwarders managing rate sheets from 20+ carriers that arrive in different formats',

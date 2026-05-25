@@ -3,3 +3,7 @@
 
 # Broken external link surfaced via Clarity (4+ sessions hit /solutions/carrier-integration → 404)
 /solutions/carrier-integration  /integrations/  301
+
+# Case study slug anonymized (client name removed); preserve SEO equity from the old URL
+/case-studies/hellmann-4pl-control-tower  /case-studies/4pl-control-tower-automation/  301
+/case-studies/hellmann-4pl-control-tower/  /case-studies/4pl-control-tower-automation/  301

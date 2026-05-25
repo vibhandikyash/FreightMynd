@@ -27,16 +27,16 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: 'hellmann-4pl-control-tower',
+    slug: '4pl-control-tower-automation',
     title: 'AI-Powered 4PL Control Tower Automation',
-    client: 'Hellmann Worldwide Logistics',
-    description: 'How Hellmann Worldwide Logistics automated their 4PL control tower operations with AI — achieving 60% processing time reduction, 50% AI cost reduction, and zero manual TMS entry.',
-    keyword: 'Hellmann 4PL control tower automation case study, CargoWise AI integration, freight document extraction',
-    headline: 'How Hellmann Automated Their 4PL Control Tower with AI',
+    client: 'Global Freight Forwarder',
+    description: 'How a global freight forwarder automated their 4PL control tower operations with AI — achieving 60% processing time reduction, 50% AI cost reduction, and zero manual TMS entry.',
+    keyword: '4PL control tower automation case study, CargoWise AI integration, freight document extraction',
+    headline: 'How a Global Freight Forwarder Automated Their 4PL Control Tower with AI',
     heroMetric: { value: '60%', label: 'Processing time reduction' },
-    metaTitle: 'Hellmann 4PL Control Tower AI | FreightMynd',
-    metaDescription: 'Hellmann Worldwide Logistics case study — AI document intelligence for 4PL control tower. 60% time reduction, zero manual CargoWise entry.',
-    clientOverview: 'Hellmann Worldwide Logistics is a global freight forwarder headquartered in Osnabrück, Germany, with 500+ offices across 170+ countries and more than 13,000 employees. Hellmann operates sea freight, air freight, road, and rail services worldwide, handling millions of shipments annually. Their 4PL control tower function manages complex multi-modal supply chains for enterprise clients, requiring high-volume, accurate document processing as the operational foundation.',
+    metaTitle: 'Global Freight Forwarder 4PL Control Tower AI | FreightMynd',
+    metaDescription: 'Global freight forwarder case study — AI document intelligence for 4PL control tower. 60% time reduction, zero manual CargoWise entry.',
+    clientOverview: 'A global freight forwarder with 500+ offices and more than 13,000 employees operating sea freight, air freight, road, and rail services worldwide, handling millions of shipments annually. Their 4PL control tower function manages complex multi-modal supply chains for enterprise clients, requiring high-volume, accurate document processing as the operational foundation.',
     results: [
       { value: '60%', label: 'Processing time reduction', context: '2–3 hour manual morning workflow reduced to under 30 minutes of exception review' },
       { value: '50%', label: 'AI cost reduction via smart filtering', context: 'Pre-filtering removes ~50% of pages before LLM extraction, halving token consumption' },
@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
       { value: '≈0%', label: 'Failure rate on 300-page batches', context: 'Stress-tested on production batches of 300+ pages with no dropped or partially processed documents' },
     ],
     stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'n8n', 'CargoWise API', 'OpenAI GPT-4o', 'Custom OCR'],
-    challenge: 'Hellmann\'s 4PL control tower operations received daily document bundles from suppliers — commercial invoices, airway bills, packing lists, customs compliance forms — often packaged as PDFs of 200–300 pages per batch. Two operators each spent 2–3 hours per morning manually downloading, splitting, reading, and re-keying data into spreadsheets before it could be entered into CargoWise. The manual process followed a rigid sequence: download email attachments, split multi-hundred-page PDFs into individual documents, identify document type, extract relevant fields, enter data into spreadsheets, and finally re-key everything into CargoWise. New suppliers required 1–3 weeks of engineering effort to map their document formats into the existing workflow. During peak season, document processing backlogs regularly exceeded 24+ hours, delaying downstream operations and creating compliance risk. The entire process lacked any audit trail — there was no systematic record of what was processed, when, or by whom, making error investigation and compliance reporting extremely difficult.',
+    challenge: 'The forwarder\'s 4PL control tower operations received daily document bundles from suppliers — commercial invoices, airway bills, packing lists, customs compliance forms — often packaged as PDFs of 200–300 pages per batch. Two operators each spent 2–3 hours per morning manually downloading, splitting, reading, and re-keying data into spreadsheets before it could be entered into CargoWise. The manual process followed a rigid sequence: download email attachments, split multi-hundred-page PDFs into individual documents, identify document type, extract relevant fields, enter data into spreadsheets, and finally re-key everything into CargoWise. New suppliers required 1–3 weeks of engineering effort to map their document formats into the existing workflow. During peak season, document processing backlogs regularly exceeded 24+ hours, delaying downstream operations and creating compliance risk. The entire process lacked any audit trail — there was no systematic record of what was processed, when, or by whom, making error investigation and compliance reporting extremely difficult.',
     challengePoints: [
       'Daily document bundles of 200-300 pages (invoices, AWBs, packing lists, customs forms)',
       '2-3 hours per morning per operator on manual download, split, read, re-key workflow',
@@ -69,7 +69,7 @@ export const caseStudies: CaseStudy[] = [
       'PDF Splitter — separates multi-hundred-page PDFs into individual documents',
       'AI Document Filter — lightweight classifier removes irrelevant pages (cover sheets, blanks, duplicates), reducing AI processing costs by 50%',
       'Extraction Engine — LangGraph-orchestrated pipeline combining Azure Document Intelligence, custom OCR, and GPT-4o for structured field extraction',
-      'Validation Layer — extracted data checked against Hellmann business rules (required fields, value ranges, supplier whitelist, cross-document consistency)',
+      'Validation Layer — extracted data checked against the forwarder\'s business rules (required fields, value ranges, supplier whitelist, cross-document consistency)',
       'CargoWise XML Push — validated data formatted as CW1-compliant XML and pushed via eHub API',
       'Excel Report Generator — formatted compliance reports auto-generated for ops team records',
       'Ops Dashboard — real-time processing status, confidence scores, and exception queue',
@@ -95,7 +95,7 @@ export const caseStudies: CaseStudy[] = [
         a: 'We push validated data directly into CargoWise via the eHub and Universal Gateway APIs as XML. The integration covers shipment records, customs declarations, accounting postings, and document attachments — with zero manual TMS entry.',
       },
       {
-        q: 'How long did the Hellmann implementation take?',
+        q: 'How long did the implementation take?',
         a: '12 weeks from kickoff to production, including a 4-week parallel run period where the AI system ran alongside the manual process to build confidence and catch edge cases.',
       },
       {
