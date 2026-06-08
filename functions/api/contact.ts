@@ -1,9 +1,10 @@
 /**
  * POST /api/contact
- * Contact form endpoint — validates input, sends email via Brevo, returns JSON.
+ * Contact form endpoint, validates input, sends email via Brevo, returns JSON.
+ * Refactored from Pages Function to Workers handler. Routing in src/worker.ts.
  */
 
-interface Env {
+export interface ContactEnv {
   SMTP_API_KEY: string;
   LEAD_EMAIL_TO: string;
   LEAD_EMAIL_FROM: string;
@@ -44,14 +45,14 @@ function escapeHtml(str: string): string {
     .replace(/"/g, '&quot;');
 }
 
-export const onRequestOptions: PagesFunction<Env> = async ({ request }) => {
+export async function handleContactOptions(request: Request): Promise<Response> {
   return new Response(null, {
     status: 204,
     headers: corsHeaders(request.headers.get('Origin') || ''),
   });
-};
+}
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export async function handleContactPost(request: Request, env: ContactEnv): Promise<Response> {
   const origin = request.headers.get('Origin') || '';
   const headers = { ...corsHeaders(origin), 'Content-Type': 'application/json' };
 
@@ -204,4 +205,4 @@ Sent via FreightMynd Contact Form`;
       { status: 500, headers },
     );
   }
-};
+}

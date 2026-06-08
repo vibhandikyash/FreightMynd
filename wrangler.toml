@@ -1,11 +1,19 @@
-# CF Pages project config for FreightMynd marketing site.
-# Project: freightmynd-site (distinct from the freightmynd Worker).
-# Bindings + ENVIRONMENT var below auto-apply on `wrangler pages deploy`.
-# Secrets (set via dashboard or `wrangler pages secret put <NAME>`):
+# CF Worker config: Workers Static Assets architecture.
+# - Astro builds static site to `dist/` (via `npm run build`).
+# - This Worker serves /api/* via src/server/worker.ts and falls back to
+#   env.ASSETS.fetch(request) for everything else (HTML/CSS/JS/images).
+#
+# Secrets (set via dashboard or `wrangler secret put <NAME> --name=freightmynd`):
 #   ANTHROPIC_API_KEY, SMTP_API_KEY, LEAD_EMAIL_TO, LEAD_EMAIL_FROM, ADMIN_TOKEN
-name = "freightmynd-site"
-pages_build_output_dir = "dist"
+
+name = "freightmynd"
+main = "src/server/worker.ts"
 compatibility_date = "2024-12-01"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "404-page"
 
 [vars]
 ENVIRONMENT = "production"

@@ -1,13 +1,14 @@
 /**
  * POST /api/chat
- * Main chat endpoint — streams Claude Haiku responses back to the client.
+ * Main chat endpoint, streams Claude Haiku responses back to the client.
+ * Refactored from Pages Function to Workers handler. Routing in src/worker.ts.
  */
 
 import { buildContextualPrompt } from '../lib/system-prompt';
 import { checkRateLimit } from '../lib/rate-limiter';
 import { sendLeadEmail } from '../lib/send-lead-email';
 
-interface Env {
+export interface ChatEnv {
   ANTHROPIC_API_KEY: string;
   SMTP_API_KEY: string;
   LEAD_EMAIL_TO: string;
@@ -56,13 +57,16 @@ function corsHeaders(origin: string): Record<string, string> {
   };
 }
 
-export const onRequestOptions: PagesFunction<Env> = async (context) => {
-  const origin = context.request.headers.get('Origin') || '';
+export async function handleChatOptions(request: Request): Promise<Response> {
+  const origin = request.headers.get('Origin') || '';
   return new Response(null, { status: 204, headers: corsHeaders(origin) });
-};
+}
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { request, env } = context;
+export async function handleChatPost(
+  request: Request,
+  env: ChatEnv,
+  ctx: ExecutionContext,
+): Promise<Response> {
   const origin = request.headers.get('Origin') || '';
   const headers = corsHeaders(origin);
 
@@ -289,8 +293,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       }
     };
 
-    // Don't await — let it run while streaming
-    context.waitUntil(processStream());
+    // Don't await, let it run while streaming
+    ctx.waitUntil(processStream());
 
     return new Response(readable, {
       headers: {
@@ -307,4 +311,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       headers: { ...headers, 'Content-Type': 'application/json' },
     });
   }
-};
+}

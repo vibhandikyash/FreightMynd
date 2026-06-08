@@ -1,19 +1,21 @@
 /**
  * GET /api/conversation/:id
  * Protected endpoint for sales team to retrieve conversation transcripts.
+ * Refactored from Pages Function to Workers handler. Routing in src/worker.ts.
+ * (Filename keeps [id] convention for git history; id is now passed by the router.)
  */
 
-interface Env {
+export interface ConversationEnv {
   ADMIN_TOKEN: string;
   CHAT_SESSIONS: KVNamespace;
   CHAT_LEADS: KVNamespace;
 }
 
-export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const { request, env, params } = context;
-  const id = params.id as string;
-
-  // Auth check
+export async function handleConversationGet(
+  request: Request,
+  env: ConversationEnv,
+  id: string,
+): Promise<Response> {
   const authHeader = request.headers.get('Authorization');
   if (!authHeader || authHeader !== `Bearer ${env.ADMIN_TOKEN}`) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
@@ -29,7 +31,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     });
   }
 
-  // Fetch session and lead data
   const [session, lead] = await Promise.all([
     env.CHAT_SESSIONS.get(`session:${id}`, 'json'),
     env.CHAT_LEADS.get(`lead:${id}`, 'json'),
@@ -50,6 +51,6 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
-    }
+    },
   );
-};
+}
