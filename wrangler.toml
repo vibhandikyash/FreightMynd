@@ -9,6 +9,7 @@
 name = "freightmynd"
 main = "src/server/worker.ts"
 compatibility_date = "2024-12-01"
+workers_dev = false  # disable *.workers.dev subdomain; only freightmynd.com serves
 
 [assets]
 directory = "./dist"
