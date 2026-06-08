@@ -16,23 +16,23 @@ const breadcrumbSchema = {
 const faqItems = [
   {
     q: 'Is Raft better than FreightMynd for freight automation?',
-    a: 'It depends on your operation\'s complexity. Raft (formerly Vector.ai) is a VC-backed SaaS platform that suits standard workflows at scale across 60+ customers and 30+ countries. FreightMynd builds custom AI systems for complex operations needing deep customization, native TMS integration, and full ownership — ideal for enterprise forwarders with edge cases that don\'t fit templates.',
+    a: 'It depends on your operation\'s complexity. Raft (formerly Vector.ai) is a VC-backed SaaS platform that suits standard workflows at scale across 60+ customers and 30+ countries. FreightMynd builds custom AI systems for complex operations needing deep customization, native TMS integration, and full ownership. That makes it ideal for enterprise forwarders with edge cases that don\'t fit templates.',
   },
   {
     q: 'Does Raft integrate with CargoWise?',
-    a: 'Yes, Raft has CargoWise integration as part of their SaaS platform. FreightMynd also integrates with CargoWise via eHub and Universal Gateway with native XML push — plus SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. FreightMynd\'s integrations are built natively per TMS instance rather than through generic connectors.',
+    a: 'Yes, Raft has CargoWise integration as part of their SaaS platform. FreightMynd also integrates with CargoWise via eHub and Universal Gateway with native XML push, plus SAP TM, Oracle TMS, Microsoft Dynamics, and Descartes. FreightMynd\'s integrations are built natively per TMS instance rather than through generic connectors.',
   },
   {
     q: 'How much does Raft cost vs FreightMynd?',
-    a: 'Raft uses custom SaaS pricing with a recurring subscription model — you pay ongoing fees for access to their platform. FreightMynd uses project-based pricing with no recurring SaaS fees. You pay for the build, and you own the system outright with no vendor lock-in or price increases when you scale.',
+    a: 'Raft uses custom SaaS pricing with a recurring subscription model, so you pay ongoing fees for access to their platform. FreightMynd uses project-based pricing with no recurring SaaS fees. You pay for the build, and you own the system outright with no vendor lock-in or price increases when you scale.',
   },
   {
     q: 'Can I switch from Raft to FreightMynd?',
-    a: 'Yes. FreightMynd systems are custom-built from scratch for your specific TMS and workflows. There is no migration dependency on Raft\'s platform. FreightMynd will audit your operations, map your workflows, and build a purpose-built system tailored to your exact requirements — including any edge cases that didn\'t fit within Raft\'s platform.',
+    a: 'Yes. FreightMynd systems are custom-built from scratch for your specific TMS and workflows. There is no migration dependency on Raft\'s platform. FreightMynd will audit your operations, map your workflows, and build a purpose-built system tailored to your exact requirements, including any edge cases that didn\'t fit within Raft\'s platform.',
   },
   {
     q: 'What is Raft\'s deployment model?',
-    a: 'Raft is a hosted SaaS platform — your data lives on their infrastructure, and you access it via subscription. FreightMynd deploys in your environment. You own the system, control the data, and have no dependency on a third-party vendor for continued operation.',
+    a: 'Raft is a hosted SaaS platform, meaning your data lives on their infrastructure and you access it via subscription. FreightMynd deploys in your environment. You own the system, control the data, and have no dependency on a third-party vendor for continued operation.',
   },
 ];
 
@@ -54,21 +54,21 @@ const comparisonRows = [
   { category: 'Pricing', raft: 'Custom SaaS pricing, recurring subscription', freightmynd: 'Project-based, no recurring fees' },
   { category: 'Scale', raft: '60 customers, 30+ countries', freightmynd: 'Boutique, enterprise-focused' },
   { category: 'Data Ownership', raft: 'Raft-hosted, vendor controls data', freightmynd: 'Client-owned, deployed in your environment' },
-  { category: 'Email Intelligence', raft: 'Pre-built email triage agent', freightmynd: 'Custom email AI — classification, auto-response, attachment routing to your pipelines' },
+  { category: 'Email Intelligence', raft: 'Pre-built email triage agent', freightmynd: 'Custom email AI: classification, auto-response, attachment routing to your pipelines' },
   { category: 'Booking Automation', raft: 'Platform booking confirmation processing', freightmynd: 'End-to-end: quote-to-booking, carrier allocation, amendment cascade, TMS record creation' },
-  { category: 'Customer Portal', raft: 'Basic shipment portal with emissions data', freightmynd: 'White-label visibility portal — your brand, your domain, quote-to-book, analytics' },
+  { category: 'Customer Portal', raft: 'Basic shipment portal with emissions data', freightmynd: 'White-label visibility portal: your brand, your domain, quote-to-book, analytics' },
   { category: 'Carrier Analytics', raft: 'Limited carrier visibility in platform', freightmynd: 'Full AI scorecards: on-time rates, lane-level benchmarks, exception patterns, contract intelligence' },
-  { category: 'ETA Prediction', raft: 'ETA tracking updates from carriers', freightmynd: 'Predictive AI: 24–72hr delay prediction, proactive alerts, exception routing' },
+  { category: 'ETA Prediction', raft: 'ETA tracking updates from carriers', freightmynd: 'Predictive AI: 24-72hr delay prediction, proactive alerts, exception routing' },
   { category: 'SOP Compliance', raft: 'Agent governance within platform', freightmynd: 'Continuous SOP auditing per customer, real-time violation detection, compliance reporting' },
   { category: 'Order-to-Cash', raft: 'AP invoice processing', freightmynd: 'Full cycle: cost accrual, invoice generation, revenue recognition, payment reconciliation' },
   { category: 'Rate Management', raft: 'Rate card storage in knowledge base', freightmynd: 'AI rate sheet ingestion from any format, normalisation, cross-carrier comparison, expiry tracking' },
-  { category: 'Solution Breadth', raft: 'Operations, customs, AP in one SaaS', freightmynd: '21 purpose-built AI solutions — each customised for your workflows' },
+  { category: 'Solution Breadth', raft: 'Operations, customs, AP in one SaaS', freightmynd: '21 purpose-built AI solutions, each customised for your workflows' },
 ];
 ---
 
 <Page
-  title="Raft vs FreightMynd — Freight AI Comparison"
-  description="Compare Raft (formerly Vector.ai) and FreightMynd for freight AI. SaaS platform vs custom-built — deployment, pricing, and TMS integration depth."
+  title="Raft vs FreightMynd: SaaS vs Custom Freight AI Compared"
+  description="Raft (Vector.ai) is a SaaS platform for freight automation. FreightMynd builds custom AI you own. Compare pricing, TMS integration depth, and invoice automation."
   schema={[breadcrumbSchema, faqSchema]}
 >
   <!-- Breadcrumb -->
@@ -83,11 +83,17 @@ const comparisonRows = [
           Compare
         </p>
         <h1 class="text-display-lg font-bold text-ink">
-          Raft vs FreightMynd — Which AI Approach Fits Your Freight Operations?
+          Raft vs FreightMynd: Which AI Approach Fits Your Freight Operations?
         </h1>
         <p class="mt-5 hero-description text-ink-3">
           Raft (formerly Vector.ai) is a VC-backed SaaS platform serving 60+ freight forwarders across 30 countries. FreightMynd builds custom AI systems deployed in your environment. Here's how they compare.
         </p>
+        <div class="mt-6 p-5 bg-white border-l-4 border-brand rounded-r-lg shadow-card">
+          <p class="text-xs font-mono text-brand uppercase tracking-wider mb-2">Quick Answer</p>
+          <p class="text-sm text-ink-2 leading-relaxed">
+            <strong>Raft</strong> is a hosted SaaS platform for freight document automation, invoice processing, and email triage, priced on a recurring subscription. <strong>FreightMynd</strong> builds custom AI systems for the same workflows, deployed in your environment, integrated natively with your TMS (CargoWise, SAP TM, Oracle TM, Descartes), and owned outright with no ongoing SaaS fees. Choose Raft if your operations fit a standard SaaS template. Choose FreightMynd if you need deep customisation, full data ownership, and native TMS integration.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -229,7 +235,7 @@ const comparisonRows = [
             </svg>
           </div>
           <h3 class="text-sm font-bold text-ink mb-1 group-hover:text-brand transition-colors">4PL Control Tower</h3>
-          <p class="text-xs text-ink-3 leading-relaxed">Full document intelligence pipeline — email to TMS push.</p>
+          <p class="text-xs text-ink-3 leading-relaxed">Full document intelligence pipeline, email to TMS push.</p>
         </a>
         <a href="/solutions/document-intelligence/"
            class="group p-6 rounded-2xl border border-line bg-surface/50 hover:bg-white hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
@@ -289,7 +295,7 @@ const comparisonRows = [
         Want to See What Custom AI Looks Like for Your Operations?
       </h2>
       <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto" data-reveal data-reveal-delay="1">
-        Book a free audit. We'll map your workflows and show you what we'd build — with a timeline and expected results.
+        Book a free audit. We'll map your workflows and show you what we'd build, with a timeline and expected results.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-reveal data-reveal-delay="2">
           <a href="/contact/" class="btn btn-cta-single">

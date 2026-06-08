@@ -60,7 +60,7 @@ export const solutions: Solution[] = [
     ],
     metaTitle: '4PL Control Tower Automation',
     metaDescription:
-      'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for the global freight forwarder Logistics.',
+      'Full document intelligence pipeline, email monitoring to CargoWise XML with zero manual entry. 60% processing time reduction for a global freight forwarder.',
     description:
       'Full document intelligence pipeline — email monitoring to CargoWise XML with zero manual entry. Built and live for a global freight forwarder.',
     icon: '🏗️',
@@ -84,7 +84,7 @@ export const solutions: Solution[] = [
         'Processing accuracy varies from 85–95% depending on the individual, the document quality, and how far into a shift they are — every error cascading into downstream exceptions',
         'New supplier onboarding takes 1–3 weeks of engineering effort to map each document format, creating a backlog that delays client go-lives',
         'Peak volume spikes (holiday season, port congestion events) cause processing backlogs of 24–72 hours that directly impact SLA compliance',
-        '300-page PDF batches from suppliers like the global freight forwarder require operators to manually identify and separate relevant pages — a task that is tedious, error-prone, and unscalable',
+        '300-page PDF batches from suppliers require operators to manually identify and separate relevant pages, a task that is tedious, error-prone, and unscalable',
         'No audit trail or consistency in how data is extracted — making compliance reporting a manual reconciliation exercise every month',
       ],
     },
@@ -1702,16 +1702,16 @@ export const solutions: Solution[] = [
       'customs entry automation',
       'customs process automation',
     ],
-    metaTitle: 'Customs Automation for Freight Forwarders',
+    metaTitle: 'Customs Automation Software: AI for Customs Brokers & Forwarders',
     metaDescription:
-      'Customs automation and AI for customs brokers — automate declarations, HS classification, and compliance processing. Integrates with your TMS.',
+      'AI customs automation that extracts data from invoices, classifies HS codes, validates compliance, and pre-fills declarations. 70% faster filing. Integrates with CargoWise and Descartes.',
     description:
-      'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
+      'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin, then pre-populates customs declarations and pushes structured data into your filing platform.',
     icon: '🛃',
     color: 'brand',
     headline: 'Customs Automation for Freight Forwarders: File in Minutes, Not Hours',
-    keywordSubheadline: 'AI-powered customs automation for freight forwarders — from document extraction to customs filing in minutes, not hours.',
-    sub: 'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin — pre-populates customs declarations and pushes structured data into your filing platform.',
+    keywordSubheadline: 'AI-powered customs automation for freight forwarders, from document extraction to customs filing in minutes, not hours.',
+    sub: 'AI-powered customs automation that extracts data from commercial invoices, packing lists, and certificates of origin, then pre-populates customs declarations and pushes structured data into your filing platform.',
 
     idealFor: [
       'Customs brokers processing 50+ declarations per day',
@@ -1812,8 +1812,20 @@ export const solutions: Solution[] = [
 
     faq: [
       {
+        q: 'What is customs automation?',
+        a: 'Customs automation is the use of AI to extract data from commercial invoices, packing lists, and certificates of origin, classify HS codes, validate compliance, and pre-populate customs declarations. It eliminates manual re-keying, reduces filing errors, and lets licensed customs brokers focus on edge cases instead of data entry. A modern customs automation system integrates directly with your filing platform (CargoWise, Descartes) and TMS (SAP TM, Oracle TM) so the same data flows end-to-end without human intervention.',
+      },
+      {
+        q: 'How does AI help customs brokers?',
+        a: 'AI helps customs brokers by automating the data-heavy steps of customs work: it extracts fields from commercial invoices, packing lists, and certificates of origin, suggests HS code classifications with confidence scores, screens parties against denied-party and sanctions lists, and pre-populates declarations in the broker filing platform. The broker reviews, confirms, and submits, retaining full legal responsibility while eliminating hours of manual data entry per day. Typical productivity gains run 60-75% per declaration.',
+      },
+      {
+        q: 'What is customs brokerage automation?',
+        a: 'Customs brokerage automation refers to the AI systems brokers use to streamline declaration filing, HS classification, party screening, and compliance documentation. Off-the-shelf tools (Descartes, KGH, WiseTech CustomsClear) provide standardised features. Custom-built systems like FreightMynd integrate directly with the broker existing filing platform and TMS, learn from the broker actual commodity portfolio, and handle the broker specific edge cases without per-format engineering.',
+      },
+      {
         q: 'Can AI fully automate customs declarations?',
-        a: 'AI automates data extraction and pre-population, typically reducing filing time by 70%. The licensed customs broker still reviews and submits — keeping human oversight where it matters while eliminating the manual data entry that slows your team down.',
+        a: 'AI automates data extraction and pre-population, typically reducing filing time by 70%. The licensed customs broker still reviews and submits, keeping human oversight where it matters while eliminating the manual data entry that slows your team down.',
       },
       {
         q: 'Does customs automation work with CargoWise?',
@@ -1832,7 +1844,7 @@ export const solutions: Solution[] = [
         a: '4-8 weeks from kickoff to production, including integration with your customs filing platform. We start with a discovery and audit phase, build and test in your environment, and deploy with full handoff and documentation.',
       },
     ],
-    relatedSolutions: ['document-intelligence', 'smart-invoice-processing', 'sea-freight-automation', 'air-freight-automation'],
+    relatedSolutions: ['customs-brokerage-automation', 'document-intelligence', 'smart-invoice-processing', 'air-freight-automation'],
     relatedIntegrations: ['cargowise', 'descartes'],
     relatedCaseStudies: ['4pl-control-tower-automation'],
   },
@@ -2486,9 +2498,9 @@ export const solutions: Solution[] = [
       'on-time delivery tracking freight',
       'carrier contract negotiation data',
     ],
-    metaTitle: 'AI Carrier Performance Analytics',
+    metaTitle: 'AI Carrier Performance Analytics for Freight Forwarders',
     metaDescription:
-      'AI-powered carrier scorecards for freight forwarders. Track on-time delivery, transit times, damage rates, cost per lane. Data-driven carrier allocation and contract negotiation.',
+      'AI carrier scorecards built from your shipment data. On-time delivery, transit time accuracy, damage rates, cost per lane. Data-driven carrier allocation, real-time, not quarterly.',
     description:
       'AI-powered carrier scorecards — on-time performance, transit time accuracy, damage rates, cost benchmarking, and exception frequency — built from your own shipment data, not industry averages.',
     icon: '📊',
@@ -2801,10 +2813,12 @@ export const solutions: Solution[] = [
       'freight exception resolution',
       'proactive customer notification freight',
       'supply chain disruption prediction',
+      'eta prediction platform freight',
+      'exception management platform logistics',
     ],
-    metaTitle: 'AI ETA Prediction & Exception Management',
+    metaTitle: 'Freight ETA Prediction & Exception Management Platform',
     metaDescription:
-      'AI predicts freight delays 24-72 hours before carriers report them. Proactive customer alerts. Intelligent exception routing. 60% faster exception resolution for freight forwarders.',
+      'Custom AI platform that predicts freight delays 24-72 hours before carriers report them, auto-alerts customers, and routes exceptions intelligently. 60% faster resolution.',
     description:
       'AI-powered ETA prediction that detects delays before they happen, auto-alerts affected customers, and routes exceptions to the right operator with full context — cutting exception resolution time by 60%.',
     icon: '⏱️',
@@ -2913,8 +2927,12 @@ export const solutions: Solution[] = [
 
     faq: [
       {
+        q: 'Which platforms offer ETA prediction and exception management?',
+        a: 'Off-the-shelf options include Portcast, Shippeo, project44, and FourKites. These are SaaS visibility platforms that provide predictive ETAs and basic exception workflows as a subscription product. FreightMynd takes a different approach: we build a custom ETA prediction and exception management platform trained on your specific shipment data, integrated directly into your TMS (CargoWise, SAP TM, Oracle TM), and owned outright by you. You get predictions tuned to your lanes and carriers, plus exception routing logic that matches your actual operations, not a vendor template.',
+      },
+      {
         q: 'How does AI predict freight delays?',
-        a: 'AI analyses multiple data sources — your historical shipment patterns, carrier schedule reliability, port congestion indices, weather data, and customs processing times — to generate ETAs that are more accurate than carrier-reported estimates. The model identifies delay patterns 24–72 hours before they appear in carrier tracking updates.',
+        a: 'AI analyses multiple data sources, including your historical shipment patterns, carrier schedule reliability, port congestion indices, weather data, and customs processing times, to generate ETAs that are more accurate than carrier-reported estimates. The model identifies delay patterns 24-72 hours before they appear in carrier tracking updates.',
       },
       {
         q: 'Does this integrate with carrier tracking systems?',
@@ -3427,5 +3445,179 @@ export const solutions: Solution[] = [
     relatedSolutions: ['autonomous-quote-management', 'freight-pricing-ai', 'carrier-performance-analytics', 'booking-automation'],
     relatedIntegrations: ['cargowise', 'sap-tm', 'oracle-tms'],
     relatedCaseStudies: [],
+  },
+
+  {
+    slug: 'customs-brokerage-automation',
+    title: 'Customs Brokerage Automation',
+    shortTitle: 'Customs Brokerage AI',
+    keyword: 'customs brokerage automation',
+    secondaryKeywords: [
+      'ai for customs brokers',
+      'ai customs brokerage',
+      'ai customs broker',
+      'customs broker ai',
+      'customs broker automation software',
+      'customs brokerage document capture',
+      'ai customs brokerage software',
+      'digital customs brokerage platforms',
+      'customs broker technology',
+      'automated customs brokerage compliance',
+      'broker filing automation',
+      'customs entry automation broker',
+      'denied party screening automation',
+      'hs code classification customs broker',
+    ],
+    metaTitle: 'Customs Brokerage Automation: AI for Customs Brokers',
+    metaDescription:
+      'Custom AI for customs brokers that extracts data from invoices and certs, classifies HS codes, screens parties, and pre-fills entries. 70% faster filing. Integrates with your filing platform.',
+    description:
+      'AI-powered customs brokerage automation that extracts data from commercial invoices, packing lists, and certificates of origin, classifies HS codes, screens parties against denied-party lists, and pre-fills entries in your filing platform, letting licensed brokers focus on edge cases instead of data entry.',
+    icon: '📋',
+    color: 'brand',
+    headline: 'AI for Customs Brokers That Files in Minutes, Not Hours',
+    keywordSubheadline: 'Customs brokerage automation built around your filing platform, your commodity portfolio, and your edge cases, not a SaaS template.',
+    sub: 'AI extracts data from commercial invoices, packing lists, and certificates of origin, suggests HS code classifications with confidence scores, screens parties against denied-party and sanctions lists, and pre-fills entries in your customs filing platform. Brokers review, confirm, and submit, keeping full legal responsibility while eliminating 60-75% of the manual data entry per declaration.',
+
+    idealFor: [
+      'Licensed customs brokers processing 50+ entries per day',
+      'Customs brokerage firms with mixed commodity portfolios where HS classification is non-trivial',
+      'Brokers operating across multiple jurisdictions with varying filing requirements',
+      'Forwarder-broker hybrid operations where customs is one part of a larger freight flow',
+      'Brokerage operations where staff turnover or peak season volume creates filing backlogs',
+    ],
+
+    problem: {
+      headline: 'Your Best Brokers Are Stuck Re-Keying Data Instead of Solving Cases',
+      description:
+        'Licensed customs brokers are expensive to hire and harder to retain, yet most of their day is spent re-keying data that already exists in commercial invoices and packing lists. HS code lookups happen by memory or spreadsheet. Denied-party screening relies on copy-pasting names into a separate tool. Compliance errors get caught at the border, not before. Every peak season turns the brokerage desk into a backlog, every new client adds new document formats, and the broker time that should be focused on classification judgement, ruling letters, and broker-to-customs communication is consumed by data entry that AI can do in seconds.',
+      painPoints: [
+        'Brokers spending 60-70% of their day on data entry instead of classification judgement, ruling research, and customs communication',
+        'HS code classification happening by memory or spreadsheet, with inconsistent treatment of similar commodities across the team',
+        'Denied-party and sanctions screening done manually in separate tools, creating compliance risk and audit gaps',
+        'Cross-document validation (invoice vs packing list vs bill of lading) caught at filing time or worse, at the border',
+        'Each new client or commodity portfolio requires weeks of broker training before throughput recovers',
+        'No structured audit trail of broker decisions, classification rationale, or supporting documentation, making customs audits painful',
+        'Peak season volume forces overtime, contract brokers, or filing delays that hurt client SLAs',
+      ],
+    },
+
+    capabilities: [
+      {
+        title: 'Commercial invoice and certificate data extraction',
+        description:
+          'AI extracts shipper, consignee, commodity description, value, country of origin, weight, quantity, and Incoterm data from commercial invoices, packing lists, certificates of origin, and bills of lading. Handles multi-format, multi-supplier variations without per-format engineering. Confidence scoring flags low-confidence fields for broker review rather than pushing uncertain data forward.',
+      },
+      {
+        title: 'AI HS code classification with broker review',
+        description:
+          'AI suggests HS code classifications based on commodity descriptions, with confidence scores and supporting rationale (similar past entries, ruling letters, classification logic). The licensed broker reviews, confirms, or overrides every classification, keeping full legal responsibility. Over time the model learns your portfolio and your broker preferences, improving first-pass accuracy.',
+      },
+      {
+        title: 'Denied party and sanctions screening',
+        description:
+          'Every party (shipper, consignee, notify party, ultimate consignee) is automatically screened against denied-party lists (BIS Denied Persons List, OFAC SDN, EU Consolidated List, UN Sanctions) and sanctioned-jurisdiction watchlists. Matches are surfaced with confidence scoring and source citation so brokers can adjudicate quickly. Audit trail records every screen, every result, every broker decision.',
+      },
+      {
+        title: 'Pre-population in your customs filing platform',
+        description:
+          'Validated data is pre-populated directly into CargoWise Customs, Descartes Customs, ABI filers, or your customs filing platform of choice. No manual re-keying, no copy-paste between systems. The broker opens an entry that already has 90%+ of fields filled, reviews, completes any judgement calls, and submits.',
+      },
+      {
+        title: 'Cross-document validation',
+        description:
+          'AI validates data consistency across commercial invoice, packing list, bill of lading, and certificates of origin before the broker sees the entry. Discrepancies in value, weight, quantity, or HS classification across documents are flagged with the specific conflict highlighted, so brokers resolve issues before filing rather than after a customs query.',
+      },
+      {
+        title: 'Audit trail and ruling letter library',
+        description:
+          'Every extraction, every classification decision, every screening result is logged with the broker confirmation, timestamp, and supporting documentation. Past ruling letters and classification precedents are indexed and searchable, so brokers can cite their reasoning consistently across similar commodities, and customs audits become a query, not a reconciliation exercise.',
+      },
+    ],
+
+    useCases: [
+      {
+        scenario: 'High-volume import brokerage with mixed commodity portfolio',
+        description:
+          'A customs brokerage filing 200+ entries per day across electronics, apparel, and industrial machinery uses AI to extract invoice data, suggest HS classifications, and pre-populate ABI entries. Brokers focus their judgement on the 15-20% of entries with non-trivial classification questions while the routine 80% flows through with light review. Filing throughput doubles without adding licensed staff.',
+      },
+      {
+        scenario: 'Forwarder-broker hybrid operations',
+        description:
+          'A freight forwarder with in-house customs brokerage uses the same AI document pipeline that processes shipment documents to feed customs entries. Commercial invoices extracted for freight purposes are simultaneously validated for customs use, HS codes suggested, and entries pre-populated in CargoWise Customs. The freight and customs teams share one source of truth.',
+      },
+      {
+        scenario: 'Peak season surge handling without overtime',
+        description:
+          'During Q4 peak season, customs entry volume triples. Instead of overtime, contract brokers, or filing delays, the AI system handles the surge with the same accuracy and review workflow. Licensed brokers continue reviewing every classification but spend 70% less time per entry, absorbing the peak volume with the same headcount.',
+      },
+    ],
+
+    results: [
+      { value: '70%', label: 'Reduction in time per customs entry', context: 'Measured across standard import/export declarations', businessOutcome: 'Brokers handle 2-3x more entries with the same headcount' },
+      { value: '90%+', label: 'First-pass HS classification accuracy', context: 'With broker confirmation on every classification', businessOutcome: 'Fewer rejected filings, faster clearance' },
+      { value: '100%', label: 'Denied-party screening coverage', context: 'Every party on every entry screened automatically', businessOutcome: 'Compliance audit trail without manual effort' },
+      { value: '4-8 wk', label: 'Deployment timeline', context: 'From kickoff to production filing', businessOutcome: 'Capacity unlocked before next peak season' },
+    ],
+
+    stack: ['Python', 'LangGraph', 'Azure Document Intelligence', 'OpenAI GPT-4o', 'PostgreSQL', 'n8n', 'Customs filing APIs'],
+
+    integrations: [
+      'CargoWise Customs',
+      'Descartes Global Logistics Network',
+      'ABI (Automated Broker Interface)',
+      'Denied-party list providers (BIS, OFAC, EU, UN)',
+      'SAP Transportation Management',
+      'Oracle Transportation Management',
+    ],
+
+    implementation: {
+      timeline: '4-8 weeks from kickoff to production',
+      phases: [
+        'Weeks 1-2: Discovery, audit current brokerage workflows, catalog commodity portfolio and document formats, map filing platform integration',
+        'Weeks 3-4: Build extraction pipeline, HS classification model configuration with your past entries, filing platform API integration',
+        'Weeks 5-6: Validation rules, denied-party screening, cross-document consistency logic, broker review UI',
+        'Weeks 7-8: UAT with licensed brokers, accuracy benchmarking, production deployment with parallel-run period for confidence',
+      ],
+    },
+
+    faq: [
+      {
+        q: 'What is customs brokerage automation?',
+        a: 'Customs brokerage automation is the use of AI to streamline the data-heavy steps of customs entry filing. AI extracts shipper, consignee, commodity, value, and origin data from commercial invoices and packing lists, suggests HS code classifications with confidence scoring, screens all parties against denied-party and sanctions lists, and pre-populates entries in the broker filing platform. The licensed broker reviews, confirms classifications, and retains full legal responsibility for the filing. A well-built customs brokerage automation system can reduce time per entry by 70% while maintaining or improving accuracy.',
+      },
+      {
+        q: 'How does AI help customs brokers?',
+        a: 'AI helps customs brokers by automating the data-heavy steps of customs work: it extracts fields from commercial invoices, packing lists, and certificates of origin, suggests HS code classifications with confidence scores, screens parties against denied-party and sanctions lists, and pre-populates declarations in the broker filing platform. The broker reviews, confirms, and submits, keeping full legal responsibility while eliminating hours of manual data entry per day. Typical productivity gains run 60-75% per declaration, freeing brokers to focus on classification judgement, ruling letters, and customs communication.',
+      },
+      {
+        q: 'Will AI replace customs brokers?',
+        a: 'No. AI handles the data-heavy, repetitive tasks (extraction, screening, pre-population) but customs brokerage requires licensed human judgement that AI cannot replace: HS classification decisions on ambiguous commodities, ruling letter interpretation, communication with customs authorities, and ultimate legal responsibility for the filing. AI augments customs brokers by removing routine data entry, letting brokers handle 2-3x more entries while focusing on the work that actually requires their license.',
+      },
+      {
+        q: 'How does AI classify HS codes?',
+        a: 'AI HS code classification uses commodity descriptions, product specifications, and past entry history to suggest the most likely Harmonized System code with a confidence score and supporting rationale (similar past entries, applicable ruling letters, classification logic). The licensed broker reviews every suggested classification, confirms or overrides, and submits. Over time the model learns your specific commodity portfolio and your team classification preferences, improving first-pass accuracy. Typical first-pass accuracy is 90%+ on portfolios with reasonable history.',
+      },
+      {
+        q: 'Does this integrate with my customs filing platform?',
+        a: 'Yes. FreightMynd integrates with CargoWise Customs (via eHub and Universal Gateway), Descartes Global Logistics Network, ABI filers, and other customs filing platforms via API. Pre-populated entries appear in your existing platform with 90%+ of fields filled, ready for broker review and submission. Brokers continue working in the platform they know rather than learning a new tool.',
+      },
+      {
+        q: 'How accurate is the denied-party screening?',
+        a: 'Denied-party screening runs every party on every entry against BIS Denied Persons List, OFAC SDN List, EU Consolidated List, UN Sanctions List, and configurable internal watchlists. Matches surface with confidence scoring (exact match, fuzzy match, alias match) and source citation. The broker reviews each potential match and adjudicates. Full audit trail of every screen and every decision is logged for compliance purposes.',
+      },
+      {
+        q: 'How does this compare to off-the-shelf customs brokerage software?',
+        a: 'Off-the-shelf products (Descartes, WiseTech CustomsClear, KGH platforms) provide standardised filing workflows and pre-built integrations as a SaaS product. FreightMynd builds custom customs brokerage automation deployed into your filing platform of choice, integrated with your specific commodity portfolio history, and tailored to your team review workflow. You own the system, control the data, and avoid recurring SaaS fees. Choose off-the-shelf if your workflow matches a vendor template. Choose FreightMynd if you need deep customisation and full ownership.',
+      },
+      {
+        q: 'How long does deployment take?',
+        a: '4-8 weeks from kickoff to production filing. Discovery and audit take 1-2 weeks, build and integration 2-4 weeks, broker UAT and accuracy benchmarking 1-2 weeks, then production deployment with a parallel-run period so brokers can confirm the AI suggestions against their own classifications before fully relying on the system.',
+      },
+    ],
+
+    relatedSolutions: ['customs-automation', 'document-intelligence', 'smart-invoice-processing', '4pl-control-tower-automation'],
+    relatedIntegrations: ['cargowise', 'descartes'],
+    relatedCaseStudies: ['4pl-control-tower-automation'],
   },
 ];

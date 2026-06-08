@@ -1,6 +1,6 @@
 # FreightMynd — Full Context
 
-> Last updated: 2026-03-28
+> Last updated: 2026-06-08
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
@@ -466,6 +466,25 @@ Capabilities:
 Results: 70% customs filing time reduction, 95%+ data extraction accuracy, zero manual data re-entry for standard formats.
 
 Best for: Customs brokers and freight forwarders processing 50+ customs declarations per week who want to eliminate manual data entry.
+
+---
+
+### Customs Brokerage Automation
+URL: https://freightmynd.com/solutions/customs-brokerage-automation
+
+AI for customs brokers that automates invoice data extraction, HS code classification with broker review, denied-party and sanctions screening, and pre-population of entries in CargoWise Customs, Descartes, and ABI filers. Licensed brokers review, confirm classifications, and submit, retaining full legal responsibility while eliminating manual data entry.
+
+Capabilities:
+- Commercial invoice, packing list, and certificate of origin data extraction
+- AI HS code classification with confidence scoring and broker review
+- Denied-party and sanctions screening (BIS Denied Persons, OFAC SDN, EU Consolidated, UN Sanctions)
+- Pre-population in CargoWise Customs, Descartes Global Logistics Network, and ABI filers
+- Cross-document validation across invoice, packing list, bill of lading
+- Audit trail and ruling letter library for classification consistency
+
+Results: 70% reduction in time per entry, 90%+ first-pass HS classification accuracy, 100% denied-party screening coverage, 4-8 week deployment timeline.
+
+Best for: Licensed customs brokers and forwarder-broker hybrid operations filing 50+ entries per day who need to eliminate manual data entry while keeping the broker in the decision loop.
 
 ---
 

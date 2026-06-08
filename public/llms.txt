@@ -2,7 +2,7 @@
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
-Last updated: 2026-05-08
+Last updated: 2026-06-08
 
 FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
 
@@ -21,6 +21,7 @@ FreightMynd competes with SaaS freight automation platforms like Raft (formerly 
 - [Freight Revenue Recovery](https://freightmynd.com/solutions/freight-revenue-recovery): AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers revenue hidden in invoice data. Average recovery: 2-5% of freight spend.
 - [Freight Spend Analytics](https://freightmynd.com/solutions/freight-spend-analytics): AI-powered freight spend analytics giving logistics leaders full visibility into carrier costs, lane profitability, and spend trends. Identifies 15-20% cost reduction opportunities.
 - [Customs Automation](https://freightmynd.com/solutions/customs-automation): AI customs declaration pre-population, HS code classification, and compliance document processing.
+- [Customs Brokerage Automation](https://freightmynd.com/solutions/customs-brokerage-automation): AI for customs brokers, automating invoice extraction, HS classification, denied-party screening, and pre-filling entries in CargoWise Customs, Descartes, and ABI filers. 70% faster filing.
 - [Freight Document Automation](https://freightmynd.com/solutions/freight-document-automation): AI document processing for freight — invoices, AWBs, bills of lading, customs forms.
 - [TMS Automation](https://freightmynd.com/solutions/tms-automation): AI-powered TMS integration with zero manual data entry.
 - [Email Intelligence & Auto-Triage](https://freightmynd.com/solutions/email-intelligence): AI-powered email triage, classification, and auto-response for freight operations — routes RFQs, booking confirmations, and exceptions to the right team instantly.

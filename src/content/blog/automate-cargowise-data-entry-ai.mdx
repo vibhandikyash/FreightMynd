@@ -2,7 +2,7 @@
 title: "Automate CargoWise Data Entry with AI: How the global freight forwarder Eliminated Manual Re-Keying"
 description: "Automate CargoWise data entry with AI — how the global freight forwarder eliminated manual re-keying on 200-300 page batches with 60% faster processing and zero TMS entries."
 publishDate: 2026-02-15
-modifiedDate: 2026-05-18
+modifiedDate: 2026-06-08
 author: "FreightMynd Team"
 category: "Technical"
 tags: ["CargoWise", "automation", "data entry", "AI", "TMS"]
@@ -10,6 +10,10 @@ featured: true
 readingTime: "12 min read"
 wordCount: 2410
 faq:
+  - q: "How do you automate data entry in CargoWise?"
+    a: "You automate CargoWise data entry by deploying an AI pipeline that ingests inbound documents (commercial invoices, AWBs, bills of lading, packing lists), extracts structured fields, validates them against business rules, and pushes clean XML into CargoWise through eHub. The pipeline reads documents from email, classifies and filters pages, runs field-level extraction, applies validation, and writes directly to your CargoWise modules. This removes manual TMS keying entirely and runs continuously without operator intervention."
+  - q: "Can CargoWise OCR documents automatically?"
+    a: "No. CargoWise One does not include native AI extraction or OCR for inbound documents. To automate data entry, you need an external AI extraction pipeline integrated with CargoWise via eHub (for asynchronous bulk XML push) or Universal Gateway (for real-time lookups and validation). The external pipeline handles document ingestion, classification, field extraction, and validation, then writes structured data into CargoWise modules through the standard integration APIs that WiseTech publishes."
   - q: "How does AI eliminate manual data entry in CargoWise?"
     a: "AI eliminates manual CargoWise data entry by replacing every step an operator performs today. An email monitoring agent ingests supplier attachments, a classifier filters irrelevant pages, a LangGraph-orchestrated extraction engine reads structured fields from invoices, AWBs and packing lists, a validation layer checks business rules, and clean XML is pushed into CargoWise via eHub. At a global freight forwarder, this pipeline runs with zero manual TMS entries on 200-300 page batches."
   - q: "What document types can be auto-pushed to CargoWise via AI?"
@@ -51,11 +55,13 @@ relatedIntegrations:
 </div>
 
 
-CargoWise data entry automation removes the manual re-keying step between supplier documents — invoices, AWBs, packing lists, customs forms — and your WiseTech TMS. At a global freight forwarder, the AI pipeline FreightMynd built processes 200-300 page document batches with zero manual entry and a 60% faster turnaround, anchored by [the forwarder's 4PL control tower automation](/case-studies/4pl-control-tower-automation/). This guide breaks down exactly how that automation works, which document categories it covers, how eHub and Universal Gateway fit together, and what to expect from a production deployment.
+**Quick answer:** You automate CargoWise data entry by deploying an AI pipeline that sits between your email inbox and your TMS. The pipeline monitors incoming supplier documents (commercial invoices, AWBs, bills of lading, packing lists), filters out irrelevant pages with a lightweight classifier, runs AI field extraction on the remaining pages, validates the extracted data against your business rules, and pushes clean XML into CargoWise via eHub. CargoWise One has no native AI or OCR, so the extraction layer must be external. A production pipeline at a global freight forwarder runs 200-300 page document batches with zero manual TMS keying, 60% faster processing, and near-zero failure rate. Typical deployment runs 4-8 weeks.
+
+CargoWise data entry automation removes the manual re-keying step between supplier documents (invoices, AWBs, packing lists, customs forms) and your WiseTech TMS. At a global freight forwarder, the AI pipeline FreightMynd built processes 200-300 page document batches with zero manual entry and a 60% faster turnaround, anchored by [the forwarder's 4PL control tower automation](/case-studies/4pl-control-tower-automation/). This guide breaks down exactly how that automation works, which document categories it covers, how eHub and Universal Gateway fit together, and what to expect from a production deployment.
 
 ## The Native XML Advantage — Why Generic Connectors Fail
 
-Rather than relying on generic connectors or RPA that mimics human clicks, a custom-built AI pipeline provides true CargoWise data entry automation by pushing clean, structured data directly via eHub XML. By bypassing UI limitations, the data flows natively into your specific CargoWise configuration — respecting your custom fields, branch codes, and workflows. FreightMynd also provides native [Descartes integration](/integrations/descartes/) and [SAP TM integration](/integrations/sap-tm/) using the same bespoke [AI for CargoWise](/integrations/cargowise/) approach.
+**Rather than relying on generic connectors or RPA that mimics human clicks, a custom-built AI pipeline provides true CargoWise data entry automation by pushing clean, structured data directly via eHub XML.** By bypassing UI limitations, the data flows natively into your specific CargoWise configuration — respecting your custom fields, branch codes, and workflows. FreightMynd also provides native [Descartes integration](/integrations/descartes/) and [SAP TM integration](/integrations/sap-tm/) using the same bespoke [AI for CargoWise](/integrations/cargowise/) approach.
 
 ### Automating Data Extraction from Customs and Freight Forms
 
@@ -69,7 +75,7 @@ For a deeper look at the build vs. buy decision for freight automation, see our 
 
 ## The Manual Data Entry Problem in CargoWise
 
-If you run a freight forwarding operation on CargoWise, you already know the bottleneck. Every morning, your ops team opens their inbox, downloads document attachments from suppliers, opens each PDF, reads through invoices and airway bills, and manually keys data into CargoWise modules. For a mid-size forwarder processing 100-200 documents per day, this consumes 2-4 full-time equivalents of labor — before anyone does actual logistics work.
+**If you run a freight forwarding operation on CargoWise, you already know the bottleneck.** Every morning, your ops team opens their inbox, downloads document attachments from suppliers, opens each PDF, reads through invoices and airway bills, and manually keys data into CargoWise modules. For a mid-size forwarder processing 100-200 documents per day, this consumes 2-4 full-time equivalents of labor — before anyone does actual logistics work.
 
 The problem is not CargoWise itself. CargoWise One is a capable TMS that handles the full freight lifecycle well. The problem is the gap between your incoming documents and CargoWise's structured data requirements. Someone has to bridge that gap, and today it is your most expensive resource: people. This is the core challenge that [TMS automation](/solutions/tms-automation/) solves — connecting your document sources to your system of record without manual intervention.
 
@@ -77,7 +83,7 @@ Manual data entry introduces three compounding costs. First, there is the direct
 
 ## How AI Extraction and XML Push Eliminates Manual Entry
 
-The solution is an AI document intelligence pipeline that sits between your email inbox and CargoWise. It does exactly what your operators do today — reads documents, extracts data, and enters it into the TMS — but at machine speed and with consistent accuracy.
+**The solution is an AI document intelligence pipeline that sits between your email inbox and CargoWise.** It does exactly what your operators do today — reads documents, extracts data, and enters it into the TMS — but at machine speed and with consistent accuracy.
 
 Here is how the pipeline works end to end.
 
@@ -115,7 +121,7 @@ In parallel with the CargoWise push, the system generates formatted Excel compli
 
 ## The global freight forwarder Deployment: Real Production Results
 
-We did not build this as a proof of concept. The full [4PL control tower automation system](/solutions/4pl-control-tower-automation/) is live in production at a global freight forwarder — a global freight forwarder with 500+ offices and 13,000+ employees.
+**We did not build this as a proof of concept.** The full [4PL control tower automation system](/solutions/4pl-control-tower-automation/) is live in production at a global freight forwarder — a global freight forwarder with 500+ offices and 13,000+ employees.
 
 Before the system went live, two operators spent significant portions of each morning manually processing document batches. Supplier PDFs arrived in bundles of 200-300 pages containing commercial invoices, airway bills, packing lists, and customs compliance forms. Each page had to be read, classified, and manually keyed into CargoWise. New suppliers required engineering effort to map their document formats.
 
@@ -130,7 +136,7 @@ The full case study is available at [Global Freight Forwarder 4PL Control Tower]
 
 ## How Self-Learning Supplier Onboarding Works
 
-One of the most common objections to document automation is the supplier onboarding problem. If every new supplier requires engineering effort to map their document formats, the system does not scale. You onboard a few suppliers, declare victory, and then spend the next year chasing the long tail.
+**One of the most common objections to document automation is the supplier onboarding problem.** If every new supplier requires engineering effort to map their document formats, the system does not scale. You onboard a few suppliers, declare victory, and then spend the next year chasing the long tail.
 
 The self-learning supplier onboarding module solves this. When a document arrives from a supplier the system has not seen before, it does not fail — it adapts. The extraction engine uses its understanding of freight document structures (where shipper details typically appear, how line items are formatted, what AWB number patterns look like) to map the new format automatically.
 
@@ -140,7 +146,7 @@ This was a critical requirement in the global freight forwarder deployment. A gl
 
 ## What Validation Looks Like in Practice
 
-The validation layer is arguably more important than the extraction engine. A system that extracts data accurately 97% of the time but pushes every result directly into CargoWise will contaminate your TMS with 3% bad data — which compounds into invoicing errors, customs filing rejections, and carrier booking mismatches.
+**The validation layer is arguably more important than the extraction engine.** A system that extracts data accurately 97% of the time but pushes every result directly into CargoWise will contaminate your TMS with 3% bad data — which compounds into invoicing errors, customs filing rejections, and carrier booking mismatches.
 
 In practice, validation operates at three levels:
 
@@ -154,7 +160,7 @@ Each validation check assigns a confidence score. When confidence drops below a 
 
 ## Getting Started: What You Need to Automate CargoWise Data Entry
 
-If you are evaluating [document intelligence](/solutions/document-intelligence/) for your CargoWise operation, here is what to consider.
+**If you are evaluating [document intelligence](/solutions/document-intelligence/) for your CargoWise operation, here is what to consider.**
 
 **Document volume matters.** The ROI inflection point is typically around 50-100 documents per day. Below that, the implementation cost takes longer to recover. Above that, the savings compound quickly.
 
@@ -168,7 +174,7 @@ If you want to understand what this would look like for your specific operation,
 
 ## CargoWise OCR vs AI Extraction: What's the Difference?
 
-Traditional OCR (Optical Character Recognition) and AI-powered document extraction are often confused, but they solve fundamentally different problems. Understanding the distinction matters because it determines whether your automation pipeline can handle the real-world complexity of freight documents — or breaks the moment a supplier changes their invoice layout.
+**Traditional OCR (Optical Character Recognition) and AI-powered document extraction are often confused, but they solve fundamentally different problems.** Understanding the distinction matters because it determines whether your automation pipeline can handle the real-world complexity of freight documents — or breaks the moment a supplier changes their invoice layout.
 
 OCR reads characters from images and maps them to text using template-based rules. It works well when documents follow a predictable, fixed layout — the same fields always appear in the same positions on the page. But freight documents are anything but predictable. A commercial invoice from a supplier in Shanghai looks nothing like one from Rotterdam. Even the same supplier may change their format between shipments. When the layout shifts, template-based OCR fails silently — extracting the wrong value into the wrong field, or returning empty results that require manual correction.
 
