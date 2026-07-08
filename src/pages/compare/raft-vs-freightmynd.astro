@@ -31,6 +31,10 @@ const faqItems = [
     a: 'Yes. FreightMynd systems are custom-built from scratch for your specific TMS and workflows. There is no migration dependency on Raft\'s platform. FreightMynd will audit your operations, map your workflows, and build a purpose-built system tailored to your exact requirements, including any edge cases that didn\'t fit within Raft\'s platform.',
   },
   {
+    q: 'How does Raft compare to FreightMynd for freight forwarding invoice automation?',
+    a: 'Raft offers AP invoice processing as part of its SaaS platform: invoice capture, data extraction, and posting to your TMS. FreightMynd builds the full invoice automation cycle as a system you own: 3-way matching against quotes and shipment records, carrier rate audit against contracted rates, duplicate and overcharge detection, and revenue recovery workflows. Production FreightMynd deployments reach 92-97% straight-through matching, with only genuine discrepancies routed to human review.',
+  },
+  {
     q: 'What is Raft\'s deployment model?',
     a: 'Raft is a hosted SaaS platform, meaning your data lives on their infrastructure and you access it via subscription. FreightMynd deploys in your environment. You own the system, control the data, and have no dependency on a third-party vendor for continued operation.',
   },
@@ -60,6 +64,7 @@ const comparisonRows = [
   { category: 'Carrier Analytics', raft: 'Limited carrier visibility in platform', freightmynd: 'Full AI scorecards: on-time rates, lane-level benchmarks, exception patterns, contract intelligence' },
   { category: 'ETA Prediction', raft: 'ETA tracking updates from carriers', freightmynd: 'Predictive AI: 24-72hr delay prediction, proactive alerts, exception routing' },
   { category: 'SOP Compliance', raft: 'Agent governance within platform', freightmynd: 'Continuous SOP auditing per customer, real-time violation detection, compliance reporting' },
+  { category: 'Invoice Automation', raft: 'AP invoice capture and processing', freightmynd: '3-way matching, carrier rate audit, overcharge detection, revenue recovery' },
   { category: 'Order-to-Cash', raft: 'AP invoice processing', freightmynd: 'Full cycle: cost accrual, invoice generation, revenue recognition, payment reconciliation' },
   { category: 'Rate Management', raft: 'Rate card storage in knowledge base', freightmynd: 'AI rate sheet ingestion from any format, normalisation, cross-carrier comparison, expiry tracking' },
   { category: 'Solution Breadth', raft: 'Operations, customs, AP in one SaaS', freightmynd: '21 purpose-built AI solutions, each customised for your workflows' },

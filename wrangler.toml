@@ -15,6 +15,11 @@ workers_dev = false  # disable *.workers.dev subdomain; only freightmynd.com ser
 directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "404-page"
+# Run the Worker before asset serving for page routes so the trailing-slash
+# 301 in worker.ts takes effect (the assets layer's own redirect is a 307,
+# which splits SEO signals across both URL variants). Hashed/static assets
+# are excluded and keep serving directly from the edge.
+run_worker_first = ["/*", "!/_astro/*", "!/fonts/*"]
 
 [vars]
 ENVIRONMENT = "production"

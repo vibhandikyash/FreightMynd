@@ -2,7 +2,7 @@
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
-Last updated: 2026-06-08
+Last updated: 2026-07-07
 
 FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
 
@@ -70,6 +70,10 @@ Native AI integration with major freight management systems — no middleware, n
 ## Optional
 
 - [Blog](https://freightmynd.com/blog): Guides and technical deep-dives on AI for freight operations
+- [Best AI Tools for Freight Forwarders 2026](https://freightmynd.com/blog/best-ai-tools-freight-forwarders-2026): 14 AI tools and platforms compared across document AI, quoting, rate intelligence, visibility, and customs
+- [Best AI Freight Quoting Software 2026](https://freightmynd.com/blog/best-ai-freight-quoting-software-2026): Zauber, Raft, Wisor, Freightos, CargoWise, and custom builds compared for quote automation
+- [Freight Forwarding Email Automation Guide](https://freightmynd.com/blog/freight-forwarding-email-automation-guide): How AI classifies, extracts, and routes ops emails, with a 4-6 week build plan
+- [Carrier Scorecard Guide](https://freightmynd.com/blog/carrier-scorecard-guide): The 6 metrics that matter, weighting, and AI-automated data collection
 - [Glossary](https://freightmynd.com/glossary): Freight and logistics terminology
 - [Freight Forwarders — Middle East](https://freightmynd.com/freight-forwarders/middle-east): AI automation for Gulf freight operations — Arabic document processing, free zone automation, GCC trade corridors
 - [Freight Forwarders — North America](https://freightmynd.com/freight-forwarders/north-america): AI freight automation for US, Canada, and Mexico operations

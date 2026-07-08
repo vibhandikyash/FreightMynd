@@ -54,6 +54,19 @@ export default {
       return json({ error: 'Method not allowed' }, { status: 405 });
     }
 
+    // Permanent trailing-slash redirect. The built-in Static Assets redirect is a
+    // 307 (temporary), so Google indexes both URL variants and splits their signals;
+    // GSC shows non-slash duplicates collecting their own impressions.
+    if (
+      (method === 'GET' || method === 'HEAD') &&
+      !path.startsWith('/api') &&
+      !path.endsWith('/') &&
+      !path.includes('.')
+    ) {
+      url.pathname = `${path}/`;
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Anything else: static asset (Astro HTML, CSS, JS, images, etc.)
     return env.ASSETS.fetch(request);
   },

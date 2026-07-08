@@ -1351,9 +1351,9 @@ export const solutions: Solution[] = [
       'carrier dispute management',
       'freight spend recovery',
     ],
-    metaTitle: 'Freight Revenue Recovery & Overcharges',
+    metaTitle: 'Freight Revenue Recovery: Stop Revenue Leakage',
     metaDescription:
-      'AI-powered freight audit that catches carrier overcharges, validates contract rates, and recovers lost revenue. Average recovery: 2-5% of total spend.',
+      'AI freight audit that finds revenue leakage: carrier overcharges, contract rate violations, duplicate billings. Average recovery: 2-5% of freight spend.',
     description:
       'AI-powered freight audit and revenue recovery — automated carrier invoice validation, overcharge detection, contract rate enforcement, and dispute management. Stop the revenue leakage hiding in your freight invoices.',
     icon: '💰',
@@ -1517,9 +1517,9 @@ export const solutions: Solution[] = [
       'carrier cost benchmarking',
       'freight cost optimization',
     ],
-    metaTitle: 'Freight Spend Analytics | FreightMynd',
+    metaTitle: 'Freight Spend Analytics: Lane-Level Cost Visibility',
     metaDescription:
-      'Complete visibility into your freight spend — cost breakdown by carrier, lane, mode, and service level. AI-powered analytics from your actual invoice data.',
+      'Lane-level freight spend analytics from your actual invoice data: cost by carrier, lane, mode, and service level. Find 15-20% transportation cost savings.',
     description:
       'AI-powered freight spend analytics — real-time visibility into transportation costs by carrier, lane, mode, and service level. Built from your actual invoice and shipment data, not estimates.',
     icon: '📊',
@@ -2166,9 +2166,9 @@ export const solutions: Solution[] = [
       'RFQ email detection',
       'shipping email AI agent',
     ],
-    metaTitle: 'Freight Email Automation & AI Triage',
+    metaTitle: 'AI Email Triage for Freight Forwarders',
     metaDescription:
-      'AI-powered freight email automation — classify, route, and auto-respond to RFQs, bookings, exceptions, and documents. 80% inbox time reduction. Outlook and Gmail integration.',
+      'AI email triage for freight forwarders: classify, route, and auto-respond to RFQs, bookings, and exceptions. 80% inbox time reduction. Outlook and Gmail.',
     description:
       'AI-powered email triage that classifies, routes, and auto-responds to freight operations emails — RFQs, booking confirmations, shipment updates, and exceptions — without human intervention.',
     icon: '📧',
@@ -2500,7 +2500,7 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'AI Carrier Performance Analytics for Freight Forwarders',
     metaDescription:
-      'AI carrier scorecards built from your shipment data. On-time delivery, transit time accuracy, damage rates, cost per lane. Data-driven carrier allocation, real-time, not quarterly.',
+      'Carrier performance analytics and AI scorecards from your own shipment data: on-time delivery, transit accuracy, cost per lane. Real-time, not quarterly.',
     description:
       'AI-powered carrier scorecards — on-time performance, transit time accuracy, damage rates, cost benchmarking, and exception frequency — built from your own shipment data, not industry averages.',
     icon: '📊',
