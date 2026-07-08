@@ -1,6 +1,6 @@
 # FreightMynd — Full Context
 
-> Last updated: 2026-06-08
+> Last updated: 2026-07-07
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
