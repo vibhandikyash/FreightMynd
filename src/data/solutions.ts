@@ -2967,6 +2967,7 @@ export const solutions: Solution[] = [
     shortTitle: 'SOP Compliance',
     keyword: 'freight SOP compliance automation',
     secondaryKeywords: [
+      'intelligent compliance monitoring freight forwarding',
       'logistics SOP monitoring AI',
       'freight operations compliance',
       'shipment data audit automation',
@@ -2982,7 +2983,7 @@ export const solutions: Solution[] = [
     ],
     metaTitle: 'AI SOP Compliance Monitoring for Freight',
     metaDescription:
-      'AI audits every shipment against your SOPs in real-time. Catch violations before they become exceptions. Customer-specific compliance. Demurrage prevention. 95%+ SOP adherence.',
+      'Intelligent compliance monitoring for freight: AI audits every shipment against your SOPs in real time, catching violations early. 95%+ SOP adherence.',
     description:
       'AI that continuously audits every shipment against your SOPs and business rules — catching violations, missing data, and process deviations before they become exceptions or customer complaints.',
     icon: '✅',
@@ -3090,6 +3091,10 @@ export const solutions: Solution[] = [
     },
 
     faq: [
+      {
+        q: 'What is intelligent compliance monitoring in freight forwarding?',
+        a: 'Intelligent compliance monitoring is AI that continuously audits freight operations against your documented procedures, customer SOPs, and business rules instead of relying on periodic manual spot checks. Every shipment record, document, and milestone is validated in real time, so violations surface as they happen rather than in a quarterly audit. FreightMynd builds these systems custom for your SOPs and TMS, with customer-specific rule sets and full audit trails.',
+      },
       {
         q: 'What is AI SOP compliance monitoring?',
         a: 'AI SOP compliance monitoring translates your Standard Operating Procedures into automated validation rules that run against every shipment in real-time. Instead of relying on operator memory and manual audits, the system continuously checks every shipment record, document, and milestone against applicable SOPs — catching violations as they happen.',
