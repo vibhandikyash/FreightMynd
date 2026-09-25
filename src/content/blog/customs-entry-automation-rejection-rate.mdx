@@ -1,0 +1,158 @@
+---
+title: "Customs Entry Automation by Rejection Rate, Not Keying Time"
+description: "Customs entry automation should be judged by first-pass acceptance, not minutes saved: three 2026 tariff regimes and the checks that stop ACE rejections."
+publishDate: 2026-09-26
+modifiedDate: 2026-09-26
+author: "FreightMynd Team"
+category: "Technical"
+tags: ["customs entry automation", "ACE rejections", "Section 232", "Section 301", "customs brokers", "validation"]
+featured: false
+readingTime: "12 min read"
+wordCount: 2300
+faq:
+  - q: "What is customs entry automation?"
+    a: "Customs entry automation is software that extracts line-level data from commercial invoices and packing lists, classifies each line, applies Chapter 99 tariff lines in the mandated order, validates the entry against CBP business rules, and pre-fills it in an ABI filing platform for broker review. The licensed broker still reviews and transmits. The measurable output is an entry that ACE accepts on the first transmission."
+  - q: "Why do customs entries get rejected in ACE?"
+    a: "ACE rejects entries for missing or invalid data elements, not for slow typing. In 2026 the common causes are Chapter 99 lines in the wrong sequence after the July 24 Section 301 tariffs, Section 232 metal articles filed on one line instead of the required two, copper entries missing smelt and cast country (hard rejects since September 14), and 10-digit HTS numbers that changed in a USITC revision. Each is a rule the entry broke, and each can be checked before transmission."
+  - q: "What is a good first-pass acceptance rate for customs entries?"
+    a: "There is no published benchmark. CBP does not release reject rates by filer, and vendor figures are self-reported and rarely define the metric. Baseline your own: pull 90 days of ACE response messages from your filing platform, count entries accepted with no reject, correction, or post-summary correction, and divide by entries transmitted. Track it by commodity group, because a copper-heavy book and an apparel book will never share one number."
+  - q: "What is the difference between rejection rate and first-pass acceptance rate?"
+    a: "They are the same measurement read from opposite ends. Rejection rate is the share of transmitted entries that ACE rejects or returns for correction. First-pass acceptance rate is the share accepted as filed, with no reject, no correction, and no PSC. If 6 of every 100 entries come back, rejection rate is 6% and first-pass acceptance is 94%. Define it in writing and count PSCs consistently."
+  - q: "What changed for US customs entries in 2026?"
+    a: "Three global tariff regimes replaced each other between February and July: IEEPA tariffs were struck on February 20, Section 122 tariffs were ruled unlawful on May 7, and Section 301 forced-labor tariffs took effect on July 24 with a mandated Chapter 99 reporting sequence. Section 232 metals moved to two-line reporting on full customs value from June 8, copper smelt and cast country became mandatory on July 30 with ACE rejections from September 14, and a Section 301 China conforming amendment opened a PSC refund window on September 23."
+  - q: "How does customs entry automation reduce ACE rejections?"
+    a: "By validating the entry against CBP rules before it is transmitted. A validation layer checks required fields per HTS heading, Chapter 99 line sequence, value consistency between lines and invoice, and origin consistency across documents, and scores classification confidence per line. Lines that fail go to an exception queue naming the specific field, so the broker fixes it before ACE sees it. Extraction accuracy of 95%+ and first-pass HS accuracy of 90%+ feed that layer; validation turns them into accepted entries."
+relatedSolutions:
+  - "customs-automation"
+  - "customs-brokerage-automation"
+  - "sop-compliance-monitoring"
+  - "document-intelligence"
+relatedIntegrations:
+  - "descartes"
+  - "cargowise"
+---
+
+<div class="summary-box">
+<strong>Key Takeaways</strong>
+<ul>
+<li>Measure customs entry automation by first-pass acceptance rate (entries ACE accepts as filed), because 2026 tariff churn multiplied the ways a correctly keyed entry can still be wrong</li>
+<li>US filers worked under three global tariff regimes in five months: IEEPA struck February 20, Section 122 ruled unlawful May 7, Section 301 forced-labor tariffs effective July 24 with a mandated Chapter 99 sequence</li>
+<li>Section 232 now requires two-line reporting on full customs value, and ACE has hard-rejected copper entries missing smelt and cast country since September 14</li>
+<li>A vendor-sourced broker account puts rework at 4+ hours per CBP rejection on 400-600 line entries, which erases a keying-time saving several times over</li>
+<li>Validation before ACE transmission (required fields per HTS heading, sequence, value and origin consistency, classification confidence) is where automation moves the acceptance rate</li>
+</ul>
+</div>
+
+Customs entry automation should be measured by first-pass acceptance rate: the share of entries ACE accepts on the first transmission with no reject, no correction, and no post-summary correction. Keying time saved is easy to demo and close to meaningless in 2026, because a 500-line entry keyed in a quarter of the usual time can still come back rejected for a missing data element, a Chapter 99 line in the wrong order, or a tariff number that changed in July.
+
+Filers have worked under three global tariff regimes since February. Section 232 metals moved to two-line reporting on full customs value. ACE has been rejecting entry summaries missing copper smelt and cast data since September 14. None of that has anything to do with typing speed. This guide walks through the failure modes each regime created, the pre-transmission checks that catch them (the part of FreightMynd's [customs automation](/solutions/customs-automation/) work that earns its keep), and how to baseline your own rejection rate.
+
+## Why Keying Time Is the Wrong Metric for Customs Entry Automation
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Rejection rate is the percentage of transmitted customs entries that ACE rejects or returns for correction. First-pass acceptance rate is its inverse: entries accepted as filed, with no reject, correction, or PSC required. Keying time measures how quickly an operator produced an entry. Acceptance measures whether the entry was right.
+</div>
+
+Most customs automation content, including vendor pages, reports the same number: minutes per declaration before and after. The figure is real and worth having. It is still the wrong headline, because rework on a rejected entry costs far more than the keying time saved on an accepted one.
+
+One broker account, published on the Docxster blog on 14 August 2026 and best read as a vendor estimate, describes a team of ten spending 2-3 days on entries of 400-600 lines and adding "4+ hours" of rework when CBP rejects one ([Docxster, 2026](https://www.docxster.com/blog/the-customs-broker-software-that-actually-cuts-manual-data-entry-%282026%29)). Take those numbers at face value. Saving 30 minutes of keying on an entry that then rejects is a net loss of three and a half hours, plus the release delay and whatever storage the container accrues meanwhile.
+
+Liability sharpens this. Asked who carries responsibility for a wrong AI decision in a regulated filing, WiseTech CEO Zubin Appoo said "it is ultimately the forwarder or the broker" ([The Loadstar, 4 September 2026](https://theloadstar.com/cargowise-is-becoming-the-ai-that-runs-freight-so-what-happens-to-the-tms/)). A metric that ignores whether the entry was accepted ignores the risk you hold.
+
+## Three Tariff Regimes in Five Months
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Between 20 February and 24 July 2026 the US replaced its global tariff structure three times. Each replacement changed which Chapter 99 secondary lines an entry needs, and the July change added a mandated reporting order. An entry template that was correct in April is wrong today, even if every field was keyed perfectly.
+</div>
+
+**20 February 2026.** The Supreme Court held in Learning Resources, Inc. v. Trump that IEEPA does not authorize tariffs, and refund processing followed through CBP's CAPE system ([Greenberg Traurig, May 2026](https://www.gtlaw.com/en/insights/2026/5/us-tariff-update-section-122-duties-found-unauthorized-by-law-ieepa-refunds-under-way)).
+
+**24 February to 7 May 2026.** A Section 122 global tariff of 10%, later 15%, took effect for a maximum of 150 days. On 7 May the Court of International Trade ruled it unlawful ([Greenberg Traurig, 2026](https://www.gtlaw.com/en/insights/2026/5/us-tariff-update-section-122-duties-found-unauthorized-by-law-ieepa-refunds-under-way)). Whether Section 122 duties are still collected pending appeal is unclear, and CBP's later reporting-order guidance still references Section 122 codes.
+
+**24 July 2026.** Section 301 "forced labor" tariffs took effect at 10% on 17 countries, 12.5% on 38 countries, and MFN-capped combined rates for the EU, Taiwan, Japan, South Korea, and Switzerland. Exemptions were expanded by 471 HTSUS subheadings versus the proposal. The tariffs stack on Section 301 China Lists 1 to 4A, AD/CVD, and Section 201; Section 232 goods are carved out ([Troutman Pepper Locke, July 2026](https://www.troutman.com/insights/forced-labor-meet-section-301-new-tariffs-target-60-of-americas-biggest-trading-partners/)).
+
+CSMS #69326983 carried the operational change. It mandates a Chapter 99 reporting sequence, the new Section 301 line first, ahead of Section 122, 232, and 201 codes, with FTZ entries on privileged foreign status unless they qualify for domestic status ([CSMS #69326983](https://content.govdelivery.com/accounts/USDHSCBP/bulletins/421d887)). Sequence is now a data element. A 500-line entry where every rate is right but the Chapter 99 lines sit in April's order is a rejection waiting to happen.
+
+## The New Ways a Correctly Keyed Entry Gets Rejected
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Since June, an entry can fail on Section 232 line structure (one line where two are required), missing copper smelt and cast country (hard ACE rejects from 14 September), a 10-digit statistical suffix that changed on 1 July, or a Chapter 99 sequence that no longer matches CBP guidance. None of these are typing errors. All are rule violations a pre-transmission check can find.
+</div>
+
+**Section 232 metals: two lines, full value.** Temporary rate structures took effect on 8 June 2026 and run through 31 December 2027. Duty applies to the full customs value regardless of metal content. New headings 9903.82.20 to 9903.82.26 were created, and two-line reporting is required under 9903.82.20/.21, with non-US content at 25% and US content at 0%, capped at 40% of value ([GHY, 2026](https://www.ghy.com/trade-compliance/us-adjusts-section-232-tariffs-on-aluminum-steel-and-copper-full-customs-value-now-applies/)). A broker who keys a metal-intensive article as a single Chapter 99 line has produced a clean-looking entry that is structurally wrong.
+
+**Copper: smelt and cast country.** Primary country of smelt and country of cast became mandatory in ACE on 30 July 2026 for HTSUS 8544.42.10, 8544.42.20, 8544.42.90, and 8544.49.10, with "OTH" accepted when unknown. From 14 September 2026, ACE rejects entry summaries missing this data outright ([GHY, 2026](https://www.ghy.com/trade-compliance/us-adjusts-section-232-tariffs-on-aluminum-steel-and-copper-full-customs-value-now-applies/)). The commercial invoice does not carry smelt country, and an operator cannot key what is not on the page.
+
+**Section 301 China conforming amendment: refund PSCs.** The 10-digit statistical categories for four China exclusions changed effective 1 July 2026. CBP issued CSMS #69990649 on 22 September, ACE acceptance went live at noon on 23 September, and qualifying entries need a PSC on or after 23 September to obtain refunds ([GHY, September 2026](https://www.ghy.com/trade-compliance/section-301-china-conforming-amendment); [CSMS #69990649](https://content.govdelivery.com/bulletins/gd/USDHSCBP-42bf8f9)). Every entry filed between 1 July and 22 September under the old suffix is now a PSC to be found, filed, and reconciled.
+
+**Stale HTS.** USITC issued 32 HTS revisions in 2025 and 10 more by early June 2026 ([GingerControl, 2026](https://gingercontrol.com/blog/trade-policy-alerts-for-customs-brokers)). A classification memorized in January can be invalid by June without anyone noticing until ACE says so.
+
+**Pharma, with a caveat.** Section 232 pharmaceutical tariffs of up to 100% are reported as reaching all importers on 29 September 2026, after an initial 31 July date. That two-date structure comes from secondary sources and should be confirmed against the proclamation before you build a rule on it ([Norton Rose Fulbright, 2026](https://www.nortonrosefulbright.com/en/knowledge/publications/d2cd8123/section-232-spotlight-overhauled-metals-tariffs-and-new-pharmaceutical-tariffs)).
+
+Brokers describe the effect plainly. Greg Timm of PCB Global Trade Management told the Globe and Mail on 7 September that workload has "gone from 100 to 200" in a "24/7 business model that has no margin of error" ([Globe and Mail, September 2026](https://www.theglobeandmail.com/business/article-customs-brokers-fresh-tariffs-have-changed-the-landscape/)).
+
+## Failure Modes and the Checks That Catch Them
+
+Each failure mode below maps to a rule that can run on the entry before it leaves your filing platform.
+
+| Failure mode | Regime that introduced it | Effective date | Pre-transmission check that catches it |
+|---|---|---|---|
+| Chapter 99 secondary lines in the wrong order | Section 301 forced-labor tariffs, CSMS #69326983 | 24 July 2026 | Sequence rule: 301 first, then 122, 232, 201, applied per line before the ABI record is built |
+| Line claimed exempt under a superseded exclusion, or stacked wrongly with China Lists, AD/CVD, or 201 | Section 301 forced-labor tariffs | 24 July 2026 | Exclusion lookup against the expanded subheading list; stacking check; Section 232 carve-out test |
+| Metal article filed on one line where two are required | Section 232 metals overhaul | 8 June 2026 | Required-line rule: any 9903.82.20/.21 claim must carry paired US and non-US content lines |
+| US content above the 40% cap, or duty on partial value | Section 232 metals overhaul | 8 June 2026 | Value consistency: Chapter 99 line value equals full customs value; US share checked against the cap |
+| Copper entry missing smelt or cast country | Section 232 copper | 30 July 2026 (mandatory), 14 September 2026 (hard reject) | Required-field rule keyed to HTS 8544.42.xx and 8544.49.10: block when absent, flag "OTH" for broker confirmation |
+| Old 10-digit statistical suffix on four Section 301 China exclusions | Section 301 China conforming amendment, CSMS #69990649 | 1 July 2026 (effective), 23 September 2026 (PSC window) | HTS validity check against the current USITC revision; PSC queue for entries filed 1 July to 22 September |
+| Stale HTS after a USITC revision | 32 revisions in 2025, 10 more by June 2026 | Rolling | Classification against the current tariff version; confidence drop on changed headings triggers review |
+| Invoice origin disagrees with the certificate, smelt country, or Section 301 rate bucket | All three regimes | Rolling | Cross-document origin check across invoice, certificate of origin, and rate lookup |
+
+The right-hand column is the whole argument. Every check is deterministic. None requires a model to guess. What they need is a layer that runs them on every line, every time, before ACE does.
+
+## Where Validation Before ACE Transmission Earns Its Keep
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> A validation layer sits between document extraction and the filing platform. It runs business-rule checks (required fields per HTS heading, Chapter 99 sequence, value consistency, origin consistency), scores classification confidence per line, and routes any failure to an exception queue that names the specific field. The broker fixes the line before transmission, not after a reject.
+</div>
+
+Extraction is the part everyone demos. FreightMynd's [document intelligence](/solutions/document-intelligence/) pipeline pulls line-level data from invoices, packing lists, and certificates of origin at 95%+ extraction accuracy, and the [customs brokerage automation](/solutions/customs-brokerage-automation/) layer suggests HS codes at 90%+ first-pass accuracy with a licensed broker confirming every classification. Those numbers are necessary. On their own they do not move the acceptance rate, because a perfectly extracted invoice still does not tell you the smelt country or the Chapter 99 order.
+
+The validation layer checks the entry against what CBP will check it against. Four families of rules:
+
+1. **Required fields per HTS heading.** The rule set knows that 8544.42.xx needs smelt and cast country, that a 9903.82.20 claim needs its paired line, and that a PGA-flagged heading needs agency data. Missing means blocked, with the field named.
+2. **Sequence rules.** Chapter 99 lines are ordered per CSMS #69326983 before the record is built, so order is never a human decision.
+3. **Value consistency.** Line values reconcile to the invoice total, Chapter 99 values equal full customs value where Section 232 requires it, and the US content split stays under the cap.
+4. **Origin and route consistency.** Invoice origin, certificate origin, smelt country, and the Section 301 rate bucket agree, or the line is flagged with the conflicting values side by side.
+
+Classification confidence runs alongside. Each suggested HS code carries a score and a rationale. Lines above threshold flow to broker review pre-filled; lines below it, or whose heading changed in the latest USITC revision, go to the front of the exception queue. Every party is screened against denied-party lists with 100% coverage in the same pass.
+
+The exception queue is the difference between automation that helps and automation that annoys. "Entry rejected" is useless. "Line 212: smelt country missing for 8544.42.20, supplier Foshan Cable Co." is a task a broker finishes in two minutes. That queue is also where [SOP compliance monitoring](/solutions/sop-compliance-monitoring/) fits: rules are versioned, so a new CSMS becomes a rule update with an audit trail you can show a customs auditor.
+
+Validated entries pre-fill in [Descartes](/integrations/descartes/), [CargoWise Customs](/integrations/cargowise/), or your ABI filer of choice, with 90%+ of fields already filled when the broker opens them.
+
+One honest limitation. A rule engine is only as current as its last update, and it cannot catch a requirement nobody has encoded. On the day a CSMS lands, someone has to read it and turn it into a rule. Validation moves the failure from ACE to your own queue; it does not remove the need to watch CBP's bulletins.
+
+## How to Measure Customs Entry Automation
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Track three numbers: first-pass acceptance rate (entries accepted as filed divided by entries transmitted), rework hours per rejection, and cost per rejection (rework hours times loaded broker cost, plus storage and penalty exposure). Baseline all three from 90 days of ACE response messages and broker time logs, then measure the same way after deployment.
+</div>
+
+No public benchmark exists for customs entry acceptance rates. CBP does not publish reject rates by filer, and vendor claims rarely define the metric. Your own baseline is the only number that matters.
+
+**First-pass acceptance rate.** Export ACE and ABI response messages from your filing platform for the last 90 days. Count entries accepted on the first transmission with no reject, no correction, and no PSC, and divide by entries transmitted. Tag PSCs by cause: one filed to claim a Section 301 conforming-amendment refund is not filer error, while one filed to fix a wrong stat suffix is. Segment by commodity group.
+
+**Rework hours per rejection.** Pull broker time logs or ticket timestamps for every reject and correction in the same period. The Docxster figure of 4+ hours per rejection is a vendor estimate from a single broker account, not a benchmark. Your number may be lower on simple entries and higher on anything with Section 232 lines.
+
+**Cost per rejection.** Multiply rework hours by loaded broker cost, then add extra storage or demurrage days from delayed release, expedite fees, and penalty exposure. This is the number that survives a budget conversation, because it converts a few points of acceptance rate into dollars per month.
+
+FreightMynd does not publish a rejection-rate figure, and you should be wary of any vendor that does without defining the denominator. A deployment should be measured on the change in your own first-pass acceptance rate, before and after, with the 70% reduction in time per entry as the secondary number. For the wider operating model, the [AI for customs brokers guide](/blog/ai-for-customs-brokers-guide/) covers assessment and platform integration. If your volume is parcel-scale rather than 500-line entries, the failure modes shift toward classification at catalog scale, covered in the [e-commerce customs automation post](/blog/ai-customs-automation-ecommerce/).
+
+## Getting Started Without Betting the Peak Season
+
+Baseline first, encode the rules for the regimes that touch your book second, and run in parallel with your current process before cutting over. A FreightMynd customs deployment runs 4-8 weeks from kickoff to production, with validation rules built in weeks 5-6 and a parallel run during UAT.
+
+The rule order follows your book. If you file copper, smelt and cast goes in first. Metal-intensive equipment means the two-line Section 232 structure and the 40% cap. Anything from the 55 countries under the July Section 301 tariffs, which is most books, needs the Chapter 99 sequence rule. Each rule should name the CSMS or Federal Register source it implements.
+
+During the parallel run, brokers keep filing as they do today while the validation layer reports what it would have blocked. That gives you a projected first-pass acceptance rate before anything changes in production, and it surfaces the rules you forgot.
+
+If you want a second pair of eyes on the baseline, [book a free audit](/contact/). We will pull your ACE response history, segment the rejects by cause, and tell you which of the failure modes above are actually costing you hours.
