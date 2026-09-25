@@ -2,7 +2,7 @@
 
 > AI-powered operations intelligence for sea, air & freight forwarders. Custom-built AI systems that replace manual freight operations. Built by Bitontree. Trusted by a global freight forwarder.
 
-Last updated: 2026-09-10
+Last updated: 2026-09-26
 
 FreightMynd is an AI automation company that builds custom document intelligence, quote automation, and freight operations systems for freight forwarders and logistics providers. Founded in 2019 and built by Bitontree, FreightMynd deploys purpose-built AI systems in 4-8 weeks that integrate directly with CargoWise, SAP TM, Oracle TMS, and other freight management platforms. Unlike SaaS freight automation tools, FreightMynd systems are owned by the client with no subscription or vendor lock-in.
 
@@ -78,6 +78,10 @@ Native AI integration with major freight management systems — no middleware, n
 - [Carrier Spend Analytics Guide](https://freightmynd.com/blog/carrier-spend-analytics-guide): Building cost views by carrier, lane, and mode from invoice data
 - [AI Customs Automation for E-Commerce](https://freightmynd.com/blog/ai-customs-automation-ecommerce): HS classification, party screening, and pre-filled declarations at parcel volume
 - [Best Bill of Lading Intelligence Tools](https://freightmynd.com/blog/best-bill-of-lading-intelligence-tools): Shipamax, Expedock, Raft, IDP platforms, and custom AI compared for B/L extraction
+- [CargoWise AI Agents vs Inbox Agents vs Custom Pipeline](https://freightmynd.com/blog/cargowise-ai-agents-vs-custom-pipeline): SARA and Auto Job Creation vs third-party inbox agents vs a client-owned pipeline, compared on validation, cost stacking, and liability
+- [CargoWise Automation Fees: The True Cost](https://freightmynd.com/blog/cargowise-automation-fees-true-cost): Value Pack per-job charges, AI overlay subscription, and model inference stacked in a worked 5,000-job example
+- [Customs Entry Automation by Rejection Rate](https://freightmynd.com/blog/customs-entry-automation-rejection-rate): Why first-pass acceptance, not keying time, is the metric under 2026's three tariff regimes
+- [Freight Invoice Audit for Forwarders](https://freightmynd.com/blog/freight-invoice-audit-for-forwarders): Auditing carrier and co-loader bills against your own buy rates, 2026 surcharges, and duty refunds
 - [Glossary](https://freightmynd.com/glossary): Freight and logistics terminology
 - [Freight Forwarders — Middle East](https://freightmynd.com/freight-forwarders/middle-east): AI automation for Gulf freight operations — Arabic document processing, free zone automation, GCC trade corridors
 - [Freight Forwarders — North America](https://freightmynd.com/freight-forwarders/north-america): AI freight automation for US, Canada, and Mexico operations

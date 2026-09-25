@@ -1,0 +1,180 @@
+---
+title: "CargoWise Automation Fees: The True Cost (2026)"
+description: "CargoWise automation fees now stack three ways: Value Pack per-job charges, an AI overlay subscription, and model inference. A worked 5,000-job example."
+publishDate: 2026-09-26
+modifiedDate: 2026-09-26
+author: "FreightMynd Team"
+category: "Guides"
+tags: ["CargoWise", "Value Packs", "automation fees", "freight AI cost", "TMS automation"]
+featured: false
+readingTime: "11 min read"
+wordCount: 2198
+faq:
+  - q: "How much does CargoWise charge per shipment under Value Packs?"
+    a: "CargoWise Value Pack fees run from US$2.63 to US$19.95 per job depending on shipment type, according to The Loadstar's 3 September 2026 report. Two examples cited elsewhere: US$19.95 for a full import container with an inland leg and US$9.95 for a standalone import customs entry. Your blended rate depends on your job mix, so a 5,000-job forwarder could see anything from about US$13,000 to just under US$100,000 a month at the extremes. Check your own invoice line items rather than trusting a published average."
+  - q: "Do third-party AI tools cost extra on CargoWise Value Packs?"
+    a: "Yes, in the sense that the overlay's subscription sits on top of the per-job fee CargoWise already charges for every job the tool creates. The Value Pack fee applies whether a human or a robot registers the job. WiseTech has also said it will monetise its own agentic AI separately (The Loadstar, 4 September 2026). Whether an external agent triggers any additional automation charge beyond the standard job fee is not stated in any public tariff we could find, so confirm it with your account manager and check a real invoice."
+  - q: "What are CargoWise automation fees?"
+    a: "The phrase practitioners use for the per-job, transaction-linked charges that replaced seat licensing when CargoWise Value Packs launched on 1 December 2025. Robert Petti's LinkedIn post on Value Pack impact said the model was penalising third-party integrations and that customers were resisting paying automation fees. In practice the term covers three layers: the CargoWise per-job charge, whatever your AI overlay vendor bills, and the model inference cost behind that overlay."
+  - q: "Is a custom AI pipeline cheaper than a SaaS overlay on CargoWise?"
+    a: "Usually over a multi-year horizon at volume, not always in year one. A custom pipeline replaces the overlay subscription with a one-time build plus an operational fee that is not charged per job, and it lets you route most work to small models. It does not remove the CargoWise per-job fee. A SaaS overlay wins on speed to deploy and on not having to own any engineering, which matters for forwarders without a technical lead."
+  - q: "How do I estimate my own CargoWise Value Pack bill?"
+    a: "Group last month's jobs by shipment type, multiply each group by its Value Pack rate from your contract, and sum the result. Then add your AI overlay subscription and any per-transaction charge it carries, plus an estimate of model cost per job. Compare the total against the labour you expect to remove. The illustrative table in this guide is built to be copied with your own numbers dropped in."
+  - q: "What is the $50 software versus $100 to $200 labour benchmark?"
+    a: "It is a framing Prompt Global CEO Robert Petti gave The Loadstar on 22 January 2026: CargoWise costs roughly US$50 per transaction while the labour to process that transaction manually runs US$100 to US$200. The point is that software is still cheaper than people per transaction, which is why the stacking question matters: every extra fee layer eats into that gap."
+relatedSolutions:
+  - "tms-automation"
+  - "4pl-control-tower-automation"
+  - "email-intelligence"
+  - "document-intelligence"
+relatedCaseStudies:
+  - "4pl-control-tower-automation"
+relatedIntegrations:
+  - "cargowise"
+---
+
+<div class="summary-box">
+<strong>Key Takeaways</strong>
+<ul>
+<li>A CargoWise forwarder running an AI overlay now pays three times per shipment: the Value Pack per-job fee (US$2.63 to US$19.95), the overlay's subscription, and the model inference behind it</li>
+<li>For an illustrative 5,000-job-per-month forwarder, the stack lands near US$58,000 a month under our stated assumptions, with CargoWise itself taking roughly 80% of that</li>
+<li>No AI overlay vendor in this market publishes pricing, and WiseTech has said its own agentic AI will be monetised separately</li>
+<li>A client-owned pipeline removes the overlay subscription and puts model cost under your control; it does not remove the CargoWise per-job fee</li>
+<li>Verify every figure here against a real invoice: the fee range is press-reported, and the 20 to 50% increase claims circulating online come from competitor blogs</li>
+</ul>
+</div>
+
+CargoWise automation fees in 2026 are not one line on your invoice. They are three separate charges that happen to land on the same shipment: a Value Pack fee of US$2.63 to US$19.95 per job depending on shipment type ([The Loadstar, 3 September 2026](https://theloadstar.com/dsv-weighs-early-cargowise-move-as-wisetech-tackles-pricing-and-accc-scrutiny/)), the subscription your AI overlay vendor charges to create and enrich those jobs, and the frontier-model inference cost buried inside that subscription. If you run a third-party inbox or document agent against your [CargoWise integration](/integrations/cargowise/), you are paying for automation twice, sometimes three times, on every job.
+
+Below: the three layers, an illustrative bill for a 5,000-job-per-month forwarder with every assumption exposed, and a comparison with a client-owned pipeline. The numbers are meant to be swapped for yours.
+
+## What CargoWise automation fees actually are in 2026
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> "CargoWise automation fees" is the practitioner term for the per-job charges introduced when CargoWise Value Packs replaced seat licensing on 1 December 2025. Roughly 95% of CargoWise customers are now on Value Packs, and WiseTech has said the model deliberately links pricing to transactions rather than headcount.
+</div>
+
+The Value Pack model bills per job. The Loadstar reports the range as US$2.63 to US$19.95 per job by shipment type, with WiseTech CEO Zubin Appoo conceding the company had been "capturing value too early" in some cases and moderating the uplift in the second half of FY26 ([The Loadstar, 3 September 2026](https://theloadstar.com/dsv-weighs-early-cargowise-move-as-wisetech-tackles-pricing-and-accc-scrutiny/)). Two specific price points cited in the trade press are US$19.95 for a full import container with an inland leg and US$9.95 for a standalone import customs entry ([GoFreight](https://gofreight.com/blog/cargowise-pricing-2025)).
+
+On the FY26 earnings call WiseTech said about 95% of CargoWise customers had moved to Value Packs and described the pricing as designed to insulate revenue from AI-driven labour efficiencies ([Investing.com transcript, 25 August 2026](https://www.investing.com/news/transcripts/earnings-call-transcript-wisetech-global-posts-record-fy-2026-shares-fall-6-on-outlook-93CH-4876137)). If your operators get faster, WiseTech's revenue does not fall, because the fee is attached to the job, not the person. And on 4 September Appoo told The Loadstar that WiseTech intends to monetise its "agentic AI capability" separately ([The Loadstar, 4 September 2026](https://theloadstar.com/cargowise-is-becoming-the-ai-that-runs-freight-so-what-happens-to-the-tms/)), so even the native route will carry a second charge once SARA and Auto Job Creation are priced.
+
+Two caveats. The fee examples are press-reported; your contract governs. And the 20 to 50% cost-increase figures and the "US$35,000 per month on three days' notice" example that circulate online come from competitor and consultant blogs; we could not verify them, so this guide does not use them.
+
+## Layer two: the AI overlay subscription nobody prices publicly
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Every third-party AI overlay for CargoWise sells on quote-only pricing. Raft lists a "custom plan" only, and Zauber, Nexcade, 5U AI, Cargofy, and Freightos AI disclosed no pricing in their announcements or on their sites. You cannot model this layer from public data; you can only model it from the quote in your inbox.
+</div>
+
+Overlay vendors sell the email triage, document-to-job creation, and quote automation that sit beside CargoWise, and their pricing is opaque by design. Raft's pricing page offers a "custom plan" and nothing else ([SaaSworthy](https://www.saasworthy.com/product/raft-ai/pricing)). Zauber's product page names no price ([gozauber.com](https://gozauber.com/product)), and neither Nexcade's seed announcement nor 5U AI's funding coverage mentions one ([Nexcade](https://nexcade.ai/news/seed-round/); [Air Cargo News, July 2026](https://www.aircargonews.net/technology/2026/07/5u-ai-raises-3-2m-to-scale-up-its-offering/)).
+
+What matters for the stacking argument is the structure, not the number. An overlay that creates a job in CargoWise does not replace the Value Pack fee for that job; it adds its own charge alongside it. Appoo set the tone in January when he said customers "can't simply buy a third-party AI product and stick it on top of CargoWise" ([The Loadstar, 27 January 2026](https://theloadstar.com/wisetech-ceo-on-cargowise-pricing-we-knew-this-would-be-disruptive/)).
+
+The open question no vendor answers in public: when an external agent registers a job, is there an automation-linked charge beyond the standard per-job fee? We could not find a published tariff that settles it. Ask your account manager in writing and reconcile the answer against next month's invoice.
+
+## Layer three: model inference, the cost that grows with document volume
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Under every overlay subscription sits a model bill. If the vendor routes every page through a frontier model, that bill scales with your document volume and gets passed to you one way or another.
+</div>
+
+Kristjan Lillemets, formerly CPO at Magaya, put it plainly to The Loadstar in June: "If we all keep using the frontier models for everything, then ROI will be a painful question soon." In the same piece he argued forwarders should tell their TMS vendor "I want you to manage our core workflows, but let us build around it" ([The Loadstar, 26 June 2026](https://theloadstar.com/dsv-sparks-rethink-on-freight-software-but-ai-may-pose-the-real-challenge/)). A 300-page supplier batch pushed through a frontier model page by page costs real money, and most of those pages are cover sheets, terms and conditions, and duplicates.
+
+This is the one layer architecture can attack directly. In the [4PL control tower pipeline](/solutions/4pl-control-tower-automation/) FreightMynd built for a global freight forwarder, a lightweight classifier strips irrelevant pages before any expensive extraction runs, which cut AI processing costs by 50% on 200 to 300 page batches. Small models classify and route; frontier models are reserved for the fields that need them. When you rent an overlay, the vendor makes that choice, and their margin depends on it.
+
+## A worked example: 5,000 jobs a month, three layers stacked
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> Under the assumptions below, an illustrative 5,000-job forwarder pays about US$58,450 a month for automation across the three layers, or roughly US$11.69 per job. CargoWise takes about US$46,450 of that. Swap in your own job mix, your overlay quote, and your model cost, and the table recalculates.
+</div>
+
+Everything in this section is illustrative. The job mix is invented to show the mechanics, the per-job rates use only the Loadstar-reported range and the two press-cited price points, and the overlay subscription and model cost are stated assumptions, not vendor quotes.
+
+**Assumptions**
+
+- 5,000 jobs a month, all created or enriched by an AI overlay
+- Job mix: 1,500 full import containers with inland leg at US$19.95; 1,000 standalone import customs entries at US$9.95; 2,500 other jobs (export, air, LCL, domestic) at the low end of the range, US$2.63
+- Overlay subscription: US$10,000 a month, a placeholder for the quote you were given
+- Model inference: US$0.40 per job passed through to you, assuming frontier-model extraction on every document with no pre-filtering
+
+| Cost layer | Basis | Monthly (US$) | Per job (US$) |
+|---|---|---|---|
+| CargoWise Value Pack: full import w/ inland | 1,500 x 19.95 | 29,925 | 19.95 |
+| CargoWise Value Pack: standalone customs entry | 1,000 x 9.95 | 9,950 | 9.95 |
+| CargoWise Value Pack: other job types | 2,500 x 2.63 | 6,575 | 2.63 |
+| **Layer 1 subtotal (CargoWise)** | | **46,450** | **9.29 blended** |
+| Layer 2: AI overlay subscription | assumption | 10,000 | 2.00 |
+| Layer 3: model inference | 5,000 x 0.40 | 2,000 | 0.40 |
+| **Total automation stack** | | **58,450** | **11.69** |
+
+Two sensitivity checks help. If every one of the 5,000 jobs sat at the bottom of the range, layer 1 alone would be US$13,150. If every job were a full import container with inland leg, it would be US$99,750. Your real bill lives somewhere between, and the only way to place it is to pull last month's job counts by type.
+
+The benchmark to hold this against comes from Prompt Global CEO Robert Petti, who told The Loadstar that CargoWise costs about US$50 per transaction while the labour to process that transaction manually runs US$100 to US$200 ([The Loadstar, 22 January 2026](https://theloadstar.com/cargowise-and-the-self-build-question-when-does-a-forwarder-go-it-alone/)). "Transaction" and "job" are not the same unit, so treat this as a framing rather than a rate card. The point holds either way: software is still cheaper than people per transaction, and each extra fee layer narrows the gap that justified automating in the first place. Given that 62.8% of supply chain teams surveyed in June had not measured AI ROI at all ([The Loadstar, 22 June 2026](https://theloadstar.com/ai-adoption-in-supply-chains-hampered-by-change-management-not-technology/)), a table like this one filled with your own numbers is most of the way to that measurement.
+
+## What practitioners are saying about paying twice
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> The sharpest public complaints about CargoWise automation fees come from forwarders and their technology leads on LinkedIn and in The Loadstar. The recurring theme: the Value Pack model taxes third-party integrations and pushes forwarders toward immature native tools.
+</div>
+
+Robert Petti's LinkedIn post on Value Pack impact (130 reactions, 33 comments) reported early data "ranging from reductions to 300% increases monthly," said the new model was "penalizing third-party integrations," and noted that customers "resist paying 'automation fees'" ([LinkedIn](https://www.linkedin.com/posts/rpetti21_logistics-freightforwarding-cargowise-activity-7404265013785341952-UsFc)). In the comments, Seko's Jamie Andrade said larger forwarders were now forced to choose "between duplicate fees or immature native solutions." That is the whole cost-stacking argument in six words.
+
+Andrade expanded on it to The Loadstar in December: "The original model gave us the autonomy to solve gaps independently. Under the new model, that flexibility is effectively removed" ([The Loadstar, 15 December 2025](https://theloadstar.com/wisetech-strategy-raises-alarm-over-future-of-3pl-software-ecosystem/)).
+
+The invoices themselves added confusion. In January, forwarders comparing first Value Pack bills found "Transitional Pricing Protection" line items that erased expected reductions, with one writing, "They basically just kept their old pricing and then had this adjustment" ([The Loadstar, 8 January 2026](https://theloadstar.com/cargowise-customers-confused-by-first-invoices-under-new-pricing-model/)). If your bill has a line you cannot explain, reconcile it before you add another vendor on top.
+
+## The alternative: a pipeline you own, and where SaaS overlays still win
+
+<div class="quick-answer">
+<strong>Quick answer:</strong> A client-owned pipeline replaces the overlay subscription with a one-time build and an operational fee not charged per job, and puts the model mix under your control. It does not remove the CargoWise per-job fee. SaaS overlays still win on time to deploy and on not needing anyone in-house to own code.
+</div>
+
+Layer 1 stays. Every job registered in CargoWise carries its Value Pack fee whether a human, a native agent, or your own pipeline creates it. Building your own automation does not get you out of that.
+
+Layers 2 and 3 are where ownership changes the economics:
+
+- **No per-transaction rent on layer 2.** FreightMynd charges a fixed project fee for the build and a monthly operational fee sized by document volume tier, with no per-page or per-extraction charges. The subscription line in the table becomes a flat operational line that does not climb because a robot created 500 more jobs.
+- **You choose the models on layer 3.** Small models classify pages, route emails, and check completeness; frontier models run only on the fields that need them. In the global freight forwarder deployment, pre-filtering cut AI processing costs by 50%, and total processing time fell 60% with zero manual TMS entry.
+- **The pipeline is TMS-agnostic above the adapter.** Extraction and validation produce clean structured data; only the final push into CargoWise is CargoWise-specific. That matters if DSV moving core volumes to Schenker's Tango platform has you thinking about your own exit options ([The Loadstar](https://theloadstar.com/dsv-confirms-cargowise-shift-as-tango-becomes-core-of-ai-platform/)).
+
+Now the honest part. A SaaS overlay deploys in days. A [TMS automation](/solutions/tms-automation/) build from FreightMynd takes 4-8 weeks from kickoff to production, and someone on your side has to own discovery, the business rules, and UAT. An overlay also means you never own code, which is a feature if you have no technical lead and a liability if you ever want to change how it works. For a forwarder doing 500 jobs a month with two operators, the overlay is probably right for now. The maths tilts toward ownership as volume climbs and the subscription starts to look like a second Value Pack.
+
+The third option is to wait for SARA and Auto Job Creation. We compare that route against overlays and custom builds in the sibling post on [CargoWise AI agents versus a custom pipeline](/blog/cargowise-ai-agents-vs-custom-pipeline/). Short version: native agents will also carry a separate charge, and liability for what they get wrong sits, in Appoo's words, with "the forwarder or the broker."
+
+## How to check your own numbers before you sign anything
+
+Pull three things before your next vendor call.
+
+1. **Last month's job count by shipment type.** Multiply each by the rate in your Value Pack contract, not a published average. That is your real layer 1.
+2. **Every overlay quote you have received, with its per-transaction terms.** If a vendor cannot say whether their fee scales with jobs created in CargoWise, that is your answer.
+3. **An estimate of documents and pages per job.** That drives model cost. Ask any vendor, including FreightMynd, how many of those pages hit a frontier model and how many are filtered first.
+
+Then run the table. If the total per job is creeping toward the labour cost it was meant to replace, the stack has stopped paying for itself. The wider rent-versus-own trade-offs are in our [SaaS versus custom freight AI comparison](/compare/saas-vs-custom-freight-ai/); the workflows most exposed to the stack are covered on the [email intelligence](/solutions/email-intelligence/) and [document intelligence](/solutions/document-intelligence/) pages.
+
+If you would rather have someone else run the model with your real invoice and job mix, [book a free audit](/contact/). We will reconcile your Value Pack bill, price the overlay you are considering against a pipeline you would own, and give you the per-job number either way.
+
+## Frequently Asked Questions
+
+### How much does CargoWise charge per shipment under Value Packs?
+
+CargoWise Value Pack fees run from US$2.63 to US$19.95 per job depending on shipment type, according to The Loadstar's 3 September 2026 report. Two examples cited elsewhere: US$19.95 for a full import container with an inland leg and US$9.95 for a standalone import customs entry. Your blended rate depends on your job mix, so a 5,000-job forwarder could see anything from about US$13,000 to just under US$100,000 a month at the extremes. Check your own invoice line items rather than trusting a published average.
+
+### Do third-party AI tools cost extra on CargoWise Value Packs?
+
+Yes, in the sense that the overlay's subscription sits on top of the per-job fee CargoWise already charges for every job the tool creates. The Value Pack fee applies whether a human or a robot registers the job. WiseTech has also said it will monetise its own agentic AI separately (The Loadstar, 4 September 2026). Whether an external agent triggers any additional automation charge beyond the standard job fee is not stated in any public tariff we could find, so confirm it with your account manager and check a real invoice.
+
+### What are CargoWise automation fees?
+
+The phrase practitioners use for the per-job, transaction-linked charges that replaced seat licensing when CargoWise Value Packs launched on 1 December 2025. Robert Petti's LinkedIn post on Value Pack impact said the model was penalising third-party integrations and that customers were resisting paying automation fees. In practice the term covers three layers: the CargoWise per-job charge, whatever your AI overlay vendor bills, and the model inference cost behind that overlay.
+
+### Is a custom AI pipeline cheaper than a SaaS overlay on CargoWise?
+
+Usually over a multi-year horizon at volume, not always in year one. A custom pipeline replaces the overlay subscription with a one-time build plus an operational fee that is not charged per job, and it lets you route most work to small models. It does not remove the CargoWise per-job fee. A SaaS overlay wins on speed to deploy and on not having to own any engineering, which matters for forwarders without a technical lead.
+
+### How do I estimate my own CargoWise Value Pack bill?
+
+Group last month's jobs by shipment type, multiply each group by its Value Pack rate from your contract, and sum the result. Then add your AI overlay subscription and any per-transaction charge it carries, plus an estimate of model cost per job. Compare the total against the labour you expect to remove. The illustrative table in this guide is built to be copied with your own numbers dropped in.
+
+### What is the $50 software versus $100 to $200 labour benchmark?
+
+It is a framing Prompt Global CEO Robert Petti gave The Loadstar on 22 January 2026: CargoWise costs roughly US$50 per transaction while the labour to process that transaction manually runs US$100 to US$200. The point is that software is still cheaper than people per transaction, which is why the stacking question matters: every extra fee layer eats into that gap.
